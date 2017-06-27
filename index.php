@@ -13,8 +13,8 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
+	<div class="row">
+	<div id="primary" class="col-md-9 content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -28,6 +28,7 @@ get_header(); ?>
 			<?php
 			endif;
 
+			echo '<div class="row list-post">';
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
@@ -42,6 +43,7 @@ get_header(); ?>
 
 			the_posts_navigation();
 
+			echo '</div>';
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
