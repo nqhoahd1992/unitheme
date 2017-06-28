@@ -23,7 +23,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'shtheme' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" role="banner" <?php header_class();?>>
 		<div class="container">
 			<div class="site-branding">
 				<?php
@@ -40,10 +40,14 @@
 				<?php
 				endif; ?>
 			</div><!-- .site-branding -->
-
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
+			<div class="header-content">
+				<div class="logo">
+					<?php display_logo();?>
+				</div>
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+				</nav><!-- #site-navigation -->
+			</div>
 		</div>
 	</header><!-- #masthead -->
 

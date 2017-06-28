@@ -145,6 +145,83 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
+ * Load Plugin activation file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+/**
+ * Load Theme Options
+ */
+require get_template_directory() . '/lib/options.php';
+
+function sh_plugin_activation() {
+
+    $plugins = array(
+        array(
+            'name' 		=> 'Redux Framework',
+            'slug' 		=> 'redux-framework',
+            'required' 	=> true
+        )
+    );
+
+    $configs = array(
+        'menu' 			=> 'tp_plugin_install',
+        'has_notice' 	=> true,
+        'dismissable' 	=> false,
+        'is_automatic' 	=> true
+    );
+    tgmpa( $plugins, $configs );
+ 
+}
+add_action('tgmpa_register', 'sh_plugin_activation');
+
+/**
+ * Add body class
+ */
+function add_class_body_layout( $classes ) {
+	global $sh_option;
+	$layout = $sh_option['opt-layout'];
+	switch ($layout) {
+	    case '1':
+	        $classes[] = 'no-sidebar';
+	        break;
+	    case '2':
+	        $classes[] = 'sidebar-content';
+	        break;
+	    case '3':
+	        $classes[] = 'content-sidebar';
+	        break;
+	    case '4':
+	        $classes[] = 'sidebar-content-sidebar';
+	        break;
+        case '5':
+	        $classes[] = 'sidebar-sidebar-content';
+	        break;
+	    case '6':
+	        $classes[] = 'content-sidebar-sidebar';
+	        break;
+	}
+	return $classes;
+
+}
+add_filter( 'body_class', 'add_class_body_layout' );
+
+function header_class( ) {
+	global $sh_option;
+	$array_class_header = array('site-header');
+	$layout_header 		= $sh_option['opt-layout-header'];
+	if( $layout_header == '1' ) {
+		$array_class_header[] = 'logo-center';
+	} else {
+		$array_class_header[] = 'logo-left';
+	}
+    echo 'class="' . join( ' ', $array_class_header ) . '"';
+}
+
+function display_logo(){
+	global $sh_option;
+	$url_logo = $sh_option['opt_settings_logo']['url'];
+	if( ! empty( $url_logo ) ) {
+		echo '<a href="'.get_site_url( ).'"><img src="'. $url_logo .'"></a>';
+	}
+}

@@ -49,14 +49,38 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	font-size: 0;
 	margin: 0;
 }
+/**/
+.site-header.logo-left {
+
+}
+.site-header.logo-left .header-content {
+	display: table;
+	width: 100%;
+	padding: 20px 0;
+}
+.site-header.logo-left .header-content .logo,
+.site-header.logo-left .header-content .main-navigation {
+	display: table-cell;
+	vertical-align: middle;
+}
+/**/
+.site-header.logo-center {
+	
+}
+.site-header.logo-center .logo {
+	text-align: center;
+}
+
 
 /*--------------------------------------------------------------
 # Main Navigation
 --------------------------------------------------------------*/
 .main-navigation {
+	background: #337ab7;
+}
+.site-header.logo-center .main-navigation {
 	float: left;
 	width: 100%;
-	background: #337ab7;
 }
 .main-navigation ul.menu {
 	padding: 0;
