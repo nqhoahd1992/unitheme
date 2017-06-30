@@ -49,7 +49,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	font-size: 0;
 	margin: 0;
 }
-/**/
+/* Header style 1 */
 .site-header.logo-left {
 
 }
@@ -63,14 +63,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	display: table-cell;
 	vertical-align: middle;
 }
-/**/
+/* Header style 2 */
 .site-header.logo-center {
 	
 }
 .site-header.logo-center .logo {
 	text-align: center;
 }
-
 
 /*--------------------------------------------------------------
 # Main Navigation
@@ -349,5 +348,88 @@ object {
 }
 
 .gallery-caption {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+## Layout construct 
+--------------------------------------------------------------*/
+.site-content {
+	padding-top: 15px;
+}
+.sidebar-content .site-main,
+.content-sidebar .site-main {
+	float: right;
+	width: 74.5%;
+}
+.sidebar-content .sidebar,
+.content-sidebar .sidebar {
+	float: left;
+	width: 23.5%;
+}
+.content-sidebar .site-main {
+	float: left;
+}
+.content-sidebar .sidebar {
+	float: right;
+}
+.sidebar-content-sidebar .content-sidebar-wrap,
+.sidebar-sidebar-content .content-sidebar-wrap,
+.content-sidebar-sidebar .content-sidebar-wrap {
+	float: left;
+	width: 75.5%;
+}
+.sidebar-content-sidebar .site-main,
+.sidebar-sidebar-content .site-main,
+.content-sidebar-sidebar .site-main {
+	float: right;
+	width: 67.5496689%;
+}
+.sidebar-content-sidebar .sidebar-primary,
+.sidebar-sidebar-content .sidebar-primary,
+.content-sidebar-sidebar .sidebar-primary {
+	float: left;
+	width: 31.1258278%;
+}
+.sidebar-content-sidebar .sidebar-secondary,
+.sidebar-sidebar-content .sidebar-secondary {
+	float: right;
+	width: 23.5%;
+}
+.sidebar-sidebar-content .sidebar {
+	float: left;
+}
+.sidebar-sidebar-content .content-sidebar-wrap {
+	float: right;
+}
+.content-sidebar-sidebar .sidebar-primary {
+	float: right;
+}
+.content-sidebar-sidebar .sidebar-secondary {
+	float: right;
+	width: 23.5%;
+}
+.content-sidebar-sidebar .site-main {
+	float: left;
+}
+
+/*--------------------------------------------------------------
+## Sidebar 
+--------------------------------------------------------------*/
+.sidebar .widget-title {
+	font-size: 15px;
+	color: #FFF;
+	text-transform: uppercase;
+	text-align: center;
+	background: #337ab7;
+	line-height: 40px;
+	height: 40px;
+	margin: 0 0 10px 0
+}
+.sidebar ul {
+	margin: 0;
+	padding: 0;
+}
+.sidebar ul li {
 	display: block;
 }

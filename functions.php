@@ -7,6 +7,19 @@
  * @package SH_Theme
  */
 
+function genesis_constants() {
+	define( 'PARENT_DIR', get_template_directory() );
+	define( 'CHILD_DIR',  get_stylesheet_directory() );
+	define( 'SH_FUNCTIONS_DIR', PARENT_DIR . '/lib/functions' );
+}
+add_action( 'init', 'genesis_constants' );
+
+function sh_load_framework() {
+	// Load Functions.
+	require_once( SH_FUNCTIONS_DIR . '/sidebar.php' );
+}
+add_action( 'init','sh_load_framework' );
+
 if ( ! function_exists( 'shtheme_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -90,8 +103,18 @@ add_action( 'after_setup_theme', 'shtheme_content_width', 0 );
  */
 function shtheme_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'shtheme' ),
+		'name'          => esc_html__( 'Primary Sidebar', 'shtheme' ),
 		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'shtheme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Secondary Sidebar', 'shtheme' ),
+		'id'            => 'sidebar-2',
 		'description'   => esc_html__( 'Add widgets here.', 'shtheme' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -206,6 +229,9 @@ function add_class_body_layout( $classes ) {
 }
 add_filter( 'body_class', 'add_class_body_layout' );
 
+/**
+ * Add header class
+ */
 function header_class( ) {
 	global $sh_option;
 	$array_class_header = array('site-header');
@@ -218,6 +244,9 @@ function header_class( ) {
     echo 'class="' . join( ' ', $array_class_header ) . '"';
 }
 
+/**
+ * Show logo
+ */
 function display_logo(){
 	global $sh_option;
 	$url_logo = $sh_option['opt_settings_logo']['url'];
@@ -225,3 +254,33 @@ function display_logo(){
 		echo '<a href="'.get_site_url( ).'"><img src="'. $url_logo .'"></a>';
 	}
 }
+
+/**
+ * Add column of footer
+ */
+function sh_register_footer_widget_areas() {
+
+	global $sh_option;
+	
+	$footer_widgets = $sh_option['opt-number-footer'];
+	$footer_widgets_number = intval($footer_widgets);
+
+	$counter = 1;
+	
+	while ( $counter <= $footer_widgets_number ) {
+
+		register_sidebar( array(
+			'name'          => sprintf( __( 'Footer %d', 'shtheme' ), $counter ),
+			'id'            => sprintf( 'footer-%d', $counter ),
+			'description'   => sprintf( __( 'Footer %d widget area.', 'shtheme' ), $counter ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+
+		$counter++;
+	}
+
+}
+add_action( 'widgets_init','sh_register_footer_widget_areas' );

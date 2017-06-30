@@ -7,11 +7,11 @@
  * @package SH_Theme
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'sidebar-2' ) ) {
 	return;
 }
 ?>
 
-<aside class="sidebar sidebar-primary" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+<aside class="sidebar sidebar-secondary" role="complementary">
+	<?php dynamic_sidebar( 'sidebar-2' ); ?>
 </aside><!-- #secondary -->

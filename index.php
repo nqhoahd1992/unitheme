@@ -13,8 +13,7 @@
  */
 
 get_header(); ?>
-	<div class="row">
-	<div id="primary" class="col-md-9 content-area">
+	<div id="primary" class="content-sidebar-wrap">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -28,7 +27,7 @@ get_header(); ?>
 			<?php
 			endif;
 
-			echo '<div class="row list-post">';
+			echo '<div class="list-post">';
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
@@ -51,8 +50,10 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
 
+		<?php do_action( 'sh_after_content' );?>
+
+	</div><!-- #primary -->
+	
 <?php
-get_sidebar();
 get_footer();

@@ -46,7 +46,7 @@
         //'disable_google_fonts_link' => true,                    // Disable this in case you want to create your own google fonts loader
         'admin_bar'            => true,
         // Show the panel pages on the admin bar
-        'admin_bar_icon'       => 'dashicons-portfolio',
+        'admin_bar_icon'       => 'dashicons-admin-generic',
         // Choose an icon for the admin bar menu
         'admin_bar_priority'   => 50,
         // Choose an priority for the admin bar menu
@@ -69,7 +69,7 @@
         // For a full list of options, visit: http://codex.wordpress.org/Function_Reference/add_submenu_page#Parameters
         'page_permissions'     => 'manage_options',
         // Permissions needed to access the options panel.
-        'menu_icon'            => 'dashicons-admin-tools',
+        'menu_icon'            => 'dashicons-admin-generic',
         // Specify a custom URL to an icon
         'last_tab'             => '',
         // Force your panel to always open to a specific tab (by id)
@@ -144,23 +144,23 @@
      * ---> START HELP TABS
      */
 
-    $tabs = array(
-        array(
-            'id'      => 'redux-help-tab-1',
-            'title'   => __( 'Theme Information 1', 'shtheme' ),
-            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'shtheme' )
-        ),
-        array(
-            'id'      => 'redux-help-tab-2',
-            'title'   => __( 'Theme Information 2', 'shtheme' ),
-            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'shtheme' )
-        )
-    );
-    Redux::setHelpTab( $opt_name, $tabs );
+    // $tabs = array(
+    //     array(
+    //         'id'      => 'redux-help-tab-1',
+    //         'title'   => __( 'Theme Information 1', 'shtheme' ),
+    //         'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'shtheme' )
+    //     ),
+    //     array(
+    //         'id'      => 'redux-help-tab-2',
+    //         'title'   => __( 'Theme Information 2', 'shtheme' ),
+    //         'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'shtheme' )
+    //     )
+    // );
+    // Redux::setHelpTab( $opt_name, $tabs );
 
-    // Set the help sidebar
-    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'shtheme' );
-    Redux::setHelpSidebar( $opt_name, $content );
+    // // Set the help sidebar
+    // $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'shtheme' );
+    // Redux::setHelpSidebar( $opt_name, $content );
 
 
     /*
@@ -187,7 +187,7 @@
         'id'               => 'general',
         // 'desc'             => __( 'These are really basic fields!', 'shtheme' ),
         'customizer_width' => '400px',
-        'icon'             => 'el el-website'
+        'icon'             => 'el el-dashboard'
     ) );
 
     Redux::setSection( $opt_name, array(
@@ -273,6 +273,32 @@
                 'url'      => true,
                 'title'    => __( 'Favicon', 'shtheme' ),
                 'compiler' => 'true',
+            ),
+        )
+    ) );
+
+    // -> Header
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Header', 'shtheme' ),
+        'id'               => 'header',
+        'icon'             => 'el el-website',
+    ) );
+
+    // -> Footer
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Footer', 'shtheme' ),
+        'id'               => 'footer',
+        'icon'             => 'el el-website',
+        'fields'           => array(
+            array(
+                'id'        => 'opt-number-footer',
+                'type'      => 'slider',
+                'title'     => __('Nhập số cột chân trang', 'shtheme'),
+                'default'   => 1,
+                'min'       => 1,
+                'step'      => 1,
+                'max'       => 4,
+                'display_value' => 'text'
             ),
         )
     ) );
