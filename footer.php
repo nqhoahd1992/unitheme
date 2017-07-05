@@ -17,7 +17,9 @@ do_action( 'sh_after_content_sidebar_wrap' );
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
 			<div class="footer-widgets">
-				
+				<div class="row">
+					<?php do_action( 'sh_footer' );?>
+				</div>
 			</div>
 			<div class="site-info">
 				

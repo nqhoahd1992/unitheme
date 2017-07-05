@@ -17,6 +17,7 @@ add_action( 'init', 'genesis_constants' );
 function sh_load_framework() {
 	// Load Functions.
 	require_once( SH_FUNCTIONS_DIR . '/sidebar.php' );
+	require_once( SH_FUNCTIONS_DIR . '/formatting.php' );
 }
 add_action( 'init','sh_load_framework' );
 
@@ -83,18 +84,6 @@ function shtheme_setup() {
 }
 endif;
 add_action( 'after_setup_theme', 'shtheme_setup' );
-
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function shtheme_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'shtheme_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'shtheme_content_width', 0 );
 
 /**
  * Register widget area.
@@ -171,6 +160,11 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Plugin activation file.
  */
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+/**
+ * Load Shortcode
+ */
+require get_template_directory() . '/lib/shortcode/shortcode-blog.php';
 
 /**
  * Load Theme Options
@@ -284,3 +278,44 @@ function sh_register_footer_widget_areas() {
 
 }
 add_action( 'widgets_init','sh_register_footer_widget_areas' );
+
+function sh_footer_widget_areas() {
+
+	global $sh_option;
+
+	$footer_widgets = $sh_option['opt-number-footer'];
+	$footer_widgets_number = intval($footer_widgets);
+
+	switch ($footer_widgets_number) {
+	    case '1':
+	        $classes = 'footer-widgets-area col-md-12';
+	        break;
+	    case '2':
+	        $classes = 'footer-widgets-area col-md-6';
+	        break;
+	    case '3':
+	        $classes = 'footer-widgets-area col-md-4';
+	        break;
+	    case '4':
+	        $classes = 'footer-widgets-area col-md-3';
+	        break;
+	}
+
+ 	$counter = 1;
+	while ( $counter <= $footer_widgets_number ) {
+
+		echo '<div class="'. $classes .'">';
+		dynamic_sidebar( 'footer-' . $counter );
+		echo '</div>';
+		$counter++;
+
+	}
+
+}
+
+add_action( 'sh_footer', 'sh_footer_widget_areas' );
+
+/**
+ * Add Thumb Size
+**/
+add_image_size( 'sh_thumb300x200', 300, 200, array( 'center', 'center' ) );
