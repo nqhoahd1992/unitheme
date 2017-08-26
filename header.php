@@ -22,6 +22,34 @@
 <div id="page" class="site">
 
 	<header id="masthead" role="banner" <?php header_class();?>>
+		<!-- Start Menu Mobile -->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#NavbarMobile">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>                        
+					</button>
+					<a class="navbar-brand" href="#">Menu</a>
+				</div>
+				<?php
+				wp_nav_menu( array(
+	                'menu'              => 'primary',
+	                'menu_id'        	=> 'primary-menu',
+	                'theme_location'    => 'menu-1',
+	                'depth'             => 2,
+	                'container'         => 'div',
+	                'container_class'   => 'collapse navbar-collapse',
+	                'container_id'      => 'NavbarMobile',
+	                'menu_class'        => 'nav navbar-nav',
+	                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+	                'walker'            => new WP_Bootstrap_Navwalker())
+	            );
+	            ?>
+			</div>
+		</div>
+		<!-- End Menu -->
 		<div class="container">
 			<div class="site-branding">
 				<?php
@@ -48,6 +76,6 @@
 			</div>
 		</div>
 	</header><!-- #masthead -->
-
+	
 	<div id="content" class="site-content">
 		<div class="container">

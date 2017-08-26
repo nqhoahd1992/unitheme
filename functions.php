@@ -7,12 +7,12 @@
  * @package SH_Theme
  */
 
-function genesis_constants() {
+function sh_constants() {
 	define( 'PARENT_DIR', get_template_directory() );
 	define( 'CHILD_DIR',  get_stylesheet_directory() );
-	define( 'SH_FUNCTIONS_DIR', PARENT_DIR . '/lib/functions' );
+	define( 'SH_FUNCTIONS_DIR', PARENT_DIR . '/inc/functions' );
 }
-add_action( 'init', 'genesis_constants' );
+add_action( 'init', 'sh_constants' );
 
 function sh_load_framework() {
 	// Load Functions.
@@ -22,71 +22,51 @@ function sh_load_framework() {
 add_action( 'init','sh_load_framework' );
 
 if ( ! function_exists( 'shtheme_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function shtheme_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on SH Theme, use a find and replace
-	 * to change 'shtheme' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'shtheme', get_template_directory() . '/languages' );
+	function shtheme_setup() {
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on SH Theme, use a find and replace
+		 * to change 'shtheme' to the name of your theme in all the template files.
+		 */
+		load_theme_textdomain( 'shtheme', get_template_directory() . '/languages' );
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+		// Add theme support
+		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'title-tag' );
+		add_theme_support( 'post-thumbnails' );
 
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus( array(
+			'menu-1' => esc_html__( 'Primary', 'shtheme' ),
+		) );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
-	add_theme_support( 'post-thumbnails' );
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support( 'html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		) );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'shtheme' ),
-	) );
+		// Set up the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'shtheme_custom_background_args', array(
+			'default-color' => 'ffffff',
+			'default-image' => '',
+		) ) );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'shtheme_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
-}
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+	}
 endif;
 add_action( 'after_setup_theme', 'shtheme_setup' );
 
 /**
- * Register widget area.
+ * Register Widget Area
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
@@ -114,7 +94,7 @@ function shtheme_widgets_init() {
 add_action( 'widgets_init', 'shtheme_widgets_init' );
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue Script File And Css File
  */
 function shtheme_scripts() {
 	wp_enqueue_style( 'shtheme-style', get_stylesheet_uri() );
@@ -142,34 +122,37 @@ function shtheme_lib_scripts(){
 add_action( 'wp_enqueue_scripts', 'shtheme_lib_scripts' , 1 );
 
 /**
- * Load Plugin activation file.
+ * Load Plugin Activation File.
  */
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
 /**
  * Load Shortcode
  */
-require get_template_directory() . '/lib/shortcode/shortcode-blog.php';
+require get_template_directory() . '/inc/shortcode/shortcode-blog.php';
 
-require get_template_directory() . '/lib/shortcode/shortcode-product.php';
+require get_template_directory() . '/inc/shortcode/shortcode-product.php';
 
 /**
  * Load Theme Options
  */
-require get_template_directory() . '/lib/options.php';
+require get_template_directory() . '/inc/options.php';
 
 /**
  * Load Woocomerce
  */
 if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/lib/function-woo.php';
+	require get_template_directory() . '/inc/function-woo.php';
 }
 
 /**
  * Load Menu Walker Bootstrap
  */
-require get_template_directory() . '/lib/wp-bootstrap-navwalker.php';
+require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
 
+/**
+ * Remove Title
+ */
 add_filter( 'get_the_archive_title', function ($title) {
     if ( is_category() ) {
             $title = single_cat_title( '', false );
@@ -181,6 +164,9 @@ add_filter( 'get_the_archive_title', function ($title) {
     return $title;
 });
 
+/**
+ * Plugin Require Install
+ */
 function sh_plugin_activation() {
 
     $plugins = array(
@@ -203,7 +189,7 @@ function sh_plugin_activation() {
 add_action('tgmpa_register', 'sh_plugin_activation');
 
 /**
- * Add body class
+ * Add Body Class
  */
 function add_class_body_layout( $classes ) {
 	global $sh_option;
@@ -272,17 +258,14 @@ function insert_favicon(){
 add_action( 'wp_head','insert_favicon' );
 
 /**
- * Add column of footer
+ * Add Widget Footer
  */
 function sh_register_footer_widget_areas() {
 
 	global $sh_option;
-	
 	$footer_widgets = $sh_option['opt-number-footer'];
 	$footer_widgets_number = intval($footer_widgets);
-
 	$counter = 1;
-	
 	while ( $counter <= $footer_widgets_number ) {
 
 		register_sidebar( array(
@@ -301,6 +284,9 @@ function sh_register_footer_widget_areas() {
 }
 add_action( 'widgets_init','sh_register_footer_widget_areas' );
 
+/**
+ * Display Footer
+ */
 function sh_footer_widget_areas() {
 
 	global $sh_option;
@@ -334,7 +320,6 @@ function sh_footer_widget_areas() {
 	}
 
 }
-
 add_action( 'sh_footer', 'sh_footer_widget_areas' );
 
 /**
@@ -366,7 +351,7 @@ if ( ! function_exists( 'shtheme_pagination' ) ) {
 }
 
 /**
- * User Roles
+ * Remove Admin Bar
 **/
 function remove_wp_logo( $wp_admin_bar ) {
 	$wp_admin_bar->remove_node('wp-logo');
@@ -374,7 +359,9 @@ function remove_wp_logo( $wp_admin_bar ) {
 }
 add_action('admin_bar_menu', 'remove_wp_logo', 999);
 
-
+/**
+ * Hide Menu Page If User not admin3b
+**/
 function remove_menus() {
 	global $current_user;
 	$username = $current_user->user_login;
@@ -400,6 +387,9 @@ function remove_unnecessary_wordpress_menus(){
 }
 add_action('admin_menu', 'remove_unnecessary_wordpress_menus', 999);
 
+/**
+ * Remove Dashboard
+**/
 function disable_default_dashboard_widgets() {
 	global $wp_meta_boxes;
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
@@ -412,3 +402,16 @@ function disable_default_dashboard_widgets() {
 
 }
 add_action('wp_dashboard_setup', 'disable_default_dashboard_widgets', 999);
+
+/**
+ * Move All File js To Footer
+**/
+function footer_enqueue_scripts() {
+	remove_action('wp_head', 'wp_print_scripts');
+	remove_action('wp_head', 'wp_print_head_scripts', 9);
+	remove_action('wp_head', 'wp_enqueue_scripts', 1);
+	add_action('wp_footer', 'wp_print_scripts', 5);
+	add_action('wp_footer', 'wp_enqueue_scripts', 5);
+	add_action('wp_footer', 'wp_print_head_scripts', 5);
+}
+add_action('after_setup_theme', 'footer_enqueue_scripts');
