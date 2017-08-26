@@ -364,3 +364,51 @@ if ( ! function_exists( 'shtheme_pagination' ) ) {
 		echo '</div>';
 	}
 }
+
+/**
+ * User Roles
+**/
+function remove_wp_logo( $wp_admin_bar ) {
+	$wp_admin_bar->remove_node('wp-logo');
+	$wp_admin_bar->remove_node('comments');
+}
+add_action('admin_bar_menu', 'remove_wp_logo', 999);
+
+
+function remove_menus() {
+	global $current_user;
+	$username = $current_user->user_login;
+	if ($username == 'admin3b') {
+	 	remove_menu_page( 'plugins.php' );
+	 	remove_menu_page( 'tools.php' );
+	 	remove_menu_page( 'options-general.php' );
+	 	remove_menu_page( 'edit-comments.php' );
+	}
+}
+add_action( 'admin_menu', 'remove_menus', 999 );
+
+function remove_unnecessary_wordpress_menus(){
+	global $current_user;
+	$username = $current_user->user_login;
+	if ($username == 'admin3b') {
+		global $submenu;
+		unset($submenu['index.php'][10]);
+	    unset($submenu['themes.php'][5]);
+	    unset($submenu['themes.php'][20]);
+	    unset($submenu['themes.php'][22]);
+	}
+}
+add_action('admin_menu', 'remove_unnecessary_wordpress_menus', 999);
+
+function disable_default_dashboard_widgets() {
+	global $wp_meta_boxes;
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+	unset($wp_meta_boxes['dashboard']['side']['high']['redux_dashboard_widget']);
+
+}
+add_action('wp_dashboard_setup', 'disable_default_dashboard_widgets', 999);
