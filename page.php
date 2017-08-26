@@ -31,9 +31,10 @@ get_header(); ?>
 			?>
 
 		</main><!-- #main -->
-		<?php do_action( '' );?>
+		
+		<?php do_action( 'sh_after_content' );?>
+
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

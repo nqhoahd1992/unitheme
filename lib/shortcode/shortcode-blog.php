@@ -85,13 +85,13 @@ class sh_blog_shortcode {
 	 * @return $html: html of post
 	 *
 	 */
-	function rt_general_post_html ( $post_class = array(), $atts = array(), $image_size = 'sh_thumb300x200' ) {
+	function rt_general_post_html ( $post_class = array(), $atts = array(), $image_size = 'sh_thumb190x120' ) {
 		extract( shortcode_atts( array(
 			'posts_per_page'				=> '5',
 			'categories'					=> '',
 			'custom_text'					=> 'Xem Thêm',
 			'hide_category'					=> '0',
-			'hide_viewmore'					=> '1',
+			'hide_viewmore'					=> '0',
 			'hide_meta'						=> '0',
 			'hide_thumb'					=> '1',
 			'hide_desc'						=> '1'

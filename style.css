@@ -1,13 +1,13 @@
 /*
-Theme Name: SH Theme
-Theme URI: http://underscores.me/
-Author: Quang Hòa, Ngọc Sỹ
-Author URI: http://underscores.me/
-Description: Description
+Theme Name: Web3B
+Theme URI:
+Author: Quang Hòa
+Author URI:
+Description:
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: shtheme
+Text Domain:
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
@@ -15,10 +15,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 SH Theme is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
-*/
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -47,7 +43,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 img {
 	max-width: 100%;
-	height: auto;
 }
 
 /*--------------------------------------------------------------
@@ -123,43 +118,15 @@ img {
 .heading a {
 	color: #FFF;
 }
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-/* Text meant only for screen readers. */
-.screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
-}
-
-.screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: bold;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000; /* Above WP toolbar. */
-}
-
-/* Do not show the outline on the skip link target. */
-#content[tabindex="-1"]:focus {
-	outline: 0;
+.page-title, .single-post h1.entry-title {
+	margin: 0 0 15px 0;
+	font-size: 16px;
+	color: #FFF;
+	background: #337ab7;
+	font-weight: normal;
+	padding: 9px 10px;
+	text-transform: uppercase;
+	line-height: 1.4;
 }
 
 /*--------------------------------------------------------------
@@ -222,27 +189,30 @@ img {
 .widget select {
 	max-width: 100%;
 }
+.widget_search .screen-reader-text {
+	display: none;
+}
 .widget_search input[type=search] {
 	border: 1px solid #cccccc;
 }
-.widget_nav_menu ul {
+.sidebar .widget_nav_menu ul {
 	background: #dfdfdf;
 }
-.widget_nav_menu ul li {
+.sidebar .widget_nav_menu ul li {
 	position: relative;
 	padding: 5px 10px;
 }
-.widget_nav_menu ul li:not(:last-child) {
+.sidebar .widget_nav_menu ul li:not(:last-child) {
 	border-bottom: 1px solid #cccccc;
 }
-.widget_nav_menu ul li a {
+.sidebar .widget_nav_menu ul li a {
 	display: block;
 	line-height: 30px;
 }
-.widget_nav_menu ul li a:hover {
+.sidebar .widget_nav_menu ul li a:hover {
 	text-decoration: none;
 }
-.widget_nav_menu .menu-item-has-children .sub-menu {
+.sidebar .widget_nav_menu .menu-item-has-children .sub-menu {
 	position: absolute;
 	left: 100%;
 	top: -1px;
@@ -251,9 +221,20 @@ img {
 	width: 200px;
 	border: 1px solid #FFF;
 }
-.widget_nav_menu .menu-item-has-children:hover .sub-menu {
+.sidebar .widget_nav_menu .menu-item-has-children:hover .sub-menu {
 	opacity: 1;
 	visibility: visible;
+}
+
+.sidebar .widget_recent_entries ul li {
+	padding: 5px 10px;
+	border-bottom: 1px solid #cccccc
+}
+.sidebar .widget_recent_entries ul li:last-child {
+	border-bottom: none;
+}
+.sidebar .widget_recent_entries .post-date {
+	display: block;
 }
 
 /*--------------------------------------------------------------
@@ -618,3 +599,104 @@ object {
 	}
 }
 
+
+/*--------------------------------------------------------------
+## Woocommerce 
+--------------------------------------------------------------*/
+.woocommerce .quantity .qty {
+	padding: 4px 0px;
+}
+.woocommerce .entry-summary {
+	margin-top: 0;
+}
+.woocommerce div.product .product_title {
+	font-size: 20px;
+	font-weight: 600;
+}
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+    font-weight: bold;
+    color: #f70320;
+}
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+.woocommerce div.product div.images .flex-control-thumbs li {
+	padding: 10px 5px;
+}
+.woocommerce .product_meta .posted_in {
+	display: block;
+}
+.woocommerce #reviews #comments h2 {
+	margin-top: 0;
+}
+.woocommerce div.product .woocommerce-tabs .panel {
+	border: none;
+}
+.woocommerce .woocommerce-breadcrumb {
+	display: none;
+}
+.content-sidebar-wrap:before,
+.content-sidebar-wrap:after {
+	clear: both;
+	display: table;
+    content: " ";
+}
+.list-products {
+	padding: 0;
+	clear: both;
+}
+.list-products li {
+	display: block;
+	margin-bottom: 18px;
+	text-align: center;
+}
+.list-products li .woocommerce-loop-product__title {
+	font-size: 13px;
+	font-weight: 600;
+	color: #333333;
+	text-transform: uppercase;
+	line-height: 25px;
+	height: 50px;
+	overflow: hidden;
+	margin: 10px 0;
+	text-align: center;
+}
+.list-products li .woocommerce-loop-product__title {
+	height: 25px;
+}
+.list-products li .woocommerce-loop-product__title:hover {
+	color: #002d5a;
+}
+.list-products li .wrap-product {
+	padding: 4px;
+	border: 1px solid #dedede;
+	background: #FFF;
+}
+
+@media (max-width: 414px) {
+	.woocommerce div.product .woocommerce-tabs ul.tabs {
+		padding: 0;
+	}
+	.woocommerce #content div.product .woocommerce-tabs ul.tabs li, 
+	.woocommerce div.product .woocommerce-tabs ul.tabs li, 
+	.woocommerce-page #content div.product .woocommerce-tabs ul.tabs li, 
+	.woocommerce-page div.product .woocommerce-tabs ul.tabs li {
+		display: block;
+		margin: 0;
+	}
+	.woocommerce div.product .woocommerce-tabs ul.tabs li a,
+	.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+		display: block;
+	}
+	.woocommerce div.product .woocommerce-tabs ul.tabs li::before,
+	.woocommerce div.product .woocommerce-tabs ul.tabs li::after {
+		display: none;
+	}
+	.woocommerce .woocommerce-ordering {
+		float: left;
+	}
+	.woocommerce div.product div.images .flex-control-thumbs li {
+		padding: 10px 2px;
+	}
+}

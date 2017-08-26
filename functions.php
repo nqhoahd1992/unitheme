@@ -119,10 +119,6 @@ add_action( 'widgets_init', 'shtheme_widgets_init' );
 function shtheme_scripts() {
 	wp_enqueue_style( 'shtheme-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'shtheme-navigation', get_template_directory_uri() . '/lib/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'shtheme-skip-link-focus-fix', get_template_directory_uri() . '/lib/js/skip-link-focus-fix.js', array(), '20151215', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -133,28 +129,17 @@ function shtheme_lib_scripts(){
 	// Bootstrap
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/lib/js/bootstrap.min.js', array('jquery'), '1.0', true );
 	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() .'/lib/css/bootstrap.min.css' );
+
+	// if ( class_exists( 'WooCommerce' ) ) {
+	// 	wp_enqueue_style( 'woocommerce-style', get_template_directory_uri() .'/lib/css/custom-woocommerce.css' );
+	// }
+
+	// Owl carousel
+	wp_register_script( 'owlcarousel-js', get_template_directory_uri() . '/lib/js/owl.carousel.min.js', array('jquery'), '1.0', true );
+	wp_register_style( 'owlcarousel-style', get_template_directory_uri() .'/lib/css/owl.carousel.min.css' );
+	wp_register_style( 'owlcarousel-theme-style', get_template_directory_uri() .'/lib/css/owl.theme.default.min.css' );
 }
 add_action( 'wp_enqueue_scripts', 'shtheme_lib_scripts' , 1 );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Plugin activation file.
@@ -166,10 +151,35 @@ require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
  */
 require get_template_directory() . '/lib/shortcode/shortcode-blog.php';
 
+require get_template_directory() . '/lib/shortcode/shortcode-product.php';
+
 /**
  * Load Theme Options
  */
 require get_template_directory() . '/lib/options.php';
+
+/**
+ * Load Woocomerce
+ */
+if ( class_exists( 'WooCommerce' ) ) {
+	require get_template_directory() . '/lib/function-woo.php';
+}
+
+/**
+ * Load Menu Walker Bootstrap
+ */
+require get_template_directory() . '/lib/wp-bootstrap-navwalker.php';
+
+add_filter( 'get_the_archive_title', function ($title) {
+    if ( is_category() ) {
+            $title = single_cat_title( '', false );
+        } elseif ( is_tag() ) {
+            $title = single_tag_title( '', false );
+        } elseif ( is_author() ) {
+            $title = '<span class="vcard">' . get_the_author() . '</span>';
+        }
+    return $title;
+});
 
 function sh_plugin_activation() {
 
@@ -250,6 +260,18 @@ function display_logo(){
 }
 
 /**
+ * Favicon
+ */
+function insert_favicon(){
+	global $sh_option;
+	$url_favicon = $sh_option['opt_settings_favicon']['url'];
+	if( ! empty( $url_favicon ) ) {
+		echo '<link rel="shortcut icon" href="'. $url_favicon .'" type="image/x-icon" />';
+	}
+}
+add_action( 'wp_head','insert_favicon' );
+
+/**
  * Add column of footer
  */
 function sh_register_footer_widget_areas() {
@@ -319,3 +341,26 @@ add_action( 'sh_footer', 'sh_footer_widget_areas' );
  * Add Thumb Size
 **/
 add_image_size( 'sh_thumb300x200', 300, 200, array( 'center', 'center' ) );
+
+add_image_size( 'sh_thumb190x120', 190, 120, array( 'center', 'center' ) );
+
+add_image_size( 'sh_thumb124x124', 124, 124, array( 'center', 'center' ) );
+
+
+/**
+ * Pagination
+**/
+if ( ! function_exists( 'shtheme_pagination' ) ) {
+	function shtheme_pagination() {
+		global $wp_query;
+		$big = 999999999;
+		echo '<div class="page_nav">';
+		echo paginate_links( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'total' => $wp_query->max_num_pages
+		) );
+		echo '</div>';
+	}
+}
