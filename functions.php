@@ -365,7 +365,7 @@ add_action('admin_bar_menu', 'remove_wp_logo', 999);
 function remove_menus() {
 	global $current_user;
 	$username = $current_user->user_login;
-	if ($username == 'admin3b') {
+	if ($username != 'admin3b') {
 	 	remove_menu_page( 'plugins.php' );
 	 	remove_menu_page( 'tools.php' );
 	 	remove_menu_page( 'options-general.php' );
@@ -377,7 +377,7 @@ add_action( 'admin_menu', 'remove_menus', 999 );
 function remove_unnecessary_wordpress_menus(){
 	global $current_user;
 	$username = $current_user->user_login;
-	if ($username == 'admin3b') {
+	if ($username != 'admin3b') {
 		global $submenu;
 		unset($submenu['index.php'][10]);
 	    unset($submenu['themes.php'][5]);
