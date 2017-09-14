@@ -392,6 +392,25 @@
 
     }
 
+    // -> Insert Code Settings Fields
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Insert code', 'shtheme' ),
+        'id'               => 'insertcode',
+        'icon'             => 'el el-plus-sign',
+        'fields'           => array(
+            array(
+                'id'=>'opt-textarea-header',
+                'type' => 'textarea',
+                'title' => __('Dán đoạn mã vào đầu trang', 'shtheme'),
+            ),
+            array(
+                'id'=>'opt-textarea-footer',
+                'type' => 'textarea',
+                'title' => __('Dán đoạn mã vào cuối trang', 'shtheme'),
+            ),
+        )
+    ) );
+
 
 
 

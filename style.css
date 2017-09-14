@@ -1,20 +1,14 @@
 /*
 Theme Name: Web3B
 Theme URI:
-Author: Quang Hòa
+Author: Quang Hoa
 Author URI:
 Description:
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain:
+Text Domain: shtheme
 Tags:
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-SH Theme is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -33,16 +27,24 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 # Content
 	## Posts and pages
 	## Comments
-# Infinite scroll
 # Media
 	## Captions
 	## Galleries
+## Layout construct
+## Shortcode
+## Sidebar
+## Footer 
+## Responsive
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+a:hover, a:active, a:focus, a:visited {
+	text-decoration: none;
+}
 img {
 	max-width: 100%;
+	height: auto;
 }
 
 /*--------------------------------------------------------------
@@ -84,12 +86,15 @@ img {
 	float: left;
 	width: 100%;
 }
-.main-navigation ul.menu {
+.main-navigation ul {
 	padding: 0;
 	margin: 0;
 }
 .main-navigation ul.menu li {
+	position: relative;
 	display: block;
+}
+.main-navigation ul.menu > li {
 	float: left;
 }
 .main-navigation ul.menu li a {
@@ -98,8 +103,53 @@ img {
 	padding: 10px 20px;
 	display: block;
 }
-.main-navigation ul.menu li a:hover {
+.main-navigation ul.menu li > a:hover,
+.main-navigation ul.menu li.current-menu-item > a {
 	text-decoration: none;
+	color: #FF0;
+}
+/**/
+.main-navigation ul ul {
+	min-width: 260px;
+	left: 0;
+    position: absolute;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 99999;
+    background: #337ab7;
+    -webkit-transition: -webkit-transform 0.25s ease,opacity 0.5s ease;
+    -moz-transition: -moz-transform 0.25s ease,opacity 0.5s ease;
+    -o-transition: -o-transform 0.25s ease,opacity 0.5s ease;
+    transition: transform 0.25s ease,opacity 0.5s ease;
+}
+.main-navigation ul li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+}
+.main-navigation ul ul li {
+	border-bottom: 1px solid #ccc;
+}
+/**/
+.main-navigation ul ul ul {
+    position: absolute;
+    left: 80%;
+    top: 0px;
+    opacity: 0;
+    visibility: hidden;
+    -moz-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
+    -webkit-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
+    -o-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
+    transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
+}
+.main-navigation ul ul ul li {
+    width: 100%;
+    opacity: 1;
+}
+.main-navigation ul ul li:hover ul {
+	opacity: 1;
+    left: 100%;
+    visibility: visible;
 }
 
 /*--------------------------------------------------------------
@@ -128,6 +178,41 @@ img {
 	text-transform: uppercase;
 	line-height: 1.4;
 }
+#back-top a {
+	display: block;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+#back-top span {
+    border-radius: 5px;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    background: #337ab7 url(lib/images/top.png) no-repeat center 50%;
+    opacity: .5;
+    -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+    -moz-transition: opacity .3s 0s, visibility 0s .3s;
+    transition: opacity .3s 0s, visibility 0s .3s;
+}
+#back-top span:hover {
+    opacity: 1;
+}
+iframe[name='google_conversion_frame'] {
+	height: 0 !important;
+	width: 0 !important;
+	line-height: 0 !important;
+	font-size: 0 !important;
+	margin-top: -13px;
+	float: left;
+}
 
 /*--------------------------------------------------------------
 # Alignments
@@ -152,6 +237,12 @@ img {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
+.content-sidebar-wrap:before,
+.content-sidebar-wrap:after {
+	clear: both;
+	display: table;
+    content: " ";
+}
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -176,14 +267,6 @@ img {
 .site-footer:after {
 	clear: both;
 }
-iframe[name='google_conversion_frame'] {
-	height: 0 !important;
-	width: 0 !important;
-	line-height: 0 !important;
-	font-size: 0 !important;
-	margin-top: -13px;
-	float: left;
-}
 
 /*--------------------------------------------------------------
 # Widgets
@@ -194,12 +277,64 @@ iframe[name='google_conversion_frame'] {
 .widget select {
 	max-width: 100%;
 }
-.widget_search .screen-reader-text {
+/* Widget Search */
+.sidebar .widget_search .screen-reader-text {
 	display: none;
 }
-.widget_search input[type=search] {
+.sidebar .widget_search input[type=search] {
 	border: 1px solid #cccccc;
 }
+.sidebar .search-form {
+	padding: 5px 12px;
+	background: #176fc8;
+	overflow: hidden;
+}
+.site-header .search-form {
+	position: absolute;
+	top: 6px;
+	right: 5px;
+	width: 200px;
+	border-radius: 20px;
+}
+.sidebar .search-form label {
+	width: calc( 100% - 16px );
+	float: left;
+	margin-bottom: 0;
+}
+.sidebar .search-form input[type=search] {
+	width: 100%;
+	border: none;
+	background: none;
+	outline-width: 0;
+	color: #FFF;
+	font-weight: normal;
+}
+.sidebar .search-form input[type=submit] {
+	float: right;
+	background: url(lib/images/icon-search.png) center center no-repeat;
+	text-indent: -9999px;
+	border: none;
+	width: 16px;
+	height: 22px;
+	outline-width: 0;
+}
+.sidebar .search-form input[type=search]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: #FFF;
+	font-weight: normal;
+}
+.sidebar .search-form input[type=search]::-moz-placeholder { /* Firefox 19+ */
+	color: #FFF;
+	font-weight: normal;
+}
+.sidebar .search-form input[type=search]:-ms-input-placeholder { /* IE 10+ */
+	color: #FFF;
+	font-weight: normal;
+}
+.sidebar .search-form input[type=search]:-moz-placeholder { /* Firefox 18- */
+	color: #FFF;
+	font-weight: normal;
+}
+/* Widget Custom Menu */
 .sidebar .widget_nav_menu ul {
 	background: #dfdfdf;
 }
@@ -230,6 +365,7 @@ iframe[name='google_conversion_frame'] {
 	opacity: 1;
 	visibility: visible;
 }
+/* Widget Recent Posts */
 .sidebar .widget_recent_entries ul li {
 	padding: 5px 10px;
 	border-bottom: 1px solid #cccccc
@@ -253,17 +389,13 @@ iframe[name='google_conversion_frame'] {
 .hentry {
 	margin: 0 0 1.5em;
 }
-.byline,
-.updated:not(.published) {
+.byline, .updated:not(.published) {
 	display: none;
 }
-.single .byline,
-.group-blog .byline {
+.single .byline, .group-blog .byline {
 	display: inline;
 }
-.page-content,
-.entry-content,
-.entry-summary {
+.page-content, .entry-content, .entry-summary {
 	margin: 1.5em 0 0;
 }
 .page-links {
@@ -297,13 +429,11 @@ iframe[name='google_conversion_frame'] {
 	color: #FFF;
 	padding: 5px 10px;
 }
-
 .comment-list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
-
 .comment-list article, .comment-list .pingback, .comment-list .trackback {
     border-top: 1px solid #eaeaea;
     border-top: 1px solid rgba(51, 51, 51, 0.1);
@@ -358,19 +488,14 @@ iframe[name='google_conversion_frame'] {
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
+.page-content .wp-smiley, .entry-content .wp-smiley, .comment-content .wp-smiley {
 	border: none;
 	margin-bottom: 0;
 	margin-top: 0;
 	padding: 0;
 }
-
 /* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
+embed, iframe, sobject {
 	max-width: 100%;
 }
 
@@ -588,8 +713,6 @@ object {
 	}
 }
 
-
-
 @media (max-width: 992px) {
 	.sidebar-content .site-main,
 	.content-sidebar .site-main,
@@ -648,12 +771,7 @@ object {
 .woocommerce .woocommerce-breadcrumb {
 	display: none;
 }
-.content-sidebar-wrap:before,
-.content-sidebar-wrap:after {
-	clear: both;
-	display: table;
-    content: " ";
-}
+/**/
 .list-products {
 	padding: 0;
 	clear: both;

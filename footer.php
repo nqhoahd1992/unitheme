@@ -24,6 +24,7 @@ do_action( 'sh_after_content_sidebar_wrap' );
 			<div class="site-info">
 				
 			</div><!-- .site-info -->
+			<p id="back-top"><a href="#top" target="_blank"><span></span></a></p>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
