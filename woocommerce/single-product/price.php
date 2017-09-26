@@ -22,5 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 
+get_price_product();
 ?>
-<p class="price"><?php echo $product->get_price_html(); ?></p>
+<!-- <p class="price"><?php echo $product->get_price_html(); ?></p> -->

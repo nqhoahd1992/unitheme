@@ -21,14 +21,17 @@ if( ! empty( $sh_option['opt-number-new'] ) ) {
 	$numpost = $sh_option['opt-number-new'];
 }
 // Product
-// if ( class_exists( 'WooCommerce' ) ) {
+if ( class_exists( 'WooCommerce' ) ) {
 	if( ! empty( $sh_option['opt-multi-select-product-cat'] ) ) {
 		$list_pro = $sh_option['opt-multi-select-product-cat'];
 	}
 	if( ! empty( $sh_option['opt-number-product'] ) ) {
 		$numpro = $sh_option['opt-number-product'];
 	}
-// }
+	if( ! empty( $sh_option['opt-number-product-column'] ) ) {
+		$numcolpro = $sh_option['opt-number-product-column'];
+	}
+}
 
 get_header(); ?>
 	<div id="primary" class="content-sidebar-wrap">
@@ -39,7 +42,7 @@ get_header(); ?>
 				echo '<div class="product-wrap">';
 					foreach ($list_pro as $key => $idpost) {
 						echo '<h2 class="heading"><a href="'. get_productcat_link( $idpost ) .'">'. get_productcat_name( $idpost ) .'</a></h2>';
-						echo do_shortcode('[shproduct posts_per_page="' . $numpro . '" categories="' . $idpost . '"]');
+						echo do_shortcode('[shproduct posts_per_page="' . $numpro . '" categories="' . $idpost . '" numcol="' . $numcolpro . '"]');
 					}
 				echo '</div>';
 			}

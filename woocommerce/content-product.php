@@ -28,7 +28,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 
 global $sh_option;
-$layout   = $sh_option['opt-number-product-column'];
+$layout   = $sh_option['number-column-product-cate'];
 switch ($layout) {
     case '1':
         $post_class = 'col-md-12';
@@ -58,7 +58,7 @@ switch ($layout) {
 		 *
 		 * @hooked woocommerce_template_loop_product_link_open - 10
 		 */
-		do_action( 'woocommerce_before_shop_loop_item' );
+		// do_action( 'woocommerce_before_shop_loop_item' );
 
 		/**
 		 * woocommerce_before_shop_loop_item_title hook.
@@ -66,7 +66,13 @@ switch ($layout) {
 		 * @hooked woocommerce_show_product_loop_sale_flash - 10
 		 * @hooked woocommerce_template_loop_product_thumbnail - 10
 		 */
-		do_action( 'woocommerce_before_shop_loop_item_title' );
+		// do_action( 'woocommerce_before_shop_loop_item_title' );
+
+		echo "<div class='image-product'>";
+			echo "<a class='img hover-zoom' href='" . get_permalink( ) . "' title='" . get_the_title() . "' >";
+				echo woocommerce_get_product_thumbnail();
+			echo "</a>";
+		echo "</div>";
 
 		/**
 		 * woocommerce_shop_loop_item_title hook.

@@ -29,11 +29,47 @@
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'shtheme' ),
-				'after'  => '</div>',
-			) );
+			// wp_link_pages( array(
+			// 	'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'shtheme' ),
+			// 	'after'  => '</div>',
+			// ) );
 		?>
+		<div class="socials-share">
+			<div id="fb-root"></div>
+			<script>(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.10";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+			<div class="fb-like" data-href="<?php the_permalink();?>" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+
+			<!-- Đặt thẻ này vào phần đầu hoặc ngay trước thẻ đóng phần nội dung của bạn. -->
+			<script src="https://apis.google.com/js/platform.js" async defer>
+			  {lang: 'vi'}
+			</script>
+			<!-- Đặt thẻ này vào nơi bạn muốn nút chia sẻ kết xuất. -->
+			<div class="g-plus" data-action="share"></div>
+			
+			<script>window.twttr = (function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0],
+			t = window.twttr || {};
+			if (d.getElementById(id)) return t;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js, fjs);
+			t._e = [];
+			t.ready = function(f) {
+			t._e.push(f);
+			};
+			return t;
+			}(document, "script", "twitter-wjs"));</script>
+			<a class="twitter-share-button"
+			  href="<?php the_permalink();?>">
+			Tweet</a>
+		</div>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-## -->

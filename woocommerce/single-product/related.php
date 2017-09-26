@@ -26,20 +26,26 @@ if ( $related_products ) : ?>
 
 		<h2 class="heading"><?php esc_html_e( 'Sản phẩm liên quan', 'woocommerce' ); ?></h2>
 
-		<?php woocommerce_product_loop_start(); ?>
+		<?php
+		wp_enqueue_script( 'owlcarousel-js' );
+        wp_enqueue_style( 'owlcarousel-style' );
+        wp_enqueue_style( 'owlcarousel-theme-style' );
+        ?>
 
-			<?php foreach ( $related_products as $related_product ) : ?>
+		<?php //woocommerce_product_loop_start(); ?>
+			<ul class="owl-carousel list-products" data-item="3" data-margin="30" data-md="2" data-sm="2" data-xs="1">
+				<?php foreach ( $related_products as $related_product ) : ?>
 
-				<?php
-				 	$post_object = get_post( $related_product->get_id() );
+					<?php
+					 	$post_object = get_post( $related_product->get_id() );
 
-					setup_postdata( $GLOBALS['post'] =& $post_object );
+						setup_postdata( $GLOBALS['post'] =& $post_object );
 
-					wc_get_template_part( 'content', 'product' ); ?>
+						wc_get_template_part( 'content', 'product' ); ?>
 
-			<?php endforeach; ?>
-
-		<?php woocommerce_product_loop_end(); ?>
+				<?php endforeach; ?>
+			</ul>
+		<?php //woocommerce_product_loop_end(); ?>
 
 	</section>
 

@@ -279,11 +279,11 @@
     ) );
 
     // -> Header
-    // Redux::setSection( $opt_name, array(
-    //     'title'            => __( 'Header', 'shtheme' ),
-    //     'id'               => 'header',
-    //     'icon'             => 'el el-website',
-    // ) );
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Header', 'shtheme' ),
+        'id'               => 'header',
+        'icon'             => 'el el-website',
+    ) );
 
     // -> Footer
     Redux::setSection( $opt_name, array(
@@ -410,6 +410,52 @@
             ),
         )
     ) );
+
+    // -> WooCommerce
+    if ( class_exists( 'WooCommerce' ) ) {
+        Redux::setSection( $opt_name, array(
+            'title'            => __( 'WooCommerce', 'shtheme' ),
+            'id'               => 'woocommerce',
+            'icon'             => 'el el-shopping-cart',
+        ) );
+
+        Redux::setSection( $opt_name, array(
+            'title'            => __( 'Danh mục sản phẩm', 'shtheme' ),
+            'id'               => 'woocommerce-cate',
+            'subsection'       => true,
+            'fields'           => array(
+                array(
+                    'id'        => 'number-column-product-cate',
+                    'type'      => 'slider',
+                    'title'     => __('Nhập số cột', 'shtheme'),
+                    'default'   => 3,
+                    'min'       => 1,
+                    'step'      => 1,
+                    'max'       => 6,
+                    'display_value' => 'text'
+                ),
+            )
+        ) );
+
+        Redux::setSection( $opt_name, array(
+            'title'            => __( 'Chi tiết sản phẩm', 'shtheme' ),
+            'id'               => 'woocommerce-singlepage',
+            'subsection'       => true,
+            'fields'           => array(
+                array(
+                    'id'        => 'number-column-product-related',
+                    'type'      => 'slider',
+                    'title'     => __('Nhập số sản phẩm liên quan', 'shtheme'),
+                    'default'   => 3,
+                    'min'       => 1,
+                    'step'      => 1,
+                    'max'       => 6,
+                    'display_value' => 'text'
+                ),
+            )
+        ) );
+    }
+    
 
 
 

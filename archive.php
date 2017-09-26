@@ -23,24 +23,36 @@ get_header(); ?>
 			<?php
 			/* Start the Loop */
 
-			echo '<div class="list-post">';
+			echo '<div class="new-list">';
 
 			while ( have_posts() ) : the_post();
 
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content' );
+				?>
+				<article class="<?php echo implode( ' ', get_post_class( $class ) );?>">
+					<a class="alignleft" href="<?php the_permalink();?>" title="<?php the_title();?>">
+						<?php echo get_the_post_thumbnail( get_the_ID(), 'sh_thumb300x200' );?>
+					</a>
+					<h3><a title="<?php the_title();?>" href="<?php the_permalink();?>" ><?php the_title();?></a></h3>
+					<?php echo get_the_content_limit( 400 ,' ');?>
+					<div class="clearfix"></div>
+					<div class="ps-meta-info">
+					   <div class="ps-alignleft">
+					   		<span><?php the_time('j F Y') ?></span><span class="ps-inline-sep">|</span><a href="http://raothue.com/category/tin-tuc/" rel="category tag">Tin tức</a>
+					   </div>
+					   <div class="ps-alignright">
+					   		<a href="<?php the_permalink();?>" class="ps-read-more">Đọc thêm</a>
+					   	</div>
+					</div>
+				</article>
+				<?php
 
 
 			endwhile;
 
 			echo '</div>';
 
-			the_posts_navigation();
+			shtheme_pagination();
 
 		else :
 
