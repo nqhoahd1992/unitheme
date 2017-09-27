@@ -27,12 +27,12 @@ add_action( 'init','sh_load_framework' );
 /**
  * Style Login
  */
-function rt_login_logo() { 
+function sh_login_logo() { 
 	?>
 		<link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>/lib/css/login.css' type='text/css' media='all' />
 	<?php 
 }
-add_action( 'login_enqueue_scripts', 'rt_login_logo' );
+add_action( 'login_enqueue_scripts', 'sh_login_logo' );
 
 /**
  * Register Widget Area
