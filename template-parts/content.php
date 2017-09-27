@@ -70,6 +70,34 @@
 			  href="<?php the_permalink();?>">
 			Tweet</a>
 		</div>
+
+		<div class="l-section-h i-cf">
+			<div class="row">
+				<?php
+				$next_post 		= get_next_post();
+				$next_id 		= $next_post->ID;
+				$previous_post 	= get_previous_post();
+				$previous_id 	= $previous_post->ID;
+				?>
+				<?php if( ! empty( $next_id ) ) : ?>
+					<div class="col-sm-6">
+						<div class="post-next-prev-content">
+							<span>Bài viết trước</span>
+							<a href="<?php echo get_the_permalink( $next_id ); ?>"><?php echo get_the_title( $next_id ); ?></a>
+						</div>
+					</div>
+				<?php endif;?>
+				<?php if( ! empty( $previous_id ) ) : ?>
+					<div class="col-sm-6">
+						<div class="post-next-prev-content">
+							<span>Bài kế tiếp</span>
+							<a href="<?php echo get_the_permalink( $previous_id ); ?>"><?php echo get_the_title( $previous_id ); ?></a>
+						</div>
+					</div>
+				<?php endif;?>
+				
+			</div>
+		</div>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-## -->

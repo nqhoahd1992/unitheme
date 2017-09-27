@@ -22,18 +22,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( $related_products ) : ?>
 
-	<section class="related">
-
-		<h2 class="heading"><?php esc_html_e( 'Sản phẩm liên quan', 'woocommerce' ); ?></h2>
-
-		<?php
+	<?php
+	global $sh_option;
+	$display_relatedpro = $sh_option['display-relatedpro'];
+	$numcol_pro_related = $sh_option['number-column-product-related'];
+	if( $display_relatedpro == '1' ) {
 		wp_enqueue_script( 'owlcarousel-js' );
         wp_enqueue_style( 'owlcarousel-style' );
         wp_enqueue_style( 'owlcarousel-theme-style' );
+        // woocommerce_product_loop_start();
         ?>
-
-		<?php //woocommerce_product_loop_start(); ?>
-			<ul class="owl-carousel list-products" data-item="3" data-margin="30" data-md="2" data-sm="2" data-xs="1">
+        <section class="related">
+	        <h2 class="heading"><?php esc_html_e( 'Sản phẩm liên quan', 'woocommerce' ); ?></h2>
+	        <ul class="owl-carousel list-products" data-item="<?php echo $numcol_pro_related;?>" data-margin="30" data-md="2" data-sm="2" data-xs="1">
 				<?php foreach ( $related_products as $related_product ) : ?>
 
 					<?php
@@ -45,9 +46,11 @@ if ( $related_products ) : ?>
 
 				<?php endforeach; ?>
 			</ul>
-		<?php //woocommerce_product_loop_end(); ?>
-
-	</section>
+		</section>
+        <?php
+        // woocommerce_product_loop_end();
+	}
+    ?>
 
 <?php endif;
 

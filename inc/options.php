@@ -427,7 +427,7 @@
                 array(
                     'id'        => 'number-column-product-cate',
                     'type'      => 'slider',
-                    'title'     => __('Nhập số cột', 'shtheme'),
+                    'title'     => __('Nhập số sản phẩm một hàng', 'shtheme'),
                     'default'   => 3,
                     'min'       => 1,
                     'step'      => 1,
@@ -443,9 +443,47 @@
             'subsection'       => true,
             'fields'           => array(
                 array(
-                    'id'        => 'number-column-product-related',
+                    'id'       => 'display-propertypro',
+                    'type'     => 'button_set',
+                    'title'    => __('Hiển thị thuộc tính sản phẩm', 'shtheme'),
+                    'options' => array(
+                        '1' => 'Bật', 
+                        '2' => 'Tắt',
+                     ), 
+                    'default' => '2'
+                ),
+            )
+        ) );
+
+        Redux::setSection( $opt_name, array(
+            'title'            => __( 'Sản phẩm liên quan', 'shtheme' ),
+            'id'               => 'woocommerce-relatedpro',
+            'subsection'       => true,
+            'fields'           => array(
+                array(
+                    'id'       => 'display-relatedpro',
+                    'type'     => 'button_set',
+                    'title'    => __('Hiển thị sản phẩm liên quan', 'shtheme'),
+                    'options' => array(
+                        '1' => 'Bật', 
+                        '2' => 'Tắt',
+                     ), 
+                    'default' => '1'
+                ),
+                array(
+                    'id'        => 'number-product-related',
                     'type'      => 'slider',
                     'title'     => __('Nhập số sản phẩm liên quan', 'shtheme'),
+                    'default'   => 3,
+                    'min'       => 1,
+                    'step'      => 1,
+                    'max'       => 6,
+                    'display_value' => 'text'
+                ),
+                array(
+                    'id'        => 'number-column-product-related',
+                    'type'      => 'slider',
+                    'title'     => __('Nhập số sản phẩm một hàng', 'shtheme'),
                     'default'   => 3,
                     'min'       => 1,
                     'step'      => 1,

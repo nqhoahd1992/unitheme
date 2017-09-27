@@ -586,6 +586,19 @@ iframe[name='google_conversion_frame'] {
     position: relative;
     top: -6px;
 }
+.post-next-prev-content span {
+    display: block;
+    font-size: 12px;
+    color: #c1c1c1;
+    margin-bottom: 7px;
+}
+.post-next-prev-content a {
+    display: block;
+    font-size: 15px;
+    color: #222;
+    line-height: 21px;
+    margin-bottom: 43px;
+}
 
 /*--------------------------------------------------------------
 ## Comments
@@ -857,7 +870,7 @@ embed, iframe, sobject {
     padding: 0 5px;
 }
 .socials-share {
-    margin-top: 20px;
+    margin: 20px 0;
     padding: 20px 0 15px 0;
     border-top: 1px solid #ebebeb;
     border-bottom: 1px solid #ebebeb;
@@ -1148,6 +1161,7 @@ embed, iframe, sobject {
 }
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, 
 .woocommerce button.button.alt, .woocommerce input.button.alt {
+	font-weight: normal;
     background-color: #337ab7;
     border-color: #337ab7;
 }

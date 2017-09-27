@@ -20,8 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $product;
+global $product, $sh_option;
 
 get_price_product();
-?>
-<!-- <p class="price"><?php echo $product->get_price_html(); ?></p> -->
+
+
+$display_propertypro   = $sh_option['display-propertypro'];
+if ( $display_propertypro == '1' ) {
+	do_action( 'woocommerce_product_additional_information', $product );
+}

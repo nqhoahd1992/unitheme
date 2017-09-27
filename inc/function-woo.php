@@ -75,11 +75,11 @@ function add_percent_sale(){
 add_action( 'woocommerce_after_shop_loop_item','add_percent_sale',15 );
 
 function woo_remove_product_tabs( $tabs ) {
-    unset( $tabs['reviews'] );
+    // unset( $tabs['reviews'] );
     unset( $tabs['additional_information'] );
     return $tabs;
 }
-// add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 
 function woo_rename_tabs( $tabs ) {
 	$tabs['description']['title'] 	= __( 'Thông số kỹ thuật' );        // Rename the reviews tab
@@ -100,7 +100,7 @@ function woo_rename_tabs( $tabs ) {
 
 function custom_numberpro_related_products_args( $args ) {
 	global $sh_option;
-	$numpro_related = $sh_option['number-column-product-related'];
+	$numpro_related = $sh_option['number-product-related'];
 	$args['posts_per_page'] = $numpro_related; // number related products
 	// $args['columns'] 	= 2; // arranged in number columns
 	return $args;
