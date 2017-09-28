@@ -32,6 +32,9 @@ add_theme_support( 'wc-product-gallery-zoom' );
 // add_theme_support( 'wc-product-gallery-lightbox' );
 add_theme_support( 'wc-product-gallery-slider' );
 
+/**
+ * 
+ */
 function get_productcat_name( $cat_id ) {
 	$cat_id = (int) $cat_id;
 	$category = get_term( $cat_id, 'product_cat' );
@@ -49,13 +52,12 @@ function get_productcat_link( $category ) {
 	return $category;
 }
 
-remove_action( 'woocommerce_after_shop_loop_item','woocommerce_template_loop_add_to_cart',10 );
-
-remove_action( 'woocommerce_after_shop_loop_item_title','woocommerce_template_loop_price',10 );
-
+/**
+ * Show image category product
+ */
 function woocommerce_category_image($products) {
     $thumbnail_id = get_woocommerce_term_meta( $products, 'thumbnail_id', true );
-    $arr = wp_get_attachment_image_src( $thumbnail_id, 'sh_thumb124x124' );
+    $arr = wp_get_attachment_image_src( $thumbnail_id, 'full' );
     $image = $arr[0];
     if ( $image ) {
 	    echo '<img src="' . $image . '" alt="" />';
@@ -63,17 +65,43 @@ function woocommerce_category_image($products) {
 }
 
 /**
+ * Edit number product show per page in category product
+ */
+function woocommerce_edit_loop_shop_per_page( $cols ) {
+	global $sh_option;
+	if ( ! empty( $sh_option['number-products-cate'] ) ) {
+		$cols = $sh_option['number-products-cate'];
+	} else {
+		$cols = get_option( 'posts_per_page' );
+	}
+	return $cols;
+}
+add_filter( 'loop_shop_per_page', 'woocommerce_edit_loop_shop_per_page', 20 );
+
+/**
  * Add percent sale in content product template
  */
 function add_percent_sale(){
 	global $product;
-	if ($product->is_on_sale()){
-		$per = round((( $product->regular_price - $product->sale_price ) / $product->regular_price ) * 100 );
+	if ( $product->is_on_sale() && $product->is_type( 'simple' ) ) {
+		$per = round( ( ( $product->regular_price - $product->sale_price ) / $product->regular_price ) * 100 );
 		echo "<span class='percent'>-$per%</span>";
 	}
 }
 add_action( 'woocommerce_after_shop_loop_item','add_percent_sale',15 );
 
+/**
+ * Overwrite field checkout
+ */
+function custom_override_checkout_fields( $fields ) {
+    unset($fields['billing']['billing_company']);
+    return $fields;
+}
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
+/**
+ * Tab Woocommerce
+ */
 function woo_remove_product_tabs( $tabs ) {
     // unset( $tabs['reviews'] );
     unset( $tabs['additional_information'] );
@@ -82,7 +110,7 @@ function woo_remove_product_tabs( $tabs ) {
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 
 function woo_rename_tabs( $tabs ) {
-	$tabs['description']['title'] 	= __( 'Thông số kỹ thuật' );        // Rename the reviews tab
+	$tabs['description']['title'] 	= __( 'Thông số kỹ thuật' );
 	$tabs['image']['title'] 		= __( 'Hình ảnh' );
 	$tabs['video']['title'] 		= __( 'Video' );
 	$tabs['document']['title'] 		= __( 'Tài liệu đính kèm' );
@@ -107,12 +135,9 @@ function custom_numberpro_related_products_args( $args ) {
 }
 add_filter( 'woocommerce_output_related_products_args', 'custom_numberpro_related_products_args' );
 
-
-function custom_price_html( $price, $product ){
-    return 'Giá: ' . str_replace( '<ins>', ' Giá khuyến mại: <ins>', $price );
-}
-add_filter( 'woocommerce_get_price_html', 'custom_price_html', 100, 2 );
-
+/**
+ * Get Price Product
+ */
 function get_price_product(){
 	global $product;
 	$regular_price 	= $product->regular_price;
@@ -127,8 +152,13 @@ function get_price_product(){
 }
 add_action( 'woocommerce_after_shop_loop_item','get_price_product',10 );
 
+/**
+ * Title Product content-product.php
+ */
 function add_title_name_product(){
-	echo '<h3 class="woocommerce-loop-product__title"><a title="' . get_the_title() . '" href=" '. get_the_permalink() .' ">' . get_the_title() . '</a></h3>';
+	echo '<h3 class="woocommerce-loop-product__title"><a 
+	title="' . get_the_title() . '" 
+	href=" '. get_the_permalink() .' ">' . get_the_title() . '</a></h3>';
 }
 add_action( 'woocommerce_shop_loop_item_title','add_title_name_product',10 );
 
@@ -145,3 +175,4 @@ remove_action( 'woocommerce_shop_loop_item_title','woocommerce_template_loop_pro
 
 // content-single-product.php
 remove_action( 'woocommerce_single_product_summary','woocommerce_template_single_meta',40 );
+

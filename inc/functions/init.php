@@ -135,7 +135,7 @@ add_action('after_setup_theme', 'shtheme_optimize');
 function add_class_body_layout( $classes ) {
 	global $sh_option;
 	$layout = $sh_option['opt-layout'];
-	switch ($layout) {
+	switch ( $layout ) {
 	    case '1':
 	        $classes[] = 'no-sidebar';
 	        break;
@@ -156,7 +156,6 @@ function add_class_body_layout( $classes ) {
 	        break;
 	}
 	return $classes;
-
 }
 add_filter( 'body_class', 'add_class_body_layout' );
 

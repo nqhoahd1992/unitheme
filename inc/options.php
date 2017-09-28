@@ -192,7 +192,7 @@
     ) );
 
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Layout', 'shtheme' ),
+        'title'            => __( 'Giao diện', 'shtheme' ),
         'id'               => 'general-layout',
         'subsection'       => true,
         // 'desc'             => __( 'For full documentation on this field, visit: ', 'shtheme' ),
@@ -200,7 +200,7 @@
             array(
             	'id'       => 'opt-layout',
 			    'type'     => 'image_select',
-			    'title'    => __('Main Layout', 'shtheme'), 
+			    'title'    => __('Giao diện chính', 'shtheme'), 
 			    // 'subtitle' => __('Select main content and sidebar alignment. Choose between 1, 2 or 3 column layout.', 'shtheme'),
 			    'options'  => array(
 			        '1'      => array(
@@ -230,23 +230,7 @@
 			    ),
 			    'default' => '2'
             ),
-            array(
-            	'id'       => 'opt-layout-header',
-			    'type'     => 'image_select',
-			    'title'    => __('Header Layout', 'shtheme'), 
-			    // 'subtitle' => __('Select main content and sidebar alignment. Choose between 1, 2 or 3 column layout.', 'shtheme'),
-			    'options'  => array(
-			        '1'      => array(
-			            'alt'   => '1 Column', 
-			            'img'   => get_stylesheet_directory_uri().'/lib/images/logo-center.gif'
-			        ),
-			        '2'      => array(
-			            'alt'   => '2 Column Left', 
-			            'img'   => get_stylesheet_directory_uri().'/lib/images/logo-left.gif'
-			        ),
-			    ),
-			    'default' => '1'
-            ),
+            
         )
     ) );
 
@@ -283,6 +267,40 @@
         'title'            => __( 'Header', 'shtheme' ),
         'id'               => 'header',
         'icon'             => 'el el-website',
+        'fields'           => array(
+            array(
+                'id'       => 'opt-layout-header',
+                'type'     => 'image_select',
+                'title'    => __('Kiểu Header', 'shtheme'),
+                'options'  => array(
+                    '1'      => array(
+                        'alt'   => '1 Column', 
+                        'img'   => get_stylesheet_directory_uri().'/lib/images/logo-center.gif'
+                    ),
+                    '2'      => array(
+                        'alt'   => '2 Column Left', 
+                        'img'   => get_stylesheet_directory_uri().'/lib/images/logo-left.gif'
+                    ),
+                ),
+                'default' => '1'
+            ),
+            array(
+                'id'       => 'display-pagetitlebar',
+                'type'     => 'switch', 
+                'title'    => __('Hiển thị page title bar', 'shtheme'),
+                'default'  => false,
+                'on'       => 'Bật',
+                'off'      => 'Tắt',
+            ),
+            array(
+                'id'       => 'display-topheader-widget',
+                'type'     => 'switch', 
+                'title'    => __('Bật Top Header Widget', 'shtheme'),
+                'default'  => false,
+                'on'       => 'Bật',
+                'off'      => 'Tắt',
+            ),
+        )
     ) );
 
     // -> Footer
@@ -295,6 +313,7 @@
                 'id'        => 'opt-number-footer',
                 'type'      => 'slider',
                 'title'     => __('Nhập số cột chân trang', 'shtheme'),
+                'subtitle'  => __('Nhập số cột chân trang ở đây, nội dung chân trang sẽ hiển thị từ Widget', 'shtheme'),
                 'default'   => 1,
                 'min'       => 1,
                 'step'      => 1,
@@ -320,7 +339,7 @@
                 'id'       => 'opt-multi-select-category',
                 'type'     => 'select',
                 'multi'    => true,
-                'title'    => __( 'Chọn danh mục', 'shtheme' ),
+                'title'    => __( 'Chọn danh mục bài viết', 'shtheme' ),
                 'data' 	   => 'terms',
 				'args' 	   => array(
 				    'taxonomies' => array( 'category' ),
@@ -340,7 +359,7 @@
 			array(
 			    'id' 		=> 'opt-number-column',
 			    'type' 		=> 'slider',
-			    'title' 	=> __('Nhập số cột', 'shtheme'),
+			    'title' 	=> __('Nhập số bài viết một hàng', 'shtheme'),
 			    'default' 	=> 3,
 			    'min' 		=> 1,
 			    'step' 		=> 1,
@@ -380,7 +399,7 @@
 				array(
 				    'id' 		=> 'opt-number-product-column',
 				    'type' 		=> 'slider',
-				    'title' 	=> __('Nhập số cột', 'shtheme'),
+				    'title' 	=> __('Nhập số sản phẩm một hàng', 'shtheme'),
 				    'default' 	=> 3,
 				    'min' 		=> 1,
 				    'step' 		=> 1,
@@ -391,6 +410,183 @@
 	    ) );
 
     }
+
+    // -> Blog Post
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Bài viết', 'shtheme' ),
+        'id'               => 'blogpost',
+        'icon'             => 'el el-pencil',
+    ) );
+
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Chi tiết bài viết', 'shtheme' ),
+        'id'               => 'blogpost-single',
+        'subsection'       => true,
+        'fields'           => array(
+            array(
+                'id'       => 'display-sharepost',
+                'type'     => 'switch', 
+                'title'    => __('Hiển thị share bài viết', 'shtheme'),
+                'default'  => true,
+                'on'       => 'Bật',
+                'off'      => 'Tắt',
+            ),
+            array(
+                'id'       => 'display-navipost',
+                'type'     => 'switch', 
+                'title'    => __('Hiển thị điều hướng bài viết', 'shtheme'),
+                'default'  => true,
+                'on'       => 'Bật',
+                'off'      => 'Tắt',
+            ),
+            array(
+                'id'       => 'display-relatedpost',
+                'type'     => 'switch', 
+                'title'    => __('Hiển thị bài viết liên quan', 'shtheme'),
+                'default'  => true,
+                'on'       => 'Bật',
+                'off'      => 'Tắt',
+            ),
+        )
+    ) );
+
+
+    // -> WooCommerce
+    if ( class_exists( 'WooCommerce' ) ) {
+        Redux::setSection( $opt_name, array(
+            'title'            => __( 'WooCommerce', 'shtheme' ),
+            'id'               => 'woocommerce',
+            'icon'             => 'el el-shopping-cart',
+        ) );
+
+        Redux::setSection( $opt_name, array(
+            'title'            => __( 'Danh mục sản phẩm', 'shtheme' ),
+            'id'               => 'woocommerce-cate',
+            'subsection'       => true,
+            'fields'           => array(
+                array(
+                    'id'        => 'number-products-cate',
+                    'type'      => 'slider',
+                    'title'     => __('Nhập số sản phẩm hiển thị mỗi trang', 'shtheme'),
+                    'default'   => 10,
+                    'min'       => 1,
+                    'step'      => 1,
+                    'max'       => 30,
+                    'display_value' => 'text',
+                ),
+                array(
+                    'id'        => 'number-column-product-cate',
+                    'type'      => 'slider',
+                    'title'     => __('Nhập số sản phẩm một hàng', 'shtheme'),
+                    'default'   => 3,
+                    'min'       => 1,
+                    'step'      => 1,
+                    'max'       => 6,
+                    'display_value' => 'text',
+                ),
+            )
+        ) );
+
+        Redux::setSection( $opt_name, array(
+            'title'            => __( 'Chi tiết sản phẩm', 'shtheme' ),
+            'id'               => 'woocommerce-singlepage',
+            'subsection'       => true,
+            'fields'           => array(
+                array(
+                   'id' => 'section-singlepage-start',
+                   'type' => 'section',
+                   'title' => __('Cài đặt chung', 'shtheme'),
+                   'subtitle' => __('', 'shtheme'),
+                   'indent' => true 
+                ),
+                array(
+                    'id'       => 'display-propertypro',
+                    'type'     => 'switch', 
+                    'title'    => __('Hiển thị thuộc tính sản phẩm', 'shtheme'),
+                    'default'  => false,
+                    'on'       => 'Bật',
+                    'off'      => 'Tắt',
+                ),
+                array(
+                    'id'     => 'section-singlepage-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ),
+                array(
+                   'id' => 'section-relatedpro-start',
+                   'type' => 'section',
+                   'title' => __('Sản phẩm liên quan', 'shtheme'),
+                   'subtitle' => __('', 'shtheme'),
+                   'indent' => true 
+                ),
+                array(
+                    'id'       => 'display-relatedpro',
+                    'type'     => 'switch', 
+                    'title'    => __('Hiển thị sản phẩm liên quan', 'shtheme'),
+                    'default'  => true,
+                    'on'       => 'Bật',
+                    'off'      => 'Tắt',
+                ),
+                array(
+                    'id'        => 'number-product-related',
+                    'type'      => 'slider',
+                    'title'     => __('Nhập số sản phẩm liên quan', 'shtheme'),
+                    'default'   => 3,
+                    'min'       => 1,
+                    'step'      => 1,
+                    'max'       => 6,
+                    'display_value' => 'text',
+                    'required' => array('display-relatedpro','equals',true),
+                ),
+                array(
+                    'id'        => 'number-column-product-related',
+                    'type'      => 'slider',
+                    'title'     => __('Nhập số sản phẩm một hàng', 'shtheme'),
+                    'default'   => 3,
+                    'min'       => 1,
+                    'step'      => 1,
+                    'max'       => 6,
+                    'display_value' => 'text',
+                    'required' => array('display-relatedpro','equals',true),
+                ),
+                array(
+                    'id'     => 'section-relatedpro-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ),
+            )
+        ) );
+
+    }
+
+    // -> Social
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Mạng xã hội', 'shtheme' ),
+        'id'               => 'social',
+        'icon'             => 'el el-bookmark',
+        'fields'           => array(
+            array(
+                'id'=>'social-facebook',
+                'type' => 'text',
+                'title' => __('Link Facebook', 'shtheme'),
+            ),
+            array(
+                'id'=>'social-youtube',
+                'type' => 'text',
+                'title' => __('Link Youtube', 'shtheme'),
+            ),
+            array(
+                'id'=>'social-twitter',
+                'type' => 'text',
+                'title' => __('Link Twitter', 'shtheme'),
+            ),
+            array(
+                'id'=>'social-google',
+                'type' => 'text',
+                'title' => __('Link Google +', 'shtheme'),
+            ),
+        )
+    ) );
 
     // -> Insert Code Settings Fields
     Redux::setSection( $opt_name, array(
@@ -410,89 +606,6 @@
             ),
         )
     ) );
-
-    // -> WooCommerce
-    if ( class_exists( 'WooCommerce' ) ) {
-        Redux::setSection( $opt_name, array(
-            'title'            => __( 'WooCommerce', 'shtheme' ),
-            'id'               => 'woocommerce',
-            'icon'             => 'el el-shopping-cart',
-        ) );
-
-        Redux::setSection( $opt_name, array(
-            'title'            => __( 'Danh mục sản phẩm', 'shtheme' ),
-            'id'               => 'woocommerce-cate',
-            'subsection'       => true,
-            'fields'           => array(
-                array(
-                    'id'        => 'number-column-product-cate',
-                    'type'      => 'slider',
-                    'title'     => __('Nhập số sản phẩm một hàng', 'shtheme'),
-                    'default'   => 3,
-                    'min'       => 1,
-                    'step'      => 1,
-                    'max'       => 6,
-                    'display_value' => 'text'
-                ),
-            )
-        ) );
-
-        Redux::setSection( $opt_name, array(
-            'title'            => __( 'Chi tiết sản phẩm', 'shtheme' ),
-            'id'               => 'woocommerce-singlepage',
-            'subsection'       => true,
-            'fields'           => array(
-                array(
-                    'id'       => 'display-propertypro',
-                    'type'     => 'button_set',
-                    'title'    => __('Hiển thị thuộc tính sản phẩm', 'shtheme'),
-                    'options' => array(
-                        '1' => 'Bật', 
-                        '2' => 'Tắt',
-                     ), 
-                    'default' => '2'
-                ),
-            )
-        ) );
-
-        Redux::setSection( $opt_name, array(
-            'title'            => __( 'Sản phẩm liên quan', 'shtheme' ),
-            'id'               => 'woocommerce-relatedpro',
-            'subsection'       => true,
-            'fields'           => array(
-                array(
-                    'id'       => 'display-relatedpro',
-                    'type'     => 'button_set',
-                    'title'    => __('Hiển thị sản phẩm liên quan', 'shtheme'),
-                    'options' => array(
-                        '1' => 'Bật', 
-                        '2' => 'Tắt',
-                     ), 
-                    'default' => '1'
-                ),
-                array(
-                    'id'        => 'number-product-related',
-                    'type'      => 'slider',
-                    'title'     => __('Nhập số sản phẩm liên quan', 'shtheme'),
-                    'default'   => 3,
-                    'min'       => 1,
-                    'step'      => 1,
-                    'max'       => 6,
-                    'display_value' => 'text'
-                ),
-                array(
-                    'id'        => 'number-column-product-related',
-                    'type'      => 'slider',
-                    'title'     => __('Nhập số sản phẩm một hàng', 'shtheme'),
-                    'default'   => 3,
-                    'min'       => 1,
-                    'step'      => 1,
-                    'max'       => 6,
-                    'display_value' => 'text'
-                ),
-            )
-        ) );
-    }
     
 
 
@@ -516,20 +629,20 @@
     */
 
     // If Redux is running as a plugin, this will remove the demo notice and links
-    //add_action( 'redux/loaded', 'remove_demo' );
+    add_action( 'redux/loaded', 'remove_demo' );
 
     // Function to test the compiler hook and demo CSS output.
     // Above 10 is a priority, but 2 in necessary to include the dynamically generated CSS to be sent to the function.
-    //add_filter('redux/options/' . $opt_name . '/compiler', 'compiler_action', 10, 3);
+    // add_filter('redux/options/' . $opt_name . '/compiler', 'compiler_action', 10, 3);
 
     // Change the arguments after they've been declared, but before the panel is created
-    //add_filter('redux/options/' . $opt_name . '/args', 'change_arguments' );
+    // add_filter('redux/options/' . $opt_name . '/args', 'change_arguments' );
 
     // Change the default value of a field after it's been set, but before it's been useds
-    //add_filter('redux/options/' . $opt_name . '/defaults', 'change_defaults' );
+    // add_filter('redux/options/' . $opt_name . '/defaults', 'change_defaults' );
 
     // Dynamically add a section. Can be also used to modify sections/fields
-    //add_filter('redux/options/' . $opt_name . '/sections', 'dynamic_section');
+    // add_filter('redux/options/' . $opt_name . '/sections', 'dynamic_section');
 
     /**
      * This is a test function that will let you see when the compiler hook occurs.

@@ -78,4 +78,29 @@
 	</header><!-- #masthead -->
 	
 	<div id="content" class="site-content">
+
+		<?php
+		global $sh_option;
+		if( $sh_option['display-pagetitlebar'] == '1' && ! is_front_page() ) {
+			echo '<div class="flex page-title-bar">';
+				echo '<div class="container">';
+					echo '<div class="title-bar-wrap">';
+						if( is_page( ) || is_single( ) ) {
+							echo '<h1 class="title">'.get_the_title( ).'</h1>';
+						} elseif( is_category() ) {
+							the_archive_title( '<h1 class="title">', '</h1>' );
+						} elseif( is_search() ) {
+							echo '<h1 class="title">Kết quả tìm kiếm cho từ khóa: '. get_search_query() .'</h1>';
+						} elseif( is_product_category() ) {
+							?><h1 class="title"><?php woocommerce_page_title(); ?></h1><?php
+						} elseif( is_404() ) {
+							echo '<h1 class="title">404</h1>';
+						}
+						breadcrumbs();
+					echo '</div>';
+				echo '</div>';
+			echo '</div>';
+		}
+		?>
+
 		<div class="container">

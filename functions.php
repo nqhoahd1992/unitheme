@@ -153,6 +153,27 @@ function footer_enqueue_scripts() {
 // add_action('after_setup_theme', 'footer_enqueue_scripts');
 
 /**
+ * Add Widget Top Header
+ */
+function sh_register_top_header_widget_areas() {
+
+	global $sh_option;
+	if( $sh_option['display-topheader-widget'] == '1' ) {
+		register_sidebar( array(
+			'name'          => __( 'Top Header', 'shtheme' ),
+			'id'            => 'top-header',
+			'description'   => __( 'Top Header widget area', 'shtheme' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+	}
+
+}
+add_action( 'widgets_init','sh_register_top_header_widget_areas',1 );
+
+/**
  * Add Widget Footer
  */
 function sh_register_footer_widget_areas() {
@@ -166,7 +187,7 @@ function sh_register_footer_widget_areas() {
 		register_sidebar( array(
 			'name'          => sprintf( __( 'Footer %d', 'shtheme' ), $counter ),
 			'id'            => sprintf( 'footer-%d', $counter ),
-			'description'   => sprintf( __( 'Footer %d widget area.', 'shtheme' ), $counter ),
+			'description'   => sprintf( __( 'Footer %d widget area', 'shtheme' ), $counter ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h4 class="widget-title">',

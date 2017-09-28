@@ -1,32 +1,24 @@
-
 body.login {
-	margin: 0 auto;
-	padding: 0;
-	background: url('login-admin.png') no-repeat;
+	background: url(../images/login-admin.png) no-repeat;
 	background-size: cover;
-	height: 100%;
-	width: 100%;
-	color: #3A3A3A;
 }
 
 #login h1 a {
-    background: url(logo-web3b.png) center no-repeat;
-    margin: 0;
-    outline: 0;
-    display: block;
+    background: url(../images/logo-web3b.png) center no-repeat;
     font-size: 0px;
-    width: auto;
-    height: 110px;
+    width: 200px;
+    height: 97px;
+    pointer-events: none;
+   	cursor: default;
 }
-#loginform{
-	margin-top: 20px;
+#loginform {
 	box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 29px;
 	border-radius: 5px;
 	padding: 20px;
 	padding-bottom: 50px;
 	background: rgba(0, 0, 0, 0.5);
 }
-.login label {
+#loginform label {
 	color: #fff !important;
 	font-weight: bold;
 	font-size: 13px;

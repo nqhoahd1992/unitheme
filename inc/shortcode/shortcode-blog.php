@@ -85,7 +85,7 @@ class sh_blog_shortcode {
 	 * @return $html: html of post
 	 *
 	 */
-	function rt_general_post_html ( $post_class = array(), $atts = array(), $image_size = 'sh_thumb190x120' ) {
+	function rt_general_post_html ( $post_class = array(), $atts = array(), $image_size = 'sh_thumb300x200' ) {
 		extract( shortcode_atts( array(
 			'posts_per_page'				=> '5',
 			'categories'					=> '',
@@ -94,12 +94,11 @@ class sh_blog_shortcode {
 			'hide_viewmore'					=> '0',
 			'hide_meta'						=> '0',
 			'hide_thumb'					=> '1',
-			'hide_desc'						=> '1'
+			'hide_desc'						=> '1',
+			'numcol'						=> 'col-md-12',
 		), $atts ) );
 		
-		global $sh_option;
-		$layout = $sh_option['opt-number-column'];
-		switch ($layout) {
+		switch ($numcol) {
 		    case '1':
 		        $post_class = 'col-md-12';
 		        break;
@@ -113,7 +112,7 @@ class sh_blog_shortcode {
 		        $post_class = 'col-md-3';
 		        break;
 	        case '5':
-		        $post_class = 'col-md-five';
+		        $post_class = 'col-md-15 col-sm-4';
 		        break;
 		    case '6':
 		        $post_class = 'col-md-2';
