@@ -71,13 +71,13 @@ global $sh_option, $post;
 			</div>
 		<?php endif;?>
 
-		<?php if( $sh_option['display-navipost'] == '1' ) : ?>
+		<?php
+		$next_id 		= get_next_post()->ID;
+		$previous_id 	= get_previous_post()->ID;
+		if( $sh_option['display-navipost'] == '1' && ( ! empty( $next_id ) || ! empty( $previous_id ) ) ) : 
+		?>
 			<div class="post-next-prev">
 				<div class="row">
-					<?php
-					$next_id 		= get_next_post()->ID;
-					$previous_id 	= get_previous_post()->ID;
-					?>
 					<?php if( ! empty( $next_id ) ) : ?>
 						<div class="col-sm-6">
 							<div class="post-next-prev-content">

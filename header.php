@@ -18,6 +18,7 @@
 <?php wp_head(); ?>
 </head>
 
+<?php global $sh_option;?>
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
@@ -50,6 +51,17 @@
 			</div>
 		</div>
 		<!-- End Menu -->
+		<?php
+		if( $sh_option['display-topheader-widget'] == 1 ) {
+			?>
+			<div class="top-header">
+				<div class="container">
+					<?php dynamic_sidebar( 'Top Header' );?>
+				</div>
+			</div>
+			<?php
+		}
+		?>
 		<div class="container">
 			<div class="site-branding">
 				<?php
@@ -70,7 +82,7 @@
 				<div class="logo">
 					<?php display_logo();?>
 				</div>
-				<nav id="site-navigation" class="main-navigation" role="navigation">
+				<nav id="site-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement" class="main-navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
 			</div>
@@ -80,7 +92,6 @@
 	<div id="content" class="site-content">
 
 		<?php
-		global $sh_option;
 		if( $sh_option['display-pagetitlebar'] == '1' && ! is_front_page() ) {
 			echo '<div class="flex page-title-bar">';
 				echo '<div class="container">';

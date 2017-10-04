@@ -20,8 +20,11 @@ if( ! empty( $sh_option['opt-multi-select-category'] ) ) {
 if( ! empty( $sh_option['opt-number-new'] ) ) {
 	$numpost = $sh_option['opt-number-new'];
 }
-if( ! empty( $sh_option['opt-number-column'] ) ) {
-	$numcolpost = $sh_option['opt-number-column'];
+// if( ! empty( $sh_option['opt-number-column'] ) ) {
+// 	$numcolpost = $sh_option['opt-number-column'];
+// }
+if( ! empty( $sh_option['opt-type-layout-new'] ) ) {
+	$style_layout_post = $sh_option['opt-type-layout-new'];
 }
 // Product
 if ( class_exists( 'WooCommerce' ) ) {
@@ -56,7 +59,7 @@ get_header(); ?>
 				echo '<div class="news-wrap">';
 					foreach ($list_cat as $key => $idpost) {
 						echo '<h2 class="heading"><a href="'. get_category_link( $idpost ) .'">'. get_cat_name( $idpost ) .'</a></h2>';
-						echo do_shortcode('[shblog posts_per_page="' . $numpost . '" categories="' . $idpost . '" numcol="' . $numcolpost . '"]');
+						echo do_shortcode('[shblog posts_per_page="' . $numpost . '" categories="' . $idpost . '" style="' . $style_layout_post . '"]');
 					}
 				echo '</div>';
 			}

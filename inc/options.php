@@ -249,7 +249,7 @@
                 //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
                 // 'desc'     => __( 'Basic media uploader with disabled URL input field.', 'shtheme' ),
                 // 'subtitle' => __( 'Upload any media using the WordPress native uploader', 'shtheme' ),
-                'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
+                // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
             ),
 
             array(
@@ -287,7 +287,7 @@
             array(
                 'id'       => 'display-pagetitlebar',
                 'type'     => 'switch', 
-                'title'    => __('Hiển thị page title bar', 'shtheme'),
+                'title'    => __('Hiển thị Page Title Bar', 'shtheme'),
                 'default'  => false,
                 'on'       => 'Bật',
                 'off'      => 'Tắt',
@@ -357,15 +357,38 @@
 			    'display_value' => 'text'
 			),
 			array(
-			    'id' 		=> 'opt-number-column',
-			    'type' 		=> 'slider',
-			    'title' 	=> __('Nhập số bài viết một hàng', 'shtheme'),
-			    'default' 	=> 3,
-			    'min' 		=> 1,
-			    'step' 		=> 1,
-			    'max' 		=> 6,
-			    'display_value' => 'text'
-			),
+                'id'       => 'opt-type-layout-new',
+                'type'     => 'image_select',
+                'title'    => __('Kiểu giao diện blog', 'shtheme'),
+               	'subtitle' => __('Chọn mẫu giao diện blog muốn hiển thị ở ngoài trang chủ', 'shtheme'),
+                'options'  => array(
+                    '1'      => array(
+                        'alt'   => 'Blog Layout 1', 
+                        'img'   => get_stylesheet_directory_uri().'/lib/images/bloglayout1.png'
+                    ),
+                    '2'      => array(
+                        'alt'   => 'Blog Layout 2', 
+                        'img'   => get_stylesheet_directory_uri().'/lib/images/bloglayout2.png'
+                    ),
+                    '3'      => array(
+                        'alt'   => 'Blog Layout 3', 
+                        'img'   => get_stylesheet_directory_uri().'/lib/images/bloglayout3.png'
+                    ),
+                    '4'      => array(
+                        'alt'   => 'Blog Layout 4', 
+                        'img'   => get_stylesheet_directory_uri().'/lib/images/bloglayout4.png'
+                    ),
+                    '5'      => array(
+                        'alt'   => 'Blog Layout 5', 
+                        'img'   => get_stylesheet_directory_uri().'/lib/images/bloglayout5.png'
+                    ),
+                    '6'      => array(
+                        'alt'   => 'Blog Layout 6', 
+                        'img'   => get_stylesheet_directory_uri().'/lib/images/bloglayout6.png'
+                    ),
+                ),
+                'default' => '1'
+            ),
         )
     ) );
 
@@ -584,6 +607,31 @@
                 'id'=>'social-google',
                 'type' => 'text',
                 'title' => __('Link Google +', 'shtheme'),
+            ),
+        )
+    ) );
+
+    // -> Information
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Thông tin', 'shtheme' ),
+        'id'               => 'information',
+        'icon'             => 'el el-info-circle',
+        'fields'           => array(
+            array(
+                'id'=>'information-phone',
+                'type' => 'text',
+                'title' => __('Số điện thoại', 'shtheme'),
+            ),
+            array(
+                'id'=>'information-address',
+                'type' => 'textarea',
+                'title' => __('Địa chỉ', 'shtheme'),
+            ),
+            array(
+                'id'=>'information-map',
+                'type' => 'textarea',
+                'title' => __('Google Maps', 'shtheme'),
+                'subtitle' => __('Mã nhúng google maps ( dạng iframe )', 'shtheme'),
             ),
         )
     ) );

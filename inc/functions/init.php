@@ -7,50 +7,6 @@
  * @package SH_Theme
  */
 
-if ( ! function_exists( 'shtheme_setup' ) ) :
-	function shtheme_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on SH Theme, use a find and replace
-		 * to change 'shtheme' to the name of your theme in all the template files.
-		 */
-		load_theme_textdomain( 'shtheme', get_template_directory() . '/languages' );
-
-		// Add theme support
-		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 'title-tag' );
-		add_theme_support( 'post-thumbnails' );
-
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'shtheme' ),
-		) );
-
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
-
-		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'shtheme_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
-
-		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
-	}
-endif;
-add_action( 'after_setup_theme', 'shtheme_setup' );
-
 /**
  * Enqueue Script File And Css File
  */

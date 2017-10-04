@@ -15,24 +15,38 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="page-header">
 				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'shtheme' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
 
 			<?php
 			/* Start the Loop */
+			echo '<div class="new-list">';
+
 			while ( have_posts() ) : the_post();
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+				?>
+				<article class="<?php echo implode( ' ', get_post_class( $class ) );?>">
+					<a class="alignleft" href="<?php the_permalink();?>" title="<?php the_title();?>">
+						<?php echo get_the_post_thumbnail( get_the_ID(), 'sh_thumb300x200' );?>
+					</a>
+					<h3><a title="<?php the_title();?>" href="<?php the_permalink();?>" ><?php the_title();?></a></h3>
+					<?php echo get_the_content_limit( 400 ,' ');?>
+					<div class="clearfix"></div>
+					<div class="ps-meta-info">
+					   <div class="ps-alignleft">
+					   		<span><?php the_time('j F Y') ?></span><span class="ps-inline-sep">|</span><a href="http://raothue.com/category/tin-tuc/" rel="category tag">Tin tức</a>
+					   </div>
+					   <div class="ps-alignright">
+					   		<a href="<?php the_permalink();?>" class="ps-read-more">Đọc thêm</a>
+					   	</div>
+					</div>
+				</article>
+				<?php
 
 			endwhile;
 
-			the_posts_navigation();
+			echo '</div>';
+
+			shtheme_pagination();
 
 		else :
 

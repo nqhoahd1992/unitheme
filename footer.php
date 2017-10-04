@@ -14,7 +14,7 @@ do_action( 'sh_after_content_sidebar_wrap' );
 		</div>
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter">
 		<div class="container">
 			<div class="footer-widgets">
 				<div class="row">

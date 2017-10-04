@@ -162,6 +162,18 @@ function add_title_name_product(){
 }
 add_action( 'woocommerce_shop_loop_item_title','add_title_name_product',10 );
 
+/**
+ * Button Detail content-product.php
+ */
+function insert_btn_detail(){
+	?>
+	<div class="text-center wrap-detail">
+		<a href="<?php the_permalink( );?>" title="<?php the_title( );?>">XEM CHI TIẾT</a>
+	</div>
+	<?php
+}
+// add_action( 'woocommerce_after_shop_loop_item','insert_btn_detail',15 );
+
 // archive-product.php
 remove_action( 'woocommerce_before_shop_loop','woocommerce_result_count',20 );
 remove_action( 'woocommerce_before_shop_loop','woocommerce_catalog_ordering',30 );

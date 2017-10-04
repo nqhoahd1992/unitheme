@@ -16,7 +16,9 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					if( $sh_option['display-pagetitlebar'] != '1' ) {
+						the_archive_title( '<h1 class="page-title">', '</h1>' );
+					}
 					the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 
@@ -56,7 +58,7 @@ get_header(); ?>
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			
 
 		endif; ?>
 
