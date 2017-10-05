@@ -28,27 +28,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 
 global $sh_option;
-$layout   = $sh_option['number-column-product-cate'];
-switch ($layout) {
-    case '1':
-        $post_class = 'col-md-12';
-        break;
-    case '2':
-        $post_class = 'col-md-6';
-        break;
-    case '3':
-        $post_class = 'col-md-4 col-sm-6';
-        break;
-    case '4':
-        $post_class = 'col-md-3 col-sm-4 col-xs-6';
-        break;
-    case '5':
-        $post_class = 'col-md-five';
-        break;
-    case '6':
-        $post_class = 'col-md-2';
-        break;
-}
+$numcol   = $sh_option['number-column-product-cate'];
+$post_class = get_column_product($numcol);
 ?>
 <li <?php post_class($post_class); ?>>
 	<div class="wrap-product">

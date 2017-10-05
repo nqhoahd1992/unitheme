@@ -100,6 +100,34 @@ function custom_override_checkout_fields( $fields ) {
 add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 
 /**
+ * Return class layout product
+ */
+function get_column_product($numcol) {
+	global $sh_option;
+	switch ($numcol) {
+	    case '1':
+	        $post_class = 'col-md-12';
+	        break;
+	    case '2':
+	        $post_class = 'col-md-6';
+	        break;
+	    case '3':
+	        $post_class = 'col-md-4 col-sm-6';
+	        break;
+	    case '4':
+	        $post_class = 'col-md-3 col-sm-4 col-xs-6';
+	        break;
+	    case '5':
+	        $post_class = 'col-md-five';
+	        break;
+	    case '6':
+	        $post_class = 'col-md-2';
+	        break;
+	}
+	return $post_class;
+}
+
+/**
  * Tab Woocommerce
  */
 function woo_remove_product_tabs( $tabs ) {
