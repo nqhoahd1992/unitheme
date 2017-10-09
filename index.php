@@ -44,6 +44,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
+			// Products
 			if( !empty( $list_pro ) ) {
 				echo '<div class="product-wrap">';
 					foreach ($list_pro as $key => $idpost) {
@@ -55,6 +56,7 @@ get_header(); ?>
 			?>
 
 			<?php
+			// News
 			if( !empty( $list_cat ) ) {
 				echo '<div class="news-wrap">';
 					foreach ($list_cat as $key => $idpost) {

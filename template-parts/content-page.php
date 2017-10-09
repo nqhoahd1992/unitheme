@@ -7,12 +7,15 @@
  * @package SH_Theme
  */
 
+global $sh_option;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+	<?php if( $sh_option['display-pagetitlebar'] == '0' ) : ?>
+		<header class="entry-header">
+			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+		</header><!-- .entry-header -->
+	<?php endif;?>
 
 	<div class="entry-content">
 		<?php

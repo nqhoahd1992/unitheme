@@ -386,6 +386,10 @@
                         'alt'   => 'Blog Layout 6', 
                         'img'   => get_stylesheet_directory_uri().'/lib/images/bloglayout6.png'
                     ),
+                    '7'      => array(
+                        'alt'   => 'Blog Layout 7', 
+                        'img'   => get_stylesheet_directory_uri().'/lib/images/bloglayout7.png'
+                    ),
                 ),
                 'default' => '1'
             ),
@@ -449,7 +453,7 @@
             array(
                 'id'       => 'display-sharepost',
                 'type'     => 'switch', 
-                'title'    => __('Hiển thị share bài viết', 'shtheme'),
+                'title'    => __('Hiển thị nút share bài viết', 'shtheme'),
                 'default'  => true,
                 'on'       => 'Bật',
                 'off'      => 'Tắt',

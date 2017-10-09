@@ -75,6 +75,9 @@ class sh_blog_shortcode {
 				case '6':
 					$html .= $this->sh_blog_style_6( $the_query, $atts );
 					break;
+				case '7':
+					$html .= $this->sh_blog_style_7( $the_query, $atts );
+					break;
 				default:
 					$html .= $this->sh_general_post_html( $the_query, $atts );
 					break;
@@ -291,6 +294,60 @@ class sh_blog_shortcode {
 				}
 			} else {
 				$image_size 					= 'rt_thumb300x200';
+				$atts['hide_category'] 			= '0';
+				$atts['hide_meta'] 				= '0';
+				$atts['hide_viewmore'] 			= '0';
+				$atts['hide_desc'] 				= '0';
+				
+				$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
+			}
+			if ( $i == count( $the_query->posts ) ) {
+				$html .= '</div>';
+			}
+
+		}
+		wp_reset_postdata();
+		$html .= '</div>';
+		return $html;
+	}
+
+	/**
+	 *
+	 * Blog style 6
+	 *
+	 * @param  $the_query: Query get data; $atts: attribute
+	 * @return $html: html of blog style 6
+	 *
+	 */
+	function sh_blog_style_7 ( $the_query, $atts ) {
+		extract( shortcode_atts( array(
+			'style'   						=> '7',
+			'posts_per_page'				=> '10',
+		), $atts ) );
+
+		$i = 0;
+		$html = '';
+		$image_size = 'sh_thumb300x200';
+
+		$html .= '<div class="row">';
+		while ( $the_query->have_posts() ) { $the_query->the_post(); $i++;
+
+			$post_class = array( 'element', 'hentry', 'post-item' );
+
+			if ( $i == 1 ) {
+				$atts['hide_category'] 			= '0';
+				$atts['hide_viewmore']			= '1';
+				$image_size 					= 'rt_thumb300x200';
+
+				$html .= '<div class="col-md-12 first-element-layout">';
+
+				$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
+				$html .= '</div>';
+				if( $posts_per_page > 1 ) {
+					$html .= '<div class="col-md-12 second-element-layout">';
+				}
+			} else {
+				$atts['hide_thumb'] 			= '0';
 				$atts['hide_category'] 			= '0';
 				$atts['hide_meta'] 				= '0';
 				$atts['hide_viewmore'] 			= '0';

@@ -8,11 +8,13 @@ function register_gtid_post_by_cat() {
 class Gtid_Post_Widget extends WP_Widget {
 
     function __construct() {
+
         parent::__construct(
             'list_posts',
             '3B - Danh sách bài viết',
             array( 'description'  =>  'Hiển thị một danh sách bài viết theo chuyên mục' )
         );
+        
     }
 
     function widget($args, $instance) {

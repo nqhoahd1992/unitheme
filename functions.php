@@ -146,6 +146,8 @@ require get_template_directory() . '/inc/widgets/wg-fblikebox.php';
 
 require get_template_directory() . '/inc/widgets/wg-image-ads.php';
 
+require get_template_directory() . '/inc/widgets/wg-page.php';
+
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/widgets/wg-product-slider.php';
 }
@@ -311,6 +313,11 @@ function shtheme_lib_scripts(){
 
 	// Font Awesome
 	wp_enqueue_style( 'fontawesome-style', SH_DIR .'/lib/css/font-awesome.min.css' );
+
+	// Woocommerce
+	if ( class_exists( 'WooCommerce' ) ) {
+		wp_enqueue_style( 'woocommerce-css-style', SH_DIR .'/lib/css/custom-woocommerce.css' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'shtheme_lib_scripts' , 1 );
 

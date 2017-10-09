@@ -20,6 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+global $sh_option;
+
 get_header( 'shop' ); ?>
 
 	<?php
@@ -35,7 +37,7 @@ get_header( 'shop' ); ?>
 
     <header class="woocommerce-products-header">
 
-		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) && $sh_option['display-pagetitlebar'] == '0' ) : ?>
 
 			<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
 
