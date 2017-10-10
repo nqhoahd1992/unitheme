@@ -25,15 +25,15 @@
 	<header id="masthead" role="banner" <?php header_class();?>>
 		<!-- Start Menu Mobile -->
 		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
+			<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#NavbarMobile">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>                        
 					</button>
-					<a class="navbar-brand" href="#">Menu</a>
-				</div>
+					<a class="navbar-brand" href="<?php echo get_site_url();?>">Menu</a>
+			</div>
+			<div class="container-fluid">
 				<?php
 				wp_nav_menu( array(
 	                'menu'              => 'primary',
@@ -48,9 +48,9 @@
 	                'walker'            => new WP_Bootstrap_Navwalker())
 	            );
 	            ?>
-			</div>
+       	 	</div>
 		</div>
-		<!-- End Menu -->
+		<!-- End Menu Mobile -->
 		<?php
 		if( $sh_option['display-topheader-widget'] == 1 ) {
 			?>

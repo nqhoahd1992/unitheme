@@ -1201,7 +1201,7 @@ embed, iframe, sobject {
     margin: 0 0 5px 0;
 }
 .sh-blog-shortcode.style-7 .second-element-layout {
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 .sh-blog-shortcode.style-7 .second-element-layout .element {
 	margin-bottom: 5px;
@@ -1277,6 +1277,9 @@ embed, iframe, sobject {
 .navbar-inverse .navbar-nav .open .dropdown-menu>.active>a, .navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:hover {
 	color: #FFF !important;
 }
+.navbar-inverse .navbar-nav>li>a{
+	font-weight: 600;
+}
 .navbar-inverse .navbar-nav>.active>a, 
 .navbar-inverse .navbar-nav>.active>a:focus, 
 .navbar-inverse .navbar-nav>.active>a:hover,
@@ -1303,16 +1306,59 @@ embed, iframe, sobject {
     right: 18px;
     top: 18px;
 }
-
-/*--------------------------------------------------------------
-## Responsive 
---------------------------------------------------------------*/
 @media (min-width: 768px) {
 	.navbar-inverse {
 		display: none;
 	}
 }
+@media (max-width: 1024px) {
+	.site-header {
+		padding-top: 50px;
+	}
+	.logged-in .site-header {
+		padding-top: 4px;
+	}
+	.logged-in .navbar-fixed-top {
+		z-index: 9999999;
+	}
+	.main-navigation {
+		display: none;
+	}
+	.navbar-nav:before, .navbar-nav:after {
+		content: ' ';
+		display: table;
+	}
+	.navbar-nav:after {
+		clear: both;
+	}
+	.navbar-toggle, .navbar-inverse {
+		display: block;
+	}
+	.navbar-header, .navbar-nav,  .navbar-nav>li {
+		float: none;
+	}
+	.navbar-collapse.collapse {
+	    display: none !important;
+	}
+	.navbar-collapse.collapse.in {
+		display: block !important;
+	}
+	.navbar-nav .open .dropdown-menu {
+	    position: static;
+	    float: none;
+	    width: auto;
+	    margin-top: 0;
+	    background-color: transparent;
+	    border: 0;
+	    -webkit-box-shadow: none;
+	    box-shadow: none;
+	}
+}
 
+
+/*--------------------------------------------------------------
+## Responsive 
+--------------------------------------------------------------*/
 @media (max-width: 1200px) {
 	.sidebar ul ul {
 		display: none;
@@ -1341,15 +1387,7 @@ embed, iframe, sobject {
 }
 
 @media (max-width: 768px) {
-	.site-header {
-		padding-top: 50px;
-	}
-	.logged-in .site-header {
-		padding-top: 4px;
-	}
-	.logged-in .navbar-fixed-top {
-		z-index: 9999999;
-	}
+	
 }
 
 @media (max-width: 414px) {
