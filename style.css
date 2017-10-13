@@ -2,7 +2,7 @@
 Theme Name: Web3B
 Theme URI: thietkeweb3b.com
 Author: Quang Hoa
-Author URI: 
+Author URI: thietkeweb3b.com
 Description: 
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -402,7 +402,8 @@ iframe[name='google_conversion_frame'] {
 	height: 40px;
 	margin: 0;
 }
-.sidebar .widget_nav_menu > div, .widget_supports .list-supporter, .sidebar .content-feature-page {
+.sidebar .widget_nav_menu > div, .widget_supports .list-supporter, 
+.sidebar .content-feature-page, .sidebar .slider-products {
 	border: 1px solid #cccccc;
 	border-top: none;
 }
@@ -626,11 +627,18 @@ iframe[name='google_conversion_frame'] {
 	color: #333333;
 }
 /* Widget Slider Products */
+.sidebar .content-feature-page, .sidebar .slider-products {
+	padding: 10px 10px 0 10px;
+}
 .widget_slider_products li .item-product {
 	overflow: hidden;
-	margin-bottom: 18px;
-	padding-bottom: 18px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
 	border-bottom: 1px dashed #cccccc;
+}
+.widget_slider_products li .item-product:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
 }
 .widget_slider_products li .alignleft, .widget_slider_products li .alignright {
 	width: 86px;

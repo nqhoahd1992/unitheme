@@ -84,11 +84,11 @@ class sh_product_shortcode {
 						 */
 						// do_action( 'woocommerce_before_shop_loop_item_title' );
 
-						echo "<div class='image-product'>";
-							echo "<a class='img hover-zoom' href='" . get_permalink( ) . "' title='" . get_the_title() . "' >";
-								echo woocommerce_get_product_thumbnail();
-							echo "</a>";
-						echo "</div>";
+						echo '<div class="image-product">';
+							echo '<a class="img hover-zoom" data-tooltip="stickyzoom" data-img-full="'. wp_get_attachment_url(get_post_thumbnail_id( $post->ID,'full' )) .'" href="'. get_permalink( ) .'" title="'. get_the_title( ) .'">';
+								echo woocommerce_get_product_thumbnail( );
+							echo '</a>';
+						echo '</div>';
 
 						/**
 						 * woocommerce_shop_loop_item_title hook.

@@ -357,10 +357,11 @@
 			    'display_value' => 'text'
 			),
 			array(
-                'id'       => 'opt-type-layout-new',
-                'type'     => 'image_select',
-                'title'    => __('Kiểu giao diện blog', 'shtheme'),
-               	'subtitle' => __('Chọn mẫu giao diện blog muốn hiển thị ở ngoài trang chủ', 'shtheme'),
+                'id'            => 'opt-type-layout-new',
+                'type'          => 'image_select',
+                'title'         => __('Kiểu giao diện blog', 'shtheme'),
+               	'subtitle'      => __('Chọn mẫu giao diện blog muốn hiển thị ở ngoài trang chủ', 'shtheme'),
+                'permissions'   => 'administrator',
                 'options'  => array(
                     '1'      => array(
                         'alt'   => 'Blog Layout 1', 
@@ -659,9 +660,37 @@
         )
     ) );
     
+    // -> 3B Developer
+    Redux::setSection( $opt_name, array(
+        'title'            => __( '3B Developer', 'shtheme' ),
+        'id'               => 'function',
+        'icon'             => 'el el-adjust-alt',
+        'permissions'      => 'administrator',
+    ) );
 
-
-
+    Redux::setSection( $opt_name, array(
+            'title'            => __( 'Woocommerce', 'shtheme' ),
+            'id'               => 'function-woocommerce',
+            'subsection'       => true,
+            'fields'           => array(
+                array(
+                    'id'       => 'woocommerce-tooltip',
+                    'type'     => 'switch', 
+                    'title'    => __('Bật tooltip cho Woocommerce', 'shtheme'),
+                    'default'  => false,
+                    'on'       => 'Bật',
+                    'off'      => 'Tắt',
+                ),
+                array(
+                    'id'       => 'woocommerce-disable-cart',
+                    'type'     => 'switch', 
+                    'title'    => __('Bật chức năng giỏ hàng', 'shtheme'),
+                    'default'  => false,
+                    'on'       => 'Bật',
+                    'off'      => 'Tắt',
+                ),
+            )
+        ) );
 
     /*
      * <--- END SECTIONS

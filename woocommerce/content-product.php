@@ -27,9 +27,14 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 
-global $sh_option;
+global $sh_option, $post;
 $numcol   = $sh_option['number-column-product-cate'];
 $post_class = get_column_product($numcol);
+if( $sh_option['woocommerce-tooltip'] == '1' ) {
+	$string_tooltip = 'data-tooltip="stickyzoom" data-img-full="'. wp_get_attachment_url(get_post_thumbnail_id( $post->ID,'full' )) .'" ';
+} else {
+	$string_tooltip = '';
+}
 ?>
 <li <?php post_class($post_class); ?>>
 	<div class="wrap-product">
@@ -49,11 +54,11 @@ $post_class = get_column_product($numcol);
 		 */
 		// do_action( 'woocommerce_before_shop_loop_item_title' );
 
-		echo "<div class='image-product'>";
-			echo "<a class='img hover-zoom' href='" . get_permalink( ) . "' title='" . get_the_title() . "' >";
-				echo woocommerce_get_product_thumbnail();
-			echo "</a>";
-		echo "</div>";
+		echo '<div class="image-product">';
+			echo '<a class="img hover-zoom" '. $string_tooltip .' href="'. get_permalink( ) .'" title="'. get_the_title( ) .'">';
+				echo woocommerce_get_product_thumbnail( );
+			echo '</a>';
+		echo '</div>';
 
 		/**
 		 * woocommerce_shop_loop_item_title hook.

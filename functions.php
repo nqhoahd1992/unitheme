@@ -16,6 +16,7 @@ add_action( 'init', 'sh_constants' );
 
 function sh_load_framework() {
 	// Load Functions.
+	require_once( PARENT_DIR . '/inc/options-function.php' );
 	require_once( SH_FUNCTIONS_DIR . '/init.php' );
 	require_once( SH_FUNCTIONS_DIR . '/sidebar.php' );
 	require_once( SH_FUNCTIONS_DIR . '/formatting.php' );
@@ -69,12 +70,10 @@ endif;
 add_action( 'after_setup_theme', 'shtheme_setup' );
 
 /**
- * Style Login
+ * Custom Login Page
  */
-function sh_login_logo() { 
-	?>
-		<link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>/lib/css/login.css' type='text/css' media='all' />
-	<?php 
+function sh_login_logo() {
+	wp_enqueue_style( 'login-custom-style', SH_DIR .'/lib/css/login.css' );
 }
 add_action( 'login_enqueue_scripts', 'sh_login_logo' );
 
@@ -105,187 +104,37 @@ function shtheme_widgets_init() {
 }
 add_action( 'widgets_init', 'shtheme_widgets_init' );
 
-
 /**
- * Load Plugin Activation File.
+ * Load File
+ *
  */
+// Load Plugin Activation File.
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
-/**
- * Load Shortcode
- */
+// Load Shortcode
 require get_template_directory() . '/inc/shortcode/shortcode-blog.php';
-
 require get_template_directory() . '/inc/shortcode/shortcode-product.php';
 
-/**
- * Load Theme Options
- */
+// Load Theme Options
 require get_template_directory() . '/inc/options.php';
 
-/**
- * Load Function Woocomerce
- */
+// Load Function Woocomerce
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/function-woo.php';
 }
 
-/**
- * Load Menu Walker Bootstrap
- */
+// Load Menu Walker Bootstrap
 require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
 
-/**
- * Load Widget
- */
+// Load Widget
 require get_template_directory() . '/inc/widgets/wg-post-list.php';
-
 require get_template_directory() . '/inc/widgets/wg-support.php';
-
 require get_template_directory() . '/inc/widgets/wg-fblikebox.php';
-
 require get_template_directory() . '/inc/widgets/wg-image-ads.php';
-
 require get_template_directory() . '/inc/widgets/wg-page.php';
-
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/widgets/wg-product-slider.php';
 }
-
-
-/**
- * Inser Code To Header Footer
- */
-function insert_code_to_header(){
-	global $sh_option;
-	$html_header = $sh_option['opt-textarea-header'];
-	if( ! empty( $html_header ) ) {
-		echo $html_header;
-	}
-}
-add_action( 'wp_head','insert_code_to_header' );
-
-function insert_code_to_footer(){
-	global $sh_option;
-	$html_footer = $sh_option['opt-textarea-footer'];
-	if( ! empty( $html_footer ) ) {
-		echo $html_footer;
-	}
-}
-add_action( 'wp_footer','insert_code_to_footer' );
-
-
-
-/**
- * Display Logo
- */
-function display_logo(){
-	global $sh_option;
-	$url_logo = $sh_option['opt_settings_logo']['url'];
-	if( ! empty( $url_logo ) ) {
-		echo '<a href="'.get_site_url( ).'"><img src="'. $url_logo .'"></a>';
-	}
-}
-
-/**
- * Move All Js File To Footer
-**/
-function footer_enqueue_scripts() {
-	remove_action('wp_head', 'wp_print_scripts');
-	remove_action('wp_head', 'wp_print_head_scripts', 9);
-	remove_action('wp_head', 'wp_enqueue_scripts', 1);
-	add_action('wp_footer', 'wp_print_scripts', 5);
-	add_action('wp_footer', 'wp_enqueue_scripts', 5);
-	add_action('wp_footer', 'wp_print_head_scripts', 5);
-}
-// add_action('after_setup_theme', 'footer_enqueue_scripts');
-
-/**
- * Add Widget Top Header
- */
-function sh_register_top_header_widget_areas() {
-
-	global $sh_option;
-	if( $sh_option['display-topheader-widget'] == '1' ) {
-		register_sidebar( array(
-			'name'          => __( 'Top Header', 'shtheme' ),
-			'id'            => 'top-header',
-			'description'   => __( 'Top Header widget area', 'shtheme' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h4 class="widget-title">',
-			'after_title'   => '</h4>',
-		) );
-	}
-
-}
-add_action( 'widgets_init','sh_register_top_header_widget_areas',1 );
-
-/**
- * Add Widget Footer
- */
-function sh_register_footer_widget_areas() {
-
-	global $sh_option;
-	$footer_widgets = $sh_option['opt-number-footer'];
-	$footer_widgets_number = intval($footer_widgets);
-	$counter = 1;
-	while ( $counter <= $footer_widgets_number ) {
-
-		register_sidebar( array(
-			'name'          => sprintf( __( 'Footer %d', 'shtheme' ), $counter ),
-			'id'            => sprintf( 'footer-%d', $counter ),
-			'description'   => sprintf( __( 'Footer %d widget area', 'shtheme' ), $counter ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h4 class="widget-title">',
-			'after_title'   => '</h4>',
-		) );
-
-		$counter++;
-	}
-
-}
-add_action( 'widgets_init','sh_register_footer_widget_areas' );
-
-/**
- * Display Footer
- */
-function sh_footer_widget_areas() {
-
-	global $sh_option;
-
-	$footer_widgets = $sh_option['opt-number-footer'];
-	$footer_widgets_number = intval($footer_widgets);
-
-	switch ($footer_widgets_number) {
-	    case '1':
-	        $classes = 'footer-widgets-area col-md-12';
-	        break;
-	    case '2':
-	        $classes = 'footer-widgets-area col-md-6';
-	        break;
-	    case '3':
-	        $classes = 'footer-widgets-area col-md-4';
-	        break;
-	    case '4':
-	        $classes = 'footer-widgets-area col-md-3';
-	        break;
-	}
-
- 	$counter = 1;
-	while ( $counter <= $footer_widgets_number ) {
-
-		echo '<div class="'. $classes .'">';
-			dynamic_sidebar( 'footer-' . $counter );
-		echo '</div>';
-		$counter++;
-
-	}
-
-}
-add_action( 'sh_footer', 'sh_footer_widget_areas' );
-
 
 function add_script_admin() {
 	if ( ! did_action( 'wp_enqueue_media' ) ) {
@@ -318,6 +167,10 @@ function shtheme_lib_scripts(){
 	if ( class_exists( 'WooCommerce' ) ) {
 		wp_enqueue_style( 'woocommerce-css-style', SH_DIR .'/lib/css/custom-woocommerce.css' );
 	}
+
+	// Dev Tooltip
+	wp_register_style( 'hover-zoom-style', SH_DIR .'/lib/css/stickytooltip.css' );
+    wp_register_script( 'hover-zoom-js', SH_DIR .'/lib/js/stickytooltip.js' );
 }
 add_action( 'wp_enqueue_scripts', 'shtheme_lib_scripts' , 1 );
 

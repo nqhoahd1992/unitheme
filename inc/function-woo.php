@@ -191,6 +191,48 @@ function add_title_name_product(){
 add_action( 'woocommerce_shop_loop_item_title','add_title_name_product',10 );
 
 /**
+ * Dev Disable Cart
+**/
+function dev_disable_cart(){
+	global $sh_option;
+	if( $sh_option['woocommerce-disable-cart'] == '0' ) {
+		remove_action( 'woocommerce_after_shop_loop_item','woocommerce_template_loop_add_to_cart',10 );
+		remove_action( 'woocommerce_single_product_summary','woocommerce_template_single_add_to_cart',30 );
+	}
+}
+add_action( 'init','dev_disable_cart' );
+
+/**
+ * Dev Tooltip
+**/
+function code_hover_zoom_class_img() {
+	global $sh_option;
+    if( ! wp_is_mobile() && $sh_option['woocommerce-tooltip'] == '1' ) {
+		wp_enqueue_style( 'hover-zoom-style' );
+	    wp_enqueue_script('hover-zoom-js' );
+    	?>
+	    <div id="mystickytooltip" class="stickytooltip">
+	        <div style="padding: 5px;">
+	            <div id="stickyzoom" class="atip" style="min-width: 200px;">
+	            	<img class="img-zoom" src="" />
+	            	<div class="description-zoom"></div>
+	            </div>
+	        </div>
+	    </div>
+	    <script type="text/javascript">
+	    	jQuery(document).ready(function(){
+	    		jQuery('.image-product a.img').hover(function(){
+			        var value = jQuery(this).data('img-full');
+			        jQuery('.stickytooltip .img-zoom').attr('src', value);
+			    });
+	    	});
+	    </script>
+		<?php
+    }
+}
+add_action('wp_footer','code_hover_zoom_class_img', 1);
+
+/**
  * Button Detail content-product.php
  */
 function insert_btn_detail(){
