@@ -66,7 +66,7 @@ function disable_rest_api(){
 		return new WP_Error('Error!', __('Unauthorized access is denied!','rest-api-error'), array('status' => rest_authorization_required_code()));
 	}
 }
-add_filter('rest_authentication_errors','disable_rest_api');
+// add_filter('rest_authentication_errors','disable_rest_api');
 /* Disable XML RPC */
 add_filter( 'xmlrpc_enabled', '__return_false' );
 

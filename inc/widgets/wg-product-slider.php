@@ -29,7 +29,7 @@ class Gtid_Products_Widget extends WP_Widget {
         ?>
 
         <div class="slider-products">
-            <ul class="owl-carousel" data-item="1" data-margin="0" data-md="1" data-sm="1" data-xs="1">
+            <ul class="owl-carousel" data-item="1" data-margin="0" data-md="1" data-sm="1" data-xs="1" data-dots="false" data-nav="true">
                 <?php
                 $i = 1;
                 $args = array(
