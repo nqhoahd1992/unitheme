@@ -14,18 +14,30 @@ do_action( 'sh_after_content_sidebar_wrap' );
 		</div>
 	</div><!-- #content -->
 
-	<footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter">
-		<div class="container">
-			<div class="footer-widgets">
-				<div class="row">
-					<?php do_action( 'sh_footer' );?>
+	<footer id="footer" class="site-footer" itemscope itemtype="https://schema.org/WPFooter">
+		
+		<div class="footer-widgets">
+			<div class="container">
+				<div class="wrap">
+					<div class="row">
+						<?php do_action( 'sh_footer' );?>
+					</div>
 				</div>
 			</div>
-			<div class="site-info">
-				
-			</div><!-- .site-info -->
-			<p id="back-top"><a href="#top" target="_blank"><span></span></a></p>
-		</div>
+		</div><!-- .footer-widgets -->
+		<div class="site-info">
+			<div class="container">
+				<div class="wrap">
+					<div class="row">
+						<div class="col-md-12">
+							<p id="copyright">Thiết kế bởi <a href="http://thietkeweb3b.com/" target="_blank" rel="nofollow">3B Việt Nam</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- .site-info -->
+		<p id="back-top"><a href="#top" target="_blank"><span></span></a></p>
+		
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

@@ -199,14 +199,10 @@ li {
 	color: #FFF;
 }
 .page-title, .single-post h1.entry-title {
-	margin: 0 0 15px 0;
-	font-size: 15px;
-	color: #FFF;
-	background: #337ab7;
+	font-size: 22px;
 	font-weight: 600;
-	padding: 9px 10px;
-	text-transform: uppercase;
-	line-height: 1.4;
+	color: #337ab7;
+	margin: 5px 0 15px 0;
 }
 .page-title-bar {
     align-items: center;
@@ -306,15 +302,6 @@ iframe[name='google_conversion_frame'] {
 	font-weight: 600;
 	display: block;
 }
-.wpcf7 input[type=text], .wpcf7 input[type=email], .wpcf7 input[type=number], .wpcf7 textarea {
-	padding: 5px 10px;
-	width: 100%;
-	border: 1px solid #cccccc;
-	font-weight: 500;
-}
-.wpcf7 input[type=text], .wpcf7 input[type=email], .wpcf7 input[type=number] {
-	height: 30px;
-}
 .wpcf7 div.wpcf7-validation-errors {
 	margin: 2em 0 1em;
 }
@@ -403,11 +390,12 @@ iframe[name='google_conversion_frame'] {
 	margin: 0;
 }
 .sidebar .widget_nav_menu > div, .widget_supports .list-supporter, 
-.sidebar .content-feature-page, .sidebar .slider-products {
+.sidebar .content-feature-page, .sidebar .slider-products,
+.sidebar .list-post-item {
 	border: 1px solid #cccccc;
 	border-top: none;
 }
-.sidebar .content-feature-page {
+.sidebar .list-post-item, .sidebar .content-feature-page {
 	padding: 10px;
 }
 .sidebar ul {
@@ -436,12 +424,12 @@ iframe[name='google_conversion_frame'] {
 	width: 200px;
 	border-radius: 20px;
 }
-.sidebar .search-form label {
+.search-form label {
 	width: calc( 100% - 16px );
 	float: left;
 	margin-bottom: 0;
 }
-.sidebar .search-form input[type=search] {
+.search-form input[type=search] {
 	width: 100%;
 	border: none;
 	background: none;
@@ -449,7 +437,7 @@ iframe[name='google_conversion_frame'] {
 	color: #FFF;
 	font-weight: normal;
 }
-.sidebar .search-form input[type=submit] {
+.search-form input[type=submit] {
 	float: right;
 	background: url(lib/images/icon-search.png) center center no-repeat;
 	text-indent: -9999px;
@@ -458,19 +446,19 @@ iframe[name='google_conversion_frame'] {
 	height: 22px;
 	outline-width: 0;
 }
-.sidebar .search-form input[type=search]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.search-form input[type=search]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 	color: #FFF;
 	font-weight: normal;
 }
-.sidebar .search-form input[type=search]::-moz-placeholder { /* Firefox 19+ */
+.search-form input[type=search]::-moz-placeholder { /* Firefox 19+ */
 	color: #FFF;
 	font-weight: normal;
 }
-.sidebar .search-form input[type=search]:-ms-input-placeholder { /* IE 10+ */
+.search-form input[type=search]:-ms-input-placeholder { /* IE 10+ */
 	color: #FFF;
 	font-weight: normal;
 }
-.sidebar .search-form input[type=search]:-moz-placeholder { /* Firefox 18- */
+.search-form input[type=search]:-moz-placeholder { /* Firefox 18- */
 	color: #FFF;
 	font-weight: normal;
 }
@@ -491,10 +479,6 @@ iframe[name='google_conversion_frame'] {
 	display: block;
 	line-height: 30px;
 	color: #333333;
-}
-.sidebar .widget_nav_menu ul li a:hover {
-	text-decoration: none;
-	color: #337ab7;
 }
 .sidebar .widget_nav_menu .menu-item-has-children .sub-menu {
 	background: #FFF;
@@ -528,36 +512,36 @@ iframe[name='google_conversion_frame'] {
 	display: block;
 }
 /* Widget Recent Posts */
-.widget_list_posts .post:before, .widget_list_posts .post:after {
-	content: ' ';
-	display: table;
+.widget .list-post-item li {
+	margin-bottom: 10px;
 }
-.widget_list_posts .post:after {
+.widget .list-post-item li:last-child {
+	margin-bottom: 0;
+}
+.widget .list-post-item .post:after {
 	clear: both;
 }
-.widget_list_posts .alignleft {
+.widget .list-post-item .alignleft {
 	width: 100px;
 	margin-right: 10px;
 }
-.widget_list_posts .alignright {
+.widget .list-post-item .alignright {
 	width: 100px;
 	margin-left: 10px;
 }
-.widget_list_posts .aligncenter {
+.widget .list-post-item .aligncenter {
 	text-align: center;
 }
-.widget_list_posts h3 {
+.widget .list-post-item h3 {
 	margin: 0 0 5px 0;
-	font-size: 15px;
+	font-size: 14px;
+	font-weight: 600;
 	line-height: 1.4;
 	max-height: 40px;
 	overflow: hidden;
 }
-.widget_list_posts h3 a {
+.widget .list-post-item h3 a {
 	color: inherit;
-}
-.widget_list_posts h3 a:hover {
-	color: #337ab7;
 }
 /* Widget Support */
 @media (min-width: 1200px) {
@@ -669,9 +653,6 @@ iframe[name='google_conversion_frame'] {
 .widget_slider_products li h3 a {
 	color: inherit;
 }
-.widget_slider_products li h3 a:hover {
-	color: #337ab7;
-}
 .widget_slider_products li .price {
 	color: #337ab7;
 	margin: 0;
@@ -680,10 +661,13 @@ iframe[name='google_conversion_frame'] {
 	padding: 20px 10px;
 	background: #fafafa;
 }
-.owl-carousel .owl-nav div {
-	color: #337ab7;
+.owl-carousel .owl-nav > div > div {
     background: #f5f5f5;
-    padding: 0 5px;
+    padding: 5px 10px;
+}
+.owl-carousel .owl-nav .fa {
+	font-size: 20px;
+	color: #337ab7;
 }
 .owl-carousel .owl-nav .owl-prev,
 .owl-carousel .owl-nav .owl-next {
@@ -796,11 +780,22 @@ iframe[name='google_conversion_frame'] {
 	clear: both;
 	margin: 0 0 1.5em;
 }
+.entry-content {
+	line-height: 25px;
+}
 .entry-content ul {
 	padding-left: 40px;
 }
 .entry-content li {
 	list-style: disc;
+}
+.entry-meta {
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+.entry-meta span {
+	display: inline-block;
+	margin-right: 10px;
 }
 .socials-share {
     margin-top: 20px;
@@ -827,9 +822,6 @@ iframe[name='google_conversion_frame'] {
     color: #222;
     margin-bottom: 20px;
 }
-.post-next-prev-content a:hover {
-	color: #337ab7;
-}
 .related-posts .td-related-title {
 	font-size: 20px;
 }
@@ -839,6 +831,14 @@ iframe[name='google_conversion_frame'] {
 .related-posts ul li {
 	margin-bottom: 5px;
 	list-style: disc;
+}
+.related-posts ul li a {
+	color: #333333;
+}
+.sidebar .widget_nav_menu ul li a:hover, 
+.post-next-prev-content a:hover, .related-posts ul li a:hover, 
+.widget_slider_products li h3 a:hover, .widget .list-post-item h3 a:hover {
+	color: #337ab7;
 }
 
 /*--------------------------------------------------------------
@@ -1269,13 +1269,23 @@ embed, iframe, sobject {
 /*--------------------------------------------------------------
 ## Footer 
 --------------------------------------------------------------*/
-.footer-widgets {
-	padding: 20px 20px;
+.site-footer .wrap {
 	background: #337ab7;
 	color: #FFF;
+	padding: 10px 15px;
 }
-.footer-widgets p {
+.site-footer p {
 	margin-bottom: 0;
+}
+.site-footer a {
+	color: #FFF;
+}
+.site-footer a:hover {
+	color: #FFF;
+}
+.footer-widgets h4.widget-title {
+	font-weight: 600;
+	font-size: 20px;
 }
 
 /*--------------------------------------------------------------

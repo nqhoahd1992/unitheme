@@ -19,10 +19,10 @@
 </head>
 
 <?php global $sh_option;?>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 <div id="page" class="site">
 
-	<header id="masthead" role="banner" <?php header_class();?>>
+	<header id="masthead" <?php header_class();?> role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 		<!-- Start Menu Mobile -->
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-header">
@@ -82,7 +82,7 @@
 				<div class="logo">
 					<?php display_logo();?>
 				</div>
-				<nav id="site-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement" class="main-navigation">
+				<nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
 			</div>

@@ -180,6 +180,7 @@ require get_template_directory() . '/inc/widgets/wg-support.php';
 require get_template_directory() . '/inc/widgets/wg-fblikebox.php';
 require get_template_directory() . '/inc/widgets/wg-image-ads.php';
 require get_template_directory() . '/inc/widgets/wg-page.php';
+require get_template_directory() . '/inc/widgets/wg-view-post-list.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/widgets/wg-product-slider.php';
 }

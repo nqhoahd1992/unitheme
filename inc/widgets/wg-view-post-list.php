@@ -1,43 +1,48 @@
 <?php
-add_action('widgets_init', 'register_gtid_post_by_cat');
+add_action('widgets_init', 'register_widget_top_view');
 
-function register_gtid_post_by_cat() {
-    register_widget('Gtid_Post_Widget');
+function register_widget_top_view() {
+    register_widget('Gtid_Post_Top_View_Widget');
 }
 
-class Gtid_Post_Widget extends WP_Widget {
+class Gtid_Post_Top_View_Widget extends WP_Widget {
 
     function __construct() {
 
         parent::__construct(
-            'list_posts',
-            '3B - Danh sách bài viết',
-            array( 'description'  =>  'Hiển thị một danh sách bài viết theo chuyên mục' )
+            'list_view_posts',
+            '3B - Danh sách bài viết xem nhiều',
+            array( 'description'  =>  'Hiển thị một danh sách bài viết theo lượt xem' )
         );
         
     }
 
     function widget($args, $instance) {
         extract($args);
-        $instance = wp_parse_args( (array)$instance, array(  'title' => '', 'numpro' => '', 'cat' => '' , 'image_alignment' => '', 'image_size' => '', 'show_content' => 'content-limit','content_limit' => '', ) );
+        $instance = wp_parse_args( (array)$instance, array(  'title' => '', 'numpro' => '', 'image_alignment' => '', 'image_size' => '', 'postdate' => '', 'show_content' => 'content-limit','content_limit' => '', ) );
         echo $before_widget;
 
         if ($instance['title']) echo $before_title . apply_filters('widget_title', $instance['title']) . $after_title;
         ?>
         <ul class="list-post-item">
             <?php
+            function filter_where( $where = '' ) {
+                global $postdate;
+                $where .= " AND post_date > '" . date('Y-m-d', strtotime('-'.$postdate.' days')) . "'";
+                return $where;
+            }
+            add_filter( 'posts_where', 'filter_where' );
+
             $args = array(
-                'post_type' => 'post',
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'category',
-                        'field' => 'id',
-                        'terms' => $instance['cat'],
-                    )
-                ),
-                'showposts' => $instance['numpro'],
+                'post_type'             => 'post',
+                'showposts'             => $instance['numpro'],
+                'meta_key'              => 'postview_number',
+                'orderby'               => 'meta_value_num',
+                'order'                 => 'DESC',
+                'ignore_sticky_posts'   => -1,
             );
             $the_query = new WP_Query($args);
+            remove_filter( 'posts_where', 'filter_where' );
             while($the_query->have_posts()):
             $the_query->the_post();
             ?>
@@ -83,10 +88,10 @@ class Gtid_Post_Widget extends WP_Widget {
         $instance = wp_parse_args( 
         	(array)$instance, array( 
             		'title' 			=> '', 
-            		'numpro' 			=> '3',  
-            		'cat' 				=> '',
+            		'numpro' 			=> '3',
                     'image_alignment'   => '',
                     'image_size'        => '',
+                    'postdate'          => '30',
                     'show_content'      => 'content-limit',
                     'content_limit'     => '',
         		) 
@@ -94,19 +99,17 @@ class Gtid_Post_Widget extends WP_Widget {
         ?>
         <p>
             <label for="<?php  echo $this->get_field_id('title'); ?>"><?php  _e('Tiêu đề', 'sh_theme'); ?>:</label>
-            <input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php  echo $this->get_field_name('title'); ?>" value="<?php  echo esc_attr( $instance['title'] ); ?>" />
+            <input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" />
         </p>
 
         <p>
             <label for="<?php  echo $this->get_field_id('numpro'); ?>"><?php  _e('Số bài hiển thị', 'sh_theme'); ?>:</label>
-            <input type="text" class="widefat" id="<?php echo $this->get_field_id('numpro'); ?>" name="<?php  echo $this->get_field_name('numpro'); ?>" value="<?php  echo esc_attr( $instance['numpro'] ); ?>" />
+            <input type="text" class="widefat" id="<?php echo $this->get_field_id('numpro'); ?>" name="<?php echo $this->get_field_name('numpro'); ?>" value="<?php echo esc_attr( $instance['numpro'] ); ?>" />
         </p>
         
         <p>
-            <label for="<?php echo $this-> get_field_id('cat'); ?>"><?php  _e('Danh mục','sh_theme'); ?>:</label>
-            <?php
-            wp_dropdown_categories(array('name'=> $this->get_field_name('cat'),'selected'=>$instance['cat'],'orderby'=>'Name','hierarchical'=>1,'show_option_all'=>__('Chọn chuyên mục','sh_theme'),'hide_empty'=>'0'));
-            ?>
+            <label for="<?php echo $this-> get_field_id('postdate'); ?>"><?php _e('Độ tuổi bài viết','sh_theme'); ?>:</label>
+            <input class="widefat" type="number" id="<?php echo $this->get_field_id('postdate'); ?>" name="<?php echo $this->get_field_name('postdate'); ?>" value="<?php echo esc_attr( $instance['postdate'] ); ?>" />
         </p>
 
         <p>
@@ -147,7 +150,6 @@ class Gtid_Post_Widget extends WP_Widget {
                 <?php _e( 'ký tự', 'sh_theme' ); ?>
             </label>
         </p>
-
     <?php
     }
 }

@@ -8,6 +8,7 @@
  */
 
 global $sh_option, $post;
+postview_set(get_the_ID());
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
@@ -24,6 +25,11 @@ global $sh_option, $post;
 		</header><!-- .entry-header -->
 	<?php endif;?>
 
+	<div class="entry-meta">
+		<span class="entry-time"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php the_time('g:i a d/m/Y') ?></span>
+		<span class="entry-view"><i class="fa fa-eye" aria-hidden="true"></i> <?php echo postview_get(get_the_ID());?></span>
+	</div>
+
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
@@ -31,6 +37,8 @@ global $sh_option, $post;
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'shtheme' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
+
+			echo get_the_tag_list('<p>Từ khóa: ',', ','</p>');
 
 			// wp_link_pages( array(
 			// 	'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'shtheme' ),

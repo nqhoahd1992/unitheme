@@ -159,3 +159,32 @@ if ( ! function_exists( 'shtheme_pagination' ) ) {
 		echo '</div>';
 	}
 }
+
+/**
+ * Count view post
+**/
+function postview_set($postID) {
+    $count_key = 'postview_number';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+
+function postview_get($postID){
+    $count_key = 'postview_number';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0 lượt xem";
+    }
+    return $count.' lượt xem';
+}
+
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);

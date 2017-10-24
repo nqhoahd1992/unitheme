@@ -482,6 +482,11 @@ html .woocommerce-checkout #payment ul.payment_methods li input {
 html .woocommerce nav.woocommerce-pagination {
   margin-bottom: 10px;
 }
+html .woocommerce .products ul, .woocommerce ul.products {
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 0;
+}
 .heading-related {
 	font-size: 20px;
 	margin: 0 0 20px 0;
@@ -570,9 +575,10 @@ html .woocommerce nav.woocommerce-pagination {
 	color: #FFF;
 	background: #337ab7;
 	text-align: center;
-	padding: 5px;
+	padding: 11px 5px;
 	border-radius: 50%;
 	font-size: 13px;
+	font-weight: 600;
 }
 
 /* List Products */
