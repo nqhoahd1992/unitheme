@@ -116,12 +116,14 @@ class Gtid_Support_Online extends WP_Widget {
 					</p>
 				<?php endif;?>
 
-	    		<p>
-	            	<label for="<?php echo $this->get_field_id('supporter_'.$i.'_skype'); ?>">
-	            		<?php _e('Skype', 'sh_theme'); ?>:
-	            	</label>
-	    			<input class="widefat" type="text" id="<?php echo $this->get_field_id('supporter_'.$i.'_skype'); ?>" name="<?php echo $this->get_field_name('supporter_'.$i.'_skype'); ?>" value="<?php echo esc_attr( $instance['supporter_'.$i.'_skype'] ); ?>" />
-	    		</p>
+				<?php if( $style != '3' ) : ?>
+		    		<p>
+		            	<label for="<?php echo $this->get_field_id('supporter_'.$i.'_skype'); ?>">
+		            		<?php _e('Skype', 'sh_theme'); ?>:
+		            	</label>
+		    			<input class="widefat" type="text" id="<?php echo $this->get_field_id('supporter_'.$i.'_skype'); ?>" name="<?php echo $this->get_field_name('supporter_'.$i.'_skype'); ?>" value="<?php echo esc_attr( $instance['supporter_'.$i.'_skype'] ); ?>" />
+		    		</p>
+	    		<?php endif;?>
     		
             </div>
 		<?php
@@ -178,7 +180,14 @@ function get_layout_support($instance, $j = 1) {
 					echo '</ul>';
 					break;
 				case '3':
-					
+					echo '<ul>';
+						if( ! empty( $name ) ) {
+							echo '<li class="name">' .$name. '</li>';
+						}
+						if( ! empty( $phone ) ) {
+							echo '<li class="phone">' .$phone. '</li>';
+						}
+					echo '</ul>';
 					break;
 				case '4':
 					
@@ -188,11 +197,6 @@ function get_layout_support($instance, $j = 1) {
 					break;
 			}
 			?>
-			<ul>
-				<?php 
-				
-				?>
-			</ul>
 		</div>
 		<?php
 	}

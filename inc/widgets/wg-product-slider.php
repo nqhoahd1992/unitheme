@@ -53,7 +53,7 @@ class Gtid_Products_Widget extends WP_Widget {
                 }
                 ?>
                     <div id="post-<?php the_ID(); ?>" class="item-product">
-                        <a class="<?php echo $instance['image_alignment'];?>" href="<?php the_permalink();?>" title="<?php the_title();?>">
+                        <a class="flex <?php echo $instance['image_alignment'];?>" href="<?php the_permalink();?>" title="<?php the_title();?>">
                             <?php if(has_post_thumbnail()) the_post_thumbnail( $instance['image_size'],array( "alt" => get_the_title() ) );?>
                         </a>
                         <h3>

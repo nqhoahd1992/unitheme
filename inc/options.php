@@ -668,7 +668,17 @@
         'permissions'      => 'administrator',
     ) );
 
-    Redux::setSection( $opt_name, array(
+    // Redux::setSection( $opt_name, array(
+    //     'title'            => __( 'Chức năng chính', 'shtheme' ),
+    //     'id'               => 'function-main',
+    //     'subsection'       => true,
+    //     'fields'           => array(
+            
+    //     )
+    // ) );
+
+    if ( class_exists( 'WooCommerce' ) ) {
+        Redux::setSection( $opt_name, array(
             'title'            => __( 'Woocommerce', 'shtheme' ),
             'id'               => 'function-woocommerce',
             'subsection'       => true,
@@ -676,7 +686,7 @@
                 array(
                     'id'       => 'woocommerce-tooltip',
                     'type'     => 'switch', 
-                    'title'    => __('Bật tooltip cho Woocommerce', 'shtheme'),
+                    'title'    => __('Tooltip cho Woocommerce', 'shtheme'),
                     'default'  => false,
                     'on'       => 'Bật',
                     'off'      => 'Tắt',
@@ -684,13 +694,14 @@
                 array(
                     'id'       => 'woocommerce-disable-cart',
                     'type'     => 'switch', 
-                    'title'    => __('Bật chức năng giỏ hàng', 'shtheme'),
+                    'title'    => __('Chức năng giỏ hàng', 'shtheme'),
                     'default'  => false,
                     'on'       => 'Bật',
                     'off'      => 'Tắt',
                 ),
             )
         ) );
+    }
 
     /*
      * <--- END SECTIONS

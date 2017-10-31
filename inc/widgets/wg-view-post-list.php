@@ -35,7 +35,7 @@ class Gtid_Post_Top_View_Widget extends WP_Widget {
 
             $args = array(
                 'post_type'             => 'post',
-                'showposts'             => $instance['numpro'],
+                'posts_per_page'        => $instance['numpro'],
                 'meta_key'              => 'postview_number',
                 'orderby'               => 'meta_value_num',
                 'order'                 => 'DESC',

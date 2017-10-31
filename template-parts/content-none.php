@@ -10,9 +10,7 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'shtheme' ); ?></h1>
-	</header><!-- .page-header -->
+	<h1 class="page-title"><?php esc_html_e( 'Không tìm thấy kết quả', 'shtheme' ); ?></h1>
 
 	<div class="page-content">
 		<?php
@@ -22,15 +20,13 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'shtheme' ); ?></p>
+			<p><?php esc_html_e( 'Không có kết quả tìm kiếm nào phù hợp với từ khóa của bạn. Xin hãy thử lại tìm kiếm với từ khóa khác.', 'shtheme' ); ?></p>
 			<?php
-				get_search_form();
 
 		else : ?>
 
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'shtheme' ); ?></p>
 			<?php
-				get_search_form();
 
 		endif; ?>
 	</div><!-- .page-content -->

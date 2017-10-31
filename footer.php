@@ -29,7 +29,10 @@ do_action( 'sh_after_content_sidebar_wrap' );
 			<div class="container">
 				<div class="wrap">
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-sm-6">
+
+						</div>
+						<div class="col-sm-6 text-right">
 							<p id="copyright">Thiết kế bởi <a href="http://thietkeweb3b.com/" target="_blank" rel="nofollow">3B Việt Nam</a></p>
 						</div>
 					</div>
@@ -39,6 +42,9 @@ do_action( 'sh_after_content_sidebar_wrap' );
 		<p id="back-top"><a href="#top" target="_blank"><span></span></a></p>
 		
 	</footer><!-- #colophon -->
+
+	<?php do_action( 'sh_after_footer' );?>
+	
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

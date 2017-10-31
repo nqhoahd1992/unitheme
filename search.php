@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
+	<div id="primary" class="content-sidebar-wrap">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -55,8 +55,10 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
-	</section><!-- #primary -->
+
+		<?php do_action( 'sh_after_content' );?>
+		
+	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

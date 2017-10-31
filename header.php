@@ -2,8 +2,6 @@
 /**
  * The header for our theme
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package SH_Theme
@@ -12,43 +10,32 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<?php wp_head(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<?php wp_head(); ?>
 </head>
 
 <?php global $sh_option;?>
 <body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+
+<?php do_action( 'sh_before_header' );?>
+
 <div id="page" class="site">
 
 	<header id="masthead" <?php header_class();?> role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+
 		<!-- Start Menu Mobile -->
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#NavbarMobile">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>                        
-					</button>
-					<a class="navbar-brand" href="<?php echo get_site_url();?>">Menu</a>
+				<button id="showmenu" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#NavbarMobile">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="<?php echo get_site_url();?>">Menu</a>
 			</div>
-			<div class="container-fluid">
-				<?php
-				wp_nav_menu( array(
-	                'menu'              => 'primary',
-	                'menu_id'        	=> 'primary-menu',
-	                'theme_location'    => 'menu-1',
-	                'depth'             => 2,
-	                'container'         => 'div',
-	                'container_class'   => 'collapse navbar-collapse',
-	                'container_id'      => 'NavbarMobile',
-	                'menu_class'        => 'nav navbar-nav',
-	                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-	                'walker'            => new WP_Bootstrap_Navwalker())
-	            );
-	            ?>
-       	 	</div>
+			
 		</div>
 		<!-- End Menu Mobile -->
 		<?php
@@ -98,14 +85,20 @@
 					echo '<div class="title-bar-wrap">';
 						if( is_page( ) || is_single( ) ) {
 							echo '<h1 class="title">'.get_the_title( ).'</h1>';
-						} elseif( is_category() ) {
+						} elseif( is_category() || is_tag() ) {
 							the_archive_title( '<h1 class="title">', '</h1>' );
 						} elseif( is_search() ) {
-							echo '<h1 class="title">Kết quả tìm kiếm cho từ khóa: '. get_search_query() .'</h1>';
-						} elseif( is_product_category() ) {
-							?><h1 class="title"><?php woocommerce_page_title(); ?></h1><?php
+							echo '<h1 class="title">Tìm kiếm cho từ khóa: '. get_search_query() .'</h1>';
 						} elseif( is_404() ) {
 							echo '<h1 class="title">404</h1>';
+						}
+						if ( class_exists( 'WooCommerce' ) ) {
+							if( is_shop() ) {
+								echo '<h1 class="title">Sản phẩm</h1>';
+							}
+							elseif( is_product_category() ) {
+								?><h1 class="title"><?php woocommerce_page_title(); ?></h1><?php
+							}
 						}
 						breadcrumbs();
 					echo '</div>';

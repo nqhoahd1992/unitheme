@@ -89,7 +89,7 @@ html .woocommerce div.product .product_title {
 }
 html .woocommerce div.product p.price, html .woocommerce div.product span.price {
 	font-weight: bold;
-	color: #f70320;
+	color: #ff0000;
 }
 html .price {
 	color: #ff0000;
@@ -573,7 +573,7 @@ html .woocommerce .products ul, .woocommerce ul.products {
 	left: 5px;
 	z-index: 9;
 	color: #FFF;
-	background: #337ab7;
+	background: #ff0000;
 	text-align: center;
 	padding: 11px 5px;
 	border-radius: 50%;
