@@ -41,7 +41,7 @@ get_header(); ?>
 					<div class="ps-meta-info">
 					   <div class="ps-alignleft">
 					   		<span><?php the_time('j F Y') ?></span><span class="ps-inline-sep">|</span>
-					   		<?php echo get_the_category_list();?>
+					   		<?php echo get_the_category_list(', ');?>
 					   </div>
 					   <div class="ps-alignright">
 					   		<a href="<?php the_permalink();?>" class="ps-read-more">Đọc thêm</a>
