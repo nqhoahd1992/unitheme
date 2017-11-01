@@ -825,6 +825,9 @@ embed, iframe, object {max-width: 100%}
     position: relative;
     top: -6px;
 }
+.post-categories {
+    display: inline-block;
+}
 
 /*--------------------------------------------------------------
 ## Shortcode 
