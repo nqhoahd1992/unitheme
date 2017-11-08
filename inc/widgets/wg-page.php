@@ -12,7 +12,7 @@ class Page_Widget_3B extends WP_Widget {
         parent::__construct(
             'featuredpage',
             '3B - Trang',
-            array( 'description'  =>  'Hiển thị một trang tiêu biểu' )
+            array( 'description'  =>  'Hiển thị một trang' )
         );
 
     }

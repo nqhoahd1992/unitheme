@@ -599,11 +599,6 @@
                 'title' => __('Link Facebook', 'shtheme'),
             ),
             array(
-                'id'=>'social-youtube',
-                'type' => 'text',
-                'title' => __('Link Youtube', 'shtheme'),
-            ),
-            array(
                 'id'=>'social-twitter',
                 'type' => 'text',
                 'title' => __('Link Twitter', 'shtheme'),
@@ -612,6 +607,11 @@
                 'id'=>'social-google',
                 'type' => 'text',
                 'title' => __('Link Google +', 'shtheme'),
+            ),
+            array(
+                'id'=>'social-youtube',
+                'type' => 'text',
+                'title' => __('Link Youtube', 'shtheme'),
             ),
         )
     ) );

@@ -72,6 +72,18 @@
 				<nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
+
+				
+				<?php
+				
+				if( class_exists('WooCommerce') ){
+					echo '<div class="navbar-actions">';
+						echo sh_woocommerce_get__cart_menu_item__content();
+					echo '</div>';
+				}
+				
+				?>
+
 			</div>
 		</div>
 	</header><!-- #masthead -->

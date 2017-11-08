@@ -421,7 +421,7 @@ class sh_blog_shortcode {
 			}
 			// Check display description
 			if ( $hide_desc == '1' ) {
-				$html .= '<div class="entry-description">'. get_the_content_limit('100',' ') .'</div>';
+				$html .= '<div class="entry-description">'. get_the_content_limit('200',' ') .'</div>';
 			}
 			// Check display view more button
 			if ( $hide_viewmore == '1' ) {

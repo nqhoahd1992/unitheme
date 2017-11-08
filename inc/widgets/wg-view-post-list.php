@@ -19,7 +19,7 @@ class Gtid_Post_Top_View_Widget extends WP_Widget {
 
     function widget($args, $instance) {
         extract($args);
-        $instance = wp_parse_args( (array)$instance, array(  'title' => '', 'numpro' => '', 'image_alignment' => '', 'image_size' => '', 'postdate' => '', 'show_content' => 'content-limit','content_limit' => '', ) );
+        $instance = wp_parse_args( (array)$instance, array(  'title' => '', 'numpro' => '', 'show_image' => '', 'image_alignment' => '', 'image_size' => '', 'postdate' => '', 'show_content' => 'content-limit','content_limit' => '', ) );
         echo $before_widget;
 
         if ($instance['title']) echo $before_title . apply_filters('widget_title', $instance['title']) . $after_title;
@@ -47,9 +47,11 @@ class Gtid_Post_Top_View_Widget extends WP_Widget {
             $the_query->the_post();
             ?>
                 <li id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
-                    <a class="<?php echo $instance['image_alignment'];?>" href="<?php the_permalink();?>" title="<?php the_title();?>">
-                        <?php if(has_post_thumbnail()) the_post_thumbnail( $instance['image_size'] ,array( "alt" => get_the_title() ) );?>
-                    </a>
+                    <?php if ( $instance['show_image'] ) { ?>
+                        <a class="img <?php echo $instance['image_alignment'];?>" href="<?php the_permalink();?>" title="<?php the_title();?>">
+                            <?php if(has_post_thumbnail()) the_post_thumbnail( $instance['image_size'] ,array( "alt" => get_the_title() ) );?>
+                        </a>
+                    <?php } ?>
                     <h3>
                         <a href="<?php the_permalink();?>" title="<?php the_title();?>">
                             <?php the_title();?>
@@ -89,6 +91,7 @@ class Gtid_Post_Top_View_Widget extends WP_Widget {
         	(array)$instance, array( 
             		'title' 			=> '', 
             		'numpro' 			=> '3',
+                    'show_image'        => '',
                     'image_alignment'   => '',
                     'image_size'        => '',
                     'postdate'          => '30',
@@ -110,6 +113,11 @@ class Gtid_Post_Top_View_Widget extends WP_Widget {
         <p>
             <label for="<?php echo $this-> get_field_id('postdate'); ?>"><?php _e('Độ tuổi bài viết','sh_theme'); ?>:</label>
             <input class="widefat" type="number" id="<?php echo $this->get_field_id('postdate'); ?>" name="<?php echo $this->get_field_name('postdate'); ?>" value="<?php echo esc_attr( $instance['postdate'] ); ?>" />
+        </p>
+
+        <p>
+            <input id="<?php echo esc_attr( $this->get_field_id( 'show_image' ) ); ?>" type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'show_image' ) ); ?>" value="1" <?php checked( $instance['show_image'] ); ?>/>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'show_image' ) ); ?>"><?php _e( 'Hiển thị ảnh đại diện', 'sh_theme' ); ?></label>
         </p>
 
         <p>
@@ -140,7 +148,7 @@ class Gtid_Post_Top_View_Widget extends WP_Widget {
                 <option value="content" <?php selected( 'content', $instance['show_content'] ); ?>><?php _e( 'Hiển thị đầy đủ', 'sh_theme' ); ?></option>
                 <option value="excerpt" <?php selected( 'excerpt', $instance['show_content'] ); ?>><?php _e( 'Hiển thị tóm tắt', 'sh_theme' ); ?></option>
                 <option value="content-limit" <?php selected( 'content-limit', $instance['show_content'] ); ?>><?php _e( 'Giới hạn số ký tự', 'sh_theme' ); ?></option>
-                <option value="" <?php selected( '', $instance['show_content'] ); ?>><?php _e( 'Không nội dung', 'sh_theme' ); ?></option>
+                <option value="" <?php selected( '', $instance['show_content'] ); ?>><?php _e( 'Không hiển thị', 'sh_theme' ); ?></option>
             </select>
         </p>
         

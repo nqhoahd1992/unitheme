@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'shtheme' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( esc_html__( 'Kết quả tìm kiếm cho từ khóa: %s', 'shtheme' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 
 			<?php
 			/* Start the Loop */
@@ -33,7 +33,8 @@ get_header(); ?>
 					<div class="clearfix"></div>
 					<div class="ps-meta-info">
 					   <div class="ps-alignleft">
-					   		<span><?php the_time('j F Y') ?></span><span class="ps-inline-sep">|</span><a href="http://raothue.com/category/tin-tuc/" rel="category tag">Tin tức</a>
+					   		<span><?php the_time('j F Y') ?></span><span class="ps-inline-sep">|</span>
+					   		<?php echo get_the_category_list(', ');?>
 					   </div>
 					   <div class="ps-alignright">
 					   		<a href="<?php the_permalink();?>" class="ps-read-more">Đọc thêm</a>

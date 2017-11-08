@@ -10,7 +10,7 @@ class Like_Box_Facebook extends WP_Widget {
 
     function __construct() {
 			parent::__construct (
-	      	'facebook-like',
+	      	'facebook_like',
 	      	'3B - Facebook Like Box', 
 	      	array(
 	          	'description' => 'Hiển thị Like Box Fanpage Facebook'
