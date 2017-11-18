@@ -175,7 +175,7 @@ function get_price_product(){
 	} elseif ( ! empty( $regular_price ) && empty( $sale_price ) ) {
 		echo '<p class="price">'. number_format( $regular_price, 0, '', '.' ) . ' đ</p>';
 	} elseif ( ! empty( $regular_price ) && ! empty( $sale_price ) ) {
-		echo '<p class="price"><ins>'. number_format( $regular_price, 0, '', '.' ) .' đ</ins><del>'. number_format( $sale_price,0,'','.' ) .' đ</del></p>';
+		echo '<p class="price"><ins>'. number_format( $sale_price, 0, '', '.' ) .' đ</ins><del>'. number_format( $regular_price,0,'','.' ) .' đ</del></p>';
 	}
 }
 add_action( 'woocommerce_after_shop_loop_item','get_price_product',10 );

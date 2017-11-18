@@ -613,6 +613,21 @@
                 'type' => 'text',
                 'title' => __('Link Youtube', 'shtheme'),
             ),
+            array(
+                'id'=>'social-linkedin',
+                'type' => 'text',
+                'title' => __('Link Linkedin', 'shtheme'),
+            ),
+            array(
+                'id'=>'social-pinterest',
+                'type' => 'text',
+                'title' => __('Link Pinterest', 'shtheme'),
+            ),
+            array(
+                'id'=>'social-instagram',
+                'type' => 'text',
+                'title' => __('Link Instagram', 'shtheme'),
+            ),
         )
     ) );
 

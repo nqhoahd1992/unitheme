@@ -195,8 +195,9 @@ html .woocommerce .variations_form label {
 html .woocommerce .woocommerce-variation-price {
 	margin-bottom: 15px;
 }
+.related .list-products {margin: 0}
 @media (min-width: 320px) {
-	.related .product {width: 100%;padding-left: 0;padding-right: 0;}
+	.related .product {width: 100%;padding-left: 0;padding-right: 0}
 }
 html #add_payment_method #payment ul.payment_methods li, 
 html .woocommerce-cart #payment ul.payment_methods li, 
@@ -311,7 +312,6 @@ html .woocommerce #order_review table.shop_table .tax-rate td,
 html .woocommerce #order_review table.shop_table .order-total td {
 	text-align: right;
 }
-
 @media screen and (max-width: 768px) {
 	html .woocommerce form .form-row-first, 
 	html .woocommerce-page form .form-row-first, 
@@ -539,7 +539,6 @@ html .woocommerce .products ul, .woocommerce ul.products {
 		float: none;
 	}
 }
-
 @media (max-width: 414px) {
 	html .woocommerce div.product .woocommerce-tabs ul.tabs {
 		padding: 0;
@@ -756,7 +755,6 @@ html .woocommerce-mini-cart-wrapper a.remove {
     -o-border-radius: 50%;
     border-radius: 50%;
 }
-
 /* List Products */
 .list-products {
 	padding: 0;
@@ -819,4 +817,3 @@ html .woocommerce-mini-cart-wrapper a.remove {
 	transform: scale(1.1);
 	-webkit-transform: scale(1.1);
 }
-
