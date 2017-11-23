@@ -188,3 +188,26 @@ function postview_get($postID){
 }
 
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+/**
+ * Get term name
+ */
+function get_dm_name( $cat_id, $taxonomy ) {
+	$cat_id = (int) $cat_id;
+	$category = get_term( $cat_id, $taxonomy );
+	if ( ! $category || is_wp_error( $category ) )
+	return '';
+	return $category->name;
+}
+
+/**
+ * Get term link
+ */
+function get_dm_link( $category, $taxonomy ) {
+	if ( ! is_object( $category ) )
+	$category = (int) $category;
+	$category = get_term_link( $category, $taxonomy );
+	if ( is_wp_error( $category ) )
+	return '';
+	return $category;
+}

@@ -48,7 +48,7 @@ get_header(); ?>
 			if( !empty( $list_pro ) ) {
 				echo '<div class="product-wrap">';
 					foreach ($list_pro as $key => $idpost) {
-						echo '<h2 class="heading"><a href="'. get_productcat_link( $idpost ) .'">'. get_productcat_name( $idpost ) .'</a></h2>';
+						echo '<h2 class="heading"><a href="'. get_dm_link( $idpost,'product_cat' ) .'">'. get_dm_name( $idpost,'product_cat' ) .'</a></h2>';
 						echo do_shortcode('[shproduct posts_per_page="' . $numpro . '" categories="' . $idpost . '" numcol="' . $numcolpro . '"]');
 					}
 				echo '</div>';

@@ -33,26 +33,6 @@ add_theme_support( 'wc-product-gallery-zoom' );
 add_theme_support( 'wc-product-gallery-slider' );
 
 /**
- * 
- */
-function get_productcat_name( $cat_id ) {
-	$cat_id = (int) $cat_id;
-	$category = get_term( $cat_id, 'product_cat' );
-	if ( ! $category || is_wp_error( $category ) )
-	return '';
-	return $category->name;
-}
-
-function get_productcat_link( $category ) {
-	if ( ! is_object( $category ) )
-	$category = (int) $category;
-	$category = get_term_link( $category, 'product_cat' );
-	if ( is_wp_error( $category ) )
-	return '';
-	return $category;
-}
-
-/**
  * Show image category product
  */
 function woocommerce_category_image($products) {
