@@ -54,6 +54,9 @@ function sh_footer_widget_areas() {
 	    case '4':
 	        $classes = 'footer-widgets-area col-md-3';
 	        break;
+	    case '5':
+	        $classes = 'footer-widgets-area col-lg-15 col-md-4 col-sm-4 col-xs-12';
+	        break;
 	}
 
  	$counter = 1;

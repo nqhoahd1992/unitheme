@@ -38,6 +38,7 @@
 			
 		</div>
 		<!-- End Menu Mobile -->
+		
 		<?php
 		if( $sh_option['display-topheader-widget'] == 1 ) {
 			?>
@@ -66,9 +67,11 @@
 				endif; ?>
 			</div><!-- .site-branding -->
 			<div class="header-content">
+
 				<div class="logo">
 					<?php display_logo();?>
 				</div>
+
 				<nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
@@ -112,9 +115,17 @@
 								?><h1 class="title"><?php woocommerce_page_title(); ?></h1><?php
 							}
 						}
-						breadcrumbs();
+						if ( function_exists('yoast_breadcrumb') ) {
+							yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+						}
 					echo '</div>';
 				echo '</div>';
+			echo '</div>';
+		} elseif ( ! is_front_page() ) {
+			echo '<div class="container">';
+			if ( function_exists('yoast_breadcrumb') ) {
+				yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+			}
 			echo '</div>';
 		}
 		?>

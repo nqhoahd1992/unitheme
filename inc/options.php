@@ -317,7 +317,7 @@
                 'default'   => 1,
                 'min'       => 1,
                 'step'      => 1,
-                'max'       => 4,
+                'max'       => 5,
                 'display_value' => 'text'
             ),
         )
@@ -336,7 +336,7 @@
         'subsection'       => true,
         'fields'           => array(
             array(
-                'id'       => 'opt-multi-select-category',
+                'id'       => 'list_cat_post',
                 'type'     => 'select',
                 'multi'    => true,
                 'title'    => __( 'Chọn danh mục bài viết', 'shtheme' ),
@@ -347,7 +347,7 @@
 				),
             ),
             array(
-			    'id' 		=> 'opt-number-new',
+			    'id' 		=> 'number_news',
 			    'type' 		=> 'slider',
 			    'title' 	=> __('Nhập số lượng bài viết', 'shtheme'),
 			    'default' 	=> 3,
@@ -357,7 +357,7 @@
 			    'display_value' => 'text'
 			),
 			array(
-                'id'            => 'opt-type-layout-new',
+                'id'            => 'type_layout',
                 'type'          => 'image_select',
                 'title'         => __('Kiểu giao diện blog', 'shtheme'),
                	'subtitle'      => __('Chọn mẫu giao diện blog muốn hiển thị ở ngoài trang chủ', 'shtheme'),
@@ -404,7 +404,7 @@
 	        'subsection'       => true,
 	        'fields'           => array(
 	            array(
-	                'id'       => 'opt-multi-select-product-cat',
+	                'id'       => 'list_cat_product',
 	                'type'     => 'select',
 	                'multi'    => true,
 	                'title'    => __( 'Chọn danh mục sản phẩm', 'shtheme' ),
@@ -415,7 +415,7 @@
 					),
 	            ),
 	            array(
-				    'id' 		=> 'opt-number-product',
+				    'id' 		=> 'number_product',
 				    'type' 		=> 'slider',
 				    'title' 	=> __('Nhập số lượng sản phẩm', 'shtheme'),
 				    'default' 	=> 3,
@@ -425,7 +425,7 @@
 				    'display_value' => 'text'
 				),
 				array(
-				    'id' 		=> 'opt-number-product-column',
+				    'id' 		=> 'number_product_row',
 				    'type' 		=> 'slider',
 				    'title' 	=> __('Nhập số sản phẩm một hàng', 'shtheme'),
 				    'default' 	=> 3,

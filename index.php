@@ -13,55 +13,46 @@
  */
 
 global $sh_option;
-// Category
-if( ! empty( $sh_option['opt-multi-select-category'] ) ) {
-	$list_cat = $sh_option['opt-multi-select-category'];
-}
-if( ! empty( $sh_option['opt-number-new'] ) ) {
-	$numpost = $sh_option['opt-number-new'];
-}
-// if( ! empty( $sh_option['opt-number-column'] ) ) {
-// 	$numcolpost = $sh_option['opt-number-column'];
-// }
-if( ! empty( $sh_option['opt-type-layout-new'] ) ) {
-	$style_layout_post = $sh_option['opt-type-layout-new'];
-}
-// Product
-if ( class_exists( 'WooCommerce' ) ) {
-	if( ! empty( $sh_option['opt-multi-select-product-cat'] ) ) {
-		$list_pro = $sh_option['opt-multi-select-product-cat'];
-	}
-	if( ! empty( $sh_option['opt-number-product'] ) ) {
-		$numpro = $sh_option['opt-number-product'];
-	}
-	if( ! empty( $sh_option['opt-number-product-column'] ) ) {
-		$numcolpro = $sh_option['opt-number-product-column'];
-	}
-}
-
 get_header(); ?>
 	<div id="primary" class="content-sidebar-wrap">
 		<main id="main" class="site-main" role="main">
 
+			<!-- --------------------- Products --------------------- -->
 			<?php
-			// Products
-			if( !empty( $list_pro ) ) {
-				echo '<div class="product-wrap">';
-					foreach ($list_pro as $key => $idpost) {
-						echo '<h2 class="heading"><a href="'. get_dm_link( $idpost,'product_cat' ) .'">'. get_dm_name( $idpost,'product_cat' ) .'</a></h2>';
-						echo do_shortcode('[shproduct posts_per_page="' . $numpro . '" categories="' . $idpost . '" numcol="' . $numcolpro . '"]');
-					}
-				echo '</div>';
+			if ( class_exists( 'WooCommerce' ) ) {
+				if( $sh_option['number_product'] ) {
+					$number_product = $sh_option['number_product'];
+				}
+				if( $sh_option['number_product_row'] ) {
+					$number_product_row = $sh_option['number_product_row'];
+				}
+				if( $sh_option['list_cat_product'] ) {
+					$list_cat_product = $sh_option['list_cat_product'];
+					echo '<div class="product-wrap">';
+						foreach ($list_cat_product as $key => $idpost) {
+							echo '<h2 class="heading"><a href="'. get_dm_link( $idpost,'product_cat' ) .'">'. get_dm_name( $idpost,'product_cat' ) .'</a></h2>';
+							echo do_shortcode('[shproduct posts_per_page="' . $number_product . '" categories="' . $idpost . '" numcol="' . $number_product_row . '"]');
+						}
+					echo '</div>';
+				}
 			}
+			
 			?>
 
+			<!-- --------------------- News --------------------- -->
 			<?php
-			// News
-			if( !empty( $list_cat ) ) {
+			if( $sh_option['number_news'] ) {
+				$number_news = $sh_option['number_news'];
+			}
+			if( $sh_option['type_layout'] ) {
+				$type_layout = $sh_option['type_layout'];
+			}
+			if( $sh_option['list_cat_post'] ) {
+				$list_cat_post = $sh_option['list_cat_post'];
 				echo '<div class="news-wrap">';
-					foreach ($list_cat as $key => $idpost) {
+					foreach ($list_cat_post as $key => $idpost) {
 						echo '<h2 class="heading"><a href="'. get_category_link( $idpost ) .'">'. get_cat_name( $idpost ) .'</a></h2>';
-						echo do_shortcode('[shblog posts_per_page="' . $numpost . '" categories="' . $idpost . '" style="' . $style_layout_post . '"]');
+						echo do_shortcode('[shblog posts_per_page="' . $number_news . '" categories="' . $idpost . '" style="' . $type_layout . '"]');
 					}
 				echo '</div>';
 			}
