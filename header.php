@@ -26,16 +26,15 @@
 	<header id="masthead" <?php header_class();?> role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 
 		<!-- Start Menu Mobile -->
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="navbar-header">
-				<button id="showmenu" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#NavbarMobile">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="<?php echo get_site_url();?>">Menu</a>
-			</div>
-			
+		<div class="navbar navbar-fixed-top">
+			<a id="showmenu" class="">
+				<span class="hamburger hamburger--collapse">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</span>
+			</a>
+			<a class="navbar-brand" href="<?php echo get_site_url();?>">Menu</a>
 		</div>
 		<!-- End Menu Mobile -->
 		
