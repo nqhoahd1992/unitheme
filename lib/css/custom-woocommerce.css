@@ -236,6 +236,12 @@ html .woocommerce form.checkout input[type=search] {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
+html .woocommerce form .form-row .input-checkbox {
+    margin: 6px 6px 0 0;
+}
+html .woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox span {
+	padding-left: 20px;
+}
 html .select2-container .select2-choice, 
 html .select2-container .select2-selection--single {
 	height: 40px;
@@ -418,6 +424,10 @@ html .woocommerce.no-sidebar div.product .woocommerce-tabs ul.tabs li.active a:a
 html .single-product div.product .woocommerce-tabs {
 	border-top: 1px solid #e3e3e3;
 	padding-top: 40px;
+	clear: both;
+}
+.related {
+	clear: both;
 }
 html .single-product div.product .woocommerce-tabs:before, html .single-product div.product .woocommerce-tabs:after {
 	content: ' ';
