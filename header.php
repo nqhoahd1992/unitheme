@@ -65,68 +65,22 @@
 				<?php
 				endif; ?>
 			</div><!-- .site-branding -->
-			<div class="header-content">
 
+			<div class="header-content">
 				<div class="logo">
 					<?php display_logo();?>
 				</div>
-
 				<nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
-
-				
-				<?php
-				
-				if( class_exists('WooCommerce') ){
-					echo '<div class="navbar-actions">';
-						echo sh_woocommerce_get__cart_menu_item__content();
-					echo '</div>';
-				}
-				
-				?>
-
+				<?php do_action( 'sh_after_menu' ) ?>
 			</div>
+			
 		</div>
 	</header><!-- #masthead -->
 	
 	<div id="content" class="site-content">
 
-		<?php
-		if( $sh_option['display-pagetitlebar'] == '1' && ! is_front_page() ) {
-			echo '<div class="flex page-title-bar">';
-				echo '<div class="container">';
-					echo '<div class="title-bar-wrap">';
-						if( is_page( ) || is_single( ) ) {
-							echo '<h1 class="title">'.get_the_title( ).'</h1>';
-						} elseif( is_category() || is_tag() ) {
-							the_archive_title( '<h1 class="title">', '</h1>' );
-						} elseif( is_search() ) {
-							echo '<h1 class="title">Tìm kiếm cho từ khóa: '. get_search_query() .'</h1>';
-						} elseif( is_404() ) {
-							echo '<h1 class="title">404</h1>';
-						}
-						if ( class_exists( 'WooCommerce' ) ) {
-							if( is_shop() ) {
-								echo '<h1 class="title">Sản phẩm</h1>';
-							}
-							elseif( is_product_category() ) {
-								?><h1 class="title"><?php woocommerce_page_title(); ?></h1><?php
-							}
-						}
-						if ( function_exists('yoast_breadcrumb') ) {
-							yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-						}
-					echo '</div>';
-				echo '</div>';
-			echo '</div>';
-		} elseif ( ! is_front_page() ) {
-			echo '<div class="container">';
-			if ( function_exists('yoast_breadcrumb') ) {
-				yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-			}
-			echo '</div>';
-		}
-		?>
+		<?php do_action( 'sh_before_main_content' ) ?>
 
 		<div class="container">

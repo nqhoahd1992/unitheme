@@ -257,8 +257,9 @@ html .select2-container--default .select2-selection--single .select2-selection__
 	margin-top: 2px;
 }
 html .select2-container--default .select2-selection--single .select2-selection__rendered {
-	height: 40px;
-	line-height: 40px;
+	height: 38px;
+	line-height: 38px;
+	outline-width: 0;
 }
 html .woocommerce #order_review table.shop_table th, 
 html .woocommerce #order_review table.shop_table td {
@@ -763,6 +764,12 @@ html .woocommerce-mini-cart-wrapper a.remove {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%;
+}
+html .woocommerce-message {
+	border-top-color: #337ab7;
+}
+html .woocommerce-message::before {
+	color: #337ab7;
 }
 /* List Products */
 @media (min-width: 1200px) {

@@ -213,6 +213,59 @@ function code_hover_zoom_class_img() {
 add_action('wp_footer','code_hover_zoom_class_img', 1);
 
 /**
+ * Insert button share single product
+ */
+function insert_share_product(){
+	?>
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57e482b2e67c850b"></script>
+	<div class="addthis_inline_share_toolbox_4524"></div>
+	<?php
+}
+add_action( 'woocommerce_share','insert_share_product' );
+
+/**
+ * Returns string with shopping basket icon and content in VERTICAL menu
+ *
+ * @return string
+ */
+if( ! function_exists('sh_woocommerce_get__cart_menu_item__content') ) {
+	function sh_woocommerce_get__cart_menu_item__content() {
+		// ob_start();
+		echo '<div class="navbar-actions">';
+			echo '<div class="navbar-actions-shrink shopping-cart">';
+				echo '<a href="javascript:void(0);" class="shopping-cart-icon-container ffb-cart-menu-item">';
+					echo '<span class="shopping-cart-icon-wrapper" title="' . WC()->cart->get_cart_contents_count() . '">';
+					echo '<span class="shopping-cart-menu-title">';
+						echo get_the_title( wc_get_page_id('cart') );
+						echo '&nbsp;';
+					echo '</span><i class="fa fa-shopping-cart" aria-hidden="true"></i> </span>';
+				echo '</a>';
+				echo '<div class="shopping-cart-menu-wrapper">';
+					wc_get_template( 'cart/mini-cart.php', array('list_class' => ''));
+				echo '</div>';
+			echo '</div>';
+		echo '</div>';
+		// return ob_get_clean();
+	}
+	add_action( 'sh_after_menu', 'sh_woocommerce_get__cart_menu_item__content');
+}
+
+/**
+ * Adds rule after product(s) is added to shopping basket. Rule is that everything with class .shopping-cart is
+ * refreshed / reloaded with ajax
+ *
+ * @param array $fragments
+ * @return array
+ */
+if( ! function_exists('woocommerce_ark__cart_menu_item__fragment') ) {
+	function woocommerce_ark__cart_menu_item__fragment($fragments) {
+		$fragments['.shopping-cart'] = sh_woocommerce_get__cart_menu_item__content();
+		return $fragments;
+	}
+}
+add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_ark__cart_menu_item__fragment');
+
+/**
  * Button Detail content-product.php
  */
 function insert_btn_detail(){
@@ -239,56 +292,3 @@ remove_action( 'woocommerce_shop_loop_item_title','woocommerce_template_loop_pro
 remove_action( 'woocommerce_single_product_summary','woocommerce_template_single_meta',40 );
 
 
-
-function insert_share_product(){
-	?>
-	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57e482b2e67c850b"></script>
-	<div class="addthis_inline_share_toolbox_4524"></div>
-	<?php
-}
-add_action( 'woocommerce_share','insert_share_product' );
-
-
-if( ! function_exists('sh_woocommerce_get__cart_menu_item__content') ) {
-	/**
-	 * Returns string with shopping basket icon and content in VERTICAL menu
-	 *
-	 * @return string
-	 */
-	function sh_woocommerce_get__cart_menu_item__content() {
-		ob_start();
-		echo '<div class="navbar-actions-shrink shopping-cart">';
-
-			echo '<a href="javascript:void(0);" class="shopping-cart-icon-container ffb-cart-menu-item">';
-				echo '<span class="shopping-cart-icon-wrapper" title="' . WC()->cart->get_cart_contents_count() . '">';
-				echo '<span class="shopping-cart-menu-title">';
-					echo get_the_title( wc_get_page_id('cart') );
-					echo '&nbsp;';
-				echo '</span>';
-				echo '<i class="fa fa-shopping-cart" aria-hidden="true"></i> ';
-				echo '</span>';
-			echo '</a>';
-
-			echo '<div class="shopping-cart-menu-wrapper">';
-				wc_get_template( 'cart/mini-cart.php', array('list_class' => ''));
-			echo '</div>';
-
-		echo '</div>';
-		return ob_get_clean();
-	}
-}
-
-add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_ark__cart_menu_item__fragment');
-if( ! function_exists('woocommerce_ark__cart_menu_item__fragment') ) {
-	/**
-	 * Adds rule after product(s) is added to shopping basket. Rule is that everything with class .shopping-cart is
-	 * refreshed / reloaded with ajax
-	 *
-	 * @param array $fragments
-	 * @return array
-	 */
-	function woocommerce_ark__cart_menu_item__fragment($fragments) {
-		$fragments['.shopping-cart'] = sh_woocommerce_get__cart_menu_item__content();
-		return $fragments;
-	}
-}

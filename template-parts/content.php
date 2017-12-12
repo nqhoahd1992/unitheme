@@ -12,7 +12,7 @@ postview_set(get_the_ID());
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
-	<?php if( $sh_option['display-pagetitlebar'] == '0' ) : ?>
+	<?php if( $sh_option['display-pagetitlebar'] == '0' || empty( $sh_option['display-pagetitlebar'] )) : ?>
 		<header class="entry-header">
 			<?php
 			if ( is_single() ) :

@@ -19,7 +19,7 @@ get_header(); ?>
 
 				?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<?php if( $sh_option['display-pagetitlebar'] == '0' ) : ?>
+					<?php if( $sh_option['display-pagetitlebar'] == '0' || empty( $sh_option['display-pagetitlebar'] )) : ?>
 						<header class="entry-header">
 							<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 						</header><!-- .entry-header -->
