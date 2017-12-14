@@ -161,7 +161,8 @@ html .woocommerce #reviews #comments ol.commentlist {
 html .woocommerce #reviews #comments ol.commentlist li {
 	list-style: none;
 }
-html .woocommerce .wc-tab h2 {
+html .woocommerce .wc-tab h2.woocommerce-Reviews-title,
+html .woocommerce .wc-tab h2.woocommerce-description-title {
 	display: none;
 	font-size: 16px;
 	margin-top: 8px;
