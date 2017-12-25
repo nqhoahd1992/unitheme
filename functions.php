@@ -159,23 +159,12 @@ if ( class_exists( 'WooCommerce' ) ) {
 require get_template_directory() . '/inc/widgets/wg-post-list.php';
 require get_template_directory() . '/inc/widgets/wg-support.php';
 require get_template_directory() . '/inc/widgets/wg-fblikebox.php';
-require get_template_directory() . '/inc/widgets/wg-image-ads.php';
 require get_template_directory() . '/inc/widgets/wg-page.php';
 require get_template_directory() . '/inc/widgets/wg-view-post-list.php';
 require get_template_directory() . '/inc/widgets/wg-information.php';
 require get_template_directory() . '/inc/widgets/wg-social.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/widgets/wg-product-slider.php';
-}
-
-function add_script_admin() {
-	if ( ! did_action( 'wp_enqueue_media' ) ) {
-		wp_enqueue_media();
-	}  
-	wp_enqueue_script( "upload", SH_DIR . "/lib/js/upload.js", array( "jquery" ) );
-}
-if( is_admin() ) {
-	add_action( "admin_head", "add_script_admin" );
 }
 
 function shtheme_lib_scripts(){
