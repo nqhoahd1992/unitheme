@@ -183,15 +183,7 @@ function shtheme_lib_scripts(){
 
 	// Font Awesome
 	wp_enqueue_style( 'fontawesome-style', SH_DIR .'/lib/css/font-awesome.min.css' );
-
-	// Woocommerce
-	if ( class_exists( 'WooCommerce' ) ) {
-		wp_enqueue_style( 'woocommerce-css-style', SH_DIR .'/lib/css/custom-woocommerce.css' );
-	}
-
-	// Dev Tooltip
-	wp_register_style( 'hover-zoom-style', SH_DIR .'/lib/css/stickytooltip.css' );
-    wp_register_script( 'hover-zoom-js', SH_DIR .'/lib/js/stickytooltip.js' );
+	
 }
 add_action( 'wp_enqueue_scripts', 'shtheme_lib_scripts' , 1 );
 

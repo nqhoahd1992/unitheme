@@ -239,6 +239,14 @@ iframe[name='google_conversion_frame'] {height: 0 !important;width: 0 !important
 	color: #FFF;
 }
 .screen-reader-text {display: none}
+.btn {
+	background: #337ab7;
+	color: #FFF;
+}
+.btn.focus, .btn:focus, .btn:hover {
+	color: #FFF;
+	opacity: .9;
+}
 .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
 	background: #337ab7;border: none;
 }

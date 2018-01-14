@@ -643,8 +643,13 @@
                 'title' => __('Số điện thoại', 'shtheme'),
             ),
             array(
+                'id'=>'information-email',
+                'type' => 'text',
+                'title' => __('Email', 'shtheme'),
+            ),
+            array(
                 'id'=>'information-address',
-                'type' => 'textarea',
+                'type' => 'text',
                 'title' => __('Địa chỉ', 'shtheme'),
             ),
             array(

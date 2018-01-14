@@ -1,4 +1,20 @@
 <?php
+/**
+ * Register Shop Widget Area
+ *
+ */
+function shtheme_add_sidebar_shop() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Shop Sidebar', 'shtheme' ),
+		'id'            => 'sidebar-shop',
+		'description'   => esc_html__( 'Add widgets here.', 'shtheme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'shtheme_add_sidebar_shop' );
 
 /**
  * Setup layout page woocommerce
@@ -18,7 +34,9 @@ function my_theme_wrapper_start() {
 
 function my_theme_wrapper_end() {
 	echo '</div>';
-	do_action( 'sh_after_content' );
+	echo '<aside class="sidebar sidebar-shop" itemscope itemtype="https://schema.org/WPSideBar">';
+		dynamic_sidebar( 'sidebar-shop' );
+	echo '</aside>';
 	echo '</div>';
 }
 
@@ -181,6 +199,23 @@ function dev_disable_cart(){
 	}
 }
 add_action( 'init','dev_disable_cart' );
+
+function shtheme_lib_woocommerce_scripts(){
+
+	// Main js
+	wp_enqueue_script( 'main-woo-js', SH_DIR . '/lib/js/main-woo.js', array(), '1.0', true );
+	wp_localize_script( 'main-woo-js', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+
+	// Woocommerce
+	if ( class_exists( 'WooCommerce' ) ) {
+		wp_enqueue_style( 'woocommerce-css-style', SH_DIR .'/lib/css/custom-woocommerce.css' );
+	}
+
+	// Dev Tooltip
+	wp_register_style( 'hover-zoom-style', SH_DIR .'/lib/css/stickytooltip.css' );
+    wp_register_script( 'hover-zoom-js', SH_DIR .'/lib/js/stickytooltip.js' );
+}
+add_action( 'wp_enqueue_scripts', 'shtheme_lib_woocommerce_scripts' , 1 );
 
 /**
  * Dev Tooltip
