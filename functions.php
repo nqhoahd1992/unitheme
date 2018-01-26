@@ -7,25 +7,6 @@
  * @package SH_Theme
  */
 
-function sh_constants() {
-	define( 'PARENT_DIR', get_template_directory() );
-	define( 'SH_DIR',  get_template_directory_uri() );
-	define( 'SH_FUNCTIONS_DIR', PARENT_DIR . '/inc/functions' );
-}
-add_action( 'init', 'sh_constants' );
-
-function sh_load_framework() {
-	// Load Functions.
-	require_once( PARENT_DIR . '/inc/options-function.php' );
-	require_once( SH_FUNCTIONS_DIR . '/init.php' );
-	require_once( SH_FUNCTIONS_DIR . '/sidebar.php' );
-	require_once( SH_FUNCTIONS_DIR . '/formatting.php' );
-	require_once( SH_FUNCTIONS_DIR . '/breadcrumbs.php' );
-	require_once( SH_FUNCTIONS_DIR . '/dashboard.php' );
-	require_once( SH_FUNCTIONS_DIR . '/mobilemenu.php' );
-}
-add_action( 'init','sh_load_framework' );
-
 if ( ! function_exists( 'shtheme_setup' ) ) :
 	function shtheme_setup() {
 		
@@ -33,6 +14,7 @@ if ( ! function_exists( 'shtheme_setup' ) ) :
 
 		// Load Theme Options
 		require get_template_directory() . '/inc/options.php';
+		Redux::init('sh_option');
 
 		// Add theme support
 		add_theme_support( 'automatic-feed-links' );
@@ -55,6 +37,25 @@ if ( ! function_exists( 'shtheme_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'shtheme_setup' );
+
+function sh_constants() {
+	define( 'PARENT_DIR', get_template_directory() );
+	define( 'SH_DIR',  get_template_directory_uri() );
+	define( 'SH_FUNCTIONS_DIR', PARENT_DIR . '/inc/functions' );
+}
+add_action( 'init', 'sh_constants' );
+
+function sh_load_framework() {
+	// Load Functions.
+	require_once( PARENT_DIR . '/inc/options-function.php' );
+	require_once( SH_FUNCTIONS_DIR . '/init.php' );
+	require_once( SH_FUNCTIONS_DIR . '/sidebar.php' );
+	require_once( SH_FUNCTIONS_DIR . '/formatting.php' );
+	require_once( SH_FUNCTIONS_DIR . '/breadcrumbs.php' );
+	require_once( SH_FUNCTIONS_DIR . '/dashboard.php' );
+	require_once( SH_FUNCTIONS_DIR . '/mobilemenu.php' );
+}
+add_action( 'init','sh_load_framework' );
 
 /**
  * Custom Login Page
