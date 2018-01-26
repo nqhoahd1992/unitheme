@@ -12,7 +12,7 @@ function create_menu_mobile_style_sliding(){
     ?>
     <nav id="mobilenav">
         <div class="toplg">
-            <h3>MENU</h3>
+            <h3><?php echo __( 'MENU', 'shtheme' )?></h3>
         </div>
         <?php 
         wp_nav_menu( array(

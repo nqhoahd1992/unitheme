@@ -30,7 +30,7 @@ class sh_blog_shortcode {
 			'style'   						=> '1',
 			'posts_per_page'				=> '5',
 			'categories'					=> '',
-			'custom_text'					=> 'Xem Thêm',
+			'custom_text'					=> __( 'Read more', 'shtheme' ),
 			'hide_category'					=> '1',
 			'hide_viewmore'					=> '1',
 			'hide_meta'						=> '1',
@@ -377,7 +377,7 @@ class sh_blog_shortcode {
 		extract( shortcode_atts( array(
 			'posts_per_page'				=> '5',
 			'categories'					=> '',
-			'custom_text'					=> 'Xem Thêm',
+			'custom_text'					=> __( 'Read more', 'shtheme' ),
 			'hide_category'					=> '0',
 			'hide_viewmore'					=> '0',
 			'hide_meta'						=> '0',
@@ -425,7 +425,7 @@ class sh_blog_shortcode {
 			}
 			// Check display view more button
 			if ( $hide_viewmore == '1' ) {
-				$html .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'" class="view-more">'. __( 'Xem thêm', 'shtheme' ) .' <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>';
+				$html .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'" class="view-more">'. __( 'View more', 'shtheme' ) .' <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>';
 			}
 		$html .= '</div>';
 		$html .= '</div></article>';

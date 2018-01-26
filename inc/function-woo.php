@@ -33,9 +33,14 @@ function my_theme_wrapper_start() {
 }
 
 function my_theme_wrapper_end() {
+	global $sh_option;
 	echo '</div>';
 	echo '<aside class="sidebar sidebar-shop" itemscope itemtype="https://schema.org/WPSideBar">';
-		dynamic_sidebar( 'sidebar-shop' );
+		if( $sh_option['display-shopsidebar'] == 1 ) {
+			dynamic_sidebar( 'sidebar-shop' );
+		} else {
+			dynamic_sidebar( 'sidebar-1' );
+		}
 	echo '</aside>';
 	echo '</div>';
 }
@@ -136,10 +141,10 @@ function woo_remove_product_tabs( $tabs ) {
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 
 function woo_rename_tabs( $tabs ) {
-	$tabs['description']['title'] 	= __( 'Thông số kỹ thuật' );
-	$tabs['image']['title'] 		= __( 'Hình ảnh' );
-	$tabs['video']['title'] 		= __( 'Video' );
-	$tabs['document']['title'] 		= __( 'Tài liệu đính kèm' );
+	$tabs['description']['title'] 	= __( 'Information', 'shtheme' );
+	$tabs['image']['title'] 		= __( 'Gallery', 'shtheme' );
+	$tabs['video']['title'] 		= __( 'Video', 'shtheme' );
+	$tabs['document']['title'] 		= __( 'Attachments', 'shtheme' );
 
 	$tabs['image']['priority']		= 50;
 	$tabs['video']['priority']		= 60;
@@ -169,7 +174,7 @@ function get_price_product(){
 	$regular_price 	= $product->regular_price;
 	$sale_price 	= $product->sale_price;
 	if( empty( $regular_price ) ) {
-		echo '<p class="price">Liên hệ</p>';
+		echo '<p class="price">'.__( 'Contact', 'shtheme' ).'</p>';
 	} elseif ( ! empty( $regular_price ) && empty( $sale_price ) ) {
 		echo '<p class="price">'. number_format( $regular_price, 0, '', '.' ) . ' đ</p>';
 	} elseif ( ! empty( $regular_price ) && ! empty( $sale_price ) ) {
@@ -204,7 +209,7 @@ function shtheme_lib_woocommerce_scripts(){
 
 	// Main js
 	wp_enqueue_script( 'main-woo-js', SH_DIR . '/lib/js/main-woo.js', array(), '1.0', true );
-	wp_localize_script( 'main-woo-js', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+	// wp_localize_script( 'main-woo-js', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 
 	// Woocommerce
 	if ( class_exists( 'WooCommerce' ) ) {
@@ -306,7 +311,7 @@ add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_ark__cart_menu_item
 function insert_btn_detail(){
 	?>
 	<div class="text-center wrap-detail">
-		<a href="<?php the_permalink( );?>" title="<?php the_title( );?>">XEM CHI TIẾT</a>
+		<a href="<?php the_permalink( );?>" title="<?php the_title( );?>"><?php _e( 'View detail', 'shtheme' );?></a>
 	</div>
 	<?php
 }
@@ -325,5 +330,3 @@ remove_action( 'woocommerce_shop_loop_item_title','woocommerce_template_loop_pro
 
 // content-single-product.php
 remove_action( 'woocommerce_single_product_summary','woocommerce_template_single_meta',40 );
-
-

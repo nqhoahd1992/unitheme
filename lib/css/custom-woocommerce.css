@@ -816,6 +816,18 @@ html .woocommerce-message {
 html .woocommerce-message::before {
 	color: #337ab7;
 }
+html .woocommerce-product-details__short-description {
+	text-align: justify;
+	margin-bottom: 20px;
+}
+html .woocommerce-product-details__short-description ul {
+	padding: 0;
+	margin-bottom: 20px;
+}
+html .woocommerce-product-details__short-description ul li {
+	list-style: inside;
+	margin-bottom: 3px;
+}
 /* List Products */
 @media (min-width: 1200px) {
 	.column-3 .list-products li:nth-child(3n+1),

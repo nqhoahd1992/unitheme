@@ -11,15 +11,16 @@ class Gtid_Social_Widget extends WP_Widget {
 
         parent::__construct(
             'social',
-            '3B - Mạng xã hội',
-            array( 'description'  =>  'Hiển thị thông tin mạng xã hội' )
+            __( '3B - Social', 'shtheme' ),
+            array(
+                'description'  =>  __( 'Display information social', 'shtheme' )
+            )
         );
         
     }
 
     function widget($args, $instance) {
         extract($args);
-        $instance = wp_parse_args( (array)$instance, array(  'title' => '' ) );
         echo $before_widget;
 
         if ($instance['title']) echo $before_title . apply_filters('widget_title', $instance['title']) . $after_title;
@@ -60,13 +61,20 @@ class Gtid_Social_Widget extends WP_Widget {
     }
 
     function form($instance) {
+        $instance = wp_parse_args(
+            (array)$instance, array(
+                // 'title'             => '', 
+                // 'numpro'            => '3',  
+                // 'cat'               => '',
+            )
+        );
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Tiêu đề', 'sh_theme' ); ?>:</label>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'shtheme' ); ?>:</label>
             <input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
         </p>
-
-        <p>Nội dung widget này được hiển thị từ trong <strong>Theme Options -> Mạng xã hội</strong></p>
+        <?php _e('<p>This widget content is displayed from <strong>Theme Options -> Social</strong></p>');?>
     <?php
     }
+
 }

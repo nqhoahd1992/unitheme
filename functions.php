@@ -31,6 +31,9 @@ if ( ! function_exists( 'shtheme_setup' ) ) :
 		
 		load_theme_textdomain( 'shtheme', get_template_directory() . '/languages' );
 
+		// Load Theme Options
+		require get_template_directory() . '/inc/options.php';
+
 		// Add theme support
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
@@ -147,8 +150,6 @@ require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require get_template_directory() . '/inc/shortcode/shortcode-blog.php';
 require get_template_directory() . '/inc/shortcode/shortcode-product.php';
 
-// Load Theme Options
-require get_template_directory() . '/inc/options.php';
 
 // Load Function Woocomerce
 if ( class_exists( 'WooCommerce' ) ) {

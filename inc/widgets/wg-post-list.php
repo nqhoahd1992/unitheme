@@ -11,15 +11,16 @@ class Gtid_Post_Widget extends WP_Widget {
 
         parent::__construct(
             'list_posts',
-            '3B - Danh sách bài viết',
-            array( 'description'  =>  'Hiển thị một danh sách bài viết theo chuyên mục' )
+            __( '3B - Featured Posts', 'shtheme' ),
+            array( 
+                'description'  =>  __( 'Displays featured posts with thumbnails', 'shtheme' ),
+            )
         );
         
     }
 
     function widget($args, $instance) {
         extract($args);
-        $instance = wp_parse_args( (array)$instance, array(  'title' => '', 'numpro' => '', 'cat' => '' , 'show_image' => '', 'image_alignment' => '', 'image_size' => '', 'show_content' => 'content-limit','content_limit' => '', ) );
         echo $before_widget;
 
         if ($instance['title']) echo $before_title . apply_filters('widget_title', $instance['title']) . $after_title;
@@ -30,9 +31,9 @@ class Gtid_Post_Widget extends WP_Widget {
                 'post_type' => 'post',
                 'tax_query' => array(
                     array(
-                        'taxonomy' => 'category',
-                        'field' => 'id',
-                        'terms' => $instance['cat'],
+                        'taxonomy'  => 'category',
+                        'field'     => 'id',
+                        'terms'     => $instance['cat'],
                     )
                 ),
                 'showposts' => $instance['numpro'],
@@ -44,18 +45,18 @@ class Gtid_Post_Widget extends WP_Widget {
                 <li id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
                     <?php if ( $instance['show_image'] ) { ?>
                         <a class="img <?php echo $instance['image_alignment'];?>" href="<?php the_permalink();?>" title="<?php the_title();?>">
-                            <?php if(has_post_thumbnail()) the_post_thumbnail( $instance['image_size'] ,array( "alt" => get_the_title() ) );?>
+                            <?php if( has_post_thumbnail() ) the_post_thumbnail( $instance['image_size'] ,array( "alt" => get_the_title() ) );?>
                         </a>
                     <?php } ?>
                     <h3><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></h3>
                     <?php
-                    if ( ! empty( $instance['show_content'] ) ) {
+                    if ( $instance['show_content'] ) {
                         echo '<div class="entry-content">';
                             if ( 'excerpt' == $instance['show_content'] ) {
                                 the_excerpt();
                             }
                             elseif ( 'content-limit' == $instance['show_content'] ) {
-                                the_content_limit( (int) $instance['content_limit'], 'Xem thêm' );
+                                the_content_limit( (int) $instance['content_limit'], __( 'Read more', 'shtheme' ) );
                             }
                             else {
                                 the_content();
@@ -92,39 +93,39 @@ class Gtid_Post_Widget extends WP_Widget {
         	);
         ?>
         <p>
-            <label for="<?php  echo $this->get_field_id('title'); ?>"><?php  _e('Tiêu đề', 'sh_theme'); ?>:</label>
+            <label for="<?php  echo $this->get_field_id('title'); ?>"><?php _e('Title', 'shtheme'); ?>:</label>
             <input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php  echo $this->get_field_name('title'); ?>" value="<?php  echo esc_attr( $instance['title'] ); ?>" />
         </p>
 
         <p>
-            <label for="<?php  echo $this->get_field_id('numpro'); ?>"><?php  _e('Số bài hiển thị', 'sh_theme'); ?>:</label>
+            <label for="<?php  echo $this->get_field_id('numpro'); ?>"><?php _e('Number of Posts to Show', 'shtheme'); ?>:</label>
             <input type="text" class="widefat" id="<?php echo $this->get_field_id('numpro'); ?>" name="<?php  echo $this->get_field_name('numpro'); ?>" value="<?php  echo esc_attr( $instance['numpro'] ); ?>" />
         </p>
         
         <p>
-            <label for="<?php echo $this-> get_field_id('cat'); ?>"><?php  _e('Danh mục','sh_theme'); ?>:</label>
+            <label for="<?php echo $this-> get_field_id('cat'); ?>"><?php _e('Category','shtheme'); ?>:</label>
             <?php
-            wp_dropdown_categories(array('name'=> $this->get_field_name('cat'),'selected'=>$instance['cat'],'orderby'=>'Name','hierarchical'=>1,'show_option_all'=>__('Chọn chuyên mục','sh_theme'),'hide_empty'=>'0'));
+            wp_dropdown_categories(array('name'=> $this->get_field_name('cat'),'selected'=>$instance['cat'],'orderby'=>'Name','hierarchical'=>1,'show_option_all'=>__('Select category','shtheme'),'hide_empty'=>'0'));
             ?>
         </p>
 
         <p>
             <input id="<?php echo esc_attr( $this->get_field_id( 'show_image' ) ); ?>" type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'show_image' ) ); ?>" value="1" <?php checked( $instance['show_image'] ); ?>/>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'show_image' ) ); ?>"><?php _e( 'Hiển thị ảnh đại diện', 'sh_theme' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'show_image' ) ); ?>"><?php _e( 'Show Featured Image', 'shtheme' ); ?></label>
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'image_alignment' ); ?>"><?php _e( 'Căn lề ảnh', 'sh_theme' ); ?>:</label>
+            <label for="<?php echo $this->get_field_id( 'image_alignment' ); ?>"><?php _e( 'Image Alignment', 'shtheme' ); ?>:</label>
             <select id="<?php echo $this->get_field_id( 'image_alignment' ); ?>" name="<?php echo $this->get_field_name( 'image_alignment' ); ?>">
-                <option value="alignnone">- <?php _e( 'Không căn lề', 'sh_theme' ); ?> -</option>
-                <option value="alignleft" <?php selected( 'alignleft', $instance['image_alignment'] ); ?>><?php _e( 'Trái', 'sh_theme' ); ?></option>
-                <option value="alignright" <?php selected( 'alignright', $instance['image_alignment'] ); ?>><?php _e( 'Phải', 'sh_theme' ); ?></option>
-                <option value="aligncenter" <?php selected( 'aligncenter', $instance['image_alignment'] ); ?>><?php _e( 'Giữa', 'sh_theme' ); ?></option>
+                <option value="alignnone">- <?php _e( 'None', 'shtheme' ); ?> -</option>
+                <option value="alignleft" <?php selected( 'alignleft', $instance['image_alignment'] ); ?>><?php _e( 'Left', 'shtheme' ); ?></option>
+                <option value="alignright" <?php selected( 'alignright', $instance['image_alignment'] ); ?>><?php _e( 'Right', 'shtheme' ); ?></option>
+                <option value="aligncenter" <?php selected( 'aligncenter', $instance['image_alignment'] ); ?>><?php _e( 'Center', 'shtheme' ); ?></option>
             </select>
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'image_size' ); ?>"><?php _e( 'Kích thước ảnh', 'sh_theme' ); ?>:</label>
+            <label for="<?php echo $this->get_field_id( 'image_size' ); ?>"><?php _e( 'Image Size', 'shtheme' ); ?>:</label>
             <select id="<?php echo $this->get_field_id( 'image_size' ); ?>" class="" name="<?php echo $this->get_field_name( 'image_size' ); ?>">
                 <option value="thumbnail">thumbnail (<?php echo get_option( 'thumbnail_size_w' ); ?>x<?php echo get_option( 'thumbnail_size_h' ); ?>)</option>
                 <?php
@@ -136,19 +137,19 @@ class Gtid_Post_Widget extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'show_content' ) ); ?>"><?php _e( 'Hiển thị nội dung', 'sh_theme' ); ?>:</label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'show_content' ) ); ?>"><?php _e( 'Content Type', 'shtheme' ); ?>:</label>
             <select id="<?php echo esc_attr( $this->get_field_id( 'show_content' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_content' ) ); ?>">
-                <option value="content" <?php selected( 'content', $instance['show_content'] ); ?>><?php _e( 'Hiển thị đầy đủ', 'sh_theme' ); ?></option>
-                <option value="excerpt" <?php selected( 'excerpt', $instance['show_content'] ); ?>><?php _e( 'Hiển thị tóm tắt', 'sh_theme' ); ?></option>
-                <option value="content-limit" <?php selected( 'content-limit', $instance['show_content'] ); ?>><?php _e( 'Giới hạn số ký tự', 'sh_theme' ); ?></option>
-                <option value="" <?php selected( '', $instance['show_content'] ); ?>><?php _e( 'Không hiển thị', 'sh_theme' ); ?></option>
+                <option value="content" <?php selected( 'content', $instance['show_content'] ); ?>><?php _e( 'Show Content', 'shtheme' ); ?></option>
+                <option value="excerpt" <?php selected( 'excerpt', $instance['show_content'] ); ?>><?php _e( 'Show Excerpt', 'shtheme' ); ?></option>
+                <option value="content-limit" <?php selected( 'content-limit', $instance['show_content'] ); ?>><?php _e( 'Show Content Limit', 'shtheme' ); ?></option>
+                <option value="" <?php selected( '', $instance['show_content'] ); ?>><?php _e( 'No Content', 'shtheme' ); ?></option>
             </select>
         </p>
         
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'content_limit' ) ); ?>"><?php _e( 'Số ký tự giới hạn', 'sh_theme' ); ?>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'content_limit' ) ); ?>"><?php _e( 'Limit content to', 'shtheme' ); ?>
                 <input type="text" id="<?php echo esc_attr( $this->get_field_id( 'content_limit' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'content_limit' ) ); ?>" value="<?php echo esc_attr( intval( $instance['content_limit'] ) ); ?>" size="3" />
-                <?php _e( 'ký tự', 'sh_theme' ); ?>
+                <?php _e( 'character', 'shtheme' ); ?>
             </label>
         </p>
 

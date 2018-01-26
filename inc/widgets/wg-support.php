@@ -10,29 +10,21 @@ class Gtid_Support_Online extends WP_Widget {
 	function __construct() {
         parent::__construct(
             'supports',
-            '3B - Hỗ trợ trực tuyến',
-            array( 'description'  =>  'Hiển thị danh sách hỗ trợ trực tuyến' )
+            __( '3B - Support', 'shtheme' ),
+            array(
+                'description'  => __( 'Display list support for website', 'shtheme' )
+            )
         );
     }
 
 	function widget($args, $instance) {
 		extract($args);
-		$instance = wp_parse_args( (array)$instance, array(
-			'title' 			=> '',
-            'number_supporter' 	=> 1,
-            'tel' 				=> '',
-            'data_style' 		=> '',
-		) );
-
 		echo $before_widget;
-		if (!empty($instance['title']))
-		echo $before_title . apply_filters('widget_title', $instance['title']) . $after_title;
+		if ($instance['title']) echo $before_title . apply_filters('widget_title', $instance['title']) . $after_title;
         ?>
-        <div class = "wrap-support">
-	        <div id="supporter-info" class="list-supporter support-style-<?php echo $instance['data_style']; ?>">
-
+        <div class="wrap-support">
+	        <div id="supporter-info" class="list-supporter support-style-<?php echo $instance['data_style'];?>">
 	        	<?php get_layout_support( $instance, $instance['data_style'] );?>
-
 			</div>
 		</div>
 		<?php
@@ -44,42 +36,44 @@ class Gtid_Support_Online extends WP_Widget {
 	}
 
 	function form($instance) {
-		$instance = wp_parse_args( (array)$instance, array(
-			'title' 			=> '',
-            'number_supporter' 	=> 1,
-		) );
+		$instance = wp_parse_args( 
+			(array)$instance, array(
+				'title' 			=> __( 'Support Online', 'shtheme' ),
+	            'number_supporter' 	=> 1,
+	            'tel' 				=> '',
+	            'data_style' 		=> '',
+			)
+		);
 		$style =  $instance['data_style'];
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>">
-				<?php _e('Tiêu đề', 'sh_theme'); ?>:
-			</label>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'shtheme'); ?>:</label>
 			<input class="widefat" type="text" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
         <p>
 	    	<label for="<?php echo $this->get_field_id('number_supporter'); ?>">
-	    		<?php _e('Số hỗ trợ viên', 'sh_theme'); ?>:
+	    		<?php _e('Number supporter', 'shtheme'); ?>:
 	    	</label>
 			<input class="widefat" type="text" id="<?php echo $this->get_field_id('number_supporter'); ?>" name="<?php echo $this->get_field_name('number_supporter'); ?>" value="<?php echo esc_attr( $instance['number_supporter'] ); ?>" />
 		</p>
 		<p>
 	        <label for="<?php echo $this->get_field_id('data_style'); ?>">
-	        	<?php _e('Giao diện', 'sh_theme'); ?>:
+	        	<?php _e('Appearance', 'shtheme'); ?>:
 	        </label>
-	    	<select class="widefat" id="<?php echo $this->get_field_id('data_style'); ?>" name="<?php echo $this->get_field_name('data_style'); ?>" style="width: 165px;">
+	    	<select class="widefat" id="<?php echo $this->get_field_id('data_style'); ?>" name="<?php echo $this->get_field_name('data_style'); ?>">
 		        <?php for ($i=1; $i < 9; $i++) {?>
-			  		<option value="<?php echo $i; ?>" <?php selected( $i , $instance['data_style']); ?>>Giao diện <?php echo $i; ?></option>
+			  		<option value="<?php echo $i; ?>" <?php selected( $i , $instance['data_style']); ?>><?php _e('Layout', 'shtheme'); ?> <?php echo $i; ?></option>
 		        <?php } ?>
 	        </select>
 	    </p>
 	    <p>
-	        <input type="submit" name="savewidget" id="savewidget" class="button-primary widget-control-save" value="Lưu" />
+	        <input type="submit" name="savewidget" id="savewidget" class="button-primary widget-control-save" value="<?php _e('Save change', 'shtheme'); ?>" />
     	</p>
 
     	<?php if( $style == '2' ) { ?>
     		<p>
 				<label for="<?php echo $this->get_field_id('supporter_email_general'); ?>">
-					<?php _e('Email', 'sh_theme'); ?>:
+					<?php _e('Email', 'shtheme'); ?>:
 				</label>
 	    		<input class="widefat" type="text" id="<?php echo $this->get_field_id('supporter_email_general'); ?>" name="<?php echo $this->get_field_name('supporter_email_general'); ?>" value="<?php echo esc_attr( $instance['supporter_email_general'] ); ?>" />
 			</p>
@@ -91,18 +85,18 @@ class Gtid_Support_Online extends WP_Widget {
     	?>
             <div style="background: #eee;padding: 10px 10px;margin-bottom: 10px;">
          	
-	            <strong><?php _e('Hỗ trợ viên ', 'sh_theme'); echo $i; ?></strong>
+	            <strong><?php echo __('Number supporter', 'shtheme').' '.$i;?></strong>
 	           	
 	           	<p>
 					<label for="<?php echo $this->get_field_id('supporter_'.$i.'_name'); ?>">
-						<?php _e('Tên', 'sh_theme'); ?>:
+						<?php _e('Name', 'shtheme'); ?>:
 					</label>
 		    		<input class="widefat" type="text" id="<?php echo $this->get_field_id('supporter_'.$i.'_name'); ?>" name="<?php echo $this->get_field_name('supporter_'.$i.'_name'); ?>" value="<?php echo esc_attr( $instance['supporter_'.$i.'_name'] ); ?>" />
 	    		</p>
 
 	    		<p>
 	    			<label for="<?php echo $this->get_field_id('supporter_'.$i.'_phone'); ?>">
-	    				<?php _e('Số điện thoại', 'sh_theme'); ?>:
+	    				<?php _e('Phone', 'shtheme'); ?>:
 	    			</label>
 	    			<input class="widefat" type="tel" id="<?php echo $this->get_field_id('supporter_'.$i.'_phone'); ?>" name="<?php echo $this->get_field_name('supporter_'.$i.'_phone'); ?>" value="<?php echo esc_attr( $instance['supporter_'.$i.'_phone'] ); ?>" />
 	    		</p>
@@ -110,7 +104,7 @@ class Gtid_Support_Online extends WP_Widget {
 	    		<?php if( $style == '1' ) : ?>
 		    		<p>
 			        	<label for="<?php echo $this->get_field_id('supporter_'.$i.'_email'); ?>">
-			        		<?php _e('Email', 'sh_theme'); ?>:
+			        		<?php _e('Email', 'shtheme'); ?>:
 			        	</label>
 						<input class="widefat" type="text" id="<?php echo $this->get_field_id('supporter_'.$i.'_email'); ?>" name="<?php echo $this->get_field_name('supporter_'.$i.'_email'); ?>" value="<?php echo esc_attr( $instance['supporter_'.$i.'_email'] ); ?>" />
 					</p>
@@ -119,7 +113,7 @@ class Gtid_Support_Online extends WP_Widget {
 				<?php if( $style != '3' ) : ?>
 		    		<p>
 		            	<label for="<?php echo $this->get_field_id('supporter_'.$i.'_skype'); ?>">
-		            		<?php _e('Skype', 'sh_theme'); ?>:
+		            		<?php _e('Skype', 'shtheme'); ?>:
 		            	</label>
 		    			<input class="widefat" type="text" id="<?php echo $this->get_field_id('supporter_'.$i.'_skype'); ?>" name="<?php echo $this->get_field_name('supporter_'.$i.'_skype'); ?>" value="<?php echo esc_attr( $instance['supporter_'.$i.'_skype'] ); ?>" />
 		    		</p>
@@ -203,7 +197,7 @@ function get_layout_support($instance, $j = 1) {
 
 	if( $j == '2' ) {
 		if( ! empty( $email_general ) ) {
-			echo '<div class="email">Email: <a href="mailto:'. $email_general .'">'. $email_general .'</a></div>';
+			echo '<div class="email">'. __('Email', 'shtheme') .' <a href="mailto:'. $email_general .'">'. $email_general .'</a></div>';
 		}
 	}
 

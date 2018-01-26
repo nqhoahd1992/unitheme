@@ -7,7 +7,7 @@
  * @package SH_Theme
  */
 
-global $sh_option, $post;
+global $sh_option;
 postview_set(get_the_ID());
 ?>
 
@@ -38,7 +38,7 @@ postview_set(get_the_ID());
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 
-			echo get_the_tag_list('<p>Từ khóa: ',', ','</p>');
+			echo get_the_tag_list('<p>Keywords: ',', ','</p>');
 
 			// wp_link_pages( array(
 			// 	'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'shtheme' ),
@@ -88,23 +88,22 @@ postview_set(get_the_ID());
 		?>
 			<div class="post-next-prev">
 				<div class="row">
-					<?php if( ! empty( $next_id ) ) : ?>
+					<?php if( $next_id ) : ?>
 						<div class="col-sm-6">
 							<div class="post-next-prev-content">
-								<span>Bài viết trước</span>
+								<span><?php _e( 'Next Post', 'shtheme' );?></span>
 								<a href="<?php echo get_the_permalink( $next_id ); ?>"><?php echo get_the_title( $next_id ); ?></a>
 							</div>
 						</div>
 					<?php endif;?>
-					<?php if( ! empty( $previous_id ) ) : ?>
+					<?php if( $previous_id ) : ?>
 						<div class="col-sm-6">
 							<div class="post-next-prev-content">
-								<span>Bài kế tiếp</span>
+								<span><?php _e( 'Previous Post', 'shtheme' );?></span>
 								<a href="<?php echo get_the_permalink( $previous_id ); ?>"><?php echo get_the_title( $previous_id ); ?></a>
 							</div>
 						</div>
 					<?php endif;?>
-					
 				</div>
 			</div>
 		<?php endif;?>
@@ -114,20 +113,37 @@ postview_set(get_the_ID());
 
 	<?php if( $sh_option['display-relatedpost'] == '1' ) : ?>
 		<div class="related-posts">
-			<h4 class="td-related-title"><span>Bài viết liên quan</span></h4>
+			<h4 class="td-related-title"><span><?php _e( 'Related posts', 'shtheme' );?></span></h4>
 			<ul>
 				<?php
-				$category = wp_get_object_terms( $post->ID, 'category',array('orderby' => 'term_group', 'order' => 'DESC'));
-				$the_query = new WP_Query(array(
-		            'cat' => end($category)->term_id,
-		            'showposts' => 6,
-		            'post__not_in' => array($post->ID)
+				global $post;
+				$category = wp_get_object_terms( 
+					$post->ID,
+					'category',
+					array(
+						'orderby' 	=> 'term_group', 
+						'order' 	=> 'DESC'
+					)
+				);
+				$the_query = new WP_Query( array(
+					'post_type' 		=> 'post',
+                    'tax_query' 		=> array(
+                        array(
+                            'taxonomy' 	=> 'category',
+                            'field' 	=> 'id',
+                            'terms' 	=> end( $category )->term_id,
+                        )
+                    ),
+		            'showposts' 		=> 6,
+		            'post__not_in' 		=> array( $post->ID ),
 		        ));
-		        if($the_query->have_posts()) :
-		        while($the_query->have_posts()) :
-		        $the_query->the_post();
-		        	echo '<li><a href=" ' .get_the_permalink().' " title=" ' .get_the_title(). ' ">' .get_the_title(). '</a></li>';
-		        endwhile;
+		        if( $the_query->have_posts() ) :
+			        while( $the_query->have_posts() ) :
+			        $the_query->the_post();
+			        	echo '<li>';
+			        		echo '<a href=" ' .get_the_permalink().' " title=" ' .get_the_title(). ' ">' .get_the_title(). '</a>';
+			        	echo '</li>';
+			        endwhile;
 		        endif;
 		        wp_reset_postdata();
 		        ?>

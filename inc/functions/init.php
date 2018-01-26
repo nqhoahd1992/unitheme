@@ -24,12 +24,12 @@ add_action( 'wp_enqueue_scripts', 'shtheme_scripts' );
  */
 add_filter( 'get_the_archive_title', function ($title) {
     if ( is_category() ) {
-            $title = single_cat_title( '', false );
-        } elseif ( is_tag() ) {
-            $title = single_tag_title( '', false );
-        } elseif ( is_author() ) {
-            $title = '<span class="vcard">' . get_the_author() . '</span>';
-        }
+        $title = single_cat_title( '', false );
+    } elseif ( is_tag() ) {
+        $title = single_tag_title( '', false );
+    } elseif ( is_author() ) {
+        $title = '<span class="vcard">' . get_the_author() . '</span>';
+    }
     return $title;
 });
 
@@ -163,28 +163,28 @@ if ( ! function_exists( 'shtheme_pagination' ) ) {
 /**
  * Count view post
 **/
-function postview_set($postID) {
-    $count_key = 'postview_number';
-    $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
+function postview_set( $postID ) {
+    $count_key 	= 'postview_number';
+    $count 		= get_post_meta( $postID, $count_key, true );
+    if( $count == '' ) {
         $count = 0;
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-    }else{
+        delete_post_meta( $postID, $count_key );
+        add_post_meta( $postID, $count_key, '0' );
+    } else {
         $count++;
-        update_post_meta($postID, $count_key, $count);
+        update_post_meta( $postID, $count_key, $count );
     }
 }
 
-function postview_get($postID){
-    $count_key = 'postview_number';
-    $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-        return "0 lượt xem";
+function postview_get( $postID ){
+    $count_key 	= 'postview_number';
+    $count 		= get_post_meta( $postID, $count_key, true );
+    if ( $count == '' ){
+        delete_post_meta( $postID, $count_key );
+        add_post_meta( $postID, $count_key, '0' );
+        return '0 '.__( 'views', 'shtheme' );
     }
-    return $count.' lượt xem';
+    return $count.' '. __( 'views', 'shtheme' );
 }
 
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
@@ -193,8 +193,8 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
  * Get term name
  */
 function get_dm_name( $cat_id, $taxonomy ) {
-	$cat_id = (int) $cat_id;
-	$category = get_term( $cat_id, $taxonomy );
+	$cat_id 	= (int) $cat_id;
+	$category 	= get_term( $cat_id, $taxonomy );
 	if ( ! $category || is_wp_error( $category ) )
 	return '';
 	return $category->name;

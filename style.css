@@ -521,6 +521,13 @@ iframe[name='google_conversion_frame'] {height: 0 !important;width: 0 !important
 .widget_slider_products li .alignright {
 	margin-left: 15px;
 }
+.widget_slider_products li .item-product img {
+	width: auto;
+	display: inline-block;
+}
+.widget_slider_products li .item-product .alignnone img {
+	margin: 0 auto 10px;
+}
 .widget_slider_products li h3 {
 	margin: 0 0 5px;
 	font-size: 15px;
@@ -687,7 +694,7 @@ iframe[name='google_conversion_frame'] {height: 0 !important;width: 0 !important
 }
 .post-next-prev {
 	border-bottom: 1px solid #ebebeb;
-	margin-bottom: 20px;
+	margin: 20px 0;
 }
 .post-next-prev-content span {
     display: block;

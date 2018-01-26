@@ -15,12 +15,12 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-				<?php
-					if( $sh_option['display-pagetitlebar'] != '1' ) {
-						the_archive_title( '<h1 class="page-title">', '</h1>' );
-					}
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
+			<?php
+				if( $sh_option['display-pagetitlebar'] != '1' ) {
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+				}
+				the_archive_description( '<div class="archive-description">', '</div>' );
+			?>
 
 			<?php
 			/* Start the Loop */
@@ -28,7 +28,6 @@ get_header(); ?>
 			echo '<div class="new-list">';
 
 			while ( have_posts() ) : the_post();
-
 
 				?>
 				<article class="<?php echo implode( ' ', get_post_class( $class ) );?>">
@@ -39,17 +38,16 @@ get_header(); ?>
 					<?php echo get_the_content_limit( 400 ,' ');?>
 					<div class="clearfix"></div>
 					<div class="ps-meta-info">
-					   <div class="ps-alignleft">
+					   	<div class="ps-alignleft">
 					   		<span><?php the_time('j F Y') ?></span><span class="ps-inline-sep">|</span>
 					   		<?php echo get_the_category_list(', ');?>
-					   </div>
-					   <div class="ps-alignright">
-					   		<a href="<?php the_permalink();?>" class="ps-read-more">Đọc thêm</a>
+					   	</div>
+					   	<div class="ps-alignright">
+					   		<a href="<?php the_permalink();?>" class="ps-read-more"><?php _e( 'Read more', 'shtheme' );?></a>
 					   	</div>
 					</div>
 				</article>
 				<?php
-
 
 			endwhile;
 
@@ -60,7 +58,6 @@ get_header(); ?>
 		else :
 
 			
-
 		endif; ?>
 
 		</main><!-- #main -->

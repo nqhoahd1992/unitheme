@@ -1,20 +1,10 @@
 <?php
 /**
  * Breadcrumbs
- *
- *
  * @package SH_Theme
  * @author  Quang Hoa
  * @license 
  * @link    
- */
-
-/**
- * @since
- *
- * @param 
- * @param
- * @return 
  */
 
 function sh_create_breadcrumb(){
@@ -28,13 +18,13 @@ function sh_create_breadcrumb(){
                     } elseif( is_archive() ) {
                         ?><h1 class="title"><?php single_term_title(); ?></h1><?php
                     } elseif( is_search() ) {
-                        echo '<h1 class="title">Tìm kiếm cho từ khóa: '. get_search_query() .'</h1>';
+                        echo '<h1 class="title">'.__('Search for keyword', 'shtheme').': '. get_search_query() .'</h1>';
                     } elseif( is_404() ) {
-                        echo '<h1 class="title">404 - Trang không tồn tại</h1>';
+                        echo '<h1 class="title">'.__('404 Not Found', 'shtheme').'</h1>';
                     }
                     if ( class_exists( 'WooCommerce' ) ) {
                         if( is_shop() ) {
-                            echo '<h1 class="title">Sản phẩm</h1>';
+                            echo '<h1 class="title">'.__('Products', 'shtheme').'</h1>';
                         }
                     }
                     if ( function_exists('yoast_breadcrumb') ) {
@@ -45,9 +35,9 @@ function sh_create_breadcrumb(){
         echo '</div>';
     } elseif ( ! is_front_page() ) {
         echo '<div class="container">';
-        if ( function_exists('yoast_breadcrumb') ) {
-            yoast_breadcrumb('<div class="breadcrumb">','</div>');
-        }
+            if ( function_exists('yoast_breadcrumb') ) {
+                yoast_breadcrumb('<div class="breadcrumb">','</div>');
+            }
         echo '</div>';
     }
 }

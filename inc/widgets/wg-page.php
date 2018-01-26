@@ -11,8 +11,10 @@ class Page_Widget_3B extends WP_Widget {
 
         parent::__construct(
             'featuredpage',
-            '3B - Trang',
-            array( 'description'  =>  'Hiển thị một trang' )
+            __( '3B - Featured Page', 'shtheme' ),
+            array( 
+            	'description'  =>  __( 'Display featured page', 'shtheme' ),
+            )
         );
 
     }
@@ -35,12 +37,12 @@ class Page_Widget_3B extends WP_Widget {
 
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Tiêu đề', 'sh_theme' ); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'shtheme' ); ?>:</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'page_id' ); ?>"><?php _e( 'Chọn trang hiển thị', 'sh_theme' ); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'page_id' ); ?>"><?php _e( 'Page', 'shtheme' ); ?>:</label>
 			<?php wp_dropdown_pages( array( 'name' => $this->get_field_name( 'page_id' ), 'selected' => $instance['page_id'] ) ); ?>
 		</p>
 
@@ -48,11 +50,11 @@ class Page_Widget_3B extends WP_Widget {
 
 		<p>
 			<input id="<?php echo $this->get_field_id( 'show_image' ); ?>" type="checkbox" name="<?php echo $this->get_field_name( 'show_image' ); ?>" value="1"<?php checked( $instance['show_image'] ); ?> />
-			<label for="<?php echo $this->get_field_id( 'show_image' ); ?>"><?php _e( 'Hiển thị ảnh đại diện', 'sh_theme' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'show_image' ); ?>"><?php _e( 'Show Featured Image', 'shtheme' ); ?></label>
 		</p>
 
 		<p>
-            <label for="<?php echo $this->get_field_id( 'image_size' ); ?>"><?php _e( 'Kích thước ảnh', 'sh_theme' ); ?>:</label>
+            <label for="<?php echo $this->get_field_id( 'image_size' ); ?>"><?php _e( 'Image Size', 'shtheme' ); ?>:</label>
             <select id="<?php echo $this->get_field_id( 'image_size' ); ?>" class="" name="<?php echo $this->get_field_name( 'image_size' ); ?>">
                 <option value="thumbnail">thumbnail (<?php echo get_option( 'thumbnail_size_w' ); ?>x<?php echo get_option( 'thumbnail_size_h' ); ?>)</option>
                 <?php
@@ -64,12 +66,12 @@ class Page_Widget_3B extends WP_Widget {
         </p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'image_alignment' ); ?>"><?php _e( 'Căn chỉnh ảnh', 'sh_theme' ); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'image_alignment' ); ?>"><?php _e( 'Image Alignment', 'shtheme' ); ?>:</label>
 			<select id="<?php echo $this->get_field_id( 'image_alignment' ); ?>" name="<?php echo $this->get_field_name( 'image_alignment' ); ?>">
-				<option value="alignnone">- <?php _e( 'None', 'sh_theme' ); ?> -</option>
-				<option value="alignleft" <?php selected( 'alignleft', $instance['image_alignment'] ); ?>><?php _e( 'Trái', 'sh_theme' ); ?></option>
-				<option value="alignright" <?php selected( 'alignright', $instance['image_alignment'] ); ?>><?php _e( 'Phải', 'sh_theme' ); ?></option>
-				<option value="aligncenter" <?php selected( 'aligncenter', $instance['image_alignment'] ); ?>><?php _e( 'Giữa', 'sh_theme' ); ?></option>
+				<option value="alignnone">- <?php _e( 'None', 'shtheme' ); ?> -</option>
+				<option value="alignleft" <?php selected( 'alignleft', $instance['image_alignment'] ); ?>><?php _e( 'Left', 'shtheme' ); ?></option>
+				<option value="alignright" <?php selected( 'alignright', $instance['image_alignment'] ); ?>><?php _e( 'Right', 'shtheme' ); ?></option>
+				<option value="aligncenter" <?php selected( 'aligncenter', $instance['image_alignment'] ); ?>><?php _e( 'Center', 'shtheme' ); ?></option>
 			</select>
 		</p>
 
@@ -77,21 +79,21 @@ class Page_Widget_3B extends WP_Widget {
 
 		<p>
 			<input id="<?php echo $this->get_field_id( 'show_title' ); ?>" type="checkbox" name="<?php echo $this->get_field_name( 'show_title' ); ?>" value="1"<?php checked( $instance['show_title'] ); ?> />
-			<label for="<?php echo $this->get_field_id( 'show_title' ); ?>"><?php _e( 'Hiển thị tiêu đề trang', 'sh_theme' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'show_title' ); ?>"><?php _e( 'Show Page Title', 'shtheme' ); ?></label>
 		</p>
 
 		<p>
 			<input id="<?php echo $this->get_field_id( 'show_content' ); ?>" type="checkbox" name="<?php echo $this->get_field_name( 'show_content' ); ?>" value="1"<?php checked( $instance['show_content'] ); ?> />
-			<label for="<?php echo $this->get_field_id( 'show_content' ); ?>"><?php _e( 'Hiển thị nội dung trang', 'sh_theme' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'show_content' ); ?>"><?php _e( 'Show Page Content', 'shtheme' ); ?></label>
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'content_limit' ); ?>"><?php _e( 'Số ký tự tối đa', 'sh_theme' ); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'content_limit' ); ?>"><?php _e( 'Content Character Limit', 'shtheme' ); ?>:</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'content_limit' ); ?>" name="<?php echo $this->get_field_name( 'content_limit' ); ?>" value="<?php echo esc_attr( $instance['content_limit'] ); ?>" size="3" />
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'more_text' ); ?>"><?php _e( 'Ký tự xem thêm', 'sh_theme' ); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'more_text' ); ?>"><?php _e( 'More Text', 'shtheme' ); ?>:</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'more_text' ); ?>" name="<?php echo $this->get_field_name( 'more_text' ); ?>" value="<?php echo esc_attr( $instance['more_text'] ); ?>" />
 		</p>
 

@@ -6,35 +6,15 @@ function like_box_facebook_widget() {
 }
 
 class Like_Box_Facebook extends WP_Widget {
- 
 
     function __construct() {
-			parent::__construct (
+		parent::__construct (
 	      	'facebook_like',
-	      	'3B - Facebook Like Box', 
+	      	__( '3B - Facebook Like Box', 'shtheme' ), 
 	      	array(
-	          	'description' => 'Hiển thị Like Box Fanpage Facebook'
+	          	'description' => __( 'Display like box fanpage Facebook', 'shtheme' ),
 	      	)
 	    );
-    }
- 
-    
-    function form( $instance ) {
-		$default = array(
-		'title' => __('Like Facebook','genesis'),
-		'page_url' => '',
-		);
-		$instance = wp_parse_args( (array) $instance, $default );
-		$title = esc_attr($instance['title']);
-		$page_url = esc_attr($instance['page_url']);
-
-		echo '<p>Tiêu đề: <input type="text" class="widefat" name="'.$this->get_field_name('title').'" value="'.$title.'"/></p>';
-		echo '<p>Link fanpage: <input type="text" class="widefat" name="'.$this->get_field_name('page_url').'" value="'.$page_url.'" placeholder="'.$page_url.'" /></p>';
-
-    }
-
-    function update($new_instance, $old_instance) {
-        return $new_instance;
     }
 
     function widget( $args, $instance ) {
@@ -54,13 +34,38 @@ class Like_Box_Facebook extends WP_Widget {
 			}(document, 'script', 'facebook-jssdk'));</script>
 
 			<div class="fb-page" 
-			data-href="<?php echo $page_url; ?>" 
-			data-small-header="false" 
-			data-adapt-container-width="true" 
-			data-hide-cover="false" 
-			data-show-facepile="true">
+				data-href="<?php echo $page_url; ?>" 
+				data-small-header="false" 
+				data-adapt-container-width="true" 
+				data-hide-cover="false" 
+				data-show-facepile="true">
 			</div>
 		<?php endif;
 		echo $after_widget;
     }
+ 
+    function form( $instance ) {
+		$default = array(
+			'title' 	=> __('Like Facebook','shtheme'),
+			'page_url' 	=> '',
+		);
+		$instance = wp_parse_args( (array) $instance, $default );
+		?>
+		<p>
+            <label for="<?php  echo $this->get_field_id('title'); ?>"><?php _e('Title', 'shtheme'); ?>:</label>
+            <input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php  echo $this->get_field_name('title'); ?>" value="<?php  echo esc_attr( $instance['title'] ); ?>" />
+        </p>
+        <p>
+            <label for="<?php  echo $this->get_field_id('page_url'); ?>"><?php _e('Link Fanpage', 'shtheme'); ?>:</label>
+            <input type="text" class="widefat" id="<?php echo $this->get_field_id('page_url'); ?>" name="<?php  echo $this->get_field_name('page_url'); ?>" value="<?php echo esc_attr( $instance['page_url'] ); ?>" />
+        </p>
+		<?php
+    }
+
+    function update($new_instance, $old_instance) {
+        return $new_instance;
+    }
+
+    
+    
 }
