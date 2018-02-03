@@ -184,7 +184,7 @@ function shtheme_lib_scripts(){
 	wp_register_style( 'owlcarousel-theme-style', SH_DIR .'/lib/css/owl.theme.default.min.css' );
 
 	// Font Awesome
-	wp_enqueue_style( 'fontawesome-style', SH_DIR .'/lib/css/font-awesome.min.css' );
+	wp_enqueue_style( 'fontawesome-style', SH_DIR .'/lib/css/font-awesome-all.css' );
 	
 }
 add_action( 'wp_enqueue_scripts', 'shtheme_lib_scripts' , 1 );

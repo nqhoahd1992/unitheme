@@ -282,6 +282,11 @@ Redux::setSection( $opt_name, array(
             'max'       => 5,
             'display_value' => 'text'
         ),
+        array(
+            'id'    => 'footer-copyright',
+            'type'  => 'text',
+            'title' => __('Copyright', 'shtheme'),
+        ),
     )
 ) );
 
