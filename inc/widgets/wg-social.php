@@ -29,25 +29,25 @@ class Gtid_Social_Widget extends WP_Widget {
         <ul>
             <?php
             if( ! empty( $sh_option['social-facebook'] ) ) {
-                echo '<li class="icon_social icon_facebook"><a href="'.$sh_option['social-facebook'].'" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>';
+                echo '<li class="icon_social icon_facebook"><a href="'.$sh_option['social-facebook'].'" rel="nofollow" target="_blank"><i class="fab fa-facebook-f"></i></a></li>';
             }
             if( ! empty( $sh_option['social-twitter'] ) ) {
-                echo '<li class="icon_social icon_twitter"><a href="'.$sh_option['social-twitter'].'" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>';
+                echo '<li class="icon_social icon_twitter"><a href="'.$sh_option['social-twitter'].'" rel="nofollow" target="_blank"><i class="fab fa-twitter"></i></a></li>';
             }
             if( ! empty( $sh_option['social-google'] ) ) {
-                echo '<li class="icon_social icon_google"><a href="'.$sh_option['social-google'].'" rel="nofollow" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>';
+                echo '<li class="icon_social icon_google"><a href="'.$sh_option['social-google'].'" rel="nofollow" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>';
             }
             if( ! empty( $sh_option['social-youtube'] ) ) {
-                echo '<li class="icon_social icon_youtube"><a href="'.$sh_option['social-youtube'].'" rel="nofollow" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>';
+                echo '<li class="icon_social icon_youtube"><a href="'.$sh_option['social-youtube'].'" rel="nofollow" target="_blank"><i class="fab fa-youtube"></i></a></li>';
             }
             if( ! empty( $sh_option['social-linkedin'] ) ) {
-                echo '<li class="icon_social icon_linkedin"><a href="'.$sh_option['social-linkedin'].'" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>';
+                echo '<li class="icon_social icon_linkedin"><a href="'.$sh_option['social-linkedin'].'" rel="nofollow" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>';
             }
             if( ! empty( $sh_option['social-pinterest'] ) ) {
-                echo '<li class="icon_social icon_pinterest"><a href="'.$sh_option['social-pinterest'].'" rel="nofollow" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>';
+                echo '<li class="icon_social icon_pinterest"><a href="'.$sh_option['social-pinterest'].'" rel="nofollow" target="_blank"><i class="fab fa-pinterest-p"></i></a></li>';
             }
             if( ! empty( $sh_option['social-instagram'] ) ) {
-                echo '<li class="icon_social icon_instagram"><a href="'.$sh_option['social-instagram'].'" rel="nofollow" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>';
+                echo '<li class="icon_social icon_instagram"><a href="'.$sh_option['social-instagram'].'" rel="nofollow" target="_blank"><i class="fab fa-instagram"></i></a></li>';
             }
             ?>
         </ul>
