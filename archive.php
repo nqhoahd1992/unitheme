@@ -52,11 +52,14 @@ get_header(); ?>
 	                        );
 	                        /* Start the Loop */
 							echo '<div class="new-list">';
-								while ( have_posts() ) : the_post();
+								$the_query = new WP_Query( $args );
+								while($the_query -> have_posts()) :
+                            	$the_query -> the_post();
 									get_template_part( 'template-parts/loop/loop-news' );
 								endwhile;
 							echo '</div>';
 							shtheme_pagination();
+							wp_reset_postdata();
 					    echo '</div>';
 					}
 				} else {
@@ -67,6 +70,7 @@ get_header(); ?>
 						endwhile;
 					echo '</div>';
 					shtheme_pagination();
+					wp_reset_postdata();
 				}
 
 			} else {
@@ -78,6 +82,7 @@ get_header(); ?>
 					endwhile;
 				echo '</div>';
 				shtheme_pagination();
+				wp_reset_postdata();
 
 			}
 			
