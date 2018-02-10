@@ -26,8 +26,8 @@ postview_set(get_the_ID());
 	<?php endif;?>
 
 	<div class="entry-meta">
-		<span class="entry-time"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php the_time('g:i a d/m/Y') ?></span>
-		<span class="entry-view"><i class="fa fa-eye" aria-hidden="true"></i> <?php echo postview_get(get_the_ID());?></span>
+		<span class="entry-time"><i class="far fa-clock"></i> <?php the_time('g:i a d/m/Y') ?></span>
+		<span class="entry-view"><i class="fas fa-eye"></i> <?php echo postview_get(get_the_ID());?></span>
 	</div>
 
 	<div class="entry-content">
@@ -126,7 +126,7 @@ postview_set(get_the_ID());
 					)
 				);
 				$the_query = new WP_Query( array(
-					'post_type' 		=> 'post',
+					'post_type' 		=> $post->post_type,
                     'tax_query' 		=> array(
                         array(
                             'taxonomy' 	=> 'category',

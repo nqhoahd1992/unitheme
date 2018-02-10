@@ -35,7 +35,8 @@ class sh_blog_shortcode {
 			'hide_viewmore'					=> '1',
 			'hide_meta'						=> '1',
 			'hide_thumb'					=> '1',
-			'hide_desc'						=> '1'
+			'hide_desc'						=> '1',
+			'number_character'				=> 200,
 		), $atts ) );
 
 		$args = array(
@@ -383,6 +384,7 @@ class sh_blog_shortcode {
 			'hide_meta'						=> '0',
 			'hide_thumb'					=> '1',
 			'hide_desc'						=> '1',
+			'number_character'				=> 200,
 		), $atts ) );
 
 		$html = '';
@@ -421,7 +423,7 @@ class sh_blog_shortcode {
 			}
 			// Check display description
 			if ( $hide_desc == '1' ) {
-				$html .= '<div class="entry-description">'. get_the_content_limit('200',' ') .'</div>';
+				$html .= '<div class="entry-description">'. get_the_content_limit($number_character,' ') .'</div>';
 			}
 			// Check display view more button
 			if ( $hide_viewmore == '1' ) {

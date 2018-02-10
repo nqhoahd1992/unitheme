@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2018-01-26 17:30+0700\n"
-"PO-Revision-Date: 2018-01-26 17:30+0700\n"
+"POT-Creation-Date: 2018-02-10 11:43+0700\n"
+"PO-Revision-Date: 2018-02-10 11:45+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -21,11 +21,9 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: archive.php:46 inc/shortcode/shortcode-blog.php:33
-#: inc/shortcode/shortcode-blog.php:380 inc/widgets/wg-post-list.php:59
-#: search.php:40
-msgid "Read more"
-msgstr "Xem thêm"
+#: archive.php:69
+msgid "The content is being updated"
+msgstr "Nội dung đang cập nhật"
 
 #: comments.php:31
 #, php-format
@@ -50,36 +48,36 @@ msgstr "Bình luận mới hơn"
 msgid "Comments are closed."
 msgstr "Bình luận đã được đóng lại."
 
-#: functions.php:44
+#: functions.php:26
 msgid "Primary"
 msgstr "Primary"
 
-#: functions.php:73
+#: functions.php:74
 msgid "Primary Sidebar"
 msgstr "Primary Sidebar"
 
-#: functions.php:75 functions.php:85 inc/function-woo.php:10
+#: functions.php:76 functions.php:86 inc/function-woo.php:10
 msgid "Add widgets here."
 msgstr "Thêm widgets tại đây."
 
-#: functions.php:83
+#: functions.php:84
 msgid "Secondary Sidebar"
 msgstr "Secondary Sidebar"
 
-#: functions.php:102
+#: functions.php:103
 msgid "Top Header"
 msgstr "Top Header"
 
-#: functions.php:104
+#: functions.php:105
 msgid "Top Header widget area"
 msgstr "Top Header widget area"
 
-#: functions.php:127
+#: functions.php:128
 #, php-format
 msgid "Footer %d"
 msgstr "Footer %d"
 
-#: functions.php:129
+#: functions.php:130
 #, php-format
 msgid "Footer %d widget area"
 msgstr "Footer %d widget area"
@@ -543,7 +541,7 @@ msgstr "Cài đặt gói mở rộng %1$s (%2$d/%3$d)"
 msgid "Shop Sidebar"
 msgstr "Shop Sidebar"
 
-#: inc/function-woo.php:144 inc/options.php:611
+#: inc/function-woo.php:144 inc/options.php:632
 msgid "Information"
 msgstr "Thông tin"
 
@@ -563,7 +561,7 @@ msgstr "Tệp đính kèm"
 msgid "Contact"
 msgstr "Liên hệ"
 
-#: inc/function-woo.php:314
+#: inc/function-woo.php:312
 msgid "View detail"
 msgstr "Xem chi tiết"
 
@@ -631,17 +629,17 @@ msgstr "Chọn giao diện Header"
 msgid "Enable Page Title Bar"
 msgstr "Bật Page Title Bar"
 
-#: inc/options.php:255 inc/options.php:263 inc/options.php:420
-#: inc/options.php:428 inc/options.php:436 inc/options.php:461
-#: inc/options.php:511 inc/options.php:530 inc/options.php:678
-#: inc/options.php:686
+#: inc/options.php:255 inc/options.php:263 inc/options.php:425
+#: inc/options.php:433 inc/options.php:441 inc/options.php:457
+#: inc/options.php:482 inc/options.php:532 inc/options.php:551
+#: inc/options.php:699 inc/options.php:707
 msgid "Enable"
 msgstr "Bật"
 
-#: inc/options.php:256 inc/options.php:264 inc/options.php:421
-#: inc/options.php:429 inc/options.php:437 inc/options.php:462
-#: inc/options.php:512 inc/options.php:531 inc/options.php:679
-#: inc/options.php:687
+#: inc/options.php:256 inc/options.php:264 inc/options.php:426
+#: inc/options.php:434 inc/options.php:442 inc/options.php:458
+#: inc/options.php:483 inc/options.php:533 inc/options.php:552
+#: inc/options.php:700 inc/options.php:708
 msgid "Disable"
 msgstr "Tắt"
 
@@ -657,186 +655,198 @@ msgstr "Footer"
 msgid "Enter number column footer"
 msgstr "Nhập số cột Footer"
 
-#: inc/options.php:290
+#: inc/options.php:288
+msgid "Copyright"
+msgstr "Copyright"
+
+#: inc/options.php:295
 msgid "Home Page"
 msgstr "Trang chủ"
 
-#: inc/options.php:296
+#: inc/options.php:301
 msgid "News"
 msgstr "Tin tức"
 
-#: inc/options.php:304 inc/options.php:371
+#: inc/options.php:309 inc/options.php:376
 msgid "Select categories"
 msgstr "Chọn các danh mục"
 
-#: inc/options.php:314
+#: inc/options.php:319
 msgid "Enter number post"
 msgstr "Nhập số bài viết"
 
-#: inc/options.php:324
+#: inc/options.php:329
 msgid "Blog Layout"
 msgstr "Chọn giao diện Blog"
 
-#: inc/options.php:363
+#: inc/options.php:368
 msgid "Product"
 msgstr "Sản phẩm"
 
-#: inc/options.php:381
+#: inc/options.php:386
 msgid "Enter number product"
 msgstr "Nhập số sản phẩm"
 
-#: inc/options.php:391 inc/options.php:485 inc/options.php:547
+#: inc/options.php:396 inc/options.php:506 inc/options.php:568
 msgid "Enter number product per row"
 msgstr "Nhập số sản phẩm mỗi hàng"
 
-#: inc/options.php:405
+#: inc/options.php:410
 msgid "Post"
 msgstr "Bài viết"
 
-#: inc/options.php:411
+#: inc/options.php:416
 msgid "Single post"
 msgstr "Chi tiết bài viết"
 
-#: inc/options.php:418
+#: inc/options.php:423
 msgid "Display buttons share social"
 msgstr "Hiển thị nút chia sẻ mạng xã hội"
 
-#: inc/options.php:426
+#: inc/options.php:431
 msgid "Display post navigation"
 msgstr "Hiển thị thanh điều hướng bài viết"
 
-#: inc/options.php:434 inc/options.php:528
+#: inc/options.php:439 inc/options.php:549
 msgid "Display related products"
 msgstr "Hiển thị sản phẩm liên quan"
 
-#: inc/options.php:446
+#: inc/options.php:448
+msgid "Category post"
+msgstr "Danh mục bài viết"
+
+#: inc/options.php:455
+msgid "Display hierarchy category"
+msgstr "Hiển thị phân cấp danh mục"
+
+#: inc/options.php:467
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
-#: inc/options.php:452
+#: inc/options.php:473
 msgid "Main Settings"
 msgstr "Cài đặt chung"
 
-#: inc/options.php:459
+#: inc/options.php:480
 msgid "Display Widget Shop Sidebar"
 msgstr "Hiển thị Widget Shop Sidebar"
 
-#: inc/options.php:468
+#: inc/options.php:489
 msgid "Category Product"
-msgstr "Chuyên mục sản phẩm"
+msgstr "Danh mục sản phẩm"
 
-#: inc/options.php:475
+#: inc/options.php:496
 msgid "Enter number product per page"
 msgstr "Nhập số sản phẩm mỗi trang"
 
-#: inc/options.php:496
+#: inc/options.php:517
 msgid "Single Product"
 msgstr "Chi tiết sản phẩm"
 
-#: inc/options.php:503
+#: inc/options.php:524
 msgid "Setting General"
 msgstr "Cài đặt chung"
 
-#: inc/options.php:509
+#: inc/options.php:530
 msgid "Display attributes product"
 msgstr "Hiển thị thuộc tính sản phẩm"
 
-#: inc/options.php:522
+#: inc/options.php:543
 msgid "Related Product"
 msgstr "Sản phẩm liên quan"
 
-#: inc/options.php:536
+#: inc/options.php:557
 msgid "Enter number related product"
 msgstr "Nhập số sản phẩm liên quan"
 
-#: inc/options.php:567
+#: inc/options.php:588
 msgid "Social"
 msgstr "Mạng xã hội"
 
-#: inc/options.php:574
+#: inc/options.php:595
 msgid "Facebook"
 msgstr "Facebook"
 
-#: inc/options.php:579
+#: inc/options.php:600
 msgid "Twitter"
 msgstr "Twitter"
 
-#: inc/options.php:584
+#: inc/options.php:605
 msgid "Google +"
 msgstr "Google +"
 
-#: inc/options.php:589
+#: inc/options.php:610
 msgid "Youtube"
 msgstr "Youtube"
 
-#: inc/options.php:594
+#: inc/options.php:615
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: inc/options.php:599
+#: inc/options.php:620
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: inc/options.php:604
+#: inc/options.php:625
 msgid "Instagram"
 msgstr "Instagram"
 
-#: inc/options.php:618
+#: inc/options.php:639
 msgid "Telephone number"
 msgstr "Số điện thoại"
 
-#: inc/options.php:623 inc/widgets/wg-information.php:37
+#: inc/options.php:644 inc/widgets/wg-information.php:37
 #: inc/widgets/wg-information.php:77 inc/widgets/wg-support.php:76
 #: inc/widgets/wg-support.php:107 inc/widgets/wg-support.php:200
 msgid "Email"
 msgstr "Email"
 
-#: inc/options.php:628 inc/widgets/wg-information.php:31
+#: inc/options.php:649 inc/widgets/wg-information.php:31
 #: inc/widgets/wg-information.php:69
 msgid "Address"
 msgstr "Địa chỉ"
 
-#: inc/options.php:633
+#: inc/options.php:654
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: inc/options.php:634
+#: inc/options.php:655
 msgid "Google map embed"
 msgstr "Mã google map"
 
-#: inc/options.php:641
+#: inc/options.php:662
 msgid "Insert code"
 msgstr "Nhúng code"
 
-#: inc/options.php:648
+#: inc/options.php:669
 msgid "Insert code to header"
 msgstr "Chèn code vào Header"
 
-#: inc/options.php:653
+#: inc/options.php:674
 msgid "Insert code to footer"
 msgstr "Chèn code vào Footer"
 
-#: inc/options.php:660
+#: inc/options.php:681
 msgid "3B Developer"
 msgstr "3B Developer"
 
-#: inc/options.php:669
+#: inc/options.php:690
 msgid "Woocommerce"
 msgstr "Woocommerce"
 
-#: inc/options.php:676
+#: inc/options.php:697
 msgid "Tooltip"
 msgstr "Tooltip"
 
-#: inc/options.php:684
+#: inc/options.php:705
 msgid "Cart"
 msgstr "Giỏ hàng"
 
-#: inc/options.php:795
+#: inc/options.php:816
 msgid "Section via hook"
 msgstr "Section via hook"
 
-#: inc/options.php:796
+#: inc/options.php:817
 msgid ""
 "<p class=\"description\">This is a section created by adding a filter to the "
 "sections array. Can be used by child themes to add/remove sections from the "
@@ -847,11 +857,17 @@ msgstr ""
 "bỏ các phần từ các tùy chọn.\n"
 "</p>"
 
-#: inc/shortcode/shortcode-blog.php:419
+#: inc/shortcode/shortcode-blog.php:33 inc/shortcode/shortcode-blog.php:381
+#: inc/widgets/wg-post-list.php:59 search.php:40
+#: template-parts/loop/loop-news.php:25
+msgid "Read more"
+msgstr "Xem thêm"
+
+#: inc/shortcode/shortcode-blog.php:421
 msgid "Comments"
 msgstr "Bình luận"
 
-#: inc/shortcode/shortcode-blog.php:428 inc/widgets/wg-view-post-list.php:68
+#: inc/shortcode/shortcode-blog.php:430 inc/widgets/wg-view-post-list.php:68
 msgid "View more"
 msgstr "Xem thêm"
 
@@ -869,7 +885,7 @@ msgstr "Like Facebook"
 
 #: inc/widgets/wg-fblikebox.php:55 inc/widgets/wg-information.php:65
 #: inc/widgets/wg-page.php:40 inc/widgets/wg-post-list.php:96
-#: inc/widgets/wg-product-slider.php:103 inc/widgets/wg-social.php:73
+#: inc/widgets/wg-product-slider.php:104 inc/widgets/wg-social.php:74
 #: inc/widgets/wg-support.php:50 inc/widgets/wg-view-post-list.php:105
 msgid "Title"
 msgstr "Tiêu đề"
@@ -912,32 +928,32 @@ msgid "Show Featured Image"
 msgstr "Hiển thị ảnh đại diện"
 
 #: inc/widgets/wg-page.php:57 inc/widgets/wg-post-list.php:128
-#: inc/widgets/wg-product-slider.php:130 inc/widgets/wg-view-post-list.php:135
+#: inc/widgets/wg-product-slider.php:131 inc/widgets/wg-view-post-list.php:135
 msgid "Image Size"
 msgstr "Kích thước ảnh"
 
 #: inc/widgets/wg-page.php:69 inc/widgets/wg-post-list.php:118
-#: inc/widgets/wg-product-slider.php:120 inc/widgets/wg-view-post-list.php:125
+#: inc/widgets/wg-product-slider.php:121 inc/widgets/wg-view-post-list.php:125
 msgid "Image Alignment"
 msgstr "Căn lề ảnh"
 
 #: inc/widgets/wg-page.php:71 inc/widgets/wg-post-list.php:120
-#: inc/widgets/wg-product-slider.php:122 inc/widgets/wg-view-post-list.php:127
+#: inc/widgets/wg-product-slider.php:123 inc/widgets/wg-view-post-list.php:127
 msgid "None"
 msgstr "Không"
 
 #: inc/widgets/wg-page.php:72 inc/widgets/wg-post-list.php:121
-#: inc/widgets/wg-product-slider.php:123 inc/widgets/wg-view-post-list.php:128
+#: inc/widgets/wg-product-slider.php:124 inc/widgets/wg-view-post-list.php:128
 msgid "Left"
 msgstr "Trái"
 
 #: inc/widgets/wg-page.php:73 inc/widgets/wg-post-list.php:122
-#: inc/widgets/wg-product-slider.php:124 inc/widgets/wg-view-post-list.php:129
+#: inc/widgets/wg-product-slider.php:125 inc/widgets/wg-view-post-list.php:129
 msgid "Right"
 msgstr "Phải"
 
 #: inc/widgets/wg-page.php:74 inc/widgets/wg-post-list.php:123
-#: inc/widgets/wg-product-slider.php:125 inc/widgets/wg-view-post-list.php:130
+#: inc/widgets/wg-product-slider.php:126 inc/widgets/wg-view-post-list.php:130
 msgid "Center"
 msgstr "Chính giữa"
 
@@ -965,16 +981,16 @@ msgstr "3B - Danh sách bài viết"
 msgid "Displays featured posts with thumbnails"
 msgstr "Hiển thị danh sách bài viết theo chuyên mục"
 
-#: inc/widgets/wg-post-list.php:101 inc/widgets/wg-product-slider.php:108
+#: inc/widgets/wg-post-list.php:101 inc/widgets/wg-product-slider.php:109
 #: inc/widgets/wg-view-post-list.php:110
 msgid "Number of Posts to Show"
 msgstr "Số bài viết hiển thị"
 
-#: inc/widgets/wg-post-list.php:106 inc/widgets/wg-product-slider.php:113
+#: inc/widgets/wg-post-list.php:106 inc/widgets/wg-product-slider.php:114
 msgid "Category"
 msgstr "Chuyên mục"
 
-#: inc/widgets/wg-post-list.php:108 inc/widgets/wg-product-slider.php:115
+#: inc/widgets/wg-post-list.php:108 inc/widgets/wg-product-slider.php:116
 msgid "Select category"
 msgstr "Chọn chuyên mục"
 
@@ -1022,7 +1038,7 @@ msgstr "3B - Mạng xã hội"
 msgid "Display information social"
 msgstr "Hiển thị thông tin mạng xã hội"
 
-#: inc/widgets/wg-social.php:76
+#: inc/widgets/wg-social.php:77
 msgid ""
 "<p>This widget content is displayed from <strong>Theme Options -> Social</"
 "strong></p>"
@@ -1138,9 +1154,17 @@ msgstr "Bài viết sau đó"
 msgid "Related posts"
 msgstr "Bài viết liên quan"
 
-#: woocommerce/cart/mini-cart.php:87
+#: woocommerce/cart/mini-cart.php:86
 msgid "Remove this item"
 msgstr "Xóa sản phẩm này"
+
+#: woocommerce/cart/mini-cart.php:99
+msgid "Subtotal"
+msgstr "Tổng phụ"
+
+#: woocommerce/cart/mini-cart.php:111
+msgid "No products in the cart."
+msgstr "Không có sản phẩm nào trong giỏ hàng."
 
 #: woocommerce/single-product/meta.php:31
 msgid "SKU:"

@@ -270,7 +270,6 @@ add_action( 'woocommerce_share','insert_share_product' );
  */
 if( ! function_exists('sh_woocommerce_get__cart_menu_item__content') ) {
 	function sh_woocommerce_get__cart_menu_item__content() {
-		// ob_start();
 		echo '<div class="navbar-actions">';
 			echo '<div class="navbar-actions-shrink shopping-cart">';
 				echo '<a href="javascript:void(0);" class="shopping-cart-icon-container ffb-cart-menu-item">';
@@ -278,14 +277,13 @@ if( ! function_exists('sh_woocommerce_get__cart_menu_item__content') ) {
 					echo '<span class="shopping-cart-menu-title">';
 						echo get_the_title( wc_get_page_id('cart') );
 						echo '&nbsp;';
-					echo '</span><i class="fa fa-shopping-cart" aria-hidden="true"></i> </span>';
+					echo '</span><i class="fas fa-shopping-cart"></i> </span>';
 				echo '</a>';
 				echo '<div class="shopping-cart-menu-wrapper">';
 					wc_get_template( 'cart/mini-cart.php', array('list_class' => ''));
 				echo '</div>';
 			echo '</div>';
 		echo '</div>';
-		// return ob_get_clean();
 	}
 	add_action( 'sh_after_menu', 'sh_woocommerce_get__cart_menu_item__content');
 }
@@ -317,16 +315,16 @@ function insert_btn_detail(){
 }
 // add_action( 'woocommerce_after_shop_loop_item','insert_btn_detail',15 );
 
-// archive-product.php
+// File archive-product.php
 remove_action( 'woocommerce_before_shop_loop','woocommerce_result_count',20 );
 remove_action( 'woocommerce_before_shop_loop','woocommerce_catalog_ordering',30 );
 remove_action( 'woocommerce_sidebar','woocommerce_get_sidebar',10 );
 
-// content-product.php
+// File content-product.php
 remove_action( 'woocommerce_after_shop_loop_item','woocommerce_template_loop_add_to_cart',10 );
 remove_action( 'woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating',5 );
 remove_action( 'woocommerce_after_shop_loop_item_title','woocommerce_template_loop_price',10 );
 remove_action( 'woocommerce_shop_loop_item_title','woocommerce_template_loop_product_title',10 );
 
-// content-single-product.php
+// File content-single-product.php
 remove_action( 'woocommerce_single_product_summary','woocommerce_template_single_meta',40 );

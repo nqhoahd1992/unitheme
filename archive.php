@@ -13,50 +13,78 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		if ( have_posts() ) : ?>
+		if ( have_posts() ) : 
 
-			<?php
-				if( $sh_option['display-pagetitlebar'] != '1' ) {
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
+			// Title 
+			if( $sh_option['display-pagetitlebar'] != '1' ) {
+				echo '<h1 class="page-title">';
+				single_term_title();
+				echo '</h1>';
+			}
+			the_archive_description( '<div class="archive-description">', '</div>' );
+			
+			if( $sh_option['display-hierarchy'] == '1' ) {
+
+				// Content
+				$archive_object = get_queried_object();
+				$archive_id 	= $archive_object->term_id;
+				$args = array(
+					'parent'     	=> $archive_id,
+					'hide_empty'  	=> 0,
+					'taxonomy'    	=> $archive_object->taxonomy,
+				);
+				$categories = get_categories( $args );
+				if( $categories ) {
+					/* Start the Loop */
+					foreach ( $categories as $value ) {
+						echo '<div class="list-categories">';
+					    	echo '<a class="item-category" href="' . get_term_link( $value->term_id, $archive_object->taxonomy ) . '">' . $value->name . '</a>';
+					    	$args = array(
+		                        'post_type' => 'post',
+		                        'tax_query' => array(
+		                            array(
+		                                'taxonomy' 	=> $archive_object->taxonomy,
+		                                'field' 	=> 'id',
+		                                'terms' 	=> $value->term_id,
+		                            )
+		                        ),
+		                        'paged'		=> get_query_var('paged'),
+	                        );
+	                        /* Start the Loop */
+							echo '<div class="new-list">';
+								while ( have_posts() ) : the_post();
+									get_template_part( 'template-parts/loop/loop-news' );
+								endwhile;
+							echo '</div>';
+							shtheme_pagination();
+					    echo '</div>';
+					}
+				} else {
+					/* Start the Loop */
+					echo '<div class="new-list">';
+						while ( have_posts() ) : the_post();
+							get_template_part( 'template-parts/loop/loop-news' );
+						endwhile;
+					echo '</div>';
+					shtheme_pagination();
 				}
-				the_archive_description( '<div class="archive-description">', '</div>' );
-			?>
 
-			<?php
-			/* Start the Loop */
+			} else {
 
-			echo '<div class="new-list">';
+				/* Start the Loop */
+				echo '<div class="new-list">';
+					while ( have_posts() ) : the_post();
+						get_template_part( 'template-parts/loop/loop-news' );
+					endwhile;
+				echo '</div>';
+				shtheme_pagination();
 
-			while ( have_posts() ) : the_post();
-
-				?>
-				<article class="<?php echo implode( ' ', get_post_class( $class ) );?>">
-					<a class="alignleft" href="<?php the_permalink();?>" title="<?php the_title();?>">
-						<?php echo get_the_post_thumbnail( get_the_ID(), 'sh_thumb300x200' );?>
-					</a>
-					<h3><a title="<?php the_title();?>" href="<?php the_permalink();?>" ><?php the_title();?></a></h3>
-					<?php echo get_the_content_limit( 400 ,' ');?>
-					<div class="clearfix"></div>
-					<div class="ps-meta-info">
-					   	<div class="ps-alignleft">
-					   		<span><?php the_time('j F Y') ?></span><span class="ps-inline-sep">|</span>
-					   		<?php echo get_the_category_list(', ');?>
-					   	</div>
-					   	<div class="ps-alignright">
-					   		<a href="<?php the_permalink();?>" class="ps-read-more"><?php _e( 'Read more', 'shtheme' );?></a>
-					   	</div>
-					</div>
-				</article>
-				<?php
-
-			endwhile;
-
-			echo '</div>';
-
-			shtheme_pagination();
-
+			}
+			
+			
 		else :
 
+			_e('The content is being updated','shtheme');
 			
 		endif; ?>
 

@@ -444,6 +444,22 @@ Redux::setSection( $opt_name, array(
     )
 ) );
 
+Redux::setSection( $opt_name, array(
+    'title'            => __( 'Category post', 'shtheme' ),
+    'id'               => 'blogpost-archive',
+    'subsection'       => true,
+    'fields'           => array(
+        array(
+            'id'       => 'display-hierarchy',
+            'type'     => 'switch', 
+            'title'    => __('Display hierarchy category', 'shtheme'),
+            'default'  => false,
+            'on'       => __('Enable', 'shtheme'),
+            'off'      => __('Disable', 'shtheme'),
+        ),
+    )
+) );
+
 
 // -> WooCommerce
 if ( class_exists( 'WooCommerce' ) ) {

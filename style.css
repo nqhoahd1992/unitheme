@@ -60,12 +60,18 @@ img {max-width: 100%;height: auto}
 .site-header.logo-left .header-content {
 	display: table;
 	width: 100%;
-	padding: 20px 0;
 }
-.site-header.logo-left .header-content .logo, .site-header.logo-left .header-content .main-navigation {
-	display: table-cell;
-	vertical-align: middle;
+.site-header.logo-left .header-content .logo img {
+	margin: 10px 0;
 }
+@media (min-width: 768px) {
+	.site-header.logo-left .header-content .logo, 
+	.site-header.logo-left .header-content .main-navigation {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
 /* Header style 2 */
 .site-header.logo-center {
 	
@@ -77,7 +83,7 @@ img {max-width: 100%;height: auto}
 /*--------------------------------------------------------------
 # Main Navigation
 --------------------------------------------------------------*/
-.main-navigation {
+.site-header.logo-center .main-navigation {
 	background: #337ab7;
 }
 .site-header.logo-center .main-navigation {
@@ -108,13 +114,18 @@ img {max-width: 100%;height: auto}
 	line-height: 40px;
 	/*text-transform: uppercase;*/
 }
+.site-header.logo-left .main-navigation ul.menu > li > a {
+	color: #333333;
+}
 .main-navigation ul.menu > li.li-home > a:before {
     content: "\f015";
     font-family: FontAwesome;
     margin-right: 5px;
 }
 .main-navigation ul.menu li > a:hover,
-.main-navigation ul.menu li.current-menu-item > a {
+.main-navigation ul.menu li.current-menu-item > a,
+.site-header.logo-left .main-navigation ul.menu li > a:hover,
+.site-header.logo-left .main-navigation ul.menu li.current-menu-item > a {
 	color: #FF0;
 }
 /* Submenu 1 */
@@ -127,10 +138,10 @@ img {max-width: 100%;height: auto}
     visibility: hidden;
     z-index: 99999;
     background: #337ab7;
-    -webkit-transition: -webkit-transform 0.25s ease,opacity 0.5s ease;
-    -moz-transition: -moz-transform 0.25s ease,opacity 0.5s ease;
-    -o-transition: -o-transform 0.25s ease,opacity 0.5s ease;
-    transition: transform 0.25s ease,opacity 0.5s ease;
+    -webkit-transition: -webkit-transform 0.25s ease, opacity 0.5s ease;
+    -moz-transition: -moz-transform 0.25s ease, opacity 0.5s ease;
+    -o-transition: -o-transform 0.25s ease, opacity 0.5s ease;
+    transition: transform 0.25s ease, opacity 0.5s ease;
 }
 .main-navigation ul li:hover > ul {
     opacity: 1;
