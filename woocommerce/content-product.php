@@ -27,13 +27,24 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 
-global $sh_option, $post;
-$numcol   = $sh_option['number-column-product-cate'];
-$post_class = get_column_product($numcol);
+global $post, $sh_option;
+
+// Dev Feature Tooltip
 if( $sh_option['woocommerce-tooltip'] == '1' ) {
 	$string_tooltip = 'data-tooltip="stickyzoom" data-img-full="'. wp_get_attachment_url(get_post_thumbnail_id( $post->ID,'full' )) .'" ';
 } else {
 	$string_tooltip = '';
+}
+
+// Post Class
+if( is_home() || $sh_option['layout-category-product'] == '1' ) {
+	$numcol 				= $sh_option['number_product'];
+	$post_class_homepage 	= get_column_product($numcol);
+	$post_class 			= $post_class_homepage;
+} elseif ( ! is_home() && $sh_option['layout-category-product'] == '0' ) {
+	$numcol   				= $sh_option['number-column-product-cate'];
+	$post_class_archive 	= get_column_product($numcol);
+	$post_class 			= $post_class_archive;
 }
 ?>
 <li <?php post_class($post_class); ?>>

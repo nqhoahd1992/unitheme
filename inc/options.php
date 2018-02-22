@@ -491,6 +491,14 @@ if ( class_exists( 'WooCommerce' ) ) {
         'subsection'       => true,
         'fields'           => array(
             array(
+                'id'        => 'layout-category-product',
+                'type'      => 'switch', 
+                'title'     => __('Layout', 'shtheme'),
+                'default'   => true,
+                'on'        => __('Default', 'shtheme'),
+                'off'       => __('Customize', 'shtheme'),
+            ),
+            array(
                 'id'        => 'number-products-cate',
                 'type'      => 'slider',
                 'title'     => __('Enter number product per page', 'shtheme'),
@@ -499,6 +507,7 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'step'      => 1,
                 'max'       => 30,
                 'display_value' => 'text',
+                'required'  => array('layout-category-product','equals',false),
             ),
             array(
                 'id'        => 'number-column-product-cate',
@@ -509,47 +518,48 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'step'      => 1,
                 'max'       => 6,
                 'display_value' => 'text',
+                'required'  => array('layout-category-product','equals',false),
             ),
         )
     ) );
 
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Single Product', 'shtheme' ),
-        'id'               => 'woocommerce-singlepage',
-        'subsection'       => true,
-        'fields'           => array(
+        'title'             => __( 'Single Product', 'shtheme' ),
+        'id'                => 'woocommerce-singlepage',
+        'subsection'        => true,
+        'fields'            => array(
             array(
-               'id'     => 'section-singlepage-start',
-               'type'   => 'section',
-               'title'  => __('Setting General', 'shtheme'),
-               'indent' => true 
+               'id'         => 'section-singlepage-start',
+               'type'       => 'section',
+               'title'      => __('Setting General', 'shtheme'),
+               'indent'     => true 
             ),
             array(
-                'id'       => 'display-propertypro',
-                'type'     => 'switch', 
-                'title'    => __('Display attributes product', 'shtheme'),
-                'default'  => false,
-                'on'       => __('Enable', 'shtheme'),
-                'off'      => __('Disable', 'shtheme'),
+                'id'        => 'display-propertypro',
+                'type'      => 'switch', 
+                'title'     => __('Display attributes product', 'shtheme'),
+                'default'   => false,
+                'on'        => __('Enable', 'shtheme'),
+                'off'       => __('Disable', 'shtheme'),
             ),
             array(
-                'id'     => 'section-singlepage-end',
-                'type'   => 'section',
-                'indent' => false,
+                'id'        => 'section-singlepage-end',
+                'type'      => 'section',
+                'indent'    => false,
             ),
             array(
-               'id'     => 'section-relatedpro-start',
-               'type'   => 'section',
-               'title'  => __('Related Product', 'shtheme'),
-               'indent' => true 
+               'id'         => 'section-relatedpro-start',
+               'type'       => 'section',
+               'title'      => __('Related Product', 'shtheme'),
+               'indent'     => true 
             ),
             array(
-                'id'       => 'display-relatedpro',
-                'type'     => 'switch', 
-                'title'    => __('Display related products', 'shtheme'),
-                'default'  => true,
-                'on'       => __('Enable', 'shtheme'),
-                'off'      => __('Disable', 'shtheme'),
+                'id'        => 'display-relatedpro',
+                'type'      => 'switch', 
+                'title'     => __('Display related products', 'shtheme'),
+                'default'   => true,
+                'on'        => __('Enable', 'shtheme'),
+                'off'       => __('Disable', 'shtheme'),
             ),
             array(
                 'id'        => 'number-product-related',
@@ -560,7 +570,7 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'step'      => 1,
                 'max'       => 6,
                 'display_value' => 'text',
-                'required' => array('display-relatedpro','equals',true),
+                'required'  => array('display-relatedpro','equals',true),
             ),
             array(
                 'id'        => 'number-column-product-related',
@@ -571,12 +581,12 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'step'      => 1,
                 'max'       => 6,
                 'display_value' => 'text',
-                'required' => array('display-relatedpro','equals',true),
+                'required'  => array('display-relatedpro','equals',true),
             ),
             array(
-                'id'     => 'section-relatedpro-end',
-                'type'   => 'section',
-                'indent' => false,
+                'id'        => 'section-relatedpro-end',
+                'type'      => 'section',
+                'indent'    => false,
             ),
         )
     ) );

@@ -884,13 +884,13 @@ html .woocommerce-product-details__short-description ul li {
 		width: 100%;
 	}
 }
-.list-products {
+.row.list-products {
 	padding: 0;
 	clear: both;
 	margin-left: -10px;
 	margin-right: -10px;
 }
-.list-products li {
+.row.list-products li {
 	display: block;
 	margin-bottom: 20px;
 	text-align: center;
@@ -945,3 +945,4 @@ html .woocommerce-product-details__short-description ul li {
 .list-products li .wrap-product .price {
 	
 }
+/* Custom Css Woocommerce */
