@@ -41,7 +41,7 @@ Tags: web3b
 # Normalize
 --------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&subset=vietnamese');
-body {overflow-x: hidden;font-family: 'Roboto', Arial, sans-serif}
+body {overflow-x: hidden;font-family: 'Roboto', Arial, sans-serif;font-size: 0.875rem;}
 a {color: #337ab7;}
 a:hover, a:active, a:focus, a:visited {text-decoration: none}
 img {max-width: 100%;height: auto}
@@ -892,8 +892,6 @@ embed, iframe, object {max-width: 100%}
 .new-list article .alignleft img {width: 100%;height: auto;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;-o-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out}
 .new-list article .alignleft img:hover {transform: scale(1.1);-webkit-transform: scale(1.1)}
 .ps-meta-info {
-    clear: both;
-    overflow: hidden;
     margin-top: 20px;
     padding: 5px 0;
     border-top: 1px solid #e0dede;
@@ -902,12 +900,10 @@ embed, iframe, object {max-width: 100%}
 }
 .ps-alignleft {
     display: inline;
-    float: left;
     margin-right: 15px;
 }
 .ps-alignright {
     display: inline;
-    float: right;
     margin-left: 15px;
 }
 .ps-inline-sep {
@@ -1033,7 +1029,7 @@ embed, iframe, object {max-width: 100%}
 	top: -2px;
 	margin-right: 5px;
 }
-@media (min-width: 992px) {
+/*@media (min-width: 992px) {
 	.sh-blog-shortcode.style-3 .element:nth-child(3n+1),
 	.sh-blog-shortcode.style-4 .element:nth-child(4n+1) {
 		clear: both;
@@ -1049,10 +1045,12 @@ embed, iframe, object {max-width: 100%}
 	.sh-blog-shortcode.style-2 .element:nth-child(2n+1) {
 		clear: both;
 	}
-}
+}*/
 @media (max-width: 414px) {
 	.sh-blog-shortcode .element {
-		width: 100%;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
 	}
 }
 
@@ -1065,24 +1063,25 @@ embed, iframe, object {max-width: 100%}
 	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
     background: #FFF;
-    min-height: 46px;
     z-index: 999999;
     background: #337ab7;
+    padding: 0;
 }
 /* Breakpoint Responsive  */
 @media (max-width: 1024px) {
 	#site-navigation {display: none}
 	.navbar {display: block}
-	.site {padding-top: 50px}
+	.site {padding-top: 46px}
 	.logged-in .site {padding-top: 14px}
 }
 @media (max-width: 782px) {
 	.logged-in .site {padding-top: 0}
 }
 .navbar-brand {
-	color: #FFF;
-	height: 46px;
-	padding: 12px 15px;
+	color: #FFF !important;
+	height: 2.875rem;
+	padding: 0.75rem 0.9375rem;
+	font-size: 1rem;
 	/*position: absolute;
 	left: 50%;
     transform: translate(-50%, 0);*/
@@ -1090,7 +1089,7 @@ embed, iframe, object {max-width: 100%}
 .navbar-brand img {max-height: 30px;}
 #mobilenav {background: #1e1e1e;position: fixed;height: 100%;width: 250px;top: 0;font-size: 0.9em;left: 0;overflow-x: hidden;overflow-y: scroll;-webkit-transition: all 0.3s ease-in-out 0s;-moz-transition: all 0.3s ease-in-out 0s;transition: all 0.3s ease-in-out 0s;-webkit-transform: translate(-250px);-moz-transform: translate(-250px);-ms-transform: translate(-250px);-o-transform: translate(-250px);transform: translate(-250px);z-index: 9999999;}
 #mobilenav.opened {-webkit-transform: translate(0px);-moz-transform: translate(0px);-ms-transform: translate(0px);-o-transform: translate(0px);transform: translate(0px);z-index: 9999999;}
-.toplg {padding: 10px;text-align: center;}
+.toplg {padding: 2rem 0.625rem 1rem 0.625rem;text-align: center;}
 .toplg img {max-width: 150px;margin: 0 auto;}
 #mobilenav h3, #mobilenav p {color: #f2f2f2;text-align: center;font-size: 18px;}
 #mobilenav .mobile-menu {margin: 15px 0;padding: 0 10px;}
@@ -1103,7 +1102,7 @@ embed, iframe, object {max-width: 100%}
 #mobilenav ul.sub-menu {display: none;list-style: none;margin: 0;padding: 0 0 0 10px;}
 .panel-overlay {opacity: 0;filter: alpha(opacity=0);}
 .panel-overlay.active {background: #000;position: fixed;left: 0;right: 0;top: 0;bottom: 0;z-index: 999999;min-height: 100vh;opacity: 0.35;filter: alpha(opacity=35);-webkit-transition: opacity 0.2s ease-in-out 0s;-moz-transition: opacity 0.2s ease-in-out 0s;transition: opacity 0.2s ease-in-out 0s;}
-#showmenu {position: fixed;top: 0;right: 10px;z-index: 5;}
+#showmenu {position: absolute;top: 0;right: 10px;z-index: 5;}
 #hamburger .hamburger{margin-left:10px}
 .hamburger{padding:10px;height:45px;display:inline-block;cursor:pointer;-webkit-transition-property:opacity,-webkit-filter;transition-property:opacity,filter;transition-property:opacity,filter,-webkit-filter;-webkit-transition-duration:.15s;transition-duration:.15s;-webkit-transition-timing-function:linear;transition-timing-function:linear;font:inherit;color:inherit;text-transform:none;background-color:transparent;border:0;margin:0;overflow:visible}
 .hamburger-box{width:30px;height:24px;display:inline-block;position:relative}

@@ -34,7 +34,7 @@ if ( $related_products ) : ?>
         ?>
         <section class="related">
 	        <h2 class="heading-related"><span><?php _e( 'Related Products', 'shtheme' ); ?></span></h2>
-	        <ul class="owl-carousel list-products" data-item="<?php echo $numcol_pro_related;?>" data-margin="30" data-md="2" data-sm="2" data-xs="1" data-dots="false" data-nav="true">
+	        <ul class="owl-carousel list-products" data-item="<?php echo $numcol_pro_related;?>" data-margin="30" data-md="2" data-sm="2" data-xs="1" data-mb="1" data-dots="false" data-nav="true">
 				<?php foreach ( $related_products as $related_product ) : ?>
 
 					<?php

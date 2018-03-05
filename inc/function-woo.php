@@ -112,19 +112,19 @@ function get_column_product($numcol) {
 	        $post_class = 'col-md-12';
 	        break;
 	    case '2':
-	        $post_class = 'col-xs-6';
+	        $post_class = 'col-6';
 	        break;
 	    case '3':
-	        $post_class = 'col-md-4 col-sm-6 col-xs-6';
+	        $post_class = 'col-md-4 col-sm-6 col-6';
 	        break;
 	    case '4':
-	        $post_class = 'col-md-3 col-sm-4 col-xs-6';
+	        $post_class = 'col-md-3 col-sm-4 col-6';
 	        break;
 	    case '5':
-	        $post_class = 'col-lg-15 col-md-3 col-sm-4 col-xs-6';
+	        $post_class = 'col-lg-15 col-md-3 col-sm-4 col-6';
 	        break;
 	    case '6':
-	        $post_class = 'col-lg-2 col-md-3 col-sm-4 col-xs-6';
+	        $post_class = 'col-lg-2 col-md-3 col-sm-4 col-6';
 	        break;
 	}
 	return $post_class;

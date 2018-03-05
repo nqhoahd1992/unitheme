@@ -38,7 +38,7 @@ if( $sh_option['woocommerce-tooltip'] == '1' ) {
 
 // Post Class
 if( is_home() || $sh_option['layout-category-product'] == '1' ) {
-	$numcol 				= $sh_option['number_product'];
+	$numcol 				= $sh_option['number_product_row'];
 	$post_class_homepage 	= get_column_product($numcol);
 	$post_class 			= $post_class_homepage;
 } elseif ( ! is_home() && $sh_option['layout-category-product'] == '0' ) {

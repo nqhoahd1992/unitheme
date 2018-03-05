@@ -180,7 +180,7 @@ class sh_blog_shortcode {
 			$post_class = array( 'element', 'hentry', 'post-item' );
 
 			$atts['hide_category'] 		= '0';
-			$post_class[] 				= 'col-md-4 col-sm-6 col-xs-6';
+			$post_class[] 				= 'col-md-4 col-sm-6 col-6';
 
 			$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
 
@@ -214,7 +214,7 @@ class sh_blog_shortcode {
 			$post_class = array( 'element', 'hentry', 'post-item' );
 
 			$atts['hide_category'] 		= '0';
-			$post_class[] 				= 'col-md-3 col-sm-6 col-xs-6';
+			$post_class[] 				= 'col-md-3 col-sm-6 col-6';
 
 			$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
 

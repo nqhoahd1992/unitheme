@@ -11,7 +11,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
@@ -26,7 +26,7 @@
 	<header id="masthead" <?php header_class();?> role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 
 		<!-- Start Menu Mobile -->
-		<div class="navbar navbar-fixed-top">
+		<div class="navbar fixed-top">
 			<a id="showmenu" class="">
 				<span class="hamburger hamburger--collapse">
 					<span class="hamburger-box">

@@ -51,7 +51,7 @@ class sh_product_shortcode {
 		if ( $the_query->have_posts() ) {
 
 			global $sh_option;
-			$numcol 				= $sh_option['number_product'];
+			$numcol 				= $sh_option['number_product_row'];
 			$post_class_homepage 	= get_column_product($numcol);
 
 			$html .= '<div class="sh-product-shortcode column-'. $numcol .'"><ul class="row list-products">';

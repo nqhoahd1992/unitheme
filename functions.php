@@ -171,6 +171,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 function shtheme_lib_scripts(){
 	// Bootstrap
+	wp_enqueue_script( 'popper-js', SH_DIR . '/lib/js/popper.min.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'bootstrap-js', SH_DIR . '/lib/js/bootstrap.min.js', array('jquery'), '1.0', true );
 	wp_enqueue_style( 'bootstrap-style', SH_DIR .'/lib/css/bootstrap.min.css' );
 
