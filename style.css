@@ -41,7 +41,8 @@ Tags: web3b
 # Normalize
 --------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&subset=vietnamese');
-body {overflow-x: hidden;font-family: 'Roboto', Arial, sans-serif;font-size: 0.875rem;}
+html{font-size:62.5%;}
+body {overflow-x: hidden;font-family: 'Roboto', Arial, sans-serif;font-size: 14px;}
 a {color: #337ab7;}
 a:hover, a:active, a:focus, a:visited {text-decoration: none}
 img {max-width: 100%;height: auto}
@@ -71,7 +72,10 @@ img {max-width: 100%;height: auto}
 		vertical-align: middle;
 	}
 }
-
+.site-header.logo-left .header-content .logo img {
+	margin: 10px 0;
+	max-height: 80px;
+}
 /* Header style 2 */
 .site-header.logo-center {
 	
@@ -1029,23 +1033,6 @@ embed, iframe, object {max-width: 100%}
 	top: -2px;
 	margin-right: 5px;
 }
-/*@media (min-width: 992px) {
-	.sh-blog-shortcode.style-3 .element:nth-child(3n+1),
-	.sh-blog-shortcode.style-4 .element:nth-child(4n+1) {
-		clear: both;
-	}
-}
-@media (min-width: 414px) and (max-width: 992px) {
-	.sh-blog-shortcode.style-3 .element:nth-child(2n+1),
-	.sh-blog-shortcode.style-4 .element:nth-child(2n+1) {
-		clear: both;
-	}
-}
-@media (min-width: 414px) {
-	.sh-blog-shortcode.style-2 .element:nth-child(2n+1) {
-		clear: both;
-	}
-}*/
 @media (max-width: 414px) {
 	.sh-blog-shortcode .element {
 		-ms-flex: 0 0 100%;
@@ -1079,9 +1066,9 @@ embed, iframe, object {max-width: 100%}
 }
 .navbar-brand {
 	color: #FFF !important;
-	height: 2.875rem;
-	padding: 0.75rem 0.9375rem;
-	font-size: 1rem;
+	height: 46px;
+	padding: 12px 15px;
+	font-size: 16px;
 	/*position: absolute;
 	left: 50%;
     transform: translate(-50%, 0);*/
@@ -1089,7 +1076,7 @@ embed, iframe, object {max-width: 100%}
 .navbar-brand img {max-height: 30px;}
 #mobilenav {background: #1e1e1e;position: fixed;height: 100%;width: 250px;top: 0;font-size: 0.9em;left: 0;overflow-x: hidden;overflow-y: scroll;-webkit-transition: all 0.3s ease-in-out 0s;-moz-transition: all 0.3s ease-in-out 0s;transition: all 0.3s ease-in-out 0s;-webkit-transform: translate(-250px);-moz-transform: translate(-250px);-ms-transform: translate(-250px);-o-transform: translate(-250px);transform: translate(-250px);z-index: 9999999;}
 #mobilenav.opened {-webkit-transform: translate(0px);-moz-transform: translate(0px);-ms-transform: translate(0px);-o-transform: translate(0px);transform: translate(0px);z-index: 9999999;}
-.toplg {padding: 2rem 0.625rem 1rem 0.625rem;text-align: center;}
+.toplg {padding: 32px 10px 16px 10px;text-align: center;}
 .toplg img {max-width: 150px;margin: 0 auto;}
 #mobilenav h3, #mobilenav p {color: #f2f2f2;text-align: center;font-size: 18px;}
 #mobilenav .mobile-menu {margin: 15px 0;padding: 0 10px;}
@@ -1150,24 +1137,26 @@ embed, iframe, object {max-width: 100%}
 /*--------------------------------------------------------------
 ## Responsive 
 --------------------------------------------------------------*/
-@media (max-width: 1200px) {
-	
-}
-
-@media (max-width: 992px) {
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
 
 }
 
-@media (max-width: 768px) {
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
 	.site-info, .site-info * {
 		text-align: center;
 	}
 }
 
-@media (max-width: 414px) {
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
 
 }
 
-@media (max-width: 320px) {
-	
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
 }
+
+/* Extra large devices (large desktops) */
