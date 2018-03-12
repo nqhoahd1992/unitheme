@@ -123,7 +123,8 @@ img {max-width: 100%;height: auto}
 }
 .main-navigation ul.menu > li.li-home > a:before {
     content: "\f015";
-    font-family: FontAwesome;
+    font-family: Font Awesome\ 5 Free;
+    font-weight: 900;
     margin-right: 5px;
 }
 .main-navigation ul.menu li > a:hover,
@@ -231,10 +232,10 @@ img {max-width: 100%;height: auto}
 #back-top span:hover {opacity: 1}
 iframe[name='google_conversion_frame'] {height: 0 !important;width: 0 !important;line-height: 0 !important;font-size: 0 !important;margin-top: -13px;float: left}
 .col-xs-15,.col-sm-15,.col-md-15,.col-lg-15 {position: relative;min-height: 1px;padding-right: 15px;padding-left: 15px}
-.col-xs-15 {width: 20%;float: left;}
-@media (min-width: 768px) {.col-sm-15 {width: 20%;float: left}}
-@media (min-width: 992px) {.col-md-15 {width: 20%;float: left}}
-@media (min-width: 1200px) {.col-lg-15 {width: 20%;float: left}}
+.col-xs-15 {-webkit-box-flex: 0;-ms-flex: 0 0 20%;flex: 0 0 20%;max-width: 20%;}
+@media (min-width: 768px) { .col-sm-15 {-webkit-box-flex: 0;-ms-flex: 0 0 20%;flex: 0 0 20%;max-width: 20%;}}
+@media (min-width: 992px) {.col-md-15 {-webkit-box-flex: 0;-ms-flex: 0 0 20%;flex: 0 0 20%;max-width: 20%;}}
+@media (min-width: 1200px) {.col-lg-15 {-webkit-box-flex: 0;-ms-flex: 0 0 20%;flex: 0 0 20%;max-width: 20%;}}
 .wpcf7 label {font-weight: 600;display: block}
 .wpcf7 div.wpcf7-validation-errors {margin: 2em 0 1em}
 .wpcf7 .span.wpcf7-not-valid-tip {margin: 5px 0}
@@ -255,6 +256,7 @@ iframe[name='google_conversion_frame'] {height: 0 !important;width: 0 !important
 }
 .screen-reader-text {display: none}
 .btn {
+	font-size: 14px;
 	background: #337ab7;
 	color: #FFF;
 }
@@ -263,7 +265,15 @@ iframe[name='google_conversion_frame'] {height: 0 !important;width: 0 !important
 	opacity: .9;
 }
 .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
-	background: #337ab7;border: none;
+	background: #337ab7;
+	border: none;
+}
+.form-control {
+	height: 34px;
+	font-size: 14px;
+}
+textarea.form-control {
+	height: 160px;
 }
 
 /*--------------------------------------------------------------
@@ -1129,6 +1139,9 @@ embed, iframe, object {max-width: 100%}
     padding-left: 0;
     list-style: none;
 }
+.footer-widgets ul li {
+	padding: 3px 0;
+}
 
 /*--------------------------------------------------------------
 ## Custom Css 
@@ -1137,8 +1150,15 @@ embed, iframe, object {max-width: 100%}
 /*--------------------------------------------------------------
 ## Responsive 
 --------------------------------------------------------------*/
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
+/* Extra large devices (large desktops) */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
 
 }
 
@@ -1149,14 +1169,7 @@ embed, iframe, object {max-width: 100%}
 	}
 }
 
-/* Medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) {
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
 
 }
-
-/* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {
-
-}
-
-/* Extra large devices (large desktops) */

@@ -23,7 +23,7 @@
 }
 .woocommerce-product-search button[type=submit] {
 	float: right;
-	background: url(lib/images/btsearch.png) center center no-repeat;
+	background: url(../images/btsearch.png) center center no-repeat;
 	text-indent: -9999px;
 	border: none;
 	width: 22px;
@@ -845,39 +845,6 @@ html .woocommerce-product-details__short-description ul li {
 	margin-bottom: 3px;
 }
 /* List Products */
-/*@media (min-width: 1200px) {
-	.column-3 .list-products li:nth-child(3n+1),
-	.column-4 .list-products li:nth-child(4n+1),
-	.column-5 .list-products li:nth-child(5n+1),
-	.column-6 .list-products li:nth-child(6n+1) {
-		clear: both;
-	}
-}
-@media (min-width: 992px) and (max-width: 1200px) {
-	.column-3 .list-products li:nth-child(3n+1),
-	.column-4 .list-products li:nth-child(4n+1),
-	.column-5 .list-products li:nth-child(5n+1),
-	.column-5 .list-products li:nth-child(4n+1),
-	.column-6 .list-products li:nth-child(4n+1) {
-		clear: both;
-	}
-}
-@media (min-width: 768px) and (max-width: 992px) {
-	.column-3 .list-products li:nth-child(2n+1),
-	.column-4 .list-products li:nth-child(3n+1),
-	.column-5 .list-products li:nth-child(3n+1),
-	.column-6 .list-products li:nth-child(3n+1) {
-		clear: both;
-	}
-}
-@media (min-width: 414px) and (max-width: 768px) {
-	.column-3 .list-products li:nth-child(2n+1),
-	.column-4 .list-products li:nth-child(2n+1),
-	.column-5 .list-products li:nth-child(2n+1),
-	.column-6 .list-products li:nth-child(2n+1) {
-		clear: both;
-	}
-}*/
 @media (max-width: 414px) {
 	.list-products li {
 		-ms-flex: 0 0 100%;
