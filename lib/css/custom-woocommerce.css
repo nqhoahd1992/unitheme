@@ -636,6 +636,14 @@ html .woocommerce .products ul, .woocommerce ul.products {
 		padding: 10px 2px;
 	}
 }
+html .woocommerce .col2-set .col-1, html .woocommerce-page .col2-set .col-1, 
+html .woocommerce .col2-set .col-2, html .woocommerce-page .col2-set .col-2 {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+	padding: 0;
+}
 .percent {
 	display: inline-block;
 	position: absolute;
