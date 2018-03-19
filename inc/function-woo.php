@@ -98,9 +98,13 @@ add_action( 'woocommerce_after_shop_loop_item','add_percent_sale',15 );
  */
 function custom_override_checkout_fields( $fields ) {
     unset($fields['billing']['billing_company']);
+    unset($fields['billing']['billing_country']);
+    unset($fields['billing']['billing_postcode']);
+
     return $fields;
 }
 add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
 
 /**
  * Return class layout product
@@ -285,7 +289,7 @@ if( ! function_exists('sh_woocommerce_get__cart_menu_item__content') ) {
 			echo '</div>';
 		echo '</div>';
 	}
-	add_action( 'sh_after_menu', 'sh_woocommerce_get__cart_menu_item__content');
+	// add_action( 'sh_after_menu', 'sh_woocommerce_get__cart_menu_item__content');
 }
 
 /**

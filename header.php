@@ -38,17 +38,16 @@
 		</div>
 		<!-- End Menu Mobile -->
 		
-		<?php
-		if( $sh_option['display-topheader-widget'] == 1 ) {
-			?>
+		<?php if( $sh_option['display-topheader-widget'] == 1 ) : ?>
+			<!-- Start Top Header -->
 			<div class="top-header">
 				<div class="container">
 					<?php dynamic_sidebar( 'Top Header' );?>
 				</div>
 			</div>
-			<?php
-		}
-		?>
+			<!-- End Top Header -->
+		<?php endif; ?>
+
 		<div class="container">
 			<div class="site-branding">
 				<?php
@@ -70,14 +69,28 @@
 				<div class="logo">
 					<?php display_logo();?>
 				</div>
-				<nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
-					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-				</nav><!-- #site-navigation -->
-				<?php do_action( 'sh_after_menu' ) ?>
+				<?php
+				if( $sh_option['opt-layout-header'] == '2' ) {
+					echo '<nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">';
+						wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'menu_class' => 'menu clearfix' ) );
+					echo '</nav>';
+				}
+				do_action( 'sh_after_menu' );
+				?>
 			</div>
 			
 		</div>
 	</header><!-- #masthead -->
+
+	<?php
+	if( $sh_option['opt-layout-header'] == '1' ) {
+		echo '<nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">';
+			echo '<div class="container">';
+				wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'menu_class' => 'menu clearfix' ) );
+			echo '</div>';
+		echo '</nav>';
+	}
+	?>
 	
 	<div id="content" class="site-content">
 

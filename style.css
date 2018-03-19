@@ -42,7 +42,7 @@ Tags: web3b
 --------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&subset=vietnamese');
 html{font-size:62.5%;}
-body {overflow-x: hidden;font-family: 'Roboto', Arial, sans-serif;font-size: 14px;}
+body {font-family: 'Roboto', Arial, sans-serif;font-size: 14px;}
 a {color: #337ab7;}
 a:hover, a:active, a:focus, a:visited {text-decoration: none}
 img {max-width: 100%;height: auto}
@@ -50,7 +50,6 @@ img {max-width: 100%;height: auto}
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-.flex {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex}
 
 /*--------------------------------------------------------------
 # Header
@@ -77,22 +76,26 @@ img {max-width: 100%;height: auto}
 	max-height: 80px;
 }
 /* Header style 2 */
-.site-header.logo-center {
-	
+.site-header.logo-center > .container {
+	max-width: 100%;
+	padding-left: 0;
+	padding-right: 0;
 }
 .site-header.logo-center .logo {
-	
+	text-align: center;
 }
 
 /*--------------------------------------------------------------
 # Main Navigation
 --------------------------------------------------------------*/
-.site-header.logo-center .main-navigation {
+.main-navigation {
 	background: #337ab7;
 }
-.site-header.logo-center .main-navigation {
-	float: left;
-	width: 100%;
+.site-header.logo-left .main-navigation {
+	background: none;
+}
+.site-header.logo-left .main-navigation ul.menu {
+	float: right;
 }
 .main-navigation ul {
 	padding: 0;
@@ -106,20 +109,28 @@ img {max-width: 100%;height: auto}
 	float: left;
 }
 .main-navigation ul.menu li a {
-	font-size: 15px;
-	color: #FFF;
+	font-size: 14px;
+	color: #333333;
 	display: block;
 	white-space: nowrap;
-	padding: 6px 20px;
+	padding: 8px 20px 8px 8px;
 	font-weight: normal;
 }
 .main-navigation ul.menu > li > a {
+	font-size: 15px;
 	padding: 0 20px;
 	line-height: 40px;
-	/*text-transform: uppercase;*/
+	color: #FFF;
+	text-transform: uppercase;
 }
 .site-header.logo-left .main-navigation ul.menu > li > a {
 	color: #333333;
+}
+.main-navigation ul.menu > li.menu-item-has-children > a:after {
+    content: "\f0d7";
+    font-family: Font Awesome\ 5 Free;
+    font-weight: 900;
+    margin-left: 5px;
 }
 .main-navigation ul.menu > li.li-home > a:before {
     content: "\f015";
@@ -127,51 +138,79 @@ img {max-width: 100%;height: auto}
     font-weight: 900;
     margin-right: 5px;
 }
-.main-navigation ul.menu li > a:hover,
-.main-navigation ul.menu li.current-menu-item > a,
-.site-header.logo-left .main-navigation ul.menu li > a:hover,
-.site-header.logo-left .main-navigation ul.menu li.current-menu-item > a {
+.main-navigation ul.menu > li > a:hover,
+.main-navigation ul.menu > li.current-menu-item > a,
+.site-header.logo-left .main-navigation ul.menu > li > a:hover,
+.site-header.logo-left .main-navigation ul.menu > li.current-menu-item > a {
 	color: #FF0;
 }
 /* Submenu 1 */
 .main-navigation ul ul {
-	min-width: 260px;
+    background-color: #fff;
+    border-top: 5px solid #337ab7;
+	min-width: 210px;
+	padding: 5px;
 	left: 0;
     position: absolute;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;
     z-index: 99999;
-    background: #337ab7;
-    -webkit-transition: -webkit-transform 0.25s ease, opacity 0.5s ease;
-    -moz-transition: -moz-transform 0.25s ease, opacity 0.5s ease;
-    -o-transition: -o-transform 0.25s ease, opacity 0.5s ease;
-    transition: transform 0.25s ease, opacity 0.5s ease;
+    -webkit-transition: transform 0.2s ease-out;
+    -moz-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    -webkit-transform: translate3d(0, -5px, 0);
+    -moz-transform: translate3d(0, -5px, 0);
+    -ms-transform: translate3d(0, -5px, 0);
+    -o-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
 }
 .main-navigation ul li:hover > ul {
     opacity: 1;
     visibility: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
-.main-navigation ul ul li {
-	border-top: 1px solid #ccc;
+.main-navigation ul.menu ul li a:hover,
+.main-navigation ul.menu ul li.current-menu-item a,
+.site-header.logo-left .main-navigation ul.menu ul li a:hover,
+.site-header.logo-left .main-navigation ul.menu ul li.current-menu-item a {
+	background: #0d0d0d;
+	color: #FFF;
+}
+.main-navigation ul ul li a {
+	border-bottom: 1px solid #f2f2f2;
+}
+.main-navigation ul ul li:last-child a {
+	border-bottom: none;
+}
+.main-navigation ul ul li.menu-item-has-children > a:before {
+    content: "\f0da";
+    float: right;
+    margin-right: -14px;
+	font-family: Font Awesome\ 5 Free;
+    font-weight: 900;
+    line-height: 22px;
 }
 /* Submenu 2 */
 .main-navigation ul ul ul {
     position: absolute;
     left: 80%;
-    top: 0px;
+    top: -10px;
     opacity: 0;
     visibility: hidden;
-    -moz-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
-    -webkit-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
-    -o-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
-    transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
+    -webkit-transition: transform 0.2s ease-out;
+    -moz-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
 }
 .main-navigation ul ul ul li {
     width: 100%;
     opacity: 1;
 }
-.main-navigation ul ul li:hover ul {
+.main-navigation ul ul li:hover > ul {
 	opacity: 1;
     left: 100%;
     visibility: visible;
@@ -212,9 +251,8 @@ img {max-width: 100%;height: auto}
 	margin: 5px 0 15px 0;
 }
 .page-title-bar {
-    align-items: center;
-    padding: 10px 0 20px 0;
-    text-align: center;
+    padding: 20px 0 10px 0;
+    margin-bottom: 20px;
 }
 .page-title-bar .title {
     font-size: 24px;
@@ -225,6 +263,7 @@ img {max-width: 100%;height: auto}
 	padding: 5px 0;
 	margin-bottom: 10px;
 	background: none;
+	color: #333333;
 }
 #back-top {margin: 0}
 #back-top a {display: block;-webkit-transition: 1s;-moz-transition: 1s;transition: 1s}
@@ -370,7 +409,7 @@ textarea.form-control {
 /* Widget Custom Menu */
 .sidebar .widget_nav_menu ul li {
 	position: relative;
-	padding: 5px 10px;
+	padding: 8px 10px;
 }
 .sidebar .widget_nav_menu ul li:not(:last-child) {
 	border-bottom: 1px solid #cccccc;
@@ -379,14 +418,13 @@ textarea.form-control {
 	font-size: 14px;
 	font-weight: normal;
 	display: block;
-	line-height: 30px;
 	color: #333333;
 }
 .sidebar .widget_nav_menu .menu-item-has-children .sub-menu {background: #FFF;position: absolute;left: 80%;top: -1px;z-index: 99;opacity: 1;visibility: hidden;width: 200px;border: 1px solid #cccccc;-moz-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
   -webkit-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
   -o-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
   transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear}
-.sidebar .widget_nav_menu .menu-item-has-children:hover .sub-menu {left: 100%;opacity: 1;visibility: visible}
+.sidebar .widget_nav_menu .menu-item-has-children:hover > .sub-menu {left: 100%;opacity: 1;visibility: visible}
 /* Widget Recent Posts */
 .sidebar .widget_recent_entries ul li {
 	padding: 5px 10px;
@@ -1093,7 +1131,7 @@ embed, iframe, object {max-width: 100%}
 #mobilenav li {display: block;position: relative;}
 #mobilenav li a {color: #fff;position: relative;display: block;text-align: left;margin: 0;padding: 5px 10px;line-height: 25px;-webkit-transition: all 0.35s linear;-moz-transition: all 0.35s linear;-o-transition: all 0.35s linear;transition: all 0.35s linear;}
 #mobilenav li.current-menu-item > a, #mobilenav li:hover > a {background: #282d36;}
-#mobilenav .arrow {border-radius: 0;position: absolute;top: 6px;right: 5px;width: 25px;height: 25px;cursor: pointer;text-align: center;font-family: "FontAwesome";line-height: 25px;vertical-align: top;color: #FFF;-webkit-transition: all 0.25s ease 0s;-moz-transition: all 0.25s ease 0s;transition: all 0.25s ease 0s;}
+#mobilenav .arrow {border-radius: 0;position: absolute;top: 6px;right: 5px;width: 25px;height: 25px;cursor: pointer;text-align: center;font-family: "Font Awesome\ 5 Free";font-weight: 900;line-height: 25px;vertical-align: top;color: #FFF;-webkit-transition: all 0.25s ease 0s;-moz-transition: all 0.25s ease 0s;transition: all 0.25s ease 0s;}
 #mobilenav .arrow:before {content: "\f067";}
 #mobilenav li.menu-item-has-children.open>.arrow:before {content: "\f068";}
 #mobilenav ul.sub-menu {display: none;list-style: none;margin: 0;padding: 0 0 0 10px;}
@@ -1132,7 +1170,7 @@ embed, iframe, object {max-width: 100%}
 }
 .footer-widgets h4.widget-title {
 	font-weight: 600;
-	font-size: 20px;
+	font-size: 16px;
 	text-transform: uppercase;
 }
 .footer-widgets ul {

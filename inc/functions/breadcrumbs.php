@@ -10,7 +10,7 @@
 function sh_create_breadcrumb(){
     global $sh_option;
     if( $sh_option['display-pagetitlebar'] == '1' && ! is_front_page() ) {
-        echo '<div class="flex page-title-bar">';
+        echo '<div class="d-flex align-items-center page-title-bar">';
             echo '<div class="container">';
                 echo '<div class="title-bar-wrap">';
                     if( is_page( ) || is_single( ) ) {

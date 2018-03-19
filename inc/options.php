@@ -173,31 +173,31 @@ Redux::setSection( $opt_name, array(
 		    'title'    => __('Main Appearance', 'shtheme'),
 		    'options'  => array(
 		        '1'       => array(
-		            'alt'     => '1 Column', 
+		            'alt'     => 'Content Full Width', 
 		            'img'     => ReduxFramework::$_url.'assets/img/1col.png'
 		        ),
 		        '2'       => array(
-                    'alt'     => '2 Column Left', 
+                    'alt'     => 'Sidebar - Content', 
 		            'img'     => ReduxFramework::$_url.'assets/img/2cl.png'
 		        ),
 		        '3'       => array(
-		            'alt'     => '2 Column Right', 
+		            'alt'     => 'Content - Sidebar', 
 		            'img'     => ReduxFramework::$_url.'assets/img/2cr.png'
 		        ),
 		        '4'       => array(
-		            'alt'     => '3 Column Middle', 
+		            'alt'     => 'Sidebar - Content - Sidebar', 
 		            'img'     => ReduxFramework::$_url.'assets/img/3cm.png'
 		        ),
 		        '5'       => array(
-		            'alt'     => '3 Column Left', 
+		            'alt'     => 'Sidebar - Sidebar - Content', 
 		            'img'     => ReduxFramework::$_url.'assets/img/3cl.png'
 		        ),
 		        '6'       => array(
-		            'alt'     => '3 Column Right', 
+		            'alt'     => 'Content - Sidebar - Sidebar', 
 		            'img'     => ReduxFramework::$_url.'assets/img/3cr.png'
 		        )
 		    ),
-		    'default' => '2'
+		    'default' => '2',
         ),
         
     )
@@ -237,11 +237,11 @@ Redux::setSection( $opt_name, array(
             'title'    => __('Header Layout', 'shtheme'),
             'options'  => array(
                 '1'      => array(
-                    'alt'   => '1 Column', 
+                    'alt'   => 'Header 1', 
                     'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/logo-center.gif'
                 ),
                 '2'      => array(
-                    'alt'   => '2 Column Left', 
+                    'alt'   => 'Header 2', 
                     'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/logo-left.gif'
                 ),
             ),
