@@ -314,10 +314,10 @@ class sh_blog_shortcode {
 
 	/**
 	 *
-	 * Blog style 6
+	 * Blog style 7
 	 *
 	 * @param  $the_query: Query get data; $atts: attribute
-	 * @return $html: html of blog style 6
+	 * @return $html: html of blog style 7
 	 *
 	 */
 	function sh_blog_style_7 ( $the_query, $atts ) {

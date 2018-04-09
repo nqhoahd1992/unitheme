@@ -58,14 +58,6 @@ function sh_load_framework() {
 add_action( 'init','sh_load_framework' );
 
 /**
- * Custom Login Page
- */
-function sh_login_logo() {
-	wp_enqueue_style( 'login-custom-style', SH_DIR .'/lib/css/login.css' );
-}
-add_action( 'login_enqueue_scripts', 'sh_login_logo' );
-
-/**
  * Register Widget Area
  *
  */

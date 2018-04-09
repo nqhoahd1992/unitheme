@@ -6,6 +6,17 @@
  * @package SH_Theme
  */
 
+/**
+ * Custom Login Page
+ */
+function sh_login_logo() {
+	wp_enqueue_style( 'login-custom-style', get_template_directory_uri() .'/lib/css/login.css' );
+}
+add_action( 'login_enqueue_scripts', 'sh_login_logo' );
+
+/**
+ * 3B Dashboard
+ */
 function custom_dashboard_help() {
 	echo '<p style="font-size:15px;line-height:1.5">Chào mừng Quý khách đến với hệ thống Quản Trị Website.<br/>
 	Hệ thống được phát triển bởi <strong>Web3B</strong> trên nền tảng <strong>Wordpress</strong>.<br />

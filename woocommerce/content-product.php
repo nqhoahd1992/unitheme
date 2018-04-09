@@ -55,7 +55,7 @@ if( is_home() || $sh_option['layout-category-product'] == '1' ) {
 		 *
 		 * @hooked woocommerce_template_loop_product_link_open - 10
 		 */
-		// do_action( 'woocommerce_before_shop_loop_item' );
+		do_action( 'woocommerce_before_shop_loop_item' );
 
 		/**
 		 * woocommerce_before_shop_loop_item_title hook.
@@ -63,7 +63,7 @@ if( is_home() || $sh_option['layout-category-product'] == '1' ) {
 		 * @hooked woocommerce_show_product_loop_sale_flash - 10
 		 * @hooked woocommerce_template_loop_product_thumbnail - 10
 		 */
-		// do_action( 'woocommerce_before_shop_loop_item_title' );
+		do_action( 'woocommerce_before_shop_loop_item_title' );
 
 		echo '<div class="image-product">';
 			echo '<a class="img hover-zoom" '. $string_tooltip .' href="'. get_permalink( ) .'" title="'. get_the_title( ) .'">';

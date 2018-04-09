@@ -147,16 +147,16 @@ function get_layout_support($instance, $j = 1) {
 				case '1':
 					echo '<ul>';
 						if( ! empty( $name ) ) {
-							echo '<li><i class="fa fa-comments" aria-hidden="true"></i> ' .$name. '</li>';
+							echo '<li><i class="fas fa-comment-alt"></i> ' .$name. '</li>';
 						}
 						if( ! empty( $phone ) ) {
-							echo '<li><i class="fa fa-phone" aria-hidden="true"></i> ' .$phone. '</li>';
+							echo '<li><i class="fas fa-phone-square"></i> ' .$phone. '</li>';
 						}
 						if( ! empty( $email ) ) {
-							echo '<li><i class="fa fa-envelope" aria-hidden="true"></i> ' .$email. '</li>';
+							echo '<li><i class="far fa-envelope"></i> ' .$email. '</li>';
 						}
 						if( ! empty( $skype ) ) {
-							echo '<li><i class="fa fa-skype" aria-hidden="true"></i> ' .$skype. '</li>';
+							echo '<li><i class="fab fa-skype"></i> ' .$skype. '</li>';
 						}
 					echo '</ul>';
 					break;

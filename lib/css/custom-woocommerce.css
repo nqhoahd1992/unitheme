@@ -310,8 +310,6 @@ html .woocommerce form.checkout input[type=search] {
 	margin-bottom: 0;
 	padding: 0 15px;
 	border: 1px solid #d3d3d3;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
 html .woocommerce form .form-row .input-checkbox {
@@ -327,8 +325,6 @@ html .select2-container .select2-selection--single {
 	line-height: 1;
 	padding: 0 5px;
 	border: 1px solid #d3d3d3;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
 html .select2-container--default .select2-selection--single .select2-selection__arrow b {
@@ -343,13 +339,6 @@ html .woocommerce #order_review table.shop_table th,
 html .woocommerce #order_review table.shop_table td {
 	width: 48%;
 	padding: 14px 0;
-}
-html #order_review, html #order_review_heading {
-	margin-right: 0;
-	border: 3px solid #e3e3e3;
-	clear: right;
-	padding-left: 26px;
-	padding-right: 26px;
 }
 html #order_review, html #order_review_heading {
 	margin-right: 0;
@@ -469,7 +458,12 @@ html .woocommerce #respond input#submit, html .woocommerce a.button, html .wooco
 	background: #337ab7;
 	color: #FFF;
 }
-html .woocommerce #respond input#submit.disabled, html .woocommerce #respond input#submit:disabled, html .woocommerce #respond input#submit:disabled[disabled], html .woocommerce a.button.disabled, html .woocommerce a.button:disabled, html .woocommerce a.button:disabled[disabled], html .woocommerce button.button.disabled, html .woocommerce button.button:disabled, html .woocommerce button.button:disabled[disabled], html .woocommerce input.button.disabled, html .woocommerce input.button:disabled, html .woocommerce input.button:disabled[disabled] {
+html .woocommerce #respond input#submit.disabled, html .woocommerce #respond input#submit:disabled, 
+html .woocommerce #respond input#submit:disabled[disabled], html .woocommerce a.button.disabled, 
+html .woocommerce a.button:disabled, html .woocommerce a.button:disabled[disabled], 
+html .woocommerce button.button.disabled, html .woocommerce button.button:disabled, 
+html .woocommerce button.button:disabled[disabled], html .woocommerce input.button.disabled, 
+html .woocommerce input.button:disabled, html .woocommerce input.button:disabled[disabled] {
 	color: #FFF;
 }
 html .woocommerce #respond input#submit:hover, html .woocommerce a.button:hover, html .woocommerce button.button:hover, html .woocommerce input.button:hover {
@@ -479,7 +473,6 @@ html .woocommerce #respond input#submit:hover, html .woocommerce a.button:hover,
 html .woocommerce .comment-respond .comment-reply-title {
 	display: block;
 	margin: 10px 0;
-	font-size: 16px;
 }
 html .woocommerce .comment-respond label {
 	font-weight: 600;
@@ -662,7 +655,6 @@ html .woocommerce .products ul, .woocommerce ul.products {
 	html .woocommerce div.product .woocommerce-tabs ul.tabs li, 
 	.woocommerce-page #content div.product .woocommerce-tabs ul.tabs li, 
 	.woocommerce-page div.product .woocommerce-tabs ul.tabs li {
-		/*display: block;*/
 		margin: 0;
 	}
 	html .woocommerce div.product .woocommerce-tabs ul.tabs li a,
@@ -883,15 +875,18 @@ html .woocommerce-message::before {
 }
 html .woocommerce-product-details__short-description {
 	text-align: justify;
-	margin-bottom: 20px;
 }
 html .woocommerce-product-details__short-description ul {
 	padding: 0;
-	margin-bottom: 20px;
 }
 html .woocommerce-product-details__short-description ul li {
 	list-style: inside;
 	margin-bottom: 3px;
+}
+html .woocommerce-product-details__short-description,
+html .woocommerce-product-details__short-description ul,
+html .entry-summary .product_meta {
+	margin-bottom: 1.5rem;
 }
 /* List Products */
 @media (max-width: 414px) {
