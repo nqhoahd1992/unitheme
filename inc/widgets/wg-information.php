@@ -26,18 +26,23 @@ class Gtid_Information_Widget extends WP_Widget {
         if ($instance['title']) echo $before_title . apply_filters('widget_title', $instance['title']) . $after_title;
         ?>
         <ul>
-            <?php 
+            <?php
+            $hide_label = $instance['hide_label'] ? 'd-none' : '';
+            $hide_icon  = $instance['hide_icon']  ? 'd-none' : '';
             if( $instance['address'] ) {
-                echo '<li><i class="fa fa-map-marker" aria-hidden="true"></i>'. __( 'Address', 'shtheme' ) .': '. $instance['address'] .'</li>';
+                echo '<li><i class="'. $hide_icon .' fas fa-map-marker-alt"></i><span class="'. $hide_label .'">'. __( 'Address', 'shtheme' ) .':</span> '. $instance['address'] .'</li>';
             }
             if( $instance['tel'] ) {
-                echo '<li><i class="fa fa-phone-square" aria-hidden="true"></i>'. __( 'Telephone', 'shtheme' ) .': '. $instance['tel'] .'</li>';
+                echo '<li><i class="'. $hide_icon .' fas fa-phone"></i><span class="'. $hide_label .'">'. __( 'Telephone', 'shtheme' ) .':</span> '. $instance['tel'] .'</li>';
+            }
+            if( $instance['hotline'] ) {
+                echo '<li><i class="'. $hide_icon .' fas fa-mobile-alt"></i><span class="'. $hide_label .'">'. __( 'Hotline', 'shtheme' ) .':</span> '. $instance['hotline'] .'</li>';
             }
             if( $instance['email'] ) {
-                echo '<li><i class="fa fa-envelope" aria-hidden="true"></i>'. __( 'Email', 'shtheme' ) .': '. $instance['email'] .'</li>';
+                echo '<li><i class="'. $hide_icon .' far fa-envelope"></i><span class="'. $hide_label .'">'. __( 'Email', 'shtheme' ) .':</span> '. $instance['email'] .'</li>';
             }
             if( $instance['website'] ) {
-                echo '<li><i class="fa fa-globe" aria-hidden="true"></i>'. __( 'Website', 'shtheme' ) .': '. $instance['website'] .'</li>';
+                echo '<li><i class="'. $hide_icon .' fas fa-globe"></i><span class="'. $hide_label .'">'. __( 'Website', 'shtheme' ) .':</span> '. $instance['website'] .'</li>';
             }
             ?>
         </ul>
@@ -56,8 +61,11 @@ class Gtid_Information_Widget extends WP_Widget {
         		'title' 	 => '', 
         		'address'    => '',  
         		'tel' 	     => '',
+                'hotline'    => '',
                 'email'      => '',
                 'website'    => '',
+                'hide_label' => '',
+                'hide_icon'  => '',
     		) 
     	);
         ?>
@@ -74,12 +82,24 @@ class Gtid_Information_Widget extends WP_Widget {
             <input type="text" class="widefat" id="<?php echo $this->get_field_id('tel'); ?>" name="<?php  echo $this->get_field_name('tel'); ?>" value="<?php  echo esc_attr( $instance['tel'] ); ?>" />
         </p>
         <p>
+            <label for="<?php  echo $this->get_field_id('hotline'); ?>"><?php _e('Hotline', 'shtheme'); ?>:</label>
+            <input type="text" class="widefat" id="<?php echo $this->get_field_id('hotline'); ?>" name="<?php  echo $this->get_field_name('hotline'); ?>" value="<?php  echo esc_attr( $instance['hotline'] ); ?>" />
+        </p>
+        <p>
             <label for="<?php  echo $this->get_field_id('email'); ?>"><?php _e('Email', 'shtheme'); ?>:</label>
             <input type="text" class="widefat" id="<?php echo $this->get_field_id('email'); ?>" name="<?php  echo $this->get_field_name('email'); ?>" value="<?php  echo esc_attr( $instance['email'] ); ?>" />
         </p>
         <p>
             <label for="<?php  echo $this->get_field_id('website'); ?>"><?php _e('Website', 'shtheme'); ?>:</label>
             <input type="text" class="widefat" id="<?php echo $this->get_field_id('website'); ?>" name="<?php  echo $this->get_field_name('website'); ?>" value="<?php  echo esc_attr( $instance['website'] ); ?>" />
+        </p>
+        <p>
+            <input id="<?php echo esc_attr( $this->get_field_id( 'hide_label' ) ); ?>" type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'hide_label' ) ); ?>" value="1" <?php checked( $instance['hide_label'] ); ?>/>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'hide_label' ) ); ?>"><?php _e( 'Hide label', 'shtheme' ); ?></label>
+        </p>
+        <p>
+            <input id="<?php echo esc_attr( $this->get_field_id( 'hide_icon' ) ); ?>" type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'hide_icon' ) ); ?>" value="1" <?php checked( $instance['hide_icon'] ); ?>/>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'hide_icon' ) ); ?>"><?php _e( 'Hide icon', 'shtheme' ); ?></label>
         </p>
     <?php
     }

@@ -14,7 +14,10 @@ if ( ! function_exists( 'shtheme_setup' ) ) :
 
 		// Load Theme Options
 		require get_template_directory() . '/inc/options.php';
-		Redux::init('sh_option');
+
+		if ( class_exists( 'ReduxFrameworkPlugin' ) ) {
+			Redux::init('sh_option');
+		}
 
 		// Add theme support
 		add_theme_support( 'automatic-feed-links' );
@@ -141,8 +144,10 @@ require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
 // Load Shortcode
 require get_template_directory() . '/inc/shortcode/shortcode-blog.php';
-require get_template_directory() . '/inc/shortcode/shortcode-product.php';
-
+require get_template_directory() . '/inc/shortcode/shortcode-blog-slide.php';
+if ( class_exists( 'WooCommerce' ) ) {
+	require get_template_directory() . '/inc/shortcode/shortcode-product.php';
+}
 
 // Load Function Woocomerce
 if ( class_exists( 'WooCommerce' ) ) {
@@ -169,7 +174,7 @@ function shtheme_lib_scripts(){
 
 	// Main js
 	wp_enqueue_script( 'main-js', SH_DIR . '/lib/js/main.js', array(), '1.0', true );
-	wp_localize_script( 'main-js', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+	wp_localize_script(	'main-js', 'ajax', array( 'url' => admin_url('admin-ajax.php') ) );
 
 	// Owl carousel
 	wp_register_script( 'owlcarousel-js', SH_DIR . '/lib/js/owl.carousel.min.js', array('jquery'), '1.0', true );

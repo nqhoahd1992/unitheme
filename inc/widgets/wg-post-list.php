@@ -69,7 +69,6 @@ class Gtid_Post_Widget extends WP_Widget {
             endwhile;
             wp_reset_postdata(); ?>
         </ul>
- 
         <?php
         echo $after_widget;
     }

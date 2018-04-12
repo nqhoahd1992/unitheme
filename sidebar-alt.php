@@ -12,6 +12,6 @@ if ( ! is_active_sidebar( 'sidebar-2' ) ) {
 }
 ?>
 
-<aside class="sidebar sidebar-secondary" role="complementary">
+<aside class="sidebar sidebar-secondary" role="complementary" itemscope itemtype="https://schema.org/WPSideBar">
 	<?php dynamic_sidebar( 'sidebar-2' ); ?>
 </aside><!-- #secondary -->

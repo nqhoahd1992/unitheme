@@ -8,6 +8,7 @@
  *
  * @package SH_Theme
  */
+
 global $sh_option;
 do_action( 'sh_after_content_sidebar_wrap' );
 ?>
@@ -33,7 +34,7 @@ do_action( 'sh_after_content_sidebar_wrap' );
 							<?php if( $sh_option['footer-copyright'] ) : echo $sh_option['footer-copyright'];endif;?>
 						</div>
 						<div class="col-sm-6 text-right">
-							<p id="copyright">Thiết kế bởi <a href="http://thietkeweb3b.com/" target="_blank" rel="nofollow">3B Việt Nam</a></p>
+							<p id="copyright"><?php _e('Designed by','shtheme');?> <a href="http://thietkeweb3b.com/" target="_blank" rel="nofollow">3B <?php _e('Viet Nam','shtheme');?></a></p>
 						</div>
 					</div>
 				</div>

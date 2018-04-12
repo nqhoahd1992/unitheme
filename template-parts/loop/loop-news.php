@@ -9,19 +9,19 @@
 
 ?>
 
-<article class="<?php echo implode( ' ', get_post_class( $class ) );?>">
+<article class="<?php echo implode( ' ', get_post_class( 'item-new' ) );?>">
 	<a class="alignleft" href="<?php the_permalink();?>" title="<?php the_title();?>">
-		<?php echo get_the_post_thumbnail( get_the_ID(), 'sh_thumb300x200' );?>
+		<?php if(has_post_thumbnail()) the_post_thumbnail("sh_thumb300x200",array("alt" => get_the_title()));?>
 	</a>
-	<h3><a title="<?php the_title();?>" href="<?php the_permalink();?>" ><?php the_title();?></a></h3>
-	<?php echo get_the_content_limit( 400 ,' ');?>
+	<h3><a title="<?php the_title();?>" href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+	<?php the_content_limit( 400 ,' ');?>
 	<div class="clearfix"></div>
-	<div class="ps-meta-info clearfix">
-	   	<div class="ps-alignleft float-left">
-	   		<span><?php the_time('j F Y') ?></span><span class="ps-inline-sep">|</span>
+	<div class="meta-info clearfix">
+	   	<div class="float-left">
+	   		<span><?php the_time('j F Y') ?></span><span class="inline-sep">|</span>
 	   		<?php echo get_the_category_list(', ');?>
 	   	</div>
-	   	<div class="ps-alignright float-right">
+	   	<div class="float-right">
 	   		<a href="<?php the_permalink();?>" class="ps-read-more"><?php _e( 'Read more', 'shtheme' );?></a>
 	   	</div>
 	</div>

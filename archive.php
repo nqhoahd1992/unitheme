@@ -53,8 +53,7 @@ get_header(); ?>
 	                        /* Start the Loop */
 							echo '<div class="new-list">';
 								$the_query = new WP_Query( $args );
-								while($the_query -> have_posts()) :
-                            	$the_query -> the_post();
+								while($the_query -> have_posts()) : $the_query -> the_post();
 									get_template_part( 'template-parts/loop/loop-news' );
 								endwhile;
 							echo '</div>';

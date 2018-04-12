@@ -418,6 +418,14 @@ Redux::setSection( $opt_name, array(
     'subsection'       => true,
     'fields'           => array(
         array(
+            'id'       => 'display-time-view',
+            'type'     => 'switch', 
+            'title'    => __('Display time and view post', 'shtheme'),
+            'default'  => true,
+            'on'       => __('Enable', 'shtheme'),
+            'off'      => __('Disable', 'shtheme'),
+        ),
+        array(
             'id'       => 'display-sharepost',
             'type'     => 'switch', 
             'title'    => __('Display buttons share social', 'shtheme'),

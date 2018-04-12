@@ -1,6 +1,6 @@
 <?php
 /**
- * Shortcode news
+ * Shortcode Product
  *
  * @link 
  *

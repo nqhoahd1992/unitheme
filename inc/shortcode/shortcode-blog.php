@@ -392,7 +392,7 @@ class sh_blog_shortcode {
 		// Check display thumb of post
 		if ( $hide_thumb == '1' && has_post_thumbnail() ) :
 			$html .= '<div class="entry-thumb">';
-				$html .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'">' . get_the_post_thumbnail( get_the_ID(), $image_size ) . '</a>';
+				$html .= '<a class="d-block" href="'. get_permalink() .'" title="'. get_the_title() .'">' . get_the_post_thumbnail( get_the_ID(), $image_size, array( "alt" => get_the_title() ) ) . '</a>';
 			$html .= '</div>';
 		endif;
 		$html .= '<div class="entry-content">';
@@ -416,18 +416,18 @@ class sh_blog_shortcode {
 			// Metadata
 			if ( $hide_meta == '1' ) {
 				$html .= '<div class="meta">';
-					$html .= '<span class="date-time"><i class="fa fa-clock-o" aria-hidden="true"></i>'. get_the_time('d/m/Y') .'</span>';
+					$html .= '<span class="date-time"><i class="far fa-clock"></i>'. get_the_time('d/m/Y') .'</span>';
 					$comments_count = wp_count_comments( get_the_ID() );
-					$html .= '<span class="number-comment"><i class="fa fa-commenting-o" aria-hidden="true"></i>'. $comments_count->approved . ' ' . __( 'Comments', 'shtheme' ) . '</span>';
+					$html .= '<span class="number-comment"><i class="fas fa-comment-dots"></i>'. $comments_count->approved . ' ' . __( 'Comments', 'shtheme' ) . '</span>';
 				$html .= '</div>';
 			}
 			// Check display description
 			if ( $hide_desc == '1' ) {
-				$html .= '<div class="entry-description">'. get_the_content_limit($number_character,' ') .'</div>';
+				$html .= '<div class="entry-description">'. get_the_content_limit( $number_character,' ' ) .'</div>';
 			}
 			// Check display view more button
 			if ( $hide_viewmore == '1' ) {
-				$html .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'" class="view-more">'. __( 'View more', 'shtheme' ) .' <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>';
+				$html .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'" class="view-more">'. __( 'View more', 'shtheme' ) .' <i class="fas fa-angle-double-right"></i></a>';
 			}
 		$html .= '</div>';
 		$html .= '</div></article>';
