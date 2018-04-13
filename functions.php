@@ -162,7 +162,8 @@ require get_template_directory() . '/inc/widgets/wg-view-post-list.php';
 require get_template_directory() . '/inc/widgets/wg-information.php';
 require get_template_directory() . '/inc/widgets/wg-social.php';
 if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/widgets/wg-product-slider.php';
+	require get_template_directory() . '/inc/widgets/wg-product-slider-horizontal.php';
+	require get_template_directory() . '/inc/widgets/wg-product-slider-vertical.php';
 }
 
 function shtheme_lib_scripts(){
@@ -179,6 +180,11 @@ function shtheme_lib_scripts(){
 	wp_register_script( 'owlcarousel-js', SH_DIR . '/lib/js/owl.carousel.min.js', array('jquery'), '1.0', true );
 	wp_register_style( 'owlcarousel-style', SH_DIR .'/lib/css/owl.carousel.min.css' );
 	wp_register_style( 'owlcarousel-theme-style', SH_DIR .'/lib/css/owl.theme.default.min.css' );
+
+	// Slick Slider
+	wp_register_script( 'slick-js', SH_DIR . '/lib/js/slick.min.js', array('jquery'), '1.0', true );
+	wp_register_style( 'slick-style', SH_DIR .'/lib/css/slick/slick.css' );
+	wp_register_style( 'slick-theme-style', SH_DIR .'/lib/css/slick/slick-theme.css' );
 
 	// Font Awesome
 	wp_enqueue_style( 'fontawesome-style', SH_DIR .'/lib/css/font-awesome-all.css' );

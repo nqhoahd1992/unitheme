@@ -10,32 +10,37 @@
 get_header(); ?>
 
 	<div id="primary" class="content-sidebar-wrap">
+
+		<?php do_action( 'before_main_content' ) ?>
+
 		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) : ?>
-
-				<h1 class="page-title"><?php printf( esc_html__( 'Search for keyword: %s', 'shtheme' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			<?php do_action( 'before_loop_main_content' ) ?>
 
 			<?php
-			/* Start the Loop */
-			echo '<div class="new-list">';
+			if ( have_posts() ) : ?>
 
-			while ( have_posts() ) : the_post();
+					<h1 class="page-title"><?php printf( esc_html__( 'Search for keyword: %s', 'shtheme' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 
-				get_template_part( 'template-parts/loop/loop-news' );
+				<?php
+				/* Start the Loop */
+				echo '<div class="new-list">';
 
-			endwhile;
+				while ( have_posts() ) : the_post();
 
-			echo '</div>';
+					get_template_part( 'template-parts/loop/loop-news' );
 
-			shtheme_pagination();
+				endwhile;
 
-		else :
+				echo '</div>';
 
-			get_template_part( 'template-parts/content', 'none' );
+				shtheme_pagination();
 
-		endif; ?>
+			else :
+
+				get_template_part( 'template-parts/content', 'none' );
+
+			endif; ?>
 
 		</main><!-- #main -->
 

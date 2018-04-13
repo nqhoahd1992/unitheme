@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2018-04-12 09:09+0700\n"
+"POT-Creation-Date: 2018-04-13 10:39+0700\n"
 "PO-Revision-Date: 2018-01-18 17:08+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -903,7 +903,8 @@ msgstr ""
 
 #: inc/widgets/wg-fblikebox.php:55 inc/widgets/wg-information.php:73
 #: inc/widgets/wg-page.php:40 inc/widgets/wg-post-list.php:95
-#: inc/widgets/wg-product-slider.php:104 inc/widgets/wg-social.php:72
+#: inc/widgets/wg-product-slider-horizontal.php:104
+#: inc/widgets/wg-product-slider-vertical.php:85 inc/widgets/wg-social.php:72
 #: inc/widgets/wg-support.php:50 inc/widgets/wg-view-post-list.php:105
 msgid "Title"
 msgstr ""
@@ -958,32 +959,44 @@ msgid "Show Featured Image"
 msgstr ""
 
 #: inc/widgets/wg-page.php:57 inc/widgets/wg-post-list.php:127
-#: inc/widgets/wg-product-slider.php:131 inc/widgets/wg-view-post-list.php:135
+#: inc/widgets/wg-product-slider-horizontal.php:138
+#: inc/widgets/wg-product-slider-vertical.php:119
+#: inc/widgets/wg-view-post-list.php:135
 msgid "Image Size"
 msgstr ""
 
 #: inc/widgets/wg-page.php:69 inc/widgets/wg-post-list.php:117
-#: inc/widgets/wg-product-slider.php:121 inc/widgets/wg-view-post-list.php:125
+#: inc/widgets/wg-product-slider-horizontal.php:128
+#: inc/widgets/wg-product-slider-vertical.php:109
+#: inc/widgets/wg-view-post-list.php:125
 msgid "Image Alignment"
 msgstr ""
 
 #: inc/widgets/wg-page.php:71 inc/widgets/wg-post-list.php:119
-#: inc/widgets/wg-product-slider.php:123 inc/widgets/wg-view-post-list.php:127
+#: inc/widgets/wg-product-slider-horizontal.php:130
+#: inc/widgets/wg-product-slider-vertical.php:111
+#: inc/widgets/wg-view-post-list.php:127
 msgid "None"
 msgstr ""
 
 #: inc/widgets/wg-page.php:72 inc/widgets/wg-post-list.php:120
-#: inc/widgets/wg-product-slider.php:124 inc/widgets/wg-view-post-list.php:128
+#: inc/widgets/wg-product-slider-horizontal.php:131
+#: inc/widgets/wg-product-slider-vertical.php:112
+#: inc/widgets/wg-view-post-list.php:128
 msgid "Left"
 msgstr ""
 
 #: inc/widgets/wg-page.php:73 inc/widgets/wg-post-list.php:121
-#: inc/widgets/wg-product-slider.php:125 inc/widgets/wg-view-post-list.php:129
+#: inc/widgets/wg-product-slider-horizontal.php:132
+#: inc/widgets/wg-product-slider-vertical.php:113
+#: inc/widgets/wg-view-post-list.php:129
 msgid "Right"
 msgstr ""
 
 #: inc/widgets/wg-page.php:74 inc/widgets/wg-post-list.php:122
-#: inc/widgets/wg-product-slider.php:126 inc/widgets/wg-view-post-list.php:130
+#: inc/widgets/wg-product-slider-horizontal.php:133
+#: inc/widgets/wg-product-slider-vertical.php:114
+#: inc/widgets/wg-view-post-list.php:130
 msgid "Center"
 msgstr ""
 
@@ -1011,16 +1024,19 @@ msgstr ""
 msgid "Displays featured posts with thumbnails"
 msgstr ""
 
-#: inc/widgets/wg-post-list.php:100 inc/widgets/wg-product-slider.php:109
-#: inc/widgets/wg-view-post-list.php:110
+#: inc/widgets/wg-post-list.php:100 inc/widgets/wg-view-post-list.php:110
 msgid "Number of Posts to Show"
 msgstr ""
 
-#: inc/widgets/wg-post-list.php:105 inc/widgets/wg-product-slider.php:114
+#: inc/widgets/wg-post-list.php:105
+#: inc/widgets/wg-product-slider-horizontal.php:121
+#: inc/widgets/wg-product-slider-vertical.php:102
 msgid "Category"
 msgstr ""
 
-#: inc/widgets/wg-post-list.php:107 inc/widgets/wg-product-slider.php:116
+#: inc/widgets/wg-post-list.php:107
+#: inc/widgets/wg-product-slider-horizontal.php:123
+#: inc/widgets/wg-product-slider-vertical.php:104
 msgid "Select category"
 msgstr ""
 
@@ -1052,11 +1068,24 @@ msgstr ""
 msgid "character"
 msgstr ""
 
-#: inc/widgets/wg-product-slider.php:13
-msgid "3B - Products Slider"
+#: inc/widgets/wg-product-slider-horizontal.php:13
+msgid "3B - Products Horizontal Slider"
 msgstr ""
 
-#: inc/widgets/wg-product-slider.php:15
+#: inc/widgets/wg-product-slider-horizontal.php:15
+msgid "Display horizontal slide list product"
+msgstr ""
+
+#: inc/widgets/wg-product-slider-horizontal.php:109
+#: inc/widgets/wg-product-slider-vertical.php:90
+msgid "Enter the product number in the view"
+msgstr ""
+
+#: inc/widgets/wg-product-slider-vertical.php:13
+msgid "3B - Products Vertical Slider"
+msgstr ""
+
+#: inc/widgets/wg-product-slider-vertical.php:15
 msgid "Display vertical slide list product"
 msgstr ""
 

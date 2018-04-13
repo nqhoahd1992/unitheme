@@ -15,7 +15,12 @@
 get_header(); ?>
 
 	<div id="primary" class="content-sidebar-wrap">
+
+		<?php do_action( 'before_main_content' ) ?>
+
 		<main id="main" class="site-main" role="main">
+
+			<?php do_action( 'before_loop_main_content' ) ?>
 
 			<?php
 			while ( have_posts() ) : the_post();

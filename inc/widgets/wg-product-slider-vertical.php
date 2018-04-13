@@ -1,16 +1,16 @@
 <?php
-add_action('widgets_init', 'register_gtid_product_by_cat');
+add_action('widgets_init', 'register_gtid_product_by_cat_vertical');
 
-function register_gtid_product_by_cat() {
-    register_widget('Gtid_Products_Widget');
+function register_gtid_product_by_cat_vertical() {
+    register_widget('Gtid_Products_Vertical_Widget');
 }
 
-class Gtid_Products_Widget extends WP_Widget {
+class Gtid_Products_Vertical_Widget extends WP_Widget {
 
     function __construct() {
         parent::__construct(
-            'slider_products',
-            __( '3B - Products Slider', 'shtheme' ),
+            'slider_products_vertical',
+            __( '3B - Products Vertical Slider', 'shtheme' ),
             array(
                 'description'  => __( 'Display vertical slide list product', 'shtheme' )
             )
@@ -25,18 +25,9 @@ class Gtid_Products_Widget extends WP_Widget {
         ?>
 
         <div class="slider-products">
-            <ul class="owl-carousel" 
-                data-item   ="1" 
-                data-margin ="0" 
-                data-md     ="1" 
-                data-sm     ="1" 
-                data-xs     ="1" 
-                data-mb     ="1" 
-                data-dots   ="false" 
-                data-nav    ="true">
+            <ul class="slick-carousel" 
+                data-item ="<?php echo $instance['numpro'];?>">
                 <?php
-                $i = 1;
-                $numpro = $instance['numpro'];
                 $args   = array(
                     'post_type'         => 'product',
                     'tax_query'         => array(
@@ -46,17 +37,14 @@ class Gtid_Products_Widget extends WP_Widget {
                             'terms'     => $instance['cat'],
                         )
                     ),
-                    'showposts'         => 20,
+                    'showposts'         => 10,
                 );
                 $the_query = new WP_Query($args);
                 $count = $the_query->found_posts;
                 while($the_query->have_posts()):
                 $the_query->the_post();
-                if( $i == 1 ) {
-                    echo '<li>';
-                }
                 ?>
-                    <div id="post-<?php the_ID(); ?>" class="item-product">
+                    <div id="post-<?php the_ID(); ?>" class="item-product-slide">
                         <a class="<?php echo $instance['image_alignment'];?>" href="<?php the_permalink();?>" title="<?php the_title();?>">
                             <?php if( has_post_thumbnail() ) the_post_thumbnail( $instance['image_size'],array( "alt" => get_the_title() ) );?>
                         </a>
@@ -68,22 +56,15 @@ class Gtid_Products_Widget extends WP_Widget {
                         <?php get_price_product();?>
                     </div>
                 <?php
-                if( $i%$numpro == 0 && $i != $count  ) {
-                    echo '</li><li>';
-                }
-                if( $i%$numpro != 0 && $i == $count  ) {
-                    echo '</li>';
-                }
-                $i++;
                 endwhile;
                 wp_reset_postdata(); ?>
             </ul>
         </div>
  
         <?php
-        wp_enqueue_script( 'owlcarousel-js' );
-        wp_enqueue_style( 'owlcarousel-style' );
-        wp_enqueue_style( 'owlcarousel-theme-style' );
+        wp_enqueue_script( 'slick-js' );
+        wp_enqueue_style( 'slick-style' );
+        wp_enqueue_style( 'slick-theme-style' );
         echo $after_widget;
     }
 
@@ -95,7 +76,7 @@ class Gtid_Products_Widget extends WP_Widget {
         $instance = wp_parse_args(
         	(array)$instance, array(
         		'title' 			=> '', 
-        		'numpro' 			=> '3',  
+        		'numpro' 			=> '1',  
         		'cat' 				=> '',
     		)
     	);
@@ -106,8 +87,15 @@ class Gtid_Products_Widget extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('numpro'); ?>"><?php _e('Number of Posts to Show', 'shtheme'); ?>:</label>
-            <input type="text" class="widefat" id="<?php echo $this->get_field_id('numpro'); ?>" name="<?php  echo $this->get_field_name('numpro'); ?>" value="<?php  echo esc_attr( $instance['numpro'] ); ?>" />
+            <label for="<?php echo $this->get_field_id('numpro'); ?>"><?php _e('Enter the product number in the view', 'shtheme'); ?>:</label>
+            <select id="<?php echo $this->get_field_id( 'numpro' ); ?>" name="<?php echo $this->get_field_name( 'numpro' ); ?>">
+                <option value="1" <?php selected( '1', $instance['numpro'] ); ?>>1</option>
+                <option value="2" <?php selected( '2', $instance['numpro'] ); ?>>2</option>
+                <option value="3" <?php selected( '3', $instance['numpro'] ); ?>>3</option>
+                <option value="4" <?php selected( '4', $instance['numpro'] ); ?>>4</option>
+                <option value="5" <?php selected( '5', $instance['numpro'] ); ?>>5</option>
+                <option value="6" <?php selected( '6', $instance['numpro'] ); ?>>6</option>
+            </select>
         </p>
         
         <p>

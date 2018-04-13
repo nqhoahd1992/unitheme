@@ -35,7 +35,7 @@ function my_theme_wrapper_start() {
 function my_theme_wrapper_end() {
 	global $sh_option;
 	echo '</main>';
-	echo '<aside class="sidebar sidebar-shop" itemscope itemtype="https://schema.org/WPSideBar">';
+	echo '<aside class="sidebar sidebar-primary sidebar-shop" itemscope itemtype="https://schema.org/WPSideBar">';
 		if( $sh_option['display-shopsidebar'] == 1 ) {
 			dynamic_sidebar( 'sidebar-shop' );
 		} else {

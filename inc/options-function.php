@@ -1,24 +1,15 @@
 <?php
 /**
- * Inser Code To Header Footer
+ * Display Metaslider
  */
-function insert_code_to_header(){
+function insert_metaslide(){
 	global $sh_option;
-	$html_header = $sh_option['opt-textarea-header'];
-	if( $html_header ) {
-		echo $html_header;
+	if( $sh_option['metaslider'] ) {
+		$metaslider = $sh_option['metaslider'];
+		echo do_shortcode('[metaslider id="'.$metaslider.'" restrict_to=home]');
 	}
 }
-add_action( 'wp_head','insert_code_to_header' );
-
-function insert_code_to_footer(){
-	global $sh_option;
-	$html_footer = $sh_option['opt-textarea-footer'];
-	if( $html_footer ) {
-		echo $html_footer;
-	}
-}
-add_action( 'wp_footer','insert_code_to_footer' );
+add_action('before_loop_main_content','insert_metaslide');
 
 /**
  * Display Logo
@@ -71,3 +62,24 @@ function sh_footer_widget_areas() {
 
 }
 add_action( 'sh_footer', 'sh_footer_widget_areas' );
+
+/**
+ * Inser Code To Header Footer
+ */
+function insert_code_to_header(){
+	global $sh_option;
+	$html_header = $sh_option['opt-textarea-header'];
+	if( $html_header ) {
+		echo $html_header;
+	}
+}
+add_action( 'wp_head','insert_code_to_header' );
+
+function insert_code_to_footer(){
+	global $sh_option;
+	$html_footer = $sh_option['opt-textarea-footer'];
+	if( $html_footer ) {
+		echo $html_footer;
+	}
+}
+add_action( 'wp_footer','insert_code_to_footer' );

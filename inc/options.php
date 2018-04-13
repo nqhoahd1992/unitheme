@@ -702,6 +702,27 @@ Redux::setSection( $opt_name, array(
     'permissions'      => 'administrator',
 ) );
 
+if ( class_exists( 'MetaSliderPlugin' ) ) {
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Metaslider', 'shtheme' ),
+        'id'               => 'function-metaslider',
+        'subsection'       => true,
+        'fields'           => array(
+            array(
+                'id'       => 'metaslider',
+                'type'     => 'select',
+                // 'multi'    => true,
+                'title'    => __( 'Select slider', 'shtheme' ),
+                'data'     => 'posts',
+                'args'     => array(
+                    'post_type'     => 'ml-slider',
+                    'orderby'       => 'date',
+                    'order'         => 'DESC',
+                ),
+            ),
+        )
+    ) );
+}
 
 if ( class_exists( 'WooCommerce' ) ) {
     Redux::setSection( $opt_name, array(

@@ -361,11 +361,13 @@ textarea.form-control {
 .sidebar .list-post-item, .sidebar .content-feature-page {
 	padding: 10px;
 }
-.sidebar ul {
-	margin: 0;
+.sidebar .widget ul {
 	padding: 0;
 }
-.sidebar ul li {
+.sidebar .widget:not(.widget_slider_products_vertical) ul {
+	margin: 0;
+}
+.sidebar .widget:not(.widget_slider_products_vertical) ul li {
 	display: block;
 }
 /* Widget Custom Menu */
@@ -559,60 +561,71 @@ textarea.form-control {
 .sidebar .content-feature-page, .sidebar .slider-products {
 	padding: 10px 10px 0 10px;
 }
-.widget_slider_products li .item-product {
+.item-product-slide {
 	overflow: hidden;
-	margin-bottom: 10px;
-	padding-bottom: 10px;
-	border-bottom: 1px dashed #cccccc;
+	margin-bottom: 15px;
 }
-.widget_slider_products li .item-product:last-child {
+.item-product-slide:last-child {
 	border-bottom: none;
 	margin-bottom: 0;
 }
-.widget_slider_products li .alignleft, .widget_slider_products li .alignright {
+.item-product-slide .alignleft,
+.item-product-slide .alignright {
 	width: 86px;
 	height: 86px;
 	background: #FFF;
 }
-.widget_slider_products li .alignleft {
+.item-product-slide .alignleft {
 	margin-right: 15px;
 }
-.widget_slider_products li .alignright {
+.item-product-slide .alignright {
 	margin-left: 15px;
 }
-.widget_slider_products li .item-product img {
+.item-product-slide img {
 	width: auto;
 	display: inline-block;
 }
-.widget_slider_products li .item-product .alignnone img {
+.item-product-slide .alignnone img {
 	margin: 0 auto 10px;
 }
-.widget_slider_products li h3 {
+.item-product-slide h3 {
 	margin: 0 0 5px;
 	font-size: 15px;
 	line-height: 24px;
 	max-height: 48px;
 	overflow: hidden;
 }
-.widget_slider_products li h3 a {
+.item-product-slide h3 a {
 	color: #333333;
 }
-.widget_slider_products li .price {
+.item-product-slide .price {
 	color: #337ab7;
 	margin: 0;
 }
-.widget_slider_products li .price ins, .widget_slider_products li .price del {
+.item-product-slide .price ins, 
+.item-product-slide .price del {
 	display: block;
 }
-.widget_slider_products li .price ins {
+.item-product-slide .price ins {
 	margin-right: 0;
 }
-.widget_slider_products li .price del {
+.item-product-slide .price del {
 	font-size: 13px;
 }
+/**/
 .sidebar .widget_listpost_widget ul {
 	padding: 20px 10px;
 	background: #fafafa;
+}
+/**/
+.slick-carousel.slick-dotted.slick-slider {
+	margin-bottom: 40px;
+}
+.slick-carousel .slick-dots li {
+	margin: 0;
+}
+.slick-carousel .slick-dots li button {
+	padding: 0;
 }
 .owl-carousel .owl-nav button > div {
     background: #f5f5f5;
@@ -720,6 +733,13 @@ textarea.form-control {
 .sidebar .cpd li:last-child {
 	border-bottom: none;
 }
+html .theme-default .nivo-controlNav {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+}
 
 /*--------------------------------------------------------------
 # Content
@@ -796,7 +816,9 @@ textarea.form-control {
 .related-posts ul li a {
 	color: #333333;
 }
-.sidebar .widget_nav_menu ul li a:hover,.post-next-prev-content a:hover, .related-posts ul li a:hover,.widget_slider_products li h3 a:hover, .widget .list-post-item h3 a:hover, .new-list article .more-link {color: #337ab7;}
+.sidebar .widget_nav_menu ul li a:hover,.post-next-prev-content a:hover, 
+.related-posts ul li a:hover,.item-product-slide h3 a:hover, 
+.widget .list-post-item h3 a:hover, .new-list article .more-link {color: #337ab7;}
 
 /*--------------------------------------------------------------
 ## Comments

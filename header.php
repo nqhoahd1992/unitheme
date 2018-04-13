@@ -97,6 +97,6 @@
 	
 	<div id="content" class="site-content">
 
-		<?php do_action( 'sh_before_main_content' ) ?>
+		<?php do_action( 'before_content' ) ?>
 
 		<div class="container">

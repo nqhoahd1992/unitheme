@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2018-04-12 09:08+0700\n"
-"PO-Revision-Date: 2018-04-12 09:09+0700\n"
+"POT-Creation-Date: 2018-04-13 10:37+0700\n"
+"PO-Revision-Date: 2018-04-13 10:38+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -908,7 +908,8 @@ msgstr "Like Facebook"
 
 #: inc/widgets/wg-fblikebox.php:55 inc/widgets/wg-information.php:73
 #: inc/widgets/wg-page.php:40 inc/widgets/wg-post-list.php:95
-#: inc/widgets/wg-product-slider.php:104 inc/widgets/wg-social.php:72
+#: inc/widgets/wg-product-slider-horizontal.php:104
+#: inc/widgets/wg-product-slider-vertical.php:85 inc/widgets/wg-social.php:72
 #: inc/widgets/wg-support.php:50 inc/widgets/wg-view-post-list.php:105
 msgid "Title"
 msgstr "Tiêu đề"
@@ -963,32 +964,44 @@ msgid "Show Featured Image"
 msgstr "Hiển thị ảnh đại diện"
 
 #: inc/widgets/wg-page.php:57 inc/widgets/wg-post-list.php:127
-#: inc/widgets/wg-product-slider.php:131 inc/widgets/wg-view-post-list.php:135
+#: inc/widgets/wg-product-slider-horizontal.php:138
+#: inc/widgets/wg-product-slider-vertical.php:119
+#: inc/widgets/wg-view-post-list.php:135
 msgid "Image Size"
 msgstr "Kích thước ảnh"
 
 #: inc/widgets/wg-page.php:69 inc/widgets/wg-post-list.php:117
-#: inc/widgets/wg-product-slider.php:121 inc/widgets/wg-view-post-list.php:125
+#: inc/widgets/wg-product-slider-horizontal.php:128
+#: inc/widgets/wg-product-slider-vertical.php:109
+#: inc/widgets/wg-view-post-list.php:125
 msgid "Image Alignment"
 msgstr "Căn lề ảnh"
 
 #: inc/widgets/wg-page.php:71 inc/widgets/wg-post-list.php:119
-#: inc/widgets/wg-product-slider.php:123 inc/widgets/wg-view-post-list.php:127
+#: inc/widgets/wg-product-slider-horizontal.php:130
+#: inc/widgets/wg-product-slider-vertical.php:111
+#: inc/widgets/wg-view-post-list.php:127
 msgid "None"
 msgstr "Không"
 
 #: inc/widgets/wg-page.php:72 inc/widgets/wg-post-list.php:120
-#: inc/widgets/wg-product-slider.php:124 inc/widgets/wg-view-post-list.php:128
+#: inc/widgets/wg-product-slider-horizontal.php:131
+#: inc/widgets/wg-product-slider-vertical.php:112
+#: inc/widgets/wg-view-post-list.php:128
 msgid "Left"
 msgstr "Trái"
 
 #: inc/widgets/wg-page.php:73 inc/widgets/wg-post-list.php:121
-#: inc/widgets/wg-product-slider.php:125 inc/widgets/wg-view-post-list.php:129
+#: inc/widgets/wg-product-slider-horizontal.php:132
+#: inc/widgets/wg-product-slider-vertical.php:113
+#: inc/widgets/wg-view-post-list.php:129
 msgid "Right"
 msgstr "Phải"
 
 #: inc/widgets/wg-page.php:74 inc/widgets/wg-post-list.php:122
-#: inc/widgets/wg-product-slider.php:126 inc/widgets/wg-view-post-list.php:130
+#: inc/widgets/wg-product-slider-horizontal.php:133
+#: inc/widgets/wg-product-slider-vertical.php:114
+#: inc/widgets/wg-view-post-list.php:130
 msgid "Center"
 msgstr "Chính giữa"
 
@@ -1016,16 +1029,19 @@ msgstr "3B - Danh sách bài viết"
 msgid "Displays featured posts with thumbnails"
 msgstr "Hiển thị danh sách bài viết theo chuyên mục"
 
-#: inc/widgets/wg-post-list.php:100 inc/widgets/wg-product-slider.php:109
-#: inc/widgets/wg-view-post-list.php:110
+#: inc/widgets/wg-post-list.php:100 inc/widgets/wg-view-post-list.php:110
 msgid "Number of Posts to Show"
 msgstr "Số bài viết hiển thị"
 
-#: inc/widgets/wg-post-list.php:105 inc/widgets/wg-product-slider.php:114
+#: inc/widgets/wg-post-list.php:105
+#: inc/widgets/wg-product-slider-horizontal.php:121
+#: inc/widgets/wg-product-slider-vertical.php:102
 msgid "Category"
 msgstr "Chuyên mục"
 
-#: inc/widgets/wg-post-list.php:107 inc/widgets/wg-product-slider.php:116
+#: inc/widgets/wg-post-list.php:107
+#: inc/widgets/wg-product-slider-horizontal.php:123
+#: inc/widgets/wg-product-slider-vertical.php:104
 msgid "Select category"
 msgstr "Chọn chuyên mục"
 
@@ -1057,11 +1073,24 @@ msgstr "Số ký tự tối đa"
 msgid "character"
 msgstr "ký tự"
 
-#: inc/widgets/wg-product-slider.php:13
-msgid "3B - Products Slider"
-msgstr "3B - Slider sản phẩm"
+#: inc/widgets/wg-product-slider-horizontal.php:13
+msgid "3B - Products Horizontal Slider"
+msgstr "3B - Slider sản phẩm chạy ngang"
 
-#: inc/widgets/wg-product-slider.php:15
+#: inc/widgets/wg-product-slider-horizontal.php:15
+msgid "Display horizontal slide list product"
+msgstr "Hiển thị 1 slide sản phẩm chạy ngang"
+
+#: inc/widgets/wg-product-slider-horizontal.php:109
+#: inc/widgets/wg-product-slider-vertical.php:90
+msgid "Enter the product number in the view"
+msgstr "Nhập số sản phẩm trong khung nhìn"
+
+#: inc/widgets/wg-product-slider-vertical.php:13
+msgid "3B - Products Vertical Slider"
+msgstr "3B - Slider sản phẩm chạy dọc"
+
+#: inc/widgets/wg-product-slider-vertical.php:15
 msgid "Display vertical slide list product"
 msgstr "Hiển thị 1 slide sản phẩm chạy dọc"
 
