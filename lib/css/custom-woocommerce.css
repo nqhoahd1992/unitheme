@@ -313,10 +313,7 @@ html .woocommerce form.checkout input[type=search] {
 	border-radius: 5px;
 }
 html .woocommerce form .form-row .input-checkbox {
-    margin: 6px 6px 0 0;
-}
-html .woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox span {
-	padding-left: 20px;
+    margin: 0 6px 0 0;
 }
 html .select2-container .select2-choice, 
 html .select2-container .select2-selection--single {
@@ -344,8 +341,7 @@ html #order_review, html #order_review_heading {
 	margin-right: 0;
 	border: 3px solid #e3e3e3;
 	clear: right;
-	padding-left: 26px;
-	padding-right: 26px;
+	padding: 0 15px 30px 15px;
 }
 html #order_review_heading {
 	margin-bottom: 0;
@@ -507,8 +503,8 @@ html .woocommerce.no-sidebar div.product .woocommerce-tabs ul.tabs li.active a:a
 	font-weight: 900;
 	content: "\f105";
 	position: absolute;
-	top: 12px;
-	right: 0;
+	top: 6px;
+	right: 10px;
 }
 html .single-product div.product .woocommerce-tabs:before, html .single-product div.product .woocommerce-tabs:after {
 	content: ' ';
@@ -577,6 +573,11 @@ html .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
 html .woocommerce-checkout .wc-proceed-to-checkout a.checkout-button {
 	padding: 10px;
 	font-size: 18px;
+}
+html #add_payment_method #payment div.form-row, 
+html .woocommerce-cart #payment div.form-row, 
+html .woocommerce-checkout #payment div.form-row {
+	padding: 0;
 }
 /* Account Page */
 html .woocommerce-MyAccount-navigation ul {

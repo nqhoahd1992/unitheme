@@ -415,7 +415,7 @@ class sh_blog_shortcode {
 			$html .= '<h3 class="entry-title"><a href="'. get_permalink() .'" title="'. get_the_title() .'">'. get_the_title() .'</a></h3>';
 			// Metadata
 			if ( $hide_meta == '1' ) {
-				$html .= '<div class="meta">';
+				$html .= '<div class="entry-meta">';
 					$html .= '<span class="date-time"><i class="far fa-clock"></i>'. get_the_time('d/m/Y') .'</span>';
 					$comments_count = wp_count_comments( get_the_ID() );
 					$html .= '<span class="number-comment"><i class="fas fa-comment-dots"></i>'. $comments_count->approved . ' ' . __( 'Comments', 'shtheme' ) . '</span>';
@@ -428,6 +428,72 @@ class sh_blog_shortcode {
 			// Check display view more button
 			if ( $hide_viewmore == '1' ) {
 				$html .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'" class="view-more">'. __( 'View more', 'shtheme' ) .' <i class="fas fa-angle-double-right"></i></a>';
+			}
+		$html .= '</div>';
+		$html .= '</div></article>';
+		return $html;
+	}
+
+	/**
+	 *
+	 * General post html
+	 *
+	 * @param  $post_class: class of post
+	 * @return $html: html of post
+	 *
+	 */
+	function sh_general_post_html_style_2 ( $post_class = array(), $atts = array(), $image_size = 'sh_thumb300x200' ) {
+		extract( shortcode_atts( array(
+			'posts_per_page'				=> '5',
+			'categories'					=> '',
+			'custom_text'					=> __( 'Read more', 'shtheme' ),
+			'hide_category'					=> '0',
+			'hide_viewmore'					=> '0',
+			'hide_meta'						=> '0',
+			'hide_thumb'					=> '1',
+			'hide_desc'						=> '1',
+			'number_character'				=> 200,
+		), $atts ) );
+
+		$html = '';
+		$html .= '<article id="post-'. get_the_ID() .'" class="'. implode( ' ', get_post_class( $post_class ) ) .'"><div class="post-inner">';
+		// Check display thumb of post
+		if ( $hide_thumb == '1' && has_post_thumbnail() ) :
+			$html .= '<div class="entry-thumb">';
+				$html .= '<a class="d-block" href="'. get_permalink() .'" title="'. get_the_title() .'">' . get_the_post_thumbnail( get_the_ID(), $image_size, array( "alt" => get_the_title() ) ) . '</a>';
+			$html .= '</div>';
+		endif;
+		$html .= '<div class="entry-content">';
+			$html .= '<h3 class="entry-title"><a href="'. get_permalink() .'" title="'. get_the_title() .'">'. get_the_title() .'</a></h3>';
+			// Check display category
+			if ( $hide_category == '1' ) {
+				$categories = wp_get_post_categories( get_the_ID() );
+				if ( count( $categories ) > 0 ) {
+					$html .= '<div class="entry-cat">';
+					foreach ( $categories as $key => $cat_id ) {
+						$category = get_category( $cat_id );
+						if ( $key == ( count( $categories ) - 1 ) ) {
+							$html .= '<a href="'. get_term_link( $category ) .'" title="'. $category->name .'">'. $category->name .'</a>';	
+						} else {
+							$html .= '<a href="'. get_term_link( $category ) .'" title="'. $category->name .'">'. $category->name .'</a>, ';
+						}
+					}
+					$html .= '</div>';
+				}
+			}
+			// Metadata
+			if ( $hide_meta == '1' ) {
+				$html .= '<div class="entry-meta">';
+					$html .= '<span class="date-time"><i class="far fa-clock"></i>'. get_the_time('d/m/Y') .'</span>';
+				$html .= '</div>';
+			}
+			// Check display description
+			if ( $hide_desc == '1' ) {
+				$html .= '<div class="entry-description">'. get_the_content_limit( $number_character,' ' ) .'</div>';
+			}
+			// Check display view more button
+			if ( $hide_viewmore == '1' ) {
+				$html .= '<div class="text-right"><a class="btn btn-primary" href="'. get_permalink() .'" title="'. get_the_title() .'" class="view-more">'. __( 'View more', 'shtheme' ) .' <i class="fas fa-angle-double-right"></i></a></div>';
 			}
 		$html .= '</div>';
 		$html .= '</div></article>';

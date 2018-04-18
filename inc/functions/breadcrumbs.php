@@ -41,4 +41,4 @@ function sh_create_breadcrumb(){
         echo '</div>';
     }
 }
-add_action( 'sh_before_main_content','sh_create_breadcrumb' );
+add_action( 'before_content','sh_create_breadcrumb' );

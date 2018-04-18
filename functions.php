@@ -167,6 +167,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 function shtheme_lib_scripts(){
+
 	// Bootstrap
 	wp_enqueue_script( 'popper-js', SH_DIR . '/lib/js/popper.min.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'bootstrap-js', SH_DIR . '/lib/js/bootstrap.min.js', array('jquery'), '1.0', true );
@@ -188,6 +189,10 @@ function shtheme_lib_scripts(){
 
 	// Font Awesome
 	wp_enqueue_style( 'fontawesome-style', SH_DIR .'/lib/css/font-awesome-all.css' );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 	
 }
 add_action( 'wp_enqueue_scripts', 'shtheme_lib_scripts' , 1 );

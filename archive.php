@@ -28,6 +28,18 @@ get_header(); ?>
 				}
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				
+				// Settings Loop
+				$new_post = new sh_blog_shortcode();
+				$post_class = array( 'element', 'hentry', 'post-item', 'item-new' );
+				$image_size = 'sh_thumb300x200';
+				$atts['hide_category'] 		= '0';
+				$atts['hide_desc'] 			= '1';
+				$atts['hide_meta']			= '1';
+				$atts['hide_viewmore']		= '0';
+				$atts['number_character']	= '400';
+				$post_class[] 				= 'col-md-12';
+
+				// Check hierarchy in theme options
 				if( $sh_option['display-hierarchy'] == '1' ) {
 
 					// Content
@@ -56,23 +68,23 @@ get_header(); ?>
 			                        'paged'		=> get_query_var('paged'),
 		                        );
 		                        /* Start the Loop */
-								echo '<div class="new-list">';
+								echo '<div class="sh-blog-shortcode style-1"><div class="row">';
 									$the_query = new WP_Query( $args );
 									while($the_query -> have_posts()) : $the_query -> the_post();
-										get_template_part( 'template-parts/loop/loop-news' );
+										echo $new_post->sh_general_post_html_style_2( $post_class, $atts, $image_size );
 									endwhile;
-								echo '</div>';
+								echo '</div></div>';
 								shtheme_pagination();
 								wp_reset_postdata();
 						    echo '</div>';
 						}
 					} else {
 						/* Start the Loop */
-						echo '<div class="new-list">';
+						echo '<div class="sh-blog-shortcode style-1"><div class="row">';
 							while ( have_posts() ) : the_post();
-								get_template_part( 'template-parts/loop/loop-news' );
+								echo $new_post->sh_general_post_html_style_2( $post_class, $atts, $image_size );
 							endwhile;
-						echo '</div>';
+						echo '</div></div>';
 						shtheme_pagination();
 						wp_reset_postdata();
 					}
@@ -80,16 +92,14 @@ get_header(); ?>
 				} else {
 
 					/* Start the Loop */
-					echo '<div class="new-list">';
+					echo '<div class="sh-blog-shortcode style-1"><div class="row">';
 						while ( have_posts() ) : the_post();
-							get_template_part( 'template-parts/loop/loop-news' );
+							echo $new_post->sh_general_post_html_style_2( $post_class, $atts, $image_size );
 						endwhile;
-					echo '</div>';
+					echo '</div></div>';
 					shtheme_pagination();
 					wp_reset_postdata();
-
 				}
-				
 				
 			else :
 

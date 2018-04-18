@@ -941,42 +941,19 @@ embed, iframe, object {max-width: 100%}
 /*--------------------------------------------------------------
 ## Category
 --------------------------------------------------------------*/
-.new-list .item-new {
-	overflow: hidden;
-	margin-bottom: 20px;
+.sh-blog-shortcode .element.item-new {
+	margin-bottom: 0;
 }
-.new-list .item-new h3 {
-	margin: 0 0 10px 0;
-	font-size: 16px;
-	line-height: 1.4;
+.sh-blog-shortcode .element.item-new:not(:last-child) .post-inner {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
 }
-.new-list .item-new h3 a {
-	color: #337ab7;
-	font-weight: 600;
-}
-.new-list .item-new p {
+.sh-blog-shortcode .element.item-new .entry-description {
 	color: #747474;
-	text-align: justify;
 }
-.new-list .item-new .alignleft {
-	width: 35.5%;
-	margin-right: 15px;
-	overflow: hidden;
-}
-.new-list .item-new .alignleft img {width: 100%;height: auto;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;-o-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out}
-.new-list .item-new .alignleft img:hover {transform: scale(1.1);-webkit-transform: scale(1.1)}
-.new-list .item-new .meta-info {
-    margin-top: 20px;
-    padding: 5px 0;
-    border-top: 1px solid #e0dede;
-    border-bottom: 1px solid #e7e6e6;
-    font-size: 13px;
-}
-.inline-sep {
-    padding: 0 5px;
-}
-.post-categories, .post-categories * {
-    display: inline-block;
+.sh-blog-shortcode .element.item-new .btn {
+	border-radius: 12px;
 }
 
 /*--------------------------------------------------------------
@@ -991,6 +968,14 @@ embed, iframe, object {max-width: 100%}
 }
 .sh-blog-shortcode .element .entry-thumb a img {width: 100%;height: auto;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;-o-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out}
 .sh-blog-shortcode .element .entry-thumb a img:hover {transform: scale(1.1);-webkit-transform: scale(1.1)}
+.sh-blog-shortcode .element .entry-meta {
+	color: #747474;
+	font-size: 13px;
+	margin-bottom: 5px;
+}
+.sh-blog-shortcode .element .entry-meta i {
+	margin-right: 5px;
+}
 .sh-blog-shortcode .element .entry-title {
 	margin: 10px 0 5px 0;
 	font-size: 15px;
