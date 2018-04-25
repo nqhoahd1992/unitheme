@@ -502,9 +502,9 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'id'        => 'layout-category-product',
                 'type'      => 'switch', 
                 'title'     => __('Layout', 'shtheme'),
-                'default'   => true,
-                'on'        => __('Default', 'shtheme'),
-                'off'       => __('Customize', 'shtheme'),
+                'default'   => false,
+                'on'        => __('Customize', 'shtheme'),
+                'off'       => __('Default', 'shtheme'),
             ),
             array(
                 'id'        => 'number-products-cate',
@@ -515,7 +515,7 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'step'      => 1,
                 'max'       => 30,
                 'display_value' => 'text',
-                'required'  => array('layout-category-product','equals',false),
+                'required'  => array('layout-category-product','equals',true),
             ),
             array(
                 'id'        => 'number-column-product-cate',
@@ -526,7 +526,15 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'step'      => 1,
                 'max'       => 6,
                 'display_value' => 'text',
-                'required'  => array('layout-category-product','equals',false),
+                'required'  => array('layout-category-product','equals',true),
+            ),
+            array(
+                'id'       => 'display-hierarchy-woocommerce',
+                'type'     => 'switch', 
+                'title'    => __('Display hierarchy category', 'shtheme'),
+                'default'  => false,
+                'on'       => __('Enable', 'shtheme'),
+                'off'      => __('Disable', 'shtheme'),
             ),
         )
     ) );
@@ -723,6 +731,35 @@ if ( class_exists( 'MetaSliderPlugin' ) ) {
         )
     ) );
 }
+
+Redux::setSection( $opt_name, array(
+    'title'            => __( 'Phone Ring', 'shtheme' ),
+    'id'               => 'function-phonering',
+    'subsection'       => true,
+    'fields'           => array(
+        array(
+            'id'        => 'switch-phonering',
+            'type'      => 'switch', 
+            'title'     => __('Status', 'shtheme'),
+            'default'   => false,
+            'on'        => __('Enable', 'shtheme'),
+            'off'       => __('Disable', 'shtheme'),
+        ),
+        array(
+            'id'        => 'phonering-number',
+            'type'      => 'text',
+            'title'     => __('Enter telephone number', 'shtheme'),
+            'default'   => 10,
+            'min'       => 1,
+            'step'      => 1,
+            'max'       => 30,
+            'display_value' => 'text',
+            'required'  => array('switch-phonering','equals',true),
+        ),
+    )
+) );
+
+
 
 if ( class_exists( 'WooCommerce' ) ) {
     Redux::setSection( $opt_name, array(

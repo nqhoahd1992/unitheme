@@ -23,18 +23,25 @@ get_header(); ?>
 					<h1 class="page-title"><?php printf( esc_html__( 'Search for keyword: %s', 'shtheme' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 
 				<?php
+				// Settings Loop
+				$new_post = new sh_blog_shortcode();
+				$post_class = array( 'element', 'hentry', 'post-item', 'item-new' );
+				$image_size = 'sh_thumb300x200';
+				$atts['hide_category'] 		= '0';
+				$atts['hide_desc'] 			= '1';
+				$atts['hide_meta']			= '1';
+				$atts['hide_viewmore']		= '0';
+				$atts['number_character']	= '400';
+				$post_class[] 				= 'col-md-12';
+				
 				/* Start the Loop */
-				echo '<div class="new-list">';
-
-				while ( have_posts() ) : the_post();
-
-					get_template_part( 'template-parts/loop/loop-news' );
-
-				endwhile;
-
-				echo '</div>';
-
+				echo '<div class="sh-blog-shortcode style-1"><div class="row">';
+					while ( have_posts() ) : the_post();
+						echo $new_post->sh_general_post_html_style_2( $post_class, $atts, $image_size );
+					endwhile;
+				echo '</div></div>';
 				shtheme_pagination();
+				wp_reset_postdata();
 
 			else :
 

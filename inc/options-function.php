@@ -1,5 +1,25 @@
 <?php
 /**
+ * Display Call Ring
+ */
+function insert_callring(){
+	global $sh_option;
+	if( $sh_option['switch-phonering'] && $sh_option['phonering-number'] ) {
+		wp_enqueue_style( 'phonering-style' );
+		echo '<div class="quick-alo-phone quick-alo-green quick-alo-show d-none d-xl-block" id="quick-alo-phoneIcon">';
+			echo '<a href="tel:'. $sh_option['phonering-number'] .'" title="'. __('Call now','shtheme') .'">';
+				echo '<div class="quick-alo-ph-circle"></div>';
+				echo '<div class="quick-alo-ph-circle-fill"></div>';
+				echo '<div class="quick-alo-ph-img-circle"></div>';
+				echo '<span class="phone_text">'. __('Call now','shtheme') .': '. $sh_option['phonering-number'] .'</span>';
+			echo '</a>';
+		echo '</div>';
+		echo '<div class="alo-floating d-xl-none"><a href="tel:'. $sh_option['phonering-number'] .'"><i class="fa fa-phone"></i> <strong>'. $sh_option['phonering-number'] .'</strong></a></div>';
+	}
+}
+add_action('sh_after_footer','insert_callring');
+
+/**
  * Display Metaslider
  */
 function insert_metaslide(){

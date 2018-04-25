@@ -190,6 +190,9 @@ function shtheme_lib_scripts(){
 	// Font Awesome
 	wp_enqueue_style( 'fontawesome-style', SH_DIR .'/lib/css/font-awesome-all.css' );
 
+	// Font Awesome
+	wp_register_style( 'phonering-style', SH_DIR .'/lib/css/phone-ring.css' );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

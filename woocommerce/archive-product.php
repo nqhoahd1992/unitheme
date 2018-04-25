@@ -53,41 +53,152 @@ do_action( 'woocommerce_before_main_content' );
 
 if ( have_posts() ) {
 
-	/**
-	 * Hook: woocommerce_before_shop_loop.
-	 *
-	 * @hooked wc_print_notices - 10
-	 * @hooked woocommerce_result_count - 20
-	 * @hooked woocommerce_catalog_ordering - 30
-	 */
-	do_action( 'woocommerce_before_shop_loop' );
+	// Check hierarchy in theme options
+	if( $sh_option['display-hierarchy-woocommerce'] == '1' && ! is_shop() ) {
 
-	woocommerce_product_loop_start();
+		// Content
+		$archive_object = get_queried_object();
+		$archive_id 	= $archive_object->term_id;
+		$args = array(
+			'parent'     	=> $archive_id,
+			'hide_empty'  	=> 0,
+			'taxonomy'    	=> $archive_object->taxonomy,
+		);
+		$categories = get_categories( $args );
+		if( $categories ) {
+			echo '<div class="list-categories">';
+			/* Start the Loop */
+			foreach ( $categories as $value ) {
+				echo '<div class="list-categories__item">';
+			    	echo '<h2 class="heading"><a class="" title="' . $value->name . '" href="' . get_term_link( $value->term_id, $archive_object->taxonomy ) . '">' . $value->name . '</h2></a>';
+			    	woocommerce_category_image($value->term_id);
+	                /**
+					 * Hook: woocommerce_before_shop_loop.
+					 *
+					 * @hooked wc_print_notices - 10
+					 * @hooked woocommerce_result_count - 20
+					 * @hooked woocommerce_catalog_ordering - 30
+					 */
+					do_action( 'woocommerce_before_shop_loop' );
 
-	if ( wc_get_loop_prop( 'total' ) ) {
-		
-		while ( have_posts() ) {
-			the_post();
+					woocommerce_product_loop_start();
+
+					if ( wc_get_loop_prop( 'total' ) ) {
+						
+						$args = array(
+	                        'post_type' => 'product',
+	                        'tax_query' => array(
+	                            array(
+	                                'taxonomy' 	=> $archive_object->taxonomy,
+	                                'field' 	=> 'id',
+	                                'terms' 	=> $value->term_id,
+	                            )
+	                        ),
+	                        'paged'		=> get_query_var('paged'),
+	                    );
+	                    $the_query = new WP_Query( $args );
+						while($the_query -> have_posts()) : $the_query -> the_post();
+
+							/**
+							 * Hook: woocommerce_shop_loop.
+							 *
+							 * @hooked WC_Structured_Data::generate_product_data() - 10
+							 */
+							do_action( 'woocommerce_shop_loop' );
+
+							wc_get_template_part( 'content', 'product' );
+						endwhile;
+					}
+
+					woocommerce_product_loop_end();
+
+					/**
+					 * Hook: woocommerce_after_shop_loop.
+					 *
+					 * @hooked woocommerce_pagination - 10
+					 */
+					// do_action( 'woocommerce_after_shop_loop' );
+				echo '</div>';
+			}
+			echo '</div>';
+		} else {
+			/**
+			 * Hook: woocommerce_before_shop_loop.
+			 *
+			 * @hooked wc_print_notices - 10
+			 * @hooked woocommerce_result_count - 20
+			 * @hooked woocommerce_catalog_ordering - 30
+			 */
+			do_action( 'woocommerce_before_shop_loop' );
+
+			woocommerce_product_loop_start();
+
+			if ( wc_get_loop_prop( 'total' ) ) {
+				
+				while ( have_posts() ) {
+					the_post();
+
+					/**
+					 * Hook: woocommerce_shop_loop.
+					 *
+					 * @hooked WC_Structured_Data::generate_product_data() - 10
+					 */
+					do_action( 'woocommerce_shop_loop' );
+
+					wc_get_template_part( 'content', 'product' );
+				}
+			}
+
+			woocommerce_product_loop_end();
 
 			/**
-			 * Hook: woocommerce_shop_loop.
+			 * Hook: woocommerce_after_shop_loop.
 			 *
-			 * @hooked WC_Structured_Data::generate_product_data() - 10
+			 * @hooked woocommerce_pagination - 10
 			 */
-			do_action( 'woocommerce_shop_loop' );
-
-			wc_get_template_part( 'content', 'product' );
+			do_action( 'woocommerce_after_shop_loop' );
 		}
+
+	} else {
+
+		/**
+		 * Hook: woocommerce_before_shop_loop.
+		 *
+		 * @hooked wc_print_notices - 10
+		 * @hooked woocommerce_result_count - 20
+		 * @hooked woocommerce_catalog_ordering - 30
+		 */
+		do_action( 'woocommerce_before_shop_loop' );
+
+		woocommerce_product_loop_start();
+
+		if ( wc_get_loop_prop( 'total' ) ) {
+			
+			while ( have_posts() ) {
+				the_post();
+
+				/**
+				 * Hook: woocommerce_shop_loop.
+				 *
+				 * @hooked WC_Structured_Data::generate_product_data() - 10
+				 */
+				do_action( 'woocommerce_shop_loop' );
+
+				wc_get_template_part( 'content', 'product' );
+			}
+		}
+
+		woocommerce_product_loop_end();
+
+		/**
+		 * Hook: woocommerce_after_shop_loop.
+		 *
+		 * @hooked woocommerce_pagination - 10
+		 */
+		do_action( 'woocommerce_after_shop_loop' );
+
 	}
 
-	woocommerce_product_loop_end();
-
-	/**
-	 * Hook: woocommerce_after_shop_loop.
-	 *
-	 * @hooked woocommerce_pagination - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop' );
 } else {
 	/**
 	 * Hook: woocommerce_no_products_found.

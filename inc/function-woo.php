@@ -63,7 +63,7 @@ function woocommerce_category_image($products) {
     $arr = wp_get_attachment_image_src( $thumbnail_id, 'full' );
     $image = $arr[0];
     if ( $image ) {
-	    echo '<img src="' . $image . '" alt="" />';
+	    echo '<div class="product-cat__featured-image mb-4"><img src="' . $image . '" alt="" /></div>';
 	}
 }
 
@@ -72,7 +72,7 @@ function woocommerce_category_image($products) {
  */
 function woocommerce_edit_loop_shop_per_page( $cols ) {
 	global $sh_option;
-	if ( ! empty( $sh_option['number-products-cate'] ) ) {
+	if ( $sh_option['number-products-cate'] ) {
 		$cols = $sh_option['number-products-cate'];
 	} else {
 		$cols = get_option( 'posts_per_page' );
@@ -138,6 +138,7 @@ function get_column_product($numcol) {
  * Tab Woocommerce
  */
 function woo_remove_product_tabs( $tabs ) {
+	// unset( $tabs['description'] );
     // unset( $tabs['reviews'] );
     unset( $tabs['additional_information'] );
     return $tabs;
@@ -227,8 +228,8 @@ function shtheme_lib_woocommerce_scripts(){
 
 	// Main js
 	wp_enqueue_script( 'main-woo-js', SH_DIR . '/lib/js/main-woo.js', array(), '1.0', true );
-	// wp_localize_script( 'main-woo-js', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
-
+	// wp_localize_script(	'main-woo-js', 'ajax', array( 'url' => admin_url('admin-ajax.php') ) );
+	
 	// Woocommerce
 	if ( class_exists( 'WooCommerce' ) ) {
 		wp_enqueue_style( 'woocommerce-css-style', SH_DIR .'/lib/css/custom-woocommerce.css' );
