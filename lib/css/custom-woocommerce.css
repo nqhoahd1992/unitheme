@@ -905,7 +905,7 @@ html .entry-summary .product_meta {
 	margin: 0;
 	padding: 0;
 }
-.related .list-products li {
+.related .list-products li.product {
 	display: block;
 	text-align: center;
 }
@@ -915,7 +915,7 @@ html .entry-summary .product_meta {
 	margin-left: -10px;
 	margin-right: -10px;
 }
-.row.list-products li {
+.row.list-products li.product {
 	display: block;
 	margin-bottom: 20px;
 	text-align: center;

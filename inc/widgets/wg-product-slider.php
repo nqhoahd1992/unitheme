@@ -1,7 +1,7 @@
 <?php
-add_action('widgets_init', 'register_gtid_product_by_cat_vertical');
+add_action('widgets_init', 'register_widget_slider_products');
 
-function register_gtid_product_by_cat_vertical() {
+function register_widget_slider_products() {
     register_widget('Gtid_Products_Vertical_Widget');
 }
 
@@ -9,10 +9,10 @@ class Gtid_Products_Vertical_Widget extends WP_Widget {
 
     function __construct() {
         parent::__construct(
-            'slider_products_vertical',
-            __( '3B - Products Vertical Slider', 'shtheme' ),
+            'slider_products',
+            __( '3B - Products Slider', 'shtheme' ),
             array(
-                'description'  => __( 'Display vertical slide list product', 'shtheme' )
+                'description'  => __( 'Display slide list product', 'shtheme' )
             )
         );
     }
@@ -23,10 +23,16 @@ class Gtid_Products_Vertical_Widget extends WP_Widget {
 
         if ($instance['title']) echo $before_title . apply_filters('widget_title', $instance['title']) . $after_title;
         ?>
-
         <div class="slider-products">
-            <ul class="slick-carousel" 
-                data-item ="<?php echo $instance['numpro'];?>">
+            <ul class="slick-carousel list-products" 
+                data-item="<?php echo $instance['numpro'];?>" 
+                data-item_md="2" 
+                data-item_sm="2" 
+                data-item_mb="1" 
+                data-row="1" 
+                data-dots="true" 
+                data-arrows="false" 
+                data-vertical="<?php echo $instance['type_slider'];?>">
                 <?php
                 $args   = array(
                     'post_type'         => 'product',
@@ -75,15 +81,26 @@ class Gtid_Products_Vertical_Widget extends WP_Widget {
     function form($instance) {
         $instance = wp_parse_args(
         	(array)$instance, array(
-        		'title' 			=> '', 
-        		'numpro' 			=> '1',  
+        		'title' 			=> '',
+                'type_slider'       => '1', 
+        		'numpro' 			=> '3',  
         		'cat' 				=> '',
+                'image_alignment'   => 'alignleft',
+                'image_size'        => 'thumbnail (150x150)',
     		)
     	);
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'shtheme'); ?>:</label>
             <input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php  echo $this->get_field_name('title'); ?>" value="<?php  echo esc_attr( $instance['title'] ); ?>" />
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id('type_slider'); ?>"><?php _e('Select type slider', 'shtheme'); ?>:</label>
+            <select id="<?php echo $this->get_field_id( 'type_slider' ); ?>" name="<?php echo $this->get_field_name( 'type_slider' ); ?>">
+                <option value="true" <?php selected( 'true', $instance['type_slider'] ); ?>><?php _e('Vertical Slider','shtheme');?></option>
+                <option value="false" <?php selected( 'false', $instance['type_slider'] ); ?>><?php _e('Horizontal Slider','shtheme');?></option>
+            </select>
         </p>
 
         <p>

@@ -27,24 +27,29 @@ if ( $related_products ) : ?>
 	$display_relatedpro = $sh_option['display-relatedpro'];
 	$numcol_pro_related = $sh_option['number-column-product-related'];
 	if( $display_relatedpro == '1' ) {
-		wp_enqueue_script( 'owlcarousel-js' );
-        wp_enqueue_style( 'owlcarousel-style' );
-        wp_enqueue_style( 'owlcarousel-theme-style' );
+		wp_enqueue_script( 'slick-js' );
+        wp_enqueue_style( 'slick-style' );
+        wp_enqueue_style( 'slick-theme-style' );
         // woocommerce_product_loop_start();
         ?>
         <section class="related">
 	        <h2 class="heading-related"><span><?php _e( 'Related Products', 'shtheme' ); ?></span></h2>
-	        <ul class="owl-carousel list-products" data-item="<?php echo $numcol_pro_related;?>" data-margin="30" data-md="2" data-sm="2" data-xs="1" data-mb="1" data-dots="false" data-nav="true">
-				<?php foreach ( $related_products as $related_product ) : ?>
-
-					<?php
+        	<ul class="slick-carousel list-products" 
+	        	data-item="<?php echo $numcol_pro_related;?>" 
+	        	data-item_md="2" 
+	        	data-item_sm="2" 
+	        	data-item_mb="1" 
+	        	data-row="1" 
+	        	data-dots="false" 
+	        	data-arrows="true" 
+	        	data-vertical="false">
+				<?php
+					foreach ( $related_products as $related_product ) : 
 					 	$post_object = get_post( $related_product->get_id() );
-
 						setup_postdata( $GLOBALS['post'] =& $post_object );
-
-						wc_get_template_part( 'content', 'product' ); ?>
-
-				<?php endforeach; ?>
+						wc_get_template_part( 'content', 'product' );
+					endforeach;
+				?>
 			</ul>
 		</section>
         <?php
