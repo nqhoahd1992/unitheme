@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2018-04-27 15:35+0700\n"
-"PO-Revision-Date: 2018-04-27 15:37+0700\n"
+"POT-Creation-Date: 2018-05-02 15:00+0700\n"
+"PO-Revision-Date: 2018-05-02 15:00+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -825,14 +825,14 @@ msgstr "Instagram"
 msgid "Telephone number"
 msgstr "Số điện thoại"
 
-#: inc/options.php:670 inc/widgets/wg-information.php:42
-#: inc/widgets/wg-information.php:89 inc/widgets/wg-support.php:76
+#: inc/options.php:670 inc/widgets/wg-information.php:45
+#: inc/widgets/wg-information.php:96 inc/widgets/wg-support.php:76
 #: inc/widgets/wg-support.php:107 inc/widgets/wg-support.php:200
 msgid "Email"
 msgstr "Email"
 
-#: inc/options.php:675 inc/widgets/wg-information.php:33
-#: inc/widgets/wg-information.php:77
+#: inc/options.php:675 inc/widgets/wg-information.php:36
+#: inc/widgets/wg-information.php:84
 msgid "Address"
 msgstr "Địa chỉ"
 
@@ -929,7 +929,7 @@ msgstr "Hiển thị Like Box Facebook"
 msgid "Like Facebook"
 msgstr "Like Facebook"
 
-#: inc/widgets/wg-fblikebox.php:55 inc/widgets/wg-information.php:73
+#: inc/widgets/wg-fblikebox.php:55 inc/widgets/wg-information.php:76
 #: inc/widgets/wg-page.php:40 inc/widgets/wg-post-list.php:95
 #: inc/widgets/wg-product-slider.php:94 inc/widgets/wg-social.php:72
 #: inc/widgets/wg-support.php:50 inc/widgets/wg-view-post-list.php:105
@@ -948,23 +948,27 @@ msgstr "3B - Thông tin liên hệ"
 msgid "Display information contact"
 msgstr "Hiển thị thông tin liên hệ"
 
-#: inc/widgets/wg-information.php:36 inc/widgets/wg-information.php:81
+#: inc/widgets/wg-information.php:39 inc/widgets/wg-information.php:88
 msgid "Telephone"
 msgstr "Số điện thoại"
 
-#: inc/widgets/wg-information.php:39 inc/widgets/wg-information.php:85
+#: inc/widgets/wg-information.php:42 inc/widgets/wg-information.php:92
 msgid "Hotline"
 msgstr "Hotline"
 
-#: inc/widgets/wg-information.php:45 inc/widgets/wg-information.php:93
+#: inc/widgets/wg-information.php:48 inc/widgets/wg-information.php:100
 msgid "Website"
 msgstr "Website"
 
-#: inc/widgets/wg-information.php:98
+#: inc/widgets/wg-information.php:80
+msgid "Company"
+msgstr "Công ty"
+
+#: inc/widgets/wg-information.php:105
 msgid "Hide label"
 msgstr "Không hiển thị nhãn"
 
-#: inc/widgets/wg-information.php:102
+#: inc/widgets/wg-information.php:109
 msgid "Hide icon"
 msgstr "Không hiển thị biểu tượng"
 

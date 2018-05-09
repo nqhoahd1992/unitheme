@@ -29,6 +29,9 @@ class Gtid_Information_Widget extends WP_Widget {
             <?php
             $hide_label = $instance['hide_label'] ? 'd-none' : '';
             $hide_icon  = $instance['hide_icon']  ? 'd-none' : '';
+            if( $instance['company'] ) {
+                echo '<li><i class="'. $hide_icon .' fab fa-windows"></i>'. $instance['company'] .'</li>';
+            }
             if( $instance['address'] ) {
                 echo '<li><i class="'. $hide_icon .' fas fa-map-marker-alt"></i><span class="'. $hide_label .'">'. __( 'Address', 'shtheme' ) .':</span> '. $instance['address'] .'</li>';
             }
@@ -72,6 +75,10 @@ class Gtid_Information_Widget extends WP_Widget {
         <p>
             <label for="<?php  echo $this->get_field_id('title'); ?>"><?php _e('Title', 'shtheme'); ?>:</label>
             <input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php  echo $this->get_field_name('title'); ?>" value="<?php  echo esc_attr( $instance['title'] ); ?>" />
+        </p>
+        <p>
+            <label for="<?php  echo $this->get_field_id('company'); ?>"><?php _e('Company', 'shtheme'); ?>:</label>
+            <input type="text" class="widefat" id="<?php echo $this->get_field_id('company'); ?>" name="<?php  echo $this->get_field_name('company'); ?>" value="<?php  echo esc_attr( $instance['company'] ); ?>" />
         </p>
         <p>
             <label for="<?php  echo $this->get_field_id('address'); ?>"><?php _e('Address', 'shtheme'); ?>:</label>

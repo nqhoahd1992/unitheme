@@ -22,9 +22,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product, $sh_option;
 
+// Get price product
 get_price_product();
 
-
+// Get attribute product
 $display_propertypro   = $sh_option['display-propertypro'];
 if ( $display_propertypro == '1' ) {
 	do_action( 'woocommerce_product_additional_information', $product );

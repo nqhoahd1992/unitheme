@@ -34,14 +34,17 @@ function my_theme_wrapper_start() {
 
 function my_theme_wrapper_end() {
 	global $sh_option;
+	$layout = $sh_option['opt-layout'];
 	echo '</main>';
-	echo '<aside class="sidebar sidebar-primary sidebar-shop" itemscope itemtype="https://schema.org/WPSideBar">';
-		if( $sh_option['display-shopsidebar'] == 1 ) {
-			dynamic_sidebar( 'sidebar-shop' );
-		} else {
-			dynamic_sidebar( 'sidebar-1' );
-		}
-	echo '</aside>';
+	if( $layout != '1' ) {
+		echo '<aside class="sidebar sidebar-primary sidebar-shop" itemscope itemtype="https://schema.org/WPSideBar">';
+			if( $sh_option['display-shopsidebar'] == 1 ) {
+				dynamic_sidebar( 'sidebar-shop' );
+			} else {
+				dynamic_sidebar( 'sidebar-1' );
+			}
+		echo '</aside>';
+	}
 	echo '</div>';
 }
 
@@ -179,15 +182,25 @@ add_filter( 'woocommerce_output_related_products_args', 'custom_numberpro_relate
  */
 function get_price_product(){
 	global $product;
-	$regular_price 	= $product->regular_price;
-	$sale_price 	= $product->sale_price;
-	if( empty( $regular_price ) ) {
-		echo '<p class="price">'.__( 'Contact', 'shtheme' ).'</p>';
-	} elseif ( ! empty( $regular_price ) && empty( $sale_price ) ) {
-		echo '<p class="price">'. number_format( $regular_price, 0, '', '.' ) . ' đ</p>';
-	} elseif ( ! empty( $regular_price ) && ! empty( $sale_price ) ) {
-		echo '<p class="price"><ins>'. number_format( $sale_price, 0, '', '.' ) .' đ</ins><del>'. number_format( $regular_price,0,'','.' ) .' đ</del></p>';
+	if( $product->is_type( 'simple' ) ) {
+		$regular_price 	= $product->regular_price;
+		$sale_price 	= $product->sale_price;
+		if( empty( $regular_price ) ) {
+			echo '<p class="price">'.__( 'Contact', 'shtheme' ).'</p>';
+		} elseif ( ! empty( $regular_price ) && empty( $sale_price ) ) {
+			echo '<p class="price">'. number_format( $regular_price, 0, '', '.' ) . ' ₫</p>';
+		} elseif ( ! empty( $regular_price ) && ! empty( $sale_price ) ) {
+			echo '<p class="price"><ins>'. number_format( $sale_price, 0, '', '.' ) .' ₫</ins><del>'. number_format( $regular_price,0,'','.' ) .' ₫</del></p>';
+		}
+	} elseif( $product->is_type( 'variable' ) ) {
+		if( is_product() ) {
+			// echo '<p class="price d-none">'. $product->get_price_html() .'</p>';
+			echo '<p class="price d-none">'. wc_price($product->get_price()) .'</p>';
+		} else {
+			echo '<p class="price">'. wc_price($product->get_price()) .'</p>';
+		}
 	}
+	
 }
 add_action( 'woocommerce_after_shop_loop_item','get_price_product',10 );
 
@@ -335,8 +348,8 @@ function insert_btn_detail(){
 // add_action( 'woocommerce_after_shop_loop_item','insert_btn_detail',15 );
 
 // File archive-product.php
-remove_action( 'woocommerce_before_shop_loop','woocommerce_result_count',20 );
-remove_action( 'woocommerce_before_shop_loop','woocommerce_catalog_ordering',30 );
+// remove_action( 'woocommerce_before_shop_loop','woocommerce_result_count',20 );
+// remove_action( 'woocommerce_before_shop_loop','woocommerce_catalog_ordering',30 );
 remove_action( 'woocommerce_sidebar','woocommerce_get_sidebar',10 );
 
 // File content-product.php

@@ -26,19 +26,19 @@ get_header(); ?>
 					<?php endif;?>
 
 					<div class="entry-content">
+						<div class="embed-responsive embed-responsive-21by9 mb-5">
+							<?php echo $sh_option['information-map'];?>
+						</div>
 						<div class="row">
+							<div class="col-sm-6">
+								<?php echo do_shortcode( '[contact-form-7 id="156" title="Liên hệ"]' );?>
+							</div>
 							<div class="col-sm-6">
 								<?php
 									the_content();
 								?>
 							</div>
-							<div class="col-sm-6">
-								<?php
-								echo $sh_option['information-map'];
-								?>
-							</div>
 						</div>
-						
 					</div><!-- .entry-content -->
 					
 				</article><!-- #post-## -->

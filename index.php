@@ -56,7 +56,7 @@ get_header(); ?>
 				echo '<div class="news-wrap">';
 					foreach ($list_cat_post as $key => $idpost) {
 						echo '<h2 class="heading"><a href="'. get_category_link( $idpost ) .'">'. get_cat_name( $idpost ) .'</a></h2>';
-						echo do_shortcode('[shblog posts_per_page="' . $number_news . '" categories="' . $idpost . '" number_character="200" style="' . $type_layout . '"]');
+						echo do_shortcode('[shblog posts_per_page="' . $number_news . '" categories="' . $idpost . '" number_character="140" style="' . $type_layout . '"]');
 					}
 				echo '</div>';
 			}
@@ -67,6 +67,8 @@ get_header(); ?>
 		<?php do_action( 'sh_after_content' );?>
 
 	</div><!-- #primary -->
+	
+	<?php //do_action( 'sh_after_content_sidebar_wrap' );?>
 	
 <?php
 get_footer();
