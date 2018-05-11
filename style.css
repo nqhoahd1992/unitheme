@@ -318,6 +318,21 @@ textarea.form-control {
 }
 
 /*--------------------------------------------------------------
+## Css Scrollbar
+--------------------------------------------------------------*/
+body::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+	background-color: #fff;
+}
+body::-webkit-scrollbar {
+	width: 8px;
+	background-color: #fff; 
+}
+body::-webkit-scrollbar-thumb {
+	background-color: #555; 
+}
+
+/*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
 .alignleft {display: inline;float: left;margin-right: 1.5em}
@@ -1284,6 +1299,7 @@ embed, iframe, object {max-width: 100%}
 	padding: 5px 0;
 	background: #337ab7;
 }
+
 
 /*--------------------------------------------------------------
 ## Custom Css 
