@@ -37,11 +37,11 @@ if( $sh_option['woocommerce-tooltip'] == '1' ) {
 }
 
 // Post Class
-if( is_home() || $sh_option['layout-category-product'] == '1' ) {
+if( is_home() || $sh_option['layout-category-product'] == '0' ) {
 	$numcol 				= $sh_option['number_product_row'];
 	$post_class_homepage 	= get_column_product($numcol);
 	$post_class 			= $post_class_homepage;
-} elseif ( ! is_home() && $sh_option['layout-category-product'] == '0' ) {
+} elseif ( ! is_home() && $sh_option['layout-category-product'] == '1' ) {
 	$numcol   				= $sh_option['number-column-product-cate'];
 	$post_class_archive 	= get_column_product($numcol);
 	$post_class 			= $post_class_archive;

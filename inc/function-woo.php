@@ -202,7 +202,7 @@ function get_price_product(){
 	}
 	
 }
-add_action( 'woocommerce_after_shop_loop_item','get_price_product',10 );
+add_action( 'woocommerce_after_shop_loop_item','get_price_product',9 );
 
 /**
  * Title Product content-product.php
@@ -302,38 +302,51 @@ add_action( 'woocommerce_share','insert_share_product' );
  */
 if( ! function_exists('sh_woocommerce_get__cart_menu_item__content') ) {
 	function sh_woocommerce_get__cart_menu_item__content() {
-		echo '<div class="navbar-actions">';
-			echo '<div class="navbar-actions-shrink shopping-cart">';
-				echo '<a href="javascript:void(0);" class="shopping-cart-icon-container ffb-cart-menu-item">';
-					echo '<span class="shopping-cart-icon-wrapper" title="' . WC()->cart->get_cart_contents_count() . '">';
-					echo '<span class="shopping-cart-menu-title">';
-						echo get_the_title( wc_get_page_id('cart') );
-						echo '&nbsp;';
-					echo '</span><i class="fas fa-shopping-cart"></i> </span>';
-				echo '</a>';
-				echo '<div class="shopping-cart-menu-wrapper">';
-					wc_get_template( 'cart/mini-cart.php', array('list_class' => ''));
-				echo '</div>';
-			echo '</div>';
-		echo '</div>';
+		?>
+		<div class="navbar-actions">
+			<div class="navbar-actions-shrink shopping-cart">
+				<a href="javascript:void(0);" class="shopping-cart-icon-container ffb-cart-menu-item">
+					<span class="shopping-cart-icon-wrapper" title="<?php echo WC()->cart->get_cart_contents_count();?>">
+						<span class="shopping-cart-menu-title">
+							<?php echo get_the_title( wc_get_page_id('cart') );?>
+						</span>
+						<i class="fas fa-shopping-cart"></i>
+					</span>
+				</a>
+				<div class="shopping-cart-menu-wrapper">
+					<?php wc_get_template( 'cart/mini-cart.php', array('list_class' => ''));?>
+				</div>
+			</div>
+		</div>
+		<?php
 	}
-	// add_action( 'sh_after_menu', 'sh_woocommerce_get__cart_menu_item__content');
+	add_action( 'sh_after_menu', 'sh_woocommerce_get__cart_menu_item__content');
 }
 
-/**
- * Adds rule after product(s) is added to shopping basket. Rule is that everything with class .shopping-cart is
- * refreshed / reloaded with ajax
- *
- * @param array $fragments
- * @return array
- */
-if( ! function_exists('woocommerce_ark__cart_menu_item__fragment') ) {
-	function woocommerce_ark__cart_menu_item__fragment($fragments) {
-		$fragments['.shopping-cart'] = sh_woocommerce_get__cart_menu_item__content();
-		return $fragments;
-	}
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+	global $woocommerce;
+	ob_start();
+	?>
+	<div class="navbar-actions">
+			<div class="navbar-actions-shrink shopping-cart">
+				<a href="javascript:void(0);" class="shopping-cart-icon-container ffb-cart-menu-item">
+					<span class="shopping-cart-icon-wrapper" title="<?php echo WC()->cart->get_cart_contents_count();?>">
+						<span class="shopping-cart-menu-title">
+							<?php echo get_the_title( wc_get_page_id('cart') );?>
+						</span>
+						<i class="fas fa-shopping-cart"></i>
+					</span>
+				</a>
+				<div class="shopping-cart-menu-wrapper">
+					<?php wc_get_template( 'cart/mini-cart.php', array('list_class' => ''));?>
+				</div>
+			</div>
+		</div>
+	<?php
+	$fragments['.navbar-actions'] = ob_get_clean();
+	return $fragments;
 }
-add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_ark__cart_menu_item__fragment');
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
 
 /**
  * Button Detail content-product.php
@@ -356,10 +369,11 @@ remove_action( 'woocommerce_sidebar','woocommerce_get_sidebar',10 );
 remove_action( 'woocommerce_before_shop_loop_item','woocommerce_template_loop_product_link_open',10 );
 remove_action( 'woocommerce_before_shop_loop_item_title','woocommerce_show_product_loop_sale_flash',10 );
 remove_action( 'woocommerce_before_shop_loop_item_title','woocommerce_template_loop_product_thumbnail',10 );
-remove_action( 'woocommerce_after_shop_loop_item','woocommerce_template_loop_add_to_cart',10 );
+// remove_action( 'woocommerce_after_shop_loop_item','woocommerce_template_loop_add_to_cart',10 );
 remove_action( 'woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating',5 );
 remove_action( 'woocommerce_after_shop_loop_item_title','woocommerce_template_loop_price',10 );
 remove_action( 'woocommerce_shop_loop_item_title','woocommerce_template_loop_product_title',10 );
 
 // File content-single-product.php
-// remove_action( 'woocommerce_single_product_summary','woocommerce_template_single_meta',40 );
+remove_action( 'woocommerce_single_product_summary','woocommerce_template_single_meta',40 );
+add_action( 'woocommerce_single_product_summary','woocommerce_template_single_meta',6 );

@@ -28,9 +28,9 @@ echo '<div class="woocommerce-mini-cart-wrapper">';
 	echo '<div class="shopping-cart-menu ffb-cart-submenu">';
 		echo '<ul class="list-unstyled">';
 
-			echo '<li>';
-				echo '<span class="shopping-cart-menu-title">'.get_the_title( wc_get_page_id('cart') ).'<a href="javascript:void(0);" class="menu-cart-close">&times;</a></span>';
-			echo '</li>';
+			// echo '<li>';
+			// 	echo '<span class="shopping-cart-menu-title">'.get_the_title( wc_get_page_id('cart') ).'<a href="javascript:void(0);" class="menu-cart-close">&times;</a></span>';
+			// echo '</li>';
 
 			if ( ! WC()->cart->is_empty() ) {
 

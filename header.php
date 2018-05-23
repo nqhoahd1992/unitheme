@@ -66,20 +66,36 @@
 					endif; ?>
 				</div><!-- .site-branding -->
 
-				<div class="header-content">
-					<div class="logo">
-						<?php display_logo();?>
+				<!-- Start Content Header -->
+				<?php
+				if( $sh_option['opt-layout-header'] == '1' ) {
+					?>
+					<div class="header-content">
+						<div class="logo">
+							<?php display_logo();?>
+						</div>
 					</div>
 					<?php
-					if( $sh_option['opt-layout-header'] == '2' ) {
-						echo '<nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">';
-							wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'menu_class' => 'menu clearfix' ) );
-						echo '</nav>';
-					}
-					do_action( 'sh_after_menu' );
+				} elseif( $sh_option['opt-layout-header'] == '2' ) {
 					?>
-				</div>
-				
+					<div class="header-content">
+						<div class="row align-items-center">
+							<div class="col-md-3">
+								<div class="logo">
+									<?php display_logo();?>
+								</div>
+							</div>
+							<div class="col-md-9">
+								<nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+									<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'menu_class' => 'menu clearfix' ) );?>
+								</nav>
+							</div>
+						</div>
+					</div>
+					<?php
+				}
+				do_action( 'sh_after_menu' );
+				?>
 			</div>
 		</div>
 
