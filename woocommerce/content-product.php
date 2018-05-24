@@ -11,23 +11,18 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.0.0
+ * @version 3.4.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
-global $product;
+global $product, $post, $sh_option;
 
 // Ensure visibility
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
-
-global $post, $sh_option;
 
 // Dev Feature Tooltip
 if( $sh_option['woocommerce-tooltip'] == '1' ) {
@@ -47,7 +42,7 @@ if( is_home() || $sh_option['layout-category-product'] == '0' ) {
 	$post_class 			= $post_class_archive;
 }
 ?>
-<li <?php post_class($post_class); ?>>
+<li <?php wc_product_class($post_class); ?>>
 	<div class="wrap-product">
 		<?php
 		/**

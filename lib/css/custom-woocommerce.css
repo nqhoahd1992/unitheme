@@ -115,10 +115,7 @@
 .shopping-cart-menu-product-wrap a span {
 	font-weight: 600;
 }
-.woocommerce-mini-cart-wrapper a.remove:not(:hover) {
-    color: #ef3637;
-}
-.woocommerce-mini-cart-wrapper a.remove {
+html .woocommerce-mini-cart-wrapper a.remove {
 	display: inline-block;
     font-size: 1.5em;
     height: 1em;
@@ -130,7 +127,7 @@
     font-weight: 700;
     border: 0;
 }
-.woocommerce-mini-cart-wrapper a.remove:hover {
+html .woocommerce-mini-cart-wrapper a.remove:hover {
     background-color: #ef3637;
     color: #FFF;
 }
@@ -159,7 +156,7 @@
 .navbar-actions {
 	position: relative;
 	float: right;
-	z-index: 1;
+	z-index: 99;
 }
 .woocommerce-mini-cart-wrapper .shopping-cart-subtotal {
     padding: 15px;
@@ -881,7 +878,7 @@ html .woocommerce .col2-set .col-2, html .woocommerce-page .col2-set .col-2 {
 	position: absolute;
 	top: 5px;
 	left: 5px;
-	z-index: 9;
+	z-index: 1;
 	color: #FFF;
 	background: #ff0000;
 	text-align: center;
