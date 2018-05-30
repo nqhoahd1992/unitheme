@@ -484,6 +484,14 @@ html .woocommerce-billing-fields h3, html #order_review_heading, html .woocommer
 html .woocommerce-additional-fields h3 {
 	width: 100%;
 }
+.woocommerce form .form-row label, .woocommerce-page form .form-row label {
+	display: block;
+	width: 100%;
+}
+.woocommerce-input-wrapper {
+	display: block;
+	width: 100%;
+}
 html .woocommerce form.checkout input[type=text], 
 html .woocommerce form.checkout input[type=password], 
 html .woocommerce form.checkout input[type=email], 
@@ -1021,6 +1029,10 @@ html .woocommerce-product-details__short-description {
     background: #337ab7;
     color: #FFF;
     margin-bottom: 10px;
+    line-height: 1.4;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: normal;
 }
 
 /* Custom Css Woocommerce */

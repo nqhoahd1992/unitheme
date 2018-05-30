@@ -14,7 +14,7 @@ function insert_callring(){
 				echo '<span class="phone_text">'. __('Call now','shtheme') .': '. $sh_option['phonering-number'] .'</span>';
 			echo '</a>';
 		echo '</div>';
-		echo '<div class="alo-floating d-xl-none"><a href="tel:'. $sh_option['phonering-number'] .'"><i class="fa fa-phone"></i> <strong>'. $sh_option['phonering-number'] .'</strong></a></div>';
+		echo '<div class="alo-floating d-xl-none"><a href="tel:'. $sh_option['phonering-number'] .'"><i class="fas fa-phone"></i> <strong>'. $sh_option['phonering-number'] .'</strong></a></div>';
 	}
 }
 add_action('sh_after_footer','insert_callring');

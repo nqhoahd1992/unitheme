@@ -406,10 +406,10 @@ body::-webkit-scrollbar-thumb {
 	visibility: hidden;
 	min-width: 200px;
 	border: 1px solid #cccccc;
-    -webkit-transition: all 0.45s ease-out 0s;
-    -moz-transition: all 0.45s ease-out 0s;
-    -o-transition: all 0.45s ease-out 0s;
-    transition: all 0.45s ease-out 0s;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
     -moz-transform: translate(40px, 0);
     -webkit-transform: translate(40px, 0);
     transform: translate(40px, 0);

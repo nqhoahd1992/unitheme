@@ -52,7 +52,7 @@ class Gtid_Products_Vertical_Widget extends WP_Widget {
                 ?>
                     <div id="post-<?php the_ID(); ?>" class="item-product-slide">
                         <a class="<?php echo $instance['image_alignment'];?>" href="<?php the_permalink();?>" title="<?php the_title();?>">
-                            <?php if( has_post_thumbnail() ) the_post_thumbnail( $instance['image_size'],array( "alt" => get_the_title() ) );?>
+                            <?php if( has_post_thumbnail() ) : echo '<img data-lazy="'.get_the_post_thumbnail_url( get_the_ID(), $image_size ).'"/>';endif;?>
                         </a>
                         <h3>
                             <a href="<?php the_permalink();?>" title="<?php the_title();?>">
