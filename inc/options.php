@@ -168,6 +168,17 @@ Redux::setSection( $opt_name, array(
     'subsection'       => true,
     'fields'           => array(
         array(
+            'id'       => 'site-layout',
+            'type'     => 'button_set', 
+            'title'    => __('Select layout website', 'shtheme'),
+            'default'  => true,
+            'options'  => array(
+                '1'       => __('Full Width Layout', 'shtheme'),
+                '2'       => __('Boxed Layout', 'shtheme'),
+             ), 
+            'default' => '1'
+        ),
+        array(
         	'id'       => 'opt-layout',
 		    'type'     => 'image_select',
 		    'title'    => __('Main Appearance', 'shtheme'),
@@ -199,7 +210,6 @@ Redux::setSection( $opt_name, array(
 		    ),
 		    'default' => '2',
         ),
-        
     )
 ) );
 

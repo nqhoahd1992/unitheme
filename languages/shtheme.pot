@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2018-05-02 14:59+0700\n"
+"POT-Creation-Date: 2018-06-04 16:50+0700\n"
 "PO-Revision-Date: 2018-01-18 17:08+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -406,7 +406,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:2647 inc/options.php:743
+#: inc/class-tgm-plugin-activation.php:2647 inc/options.php:753
 msgid "Status"
 msgstr ""
 
@@ -548,27 +548,27 @@ msgstr ""
 msgid "Shop Sidebar"
 msgstr ""
 
-#: inc/function-woo.php:149 inc/options.php:658
+#: inc/function-woo.php:152 inc/options.php:668
 msgid "Information"
 msgstr ""
 
-#: inc/function-woo.php:150
+#: inc/function-woo.php:153
 msgid "Gallery"
 msgstr ""
 
-#: inc/function-woo.php:151
+#: inc/function-woo.php:154
 msgid "Video"
 msgstr ""
 
-#: inc/function-woo.php:152
+#: inc/function-woo.php:155
 msgid "Attachments"
 msgstr ""
 
-#: inc/function-woo.php:185
+#: inc/function-woo.php:189
 msgid "Contact"
 msgstr ""
 
-#: inc/function-woo.php:331
+#: inc/function-woo.php:357
 msgid "View detail"
 msgstr ""
 
@@ -584,15 +584,15 @@ msgstr ""
 msgid "Products"
 msgstr ""
 
-#: inc/functions/init.php:66
+#: inc/functions/init.php:92
 msgid "Unauthorized access is denied!"
 msgstr ""
 
-#: inc/functions/init.php:185 inc/functions/init.php:187
+#: inc/functions/init.php:207 inc/functions/init.php:209
 msgid "views"
 msgstr ""
 
-#: inc/functions/mobilemenu.php:15
+#: inc/functions/mobilemenu.php:16
 msgid "MENU"
 msgstr ""
 
@@ -613,301 +613,309 @@ msgid "Appearance"
 msgstr ""
 
 #: inc/options.php:173
+msgid "Select layout website"
+msgstr ""
+
+#: inc/options.php:176
+msgid "Full Width Layout"
+msgstr ""
+
+#: inc/options.php:177
+msgid "Boxed Layout"
+msgstr ""
+
+#: inc/options.php:184
 msgid "Main Appearance"
 msgstr ""
 
-#: inc/options.php:207
+#: inc/options.php:217
 msgid "Logo, Favicon"
 msgstr ""
 
-#: inc/options.php:215
+#: inc/options.php:225
 msgid "Logo Image"
 msgstr ""
 
-#: inc/options.php:222
+#: inc/options.php:232
 msgid "Favicon Image"
 msgstr ""
 
-#: inc/options.php:230
+#: inc/options.php:240
 msgid "Header"
 msgstr ""
 
-#: inc/options.php:237
+#: inc/options.php:247
 msgid "Header Layout"
 msgstr ""
 
-#: inc/options.php:253
+#: inc/options.php:263
 msgid "Enable Page Title Bar"
 msgstr ""
 
-#: inc/options.php:255 inc/options.php:263 inc/options.php:425
-#: inc/options.php:433 inc/options.php:441 inc/options.php:449
-#: inc/options.php:465 inc/options.php:490 inc/options.php:536
-#: inc/options.php:558 inc/options.php:577 inc/options.php:745
-#: inc/options.php:775 inc/options.php:783
+#: inc/options.php:265 inc/options.php:273 inc/options.php:435
+#: inc/options.php:443 inc/options.php:451 inc/options.php:459
+#: inc/options.php:475 inc/options.php:500 inc/options.php:546
+#: inc/options.php:568 inc/options.php:587 inc/options.php:755
+#: inc/options.php:785 inc/options.php:793
 msgid "Enable"
 msgstr ""
 
-#: inc/options.php:256 inc/options.php:264 inc/options.php:426
-#: inc/options.php:434 inc/options.php:442 inc/options.php:450
-#: inc/options.php:466 inc/options.php:491 inc/options.php:537
-#: inc/options.php:559 inc/options.php:578 inc/options.php:746
-#: inc/options.php:776 inc/options.php:784
+#: inc/options.php:266 inc/options.php:274 inc/options.php:436
+#: inc/options.php:444 inc/options.php:452 inc/options.php:460
+#: inc/options.php:476 inc/options.php:501 inc/options.php:547
+#: inc/options.php:569 inc/options.php:588 inc/options.php:756
+#: inc/options.php:786 inc/options.php:794
 msgid "Disable"
 msgstr ""
 
-#: inc/options.php:261
+#: inc/options.php:271
 msgid "Enable Top Header Widget"
 msgstr ""
 
-#: inc/options.php:271
+#: inc/options.php:281
 msgid "Footer"
 msgstr ""
 
-#: inc/options.php:278
+#: inc/options.php:288
 msgid "Enter number column footer"
 msgstr ""
 
-#: inc/options.php:288
+#: inc/options.php:298
 msgid "Copyright"
 msgstr ""
 
-#: inc/options.php:295
+#: inc/options.php:305
 msgid "Home Page"
 msgstr ""
 
-#: inc/options.php:301
+#: inc/options.php:311
 msgid "News"
 msgstr ""
 
-#: inc/options.php:309 inc/options.php:376
+#: inc/options.php:319 inc/options.php:386
 msgid "Select categories"
 msgstr ""
 
-#: inc/options.php:319
+#: inc/options.php:329
 msgid "Enter number post"
 msgstr ""
 
-#: inc/options.php:329
+#: inc/options.php:339
 msgid "Blog Layout"
 msgstr ""
 
-#: inc/options.php:368
+#: inc/options.php:378
 msgid "Product"
 msgstr ""
 
-#: inc/options.php:386
+#: inc/options.php:396
 msgid "Enter number product"
 msgstr ""
 
-#: inc/options.php:396 inc/options.php:523 inc/options.php:594
+#: inc/options.php:406 inc/options.php:533 inc/options.php:604
 msgid "Enter number product per row"
 msgstr ""
 
-#: inc/options.php:410
+#: inc/options.php:420
 msgid "Post"
 msgstr ""
 
-#: inc/options.php:416
+#: inc/options.php:426
 msgid "Single post"
 msgstr ""
 
-#: inc/options.php:423
+#: inc/options.php:433
 msgid "Display time and view post"
 msgstr ""
 
-#: inc/options.php:431
+#: inc/options.php:441
 msgid "Display buttons share social"
 msgstr ""
 
-#: inc/options.php:439
+#: inc/options.php:449
 msgid "Display post navigation"
 msgstr ""
 
-#: inc/options.php:447 inc/options.php:575
+#: inc/options.php:457 inc/options.php:585
 msgid "Display related products"
 msgstr ""
 
-#: inc/options.php:456
+#: inc/options.php:466
 msgid "Category post"
 msgstr ""
 
-#: inc/options.php:463 inc/options.php:534
+#: inc/options.php:473 inc/options.php:544
 msgid "Display hierarchy category"
 msgstr ""
 
-#: inc/options.php:475
+#: inc/options.php:485
 msgid "WooCommerce"
 msgstr ""
 
-#: inc/options.php:481
+#: inc/options.php:491
 msgid "Main Settings"
 msgstr ""
 
-#: inc/options.php:488
+#: inc/options.php:498
 msgid "Display Widget Shop Sidebar"
 msgstr ""
 
-#: inc/options.php:497
+#: inc/options.php:507
 msgid "Category Product"
 msgstr ""
 
-#: inc/options.php:504 inc/widgets/wg-support.php:65
+#: inc/options.php:514 inc/widgets/wg-support.php:65
 msgid "Layout"
 msgstr ""
 
-#: inc/options.php:506
+#: inc/options.php:516
 msgid "Customize"
 msgstr ""
 
-#: inc/options.php:507
+#: inc/options.php:517
 msgid "Default"
 msgstr ""
 
-#: inc/options.php:512
+#: inc/options.php:522
 msgid "Enter number product per page"
 msgstr ""
 
-#: inc/options.php:543
+#: inc/options.php:553
 msgid "Single Product"
 msgstr ""
 
-#: inc/options.php:550
+#: inc/options.php:560
 msgid "Setting General"
 msgstr ""
 
-#: inc/options.php:556
+#: inc/options.php:566
 msgid "Display attributes product"
 msgstr ""
 
-#: inc/options.php:569
+#: inc/options.php:579
 msgid "Related Product"
 msgstr ""
 
-#: inc/options.php:583
+#: inc/options.php:593
 msgid "Enter number related product"
 msgstr ""
 
-#: inc/options.php:614
+#: inc/options.php:624
 msgid "Social"
 msgstr ""
 
-#: inc/options.php:621
+#: inc/options.php:631
 msgid "Facebook"
 msgstr ""
 
-#: inc/options.php:626
+#: inc/options.php:636
 msgid "Twitter"
 msgstr ""
 
-#: inc/options.php:631
+#: inc/options.php:641
 msgid "Google +"
 msgstr ""
 
-#: inc/options.php:636
+#: inc/options.php:646
 msgid "Youtube"
 msgstr ""
 
-#: inc/options.php:641
+#: inc/options.php:651
 msgid "Linkedin"
 msgstr ""
 
-#: inc/options.php:646
+#: inc/options.php:656
 msgid "Pinterest"
 msgstr ""
 
-#: inc/options.php:651
+#: inc/options.php:661
 msgid "Instagram"
 msgstr ""
 
-#: inc/options.php:665
+#: inc/options.php:675
 msgid "Telephone number"
 msgstr ""
 
-#: inc/options.php:670 inc/widgets/wg-information.php:45
+#: inc/options.php:680 inc/widgets/wg-information.php:45
 #: inc/widgets/wg-information.php:96 inc/widgets/wg-support.php:76
 #: inc/widgets/wg-support.php:107 inc/widgets/wg-support.php:200
 msgid "Email"
 msgstr ""
 
-#: inc/options.php:675 inc/widgets/wg-information.php:36
+#: inc/options.php:685 inc/widgets/wg-information.php:36
 #: inc/widgets/wg-information.php:84
 msgid "Address"
 msgstr ""
 
-#: inc/options.php:680
+#: inc/options.php:690
 msgid "Google Maps"
 msgstr ""
 
-#: inc/options.php:681
+#: inc/options.php:691
 msgid "Google map embed"
 msgstr ""
 
-#: inc/options.php:688
+#: inc/options.php:698
 msgid "Insert code"
 msgstr ""
 
-#: inc/options.php:695
+#: inc/options.php:705
 msgid "Insert code to header"
 msgstr ""
 
-#: inc/options.php:700
+#: inc/options.php:710
 msgid "Insert code to footer"
 msgstr ""
 
-#: inc/options.php:707
+#: inc/options.php:717
 msgid "3B Developer"
 msgstr ""
 
-#: inc/options.php:715
+#: inc/options.php:725
 msgid "Metaslider"
 msgstr ""
 
-#: inc/options.php:723
+#: inc/options.php:733
 msgid "Select slider"
 msgstr ""
 
-#: inc/options.php:736
+#: inc/options.php:746
 msgid "Phone Ring"
 msgstr ""
 
-#: inc/options.php:751
+#: inc/options.php:761
 msgid "Enter telephone number"
 msgstr ""
 
-#: inc/options.php:766
+#: inc/options.php:776
 msgid "Woocommerce"
 msgstr ""
 
-#: inc/options.php:773
+#: inc/options.php:783
 msgid "Tooltip"
 msgstr ""
 
-#: inc/options.php:781
+#: inc/options.php:791
 msgid "Cart"
 msgstr ""
 
-#: inc/options.php:892
+#: inc/options.php:902
 msgid "Section via hook"
 msgstr ""
 
-#: inc/options.php:893
+#: inc/options.php:903
 msgid ""
 "<p class=\"description\">This is a section created by adding a filter to the "
 "sections array. Can be used by child themes to add/remove sections from the "
 "options.</p>"
 msgstr ""
 
-#: inc/shortcode/shortcode-blog.php:33 inc/shortcode/shortcode-blog.php:381
-#: inc/shortcode/shortcode-blog.php:449 inc/widgets/wg-post-list.php:59
+#: inc/shortcode/shortcode-blog.php:33 inc/shortcode/shortcode-blog.php:353
+#: inc/shortcode/shortcode-blog.php:421 inc/widgets/wg-post-list.php:59
 msgid "Read more"
 msgstr ""
 
-#: inc/shortcode/shortcode-blog.php:421
-msgid "Comments"
-msgstr ""
-
-#: inc/shortcode/shortcode-blog.php:430 inc/shortcode/shortcode-blog.php:496
+#: inc/shortcode/shortcode-blog.php:402 inc/shortcode/shortcode-blog.php:468
 #: inc/widgets/wg-view-post-list.php:68
 msgid "View more"
 msgstr ""

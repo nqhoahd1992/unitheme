@@ -2,10 +2,36 @@
 /**
  * SH Theme Init functions
  *
- * @link 
- *
  * @package SH_Theme
  */
+
+/**
+ * Add Header Class
+ */
+function header_class( ) {
+	global $sh_option;
+	$array_class_header = array('site-header');
+	$layout_header 		= $sh_option['opt-layout-header'];
+	if( $layout_header == '1' ) {
+		$array_class_header[] = 'header-banner';
+	} elseif( $layout_header == '2' ) {
+		$array_class_header[] = 'header-logo';
+	}
+    echo 'class="' . join( ' ', $array_class_header ) . '"';
+}
+
+/**
+ * Display header.
+ */
+function sh_header_layout() {
+	global $sh_option;
+	$layout_header = $sh_option['opt-layout-header'];
+	if( $layout_header == '1' ) {
+		get_template_part( 'template-parts/header/header-banner' );
+	} elseif( $layout_header == '2' ) {
+		get_template_part( 'template-parts/header/header-logo' );
+	}
+}
 
 /**
  * Enqueue Script File And Css File
@@ -90,7 +116,8 @@ add_action('after_setup_theme', 'shtheme_optimize');
  */
 function add_class_body_layout( $classes ) {
 	global $sh_option;
-	$layout = $sh_option['opt-layout'];
+	$layout 	 = $sh_option['opt-layout'];
+	$site_layout = $sh_option['site-layout'];
 	switch ( $layout ) {
 	    case '1':
 	        $classes[] = 'no-sidebar';
@@ -111,24 +138,19 @@ function add_class_body_layout( $classes ) {
 	        $classes[] = 'content-sidebar-sidebar';
 	        break;
 	}
+
+	switch ( $site_layout ) {
+	    case '1':
+	        $classes[] = 'site-full-width';
+	        break;
+	    case '2':
+	        $classes[] = 'site-boxed';
+	        break;
+	}
 	return $classes;
 }
 add_filter( 'body_class', 'add_class_body_layout' );
 
-/**
- * Add Header Class
- */
-function header_class( ) {
-	global $sh_option;
-	$array_class_header = array('site-header');
-	$layout_header 		= $sh_option['opt-layout-header'];
-	if( $layout_header == '1' ) {
-		$array_class_header[] = 'logo-center';
-	} else {
-		$array_class_header[] = 'logo-left';
-	}
-    echo 'class="' . join( ' ', $array_class_header ) . '"';
-}
 
 /**
  * Display Favicon

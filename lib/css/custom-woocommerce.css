@@ -819,6 +819,19 @@ html .woocommerce .products ul, .woocommerce ul.products {
     max-width: 380px;
     min-width: 215px;
 }
+@media (min-width: 992px) {
+	.related .slick-carousel .slick-next, 
+	.related .slick-carousel .slick-prev {
+		top: -35px;
+	}
+	.related .slick-carousel .slick-next {
+		right: 15px;
+	}
+	.related .slick-carousel .slick-prev {
+		left: inherit;
+		right: 40px;
+	}
+}
 @media screen and (min-width: 768px) {
 	html .no-sidebar .woocommerce-tabs ul.tabs {
 		width: 20%;
