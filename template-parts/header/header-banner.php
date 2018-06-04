@@ -4,6 +4,8 @@
  *
  * @package SH_Theme
  */
+
+global $sh_option;
 ?>
 <!-- Start Menu Mobile -->
 <div class="navbar fixed-top d-lg-none">

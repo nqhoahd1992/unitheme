@@ -4,6 +4,8 @@
  *
  * @package SH_Theme
  */
+
+global $sh_option;
 ?>
 <!-- Start Top Header -->
 <?php if( $sh_option['display-topheader-widget'] == 1 ) : ?>
