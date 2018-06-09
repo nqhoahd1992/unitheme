@@ -67,7 +67,7 @@ if ( have_posts() ) {
 			/* Start the Loop */
 			foreach ( $categories as $value ) {
 				echo '<div class="list-categories__item">';
-			    	echo '<h2 class="heading"><a class="" title="' . $value->name . '" href="' . get_term_link( $value->term_id, $archive_object->taxonomy ) . '">' . $value->name . '</h2></a>';
+			    	echo '<h2 class="heading"><a class="" title="' . $value->name . '" href="' . get_term_link( $value->term_id, $archive_object->taxonomy ) . '">' . $value->name . '</a></h2>';
 			    	woocommerce_category_image($value->term_id);
 	                /**
 					 * Hook: woocommerce_before_shop_loop.

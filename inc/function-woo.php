@@ -200,7 +200,6 @@ function get_price_product(){
 			echo '<p class="price">'. wc_price($product->get_price()) .'</p>';
 		}
 	}
-	
 }
 add_action( 'woocommerce_after_shop_loop_item','get_price_product',9 );
 
@@ -245,14 +244,15 @@ function shtheme_lib_woocommerce_scripts(){
 	
 	// Woocommerce
 	if ( class_exists( 'WooCommerce' ) ) {
-		wp_enqueue_style( 'woocommerce-css-style', SH_DIR .'/lib/css/custom-woocommerce.css' );
+		wp_enqueue_style( 'woocommerce-style', SH_DIR .'/lib/css/custom-woocommerce.css' );
+		wp_enqueue_style( 'woocommerce-layout-style', SH_DIR .'/lib/css/layout-woocommerce.css' );
 	}
 
 	// Dev Tooltip
 	wp_register_style( 'hover-zoom-style', SH_DIR .'/lib/css/stickytooltip.css' );
     wp_register_script( 'hover-zoom-js', SH_DIR .'/lib/js/stickytooltip.js' );
 }
-add_action( 'wp_enqueue_scripts', 'shtheme_lib_woocommerce_scripts' , 1 );
+add_action( 'wp_enqueue_scripts', 'shtheme_lib_woocommerce_scripts' , 99 );
 
 /**
  * Dev Tooltip
