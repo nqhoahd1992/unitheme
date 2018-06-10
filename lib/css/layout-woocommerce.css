@@ -7,6 +7,10 @@
 .list-products {
 	padding: 0;
 }
+.woocommerce .products .row.list-products {
+	margin-left: -15px;
+	margin-right: -15px;
+}
 .list-products li.product {
 	display: block;
 	margin-bottom: 30px;
@@ -236,4 +240,22 @@
 	.list-products li .wrap-product .price ins {
 		margin-right: 0;
 	}
+}
+.upsells .list-products li.product {
+	text-align: left;
+}
+.upsells .list-products li .wrap-product {
+	overflow: hidden;
+}
+.upsells .list-products .image-product {
+	float: left;
+	display: block;
+	width: 42%;
+	margin: 0 15px 0 0;
+}
+.upsells .list-products li .woocommerce-loop-product__title {
+	margin: 0 0 5px 0;
+}
+.woocommerce div.product .upsells p.price {
+	margin-bottom: 10px;
 }
