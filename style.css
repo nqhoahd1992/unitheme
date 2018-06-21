@@ -441,7 +441,6 @@ textarea.form-control {
 	outline-width: 0;
 	color: #FFF;
 	font-weight: normal;
-	cursor: pointer;
 }
 .search-form input[type=submit] {
 	float: right;
@@ -451,6 +450,7 @@ textarea.form-control {
 	width: 22px;
 	height: 22px;
 	outline-width: 0;
+	cursor: pointer;
 }
 .search-form input[type=search]::-webkit-input-placeholder,
 .search-form input[type=search]::-moz-placeholder,
