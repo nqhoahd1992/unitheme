@@ -30,7 +30,7 @@ class Gtid_Information_Widget extends WP_Widget {
             $hide_label = $instance['hide_label'] ? 'd-none' : '';
             $hide_icon  = $instance['hide_icon']  ? 'd-none' : '';
             if( $instance['company'] ) {
-                echo '<li><i class="'. $hide_icon .' fab fa-windows"></i>'. $instance['company'] .'</li>';
+                echo '<li class="label-company"><i class="'. $hide_icon .' fab fa-windows"></i>'. $instance['company'] .'</li>';
             }
             if( $instance['address'] ) {
                 echo '<li><i class="'. $hide_icon .' fas fa-map-marker-alt"></i><span class="'. $hide_label .'">'. __( 'Address', 'shtheme' ) .':</span> '. $instance['address'] .'</li>';

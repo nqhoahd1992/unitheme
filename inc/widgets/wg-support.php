@@ -146,39 +146,39 @@ function get_layout_support($instance, $j = 1) {
 			switch ($j) {
 				case '1':
 					echo '<ul>';
-						if( ! empty( $name ) ) {
+						if( $name ) {
 							echo '<li><i class="fas fa-comment-alt"></i> ' .$name. '</li>';
 						}
-						if( ! empty( $phone ) ) {
+						if( $phone ) {
 							echo '<li><i class="fas fa-phone-square"></i> ' .$phone. '</li>';
 						}
-						if( ! empty( $email ) ) {
+						if( $email ) {
 							echo '<li><i class="far fa-envelope"></i> ' .$email. '</li>';
 						}
-						if( ! empty( $skype ) ) {
+						if( $skype ) {
 							echo '<li><i class="fab fa-skype"></i> ' .$skype. '</li>';
 						}
 					echo '</ul>';
 					break;
 				case '2':
 					echo '<ul>';
-						if( ! empty( $name ) ) {
+						if( $name ) {
 							echo '<li class="name">' .$name. '</li>';
 						}
-						if( ! empty( $phone ) ) {
+						if( $phone ) {
 							echo '<li class="phone">' .$phone. '</li>';
 						}
-						if( ! empty( $skype ) ) {
+						if( $skype ) {
 							echo '<li class="skype"><a href="skype:'.$skype.'?chat"><img src="'.get_stylesheet_directory_uri().'/lib/images/ic-skype.png"></a></li>';
 						}
 					echo '</ul>';
 					break;
 				case '3':
 					echo '<ul>';
-						if( ! empty( $name ) ) {
+						if( $name ) {
 							echo '<li class="name">' .$name. '</li>';
 						}
-						if( ! empty( $phone ) ) {
+						if( $phone ) {
 							echo '<li class="phone">' .$phone. '</li>';
 						}
 					echo '</ul>';
@@ -196,7 +196,7 @@ function get_layout_support($instance, $j = 1) {
 	}
 
 	if( $j == '2' ) {
-		if( ! empty( $email_general ) ) {
+		if( $email_general ) {
 			echo '<div class="email">'. __('Email', 'shtheme') .' <a href="mailto:'. $email_general .'">'. $email_general .'</a></div>';
 		}
 	}

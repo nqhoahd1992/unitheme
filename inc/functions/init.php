@@ -16,6 +16,8 @@ function header_class( ) {
 		$array_class_header[] = 'header-banner';
 	} elseif( $layout_header == '2' ) {
 		$array_class_header[] = 'header-logo';
+	} elseif( $layout_header == '3' ) {
+		$array_class_header[] = 'header-logo-style2';
 	}
     echo 'class="' . join( ' ', $array_class_header ) . '"';
 }
@@ -30,6 +32,8 @@ function sh_header_layout() {
 		get_template_part( 'template-parts/header/header-banner' );
 	} elseif( $layout_header == '2' ) {
 		get_template_part( 'template-parts/header/header-logo' );
+	} elseif( $layout_header == '3' ) {
+		get_template_part( 'template-parts/header/header-logo-style2' );
 	}
 }
 

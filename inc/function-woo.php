@@ -1,5 +1,12 @@
 <?php
 /**
+ * Include function woocommerce
+ */
+require get_template_directory() . '/inc/functions-woocommerce/customizer-cart/customizer-cart-main.php';
+require get_template_directory() . '/inc/functions-woocommerce/tooltip/tooltip-main.php';
+require get_template_directory() . '/inc/functions-woocommerce/gallery-product/gallery-main.php';
+
+/**
  * Register Shop Widget Area
  *
  */
@@ -17,13 +24,16 @@ function shtheme_add_sidebar_shop() {
 add_action( 'widgets_init', 'shtheme_add_sidebar_shop' );
 
 /**
- * Setup layout page woocommerce
+ * Add Support Woocommrce
  */
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 add_action( 'after_setup_theme', 'woocommerce_support' );
 
+/**
+ * Setup Layout Page Woocommerce
+ */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
@@ -50,13 +60,6 @@ function my_theme_wrapper_end() {
 
 add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
 add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
-
-/**
- * Enable Gallery
- */
-add_theme_support( 'wc-product-gallery-zoom' );
-// add_theme_support( 'wc-product-gallery-lightbox' );
-add_theme_support( 'wc-product-gallery-slider' );
 
 /**
  * Show image category product
@@ -214,75 +217,20 @@ function add_title_name_product(){
 add_action( 'woocommerce_shop_loop_item_title','add_title_name_product',10 );
 
 /**
- * Dev Disable Cart
-**/
-function dev_disable_cart(){
-	global $sh_option;
-	if( $sh_option['woocommerce-disable-cart'] == '0' ) {
-		remove_action( 'woocommerce_after_shop_loop_item','woocommerce_template_loop_add_to_cart',10 );
-		remove_action( 'woocommerce_single_product_summary','woocommerce_template_single_add_to_cart',30 );
-	}
-}
-add_action( 'init','dev_disable_cart' );
-
-function remove_menu_pages_disable_cart() {
-	global $sh_option;
-	if( $sh_option['woocommerce-disable-cart'] == '0' && ! current_user_can('administrator') ) {
-    	remove_menu_page( 'woocommerce' );
-    }
-}
-add_action( 'admin_init', 'remove_menu_pages_disable_cart' );
-
-/**
- * Dev Disable Cart
-**/
+ * Include JS CSS Files 
+ */
 function shtheme_lib_woocommerce_scripts(){
 
 	// Main js
 	wp_enqueue_script( 'main-woo-js', SH_DIR . '/lib/js/main-woo.js', array(), '1.0', true );
 	// wp_localize_script(	'main-woo-js', 'ajax', array( 'url' => admin_url('admin-ajax.php') ) );
 	
-	// Woocommerce
-	if ( class_exists( 'WooCommerce' ) ) {
-		wp_enqueue_style( 'woocommerce-style', SH_DIR .'/lib/css/custom-woocommerce.css' );
-		wp_enqueue_style( 'woocommerce-layout-style', SH_DIR .'/lib/css/layout-woocommerce.css' );
-	}
+	// Woocommerce Style
+	wp_enqueue_style( 'woocommerce-style', SH_DIR .'/lib/css/custom-woocommerce.css' );
+	wp_enqueue_style( 'woocommerce-layout-style', SH_DIR .'/lib/css/layout-woocommerce.css' );
 
-	// Dev Tooltip
-	wp_register_style( 'hover-zoom-style', SH_DIR .'/lib/css/stickytooltip.css' );
-    wp_register_script( 'hover-zoom-js', SH_DIR .'/lib/js/stickytooltip.js' );
 }
 add_action( 'wp_enqueue_scripts', 'shtheme_lib_woocommerce_scripts' , 99 );
-
-/**
- * Dev Tooltip
-**/
-function code_hover_zoom_class_img() {
-	global $sh_option;
-    if( ! wp_is_mobile() && $sh_option['woocommerce-tooltip'] == '1' ) {
-		wp_enqueue_style( 'hover-zoom-style' );
-	    wp_enqueue_script('hover-zoom-js' );
-    	?>
-	    <div id="mystickytooltip" class="stickytooltip">
-	        <div style="padding: 5px;">
-	            <div id="stickyzoom" class="atip" style="min-width: 200px;">
-	            	<img class="img-zoom" src="" />
-	            	<div class="description-zoom"></div>
-	            </div>
-	        </div>
-	    </div>
-	    <script type="text/javascript">
-	    	jQuery(document).ready(function(){
-	    		jQuery('.image-product a.img').hover(function(){
-			        var value = jQuery(this).data('img-full');
-			        jQuery('.stickytooltip .img-zoom').attr('src', value);
-			    });
-	    	});
-	    </script>
-		<?php
-    }
-}
-add_action('wp_footer','code_hover_zoom_class_img', 1);
 
 /**
  * Insert button share single product
@@ -296,7 +244,7 @@ function insert_share_product(){
 add_action( 'woocommerce_share','insert_share_product' );
 
 /**
- * Returns string with shopping basket icon and content in VERTICAL menu
+ * Returns Mini Cart
  *
  * @return string
  */
@@ -305,19 +253,19 @@ if( ! function_exists('sh_woocommerce_get__cart_menu_item__content') ) {
 		?>
 		<div class="navbar-actions">
 			<div class="navbar-actions-shrink shopping-cart">
-				<a href="javascript:void(0);" class="shopping-cart-icon-container ffb-cart-menu-item">
+				<a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>" class="shopping-cart-icon-container ffb-cart-menu-item">
 					<span class="shopping-cart-icon-wrapper" title="<?php echo WC()->cart->get_cart_contents_count();?>">
 						<span class="shopping-cart-menu-title">
 							<?php echo get_the_title( wc_get_page_id('cart') );?>
 						</span>
-						<i class="fas fa-shopping-cart"></i>
+						<img src="<?php echo get_stylesheet_directory_uri();?>/lib/images/icon-cart.png">
 					</span>
 				</a>
 				<div class="shopping-cart-menu-wrapper">
 					<?php wc_get_template( 'cart/mini-cart.php', array('list_class' => ''));?>
 				</div>
 			</div>
-		</div>
+	</div>
 		<?php
 	}
 	add_action( 'sh_after_menu', 'sh_woocommerce_get__cart_menu_item__content');
@@ -328,20 +276,20 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 	?>
 	<div class="navbar-actions">
-			<div class="navbar-actions-shrink shopping-cart">
-				<a href="javascript:void(0);" class="shopping-cart-icon-container ffb-cart-menu-item">
-					<span class="shopping-cart-icon-wrapper" title="<?php echo WC()->cart->get_cart_contents_count();?>">
-						<span class="shopping-cart-menu-title">
-							<?php echo get_the_title( wc_get_page_id('cart') );?>
-						</span>
-						<i class="fas fa-shopping-cart"></i>
+		<div class="navbar-actions-shrink shopping-cart">
+			<a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>" class="shopping-cart-icon-container ffb-cart-menu-item">
+				<span class="shopping-cart-icon-wrapper" title="<?php echo WC()->cart->get_cart_contents_count();?>">
+					<span class="shopping-cart-menu-title">
+						<?php echo get_the_title( wc_get_page_id('cart') );?>
 					</span>
-				</a>
-				<div class="shopping-cart-menu-wrapper">
-					<?php wc_get_template( 'cart/mini-cart.php', array('list_class' => ''));?>
-				</div>
+					<img src="<?php echo get_stylesheet_directory_uri();?>/lib/images/icon-cart.png">
+				</span>
+			</a>
+			<div class="shopping-cart-menu-wrapper">
+				<?php wc_get_template( 'cart/mini-cart.php', array('list_class' => ''));?>
 			</div>
 		</div>
+	</div>
 	<?php
 	$fragments['.navbar-actions'] = ob_get_clean();
 	return $fragments;
@@ -349,7 +297,7 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
 
 /**
- * Button Detail content-product.php
+ * Button Detail In File content-product.php
  */
 function insert_btn_detail(){
 	?>
@@ -360,6 +308,9 @@ function insert_btn_detail(){
 }
 // add_action( 'woocommerce_after_shop_loop_item','insert_btn_detail',15 );
 
+/**
+ * Hook Woocommerce
+ */
 // File archive-product.php
 // remove_action( 'woocommerce_before_shop_loop','woocommerce_result_count',20 );
 // remove_action( 'woocommerce_before_shop_loop','woocommerce_catalog_ordering',30 );

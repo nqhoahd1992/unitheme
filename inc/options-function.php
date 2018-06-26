@@ -24,9 +24,9 @@ add_action('sh_after_footer','insert_callring');
  */
 function insert_metaslide(){
 	global $sh_option;
-	if( $sh_option['metaslider'] ) {
+	if( $sh_option['metaslider'] && is_home() ) {
 		$metaslider = $sh_option['metaslider'];
-		echo do_shortcode('[metaslider id="'.$metaslider.'" restrict_to=home]');
+		echo '<div class="slider">'.do_shortcode('[metaslider id="'.$metaslider.'" restrict_to=home]').'</div>';
 	}
 }
 add_action('before_loop_main_content','insert_metaslide');

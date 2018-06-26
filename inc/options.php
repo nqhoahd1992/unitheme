@@ -248,11 +248,15 @@ Redux::setSection( $opt_name, array(
             'options'  => array(
                 '1'      => array(
                     'alt'   => 'Header 1', 
-                    'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/logo-center.gif'
+                    'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/logo-center.png'
                 ),
                 '2'      => array(
                     'alt'   => 'Header 2', 
                     'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/logo-left.gif'
+                ),
+                '3'      => array(
+                    'alt'   => 'Header 3', 
+                    'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/logo-left2.png'
                 ),
             ),
             'default' => '1'
@@ -573,6 +577,78 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'type'      => 'section',
                 'indent'    => false,
             ),
+
+            /*==========================================*/
+            array(
+               'id'         => 'section-gallery-start',
+               'type'       => 'section',
+               'title'      => __('Thư viện ảnh sản phẩm', 'shtheme'),
+               'indent'     => true 
+            ),
+            array(
+                'id'        => 'gallery-single-custom',
+                'type'      => 'switch', 
+                'title'     => __('Kích hoạt chức năng tùy chỉnh thư viện ảnh', 'shtheme'),
+                'default'   => false,
+                'on'        => __('Enable', 'shtheme'),
+                'off'       => __('Disable', 'shtheme'),
+            ),
+            array(
+                'id'       => 'gallery-single-style',
+                'type'     => 'button_set', 
+                'title'    => __('Chọn kiểu slider sản phẩm', 'shtheme'),
+                'default'  => true,
+                'options'  => array(
+                    '1'       => __('Ngang', 'shtheme'),
+                    '2'       => __('Dọc', 'shtheme'),
+                 ), 
+                'default' => '1',
+                'required'  => array('gallery-single-custom','equals',true),
+            ),
+            array(
+                'id'        => 'gallery-single-number-thumbnails',
+                'type'      => 'slider',
+                'title'     => __('Nhập số ảnh của thư viện ảnh trong khung nhìn', 'shtheme'),
+                'default'   => 4,
+                'min'       => 1,
+                'step'      => 1,
+                'max'       => 6,
+                'display_value' => 'text',
+                'required'  => array('gallery-single-custom','equals',true),
+            ),
+            array(
+                'id'        => 'gallery-single-zoom',
+                'type'      => 'switch', 
+                'title'     => __('Bật chức năng soi ảnh', 'shtheme'),
+                'default'   => false,
+                'on'        => __('Enable', 'shtheme'),
+                'off'       => __('Disable', 'shtheme'),
+                'required'  => array('gallery-single-custom','equals',true),
+            ),
+            array(
+                'id'        => 'gallery-single-lightbox',
+                'type'      => 'switch', 
+                'title'     => __('Bật chức năng phóng ảnh', 'shtheme'),
+                'default'   => false,
+                'on'        => __('Enable', 'shtheme'),
+                'off'       => __('Disable', 'shtheme'),
+                'required'  => array('gallery-single-custom','equals',true),
+            ),
+            array(
+                'id'        => 'gallery-single-autoplay',
+                'type'      => 'switch', 
+                'title'     => __('Bật tự động chạy cho thư viện ảnh', 'shtheme'),
+                'default'   => false,
+                'on'        => __('Enable', 'shtheme'),
+                'off'       => __('Disable', 'shtheme'),
+                'required'  => array('gallery-single-custom','equals',true),
+            ),
+            array(
+                'id'        => 'section-gallery-end',
+                'type'      => 'section',
+                'indent'    => false,
+            ),
+            /*==========================================*/
             array(
                'id'         => 'section-relatedpro-start',
                'type'       => 'section',

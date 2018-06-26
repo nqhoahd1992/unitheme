@@ -49,7 +49,7 @@ do_action( 'woocommerce_before_main_content' );
 <?php
 
 // Check hierarchy in theme options
-if( $sh_option['display-hierarchy-woocommerce'] == '1' && ! is_shop() ) {
+if( $sh_option['display-hierarchy-woocommerce'] == '1' && ! is_shop() && is_product_category() ) {
 	// Content
 	$archive_object = get_queried_object();
 	$archive_id 	= $archive_object->term_id;
@@ -61,14 +61,18 @@ if( $sh_option['display-hierarchy-woocommerce'] == '1' && ! is_shop() ) {
 	$categories = get_categories( $args );
 	if( $categories ) {
 		echo '<div class="list-categories">';
+			echo '<div class="row">';
 			/* Start the Loop */
 			foreach ( $categories as $value ) {
-				echo '<div class="list-categories__item">';
-			    	echo '<h2 class="heading"><a class="" title="' . $value->name . '" href="' . get_term_link( $value->term_id, $archive_object->taxonomy ) . '">' . $value->name . '</a></h2>';
-			    	woocommerce_category_image($value->term_id);
+				echo '<div class="col-md-3">';
+					echo '<div class="list-categories__item">';
+				    	echo '<h2><a class="" title="' . $value->name . '" href="' . get_term_link( $value->term_id, $archive_object->taxonomy ) . '">' . $value->name . '</a></h2>';
+				    	woocommerce_category_image($value->term_id);
+					echo '</div>';
 				echo '</div>';
 			}
 			echo '</div>';
+		echo '</div>';
 	}
 }
 
