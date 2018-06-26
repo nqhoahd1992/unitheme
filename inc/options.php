@@ -582,13 +582,13 @@ if ( class_exists( 'WooCommerce' ) ) {
             array(
                'id'         => 'section-gallery-start',
                'type'       => 'section',
-               'title'      => __('Thư viện ảnh sản phẩm', 'shtheme'),
+               'title'      => __('Gallery Product', 'shtheme'),
                'indent'     => true 
             ),
             array(
                 'id'        => 'gallery-single-custom',
                 'type'      => 'switch', 
-                'title'     => __('Kích hoạt chức năng tùy chỉnh thư viện ảnh', 'shtheme'),
+                'title'     => __('Enable customizer gallery product', 'shtheme'),
                 'default'   => false,
                 'on'        => __('Enable', 'shtheme'),
                 'off'       => __('Disable', 'shtheme'),
@@ -596,11 +596,11 @@ if ( class_exists( 'WooCommerce' ) ) {
             array(
                 'id'       => 'gallery-single-style',
                 'type'     => 'button_set', 
-                'title'    => __('Chọn kiểu slider sản phẩm', 'shtheme'),
+                'title'    => __('Choose style of slider gallery product', 'shtheme'),
                 'default'  => true,
                 'options'  => array(
-                    '1'       => __('Ngang', 'shtheme'),
-                    '2'       => __('Dọc', 'shtheme'),
+                    '1'       => __('Horizontal', 'shtheme'),
+                    '2'       => __('Vertical', 'shtheme'),
                  ), 
                 'default' => '1',
                 'required'  => array('gallery-single-custom','equals',true),
@@ -608,7 +608,7 @@ if ( class_exists( 'WooCommerce' ) ) {
             array(
                 'id'        => 'gallery-single-number-thumbnails',
                 'type'      => 'slider',
-                'title'     => __('Nhập số ảnh của thư viện ảnh trong khung nhìn', 'shtheme'),
+                'title'     => __('Enter the number of product images in the view', 'shtheme'),
                 'default'   => 4,
                 'min'       => 1,
                 'step'      => 1,
@@ -619,7 +619,7 @@ if ( class_exists( 'WooCommerce' ) ) {
             array(
                 'id'        => 'gallery-single-zoom',
                 'type'      => 'switch', 
-                'title'     => __('Bật chức năng soi ảnh', 'shtheme'),
+                'title'     => __('Enable Zoom', 'shtheme'),
                 'default'   => false,
                 'on'        => __('Enable', 'shtheme'),
                 'off'       => __('Disable', 'shtheme'),
@@ -628,7 +628,7 @@ if ( class_exists( 'WooCommerce' ) ) {
             array(
                 'id'        => 'gallery-single-lightbox',
                 'type'      => 'switch', 
-                'title'     => __('Bật chức năng phóng ảnh', 'shtheme'),
+                'title'     => __('Enable Lightbox', 'shtheme'),
                 'default'   => false,
                 'on'        => __('Enable', 'shtheme'),
                 'off'       => __('Disable', 'shtheme'),
@@ -637,7 +637,7 @@ if ( class_exists( 'WooCommerce' ) ) {
             array(
                 'id'        => 'gallery-single-autoplay',
                 'type'      => 'switch', 
-                'title'     => __('Bật tự động chạy cho thư viện ảnh', 'shtheme'),
+                'title'     => __('Enable autoplay for gallery', 'shtheme'),
                 'default'   => false,
                 'on'        => __('Enable', 'shtheme'),
                 'off'       => __('Disable', 'shtheme'),

@@ -375,8 +375,9 @@ html .woocommerce-mini-cart-wrapper a.remove:hover {
 .woocommerce span.onsale {
 	display: none;
 }
-.product_meta .posted_in {
-	/*display: none;*/
+.product_meta .sku_wrapper, .product_meta .posted_in {
+	display: block;
+    margin-bottom: 5px;
 }
 html .woocommerce .quantity .qty {
 	padding: 4px 0px;
