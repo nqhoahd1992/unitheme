@@ -3,12 +3,12 @@
  * Include function woocommerce
  */
 require get_template_directory() . '/inc/functions-woocommerce/customizer-cart/customizer-cart-main.php';
-require get_template_directory() . '/inc/functions-woocommerce/tooltip/tooltip-main.php';
 require get_template_directory() . '/inc/functions-woocommerce/gallery-product/gallery-main.php';
+require get_template_directory() . '/inc/functions-woocommerce/tooltip-product.php';
+require get_template_directory() . '/inc/functions-woocommerce/swap-image-product.php';
 
 /**
  * Register Shop Widget Area
- *
  */
 function shtheme_add_sidebar_shop() {
 	register_sidebar( array(

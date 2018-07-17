@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2018-06-26 16:00+0700\n"
-"PO-Revision-Date: 2018-06-26 16:02+0700\n"
+"POT-Creation-Date: 2018-07-17 14:29+0700\n"
+"PO-Revision-Date: 2018-07-17 14:29+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -1264,6 +1264,10 @@ msgstr "Chỉnh sửa %s"
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Đọc tiếp %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: template-parts/content.php:42
+msgid "Tags"
+msgstr "Tags"
 
 #: template-parts/content.php:97
 msgid "Next Post"

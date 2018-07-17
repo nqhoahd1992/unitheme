@@ -26,7 +26,7 @@ postview_set( get_the_ID() );
 
 	<?php if( $sh_option['display-time-view'] == '1' ) : ?>
 		<div class="entry-meta">
-			<span class="entry-time"><i class="far fa-clock"></i> <?php the_time('g:i a d/m/Y') ?></span>
+			<span class="entry-time"><i class="far fa-calendar-alt"></i> <?php the_time('g:i a d/m/Y') ?></span>
 			<span class="entry-view"><i class="fas fa-eye"></i> <?php echo postview_get(get_the_ID());?></span>
 		</div>
 	<?php endif; ?>
@@ -39,7 +39,7 @@ postview_set( get_the_ID() );
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 
-			echo get_the_tag_list('<p>Keywords: ',', ','</p>');
+			echo get_the_tag_list('<p><i class="fas fa-tags"></i> '. __('Tags','shtheme') .': ',', ','</p>');
 
 			// wp_link_pages( array(
 			// 	'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'shtheme' ),

@@ -26,14 +26,14 @@ $version = '3.0';
 if( version_compare( $woocommerce->version, $version, ">=" ) ) {
 	$attachment_ids = $product->get_gallery_image_ids();
 	$wooLatest = true;
-}else{
+} else {
 	$attachment_ids = $product->get_gallery_attachment_ids();
 	$wooLatest = false;
 }
 
 if ( has_post_thumbnail() ) {
-	$thumbanil_id   = array(get_post_thumbnail_id());
-	$attachment_ids = array_merge($thumbanil_id,$attachment_ids);
+	$thumbnails_id   = array(get_post_thumbnail_id());
+	$attachment_ids = array_merge($thumbnails_id,$attachment_ids);
 }
 
 if ( $attachment_ids ) 
