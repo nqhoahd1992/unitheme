@@ -302,7 +302,9 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart
 function insert_btn_detail(){
 	?>
 	<div class="text-center wrap-detail">
-		<a href="<?php the_permalink( );?>" title="<?php the_title( );?>"><?php _e( 'View detail', 'shtheme' );?></a>
+		<a href="<?php the_permalink( );?>" title="<?php _e( 'View detail', 'shtheme' );?>">
+			<?php _e( 'View detail', 'shtheme' );?>
+		</a>
 	</div>
 	<?php
 }

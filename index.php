@@ -25,17 +25,17 @@ get_header(); ?>
 			<!-- --------------------- Products --------------------- -->
 			<?php
 			if ( class_exists( 'WooCommerce' ) ) {
-				if( $sh_option['number_product'] ) {
-					$number_product = $sh_option['number_product'];
-				}
-				if( $sh_option['number_product_row'] ) {
-					$number_product_row = $sh_option['number_product_row'];
-				}
 				if( $sh_option['list_cat_product'] ) {
 					$list_cat_product = $sh_option['list_cat_product'];
+					if( $sh_option['number_product'] ) {
+						$number_product = $sh_option['number_product'];
+					}
+					if( $sh_option['number_product_row'] ) {
+						$number_product_row = $sh_option['number_product_row'];
+					}
 					echo '<div class="product-wrap">';
 						foreach ($list_cat_product as $key => $idpost) {
-							echo '<h2 class="heading"><a href="'. get_dm_link( $idpost,'product_cat' ) .'">'. get_dm_name( $idpost,'product_cat' ) .'</a></h2>';
+							echo '<h2 class="heading"><a title="'. get_dm_name( $idpost,'product_cat' ) .'" href="'. get_dm_link( $idpost,'product_cat' ) .'">'. get_dm_name( $idpost,'product_cat' ) .'</a></h2>';
 							echo do_shortcode('[shproduct posts_per_page="' . $number_product . '" categories="' . $idpost . '" numcol="' . $number_product_row . '"]');
 						}
 					echo '</div>';
@@ -45,17 +45,17 @@ get_header(); ?>
 
 			<!-- --------------------- News --------------------- -->
 			<?php
-			if( $sh_option['number_news'] ) {
-				$number_news = $sh_option['number_news'];
-			}
-			if( $sh_option['type_layout'] ) {
-				$type_layout = $sh_option['type_layout'];
-			}
 			if( $sh_option['list_cat_post'] ) {
 				$list_cat_post = $sh_option['list_cat_post'];
+				if( $sh_option['number_news'] ) {
+					$number_news = $sh_option['number_news'];
+				}
+				if( $sh_option['type_layout'] ) {
+					$type_layout = $sh_option['type_layout'];
+				}
 				echo '<div class="news-wrap">';
 					foreach ($list_cat_post as $key => $idpost) {
-						echo '<h2 class="heading"><a href="'. get_category_link( $idpost ) .'">'. get_cat_name( $idpost ) .'</a></h2>';
+						echo '<h2 class="heading"><a title="'. get_cat_name( $idpost ) .'" href="'. get_category_link( $idpost ) .'">'. get_cat_name( $idpost ) .'</a></h2>';
 						echo do_shortcode('[shblog posts_per_page="' . $number_news . '" categories="' . $idpost . '" number_character="140" style="' . $type_layout . '"]');
 					}
 				echo '</div>';
@@ -67,8 +67,6 @@ get_header(); ?>
 		<?php do_action( 'sh_after_content' );?>
 
 	</div><!-- #primary -->
-	
-	<?php //do_action( 'sh_after_content_sidebar_wrap' );?>
 	
 <?php
 get_footer();

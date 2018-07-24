@@ -208,7 +208,7 @@ html .woocommerce-mini-cart-wrapper a.remove:hover {
     top: 100%;
     right: 0;
     width: 250px;
-    z-index: 1;
+    z-index: 99;
     background: #fff;
     max-height: calc(100vh - 200px);
     overflow-y: auto;
@@ -640,6 +640,11 @@ pre .woocommerce {
 	.woocommerce-account .woocommerce-MyAccount-content { 
 		width: 75%;
 	}
+}
+.u-column1.col-1.woocommerce-Address {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 .woocommerce-MyAccount-navigation ul {
 	list-style-type: none;

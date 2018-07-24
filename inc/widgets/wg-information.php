@@ -41,6 +41,9 @@ class Gtid_Information_Widget extends WP_Widget {
             if( $instance['hotline'] ) {
                 echo '<li><i class="'. $hide_icon .' fas fa-mobile-alt"></i><span class="'. $hide_label .'">'. __( 'Hotline', 'shtheme' ) .':</span> '. $instance['hotline'] .'</li>';
             }
+            if( $instance['fax'] ) {
+                echo '<li><i class="'. $hide_icon .' fas fa-fax"></i><span class="'. $hide_label .'">'. __( 'Fax', 'shtheme' ) .':</span> '. $instance['fax'] .'</li>';
+            }
             if( $instance['email'] ) {
                 echo '<li><i class="'. $hide_icon .' far fa-envelope"></i><span class="'. $hide_label .'">'. __( 'Email', 'shtheme' ) .':</span> '. $instance['email'] .'</li>';
             }
@@ -65,6 +68,7 @@ class Gtid_Information_Widget extends WP_Widget {
         		'address'    => '',  
         		'tel' 	     => '',
                 'hotline'    => '',
+                'fax'        => '',
                 'email'      => '',
                 'website'    => '',
                 'hide_label' => '',
@@ -91,6 +95,10 @@ class Gtid_Information_Widget extends WP_Widget {
         <p>
             <label for="<?php  echo $this->get_field_id('hotline'); ?>"><?php _e('Hotline', 'shtheme'); ?>:</label>
             <input type="text" class="widefat" id="<?php echo $this->get_field_id('hotline'); ?>" name="<?php  echo $this->get_field_name('hotline'); ?>" value="<?php  echo esc_attr( $instance['hotline'] ); ?>" />
+        </p>
+        <p>
+            <label for="<?php  echo $this->get_field_id('fax'); ?>"><?php _e('Fax', 'shtheme'); ?>:</label>
+            <input type="text" class="widefat" id="<?php echo $this->get_field_id('fax'); ?>" name="<?php  echo $this->get_field_name('fax'); ?>" value="<?php  echo esc_attr( $instance['fax'] ); ?>" />
         </p>
         <p>
             <label for="<?php  echo $this->get_field_id('email'); ?>"><?php _e('Email', 'shtheme'); ?>:</label>

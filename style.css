@@ -64,10 +64,11 @@ img {max-width: 100%;height: auto}
 .header-banner #showmenu {
 	right: 15px;
 }
-/* Header style 2 */	
-.header-logo .logo img {
+/* Header style 2 */
+.site-header.header-logo .logo img {
 	margin: 10px 0;
 }
+/* Header style 3 */
 
 /*--------------------------------------------------------------
 # Main Navigation
@@ -241,7 +242,7 @@ img {max-width: 100%;height: auto}
 }
 .page-title, h1.entry-title {
 	font-size: 22px;
-	font-weight: normal;
+	font-weight: 600;
 	color: #337ab7;
 	margin: 5px 0 15px 0;
 }
@@ -272,7 +273,7 @@ iframe[name='google_conversion_frame'] {height: 0 !important;width: 0 !important
 @media (min-width: 1200px) {.col-lg-15 {-webkit-box-flex: 0;-ms-flex: 0 0 20%;flex: 0 0 20%;max-width: 20%;}}
 .wpcf7 label {font-weight: 600;display: block}
 .wpcf7 div.wpcf7-validation-errors {margin: 2em 0 1em}
-.wpcf7 .span.wpcf7-not-valid-tip {margin: 5px 0}
+.wpcf7 span.wpcf7-not-valid-tip {margin: 5px 0}
 .page_nav {
 	text-align: center;
 	margin-bottom: 20px;
@@ -297,6 +298,9 @@ iframe[name='google_conversion_frame'] {height: 0 !important;width: 0 !important
 .btn.focus, .btn:focus, .btn:hover {
 	color: #FFF;
 	opacity: .9;
+}
+.btn-primary {
+	border-color: #337ab7;
 }
 .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
 	background: #337ab7;
@@ -370,7 +374,8 @@ textarea.form-control {
 .sidebar .widget ul {
 	padding: 0;
 }
-.sidebar .widget_list_posts ul, .sidebar .widget .content-feature-page {
+.sidebar .widget_list_posts ul, .sidebar .widget .content-feature-page,
+.sidebar .textwidget {
 	padding: 10px;
 }
 .sidebar .widget:not(.widget_slider_products) ul {
@@ -705,14 +710,14 @@ html .slick-carousel.slick-dotted.slick-slider {
 	left: -15px;
 }
 .slick-slider .slick-arrow:before {
-	font-family: Font Awesome\ 5 Free;
+	font-family: Font Awesome\ 5 Free !important;
 	font-weight: bold;
 }
 .slick-prev:before {
-	content: "\f053";
+	content: "\f053" !important;
 }
 .slick-next:before {
-	content: "\f054";
+	content: "\f054" !important;
 }
 .slick-slider .slick-next:before, .slick-slider .slick-prev:before {
 	color: #337ab7;
@@ -787,6 +792,14 @@ html .slick-carousel.slick-dotted.slick-slider {
 	width: 14px;
 	text-align: center;
 }
+.widget_information li.label-company {
+	padding-left: 0;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.widget_information li.label-company i {
+	display: none;
+}
 /* Widget Social */
 .widget_social ul li {display: inline-block;margin-right: 5px;}
 .widget_social ul li a {
@@ -856,12 +869,12 @@ html .theme-default .nivo-controlNav {
 	margin-bottom: 10px;
 }
 .entry-meta span {
-	color: #c1c1c1;
+	color: #747474;
 	display: inline-block;
 	margin-right: 10px;
 }
 .entry-meta span i {
-	color: #337ab7;
+	color: #747474;
 }
 .socials-share {
     padding: 20px 0 15px 0;
@@ -964,9 +977,6 @@ embed, iframe, object {max-width: 100%}
 /*--------------------------------------------------------------
 ## Layout construct 
 --------------------------------------------------------------*/
-.site-content {
-	padding-top: 15px;
-}
 @media (min-width: 992px) {
 	.sidebar-content .site-main,
 	.content-sidebar .site-main {
@@ -1023,6 +1033,9 @@ embed, iframe, object {max-width: 100%}
 	.content-sidebar-sidebar .site-main {
 		float: left;
 	}
+}
+.site-content {
+	padding-top: 15px;
 }
 .page-template-page-fullwidth .site-main {
 	width: 100%;

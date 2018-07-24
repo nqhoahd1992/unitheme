@@ -8,6 +8,7 @@
  */
 
 global $sh_option;
+$slug_category = 'category';
 postview_set( get_the_ID() );
 ?>
 
@@ -119,7 +120,7 @@ postview_set( get_the_ID() );
 				global $post;
 				$category = wp_get_object_terms( 
 					$post->ID,
-					'category',	//change taxonomy
+					$slug_category,	//change taxonomy
 					array(
 						'orderby' 	=> 'term_group', 
 						'order' 	=> 'DESC'
@@ -129,7 +130,7 @@ postview_set( get_the_ID() );
 					'post_type' 		=> $post->post_type,
                     'tax_query' 		=> array(
                         array(
-                            'taxonomy' 	=> 'category', //change taxonomy
+                            'taxonomy' 	=> $slug_category, //change taxonomy
                             'field' 	=> 'id',
                             'terms' 	=> end( $category )->term_id,
                         )

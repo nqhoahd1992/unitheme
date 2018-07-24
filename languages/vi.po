@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
 "POT-Creation-Date: 2018-07-17 14:29+0700\n"
-"PO-Revision-Date: 2018-07-17 14:29+0700\n"
+"PO-Revision-Date: 2018-07-23 16:06+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -212,7 +212,7 @@ msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
 msgstr ""
-"Gói mở rộng không kích hoạt. Một phiên bản cao hơn của% s là cần thiết cho "
+"Gói mở rộng không kích hoạt. Một phiên bản cao hơn của %s là cần thiết cho "
 "chủ đề này. Hãy cập nhật gói mở rộng."
 
 #. translators: 1: dashboard link.
@@ -954,8 +954,7 @@ msgid ""
 msgstr ""
 "<p class=\"description\">Đây là một phần được tạo ra bằng cách thêm một bộ "
 "lọc vào mảng các phần. Có thể được sử dụng bởi các chủ đề con để thêm / gỡ "
-"bỏ các phần từ các tùy chọn.\n"
-"</p>"
+"bỏ các phần từ các tùy chọn.</p>"
 
 #: inc/shortcode/shortcode-blog.php:33 inc/shortcode/shortcode-blog.php:353
 #: inc/shortcode/shortcode-blog.php:421 inc/widgets/wg-post-list.php:59
