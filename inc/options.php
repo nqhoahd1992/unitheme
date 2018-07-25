@@ -499,8 +499,16 @@ if ( class_exists( 'WooCommerce' ) ) {
             array(
                 'id'       => 'display-shopsidebar',
                 'type'     => 'switch', 
-                'title'    => __('Display Widget Shop Sidebar', 'shtheme'),
+                'title'    => __('Enable Shop Sidebar', 'shtheme'),
                 'default'  => false,
+                'on'       => __('Enable', 'shtheme'),
+                'off'      => __('Disable', 'shtheme'),
+            ),
+            array(
+                'id'       => 'woo-hover-flip-image',
+                'type'     => 'switch', 
+                'title'    => __('Enable Hover Flip Image Of Product', 'shtheme'),
+                'default'  => true,
                 'on'       => __('Enable', 'shtheme'),
                 'off'      => __('Disable', 'shtheme'),
             ),
@@ -764,7 +772,6 @@ Redux::setSection( $opt_name, array(
             'id'        =>'information-map',
             'type'      => 'textarea',
             'title'     => __('Google Maps', 'shtheme'),
-            'subtitle'  => __('Google map embed', 'shtheme'),
         ),
     )
 ) );

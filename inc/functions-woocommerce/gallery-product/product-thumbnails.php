@@ -36,13 +36,12 @@ if ( has_post_thumbnail() ) {
 	$attachment_ids = array_merge($thumbnails_id,$attachment_ids);
 }
 
-if ( $attachment_ids ) 
-{
+if ( $attachment_ids && count( $attachment_ids ) > 1 ) {
 	?>
-	<section id="dev3b-gallery" class="slider dev3b-slider-nav"><?php
+	<section id="dev3b-gallery" class="slider dev3b-slider-nav">
+		<?php
 
-		foreach ( $attachment_ids as $attachment_id ) 
-		{
+		foreach ( $attachment_ids as $attachment_id ) {
 			$props = wc_get_product_attachment_props( $attachment_id, $post );
 			
 			if($wooLatest){
@@ -67,6 +66,8 @@ if ( $attachment_ids )
 			);
 		}
 
-	?></section>
+		?>
+		
+	</section>
 	<?php
 }

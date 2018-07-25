@@ -52,7 +52,7 @@ if( $sh_option['woocommerce-tooltip'] == '1' ) {
 		echo '<div class="image-product">';
 			echo '<a class="img hover-zoom" '. $string_tooltip .' href="'. get_permalink( ) .'" title="'. get_the_title( ) .'">';
 				echo woocommerce_get_product_thumbnail( );
-				echo woocommerce_swap_image_product( $product );
+				do_action( 'woocommerce_shop_loop_item_image' );
 			echo '</a>';
 		echo '</div>';
 

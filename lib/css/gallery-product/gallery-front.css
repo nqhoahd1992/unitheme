@@ -61,6 +61,7 @@ a.dev3b-popup:hover{
     padding-right: 10px !important;
 }
 #dev3b-gallery .slick-slide img {
+    border: 1px solid #ddd;
     opacity: 0.5;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
