@@ -21,9 +21,10 @@ function custom_dashboard_help() {
 	echo '<p style="font-size:15px;line-height:1.5">Chào mừng Quý khách đến với hệ thống Quản Trị Website.<br/>
 	Hệ thống được phát triển bởi <strong>Web3B</strong> trên nền tảng <strong>Wordpress</strong>.<br />
 	Để xem hướng dẫn quản trị website, vui lòng xem tại link sau : <a target="_blank" href="http://thietkeweb3b.com/huong-dan-quan-tri/">Hướng dẫn quản trị Website</a> <br />
-	Mọi thắc mắc, lỗi trong quá trình sử dụng Quý khách hàng có thể liên hệ bộ phận Kỹ Thuật :<br/>
-	<strong>Điện thoại </strong>: 0981.631.777 - 024.62.590.333( giờ hành chính )<br/>
-	<strong>Email</strong>: kythuat.web3b@gmail.com <br/>
+	Mọi thắc mắc, lỗi trong quá trình sử dụng Quý khách hàng có thể liên hệ bộ phận Chăm sóc khách hàng:<br/>
+	<strong>Điện thoại </strong>: <a href="tel:02462590333">02462.590.333</a> ( giờ hành chính )<br/>
+	<strong>Hotline </strong>: <a href="tel:0981631777">0981.631.777</a> - <a href="tel:0934438222">0934.438.222</a> <br/>
+	<strong>Email</strong>: <a href="mailto:cskh@web3b.com">cskh@web3b.com</a> <br/>
 	<strong>Web</strong>: <a href="http://thietkeweb3b.com"> thietkeweb3b.com </a><br/>
 	Cảm ơn quý khách đã tin tưởng và sử dụng sản phẩm của chúng tôi.
 	</p>';
