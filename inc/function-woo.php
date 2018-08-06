@@ -191,17 +191,24 @@ function get_price_product(){
 		if( empty( $regular_price ) ) {
 			echo '<p class="price">'.__( 'Contact', 'shtheme' ).'</p>';
 		} elseif ( ! empty( $regular_price ) && empty( $sale_price ) ) {
-			echo '<p class="price">'. number_format( $regular_price, 0, '', '.' ) . ' ₫</p>';
+			echo '<p class="price">'. wc_price( $regular_price) . '</p>';
 		} elseif ( ! empty( $regular_price ) && ! empty( $sale_price ) ) {
-			echo '<p class="price"><ins>'. number_format( $sale_price, 0, '', '.' ) .' ₫</ins><del>'. number_format( $regular_price,0,'','.' ) .' ₫</del></p>';
+			echo '<p class="price"><ins>'. wc_price( $sale_price) .'</ins><del>'. wc_price( $regular_price) .'</del></p>';
 		}
 	} elseif( $product->is_type( 'variable' ) ) {
-		if( is_product() ) {
-			// echo '<p class="price d-none">'. $product->get_price_html() .'</p>';
-			echo '<p class="price d-none">'. wc_price($product->get_price()) .'</p>';
-		} else {
-			echo '<p class="price">'. wc_price($product->get_price()) .'</p>';
+		$available_variations = $product->get_available_variations();
+		$variation_id=$available_variations[0]['variation_id'];
+		$variable_product1= new WC_Product_Variation( $variation_id );
+		$regular_price = $variable_product1 ->get_regular_price();
+		$sales_price = $variable_product1 ->get_price();
+		if( empty( $regular_price ) ) {
+			echo '<p class="price">'.__( 'Contact', 'shtheme' ).'</p>';
+		} elseif ( ! empty( $regular_price ) && empty( $sales_price ) ) {
+			echo '<p class="price">'. wc_price( $regular_price) . '</p>';
+		} elseif ( ! empty( $regular_price ) && ! empty( $sales_price ) ) {
+			echo '<p class="price"><ins'. wc_price( $sales_price) .'</ins><del>'. wc_price( $regular_price) .'</del></p>';
 		}
+
 	}
 }
 add_action( 'woocommerce_after_shop_loop_item','get_price_product',9 );
