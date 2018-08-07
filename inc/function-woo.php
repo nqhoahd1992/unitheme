@@ -95,6 +95,14 @@ function add_percent_sale(){
 	if ( $product->is_on_sale() && $product->is_type( 'simple' ) ) {
 		$per = round( ( ( $product->regular_price - $product->sale_price ) / $product->regular_price ) * 100 );
 		echo "<span class='percent'>-$per%</span>";
+	}elseif($product->is_on_sale() && $product->is_type( 'variable' ) ) {
+		$available_variations = $product->get_available_variations();
+		$variation_id=$available_variations[0]['variation_id'];
+		$variable_product1= new WC_Product_Variation( $variation_id );
+		$regular_price = $variable_product1 ->get_regular_price();
+		$sales_price = $variable_product1 ->get_price();
+		$per = round( ( ( $regular_price - $sales_price ) / $regular_price ) * 100 );
+		echo "<span class='percent'>-$per%</span>";
 	}
 }
 add_action( 'woocommerce_after_shop_loop_item','add_percent_sale',15 );
