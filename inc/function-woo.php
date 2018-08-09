@@ -94,15 +94,7 @@ function add_percent_sale(){
 	global $product;
 	if ( $product->is_on_sale() && $product->is_type( 'simple' ) ) {
 		$per = round( ( ( $product->regular_price - $product->sale_price ) / $product->regular_price ) * 100 );
-		echo "<span class='percent'>-$per%</span>";
-	}elseif($product->is_on_sale() && $product->is_type( 'variable' ) ) {
-		$available_variations = $product->get_available_variations();
-		$variation_id=$available_variations[0]['variation_id'];
-		$variable_product1= new WC_Product_Variation( $variation_id );
-		$regular_price = $variable_product1 ->get_regular_price();
-		$sales_price = $variable_product1 ->get_price();
-		$per = round( ( ( $regular_price - $sales_price ) / $regular_price ) * 100 );
-		echo "<span class='percent'>-$per%</span>";
+		echo '<span class="percent">-'. $per .'%</span>';
 	}
 }
 add_action( 'woocommerce_after_shop_loop_item','add_percent_sale',15 );
@@ -193,10 +185,10 @@ add_filter( 'woocommerce_output_related_products_args', 'custom_numberpro_relate
  */
 function get_price_product(){
 	global $product;
-	if( $product->is_type( 'simple' ) ) {
+	if ( $product->is_type( 'simple' ) ) {
 		$regular_price 	= $product->regular_price;
 		$sale_price 	= $product->sale_price;
-		if( empty( $regular_price ) ) {
+		if ( empty( $regular_price ) ) {
 			echo '<p class="price">'.__( 'Contact', 'shtheme' ).'</p>';
 		} elseif ( ! empty( $regular_price ) && empty( $sale_price ) ) {
 			echo '<p class="price">'. wc_price( $regular_price) . '</p>';
@@ -204,19 +196,12 @@ function get_price_product(){
 			echo '<p class="price"><ins>'. wc_price( $sale_price) .'</ins><del>'. wc_price( $regular_price) .'</del></p>';
 		}
 	} elseif( $product->is_type( 'variable' ) ) {
-		$available_variations = $product->get_available_variations();
-		$variation_id=$available_variations[0]['variation_id'];
-		$variable_product1= new WC_Product_Variation( $variation_id );
-		$regular_price = $variable_product1 ->get_regular_price();
-		$sales_price = $variable_product1 ->get_price();
-		if( empty( $regular_price ) ) {
-			echo '<p class="price">'.__( 'Contact', 'shtheme' ).'</p>';
-		} elseif ( ! empty( $regular_price ) && empty( $sales_price ) ) {
-			echo '<p class="price">'. wc_price( $regular_price) . '</p>';
-		} elseif ( ! empty( $regular_price ) && ! empty( $sales_price ) ) {
-			echo '<p class="price"><ins'. wc_price( $sales_price) .'</ins><del>'. wc_price( $regular_price) .'</del></p>';
+		if( is_product() ) {
+			// echo '<p class="price d-none">'. $product->get_price_html() .'</p>';
+			echo '<p class="price d-none">'. wc_price($product->get_price()) .'</p>';
+		} else {
+			echo '<p class="price">'. wc_price($product->get_price()) .'</p>';
 		}
-
 	}
 }
 add_action( 'woocommerce_after_shop_loop_item','get_price_product',9 );
