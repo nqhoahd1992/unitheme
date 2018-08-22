@@ -332,10 +332,6 @@ html .woocommerce-mini-cart-wrapper a.remove:hover {
 .woocommerce .woocommerce-result-count {
 	padding: 5px 0;
 }
-.woocommerce .woocommerce-ordering select {
-	padding: 5px 10px;
-	border-color: #ddd;
-}
 .woocommerce-pagination {
     margin-bottom: 20px;
 }
@@ -360,7 +356,11 @@ html .woocommerce-mini-cart-wrapper a.remove:hover {
     background: #337ab7;
     color: #FFF;
 }
+.switcher-wrap .woocommerce-message {
+    flex: 0 0 100%;
+}
 .woocommerce .woocommerce-ordering select {
+    padding: 5px 10px;
     background-color: #f5f5f5;
     border: none;
 }
