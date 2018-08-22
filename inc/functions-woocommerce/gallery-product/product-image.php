@@ -52,11 +52,11 @@ $version = '3.0';
 			$html  = '<section class="slider dev3b-slider-for">';
 			
 			$html .= sprintf(
-						'<div class="zoom">%s%s<a href="%s" class="dev3b-popup fas fa-expand" data-fancybox="product-gallery"></a></div>',
-						$fullimage,
-						$image,
-						$image_link
-					);
+				'<div class="zoom">%s%s<a href="%s" class="dev3b-popup fas fa-expand" data-fancybox="product-gallery"></a></div>',
+				$fullimage,
+				$image,
+				$image_link
+			);
 			
 			foreach( $attachment_ids as $attachment_id ) {
 			   $imgfull_src = wp_get_attachment_image_src( $attachment_id,'full');

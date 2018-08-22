@@ -6,6 +6,7 @@ require get_template_directory() . '/inc/functions-woocommerce/customizer-cart/c
 require get_template_directory() . '/inc/functions-woocommerce/gallery-product/gallery-main.php';
 require get_template_directory() . '/inc/functions-woocommerce/tooltip-product.php';
 require get_template_directory() . '/inc/functions-woocommerce/swap-image-product.php';
+require get_template_directory() . '/inc/functions-woocommerce/woocommerce-grid-list-toggle.php';
 
 /**
  * Register Shop Widget Area
@@ -69,7 +70,7 @@ function woocommerce_category_image($products) {
     $arr = wp_get_attachment_image_src( $thumbnail_id, 'full' );
     $image = $arr[0];
     if ( $image ) {
-	    echo '<div class="product-cat__featured-image mb-4"><img src="' . $image . '" alt="" /></div>';
+	    echo '<div class="product-cat__featured-image mb-5"><img src="' . $image . '" alt="" /></div>';
 	}
 }
 
@@ -316,6 +317,7 @@ function insert_btn_detail(){
 // File archive-product.php
 // remove_action( 'woocommerce_before_shop_loop','woocommerce_result_count',20 );
 // remove_action( 'woocommerce_before_shop_loop','woocommerce_catalog_ordering',30 );
+remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb',20 );
 remove_action( 'woocommerce_sidebar','woocommerce_get_sidebar',10 );
 
 // File content-product.php

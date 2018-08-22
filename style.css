@@ -43,7 +43,8 @@ Tags: web3b
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&subset=vietnamese');
 html{font-size:62.5%;}
 body {font-family: 'Roboto', Arial, sans-serif;font-size: 14px;}
-a {color: #337ab7;}
+a {color: #337ab7;transition: all 0.3s;}
+a:hover {color: #337ab7;}
 a:hover, a:active, a:focus, a:visited {text-decoration: none}
 img {max-width: 100%;height: auto}
 .site-boxed {
@@ -133,9 +134,9 @@ img {max-width: 100%;height: auto}
     opacity: 0;
     visibility: hidden;
     z-index: 99999;
-    -webkit-transition: transform 0.2s ease-out;
-    -moz-transition: transform 0.2s ease-out;
-    transition: transform 0.2s ease-out;
+    -webkit-transition: 0.2s ease-out;
+    -moz-transition: 0.2s ease-out;
+    transition: 0.2s ease-out;
     -webkit-transform: translate3d(0, 20px, 0);
     -moz-transform: translate3d(0, 20px, 0);
     -ms-transform: translate3d(0, 20px, 0);
@@ -263,7 +264,7 @@ img {max-width: 100%;height: auto}
 }
 #back-top {margin: 0}
 #back-top a {display: block;-webkit-transition: 1s;-moz-transition: 1s;transition: 1s}
-#back-top span {border-radius: 5px;display: inline-block;height: 40px;width: 40px;position: fixed;bottom: 60px;right: 30px;z-index: 9;box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);overflow: hidden;text-indent: 100%;white-space: nowrap;background: #337ab7 url(lib/images/top.png) no-repeat center 50%;opacity: .5;-webkit-transition: opacity .3s 0s, visibility 0s .3s;-moz-transition: opacity .3s 0s, visibility 0s .3s;transition: opacity .3s 0s, visibility 0s .3s}
+#back-top span {border-radius: 5px;display: inline-block;height: 40px;width: 40px;position: fixed;bottom: 20%;right: 30px;z-index: 9;box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);overflow: hidden;text-indent: 100%;white-space: nowrap;background: #337ab7 url(lib/images/top.png) no-repeat center 50%;opacity: .5;-webkit-transition: opacity .3s 0s, visibility 0s .3s;-moz-transition: opacity .3s 0s, visibility 0s .3s;transition: opacity .3s 0s, visibility 0s .3s}
 #back-top span:hover {opacity: 1}
 iframe[name='google_conversion_frame'] {height: 0 !important;width: 0 !important;line-height: 0 !important;font-size: 0 !important;margin-top: -13px;float: left}
 .col-xs-15,.col-sm-15,.col-md-15,.col-lg-15 {position: relative;min-height: 1px;padding-right: 15px;padding-left: 15px}
@@ -904,7 +905,7 @@ html .theme-default .nivo-controlNav {
 .related-posts {
 	margin-bottom: 20px;
 }
-.related-posts .td-related-title {
+.related-posts .related-title {
 	font-weight: bold;
 	font-size: 20px;
 	margin-bottom: 15px;
@@ -1359,6 +1360,7 @@ embed, iframe, object {max-width: 100%}
 .site-header:not(.header-banner) .hamburger-inner,
 .site-header:not(.header-banner) .hamburger-inner::after,
 .site-header:not(.header-banner) .hamburger-inner::before {background-color:#337ab7}
+
 /*--------------------------------------------------------------
 ## Footer 
 --------------------------------------------------------------*/

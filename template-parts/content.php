@@ -114,7 +114,7 @@ postview_set( get_the_ID() );
 
 	<?php if( $sh_option['display-relatedpost'] == '1' ) : ?>
 		<div class="related-posts">
-			<h4 class="td-related-title"><span><?php _e( 'Related posts', 'shtheme' );?></span></h4>
+			<h4 class="related-title"><span><?php _e( 'Related posts', 'shtheme' );?></span></h4>
 			<ul>
 				<?php
 				global $post;
@@ -126,13 +126,18 @@ postview_set( get_the_ID() );
 						'order' 	=> 'DESC'
 					)
 				);
+				if( function_exists('yoast_get_primary_term_id') ) {
+					$cat_id = yoast_get_primary_term_id( 'category',$post->ID );
+				} else {
+					$cat_id = end( $category )->term_id;
+				}
 				$the_query = new WP_Query( array(
 					'post_type' 		=> $post->post_type,
                     'tax_query' 		=> array(
                         array(
                             'taxonomy' 	=> $slug_category, //change taxonomy
                             'field' 	=> 'id',
-                            'terms' 	=> end( $category )->term_id,
+                            'terms' 	=> $cat_id,
                         )
                     ),
 		            'showposts' 		=> 6,

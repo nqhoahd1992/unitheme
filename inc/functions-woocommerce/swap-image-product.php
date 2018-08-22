@@ -8,7 +8,6 @@ function add_class_product_has_gallery( $classes ) {
 		$post_type = get_post_type( get_the_ID() );
 
 		if ( $post_type == 'product' ) {
-
 			$attachment_ids 	= $product->get_gallery_image_ids( $product );
 			$attachment_ids     = array_values( $attachment_ids );
 			if ( $attachment_ids ) {

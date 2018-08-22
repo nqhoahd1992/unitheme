@@ -38,6 +38,7 @@ get_header(); ?>
 				$atts['hide_viewmore']		= '1';
 				$atts['number_character']	= '300';
 				$post_class[] 				= 'col-md-12';
+				$style 						= 'style-1';
 
 				// Check hierarchy in theme options
 				if( $sh_option['display-hierarchy'] == '1' ) {
@@ -68,7 +69,7 @@ get_header(); ?>
 			                        'paged'		=> get_query_var('paged'),
 		                        );
 		                        /* Start the Loop */
-								echo '<div class="sh-blog-shortcode style-1"><div class="row">';
+								echo '<div class="sh-blog-shortcode '. $style .'"><div class="row">';
 									$the_query = new WP_Query( $args );
 									while($the_query -> have_posts()) : $the_query -> the_post();
 										echo $new_post->sh_general_post_html_style_2( $post_class, $atts, $image_size );
@@ -80,7 +81,7 @@ get_header(); ?>
 						}
 					} else {
 						/* Start the Loop */
-						echo '<div class="sh-blog-shortcode style-1"><div class="row">';
+						echo '<div class="sh-blog-shortcode '. $style .'"><div class="row">';
 							while ( have_posts() ) : the_post();
 								echo $new_post->sh_general_post_html_style_2( $post_class, $atts, $image_size );
 							endwhile;
@@ -90,9 +91,8 @@ get_header(); ?>
 					}
 
 				} else {
-
 					/* Start the Loop */
-					echo '<div class="sh-blog-shortcode style-1"><div class="row">';
+					echo '<div class="sh-blog-shortcode '. $style .'"><div class="row">';
 						while ( have_posts() ) : the_post();
 							echo $new_post->sh_general_post_html_style_2( $post_class, $atts, $image_size );
 						endwhile;
@@ -103,7 +103,7 @@ get_header(); ?>
 				
 			else :
 
-				_e('The content is being updated','shtheme');
+				echo '<div class="mb-4">' . __('The content is being updated','shtheme') . '</div>';
 				
 			endif; ?>
 

@@ -43,10 +43,9 @@ class Gtid_Products_Vertical_Widget extends WP_Widget {
                             'terms'     => $instance['cat'],
                         )
                     ),
-                    'showposts'         => 10,
+                    'posts_per_page'    => 10,
                 );
                 $the_query = new WP_Query($args);
-                $count = $the_query->found_posts;
                 while($the_query->have_posts()):
                 $the_query->the_post();
                 ?>

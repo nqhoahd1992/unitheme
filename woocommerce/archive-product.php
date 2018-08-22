@@ -78,14 +78,16 @@ if( $sh_option['display-hierarchy-woocommerce'] == '1' && ! is_shop() && is_prod
 
 if ( have_posts() ) {
 
-	/**
-	 * Hook: woocommerce_before_shop_loop.
-	 *
-	 * @hooked wc_print_notices - 10
-	 * @hooked woocommerce_result_count - 20
-	 * @hooked woocommerce_catalog_ordering - 30
-	 */
-	do_action( 'woocommerce_before_shop_loop' );
+	echo '<div class="d-flex align-items-center switcher-wrap">';
+		/**
+		 * Hook: woocommerce_before_shop_loop.
+		 *
+		 * @hooked wc_print_notices - 10
+		 * @hooked woocommerce_result_count - 20
+		 * @hooked woocommerce_catalog_ordering - 30
+		 */
+		do_action( 'woocommerce_before_shop_loop' );
+	echo '</div>';
 
 	woocommerce_product_loop_start();
 
