@@ -112,48 +112,48 @@ postview_set( get_the_ID() );
 		</div>
 	<?php endif;?>
 
-	<?php if( $sh_option['display-relatedpost'] == '1' ) : ?>
-		<div class="related-posts">
-			<h4 class="related-title"><span><?php _e( 'Related posts', 'shtheme' );?></span></h4>
-			<ul>
-				<?php
-				global $post;
-				$category = wp_get_object_terms( 
-					$post->ID,
-					$slug_category,	//change taxonomy
-					array(
-						'orderby' 	=> 'term_group', 
-						'order' 	=> 'DESC'
-					)
-				);
-				if( function_exists('yoast_get_primary_term_id') ) {
-					$cat_id = yoast_get_primary_term_id( 'category',$post->ID );
-				} else {
-					$cat_id = end( $category )->term_id;
-				}
-				$the_query = new WP_Query( array(
-					'post_type' 		=> $post->post_type,
-                    'tax_query' 		=> array(
-                        array(
-                            'taxonomy' 	=> $slug_category, //change taxonomy
-                            'field' 	=> 'id',
-                            'terms' 	=> $cat_id,
-                        )
-                    ),
-		            'showposts' 		=> 6,
-		            'post__not_in' 		=> array( $post->ID ),
-		        ));
-		        if( $the_query->have_posts() ) :
+	<?php 
+	if( $sh_option['display-relatedpost'] == '1' ) {
+		global $post;
+		$category = wp_get_object_terms( 
+			$post->ID,
+			$slug_category,	//change taxonomy
+			array(
+				'orderby' 	=> 'term_group', 
+				'order' 	=> 'DESC'
+			)
+		);
+		if( function_exists('yoast_get_primary_term_id') && count( $category ) > 1 ) {
+			$cat_id = yoast_get_primary_term_id( 'category',$post->ID );
+		} else {
+			$cat_id = end( $category )->term_id;
+		}
+		$the_query = new WP_Query( array(
+			'post_type' 		=> $post->post_type,
+            'tax_query' 		=> array(
+                array(
+                    'taxonomy' 	=> $slug_category, //change taxonomy
+                    'field' 	=> 'id',
+                    'terms' 	=> $cat_id,
+                )
+            ),
+            'showposts' 		=> 6,
+            'post__not_in' 		=> array( $post->ID ),
+        ));
+        if( $the_query->have_posts() ) :
+        	echo '<div class="related-posts">';
+        		echo '<h4 class="related-title"><span>'. __( 'Related posts', 'shtheme' ) .'</span></h4>';
+        		echo '<ul>';
 			        while( $the_query->have_posts() ) : $the_query->the_post();
 			        	echo '<li>';
 			        		echo '<a href="' . get_the_permalink() .'" title="' . get_the_title() . '">' . get_the_title() . '</a>';
 			        	echo '</li>';
 			        endwhile;
-		        endif;
-		        wp_reset_postdata();
-		        ?>
-	    	</ul>
-		</div>
-	<?php endif;?>
+			    echo '</ul>';
+			echo '</div>';
+        endif;
+        wp_reset_postdata();
+	}
+	?>
 
 </article><!-- #post-## -->
