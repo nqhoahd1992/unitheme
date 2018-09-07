@@ -24,15 +24,15 @@ class sh_blog_shortcode {
 	 * @return string		  HTML output
 	 */
 	function render( $atts, $content = '') {
-		$html = '';
+		$html = $css_class = $el_class = '';
 
 		extract( shortcode_atts( array(
 			'style'   						=> '1',
 			'posts_per_page'				=> '5',
 			'categories'					=> '',
-			'custom_text'					=> __( 'Read more', 'shtheme' ),
+			'viewmore_text'					=> __( 'Read more', 'shtheme' ),
 			'hide_category'					=> '1',
-			'hide_viewmore'					=> '1',
+			'btn_viewmore'					=> '1',
 			'hide_meta'						=> '1',
 			'hide_thumb'					=> '1',
 			'hide_desc'						=> '1',
@@ -55,8 +55,7 @@ class sh_blog_shortcode {
 		// The Loop
 		if ( $the_query->have_posts() ) {
 
-			$html .= '<div class="sh-blog-shortcode style-'. $style .'">';
-
+			$html .= '<div class="sh-blog-shortcode style-'. $style .' '. $css_class .' '. $el_class .'">';
 			switch ( $style ) {
 				case '1':
 					$html .= $this->sh_blog_style_1( $the_query, $atts );
@@ -259,7 +258,7 @@ class sh_blog_shortcode {
 
 			if ( $i == 1 ) {
 				// $image_size 					= 'rt_thumb300x200';
-				$atts['hide_viewmore']			= '1';
+				$atts['btn_viewmore']			= '1';
 				
 				$html .= '<div class="col-md-6 first-element-layout">';
 				$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
@@ -270,7 +269,7 @@ class sh_blog_shortcode {
 			} else {
 				// $image_size 					= 'rt_thumb300x200';
 				$atts['hide_meta'] 				= '0';
-				$atts['hide_viewmore'] 			= '0';
+				$atts['btn_viewmore'] 			= '0';
 				$atts['hide_desc'] 				= '0';
 				
 				$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
@@ -311,7 +310,7 @@ class sh_blog_shortcode {
 
 			if ( $i == 1 ) {
 				// $image_size 					= 'rt_thumb300x200';
-				$atts['hide_viewmore']			= '1';
+				$atts['btn_viewmore']			= '1';
 
 				$html .= '<div class="col-md-12 first-element-layout">';
 				$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
@@ -323,7 +322,7 @@ class sh_blog_shortcode {
 				// $image_size 					= 'rt_thumb300x200';
 				$atts['hide_thumb'] 			= '0';
 				$atts['hide_meta'] 				= '0';
-				$atts['hide_viewmore'] 			= '0';
+				$atts['btn_viewmore'] 			= '0';
 				$atts['hide_desc'] 				= '0';
 				
 				$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
@@ -350,9 +349,9 @@ class sh_blog_shortcode {
 		extract( shortcode_atts( array(
 			'posts_per_page'				=> '5',
 			'categories'					=> '',
-			'custom_text'					=> __( 'Read more', 'shtheme' ),
+			'viewmore_text'					=> __( 'Read more', 'shtheme' ),
 			'hide_category'					=> '0',
-			'hide_viewmore'					=> '0',
+			'btn_viewmore'					=> '0',
 			'hide_meta'						=> '0',
 			'hide_thumb'					=> '1',
 			'hide_desc'						=> '1',
@@ -398,8 +397,8 @@ class sh_blog_shortcode {
 				$html .= '<div class="entry-description">'. get_the_content_limit( $number_character,' ' ) .'</div>';
 			}
 			// Check display view more button
-			if ( $hide_viewmore == '1' ) {
-				$html .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'" class="view-more">'. __( 'View more', 'shtheme' ) .' <i class="fas fa-angle-double-right"></i></a>';
+			if ( $btn_viewmore == '1' ) {
+				$html .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'" class="view-more">'. $viewmore_text .' <i class="fas fa-angle-double-right"></i></a>';
 			}
 		$html .= '</div>';
 		$html .= '</div></article>';
@@ -418,9 +417,9 @@ class sh_blog_shortcode {
 		extract( shortcode_atts( array(
 			'posts_per_page'				=> '5',
 			'categories'					=> '',
-			'custom_text'					=> __( 'Read more', 'shtheme' ),
+			'viewmore_text'					=> __( 'Read more', 'shtheme' ),
 			'hide_category'					=> '0',
-			'hide_viewmore'					=> '0',
+			'btn_viewmore'					=> '0',
 			'hide_meta'						=> '0',
 			'hide_thumb'					=> '1',
 			'hide_desc'						=> '1',
@@ -464,8 +463,8 @@ class sh_blog_shortcode {
 				$html .= '<div class="entry-description">'. get_the_content_limit( $number_character,' ' ) .'</div>';
 			}
 			// Check display view more button
-			if ( $hide_viewmore == '1' ) {
-				$html .= '<div class="text-left"><a class="view-detail" href="'. get_permalink() .'" title="'. get_the_title() .'">'. __( 'View more', 'shtheme' ) .' <i class="fas fa-angle-double-right"></i></a></div>';
+			if ( $btn_viewmore == '1' ) {
+				$html .= '<div class="text-left"><a class="view-detail" href="'. get_permalink() .'" title="'. get_the_title() .'">'. $viewmore_text .' <i class="fas fa-angle-double-right"></i></a></div>';
 			}
 		$html .= '</div>';
 		$html .= '</div></article>';

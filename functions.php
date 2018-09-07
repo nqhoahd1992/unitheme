@@ -144,6 +144,9 @@ require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
 // Load Shortcode
 require get_template_directory() . '/inc/shortcode/shortcode-blog.php';
+if ( class_exists( 'Vc_Manager' ) ) {
+	require get_template_directory() . '/inc/vc_shortcode/wtb-shortcodes.php';
+}
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/shortcode/shortcode-product.php';
 }
