@@ -521,23 +521,14 @@ if ( class_exists( 'WooCommerce' ) ) {
         'subsection'       => true,
         'fields'           => array(
             array(
-                'id'        => 'layout-category-product',
-                'type'      => 'switch', 
-                'title'     => __('Layout', 'shtheme'),
-                'default'   => false,
-                'on'        => __('Customize', 'shtheme'),
-                'off'       => __('Default', 'shtheme'),
-            ),
-            array(
                 'id'        => 'number-products-cate',
                 'type'      => 'slider',
                 'title'     => __('Enter number product per page', 'shtheme'),
-                'default'   => 10,
+                'default'   => 9,
                 'min'       => 1,
                 'step'      => 1,
                 'max'       => 30,
                 'display_value' => 'text',
-                'required'  => array('layout-category-product','equals',true),
             ),
             array(
                 'id'        => 'number-column-product-cate',
@@ -548,7 +539,6 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'step'      => 1,
                 'max'       => 6,
                 'display_value' => 'text',
-                'required'  => array('layout-category-product','equals',true),
             ),
             array(
                 'id'       => 'display-hierarchy-woocommerce',

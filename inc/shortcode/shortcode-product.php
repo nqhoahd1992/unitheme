@@ -27,9 +27,9 @@ class sh_product_shortcode {
 		$html = '';
 
 		extract( shortcode_atts( array(
-			'posts_per_page'				=> '5',
-			'categories'					=> '',
-			'numcol'						=> '3',
+			'categories'		=> '',
+			'posts_per_page'	=> '5',
+			'numcol'			=> '3',
 		), $atts ) );
 
 		$args = array(
@@ -50,9 +50,7 @@ class sh_product_shortcode {
 
 		if ( $the_query->have_posts() ) {
 
-			global $sh_option;
-			$numcol 				= $sh_option['number_product_row'];
-			$post_class_homepage 	= get_column_product($numcol);
+			// $post_class_homepage = get_column_product($numcol);
 
 			$html .= '<div class="sh-product-shortcode column-'. $numcol .'"><ul class="row list-products">';
 
