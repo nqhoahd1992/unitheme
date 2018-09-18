@@ -30,12 +30,13 @@ get_header(); ?>
 				$atts['hide_category'] 		= '0';
 				$atts['hide_desc'] 			= '1';
 				$atts['hide_meta']			= '1';
-				$atts['hide_viewmore']		= '0';
-				$atts['number_character']	= '400';
+				$atts['hide_viewmore']		= '1';
+				$atts['number_character']	= '300';
 				$post_class[] 				= 'col-md-12';
+				$style 						= 'style-1';
 				
 				/* Start the Loop */
-				echo '<div class="sh-blog-shortcode style-1"><div class="row">';
+				echo '<div class="sh-blog-shortcode '. $style .'"><div class="row">';
 					while ( have_posts() ) : the_post();
 						echo $new_post->sh_general_post_html_style_2( $post_class, $atts, $image_size );
 					endwhile;

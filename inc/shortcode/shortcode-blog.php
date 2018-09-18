@@ -257,7 +257,7 @@ class sh_blog_shortcode {
 		while ( $the_query->have_posts() ) { $the_query->the_post(); $i++;
 
 			if ( $i == 1 ) {
-				// $image_size 					= 'rt_thumb300x200';
+				// $image_size 					= 'sh_thumb300x200';
 				$atts['btn_viewmore']			= '1';
 				
 				$html .= '<div class="col-md-6 first-element-layout">';
@@ -267,7 +267,7 @@ class sh_blog_shortcode {
 					$html .= '<div class="col-md-6 second-element-layout">';
 				}
 			} else {
-				// $image_size 					= 'rt_thumb300x200';
+				// $image_size 					= 'sh_thumb300x200';
 				$atts['hide_meta'] 				= '0';
 				$atts['btn_viewmore'] 			= '0';
 				$atts['hide_desc'] 				= '0';
@@ -306,10 +306,8 @@ class sh_blog_shortcode {
 		$html .= '<div class="row">';
 		while ( $the_query->have_posts() ) { $the_query->the_post(); $i++;
 
-			
-
 			if ( $i == 1 ) {
-				// $image_size 					= 'rt_thumb300x200';
+				// $image_size 					= 'sh_thumb300x200';
 				$atts['btn_viewmore']			= '1';
 
 				$html .= '<div class="col-md-12 first-element-layout">';
@@ -319,7 +317,7 @@ class sh_blog_shortcode {
 					$html .= '<div class="col-md-12 second-element-layout">';
 				}
 			} else {
-				// $image_size 					= 'rt_thumb300x200';
+				// $image_size 					= 'sh_thumb300x200';
 				$atts['hide_thumb'] 			= '0';
 				$atts['hide_meta'] 				= '0';
 				$atts['btn_viewmore'] 			= '0';

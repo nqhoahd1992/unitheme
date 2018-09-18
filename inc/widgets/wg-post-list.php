@@ -36,7 +36,7 @@ class Gtid_Post_Widget extends WP_Widget {
                         'terms'     => $instance['cat'],
                     )
                 ),
-                'showposts' => $instance['numpro'],
+                'posts_per_page' => $instance['numpro'],
             );
             $the_query = new WP_Query($args);
             while($the_query->have_posts()):

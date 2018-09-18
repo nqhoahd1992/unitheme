@@ -40,6 +40,7 @@ remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wra
 
 function my_theme_wrapper_start() {
 	echo '<div class="content-sidebar-wrap">';
+	do_action( 'before_main_content' );
 	echo '<main id="main" class="site-main" role="main">';
 }
 
