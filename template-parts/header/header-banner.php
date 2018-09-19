@@ -7,19 +7,6 @@
 
 global $sh_option;
 ?>
-<!-- Start Menu Mobile -->
-<div class="navbar fixed-top d-lg-none">
-	<a id="showmenu" class="">
-		<span class="hamburger hamburger--collapse">
-			<span class="hamburger-box">
-				<span class="hamburger-inner"></span>
-			</span>
-		</span>
-	</a>
-	<a class="navbar-brand" href="<?php echo get_site_url();?>">MENU</a>
-</div>
-<!-- End Menu Mobile -->
-
 <!-- Start Top Header -->
 <?php if( $sh_option['display-topheader-widget'] == 1 ) : ?>
 	<div class="top-header">
@@ -55,6 +42,19 @@ global $sh_option;
 		</div>
 	</div>
 </div>
+
+<!-- Start Menu Mobile -->
+<div class="navbar fixed-top d-lg-none">
+	<a id="showmenu" class="">
+		<span class="hamburger hamburger--collapse">
+			<span class="hamburger-box">
+				<span class="hamburger-inner"></span>
+			</span>
+		</span>
+	</a>
+	<a class="navbar-brand" href="<?php echo get_site_url();?>">MENU</a>
+</div>
+<!-- End Menu Mobile -->
 
 <nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
 	<div class="container">

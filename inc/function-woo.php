@@ -64,6 +64,15 @@ add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
 add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
 
 /**
+ * Set user role when create account woocommerce
+ */
+function set_user_role_woocommerce($args) {
+	$args['role'] = 'subscriber';
+	return $args;
+}
+add_filter('woocommerce_new_customer_data', 'set_user_role_woocommerce', 10, 1);
+
+/**
  * Show image category product
  */
 function woocommerce_category_image($products) {

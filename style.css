@@ -375,7 +375,9 @@ textarea.form-control {
 .sidebar .widget ul {
 	padding: 0;
 }
-.sidebar .widget_list_posts ul, .sidebar .widget .content-feature-page,
+.sidebar .widget_list_posts .list-post-item, 
+.sidebar .widget_list_view_posts .list-post-item,
+.sidebar .widget .content-feature-page,
 .sidebar .textwidget {
 	padding: 10px;
 }
@@ -398,6 +400,15 @@ textarea.form-control {
 	font-weight: normal;
 	display: block;
 	color: #333333;
+}
+.sidebar .widget_nav_menu ul li a:before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #337ab7;
+    border-radius: 50%;
+    margin-right: 5px;
 }
 .sidebar .widget_nav_menu .menu-item-has-children .sub-menu {
 	background: #FFF;
@@ -659,7 +670,7 @@ textarea.form-control {
 	margin: 0 auto 10px;
 }
 .item-product-slide h3 {
-	margin: 0 0 5px;
+	margin: 5px 0;
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 1.2;
