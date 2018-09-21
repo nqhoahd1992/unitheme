@@ -123,8 +123,8 @@ postview_set( get_the_ID() );
 				'order' 	=> 'DESC'
 			)
 		);
-		if( function_exists('yoast_get_primary_term_id') && count( $category ) > 1 ) {
-			$cat_id = yoast_get_primary_term_id( 'category',$post->ID );
+		if( function_exists('yoast_get_primary_term_id') && count( $category ) > 1 && yoast_get_primary_term_id( $slug_category,$post->ID ) ) {
+			$cat_id = yoast_get_primary_term_id( $slug_category,$post->ID );
 		} else {
 			$cat_id = end( $category )->term_id;
 		}
@@ -137,7 +137,7 @@ postview_set( get_the_ID() );
                     'terms' 	=> $cat_id,
                 )
             ),
-            'showposts' 		=> 6,
+            'posts_per_page' 	=> 6,
             'post__not_in' 		=> array( $post->ID ),
         ));
         if( $the_query->have_posts() ) :
