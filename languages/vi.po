@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2018-09-19 11:07+0700\n"
-"PO-Revision-Date: 2018-09-19 11:14+0700\n"
+"POT-Creation-Date: 2018-10-02 10:56+0700\n"
+"PO-Revision-Date: 2018-10-02 10:56+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -721,7 +721,7 @@ msgstr "Nhập số bài viết"
 msgid "Blog Layout"
 msgstr "Chọn giao diện Blog"
 
-#: inc/options.php:382
+#: inc/options.php:382 inc/vc_shortcode/woo_shortcodes/wtb_product.php:19
 msgid "Product"
 msgstr "Sản phẩm"
 
@@ -1025,6 +1025,7 @@ msgstr "Blog"
 #. Theme Name of the plugin/theme
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:21
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:21
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:21
 msgid "Web3B"
 msgstr "Web3B"
 
@@ -1062,43 +1063,51 @@ msgstr "Giao diện 7"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:43
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:42
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:42
 msgid "Posts Count"
 msgstr "Số lượng bài viết muốn lấy"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:52
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:147
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:51
 msgid "Order by"
 msgstr "Sắp xếp theo"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:55
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:150
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:54
 #, php-format
 msgid "Select how to sort retrieved products_category. More at %s."
 msgstr "Select how to sort retrieved products_category. More at %s."
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:60
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:155
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:59
 msgid "Order way"
 msgstr "Kiểu sắp xếp"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:63
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:158
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:62
 #, php-format
 msgid "Designates the ascending or descending order. More at %s."
 msgstr "Designates the ascending or descending order. More at %s."
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:68
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:163
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:67
 msgid "Category ID"
 msgstr "ID chuyên mục"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:76
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:195
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:75
 msgid "CSS box"
 msgstr "CSS box"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:78
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:197
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:77
 msgid "Design Options"
 msgstr "Design Options"
 
@@ -1114,6 +1123,7 @@ msgstr "Number Column on Desktop Large (> 1200px)"
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:65
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:77
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:89
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:33
 msgid "4"
 msgstr "4"
 
@@ -1121,6 +1131,7 @@ msgstr "4"
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:66
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:78
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:90
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:32
 msgid "3"
 msgstr "3"
 
@@ -1128,6 +1139,7 @@ msgstr "3"
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:67
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:79
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:91
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:31
 msgid "2"
 msgstr "2"
 
@@ -1135,6 +1147,7 @@ msgstr "2"
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:68
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:80
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:92
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:30
 msgid "1"
 msgstr "1"
 
@@ -1204,6 +1217,18 @@ msgstr "Không"
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:183
 msgid "Navigation Arrows"
 msgstr "Navigation Arrows"
+
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:27
+msgid "Number of products per row"
+msgstr "Số sản phẩm mỗi hàng"
+
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:34
+msgid "5"
+msgstr "5"
+
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:35
+msgid "6"
+msgstr "6"
 
 #: inc/widgets/wg-fblikebox.php:13
 msgid "3B - Facebook Like Box"

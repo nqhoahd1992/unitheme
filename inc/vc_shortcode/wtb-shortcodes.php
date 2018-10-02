@@ -9,7 +9,8 @@ define('WTB_SHORTCODES_WOO_TEMPLATES', dirname(__FILE__) . '/woo_templates/');
 class WTBShortcodesClass {
 
     private $shortcodes = array("wtb_blog",'wtb_blog_slider');
-	// private $woo_shortcodes = array("wtb_product","wtb_product_cate");
+    private $woo_shortcodes = array("wtb_product");
+	// private $woo_shortcodes = array("wtb_product","wtb_product_slider");
     
     function __construct() {
 
@@ -28,9 +29,9 @@ class WTBShortcodesClass {
         }
 
         if ( class_exists( 'WooCommerce' ) ) {
-            // foreach ($this->woo_shortcodes as $woo_shortcode) {
-            //     require_once(WTB_SHORTCODES_WOO_PATH . $woo_shortcode . '.php');
-            // }
+            foreach ($this->woo_shortcodes as $woo_shortcode) {
+                require_once(WTB_SHORTCODES_WOO_PATH . $woo_shortcode . '.php');
+            }
         }
     }
 
