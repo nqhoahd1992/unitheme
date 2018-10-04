@@ -38,7 +38,7 @@ function display_logo(){
 	global $sh_option;
 	$url_logo = $sh_option['opt_settings_logo']['url'];
 	if(  $url_logo ) {
-		echo '<a href="'.get_site_url( ).'"><img src="'. $url_logo .'"></a>';
+		echo '<a href="'. esc_url( home_url( '/' ) ) .'"><img src="'. $url_logo .'"></a>';
 	}
 }
 

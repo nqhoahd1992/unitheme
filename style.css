@@ -813,6 +813,7 @@ html .slick-carousel.slick-dotted.slick-slider {
 	display: none;
 }
 /* Widget Social */
+.widget_social ul {margin: 0;padding: 0;}
 .widget_social ul li {display: inline-block;margin-right: 5px;}
 .widget_social ul li a {
     display: inline-block;
