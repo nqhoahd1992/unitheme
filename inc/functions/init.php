@@ -162,7 +162,7 @@ add_filter( 'body_class', 'add_class_body_layout' );
 function insert_favicon(){
 	global $sh_option;
 	$url_favicon = $sh_option['opt_settings_favicon']['url'];
-	if( ! empty( $url_favicon ) ) {
+	if( $url_favicon ) {
 		echo '<link rel="shortcut icon" href="'. $url_favicon .'" type="image/x-icon" />';
 	}
 }
@@ -214,24 +214,6 @@ function postview_get( $postID ){
 }
 
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-
-/**
- * Responsive Video Youtube In Content
- */
-function div_wrapper_video($content) {
-   // match any iframes
-   /*$pattern = '~<iframe.*</iframe>|<embed.*</embed>~'; // Add it if all iframe*/
-   $pattern = '~<iframe.*src=".*(youtube.com|youtu.be).*</iframe>|<embed.*</embed>~'; //only iframe youtube
-   preg_match_all($pattern, $content, $matches);
-   foreach ($matches[0] as $match) {
-     // wrap matched iframe with div
-     $wrappedframe = '<div class="embed-responsive embed-responsive-16by9">' . $match . '</div>';
-     //replace original iframe with new in content
-     $content = str_replace($match, $wrappedframe, $content);
-   }
-   return $content; 
-}
-add_filter('the_content', 'div_wrapper_video');
 
 /**
  * Get term name

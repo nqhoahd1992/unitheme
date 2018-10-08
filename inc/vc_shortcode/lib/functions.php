@@ -44,13 +44,14 @@ function wtb_shortcode_template( $name = false ) {
 
 function wtb_shortcode_woo_template( $name = false ) {
     if (!$name)
-    return false;
+        return false;
+    
     if ( $overridden_template = locate_template( 'vc_templates' . $name . '.php' ) ) {
-    return $overridden_template;
+        return $overridden_template;
     } else {
-    // If neither the child nor parent theme have overridden the template,
-    // we load the template from the 'templates' sub-directory of the directory this file is in
-    return WTB_SHORTCODES_WOO_TEMPLATES . $name . '.php';
+        // If neither the child nor parent theme have overridden the template,
+        // we load the template from the 'templates' sub-directory of the directory this file is in
+        return WTB_SHORTCODES_WOO_TEMPLATES . $name . '.php';
     }
 }
 
@@ -70,4 +71,8 @@ function wtb_vc_custom_class() {
         'param_name' => 'el_class',
         'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'shtheme' )
     );
+}
+
+function wtb_shortcode_end_block_comment( $string ) {
+    return WP_DEBUG ? '<!-- END ' . $string . ' -->' : '';
 }

@@ -30,31 +30,27 @@ if ( $the_query->have_posts() ) {
     $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, vc_shortcode_custom_css_class( $css, ' ' ), 'wtb_blog', $atts );
     $el_class = esc_html( wtb_shortcode_extract_class( $el_class ) );
 
-    echo '<div class="sh-blog-shortcode style-'. $style .' '. $el_class .'">';
+    echo '<div class="sh-product-shortcode column-'. $numcol .' '. $el_class .'">';
 
-        echo '<div class="sh-product-shortcode column-'. $numcol .' '. $el_class .'">';
+        echo '<ul class="row list-products">';
 
-        	echo '<ul class="row list-products">';
+            while ( $the_query->have_posts() ) {
 
-	           	while ( $the_query->have_posts() ) {
+                $the_query->the_post();
 
-					$the_query->the_post();
+                /**
+                 * Hook: woocommerce_shop_loop.
+                 *
+                 * @hooked WC_Structured_Data::generate_product_data() - 10
+                 */
+                do_action( 'woocommerce_shop_loop' );
 
-					/**
-					 * Hook: woocommerce_shop_loop.
-					 *
-					 * @hooked WC_Structured_Data::generate_product_data() - 10
-					 */
-					do_action( 'woocommerce_shop_loop' );
+                wc_get_template_part( 'content', 'product' );
 
-					wc_get_template_part( 'content', 'product' );
+            }
+            wp_reset_postdata();
 
-				}
-				wp_reset_postdata();
-
-			echo '</ul>';
-
-        echo '</div>';
+        echo '</ul>';
 
     echo '</div>';
 
