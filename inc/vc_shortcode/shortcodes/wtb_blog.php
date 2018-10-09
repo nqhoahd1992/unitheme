@@ -1,5 +1,4 @@
 <?php
-
 add_shortcode('wtb_blog', 'wtb_shortcode_blog');
 add_action('vc_build_admin_page', 'wtb_load_blog_shortcode');
 add_action('vc_after_init', 'wtb_load_blog_shortcode');
@@ -16,12 +15,13 @@ function wtb_load_blog_shortcode() {
     $order_by_values    = wtb_vc_woo_order_by();
     $order_way_values   = wtb_vc_woo_order_way();
     vc_map( array(
-        'name'      => "Web3B " . esc_html__('Blog', 'shtheme'),
-        'base'      => 'wtb_blog',
-        'category'  => esc_html__('Web3B', 'shtheme'),
-        'icon'      => 'wtb_vc_icon',
-        'weight'    => - 50,
-        'params'    => array(
+        'name'          => "Web3B " . esc_html__('Blog', 'shtheme'),
+        'base'          => 'wtb_blog',
+        'description'   => esc_html__('Show multiple posts in a category', 'shtheme'),
+        'category'      => esc_html__('Web3B', 'shtheme'),
+        'icon'		    => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
+        'weight'        => - 50,
+        'params'        => array(
             array(
                 'type'          => 'dropdown',
                 'heading'       => esc_html__('Layout', 'shtheme'),

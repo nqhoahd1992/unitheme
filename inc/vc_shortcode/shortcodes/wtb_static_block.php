@@ -10,9 +10,9 @@ function wtb_shortcode_static_block($atts, $content = null) {
 }
 
 function wtb_load_static_block_shortcode() {
-    $custom_class   = wtb_vc_custom_class();
-    $block_options  = array();
-    $block_options[0] = esc_html__('Choose a block to display', 'shtheme');
+    $custom_class       = wtb_vc_custom_class();
+    $block_options      = array();
+    $block_options[0]   = esc_html__('Choose a block to display', 'shtheme');
     $args = array(
         'posts_per_page'    => -1,
         'post_type'         => 'block',
@@ -23,11 +23,13 @@ function wtb_load_static_block_shortcode() {
         $block_options[$_post->post_title] = $_post->ID;
     }
     vc_map( array(
-        'name'      => "Web3B " . esc_html__('Static Block', 'shtheme'),
-        'base'      => 'wtb_static_block',
-        'category'  => esc_html__('Web3B', 'shtheme'),
-        'weight'    => - 50,
-        'params'    => array(
+        'name'          => "Web3B " . esc_html__('Static Block', 'shtheme'),
+        'base'          => 'wtb_static_block',
+        'description'   => esc_html__('Show static block', 'shtheme'),
+        'category'      => esc_html__('Web3B', 'shtheme'),
+        'icon'          => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
+        'weight'        => - 50,
+        'params'        => array(
             array(
                 'type'          => 'dropdown',
                 'heading'       => esc_html__('Static Block', 'shtheme'),

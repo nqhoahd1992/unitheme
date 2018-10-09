@@ -16,12 +16,13 @@ function wtb_load_product_shortcode() {
     $order_by_values    = wtb_vc_woo_order_by();
     $order_way_values   = wtb_vc_woo_order_way();
     vc_map( array(
-        'name'      => "Web3B " . esc_html__('Product', 'shtheme'),
-        'base'      => 'wtb_product',
-        'category'  => esc_html__('Web3B', 'shtheme'),
-        'icon'      => 'wtb_vc_icon',
-        'weight'    => - 50,
-        'params'    => array(
+        'name'          => "Web3B " . esc_html__('Product', 'shtheme'),
+        'base'          => 'wtb_product',
+        'description'   => esc_html__('Show multiple products in a category', 'shtheme'),
+        'category'      => esc_html__('Web3B', 'shtheme'),
+        'icon'          => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
+        'weight'        => - 50,
+        'params'        => array(
             array(
                 'type'          => 'dropdown',
                 'heading'       => esc_html__('Number of products per row', 'shtheme'),

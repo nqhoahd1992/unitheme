@@ -18,7 +18,8 @@ class WTB_PostTypes {
                 'public'                => true,
                 'rewrite'               => array('slug' => 'block'),
                 'supports'              => array('title', 'editor'),
-                'can_export'            => true
+                'can_export'            => true,
+                'menu_icon'             => 'dashicons-layout',
             )
         );
     }
@@ -31,15 +32,15 @@ class WTB_PostTypes {
         return array(
             "name"          => $title,
             "singular_name" => $singular_name,
-            "add_new"       => esc_html__("Thêm mới", 'shtheme'),
-            "add_new_item"  => sprintf(esc_html__("Thêm mới %s", 'shtheme'), $singular_name),
-            "edit_item"     => sprintf(esc_html__("Chỉnh sửa %s", 'shtheme'), $singular_name),
-            "new_item"      => sprintf(esc_html__("Thêm %s", 'shtheme'), $singular_name),
-            "view_item"     => sprintf(esc_html__("Xem %s", 'shtheme'), $singular_name),
-            "search_items"  => sprintf(esc_html__("Tìm kiếm %s", 'shtheme'), $name),
-            "not_found"     => sprintf(esc_html__("%s không tìm thấy", 'shtheme'), $name),
-            "not_found_in_trash" => sprintf(esc_html__("%s Không có bài viết trong thùng rác", 'shtheme'), $name),
-            "parent_item_colon"  => ""
+            "add_new"       => esc_html__("Add New", 'shtheme'),
+            "add_new_item"  => sprintf(esc_html__("Add New %s", 'shtheme'), $singular_name),
+            "edit_item"     => sprintf(esc_html__("Edit %s", 'shtheme'), $singular_name),
+            "new_item"      => sprintf(esc_html__("New %s", 'shtheme'), $singular_name),
+            "view_item"     => sprintf(esc_html__("View %s", 'shtheme'), $singular_name),
+            "search_items"  => sprintf(esc_html__("Search %s", 'shtheme'), $name),
+            "not_found"     => sprintf(esc_html__("No %s found", 'shtheme'), $name),
+            "not_found_in_trash" => sprintf(esc_html__("No %s found in Trash", 'shtheme'), $name),
+            "parent_item_colon"  => "",
         );
     }
 

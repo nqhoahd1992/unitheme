@@ -1,24 +1,24 @@
 <?php
 
-add_shortcode('wtb_blog_slider', 'wtb_shortcode_blog_slider');
-add_action('vc_build_admin_page', 'wtb_load_blog_slider_shortcode');
-add_action('vc_after_init', 'wtb_load_blog_slider_shortcode');
+add_shortcode('wtb_product_slider', 'wtb_shortcode_product_slider');
+add_action('vc_build_admin_page', 'wtb_load_product_slider_shortcode');
+add_action('vc_after_init', 'wtb_load_product_slider_shortcode');
 
-function wtb_shortcode_blog_slider($atts, $content = null) {
+function wtb_shortcode_product_slider($atts, $content = null) {
     ob_start();
-    if ($template = wtb_shortcode_template('wtb_blog_slider'))
+    if ($template = wtb_shortcode_woo_template('wtb_product_slider'))
         include $template;
     return ob_get_clean();
 }
 
-function wtb_load_blog_slider_shortcode() {
+function wtb_load_product_slider_shortcode() {
     $custom_class       = wtb_vc_custom_class();
     $order_by_values    = wtb_vc_woo_order_by();
     $order_way_values   = wtb_vc_woo_order_way();
     vc_map( array(
-        'name'          => "Web3B " . esc_html__('Blog Slider', 'shtheme'),
-        'base'          => 'wtb_blog_slider',
-        'description'   => esc_html__('Show posts slider in a category', 'shtheme'),
+        'name'          => "Web3B " . esc_html__('Product Slider', 'shtheme'),
+        'base'          => 'wtb_product_slider',
+        'description'   => esc_html__('Show products slider in a category', 'shtheme'),
         'category'      => esc_html__('Web3B', 'shtheme'),
         'icon'          => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
         'weight'        => - 50,
@@ -88,53 +88,6 @@ function wtb_load_blog_slider_shortcode() {
                     esc_html__('3', 'shtheme') => 3,
                     esc_html__('2', 'shtheme') => 2,
                     esc_html__('1', 'shtheme') => 1,
-                ),
-            ),
-            array(
-                'type'          => 'textfield',
-                'heading'       => esc_html__('Image size', 'shtheme'),
-                'param_name'    => 'image_size',
-                'value'         => 'thumbnail',
-                'admin_label'   => true,
-                'description'   => esc_html__( 'Enter image size (Example: "thumbnail", "medium", "large", "full" or other sizes defined by theme). Alternatively enter size in pixels (Example: 200x100 (Width x Height)).', 'shtheme' ),
-            ),
-            array(
-                'type'          => 'checkbox',
-                'heading'       => esc_html__('Show meta post', 'shtheme'),
-                'param_name'    => 'hide_meta',
-                'value'         => array(esc_html__('Yes', 'shtheme') => '1')
-            ),
-            array(
-                'type'          => 'checkbox',
-                'heading'       => esc_html__('Show content limit', 'shtheme'),
-                'param_name'    => 'hide_desc',
-                'value'         => array(esc_html__('Yes', 'shtheme') => '1')
-            ),
-            array(
-                'type'          => 'wtb_vc_slider_type_field',
-                'heading'       => esc_html__('Number character limit', 'shtheme'),
-                'param_name'    => 'number_character',
-                'value'         => 200,
-                'dependency'    => array(
-                    'element'   => 'hide_desc',
-                    'value'     => array('1'),
-                ),
-                'admin_label'   => true
-            ),
-			array(
-                'type'          => 'checkbox',
-                'heading'       => esc_html__('Show view more', 'shtheme'),
-                'param_name'    => 'btn_viewmore',
-                'value'         => array(esc_html__('Yes', 'shtheme') => '1')
-            ),
-            array(
-                'type'          => 'textfield',
-                'heading'       => esc_html__('View more text', 'shtheme'),
-                'param_name'    => 'viewmore_text',
-                'value'         => esc_html__('Read more', 'shtheme'),
-                'dependency'    => array(
-                    'element'   => 'btn_viewmore',
-                    'value'     => array('1'),
                 ),
             ),
             
