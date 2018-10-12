@@ -76,3 +76,16 @@ function wtb_vc_custom_class() {
 function wtb_shortcode_end_block_comment( $string ) {
     return WP_DEBUG ? '<!-- END ' . $string . ' -->' : '';
 }
+
+function wtb_get_terms( $taxonomy ) {
+    $block_options      = array();
+    $block_options[0]   = esc_html__('Choose a category', 'shtheme');
+    $terms = get_terms( array(
+        'taxonomy'      => $taxonomy,
+        'hide_empty'    => false,
+    ) );
+    foreach( $terms as $value ){
+        $block_options[$value->name] = $value->term_id;
+    }
+    return $block_options;
+}

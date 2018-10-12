@@ -15,6 +15,8 @@ function wtb_load_product_shortcode() {
     $custom_class       = wtb_vc_custom_class();
     $order_by_values    = wtb_vc_woo_order_by();
     $order_way_values   = wtb_vc_woo_order_way();
+    $block_options      = wtb_get_terms('product_cat');
+
     vc_map( array(
         'name'          => "Web3B " . esc_html__('Product', 'shtheme'),
         'base'          => 'wtb_product',
@@ -64,10 +66,10 @@ function wtb_load_product_shortcode() {
                 'group'         => 'Data'
             ),
             array(
-                'type'          => 'wtb_vc_slider_type_field',
-                'heading'       => esc_html__('Category ID', 'shtheme'),
-                // 'description'   => esc_html__('Comma separated list of category ids', 'shtheme'),
+                'type'          => 'dropdown',
+                'heading'       => esc_html__('Choose a category', 'shtheme'),
                 'param_name'    => 'categories',
+                'value'         =>  $block_options,
                 'admin_label'   => true,
                 'group'         => 'Data'
             ),

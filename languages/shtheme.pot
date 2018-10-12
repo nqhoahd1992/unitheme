@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2018-10-09 10:39+0700\n"
+"POT-Creation-Date: 2018-10-12 10:22+0700\n"
 "PO-Revision-Date: 2018-01-18 17:08+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -720,7 +720,7 @@ msgstr ""
 msgid "Blog Layout"
 msgstr ""
 
-#: inc/options.php:382 inc/vc_shortcode/woo_shortcodes/wtb_product.php:19
+#: inc/options.php:382 inc/vc_shortcode/woo_shortcodes/wtb_product.php:21
 msgid "Product"
 msgstr ""
 
@@ -952,56 +952,10 @@ msgstr ""
 
 #: inc/shortcode/shortcode-blog.php:33 inc/shortcode/shortcode-blog.php:350
 #: inc/shortcode/shortcode-blog.php:418
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:134
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:136
 #: inc/vc_shortcode/templates/wtb_blog_slider.php:15
 #: inc/widgets/wg-post-list.php:59
 msgid "Read more"
-msgstr ""
-
-#: inc/vc_shortcode/lib/apr-post-type.php:14
-#: inc/vc_shortcode/shortcodes/wtb_static_block.php:26
-#: inc/vc_shortcode/shortcodes/wtb_static_block.php:35
-msgid "Static Block"
-msgstr ""
-
-#: inc/vc_shortcode/lib/apr-post-type.php:34
-msgid "Add New"
-msgstr ""
-
-#: inc/vc_shortcode/lib/apr-post-type.php:35
-#, php-format
-msgid "Add New %s"
-msgstr ""
-
-#. translators: %s: Name of current post
-#: inc/vc_shortcode/lib/apr-post-type.php:36 template-parts/content-page.php:37
-#, php-format
-msgid "Edit %s"
-msgstr ""
-
-#: inc/vc_shortcode/lib/apr-post-type.php:37
-#, php-format
-msgid "New %s"
-msgstr ""
-
-#: inc/vc_shortcode/lib/apr-post-type.php:38
-#, php-format
-msgid "View %s"
-msgstr ""
-
-#: inc/vc_shortcode/lib/apr-post-type.php:39
-#, php-format
-msgid "Search %s"
-msgstr ""
-
-#: inc/vc_shortcode/lib/apr-post-type.php:40
-#, php-format
-msgid "No %s found"
-msgstr ""
-
-#: inc/vc_shortcode/lib/apr-post-type.php:41
-#, php-format
-msgid "No %s found in Trash"
 msgstr ""
 
 #: inc/vc_shortcode/lib/functions.php:13
@@ -1058,152 +1012,171 @@ msgid ""
 "field to add a class name and then refer to it in your css file."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:18
-msgid "Blog"
+#: inc/vc_shortcode/lib/functions.php:82
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:70
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:163
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:70
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:116
+msgid "Choose a category"
+msgstr ""
+
+#: inc/vc_shortcode/lib/wtb-post-type.php:14
+#: inc/vc_shortcode/shortcodes/wtb_static_block.php:26
+#: inc/vc_shortcode/shortcodes/wtb_static_block.php:35
+msgid "Static Block"
+msgstr ""
+
+#: inc/vc_shortcode/lib/wtb-post-type.php:35
+msgid "Add New"
+msgstr ""
+
+#: inc/vc_shortcode/lib/wtb-post-type.php:36
+#, php-format
+msgid "Add New %s"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: inc/vc_shortcode/lib/wtb-post-type.php:37 template-parts/content-page.php:37
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: inc/vc_shortcode/lib/wtb-post-type.php:38
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: inc/vc_shortcode/lib/wtb-post-type.php:39
+#, php-format
+msgid "View %s"
+msgstr ""
+
+#: inc/vc_shortcode/lib/wtb-post-type.php:40
+#, php-format
+msgid "Search %s"
+msgstr ""
+
+#: inc/vc_shortcode/lib/wtb-post-type.php:41
+#, php-format
+msgid "No %s found"
+msgstr ""
+
+#: inc/vc_shortcode/lib/wtb-post-type.php:42
+#, php-format
+msgid "No %s found in Trash"
 msgstr ""
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:20
+msgid "Blog"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:22
 msgid "Show multiple posts in a category"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:21
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:22
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:23
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:24
 #: inc/vc_shortcode/shortcodes/wtb_static_block.php:29
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:22
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:22
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:24
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:24
 msgid "Web3B"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:27 inc/widgets/wg-support.php:65
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:29 inc/widgets/wg-support.php:65
 msgid "Layout"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:30
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:32
 msgid "Style 1"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:31
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:33
 msgid "Style 2"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:32
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:34
 msgid "Style 3"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:33
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:35
 msgid "Style 4"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:34
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:36
 msgid "Style 5"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:35
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:37
 msgid "Style 6"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:36
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:38
 msgid "Style 7"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:43
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:28
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:43
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:28
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:45
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:30
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:45
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:30
 msgid "Posts Count"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:52
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:145
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:52
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:98
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:54
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:147
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:54
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:100
 msgid "Order by"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:55
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:148
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:55
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:101
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:57
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:150
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:57
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:103
 #, php-format
 msgid "Select how to sort retrieved products_category. More at %s."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:60
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:153
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:60
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:106
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:62
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:155
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:62
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:108
 msgid "Order way"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:63
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:156
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:63
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:109
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:65
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:158
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:65
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:111
 #, php-format
 msgid "Designates the ascending or descending order. More at %s."
-msgstr ""
-
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:68
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:161
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:68
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:114
-msgid "Category ID"
-msgstr ""
-
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:76
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:193
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:76
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:146
-msgid "CSS box"
 msgstr ""
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:78
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:195
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:78
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:148
+msgid "CSS box"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:80
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:197
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:80
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:150
 msgid "Design Options"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:19
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:21
 msgid "Blog Slider"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:21
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:23
 msgid "Show posts slider in a category"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:35
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:35
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:37
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:37
 msgid "Number Column on Desktop Large (> 1200px)"
-msgstr ""
-
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:39
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:51
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:63
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:75
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:87
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:34
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:39
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:51
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:63
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:75
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:87
-msgid "4"
-msgstr ""
-
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:40
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:52
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:64
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:76
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:88
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:33
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:40
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:52
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:64
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:76
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:88
-msgid "3"
 msgstr ""
 
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:41
@@ -1211,13 +1184,13 @@ msgstr ""
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:65
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:77
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:89
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:32
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:36
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:41
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:53
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:65
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:77
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:89
-msgid "2"
+msgid "4"
 msgstr ""
 
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:42
@@ -1225,90 +1198,118 @@ msgstr ""
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:66
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:78
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:90
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:31
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:35
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:42
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:54
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:66
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:78
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:90
+msgid "3"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:43
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:55
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:67
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:79
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:91
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:34
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:43
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:55
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:67
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:79
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:91
+msgid "2"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:44
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:56
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:68
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:80
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:92
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:33
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:44
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:56
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:68
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:80
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:92
 msgid "1"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:47
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:47
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:49
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:49
 msgid "Number Column on Desktop"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:59
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:59
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:61
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:61
 msgid "Number Column on Tablets"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:71
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:71
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:73
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:73
 msgid "Number Column on Mobile"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:83
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:83
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:85
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:85
 msgid "Number row"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:95
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:97
 msgid "Image size"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:99
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:101
 msgid ""
 "Enter image size (Example: \"thumbnail\", \"medium\", \"large\", \"full\" or "
 "other sizes defined by theme). Alternatively enter size in pixels (Example: "
 "200x100 (Width x Height))."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:103
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:105
 msgid "Show meta post"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:105
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:111
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:128
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:174
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:185
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:127
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:138
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:107
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:113
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:130
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:176
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:187
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:129
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:140
 msgid "Yes"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:109
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:111
 msgid "Show content limit"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:115
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:117
 msgid "Number character limit"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:126
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:128
 msgid "Show view more"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:132
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:134
 msgid "View more text"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:170
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:123
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:172
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:125
 msgid "Dots Navigation"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:175
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:186
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:128
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:139
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:177
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:188
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:130
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:141
 msgid "No"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:181
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:134
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:183
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:136
 msgid "Arrows Navigation"
 msgstr ""
 
@@ -1320,27 +1321,27 @@ msgstr ""
 msgid "Show static block"
 msgstr ""
 
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:21
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:23
 msgid "Show multiple products in a category"
 msgstr ""
 
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:28
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:30
 msgid "Number of products per row"
 msgstr ""
 
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:35
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:37
 msgid "5"
 msgstr ""
 
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:36
+#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:38
 msgid "6"
 msgstr ""
 
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:19
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:21
 msgid "Product Slider"
 msgstr ""
 
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:21
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:23
 msgid "Show products slider in a category"
 msgstr ""
 
