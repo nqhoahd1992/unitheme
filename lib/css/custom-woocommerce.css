@@ -1004,6 +1004,14 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td, .shop_table
 .woocommerce .woocommerce-customer-details address {
 	border-color: #ddd;
 }
+#add_payment_method #payment .payment_method_paypal .about_paypal, 
+.woocommerce-cart #payment .payment_method_paypal .about_paypal, 
+.woocommerce-checkout #payment .payment_method_paypal .about_paypal {
+    float: none;
+    line-height: 1.4;
+    font-size: 13px;
+    margin-left: 5px;
+}
 
 /*--------------------------------------------------------------
 # Custom Css

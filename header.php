@@ -16,6 +16,16 @@
 
 	<header id="masthead" <?php header_class();?> role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 
+		<!-- Start Top Header -->
+		<?php if( $sh_option['display-topheader-widget'] == 1 ) : ?>
+			<div class="top-header">
+				<div class="container">
+					<?php dynamic_sidebar( 'Top Header' );?>
+				</div>
+			</div>
+		<?php endif; ?>
+		<!-- End Top Header -->
+
 		<?php sh_header_layout();?>
 
 	</header><!-- #masthead -->

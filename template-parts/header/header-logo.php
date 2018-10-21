@@ -7,16 +7,6 @@
 
 global $sh_option;
 ?>
-<!-- Start Top Header -->
-<?php if( $sh_option['display-topheader-widget'] == 1 ) : ?>
-	<div class="top-header">
-		<div class="container">
-			<?php dynamic_sidebar( 'Top Header' );?>
-		</div>
-	</div>
-<?php endif; ?>
-<!-- End Top Header -->
-
 <div class="header-main">
 	<div class="container">
 		<div class="site-branding">
@@ -43,12 +33,12 @@ global $sh_option;
 				</span>
 			</a>
 			<div class="row align-items-center">
-				<div class="col-md-3">
+				<div class="col-xl-3 col-lg-2">
 					<div class="logo">
 						<?php display_logo();?>
 					</div>
 				</div>
-				<div class="col-md-9">
+				<div class="col-xl-9 col-lg-10">
 					<nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
 						<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'menu_class' => 'menu clearfix' ) );?>
 					</nav>

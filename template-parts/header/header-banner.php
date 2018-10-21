@@ -7,16 +7,6 @@
 
 global $sh_option;
 ?>
-<!-- Start Top Header -->
-<?php if( $sh_option['display-topheader-widget'] == 1 ) : ?>
-	<div class="top-header">
-		<div class="container">
-			<?php dynamic_sidebar( 'Top Header' );?>
-		</div>
-	</div>
-<?php endif; ?>
-<!-- End Top Header -->
-
 <div class="header-main">
 	<div class="container">
 		<div class="site-branding">

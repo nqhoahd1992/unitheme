@@ -7,16 +7,6 @@
 
 global $sh_option;
 ?>
-<!-- Start Top Header -->
-<?php if( $sh_option['display-topheader-widget'] == 1 ) : ?>
-	<div class="top-header">
-		<div class="container">
-			<?php dynamic_sidebar( 'Top Header' );?>
-		</div>
-	</div>
-<?php endif; ?>
-<!-- End Top Header -->
-
 <div class="header-main">
 	<div class="container">
 		<div class="site-branding">
@@ -43,12 +33,12 @@ global $sh_option;
 				</span>
 			</a>
 			<div class="row align-items-center">
-				<div class="col-md-3">
+				<div class="col-xl-3 col-lg-2">
 					<div class="logo">
 						<?php display_logo();?>
 					</div>
 				</div>
-				<div class="col-md-9">
+				<div class="col-xl-9 col-lg-10">
 					Content
 					<?php //do_action( 'sh_after_menu' );?>
 				</div>
