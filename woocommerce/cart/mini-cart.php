@@ -21,99 +21,83 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-do_action( 'woocommerce_before_mini_cart' );
+do_action( 'woocommerce_before_mini_cart' ); ?>
 
-echo '<div class="woocommerce-mini-cart-wrapper">';
+<?php if ( ! WC()->cart->is_empty() ) : ?>
 
-	echo '<div class="shopping-cart-menu ffb-cart-submenu">';
-		echo '<ul class="list-unstyled">';
+	<ul class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
+		<?php
+			do_action( 'woocommerce_before_mini_cart_contents' );
 
-			// echo '<li>';
-			// 	echo '<span class="shopping-cart-menu-title">'.get_the_title( wc_get_page_id('cart') ).'<a href="javascript:void(0);" class="menu-cart-close">&times;</a></span>';
-			// echo '</li>';
+			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+				$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+				$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 
-			if ( ! WC()->cart->is_empty() ) {
-
-				foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-					$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-					$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
-
-					if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-						$product_name      = apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key );
-						$thumbnail         = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-						$product_price     = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
-						$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
-
-						echo '<li class="shopping-cart-menu-content ';
-						echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) );
-						echo '">';
-
-						// Image
-
-						echo '<div class="shopping-cart-menu-product-media">';
-						if ( $_product->is_visible() ) {
-							echo '<a href="' . esc_url($product_permalink) . '">';
-						}
-						echo str_replace(array('http:', 'https:'), '', $thumbnail);
-						if ( $_product->is_visible() ) {
-							echo '</a>';
-						}
-						echo '</div>';
-
-						// Item name + price
-
-						echo '<div class="shopping-cart-menu-product-wrap">';
-						if ( $_product->is_visible() ) {
-							echo '<a href="' . esc_url($product_permalink) . '">';
-						}
-						echo '<span class="shopping-cart-menu-product-name">'.$product_name.'</span>';
-						if ( $_product->is_visible() ) {
-							echo '</a>';
-						}
-
-						echo '<span class="shopping-cart-menu-product-price">';
-						echo WC()->cart->get_item_data( $cart_item );
-						echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key );
-						echo '</span>';
-
-						echo '</div>';
-
-						// Delete X
-
+				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+					$product_name      = apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key );
+					$thumbnail         = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+					$product_price     = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
+					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
+					?>
+					<li class="woocommerce-mini-cart-item clearfix <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
+						<?php
 						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-							'<a href="%s" class="remove shopping-cart-close" title="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-							esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-							esc_html( __( 'Remove this item', 'ark' ) ),
+							'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
+							esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+							__( 'Remove this item', 'woocommerce' ),
 							esc_attr( $product_id ),
+							esc_attr( $cart_item_key ),
 							esc_attr( $_product->get_sku() )
 						), $cart_item_key );
-
-						echo '</li>';
-					}
+						?>
+						<?php if ( empty( $product_permalink ) ) : ?>
+							<div class="shopping-cart-menu-product-media">
+								<?php echo $thumbnail; ?>
+							</div>
+							<div class="shopping-cart-menu-product-wrap">
+								<?php echo $product_name; ?>
+								<div class="shopping-cart-menu-product-price">
+									<?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
+									<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
+								</div>
+							</div>
+						<?php else : ?>
+							<div class="shopping-cart-menu-product-media">
+								<a href="<?php echo esc_url( $product_permalink ); ?>">
+									<?php echo $thumbnail; ?>
+								</a>
+							</div>
+							<div class="shopping-cart-menu-product-wrap">
+								<a href="<?php echo esc_url( $product_permalink ); ?>">
+									<?php echo $product_name; ?>
+								</a>
+								<div class="shopping-cart-menu-product-price">
+									<?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
+									<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
+								</div>
+							</div>
+							
+						<?php endif; ?>
+						
+					</li>
+					<?php
 				}
-
-				echo '<li class="shopping-cart-subtotal">';
-
-					// Subtotal
-					echo '<div class="shopping-cart-subtotal-content">';
-						echo '<span class="shopping-cart-subtotal-title">'. __( 'Subtotal', 'woocommerce' ) .'</span>';
-						echo '<span class="shopping-cart-subtotal-price">' .  WC()->cart->get_cart_subtotal() . '</span>';
-					echo '</div>';
-
-					echo '<a class="shopping-cart-subtotal-checkout-link" href="' . wc_get_checkout_url() . '">'.get_the_title( wc_get_page_id('checkout') ).'</a>';
-
-					echo '<p class="shopping-cart-subtotal-view">';
-					echo '<a class="shopping-cart-subtotal-view-link" href="' . wc_get_cart_url() . '">'.get_the_title( wc_get_page_id('cart') ).'</a>';
-					echo '</p>';
-
-				echo '</li>';
-			} else {
-				echo '<li class="shopping-cart-menu-content empty">'.__( 'No products in the cart.', 'woocommerce' ).'</li>';
 			}
-		echo '</ul>';
-		
-	echo '</div>';
 
-echo '</div>';
+			do_action( 'woocommerce_mini_cart_contents' );
+		?>
+	</ul>
 
-do_action( 'woocommerce_after_mini_cart' );
+	<p class="woocommerce-mini-cart__total total"><strong><?php _e( 'Subtotal', 'woocommerce' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
+
+	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
+
+	<p class="woocommerce-mini-cart__buttons buttons"><?php do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?></p>
+
+<?php else : ?>
+
+	<p class="woocommerce-mini-cart__empty-message"><?php _e( 'No products in the cart.', 'woocommerce' ); ?></p>
+
+<?php endif; ?>
+
+<?php do_action( 'woocommerce_after_mini_cart' ); ?>

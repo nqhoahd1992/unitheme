@@ -40,7 +40,7 @@ global $sh_option;
 				</div>
 				<div class="col-xl-9 col-lg-10">
 					Content
-					<?php //do_action( 'sh_after_menu' );?>
+					<?php do_action( 'sh_after_menu' );?>
 				</div>
 			</div>
 		</div>

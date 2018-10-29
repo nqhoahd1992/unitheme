@@ -261,23 +261,23 @@ add_action( 'woocommerce_share','insert_share_product' );
  */
 if( ! function_exists('sh_woocommerce_get__cart_menu_item__content') ) {
 	function sh_woocommerce_get__cart_menu_item__content() {
-		?>
-		<div class="navbar-actions">
-			<div class="navbar-actions-shrink shopping-cart">
-				<a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>" class="shopping-cart-icon-container ffb-cart-menu-item">
-					<span class="shopping-cart-icon-wrapper" title="<?php echo WC()->cart->get_cart_contents_count();?>">
-						<span class="shopping-cart-menu-title">
-							<?php echo get_the_title( wc_get_page_id('cart') );?>
-						</span>
-						<img src="<?php echo get_stylesheet_directory_uri();?>/lib/images/icon-cart.png">
+	?>
+	<div class="navbar-actions">
+		<div class="navbar-actions-shrink shopping-cart">
+			<a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>" class="shopping-cart-icon-container ffb-cart-menu-item">
+				<span class="shopping-cart-icon-wrapper" title="<?php echo WC()->cart->get_cart_contents_count();?>">
+					<span class="shopping-cart-menu-title">
+						<?php echo get_the_title( wc_get_page_id('cart') );?>
 					</span>
-				</a>
-				<div class="shopping-cart-menu-wrapper">
-					<?php wc_get_template( 'cart/mini-cart.php', array('list_class' => ''));?>
-				</div>
+					<img src="<?php echo get_stylesheet_directory_uri();?>/lib/images/icon-cart.png">
+				</span>
+			</a>
+			<div class="shopping-cart-menu-wrapper">
+				<?php wc_get_template( 'cart/mini-cart.php', array('list_class' => ''));?>
 			</div>
+		</div>
 	</div>
-		<?php
+	<?php
 	}
 	add_action( 'sh_after_menu', 'sh_woocommerce_get__cart_menu_item__content');
 }
