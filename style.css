@@ -449,12 +449,11 @@ textarea.form-control {
 }
 /* Widget Search */
 .search-form label {
-	width: calc( 100% - 22px );
-	float: left;
+	width: 100%;
 	margin-bottom: 0;
 }
 .search-form input[type=search], .search-form input[type=submit] {
-	height: 22px;
+	height: 29px;
 	outline: none;
 	border: none;
 }
@@ -463,12 +462,16 @@ textarea.form-control {
 	background: none;
 	color: #FFF;
 	font-weight: normal;
+	padding: 4px 39px 4px 10px;
 }
 .search-form input[type=submit] {
-	float: right;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
 	background: url(lib/images/btsearch.png) center center no-repeat;
 	text-indent: -9999px;
-	width: 22px;
+	width: 29px;
 	cursor: pointer;
 }
 .search-form input[type=search]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -484,7 +487,7 @@ textarea.form-control {
 	color: #FFF;
 }
 .sidebar .search-form {
-	padding: 5px 12px;
+	padding: 4px 12px;
 	background: #176fc8;
 	overflow: hidden;
 }
@@ -492,8 +495,11 @@ textarea.form-control {
 	position: absolute;
 	top: 6px;
 	right: 5px;
+	z-index: 9;
 	width: 200px;
-	border-radius: 20px;
+	border-radius: 3px;
+	background: #FFF;
+	overflow: hidden;
 }
 .site-header input[type=search] {color: #333333}
 /* Widget Recent Posts */
@@ -630,6 +636,9 @@ textarea.form-control {
 /* Widget Slider Products */
 .sidebar .content-feature-page, .sidebar .slider-products {
 	padding: 10px 10px 0 10px;
+}
+html .widget_slider_products .slick-carousel.slick-dotted.slick-slider {
+	margin: 0;
 }
 .item-product-slide {
 	overflow: hidden;
@@ -1116,7 +1125,7 @@ embed, iframe, object {max-width: 100%}
 /* Blog Shortcode 1 */
 .sh-blog-shortcode.style-1 .element .entry-thumb {
 	float: left;
-	width: 35%;
+	width: 25%;
 	margin-right: 15px;
 }
 .sh-blog-shortcode.style-1 .element .entry-title {

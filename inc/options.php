@@ -432,6 +432,12 @@ Redux::setSection( $opt_name, array(
     'subsection'       => true,
     'fields'           => array(
         array(
+           'id'         => 'section-singlepost-start',
+           'type'       => 'section',
+           'title'      => __('Setting General', 'shtheme'),
+           'indent'     => true 
+        ),
+        array(
             'id'       => 'display-time-view',
             'type'     => 'switch', 
             'title'    => __('Display time and view post', 'shtheme'),
@@ -456,12 +462,29 @@ Redux::setSection( $opt_name, array(
             'off'      => __('Disable', 'shtheme'),
         ),
         array(
+           'id'         => 'section-relatedpost',
+           'type'       => 'section',
+           'title'      => __('Related Post', 'shtheme'),
+           'indent'     => true 
+        ),
+        array(
             'id'       => 'display-relatedpost',
             'type'     => 'switch', 
-            'title'    => __('Display related products', 'shtheme'),
+            'title'    => __('Display related post', 'shtheme'),
             'default'  => true,
             'on'       => __('Enable', 'shtheme'),
             'off'      => __('Disable', 'shtheme'),
+        ),
+        array(
+            'id'        => 'relatedpost-number-post',
+            'type'      => 'slider',
+            'title'     => __('Enter number post', 'shtheme'),
+            'default'   => 6,
+            'min'       => 1,
+            'step'      => 1,
+            'max'       => 10,
+            'display_value' => 'text',
+            'required'  => array('display-relatedpost','equals',true),
         ),
     )
 ) );

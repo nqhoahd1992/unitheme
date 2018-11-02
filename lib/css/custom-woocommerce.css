@@ -6,29 +6,32 @@
 	position: absolute;
 	bottom: -36px;
 	right: 0;
+    z-index: 9;
 	width: 240px;
 	border-radius: 3px;
 	background: #FFF;
-	padding: 4px 10px;
+    overflow: hidden;
 }
 .site-header input[type=search] {color: #333333}
 .woocommerce-product-search input[type=search] {
+    width: 100%;
 	border: none;
 	background: none;
 	outline-width: 0;
-	color: #FFF;
 	font-weight: normal;
-	width: calc( 100% - 22px );
-	float: left;
 	margin-bottom: 0;
+    padding: 4px 39px 4px 10px;
 }
 .woocommerce-product-search button[type=submit] {
-	float: right;
-	background: url(../images/btsearch.png) center center no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+	background: url(../images/btsearch.png) center center no-repeat, red;
 	text-indent: -9999px;
 	border: none;
-	width: 22px;
-	height: 22px;
+	width: 29px;
+	height: 29px;
 	outline-width: 0;
 	cursor: pointer;
 }

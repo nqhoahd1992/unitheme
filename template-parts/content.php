@@ -56,14 +56,14 @@ postview_set( get_the_ID() );
 			  var js, fjs = d.getElementsByTagName(s)[0];
 			  if (d.getElementById(id)) return;
 			  js = d.createElement(s); js.id = id;
-			  js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.0';
+			  js.src = 'https://connect.facebook.net/<?php _e('en_US','shtheme');?>/sdk.js#xfbml=1&version=v3.2';
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));</script>
 
 			<div class="fb-like" data-href="<?php the_permalink();?>" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
 
 			<!-- Đặt thẻ này vào phần đầu hoặc ngay trước thẻ đóng phần nội dung của bạn. -->
-			<script src="https://apis.google.com/js/platform.js" async defer>{lang: 'vi'}</script>
+			<script src="https://apis.google.com/js/platform.js" async defer>{lang: '<?php _e('en-US','shtheme');?>'}</script>
 			<!-- Đặt thẻ này vào nơi bạn muốn nút chia sẻ kết xuất. -->
 			<div class="g-plus" data-action="share"></div>
 			
@@ -114,6 +114,8 @@ postview_set( get_the_ID() );
 
 	<?php 
 	if( $sh_option['display-relatedpost'] == '1' ) {
+
+		// Get id category
 		global $post;
 		$category = wp_get_object_terms( 
 			$post->ID,
@@ -128,6 +130,8 @@ postview_set( get_the_ID() );
 		} else {
 			$cat_id = end( $category )->term_id;
 		}
+
+		// Loop
 		$the_query = new WP_Query( array(
 			'post_type' 		=> $post->post_type,
             'tax_query' 		=> array(
@@ -137,7 +141,7 @@ postview_set( get_the_ID() );
                     'terms' 	=> $cat_id,
                 )
             ),
-            'posts_per_page' 	=> 6,
+            'posts_per_page' 	=> $sh_option['relatedpost-number-post'],
             'post__not_in' 		=> array( $post->ID ),
         ));
         if( $the_query->have_posts() ) :
