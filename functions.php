@@ -62,7 +62,6 @@ add_action( 'init','sh_load_framework' );
 
 /**
  * Register Widget Area
- *
  */
 function shtheme_widgets_init() {
 	register_sidebar( array(
@@ -137,7 +136,6 @@ add_action( 'widgets_init','sh_register_footer_widget_areas' );
 
 /**
  * Load File
- *
  */
 // Load Plugin Activation File.
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';

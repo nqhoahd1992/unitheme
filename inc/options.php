@@ -816,6 +816,59 @@ Redux::setSection( $opt_name, array(
     'permissions'      => 'administrator',
 ) );
 
+Redux::setSection( $opt_name, array(
+    'title'            => __( 'User Functions', 'shtheme' ),
+    'id'               => 'user-func',
+    'subsection'       => true,
+    'fields'           => array(
+        array(
+            'id'       => 'btn-restrict-user',
+            'type'     => 'switch',
+            'title'    => __('Restrict user', 'shtheme'),
+            'desc'     => __('Restrict user in admin page', 'shtheme'),
+            'default'  => true,
+            'on'       => __('Enable', 'shtheme'),
+            'off'      => __('Disable', 'shtheme'),
+        ),
+        array(
+            'id'       => 'btn-hidden-info',
+            'type'     => 'switch',
+            'title'    => __('Hidden information', 'shtheme'),
+            'desc'     => __('Hidden information dashboard & login page', 'shtheme'),
+            'default'  => false,
+            'on'       => __('Enable', 'shtheme'),
+            'off'      => __('Disable', 'shtheme'),
+        ),
+    )
+) );
+
+Redux::setSection( $opt_name, array(
+    'title'            => __( 'Website Functions', 'shtheme' ),
+    'id'               => 'website-func',
+    'subsection'       => true,
+    'fields'           => array(
+        array(
+            'id'        => 'switch-phonering',
+            'type'      => 'switch',
+            'title'     => __('Phone Ring', 'shtheme'),
+            'default'   => false,
+            'on'        => __('Enable', 'shtheme'),
+            'off'       => __('Disable', 'shtheme'),
+        ),
+        array(
+            'id'        => 'phonering-number',
+            'type'      => 'text',
+            'title'     => __('Enter telephone number', 'shtheme'),
+            'default'   => 10,
+            'min'       => 1,
+            'step'      => 1,
+            'max'       => 30,
+            'display_value' => 'text',
+            'required'  => array('switch-phonering','equals',true),
+        ),
+    )
+) );
+
 if ( class_exists( 'MetaSliderPlugin' ) ) {
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Metaslider', 'shtheme' ),
@@ -838,35 +891,6 @@ if ( class_exists( 'MetaSliderPlugin' ) ) {
     ) );
 }
 
-Redux::setSection( $opt_name, array(
-    'title'            => __( 'Phone Ring', 'shtheme' ),
-    'id'               => 'function-phonering',
-    'subsection'       => true,
-    'fields'           => array(
-        array(
-            'id'        => 'switch-phonering',
-            'type'      => 'switch', 
-            'title'     => __('Status', 'shtheme'),
-            'default'   => false,
-            'on'        => __('Enable', 'shtheme'),
-            'off'       => __('Disable', 'shtheme'),
-        ),
-        array(
-            'id'        => 'phonering-number',
-            'type'      => 'text',
-            'title'     => __('Enter telephone number', 'shtheme'),
-            'default'   => 10,
-            'min'       => 1,
-            'step'      => 1,
-            'max'       => 30,
-            'display_value' => 'text',
-            'required'  => array('switch-phonering','equals',true),
-        ),
-    )
-) );
-
-
-
 if ( class_exists( 'WooCommerce' ) ) {
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Woocommerce', 'shtheme' ),
@@ -875,7 +899,7 @@ if ( class_exists( 'WooCommerce' ) ) {
         'fields'           => array(
             array(
                 'id'       => 'woocommerce-tooltip',
-                'type'     => 'switch', 
+                'type'     => 'switch',
                 'title'    => __('Tooltip', 'shtheme'),
                 'default'  => false,
                 'on'       => __('Enable', 'shtheme'),
@@ -883,7 +907,7 @@ if ( class_exists( 'WooCommerce' ) ) {
             ),
             array(
                 'id'       => 'woocommerce-disable-cart',
-                'type'     => 'switch', 
+                'type'     => 'switch',
                 'title'    => __('Cart', 'shtheme'),
                 'default'  => false,
                 'on'       => __('Enable', 'shtheme'),

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2018-11-02 10:44+0700\n"
+"POT-Creation-Date: 2018-11-03 10:49+0700\n"
 "PO-Revision-Date: 2018-01-18 17:08+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: archive.php:106 author.php:106
+#: archive.php:106
 msgid "The content is being updated"
 msgstr ""
 
@@ -61,32 +61,32 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:69
+#: functions.php:68
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:71 functions.php:81 inc/function-woo.php:18
+#: functions.php:70 functions.php:80 inc/function-woo.php:18
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:79
+#: functions.php:78
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: functions.php:98
+#: functions.php:97
 msgid "Top Header"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:99
 msgid "Top Header widget area"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:122
 #, php-format
 msgid "Footer %d"
 msgstr ""
 
-#: functions.php:125
+#: functions.php:124
 #, php-format
 msgid "Footer %d widget area"
 msgstr ""
@@ -406,7 +406,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:2647 inc/options.php:849
+#: inc/class-tgm-plugin-activation.php:2647
 msgid "Status"
 msgstr ""
 
@@ -669,8 +669,8 @@ msgstr ""
 #: inc/options.php:502 inc/options.php:527 inc/options.php:535
 #: inc/options.php:571 inc/options.php:593 inc/options.php:614
 #: inc/options.php:645 inc/options.php:654 inc/options.php:663
-#: inc/options.php:684 inc/options.php:851 inc/options.php:881
-#: inc/options.php:889
+#: inc/options.php:684 inc/options.php:830 inc/options.php:839
+#: inc/options.php:855 inc/options.php:905 inc/options.php:913
 msgid "Enable"
 msgstr ""
 
@@ -679,8 +679,8 @@ msgstr ""
 #: inc/options.php:503 inc/options.php:528 inc/options.php:536
 #: inc/options.php:572 inc/options.php:594 inc/options.php:615
 #: inc/options.php:646 inc/options.php:655 inc/options.php:664
-#: inc/options.php:685 inc/options.php:852 inc/options.php:882
-#: inc/options.php:890
+#: inc/options.php:685 inc/options.php:831 inc/options.php:840
+#: inc/options.php:856 inc/options.php:906 inc/options.php:914
 msgid "Disable"
 msgstr ""
 
@@ -919,39 +919,63 @@ msgstr ""
 msgid "3B Developer"
 msgstr ""
 
-#: inc/options.php:821
-msgid "Metaslider"
+#: inc/options.php:820
+msgid "User Functions"
 msgstr ""
 
-#: inc/options.php:829
-msgid "Select slider"
+#: inc/options.php:827
+msgid "Restrict user"
 msgstr ""
 
-#: inc/options.php:842
+#: inc/options.php:828
+msgid "Restrict user in admin page"
+msgstr ""
+
+#: inc/options.php:836
+msgid "Hidden information"
+msgstr ""
+
+#: inc/options.php:837
+msgid "Hidden information dashboard & login page"
+msgstr ""
+
+#: inc/options.php:846
+msgid "Website Functions"
+msgstr ""
+
+#: inc/options.php:853
 msgid "Phone Ring"
 msgstr ""
 
-#: inc/options.php:857
+#: inc/options.php:861
 msgid "Enter telephone number"
 msgstr ""
 
-#: inc/options.php:872
+#: inc/options.php:874
+msgid "Metaslider"
+msgstr ""
+
+#: inc/options.php:882
+msgid "Select slider"
+msgstr ""
+
+#: inc/options.php:896
 msgid "Woocommerce"
 msgstr ""
 
-#: inc/options.php:879
+#: inc/options.php:903
 msgid "Tooltip"
 msgstr ""
 
-#: inc/options.php:887
+#: inc/options.php:911
 msgid "Cart"
 msgstr ""
 
-#: inc/options.php:998
+#: inc/options.php:1022
 msgid "Section via hook"
 msgstr ""
 
-#: inc/options.php:999
+#: inc/options.php:1023
 msgid ""
 "<p class=\"description\">This is a section created by adding a filter to the "
 "sections array. Can be used by child themes to add/remove sections from the "
@@ -1660,7 +1684,7 @@ msgstr ""
 msgid "Previous Post"
 msgstr ""
 
-#: template-parts/content.php:145
+#: template-parts/content.php:149
 msgid "Related posts"
 msgstr ""
 
