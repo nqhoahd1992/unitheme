@@ -848,13 +848,11 @@ Redux::setSection( $opt_name, array(
     'subsection'       => true,
     'fields'           => array(
         array(
-            'id'        => 'switch-phonering',
-            'type'      => 'switch',
-            'title'     => __('Phone Ring', 'shtheme'),
-            'default'   => false,
-            'on'        => __('Enable', 'shtheme'),
-            'off'       => __('Disable', 'shtheme'),
-        ),
+           'id'         => 'section-website-func-start',
+           'type'       => 'section',
+           'title'      => __('Plugin Chat', 'shtheme'),
+           'indent'     => true,
+       ),
         array(
             'id'        => 'phonering-number',
             'type'      => 'text',
@@ -864,7 +862,21 @@ Redux::setSection( $opt_name, array(
             'step'      => 1,
             'max'       => 30,
             'display_value' => 'text',
-            'required'  => array('switch-phonering','equals',true),
+        ),
+        array(
+            'id'        => 'zalo-number',
+            'type'      => 'text',
+            'title'     => __('Enter zalo number', 'shtheme'),
+            'default'   => 10,
+            'min'       => 1,
+            'step'      => 1,
+            'max'       => 30,
+            'display_value' => 'text',
+        ),
+        array(
+            'id'        => 'section-website-func-end',
+            'type'      => 'section',
+            'indent'    => false,
         ),
     )
 ) );

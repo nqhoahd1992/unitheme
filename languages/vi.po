@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2018-11-03 10:49+0700\n"
-"PO-Revision-Date: 2018-11-03 10:52+0700\n"
+"POT-Creation-Date: 2018-11-22 16:53+0700\n"
+"PO-Revision-Date: 2018-11-22 16:53+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -671,7 +671,7 @@ msgstr "Bật Page Title Bar"
 #: inc/options.php:571 inc/options.php:593 inc/options.php:614
 #: inc/options.php:645 inc/options.php:654 inc/options.php:663
 #: inc/options.php:684 inc/options.php:830 inc/options.php:839
-#: inc/options.php:855 inc/options.php:905 inc/options.php:913
+#: inc/options.php:917 inc/options.php:925
 msgid "Enable"
 msgstr "Bật"
 
@@ -681,7 +681,7 @@ msgstr "Bật"
 #: inc/options.php:572 inc/options.php:594 inc/options.php:615
 #: inc/options.php:646 inc/options.php:655 inc/options.php:664
 #: inc/options.php:685 inc/options.php:831 inc/options.php:840
-#: inc/options.php:856 inc/options.php:906 inc/options.php:914
+#: inc/options.php:918 inc/options.php:926
 msgid "Disable"
 msgstr "Tắt"
 
@@ -945,38 +945,42 @@ msgid "Website Functions"
 msgstr "Chức năng website"
 
 #: inc/options.php:853
-msgid "Phone Ring"
-msgstr "Điện thoại rung"
+msgid "Plugin Chat"
+msgstr "Plugin Chat"
 
-#: inc/options.php:861
+#: inc/options.php:859
 msgid "Enter telephone number"
 msgstr "Nhập số điện thoại"
 
-#: inc/options.php:874
+#: inc/options.php:869
+msgid "Enter zalo number"
+msgstr "Nhập số Zalo"
+
+#: inc/options.php:886
 msgid "Metaslider"
 msgstr "Metaslider"
 
-#: inc/options.php:882
+#: inc/options.php:894
 msgid "Select slider"
 msgstr "Chọn slide"
 
-#: inc/options.php:896
+#: inc/options.php:908
 msgid "Woocommerce"
 msgstr "Woocommerce"
 
-#: inc/options.php:903
+#: inc/options.php:915
 msgid "Tooltip"
 msgstr "Tooltip"
 
-#: inc/options.php:911
+#: inc/options.php:923
 msgid "Cart"
 msgstr "Giỏ hàng"
 
-#: inc/options.php:1022
+#: inc/options.php:1034
 msgid "Section via hook"
 msgstr "Section via hook"
 
-#: inc/options.php:1023
+#: inc/options.php:1035
 msgid ""
 "<p class=\"description\">This is a section created by adding a filter to the "
 "sections array. Can be used by child themes to add/remove sections from the "
@@ -1775,6 +1779,9 @@ msgstr "thietkeweb3b.com"
 #. Author of the plugin/theme
 msgid "Quang Hoa"
 msgstr "Quang Hoa"
+
+#~ msgid "Phone Ring"
+#~ msgstr "Điện thoại rung"
 
 #~ msgid "Category ID"
 #~ msgstr "ID chuyên mục"

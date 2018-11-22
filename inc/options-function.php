@@ -4,7 +4,7 @@
  */
 function insert_callring(){
 	global $sh_option;
-	if( $sh_option['switch-phonering'] && $sh_option['phonering-number'] ) {
+	if( $sh_option['phonering-number'] ) {
 		wp_enqueue_style( 'phonering-style' );
 		echo '<div class="quick-alo-phone quick-alo-green quick-alo-show d-none d-xl-block" id="quick-alo-phoneIcon">';
 			echo '<a href="tel:'. $sh_option['phonering-number'] .'" title="'. __('Call now','shtheme') .'">';
@@ -15,6 +15,10 @@ function insert_callring(){
 			echo '</a>';
 		echo '</div>';
 		echo '<div class="alo-floating d-xl-none"><a href="tel:'. $sh_option['phonering-number'] .'"><i class="fas fa-phone"></i> <strong>'. $sh_option['phonering-number'] .'</strong></a></div>';
+	}
+
+	if( $sh_option['zalo-number'] ) {
+		echo '<div class="alo-floating alo-floating-zalo"><a title="Chat Zalo" rel="nofollow" target="_blank" href="https://zalo.me/'. $sh_option['zalo-number'] .'"><strong>Chat Zalo</strong></a></div>';
 	}
 }
 add_action('sh_after_footer','insert_callring');

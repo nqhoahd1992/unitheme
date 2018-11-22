@@ -311,7 +311,8 @@
     text-align: center;
     height: 40px;
     line-height: 40px;
-    font-size: 16px;
+    font-size: 14px;
+    text-shadow: 1px 1px 0 #000;
     border-radius: 40px;
     cursor: pointer;
     padding-right: 5px;
@@ -324,4 +325,10 @@
 }
 .alo-floating a {
     color: #FFF;
+}
+.alo-floating-zalo {
+    bottom: 60px;
+    padding-left: 45px;
+    background: url(../images/icon-zalo.png) 8px center no-repeat, #009dff;
+    background-size: 30px auto;
 }
