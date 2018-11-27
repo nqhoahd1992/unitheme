@@ -4,8 +4,11 @@
  */
 function insert_callring(){
 	global $sh_option;
-	if( $sh_option['phonering-number'] ) {
+	if( $sh_option['phonering-number'] || $sh_option['phonering-number'] ) {
 		wp_enqueue_style( 'phonering-style' );
+	}
+
+	if( $sh_option['phonering-number'] ) {
 		echo '<div class="quick-alo-phone quick-alo-green quick-alo-show d-none d-xl-block" id="quick-alo-phoneIcon">';
 			echo '<a href="tel:'. $sh_option['phonering-number'] .'" title="'. __('Call now','shtheme') .'">';
 				echo '<div class="quick-alo-ph-circle"></div>';

@@ -867,7 +867,6 @@ Redux::setSection( $opt_name, array(
             'id'        => 'zalo-number',
             'type'      => 'text',
             'title'     => __('Enter zalo number', 'shtheme'),
-            'default'   => 10,
             'min'       => 1,
             'step'      => 1,
             'max'       => 30,
