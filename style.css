@@ -366,19 +366,20 @@ textarea.form-control {
 	padding: 10px 10px;
 	margin: 0;
 }
-.sidebar .widget_nav_menu > div, .widget_supports .list-supporter, 
-.sidebar .content-feature-page, .sidebar .slider-products,
-.sidebar .list-post-item, .sidebar .widget_text .textwidget {
-	border: 1px solid #cccccc;
-	border-top: none;
-}
 .sidebar .widget ul {
 	padding: 0;
+}
+.sidebar .widget_nav_menu > div, .widget_supports .list-supporter, 
+.sidebar .content-feature-page, .sidebar .slider-products,
+.sidebar .list-post-item, .sidebar .widget_text .textwidget,
+.sidebar .widget_recently_viewed_products .product_list_widget {
+	border: 1px solid #cccccc;
+	border-top: none;
 }
 .sidebar .widget_list_posts .list-post-item, 
 .sidebar .widget_list_view_posts .list-post-item,
 .sidebar .widget .content-feature-page,
-.sidebar .textwidget {
+.sidebar .textwidget, .sidebar .widget_recently_viewed_products .product_list_widget {
 	padding: 10px;
 }
 .sidebar .widget:not(.widget_slider_products) ul {
@@ -387,6 +388,30 @@ textarea.form-control {
 .sidebar .widget:not(.widget_slider_products) ul li {
 	display: block;
 }
+
+.woocommerce ul.cart_list li a span, .woocommerce ul.product_list_widget li a span {
+	color: #333333;
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.woocommerce ul.cart_list li img, .woocommerce ul.product_list_widget li img {
+	width: 100px;
+	float: left;
+	margin-right: 10px;
+	margin-left: 0;
+}
+.woocommerce ul.product_list_widget .woocommerce-Price-amount {
+    font-weight: bold;
+    color: #ff0000;
+    margin: 0;
+}
+
 /* Widget Custom Menu */
 .sidebar .widget_nav_menu ul li {
 	position: relative;
@@ -828,10 +853,10 @@ html .slick-carousel.slick-dotted.slick-slider {
     display: inline-block;
     height: 30px;
     width: 30px;
+    line-height: 30px;
     color: #333;
     background: #fff;
     box-shadow: 0 3px 5px #616161;
-    line-height: 30px;
     border-radius: 50%;
     font-size: 16px;
     text-align: center;
@@ -845,6 +870,20 @@ html .slick-carousel.slick-dotted.slick-slider {
 .widget_social .icon_pinterest a {color: #bd081c}
 .widget_social .icon_instagram a {color: #e4405f}
 .widget_social ul li a:hover {transform: translateY(-5px)}
+/* Widget Tag Cloud */
+.tagcloud a {
+    font-size: 14px !important;
+    display: inline-block;
+    border: 1px solid #337ab7;
+    margin: 0 3px 5px 0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #337ab7;
+}
+.tagcloud a:hover {
+	background: #337ab7;
+	color: #FFF;
+}
 /* Count Per Day */
 .sidebar .cpd {
 	padding: 5px 10px;
@@ -1345,9 +1384,6 @@ embed, iframe, object {max-width: 100%}
 	-webkit-transition: all 0.25s ease 0s;
 	-moz-transition: all 0.25s ease 0s;
 	transition: all 0.25s ease 0s;
-}
-#mobilenav ul ul .arrow {
-	height: 45px;
 }
 #mobilenav .arrow:before {
 	position: absolute;

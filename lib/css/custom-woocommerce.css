@@ -198,11 +198,8 @@ button.loading, input[type='button'].loading, input[type='reset'].loading, input
     width: 250px;
     z-index: 99;
     background: #fff;
-    max-height: calc(100vh - 200px);
-    overflow-y: auto;
-    -webkit-box-shadow: 0 4px 7px 0 rgba(50,50,50,0.2);
-    -moz-box-shadow: 0 4px 7px 0 rgba(50,50,50,0.2);
-    box-shadow: 0 4px 7px 0 rgba(50,50,50,0.2);
+    box-shadow: 1px 1px 15px rgba(0,0,0,0.15);
+    border: 2px solid #ddd;
     transition: all 0.3s cubic-bezier(0.7, 1, 0.7, 1);
     visibility: hidden;
     opacity: 0;
@@ -210,6 +207,32 @@ button.loading, input[type='button'].loading, input[type='reset'].loading, input
 .shopping-cart:hover .shopping-cart-menu-wrapper {
     visibility: visible;
     opacity: 1;
+}
+.shopping-cart .shopping-cart-menu-wrapper:after, 
+.shopping-cart .shopping-cart-menu-wrapper:before {
+    top: -22px;
+    z-index: 10;
+    right: 15px;
+    border: solid transparent;
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.shopping-cart .shopping-cart-menu-wrapper:before {
+    z-index: -999;
+    border-bottom-color: #ddd;
+    border-width: 11px;
+    margin-left: -11px;
+    right: 12px;
+}
+.shopping-cart .shopping-cart-menu-wrapper:after {
+    top: -16px;
+    border-color: rgba(221,221,221,0);
+    border-bottom-color: #fff;
+    border-width: 8px;
+    margin-left: -8px;
 }
 .shopping-cart .shopping-cart-menu-wrapper p {
     clear: both;
