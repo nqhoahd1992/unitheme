@@ -3,10 +3,11 @@ $css_class = '';
 extract(shortcode_atts(array(
     // 'style'             => '1',
     'posts_per_page'        => '10',
-    'items_desktop_large'   => '3',
-    'items_desktop'         => '2',
-    'items_tablets'         => '2',
-    'items_mobile'          => '1',
+    'item'                  => '3',
+    'item_lg'               => '2',
+    'item_md'               => '2',
+    'item_sm'               => '1',
+    'item_mb'               => '1',
     'number_row'            => '1',
     'image_size'            => 'thumbnail',
     'hide_meta'             => '0',
@@ -50,16 +51,17 @@ if ( $the_query->have_posts() ) {
     echo '<div class="wtb_blog_slider_container wpb_content_element '. $css_class .'">';
         echo '<div class="sh-blog-slider-shortcode '. $el_class .'">';
 
-            echo '<div class="slick-carousel blog-slider" data-item="'. $items_desktop_large .'" data-item_md="'. $items_desktop .'" data-item_sm="'. $items_tablets .'" data-item_mb="'. $items_mobile .'" data-row="'. $number_row .'" data-dots="'. $data_dots .'" data-arrows="'. $data_arrows .'" data-vertical="false">';
+            echo '<div class="slick-carousel blog-slider" data-item="'. $item .'" data-item_lg="'. $item_lg .'" data-item_md="'. $item_md .'" data-item_sm="'. $item_sm .'" data-item_mb="'. $item_mb .'" data-row="'. $number_row .'" data-dots="'. $data_dots .'" data-arrows="'. $data_arrows .'" data-vertical="false">';
                 
-                while ( $the_query->have_posts() ) { $the_query->the_post();
+                while ( $the_query->have_posts() ) {
+                    $the_query->the_post();
                     echo '<div class="blog-slider__item">';
                         echo '<div class="blog-slider__item__inner">';
                             echo '<div class="entry-thumb">';
                                 echo '<a class="d-block" href="'. get_the_permalink() .'" title="'. get_the_title() .'">';
                                     echo '<div class="blog-slider__item__hover"><i class="fas fa-link"></i></div>';
                                     if( has_post_thumbnail() ) : 
-                                        echo '<img data-lazy="'. get_the_post_thumbnail_url( get_the_ID(), $image_size ) .'"/>';
+                                        echo '<img alt="'. get_the_title() .'" data-lazy="'. get_the_post_thumbnail_url( get_the_ID(), $image_size ) .'"/>';
                                     endif;
                                 echo '</a>';
                             echo '</div>';

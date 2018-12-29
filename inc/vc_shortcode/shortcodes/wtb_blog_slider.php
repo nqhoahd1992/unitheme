@@ -33,11 +33,11 @@ function wtb_load_blog_slider_shortcode() {
                 'admin_label'   => true
             ),
             array(
-                "type" => "dropdown",
-                "heading" => esc_html__("Number Column on Desktop Large (> 1200px)", 'shtheme'),
-                "param_name" => "items_desktop_large",
-                'std' => 3,
-                'value' => array(
+                "type"          => "dropdown",
+                "heading"       => esc_html__("Number Column on Extra large screen (>= 1200px)", 'shtheme'),
+                "param_name"    => "item",
+                'std'           => 3,
+                'value'         => array(
                     esc_html__('4', 'shtheme') => 4,
                     esc_html__('3', 'shtheme') => 3,
                     esc_html__('2', 'shtheme') => 2,
@@ -45,11 +45,11 @@ function wtb_load_blog_slider_shortcode() {
                 ),
             ),
             array(
-                "type" => "dropdown",
-                "heading" => esc_html__("Number Column on Desktop", 'shtheme'),
-                "param_name" => "items_desktop",
-                'std' => 2,
-                'value' => array(
+                "type"          => "dropdown",
+                "heading"       => esc_html__("Number Column on Large screen (992px - 1199px)", 'shtheme'),
+                "param_name"    => "item_lg",
+                'std'           => 2,
+                'value'         => array(
                     esc_html__('4', 'shtheme') => 4,
                     esc_html__('3', 'shtheme') => 3,
                     esc_html__('2', 'shtheme') => 2,
@@ -57,11 +57,11 @@ function wtb_load_blog_slider_shortcode() {
                 ),
             ),
             array(
-                "type" => "dropdown",
-                "heading" => __("Number Column on Tablets", "shtheme"),
-                "param_name" => "items_tablets",
-                'std' => 2,
-                'value' => array(
+                "type"          => "dropdown",
+                "heading"       => esc_html__("Number Column on Medium screen (769px - 991px)", 'shtheme'),
+                "param_name"    => "item_md",
+                'std'           => 2,
+                'value'         => array(
                     esc_html__('4', 'shtheme') => 4,
                     esc_html__('3', 'shtheme') => 3,
                     esc_html__('2', 'shtheme') => 2,
@@ -69,11 +69,11 @@ function wtb_load_blog_slider_shortcode() {
                 ),
             ),
             array(
-                "type" => "dropdown",
-                "heading" => __("Number Column on Mobile", "shtheme"),
-                "param_name" => "items_mobile",
-                'std' => 1,
-                'value' => array(
+                "type"          => "dropdown",
+                "heading"       => __("Number Column on Small screen (577px - 767px)", "shtheme"),
+                "param_name"    => "item_sm",
+                'std'           => 2,
+                'value'         => array(
                     esc_html__('4', 'shtheme') => 4,
                     esc_html__('3', 'shtheme') => 3,
                     esc_html__('2', 'shtheme') => 2,
@@ -81,11 +81,23 @@ function wtb_load_blog_slider_shortcode() {
                 ),
             ),
             array(
-                "type" => "dropdown",
-                "heading" => __("Number row", "shtheme"),
-                "param_name" => "number_row",
-                'std' => 1,
-                'value' => array(
+                "type"          => "dropdown",
+                "heading"       => __("Number Column on Extra small screen (< 576px)", "shtheme"),
+                "param_name"    => "item_mb",
+                'std'           => 1,
+                'value'         => array(
+                    esc_html__('4', 'shtheme') => 4,
+                    esc_html__('3', 'shtheme') => 3,
+                    esc_html__('2', 'shtheme') => 2,
+                    esc_html__('1', 'shtheme') => 1,
+                ),
+            ),
+            array(
+                "type"          => "dropdown",
+                "heading"       => __("Number row", "shtheme"),
+                "param_name"    => "number_row",
+                'std'           => 1,
+                'value'         => array(
                     esc_html__('4', 'shtheme') => 4,
                     esc_html__('3', 'shtheme') => 3,
                     esc_html__('2', 'shtheme') => 2,

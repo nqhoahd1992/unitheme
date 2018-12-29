@@ -26,6 +26,7 @@ class Gtid_Products_Vertical_Widget extends WP_Widget {
         <div class="slider-products">
             <ul class="slick-carousel list-products" 
                 data-item="<?php echo $instance['numpro'];?>" 
+                data-item_lg="3" 
                 data-item_md="2" 
                 data-item_sm="2" 
                 data-item_mb="1" 

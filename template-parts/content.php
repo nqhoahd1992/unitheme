@@ -28,7 +28,7 @@ postview_set( get_the_ID() );
 	<?php if( $sh_option['display-time-view'] == '1' ) : ?>
 		<div class="entry-meta">
 			<span class="entry-time"><i class="far fa-calendar-alt"></i> <?php the_time('g:i a d/m/Y') ?></span>
-			<span class="entry-view"><i class="fas fa-eye"></i> <?php echo postview_get(get_the_ID());?></span>
+			<span class="entry-view"><i class="fas fa-eye"></i> <?php echo postview_get( get_the_ID() );?></span>
 		</div>
 	<?php endif; ?>
 

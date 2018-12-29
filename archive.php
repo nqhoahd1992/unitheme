@@ -103,7 +103,7 @@ get_header(); ?>
 				
 			else :
 
-				echo '<div class="mb-4">' . __('The content is being updated','shtheme') . '</div>';
+				echo '<div class="mb-4 alert alert-info">' . __('The content is being updated','shtheme') . '</div>';
 				
 			endif; ?>
 
