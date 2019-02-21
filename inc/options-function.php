@@ -27,6 +27,76 @@ function insert_callring(){
 add_action('sh_after_footer','insert_callring');
 
 /**
+ * Display Slider
+ */
+function create_slide_carousel(){
+	global $sh_option;
+	if( $sh_option['home-slide-switch'] && is_front_page() ) {
+		$slider_autoplay = $slider_pause = $class_fade = '';
+		if( $sh_option['slider-autoplay'] ) {
+			$slider_autoplay = 'carousel';
+		}
+		if( $sh_option['slider-interval'] ) {
+			$slider_interval = $sh_option['slider-interval'];
+		}
+		if( $sh_option['slider-pause'] ) {
+			$slider_pause = 'hover';
+		}
+		if( $sh_option['slider-animation'] ) {
+			if( $sh_option['slider-animation'] == '1' ) {
+				$class_carousel = '';
+			} else {
+				$class_carousel = 'carousel-fade';
+			}
+		}
+		echo '<div class="slider">';
+			$home_slide = $sh_option['home-slide'];
+			echo '<div id="carouselMainSlide" class="carousel slide '. $class_carousel .'" data-ride="'. $slider_autoplay .'" data-interval="'. $slider_interval .'" data-pause="'. $slider_pause .'">';
+				echo '<ol class="carousel-indicators">';
+					$i = 0;
+					foreach ( $home_slide as $key => $value ) {
+						$class = ( $i == 0 ) ? ' active' : '';
+						echo '<li data-target="#carouselMainSlide" data-slide-to="'. $i .'" class="'. $class .'"></li>';
+						$i++;
+					}
+				echo '</ol>';
+				echo '<div class="carousel-inner">';
+					$i = 0;
+					foreach ( $home_slide as $key => $value ) {
+						$class = ( $i == 0 ) ? ' active' : '';
+						echo '<div class="carousel-item '. $class .'">';
+							if( $value['url'] ) {
+								echo '<a href="'. $value['url'] .'">';
+									echo '<img class="d-block w-100" src="'. $value['image'] .'" alt="'. $value['title'] .'">';
+								echo '</a>';
+							} else {
+								echo '<img class="d-block w-100" src="'. $value['image'] .'" alt="'. $value['title'] .'">';
+							}
+							if( $value['title'] || $value['description'] ) {
+								echo '<div class="carousel-caption d-none d-md-block">';
+									echo '<h3>'. $value['title'] .'</h3>';
+									echo '<p>'. $value['description'] .'</p>';
+								echo '</div>';
+							}
+						echo '</div>';
+						$i++;
+					}
+				echo '</div>';
+				echo '<a class="carousel-control-prev" href="#carouselMainSlide" role="button" data-slide="prev">';
+					echo '<span class="carousel-control-prev-icon" aria-hidden="true"></span>';
+					echo '<span class="sr-only">Previous</span>';
+				echo '</a>';
+				echo '<a class="carousel-control-next" href="#carouselMainSlide" role="button" data-slide="next">';
+					echo '<span class="carousel-control-next-icon" aria-hidden="true"></span>';
+					echo '<span class="sr-only">Next</span>';
+				echo '</a>';
+			echo '</div>';
+		echo '</div>';
+	}
+}
+add_action('before_loop_main_content','create_slide_carousel');
+
+/**
  * Display Metaslider
  */
 function insert_metaslide(){

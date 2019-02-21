@@ -187,6 +187,28 @@ if ( ! function_exists( 'shtheme_pagination' ) ) {
 }
 
 /**
+ * Custom Pagination
+**/
+if ( ! function_exists( 'shtheme_custom_pagination' ) ) {
+	function shtheme_custom_pagination( $custom_query ) {
+		$total_pages = $custom_query->max_num_pages;
+		$big = 999999999;
+		echo '<div class="page_nav">';
+			if ($total_pages > 1){
+		        $current_page = max(1, get_query_var('paged'));
+
+		        echo paginate_links(array(
+		            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		            'format' => '?paged=%#%',
+		            'current' => $current_page,
+		            'total' => $total_pages,
+		        ));
+		    }
+		echo '</div>';
+	}
+}
+
+/**
  * Count view post
 **/
 function postview_set( $postID ) {

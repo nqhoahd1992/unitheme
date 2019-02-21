@@ -304,6 +304,81 @@ Redux::setSection( $opt_name, array(
     )
 ) );
 
+// -> Slider Settings Fields
+Redux::setSection( $opt_name, array(
+    'title'            => __( 'Slider', 'shtheme' ),
+    'id'               => 'slider-main',
+    'icon'             => 'el el-picture'
+) );
+
+Redux::setSection( $opt_name, array(
+    'title'            => __( 'Gallery Slide', 'shtheme' ),
+    'id'               => 'slider-gallery',
+    'subsection'       => true,
+    'fields'           => array(
+        array(
+            'id'        => 'home-slide-switch',
+            'type'      => 'switch', 
+            'title'     => __('Enable gallery slider', 'shtheme'),
+            'default'   => false,
+            'on'        => __('Enable', 'shtheme'),
+            'off'       => __('Disable', 'shtheme'),
+        ),
+        array(
+            'id'         => 'home-slide',
+            'type'       => 'slides',
+            'title'      => __('Photo list', 'shtheme'),
+            'required'   => array('home-slide-switch','equals',true),
+        ),
+    )
+) );
+
+Redux::setSection( $opt_name, array(
+    'title'            	=> __( 'Advanced Options', 'shtheme' ),
+    'id'               	=> 'slider-advanced',
+    'subsection'       	=> true,
+    'fields'           	=> array(
+		array(
+            'id'       	=> 'slider-autoplay',
+            'type'     	=> 'switch', 
+            'title'    	=> __('Slider autoplay', 'shtheme'),
+            'default'  	=> true,
+            'on'       	=> __('Enable', 'shtheme'),
+            'off'      	=> __('Disable', 'shtheme'),
+        ),
+        array(
+		    'id' 		=> 'slider-interval',
+		    'type' 		=> 'slider',
+		    'title' 	=> __('Slider interval', 'shtheme'),
+		    'default' 	=> 3000,
+		    'min' 		=> 1000,
+		    'step' 		=> 500,
+		    'max' 		=> 10000,
+		    'display_value' => 'text',
+		    'required'  => array('slider-autoplay','equals',true),
+		),
+        array(
+            'id'       	=> 'slider-pause',
+            'type'     	=> 'switch', 
+            'title'    	=> __('Slider hover pause', 'shtheme'),
+            'default'  	=> false,
+            'on'       	=> __('Enable', 'shtheme'),
+            'off'      	=> __('Disable', 'shtheme'),
+            'required'  => array('slider-autoplay','equals',true),
+        ),
+        array(
+		    'id'       	=> 'slider-animation',
+		    'type'     	=> 'button_set',
+		    'title'    	=> __('Slider animate', 'shtheme'),
+		    'options' 	=> array(
+		        '1' => 'Slide', 
+		        '2' => 'Fade',
+		     ), 
+		    'default' => '1'
+		),
+    )
+) );
+
 // -> Homepage Settings Fields
 Redux::setSection( $opt_name, array(
     'title'            => __( 'Home Page', 'shtheme' ),

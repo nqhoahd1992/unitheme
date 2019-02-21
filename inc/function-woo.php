@@ -80,7 +80,7 @@ function woocommerce_category_image($products) {
     $arr = wp_get_attachment_image_src( $thumbnail_id, 'full' );
     $image = $arr[0];
     if ( $image ) {
-	    echo '<div class="product-cat__featured-image mb-5"><img src="' . $image . '" alt="" /></div>';
+	    echo '<img src="' . $image . '" alt="" />';
 	}
 }
 

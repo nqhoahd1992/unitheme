@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2018-11-22 16:53+0700\n"
-"PO-Revision-Date: 2018-11-22 16:53+0700\n"
+"POT-Creation-Date: 2019-02-21 16:00+0700\n"
+"PO-Revision-Date: 2019-02-21 16:01+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -549,7 +549,7 @@ msgstr "Cài đặt gói mở rộng %1$s (%2$d/%3$d)"
 msgid "Shop Sidebar"
 msgstr "Shop Sidebar"
 
-#: inc/function-woo.php:166 inc/options.php:765
+#: inc/function-woo.php:166 inc/options.php:840
 msgid "Information"
 msgstr "Thông tin"
 
@@ -601,7 +601,7 @@ msgstr "Sản phẩm"
 msgid "Unauthorized access is denied!"
 msgstr "Truy cập bị từ chối!"
 
-#: inc/functions/init.php:211 inc/functions/init.php:213
+#: inc/functions/init.php:233 inc/functions/init.php:235
 msgid "views"
 msgstr "lượt xem"
 
@@ -609,7 +609,7 @@ msgstr "lượt xem"
 msgid "MENU"
 msgstr "MENU"
 
-#: inc/options-function.php:10 inc/options-function.php:14
+#: inc/options-function.php:13 inc/options-function.php:17
 msgid "Call now"
 msgstr "Gọi ngay"
 
@@ -665,23 +665,25 @@ msgstr "Chọn giao diện Header"
 msgid "Enable Page Title Bar"
 msgstr "Bật Page Title Bar"
 
-#: inc/options.php:269 inc/options.php:277 inc/options.php:445
-#: inc/options.php:453 inc/options.php:461 inc/options.php:475
-#: inc/options.php:502 inc/options.php:527 inc/options.php:535
-#: inc/options.php:571 inc/options.php:593 inc/options.php:614
-#: inc/options.php:645 inc/options.php:654 inc/options.php:663
-#: inc/options.php:684 inc/options.php:830 inc/options.php:839
-#: inc/options.php:917 inc/options.php:925
+#: inc/options.php:269 inc/options.php:277 inc/options.php:324
+#: inc/options.php:346 inc/options.php:365 inc/options.php:520
+#: inc/options.php:528 inc/options.php:536 inc/options.php:550
+#: inc/options.php:577 inc/options.php:602 inc/options.php:610
+#: inc/options.php:646 inc/options.php:668 inc/options.php:689
+#: inc/options.php:720 inc/options.php:729 inc/options.php:738
+#: inc/options.php:759 inc/options.php:905 inc/options.php:914
+#: inc/options.php:991 inc/options.php:999
 msgid "Enable"
 msgstr "Bật"
 
-#: inc/options.php:270 inc/options.php:278 inc/options.php:446
-#: inc/options.php:454 inc/options.php:462 inc/options.php:476
-#: inc/options.php:503 inc/options.php:528 inc/options.php:536
-#: inc/options.php:572 inc/options.php:594 inc/options.php:615
-#: inc/options.php:646 inc/options.php:655 inc/options.php:664
-#: inc/options.php:685 inc/options.php:831 inc/options.php:840
-#: inc/options.php:918 inc/options.php:926
+#: inc/options.php:270 inc/options.php:278 inc/options.php:325
+#: inc/options.php:347 inc/options.php:366 inc/options.php:521
+#: inc/options.php:529 inc/options.php:537 inc/options.php:551
+#: inc/options.php:578 inc/options.php:603 inc/options.php:611
+#: inc/options.php:647 inc/options.php:669 inc/options.php:690
+#: inc/options.php:721 inc/options.php:730 inc/options.php:739
+#: inc/options.php:760 inc/options.php:906 inc/options.php:915
+#: inc/options.php:992 inc/options.php:1000
 msgid "Disable"
 msgstr "Tắt"
 
@@ -702,285 +704,321 @@ msgid "Copyright"
 msgstr "Copyright"
 
 #: inc/options.php:309
+msgid "Slider"
+msgstr "Slider ảnh"
+
+#: inc/options.php:315
+msgid "Gallery Slide"
+msgstr "Thư viện ảnh"
+
+#: inc/options.php:322
+msgid "Enable gallery slider"
+msgstr "Kích hoạt slider thư viện ảnh"
+
+#: inc/options.php:330
+msgid "Photo list"
+msgstr "Danh sách ảnh"
+
+#: inc/options.php:337
+msgid "Advanced Options"
+msgstr "Cài đặt nâng cao"
+
+#: inc/options.php:344
+msgid "Slider autoplay"
+msgstr "Tự động chạy"
+
+#: inc/options.php:352
+msgid "Slider interval"
+msgstr "Thời gian chuyển slide"
+
+#: inc/options.php:363
+msgid "Slider hover pause"
+msgstr "Dừng slider khi hover chuột"
+
+#: inc/options.php:372
+msgid "Slider animate"
+msgstr "Hiệu ứng slider"
+
+#: inc/options.php:384
 msgid "Home Page"
 msgstr "Trang chủ"
 
-#: inc/options.php:315
+#: inc/options.php:390
 msgid "News"
 msgstr "Tin tức"
 
-#: inc/options.php:323 inc/options.php:390
+#: inc/options.php:398 inc/options.php:465
 msgid "Select categories"
 msgstr "Chọn các danh mục"
 
-#: inc/options.php:333 inc/options.php:481
+#: inc/options.php:408 inc/options.php:556
 msgid "Enter number post"
 msgstr "Nhập số bài viết"
 
-#: inc/options.php:343
+#: inc/options.php:418
 msgid "Blog Layout"
 msgstr "Chọn giao diện Blog"
 
-#: inc/options.php:382 inc/vc_shortcode/woo_shortcodes/wtb_product.php:21
+#: inc/options.php:457 inc/vc_shortcode/woo_shortcodes/wtb_product.php:21
 msgid "Product"
 msgstr "Sản phẩm"
 
-#: inc/options.php:400
+#: inc/options.php:475
 msgid "Enter number product"
 msgstr "Nhập số sản phẩm"
 
-#: inc/options.php:410 inc/options.php:559 inc/options.php:701
+#: inc/options.php:485 inc/options.php:634 inc/options.php:776
 msgid "Enter number product per row"
 msgstr "Nhập số sản phẩm mỗi hàng"
 
-#: inc/options.php:424
+#: inc/options.php:499
 msgid "Post"
 msgstr "Bài viết"
 
-#: inc/options.php:430
+#: inc/options.php:505
 msgid "Single post"
 msgstr "Chi tiết bài viết"
 
-#: inc/options.php:437 inc/options.php:585
+#: inc/options.php:512 inc/options.php:660
 msgid "Setting General"
 msgstr "Cài đặt chung"
 
-#: inc/options.php:443
+#: inc/options.php:518
 msgid "Display time and view post"
 msgstr "Hiển thị ngày đăng và số lượt xem bài viết"
 
-#: inc/options.php:451
+#: inc/options.php:526
 msgid "Display buttons share social"
 msgstr "Hiển thị nút chia sẻ mạng xã hội"
 
-#: inc/options.php:459
+#: inc/options.php:534
 msgid "Display post navigation"
 msgstr "Hiển thị thanh điều hướng bài viết"
 
-#: inc/options.php:467
+#: inc/options.php:542
 msgid "Related Post"
 msgstr "Bài viết liên quan"
 
-#: inc/options.php:473
+#: inc/options.php:548
 msgid "Display related post"
 msgstr "Hiển thị bài viết liên quan"
 
-#: inc/options.php:493
+#: inc/options.php:568
 msgid "Category post"
 msgstr "Danh mục bài viết"
 
-#: inc/options.php:500 inc/options.php:569
+#: inc/options.php:575 inc/options.php:644
 msgid "Display hierarchy category"
 msgstr "Hiển thị phân cấp danh mục"
 
-#: inc/options.php:512
+#: inc/options.php:587
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
-#: inc/options.php:518
+#: inc/options.php:593
 msgid "Main Settings"
 msgstr "Cài đặt chung"
 
-#: inc/options.php:525
+#: inc/options.php:600
 msgid "Enable Shop Sidebar"
 msgstr "Bật Shop Sidebar"
 
-#: inc/options.php:533
+#: inc/options.php:608
 msgid "Enable Hover Flip Image Of Product"
 msgstr "Bật chức năng hover lật ảnh sản phẩm"
 
-#: inc/options.php:542
+#: inc/options.php:617
 msgid "Category Product"
 msgstr "Danh mục sản phẩm"
 
-#: inc/options.php:549
+#: inc/options.php:624
 msgid "Enter number product per page"
 msgstr "Nhập số sản phẩm mỗi trang"
 
-#: inc/options.php:578
+#: inc/options.php:653
 msgid "Single Product"
 msgstr "Chi tiết sản phẩm"
 
-#: inc/options.php:591
+#: inc/options.php:666
 msgid "Display attributes product"
 msgstr "Hiển thị thuộc tính sản phẩm"
 
-#: inc/options.php:606
+#: inc/options.php:681
 msgid "Gallery Product"
 msgstr "Thư viện ảnh sản phẩm"
 
-#: inc/options.php:612
+#: inc/options.php:687
 msgid "Enable customizer gallery product"
 msgstr "Kích hoạt chức năng tùy chỉnh thư viện ảnh"
 
-#: inc/options.php:620
+#: inc/options.php:695
 msgid "Choose style of slider gallery product"
 msgstr "Chọn kiểu slider sản phẩm"
 
-#: inc/options.php:623
+#: inc/options.php:698
 msgid "Horizontal"
 msgstr "Ngang"
 
-#: inc/options.php:624
+#: inc/options.php:699
 msgid "Vertical"
 msgstr "Dọc"
 
-#: inc/options.php:632
+#: inc/options.php:707
 msgid "Enter the number of product images in the view"
 msgstr "Nhập số ảnh của thư viện ảnh trong khung nhìn"
 
-#: inc/options.php:643
+#: inc/options.php:718
 msgid "Enable Zoom"
 msgstr "Bật chức năng soi ảnh"
 
-#: inc/options.php:652
+#: inc/options.php:727
 msgid "Enable Lightbox"
 msgstr "Bật chức năng phóng ảnh"
 
-#: inc/options.php:661
+#: inc/options.php:736
 msgid "Enable autoplay for gallery"
 msgstr "Bật tự động chạy cho thư viện ảnh"
 
-#: inc/options.php:676
+#: inc/options.php:751
 msgid "Related Product"
 msgstr "Sản phẩm liên quan"
 
-#: inc/options.php:682
+#: inc/options.php:757
 msgid "Display related products"
 msgstr "Hiển thị sản phẩm liên quan"
 
-#: inc/options.php:690
+#: inc/options.php:765
 msgid "Enter number related product"
 msgstr "Nhập số sản phẩm liên quan"
 
-#: inc/options.php:721
+#: inc/options.php:796
 msgid "Social"
 msgstr "Mạng xã hội"
 
-#: inc/options.php:728
+#: inc/options.php:803
 msgid "Facebook"
 msgstr "Facebook"
 
-#: inc/options.php:733
+#: inc/options.php:808
 msgid "Twitter"
 msgstr "Twitter"
 
-#: inc/options.php:738
+#: inc/options.php:813
 msgid "Google +"
 msgstr "Google +"
 
-#: inc/options.php:743
+#: inc/options.php:818
 msgid "Youtube"
 msgstr "Youtube"
 
-#: inc/options.php:748
+#: inc/options.php:823
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: inc/options.php:753
+#: inc/options.php:828
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: inc/options.php:758
+#: inc/options.php:833
 msgid "Instagram"
 msgstr "Instagram"
 
-#: inc/options.php:772
+#: inc/options.php:847
 msgid "Telephone number"
 msgstr "Số điện thoại"
 
-#: inc/options.php:777 inc/widgets/wg-information.php:48
+#: inc/options.php:852 inc/widgets/wg-information.php:48
 #: inc/widgets/wg-information.php:104 inc/widgets/wg-support.php:76
 #: inc/widgets/wg-support.php:107 inc/widgets/wg-support.php:200
 msgid "Email"
 msgstr "Email"
 
-#: inc/options.php:782 inc/widgets/wg-information.php:36
+#: inc/options.php:857 inc/widgets/wg-information.php:36
 #: inc/widgets/wg-information.php:88
 msgid "Address"
 msgstr "Địa chỉ"
 
-#: inc/options.php:787
+#: inc/options.php:862
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: inc/options.php:794
+#: inc/options.php:869
 msgid "Insert code"
 msgstr "Nhúng code"
 
-#: inc/options.php:801
+#: inc/options.php:876
 msgid "Insert code to header"
 msgstr "Chèn code vào Header"
 
-#: inc/options.php:806
+#: inc/options.php:881
 msgid "Insert code to footer"
 msgstr "Chèn code vào Footer"
 
-#: inc/options.php:813
+#: inc/options.php:888
 msgid "3B Developer"
 msgstr "3B Developer"
 
-#: inc/options.php:820
+#: inc/options.php:895
 msgid "User Functions"
 msgstr "Chức năng người dùng"
 
-#: inc/options.php:827
+#: inc/options.php:902
 msgid "Restrict user"
 msgstr "Hạn chế chức năng người dùng"
 
-#: inc/options.php:828
+#: inc/options.php:903
 msgid "Restrict user in admin page"
 msgstr "Hạn chế chức năng của người dùng trong trang quản trị"
 
-#: inc/options.php:836
+#: inc/options.php:911
 msgid "Hidden information"
 msgstr "Ẩn thông tin"
 
-#: inc/options.php:837
+#: inc/options.php:912
 msgid "Hidden information dashboard & login page"
 msgstr "Ẩn thông tin ở bảng điều khiển trong trang quản trị và trang đăng nhập"
 
-#: inc/options.php:846
+#: inc/options.php:921
 msgid "Website Functions"
 msgstr "Chức năng website"
 
-#: inc/options.php:853
+#: inc/options.php:928
 msgid "Plugin Chat"
 msgstr "Plugin Chat"
 
-#: inc/options.php:859
+#: inc/options.php:934
 msgid "Enter telephone number"
 msgstr "Nhập số điện thoại"
 
-#: inc/options.php:869
+#: inc/options.php:944
 msgid "Enter zalo number"
 msgstr "Nhập số Zalo"
 
-#: inc/options.php:886
+#: inc/options.php:960
 msgid "Metaslider"
 msgstr "Metaslider"
 
-#: inc/options.php:894
+#: inc/options.php:968
 msgid "Select slider"
 msgstr "Chọn slide"
 
-#: inc/options.php:908
+#: inc/options.php:982
 msgid "Woocommerce"
 msgstr "Woocommerce"
 
-#: inc/options.php:915
+#: inc/options.php:989
 msgid "Tooltip"
 msgstr "Tooltip"
 
-#: inc/options.php:923
+#: inc/options.php:997
 msgid "Cart"
 msgstr "Giỏ hàng"
 
-#: inc/options.php:1034
+#: inc/options.php:1108
 msgid "Section via hook"
 msgstr "Section via hook"
 
-#: inc/options.php:1035
+#: inc/options.php:1109
 msgid ""
 "<p class=\"description\">This is a section created by adding a filter to the "
 "sections array. Can be used by child themes to add/remove sections from the "
@@ -992,8 +1030,8 @@ msgstr ""
 
 #: inc/shortcode/shortcode-blog.php:33 inc/shortcode/shortcode-blog.php:350
 #: inc/shortcode/shortcode-blog.php:418
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:136
-#: inc/vc_shortcode/templates/wtb_blog_slider.php:15
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:148
+#: inc/vc_shortcode/templates/wtb_blog_slider.php:16
 #: inc/widgets/wg-post-list.php:59
 msgid "Read more"
 msgstr "Xem thêm"
@@ -1012,7 +1050,7 @@ msgstr "Tác giả"
 
 #: inc/vc_shortcode/lib/functions.php:16 inc/widgets/wg-fblikebox.php:55
 #: inc/widgets/wg-information.php:80 inc/widgets/wg-page.php:40
-#: inc/widgets/wg-post-list.php:95 inc/widgets/wg-product-slider.php:95
+#: inc/widgets/wg-post-list.php:95 inc/widgets/wg-product-slider.php:96
 #: inc/widgets/wg-social.php:72 inc/widgets/wg-support.php:50
 #: inc/widgets/wg-view-post-list.php:105
 msgid "Title"
@@ -1056,7 +1094,7 @@ msgstr ""
 
 #: inc/vc_shortcode/lib/functions.php:82
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:70
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:163
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:175
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:70
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:116
 msgid "Choose a category"
@@ -1165,14 +1203,14 @@ msgid "Posts Count"
 msgstr "Số lượng bài viết muốn lấy"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:54
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:147
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:159
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:54
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:100
 msgid "Order by"
 msgstr "Sắp xếp theo"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:57
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:150
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:162
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:57
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:103
 #, php-format
@@ -1180,14 +1218,14 @@ msgid "Select how to sort retrieved products_category. More at %s."
 msgstr "Select how to sort retrieved products_category. More at %s."
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:62
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:155
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:167
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:62
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:108
 msgid "Order way"
 msgstr "Kiểu sắp xếp"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:65
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:158
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:170
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:65
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:111
 #, php-format
@@ -1195,14 +1233,14 @@ msgid "Designates the ascending or descending order. More at %s."
 msgstr "Designates the ascending or descending order. More at %s."
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:78
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:195
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:207
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:78
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:148
 msgid "CSS box"
 msgstr "CSS box"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:80
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:197
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:209
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:80
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:150
 msgid "Design Options"
@@ -1214,18 +1252,18 @@ msgstr "Blog Slider"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:23
 msgid "Show posts slider in a category"
-msgstr "Hiển thị slide bài viết trong chuyên mục "
+msgstr "Hiển thị slide bài viết trong chuyên mục"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:37
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:37
-msgid "Number Column on Desktop Large (> 1200px)"
-msgstr "Số cột trên màn Desktop Large (> 1200px)"
+msgid "Number Column on Extra large screen (>= 1200px)"
+msgstr "Số cột trên màn hình thiết bị (> 1200px)"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:41
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:53
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:65
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:77
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:89
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:101
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:36
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:41
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:53
@@ -1240,6 +1278,7 @@ msgstr "4"
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:66
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:78
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:90
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:102
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:35
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:42
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:54
@@ -1254,6 +1293,7 @@ msgstr "3"
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:67
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:79
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:91
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:103
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:34
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:43
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:55
@@ -1268,6 +1308,7 @@ msgstr "2"
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:68
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:80
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:92
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:104
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:33
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:44
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:56
@@ -1278,82 +1319,82 @@ msgid "1"
 msgstr "1"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:49
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:49
-msgid "Number Column on Desktop"
-msgstr "Số cột trên màn Desktop"
+msgid "Number Column on Large screen (992px - 1199px)"
+msgstr "Số cột trên màn hình thiết bị (992px - 1199px)"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:61
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:61
-msgid "Number Column on Tablets"
-msgstr "Số cột trên màn Tablets"
+msgid "Number Column on Medium screen (769px - 991px)"
+msgstr "Số cột trên màn hình thiết bị (769px - 991px)"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:73
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:73
-msgid "Number Column on Mobile"
-msgstr "Số cột trên màn Mobile"
+msgid "Number Column on Small screen (577px - 767px)"
+msgstr "Số cột trên màn hình thiết bị (577px - 767px)"
 
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:85
+msgid "Number Column on Extra small screen (< 576px)"
+msgstr "Số cột trên màn hình thiết bị (< 576px)"
+
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:97
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:85
 msgid "Number row"
 msgstr "Số hàng"
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:97
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:109
 msgid "Image size"
 msgstr "Kích thước ảnh"
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:101
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:113
 msgid ""
 "Enter image size (Example: \"thumbnail\", \"medium\", \"large\", \"full\" or "
 "other sizes defined by theme). Alternatively enter size in pixels (Example: "
 "200x100 (Width x Height))."
 msgstr ""
-"Enter image size (Example: \"thumbnail\", \"medium\", \"large\", \"full\" or "
-"other sizes defined by theme). Alternatively enter size in pixels (Example: "
-"200x100 (Width x Height))."
+"Nhập kích thước ảnh (Ví dụ: \"thumbnail\", \"medium\", \"large\", \"full\" "
+"hoặc kích thước khác)"
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:105
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:117
 msgid "Show meta post"
 msgstr "Hiển thị meta bài viết"
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:107
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:113
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:130
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:176
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:187
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:119
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:125
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:142
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:188
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:199
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:129
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:140
 msgid "Yes"
 msgstr "Có"
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:111
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:123
 msgid "Show content limit"
 msgstr "Hiển thị nội dung tóm tắt"
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:117
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:129
 msgid "Number character limit"
 msgstr "Số ký tự tối đa"
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:128
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:140
 msgid "Show view more"
 msgstr "Hiển thị nút xem thêm"
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:134
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:146
 msgid "View more text"
 msgstr "Chữ nút xem thêm"
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:172
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:184
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:125
 msgid "Dots Navigation"
 msgstr "Dots Navigation"
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:177
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:188
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:189
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:200
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:130
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:141
 msgid "No"
 msgstr "Không"
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:183
+#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:195
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:136
 msgid "Arrows Navigation"
 msgstr "Arrows Navigation"
@@ -1368,7 +1409,7 @@ msgstr "Hiển thị block"
 
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:23
 msgid "Show multiple products in a category"
-msgstr "Hiển thị các sản phẩm trong chuyên mục "
+msgstr "Hiển thị các sản phẩm trong chuyên mục"
 
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:30
 msgid "Number of products per row"
@@ -1388,7 +1429,23 @@ msgstr "Slider sản phẩm"
 
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:23
 msgid "Show products slider in a category"
-msgstr "Hiển thị slide sản phẩm trong chuyên mục "
+msgstr "Hiển thị slide sản phẩm trong chuyên mục"
+
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:37
+msgid "Number Column on Desktop Large (> 1200px)"
+msgstr "Số cột trên màn Desktop Large (> 1200px)"
+
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:49
+msgid "Number Column on Desktop"
+msgstr "Số cột trên màn Desktop"
+
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:61
+msgid "Number Column on Tablets"
+msgstr "Số cột trên màn Tablets"
+
+#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:73
+msgid "Number Column on Mobile"
+msgstr "Số cột trên màn Mobile"
 
 #: inc/widgets/wg-fblikebox.php:13
 msgid "3B - Facebook Like Box"
@@ -1464,32 +1521,32 @@ msgid "Show Featured Image"
 msgstr "Hiển thị ảnh đại diện"
 
 #: inc/widgets/wg-page.php:57 inc/widgets/wg-post-list.php:127
-#: inc/widgets/wg-product-slider.php:137 inc/widgets/wg-view-post-list.php:135
+#: inc/widgets/wg-product-slider.php:138 inc/widgets/wg-view-post-list.php:135
 msgid "Image Size"
 msgstr "Kích thước ảnh"
 
 #: inc/widgets/wg-page.php:69 inc/widgets/wg-post-list.php:117
-#: inc/widgets/wg-product-slider.php:127 inc/widgets/wg-view-post-list.php:125
+#: inc/widgets/wg-product-slider.php:128 inc/widgets/wg-view-post-list.php:125
 msgid "Image Alignment"
 msgstr "Căn lề ảnh"
 
 #: inc/widgets/wg-page.php:71 inc/widgets/wg-post-list.php:119
-#: inc/widgets/wg-product-slider.php:129 inc/widgets/wg-view-post-list.php:127
+#: inc/widgets/wg-product-slider.php:130 inc/widgets/wg-view-post-list.php:127
 msgid "None"
 msgstr "Không"
 
 #: inc/widgets/wg-page.php:72 inc/widgets/wg-post-list.php:120
-#: inc/widgets/wg-product-slider.php:130 inc/widgets/wg-view-post-list.php:128
+#: inc/widgets/wg-product-slider.php:131 inc/widgets/wg-view-post-list.php:128
 msgid "Left"
 msgstr "Trái"
 
 #: inc/widgets/wg-page.php:73 inc/widgets/wg-post-list.php:121
-#: inc/widgets/wg-product-slider.php:131 inc/widgets/wg-view-post-list.php:129
+#: inc/widgets/wg-product-slider.php:132 inc/widgets/wg-view-post-list.php:129
 msgid "Right"
 msgstr "Phải"
 
 #: inc/widgets/wg-page.php:74 inc/widgets/wg-post-list.php:122
-#: inc/widgets/wg-product-slider.php:132 inc/widgets/wg-view-post-list.php:130
+#: inc/widgets/wg-product-slider.php:133 inc/widgets/wg-view-post-list.php:130
 msgid "Center"
 msgstr "Chính giữa"
 
@@ -1521,11 +1578,11 @@ msgstr "Hiển thị danh sách bài viết theo chuyên mục"
 msgid "Number of Posts to Show"
 msgstr "Số bài viết hiển thị"
 
-#: inc/widgets/wg-post-list.php:105 inc/widgets/wg-product-slider.php:120
+#: inc/widgets/wg-post-list.php:105 inc/widgets/wg-product-slider.php:121
 msgid "Category"
 msgstr "Chuyên mục"
 
-#: inc/widgets/wg-post-list.php:107 inc/widgets/wg-product-slider.php:122
+#: inc/widgets/wg-post-list.php:107 inc/widgets/wg-product-slider.php:123
 msgid "Select category"
 msgstr "Chọn chuyên mục"
 
@@ -1565,19 +1622,19 @@ msgstr "3B - Slider sản phẩm"
 msgid "Display slide list product"
 msgstr "Hiển thị 1 slider sản phẩm"
 
-#: inc/widgets/wg-product-slider.php:100
+#: inc/widgets/wg-product-slider.php:101
 msgid "Select type slider"
 msgstr "Chọn kiểu slide"
 
-#: inc/widgets/wg-product-slider.php:102
+#: inc/widgets/wg-product-slider.php:103
 msgid "Vertical Slider"
 msgstr "Slider chạy dọc"
 
-#: inc/widgets/wg-product-slider.php:103
+#: inc/widgets/wg-product-slider.php:104
 msgid "Horizontal Slider"
 msgstr "Slider chạy ngang"
 
-#: inc/widgets/wg-product-slider.php:108
+#: inc/widgets/wg-product-slider.php:109
 msgid "Enter the product number in the view"
 msgstr "Nhập số sản phẩm trong khung nhìn"
 
