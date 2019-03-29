@@ -41,11 +41,6 @@ postview_set( get_the_ID() );
 			) );
 
 			echo get_the_tag_list('<p><i class="fas fa-tags"></i> '. __('Tags','shtheme') .': ',', ','</p>');
-
-			// wp_link_pages( array(
-			// 	'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'shtheme' ),
-			// 	'after'  => '</div>',
-			// ) );
 		?>
 	</div><!-- .entry-content -->
 
@@ -60,13 +55,8 @@ postview_set( get_the_ID() );
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));</script>
 
-			<div class="fb-like" data-href="<?php the_permalink();?>" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+			<div class="fb-like" data-href="<?php the_permalink();?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 
-			<!-- Đặt thẻ này vào phần đầu hoặc ngay trước thẻ đóng phần nội dung của bạn. -->
-			<script src="https://apis.google.com/js/platform.js" async defer>{lang: '<?php _e('en-US','shtheme');?>'}</script>
-			<!-- Đặt thẻ này vào nơi bạn muốn nút chia sẻ kết xuất. -->
-			<div class="g-plus" data-action="share"></div>
-			
 			<script>window.twttr = (function(d, s, id) {
 			var js, fjs = d.getElementsByTagName(s)[0],
 			t = window.twttr || {};

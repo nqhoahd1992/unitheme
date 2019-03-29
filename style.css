@@ -43,7 +43,7 @@ Tags: web3b
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&subset=vietnamese');
 html{font-size:62.5%;}
 body {font-family: 'Roboto', Arial, sans-serif;font-size: 14px;}
-a {color: #337ab7;transition: all 0.3s;}
+a {color: #337ab7;transition: all 0.3s ease-in-out;}
 a:hover {color: #337ab7;}
 a:hover, a:active, a:focus, a:visited {text-decoration: none}
 img {max-width: 100%;height: auto}
@@ -624,7 +624,7 @@ textarea.form-control {
 }
 .widget_supports .support-style-3 ul {
 	padding: 10px 15px;
-	background: url(lib/images/zalo_logo.png) 186px center no-repeat;
+	background: url(lib/images/zalo_logo.png) right 15px center no-repeat;
 }
 .widget_supports .support-style-3 ul li {
 }
@@ -1187,6 +1187,9 @@ embed, iframe, object {max-width: 100%}
 .sh-blog-shortcode.style-6 .first-element-layout, .sh-blog-shortcode.style-6 .second-element-layout {
 	margin-bottom: 20px;
 }
+.sh-blog-shortcode.style-6 .first-element-layout .element {
+	margin-bottom: 0;
+}
 .sh-blog-shortcode.style-6 .second-element-layout .entry-thumb {
 	float: left;
 	width: 110px;
@@ -1402,9 +1405,6 @@ embed, iframe, object {max-width: 100%}
 .site-footer {
 	color: #FFF;
 }
-.site-footer p {
-	margin-bottom: 0;
-}
 .site-footer a {
 	color: #FFF;
 }
@@ -1442,6 +1442,9 @@ embed, iframe, object {max-width: 100%}
 .site-info {
 	padding: 10px 0;
 	background: #337ab7;
+}
+.site-info p {
+	margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------

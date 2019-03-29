@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2019-02-21 16:00+0700\n"
+"POT-Creation-Date: 2019-03-29 16:09+0700\n"
 "PO-Revision-Date: 2018-01-18 17:08+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -548,27 +548,31 @@ msgstr ""
 msgid "Shop Sidebar"
 msgstr ""
 
-#: inc/function-woo.php:166 inc/options.php:840
+#: inc/function-woo.php:119
+msgid "Continue Shopping"
+msgstr ""
+
+#: inc/function-woo.php:177 inc/options.php:840
 msgid "Information"
 msgstr ""
 
-#: inc/function-woo.php:167
+#: inc/function-woo.php:178
 msgid "Gallery"
 msgstr ""
 
-#: inc/function-woo.php:168
+#: inc/function-woo.php:179
 msgid "Video"
 msgstr ""
 
-#: inc/function-woo.php:169
+#: inc/function-woo.php:180
 msgid "Attachments"
 msgstr ""
 
-#: inc/function-woo.php:203
+#: inc/function-woo.php:214
 msgid "Contact"
 msgstr ""
 
-#: inc/function-woo.php:316 inc/function-woo.php:317
+#: inc/function-woo.php:327 inc/function-woo.php:328
 msgid "View detail"
 msgstr ""
 
@@ -1447,7 +1451,7 @@ msgstr ""
 msgid "Display like box fanpage Facebook"
 msgstr ""
 
-#: inc/widgets/wg-fblikebox.php:32 template-parts/content.php:59
+#: inc/widgets/wg-fblikebox.php:32 template-parts/content.php:54
 msgid "en_US"
 msgstr ""
 
@@ -1734,19 +1738,15 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: template-parts/content.php:66
-msgid "en-US"
-msgstr ""
-
-#: template-parts/content.php:98
+#: template-parts/content.php:88
 msgid "Next Post"
 msgstr ""
 
-#: template-parts/content.php:106
+#: template-parts/content.php:96
 msgid "Previous Post"
 msgstr ""
 
-#: template-parts/content.php:149
+#: template-parts/content.php:139
 msgid "Related posts"
 msgstr ""
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2019-02-21 16:00+0700\n"
-"PO-Revision-Date: 2019-02-21 16:01+0700\n"
+"POT-Creation-Date: 2019-03-29 16:10+0700\n"
+"PO-Revision-Date: 2019-03-29 16:10+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -549,27 +549,31 @@ msgstr "Cài đặt gói mở rộng %1$s (%2$d/%3$d)"
 msgid "Shop Sidebar"
 msgstr "Shop Sidebar"
 
-#: inc/function-woo.php:166 inc/options.php:840
+#: inc/function-woo.php:119
+msgid "Continue Shopping"
+msgstr "Tiếp tục mua hàng"
+
+#: inc/function-woo.php:177 inc/options.php:840
 msgid "Information"
 msgstr "Thông tin"
 
-#: inc/function-woo.php:167
+#: inc/function-woo.php:178
 msgid "Gallery"
 msgstr "Thư viện ảnh"
 
-#: inc/function-woo.php:168
+#: inc/function-woo.php:179
 msgid "Video"
 msgstr "Video"
 
-#: inc/function-woo.php:169
+#: inc/function-woo.php:180
 msgid "Attachments"
 msgstr "Tệp đính kèm"
 
-#: inc/function-woo.php:203
+#: inc/function-woo.php:214
 msgid "Contact"
 msgstr "Liên hệ"
 
-#: inc/function-woo.php:316 inc/function-woo.php:317
+#: inc/function-woo.php:327 inc/function-woo.php:328
 msgid "View detail"
 msgstr "Xem chi tiết"
 
@@ -1455,7 +1459,7 @@ msgstr "3B - Facebook Like Box"
 msgid "Display like box fanpage Facebook"
 msgstr "Hiển thị Like Box Facebook"
 
-#: inc/widgets/wg-fblikebox.php:32 template-parts/content.php:59
+#: inc/widgets/wg-fblikebox.php:32 template-parts/content.php:54
 msgid "en_US"
 msgstr "vi_VN"
 
@@ -1748,19 +1752,15 @@ msgstr "Đọc tiếp %s <span class=\"meta-nav\">&rarr;</span>"
 msgid "Tags"
 msgstr "Tags"
 
-#: template-parts/content.php:66
-msgid "en-US"
-msgstr "vi"
-
-#: template-parts/content.php:98
+#: template-parts/content.php:88
 msgid "Next Post"
 msgstr "Bài viết trước đó"
 
-#: template-parts/content.php:106
+#: template-parts/content.php:96
 msgid "Previous Post"
 msgstr "Bài viết sau đó"
 
-#: template-parts/content.php:149
+#: template-parts/content.php:139
 msgid "Related posts"
 msgstr "Bài viết liên quan"
 
@@ -1836,6 +1836,9 @@ msgstr "thietkeweb3b.com"
 #. Author of the plugin/theme
 msgid "Quang Hoa"
 msgstr "Quang Hoa"
+
+#~ msgid "en-US"
+#~ msgstr "vi"
 
 #~ msgid "Phone Ring"
 #~ msgstr "Điện thoại rung"

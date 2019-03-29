@@ -111,6 +111,17 @@ function add_percent_sale(){
 add_action( 'woocommerce_after_shop_loop_item','add_percent_sale',15 );
 
 /**
+ * Add button continue shopping
+ */
+function wtb_continue_shopping_button() {
+	$shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) );
+	echo '<div class="continue_shopping">';
+	echo ' <a href="'. $shop_page_url .'" class="button">'. __('Continue Shopping','shtheme') .' →</a>';
+	echo '</div>';
+}
+add_action( 'woocommerce_after_cart_totals', 'wtb_continue_shopping_button' );
+
+/**
  * Overwrite field checkout
  */
 function custom_override_checkout_fields( $fields ) {
