@@ -203,6 +203,31 @@ function custom_numberpro_related_products_args( $args ) {
 add_filter( 'woocommerce_output_related_products_args', 'custom_numberpro_related_products_args' );
 
 /**
+ * Add Button Quick Buy Simple Product In Single Product
+ */
+function insert_btn_quick_buy(){
+	global $post, $product;
+	if ( $product->is_type( 'simple' ) ) {
+		?>
+		<a class="button buy_now ml-2" href="?quick_buy=1&add-to-cart=<?php echo $post->ID?>" class="qn_btn"><?php _e('Quick buy','shtheme'); ?></a>
+		<?php
+	}
+}
+add_action( 'woocommerce_after_add_to_cart_button','insert_btn_quick_buy',1 );
+
+/**
+ * Redirect To Checkout Page After Click Button Quick Buy
+ */
+function redirect_to_checkout($checkout_url) {
+    global $woocommerce;
+    if($_GET['quick_buy']) {
+        $checkout_url = $woocommerce->cart->get_checkout_url();
+    }
+    return $checkout_url;
+}
+add_filter ('woocommerce_add_to_cart_redirect', 'redirect_to_checkout');
+
+/**
  * Get Price Product
  */
 function get_price_product(){

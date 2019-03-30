@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2019-03-29 16:10+0700\n"
-"PO-Revision-Date: 2019-03-29 16:10+0700\n"
+"POT-Creation-Date: 2019-03-30 11:43+0700\n"
+"PO-Revision-Date: 2019-03-30 11:48+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -569,11 +569,15 @@ msgstr "Video"
 msgid "Attachments"
 msgstr "Tệp đính kèm"
 
-#: inc/function-woo.php:214
+#: inc/function-woo.php:212
+msgid "Quick buy"
+msgstr "Mua ngay"
+
+#: inc/function-woo.php:239
 msgid "Contact"
 msgstr "Liên hệ"
 
-#: inc/function-woo.php:327 inc/function-woo.php:328
+#: inc/function-woo.php:352 inc/function-woo.php:353
 msgid "View detail"
 msgstr "Xem chi tiết"
 

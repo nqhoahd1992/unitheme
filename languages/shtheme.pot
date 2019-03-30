@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2019-03-29 16:09+0700\n"
+"POT-Creation-Date: 2019-03-30 11:43+0700\n"
 "PO-Revision-Date: 2018-01-18 17:08+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -568,11 +568,15 @@ msgstr ""
 msgid "Attachments"
 msgstr ""
 
-#: inc/function-woo.php:214
+#: inc/function-woo.php:212
+msgid "Quick buy"
+msgstr ""
+
+#: inc/function-woo.php:239
 msgid "Contact"
 msgstr ""
 
-#: inc/function-woo.php:327 inc/function-woo.php:328
+#: inc/function-woo.php:352 inc/function-woo.php:353
 msgid "View detail"
 msgstr ""
 

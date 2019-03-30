@@ -182,6 +182,12 @@ button.loading, input[type='button'].loading, input[type='reset'].loading, input
 .button.loading {
     color: #eeeeee;
 }
+.woocommerce div.product form.cart .button {
+    background-image: linear-gradient(-180deg,#288ad6 0%,#0e74c3 100%);
+}
+.woocommerce div.product form.cart .button.buy_now {
+    background: linear-gradient(-180deg,#e52025 2%,#d81116 96%);   
+}
 /* Minicart */
 .shopping-cart {
     display: inline-block;
