@@ -4,27 +4,78 @@
  */
 function insert_callring(){
 	global $sh_option;
-	if( $sh_option['phonering-number'] || $sh_option['phonering-number'] ) {
+	if( $sh_option['phonering-number'] || $sh_option['zalo-number'] ) {
 		wp_enqueue_style( 'phonering-style' );
 	}
 
-	if( $sh_option['phonering-number'] ) {
-		echo '<div class="quick-alo-phone quick-alo-green quick-alo-show d-none d-xl-block" id="quick-alo-phoneIcon">';
-			echo '<a href="tel:'. $sh_option['phonering-number'] .'" title="'. __('Call now','shtheme') .'">';
-				echo '<div class="quick-alo-ph-circle"></div>';
-				echo '<div class="quick-alo-ph-circle-fill"></div>';
-				echo '<div class="quick-alo-ph-img-circle"></div>';
-				echo '<span class="phone_text">'. __('Call now','shtheme') .': '. $sh_option['phonering-number'] .'</span>';
-			echo '</a>';
-		echo '</div>';
-		echo '<div class="alo-floating d-xl-none"><a href="tel:'. $sh_option['phonering-number'] .'"><i class="fas fa-phone"></i> <strong>'. $sh_option['phonering-number'] .'</strong></a></div>';
-	}
+	echo '<div class="hotline-phone-'. $sh_option['phonering-style'] .'">';
+		if( $sh_option['phonering-number'] ) {
+			
+			if( $sh_option['phonering-style'] == '1' ) {
+				echo '<div class="quick-alo-phone quick-alo-green quick-alo-show d-none d-xl-block" id="quick-alo-phoneIcon">';
+					echo '<a href="tel:'. $sh_option['phonering-number'] .'" title="'. __('Call now','shtheme') .'">';
+						echo '<div class="quick-alo-ph-circle"></div>';
+						echo '<div class="quick-alo-ph-circle-fill"></div>';
+						echo '<div class="quick-alo-ph-img-circle"></div>';
+						echo '<span class="phone_text">'. __('Call now','shtheme') .': '. $sh_option['phonering-number'] .'</span>';
+					echo '</a>';
+				echo '</div>';
+				echo '<div class="alo-floating d-xl-none"><a href="tel:'. $sh_option['phonering-number'] .'"><i class="fas fa-phone"></i> <strong>'. $sh_option['phonering-number'] .'</strong></a></div>';
+			} elseif( $sh_option['phonering-style'] == '2' ) {
+				echo '<div class="hotline-phone-ring-wrap">';
+					echo '<div class="hotline-phone-ring">';
+						echo '<div class="quick-alo-ph-circle"></div>';
+						echo '<div class="quick-alo-ph-circle-fill"></div>';
+						echo '<div class="quick-alo-ph-img-circle">';
+							echo '<a href="tel:'. $sh_option['phonering-number'] .'" class="pps-btn-img">';
+								echo '<img src="'. get_stylesheet_directory_uri() .'/lib/images/icon-phone2.png" alt="Số điện thoại" width="50">';
+							echo '</a>';
+						echo '</div>';
+					echo '</div>';
+					echo '<div class="hotline-bar d-none d-md-block">';
+						echo '<a href="tel:'. $sh_option['phonering-number'] .'">';
+							echo '<span class="text-hotline">'. $sh_option['phonering-number'] .'</span>';
+						echo '</a>';
+					echo '</div>';
+				echo '</div>';
+			}
+		}
 
-	if( $sh_option['zalo-number'] ) {
-		echo '<div class="alo-floating alo-floating-zalo"><a title="Chat Zalo" rel="nofollow" target="_blank" href="https://zalo.me/'. $sh_option['zalo-number'] .'"><strong>Chat Zalo</strong></a></div>';
-	}
+		if( $sh_option['zalo-number'] ) {
+			echo '<div class="alo-floating alo-floating-zalo"><a title="Chat Zalo" rel="nofollow" target="_blank" href="https://zalo.me/'. $sh_option['zalo-number'] .'"><strong>Chat Zalo</strong></a></div>';
+		}
+	echo '</div>';
 }
 add_action('sh_after_footer','insert_callring');
+
+function callring_style() {
+	global $sh_option;
+	if ( $sh_option['phonering-color'] ) { 
+	?>
+	<style>
+		.hotline-phone-1 .quick-alo-phone.quick-alo-green .quick-alo-ph-img-circle,
+		.hotline-phone-2 .quick-alo-ph-img-circle, .hotline-bar {
+			background-color: <?php echo $sh_option['phonering-color'] ?> !important;
+		}
+	</style>
+	<?php
+	$hex = $sh_option['phonering-color'];
+		( strlen( $hex ) === 4 ) ? list( $r, $g, $b ) = sscanf( $hex, '#%1x%1x%1x' ) : list( $r, $g, $b ) = sscanf( $hex, '#%2x%2x%2x' );
+		$hotlinebar_bg = "rgb( $r, $g, $b, .7 )";
+	?>
+	<style>
+		.hotline-phone-1 .quick-alo-phone.quick-alo-green .quick-alo-ph-circle-fill,
+		.hotline-phone-2 .quick-alo-ph-circle-fill {
+			background: <?php echo $hotlinebar_bg ?> !important;
+		}
+		.hotline-phone-1 .quick-alo-phone.quick-alo-green .quick-alo-ph-circle {
+			border-color: <?php echo $hotlinebar_bg ?> !important;
+		}
+	</style>
+	<?php 
+	}
+}
+add_action( 'wp_footer', 'callring_style' );
 
 /**
  * Display Slider

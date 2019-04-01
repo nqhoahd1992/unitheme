@@ -927,7 +927,7 @@ Redux::setSection( $opt_name, array(
            'type'       => 'section',
            'title'      => __('Plugin Chat', 'shtheme'),
            'indent'     => true,
-       ),
+        ),
         array(
             'id'        => 'phonering-number',
             'type'      => 'text',
@@ -937,6 +937,23 @@ Redux::setSection( $opt_name, array(
             'step'      => 1,
             'max'       => 30,
             'display_value' => 'text',
+        ),
+        array(
+            'id'        => 'phonering-style',
+            'type'      => 'button_set',
+            'title'     => __('Phone Ring Style', 'shtheme'),
+            'options'   => array(
+                '1' => 'Style 1',
+                '2' => 'Style 2',
+             ), 
+            'default' => '2'
+        ),
+        array(
+            'id'       => 'phonering-color',
+            'type'     => 'color',
+            'title'    => __('Phone Ring Color', 'shtheme'),
+            'default'  => '#337ab7',
+            'validate' => 'color',
         ),
         array(
             'id'        => 'zalo-number',
