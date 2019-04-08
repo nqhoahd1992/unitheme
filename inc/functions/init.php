@@ -73,7 +73,39 @@ function sh_plugin_activation() {
             'name' 		=> 'Redux Framework',
             'slug' 		=> 'redux-framework',
             'required' 	=> true
-        )
+        ),
+        array(
+            'name' 		=> 'WooCommerce',
+            'slug' 		=> 'woocommerce',
+        ),
+        array(
+            'name' 		=> 'Duplicate post',
+            'slug' 		=> 'duplicate-post',
+        ),
+        array(
+            'name' 		=> 'Contact form 7',
+            'slug' 		=> 'contact-form-7',
+        ),
+        array(
+            'name' 		=> 'Tinymce advanced',
+            'slug' 		=> 'tinymce-advanced',
+        ),
+        array(
+            'name' 		=> 'User role editor',
+            'slug' 		=> 'user-role-editor',
+        ),
+        array(
+            'name' 		=> 'Wp smtp',
+            'slug' 		=> 'wp-smtp',
+        ),
+        array(
+            'name' 		=> 'Yoast SEO',
+            'slug' 		=> 'wordpress-seo',
+        ),
+        array(
+            'name' 		=> 'MetaSlider',
+            'slug' 		=> 'ml-slider',
+        ),
     );
 
     $configs = array(
@@ -83,7 +115,7 @@ function sh_plugin_activation() {
         'is_automatic' 	=> true
     );
     tgmpa( $plugins, $configs );
- 
+
 }
 add_action('tgmpa_register', 'sh_plugin_activation');
 

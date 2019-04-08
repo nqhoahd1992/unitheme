@@ -57,7 +57,7 @@ $args = array(
     // Show the time the page took to load, etc
     'update_notice'        => true,
     // If dev_mode is enabled, will notify developer of updated versions available in the GitHub Repo
-    'customizer'           => true,
+    'customizer'           => false,
     // Enable basic customizer support
     //'open_expanded'     => true,                    // Allow you to start the panel in an expanded way initially.
     //'disable_save_warn' => true,                    // Disable the save warning when a user changes a field
@@ -169,13 +169,13 @@ Redux::setSection( $opt_name, array(
     'fields'           => array(
         array(
             'id'       => 'site-layout',
-            'type'     => 'button_set', 
+            'type'     => 'button_set',
             'title'    => __('Select layout website', 'shtheme'),
             'default'  => true,
             'options'  => array(
                 '1'       => __('Full Width Layout', 'shtheme'),
                 '2'       => __('Boxed Layout', 'shtheme'),
-             ), 
+             ),
             'default' => '1'
         ),
         array(
@@ -184,27 +184,27 @@ Redux::setSection( $opt_name, array(
 		    'title'    => __('Main Appearance', 'shtheme'),
 		    'options'  => array(
 		        '1'       => array(
-		            'alt'     => 'Content Full Width', 
+		            'alt'     => 'Content Full Width',
 		            'img'     => ReduxFramework::$_url.'assets/img/1col.png'
 		        ),
 		        '2'       => array(
-                    'alt'     => 'Sidebar - Content', 
+                    'alt'     => 'Sidebar - Content',
 		            'img'     => ReduxFramework::$_url.'assets/img/2cl.png'
 		        ),
 		        '3'       => array(
-		            'alt'     => 'Content - Sidebar', 
+		            'alt'     => 'Content - Sidebar',
 		            'img'     => ReduxFramework::$_url.'assets/img/2cr.png'
 		        ),
 		        '4'       => array(
-		            'alt'     => 'Sidebar - Content - Sidebar', 
+		            'alt'     => 'Sidebar - Content - Sidebar',
 		            'img'     => ReduxFramework::$_url.'assets/img/3cm.png'
 		        ),
 		        '5'       => array(
-		            'alt'     => 'Sidebar - Sidebar - Content', 
+		            'alt'     => 'Sidebar - Sidebar - Content',
 		            'img'     => ReduxFramework::$_url.'assets/img/3cl.png'
 		        ),
 		        '6'       => array(
-		            'alt'     => 'Content - Sidebar - Sidebar', 
+		            'alt'     => 'Content - Sidebar - Sidebar',
 		            'img'     => ReduxFramework::$_url.'assets/img/3cr.png'
 		        )
 		    ),
@@ -247,15 +247,15 @@ Redux::setSection( $opt_name, array(
             'title'    => __('Header Layout', 'shtheme'),
             'options'  => array(
                 '1'      => array(
-                    'alt'   => 'Header 1', 
+                    'alt'   => 'Header 1',
                     'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/logo-center.png'
                 ),
                 '2'      => array(
-                    'alt'   => 'Header 2', 
+                    'alt'   => 'Header 2',
                     'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/logo-left.gif'
                 ),
                 '3'      => array(
-                    'alt'   => 'Header 3', 
+                    'alt'   => 'Header 3',
                     'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/logo-left2.png'
                 ),
             ),
@@ -263,7 +263,7 @@ Redux::setSection( $opt_name, array(
         ),
         array(
             'id'       => 'display-pagetitlebar',
-            'type'     => 'switch', 
+            'type'     => 'switch',
             'title'    => __('Enable Page Title Bar', 'shtheme'),
             'default'  => false,
             'on'       => __('Enable', 'shtheme'),
@@ -271,7 +271,7 @@ Redux::setSection( $opt_name, array(
         ),
         array(
             'id'       => 'display-topheader-widget',
-            'type'     => 'switch', 
+            'type'     => 'switch',
             'title'    => __('Enable Top Header Widget', 'shtheme'),
             'default'  => false,
             'on'       => __('Enable', 'shtheme'),
@@ -318,7 +318,7 @@ Redux::setSection( $opt_name, array(
     'fields'           => array(
         array(
             'id'        => 'home-slide-switch',
-            'type'      => 'switch', 
+            'type'      => 'switch',
             'title'     => __('Enable gallery slider', 'shtheme'),
             'default'   => false,
             'on'        => __('Enable', 'shtheme'),
@@ -340,7 +340,7 @@ Redux::setSection( $opt_name, array(
     'fields'           	=> array(
 		array(
             'id'       	=> 'slider-autoplay',
-            'type'     	=> 'switch', 
+            'type'     	=> 'switch',
             'title'    	=> __('Slider autoplay', 'shtheme'),
             'default'  	=> true,
             'on'       	=> __('Enable', 'shtheme'),
@@ -359,7 +359,7 @@ Redux::setSection( $opt_name, array(
 		),
         array(
             'id'       	=> 'slider-pause',
-            'type'     	=> 'switch', 
+            'type'     	=> 'switch',
             'title'    	=> __('Slider hover pause', 'shtheme'),
             'default'  	=> false,
             'on'       	=> __('Enable', 'shtheme'),
@@ -371,9 +371,9 @@ Redux::setSection( $opt_name, array(
 		    'type'     	=> 'button_set',
 		    'title'    	=> __('Slider animate', 'shtheme'),
 		    'options' 	=> array(
-		        '1' => 'Slide', 
+		        '1' => 'Slide',
 		        '2' => 'Fade',
-		     ), 
+		     ),
 		    'default' => '1'
 		),
     )
@@ -419,31 +419,31 @@ Redux::setSection( $opt_name, array(
             'permissions'   => 'administrator',
             'options'  => array(
                 '1'      => array(
-                    'alt'   => 'Blog Layout 1', 
+                    'alt'   => 'Blog Layout 1',
                     'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/bloglayout1.png'
                 ),
                 '2'      => array(
-                    'alt'   => 'Blog Layout 2', 
+                    'alt'   => 'Blog Layout 2',
                     'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/bloglayout2.png'
                 ),
                 '3'      => array(
-                    'alt'   => 'Blog Layout 3', 
+                    'alt'   => 'Blog Layout 3',
                     'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/bloglayout3.png'
                 ),
                 '4'      => array(
-                    'alt'   => 'Blog Layout 4', 
+                    'alt'   => 'Blog Layout 4',
                     'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/bloglayout4.png'
                 ),
                 '5'      => array(
-                    'alt'   => 'Blog Layout 5', 
+                    'alt'   => 'Blog Layout 5',
                     'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/bloglayout5.png'
                 ),
                 '6'      => array(
-                    'alt'   => 'Blog Layout 6', 
+                    'alt'   => 'Blog Layout 6',
                     'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/bloglayout6.png'
                 ),
                 '7'      => array(
-                    'alt'   => 'Blog Layout 7', 
+                    'alt'   => 'Blog Layout 7',
                     'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/bloglayout7.png'
                 ),
             ),
@@ -510,11 +510,11 @@ Redux::setSection( $opt_name, array(
            'id'         => 'section-singlepost-start',
            'type'       => 'section',
            'title'      => __('Setting General', 'shtheme'),
-           'indent'     => true 
+           'indent'     => true
         ),
         array(
             'id'       => 'display-time-view',
-            'type'     => 'switch', 
+            'type'     => 'switch',
             'title'    => __('Display time and view post', 'shtheme'),
             'default'  => true,
             'on'       => __('Enable', 'shtheme'),
@@ -522,7 +522,7 @@ Redux::setSection( $opt_name, array(
         ),
         array(
             'id'       => 'display-sharepost',
-            'type'     => 'switch', 
+            'type'     => 'switch',
             'title'    => __('Display buttons share social', 'shtheme'),
             'default'  => true,
             'on'       => __('Enable', 'shtheme'),
@@ -530,7 +530,7 @@ Redux::setSection( $opt_name, array(
         ),
         array(
             'id'       => 'display-navipost',
-            'type'     => 'switch', 
+            'type'     => 'switch',
             'title'    => __('Display post navigation', 'shtheme'),
             'default'  => true,
             'on'       => __('Enable', 'shtheme'),
@@ -540,11 +540,11 @@ Redux::setSection( $opt_name, array(
            'id'         => 'section-relatedpost',
            'type'       => 'section',
            'title'      => __('Related Post', 'shtheme'),
-           'indent'     => true 
+           'indent'     => true
         ),
         array(
             'id'       => 'display-relatedpost',
-            'type'     => 'switch', 
+            'type'     => 'switch',
             'title'    => __('Display related post', 'shtheme'),
             'default'  => true,
             'on'       => __('Enable', 'shtheme'),
@@ -571,7 +571,7 @@ Redux::setSection( $opt_name, array(
     'fields'           => array(
         array(
             'id'       => 'display-hierarchy',
-            'type'     => 'switch', 
+            'type'     => 'switch',
             'title'    => __('Display hierarchy category', 'shtheme'),
             'default'  => false,
             'on'       => __('Enable', 'shtheme'),
@@ -596,7 +596,7 @@ if ( class_exists( 'WooCommerce' ) ) {
         'fields'           => array(
             array(
                 'id'       => 'display-shopsidebar',
-                'type'     => 'switch', 
+                'type'     => 'switch',
                 'title'    => __('Enable Shop Sidebar', 'shtheme'),
                 'default'  => false,
                 'on'       => __('Enable', 'shtheme'),
@@ -604,7 +604,7 @@ if ( class_exists( 'WooCommerce' ) ) {
             ),
             array(
                 'id'       => 'woo-hover-flip-image',
-                'type'     => 'switch', 
+                'type'     => 'switch',
                 'title'    => __('Enable Hover Flip Image Of Product', 'shtheme'),
                 'default'  => true,
                 'on'       => __('Enable', 'shtheme'),
@@ -640,7 +640,7 @@ if ( class_exists( 'WooCommerce' ) ) {
             ),
             array(
                 'id'       => 'display-hierarchy-woocommerce',
-                'type'     => 'switch', 
+                'type'     => 'switch',
                 'title'    => __('Display hierarchy category', 'shtheme'),
                 'default'  => false,
                 'on'       => __('Enable', 'shtheme'),
@@ -658,11 +658,11 @@ if ( class_exists( 'WooCommerce' ) ) {
                'id'         => 'section-singlepage-start',
                'type'       => 'section',
                'title'      => __('Setting General', 'shtheme'),
-               'indent'     => true 
+               'indent'     => true
             ),
             array(
                 'id'        => 'display-propertypro',
-                'type'      => 'switch', 
+                'type'      => 'switch',
                 'title'     => __('Display attributes product', 'shtheme'),
                 'default'   => false,
                 'on'        => __('Enable', 'shtheme'),
@@ -679,11 +679,11 @@ if ( class_exists( 'WooCommerce' ) ) {
                'id'         => 'section-gallery-start',
                'type'       => 'section',
                'title'      => __('Gallery Product', 'shtheme'),
-               'indent'     => true 
+               'indent'     => true
             ),
             array(
                 'id'        => 'gallery-single-custom',
-                'type'      => 'switch', 
+                'type'      => 'switch',
                 'title'     => __('Enable customizer gallery product', 'shtheme'),
                 'default'   => false,
                 'on'        => __('Enable', 'shtheme'),
@@ -691,13 +691,13 @@ if ( class_exists( 'WooCommerce' ) ) {
             ),
             array(
                 'id'       => 'gallery-single-style',
-                'type'     => 'button_set', 
+                'type'     => 'button_set',
                 'title'    => __('Choose style of slider gallery product', 'shtheme'),
                 'default'  => true,
                 'options'  => array(
                     '1'       => __('Horizontal', 'shtheme'),
                     '2'       => __('Vertical', 'shtheme'),
-                 ), 
+                 ),
                 'default' => '1',
                 'required'  => array('gallery-single-custom','equals',true),
             ),
@@ -714,7 +714,7 @@ if ( class_exists( 'WooCommerce' ) ) {
             ),
             array(
                 'id'        => 'gallery-single-zoom',
-                'type'      => 'switch', 
+                'type'      => 'switch',
                 'title'     => __('Enable Zoom', 'shtheme'),
                 'default'   => false,
                 'on'        => __('Enable', 'shtheme'),
@@ -723,7 +723,7 @@ if ( class_exists( 'WooCommerce' ) ) {
             ),
             array(
                 'id'        => 'gallery-single-lightbox',
-                'type'      => 'switch', 
+                'type'      => 'switch',
                 'title'     => __('Enable Lightbox', 'shtheme'),
                 'default'   => false,
                 'on'        => __('Enable', 'shtheme'),
@@ -732,7 +732,7 @@ if ( class_exists( 'WooCommerce' ) ) {
             ),
             array(
                 'id'        => 'gallery-single-autoplay',
-                'type'      => 'switch', 
+                'type'      => 'switch',
                 'title'     => __('Enable autoplay for gallery', 'shtheme'),
                 'default'   => false,
                 'on'        => __('Enable', 'shtheme'),
@@ -749,11 +749,11 @@ if ( class_exists( 'WooCommerce' ) ) {
                'id'         => 'section-relatedpro-start',
                'type'       => 'section',
                'title'      => __('Related Product', 'shtheme'),
-               'indent'     => true 
+               'indent'     => true
             ),
             array(
                 'id'        => 'display-relatedpro',
-                'type'      => 'switch', 
+                'type'      => 'switch',
                 'title'     => __('Display related products', 'shtheme'),
                 'default'   => true,
                 'on'        => __('Enable', 'shtheme'),
@@ -945,7 +945,7 @@ Redux::setSection( $opt_name, array(
             'options'   => array(
                 '1' => 'Style 1',
                 '2' => 'Style 2',
-             ), 
+             ),
             'default' => '2'
         ),
         array(
