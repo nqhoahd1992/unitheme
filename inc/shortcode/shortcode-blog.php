@@ -78,6 +78,9 @@ class sh_blog_shortcode {
 				case '7':
 					$html .= $this->sh_blog_style_7( $the_query, $atts );
 					break;
+				case '8':
+					$html .= $this->sh_blog_style_8( $the_query, $atts );
+					break;
 				default:
 					$html .= $this->sh_general_post_html( $the_query, $atts );
 					break;
@@ -327,6 +330,57 @@ class sh_blog_shortcode {
 			}
 			if ( $i == count( $the_query->posts ) ) {
 				$html .= '</div>';
+			}
+
+		}
+		wp_reset_postdata();
+		$html .= '</div>';
+		return $html;
+	}
+
+	/**
+	 *
+	 * Blog style 8
+	 *
+	 * @param  $the_query: Query get data; $atts: attribute
+	 * @return $html: html of blog style 8
+	 *
+	 */
+	function sh_blog_style_8 ( $the_query, $atts ) {
+		extract( shortcode_atts( array(
+            'posts_per_page'                => '10',
+        ), $atts ) );
+
+
+		$i = 0;
+		$image_size 			= 'sh_thumb300x200';
+		$post_class 			= array( 'element', 'hentry', 'post-item' );
+		$atts['hide_category'] 	= '0';
+		$atts['hide_meta'] 		= '0';
+		$atts['btn_viewmore'] 	= '0';
+		$atts['hide_desc'] 		= '0';
+
+		$html = '';
+		$html .= '<div class="row">';
+		while ( $the_query->have_posts() ) { $the_query->the_post(); $i++;
+
+			if ( $i == 1 ) {
+				$image_size 					= 'sh_thumb300x200';
+				
+				$html .= '<div class="col-md-6 first-element-layout">';
+				$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
+				$html .= '</div>';
+				if( $posts_per_page > 1 ) {
+					$html .= '<div class="col-md-6 second-element-layout"><div class="row">';
+				}
+			} else {
+				$image_size 			= 'sh_thumb300x200';
+				$post_class[] 			= 'col-6';
+				
+				$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
+			}
+			if ( $i == count( $the_query->posts ) ) {
+				$html .= '</div></div>';
 			}
 
 		}

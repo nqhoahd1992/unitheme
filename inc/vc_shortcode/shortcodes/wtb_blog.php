@@ -36,6 +36,7 @@ function wtb_load_blog_shortcode() {
                     esc_html__('Style 5', 'shtheme') => '5',
                     esc_html__('Style 6', 'shtheme') => '6',
                     esc_html__('Style 7', 'shtheme') => '7',
+                    esc_html__('Style 8', 'shtheme') => '8',
                 ),
                 'std'           => '3',
                 'admin_label'   => true,

@@ -56,6 +56,9 @@ if ( $the_query->have_posts() ) {
                 case '7':
                     echo $new_post->sh_blog_style_7( $the_query, $atts );
                     break;
+                case '8':
+                    echo $new_post->sh_blog_style_8( $the_query, $atts );
+                    break;
                 default:
                     echo $new_post->sh_general_post_html( $the_query, $atts );
                     break;

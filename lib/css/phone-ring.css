@@ -356,7 +356,7 @@
     position: absolute;
     background: #337ab7;
     height: 45px;
-    width: 165px;
+    white-space: nowrap;
     line-height: 40px;
     border-radius: 3px;
     padding: 0 10px;

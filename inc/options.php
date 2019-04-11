@@ -446,6 +446,10 @@ Redux::setSection( $opt_name, array(
                     'alt'   => 'Blog Layout 7',
                     'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/bloglayout7.png'
                 ),
+                '8'      => array(
+                    'alt'   => 'Blog Layout 8',
+                    'img'   => get_stylesheet_directory_uri().'/lib/images/theme-option/bloglayout8.png'
+                ),
             ),
             'default' => '1'
         ),
