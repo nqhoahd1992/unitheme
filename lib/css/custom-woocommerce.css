@@ -1060,6 +1060,31 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td, .shop_table
     font-size: 13px;
     margin-left: 5px;
 }
+.list-categories__item {
+    margin-bottom: 30px;
+}
+.list-categories__item h2 {
+    text-align: center;
+    font-size: 16px;
+}
+.list-categories__item h2 a {
+    color: #333333;
+    transition: all .5s ease-in-out;
+}
+.list-categories__item h2 a:hover {
+    color: #337ab7;
+}
+.list-categories__item .img {
+    display: block;
+    margin-bottom: 10px;
+}
+.list-categories__item img {
+    width: 100%;
+    transition: all .5s ease-in-out;
+}
+.list-categories__item:hover img {
+    opacity: .7;
+}
 
 /*--------------------------------------------------------------
 # Custom Css

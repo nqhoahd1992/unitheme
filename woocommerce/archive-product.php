@@ -66,8 +66,8 @@ if( $sh_option['display-hierarchy-woocommerce'] == '1' && ! is_shop() && is_prod
 			foreach ( $categories as $value ) {
 				echo '<div class="col-md-3">';
 					echo '<div class="list-categories__item">';
+						echo '<a class="img" title="' . $value->name . '" href="' . get_term_link( $value->term_id, $archive_object->taxonomy ) . '">' . woocommerce_category_image( $value->term_id ) . '</a>';
 				    	echo '<h2><a class="" title="' . $value->name . '" href="' . get_term_link( $value->term_id, $archive_object->taxonomy ) . '">' . $value->name . '</a></h2>';
-				    	woocommerce_category_image($value->term_id);
 					echo '</div>';
 				echo '</div>';
 			}

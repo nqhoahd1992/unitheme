@@ -80,7 +80,9 @@ function woocommerce_category_image($products) {
     $arr = wp_get_attachment_image_src( $thumbnail_id, 'full' );
     $image = $arr[0];
     if ( $image ) {
-	    echo '<img src="' . $image . '" alt="" />';
+	    return '<img src="' . $image . '" alt="" />';
+	} else {
+		return '<img src="'. get_stylesheet_directory_uri() .'/lib/images/img-not-available.jpg" alt="">';
 	}
 }
 
