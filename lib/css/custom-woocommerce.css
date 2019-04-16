@@ -17,7 +17,7 @@
     width: 100%;
 	border: none;
 	background: none;
-	outline-width: 0;
+	outline: none;
 	font-weight: normal;
 	margin-bottom: 0;
     padding: 4px 39px 4px 10px;
@@ -32,7 +32,7 @@
 	border: none;
 	width: 29px;
 	height: 29px;
-	outline-width: 0;
+	outline: none;
 	cursor: pointer;
 }
 .sidebar .widget_product_categories .product-categories {
@@ -228,7 +228,8 @@ button.loading, input[type='button'].loading, input[type='reset'].loading, input
     position: absolute;
     top: 100%;
     right: 0;
-    width: 250px;
+    min-width: 250px;
+    width: auto;
     z-index: 99;
     background: #fff;
     box-shadow: 1px 1px 15px rgba(0,0,0,0.15);
@@ -270,6 +271,7 @@ button.loading, input[type='button'].loading, input[type='reset'].loading, input
 .shopping-cart .shopping-cart-menu-wrapper p {
     clear: both;
     margin: 0;
+    white-space: nowrap;
 }
 .shopping-cart .shopping-cart-menu-wrapper p.woocommerce-mini-cart__total {
     margin: 10px 0;

@@ -256,6 +256,17 @@ function get_price_product(){
 add_action( 'woocommerce_after_shop_loop_item','get_price_product',9 );
 
 /**
+ * Display Price For Variable Product Equal Price
+ */
+function display_equalprice_variable_pro($available_variations, \WC_Product_Variable $variable, \WC_Product_Variation $variation) {
+    if (empty($available_variations['price_html'])) {
+        $available_variations['price_html'] = '<p class="price">' . $variation->get_price_html() . '</p>';
+    }
+    return $available_variations;
+}
+add_filter('woocommerce_available_variation', 'display_equalprice_variable_pro', 10, 3);
+
+/**
  * Title Product content-product.php
  */
 function add_title_name_product(){
