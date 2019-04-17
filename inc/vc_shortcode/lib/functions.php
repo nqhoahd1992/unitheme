@@ -1,10 +1,15 @@
 <?php
-if (function_exists('vc_add_shortcode_param')){
+/**
+* WTB input type number param
+*/
+if ( function_exists('vc_add_shortcode_param') ){
     vc_add_shortcode_param( 'wtb_vc_slider_type_field', 'wtb_vc_slider_type_field' );
 }
-function wtb_vc_slider_type_field($settings, $value) {
-    $output = '<input type="number" min="0" max="5" class="wpb_vc_param_value ' . $settings['param_name'] . '" name="' . $settings['param_name'] . '" value="'.$value.'" style="height:auto;" />';
-    return $output;
+if ( ! function_exists( 'wtb_vc_slider_type_field' ) ) {
+    function wtb_vc_slider_type_field( $settings, $value ) {
+        $output = '<input type="number" min="0" max="5" class="wpb_vc_param_value ' . $settings['param_name'] . '" name="' . $settings['param_name'] . '" value="'.$value.'" style="height:auto;" />';
+        return $output;
+    }
 }
 
 function wtb_vc_woo_order_by() {

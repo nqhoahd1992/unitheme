@@ -185,6 +185,10 @@ function shtheme_lib_scripts(){
 	// Font Awesome
 	wp_enqueue_style( 'fontawesome-style', SH_DIR .'/lib/css/font-awesome-all.css' );
 
+	// Fancybox
+	wp_enqueue_script( 'fancybox-js', SH_DIR .'/lib/js/gallery-product/jquery.fancybox.js',array('jquery'),'3.0.47', true);
+	wp_enqueue_style( 'fancybox-css', SH_DIR .'/lib/css/gallery-product/fancybox.css' );
+
 	// Ring Phone
 	wp_register_style( 'phonering-style', SH_DIR .'/lib/css/phone-ring.css' );
 
