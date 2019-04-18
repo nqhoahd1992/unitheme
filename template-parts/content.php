@@ -57,6 +57,9 @@ postview_set( get_the_ID() );
 
 			<div class="fb-like" data-href="<?php the_permalink();?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 
+			<script src="https://sp.zalo.me/plugins/sdk.js"></script>
+			<div class="zalo-share-button" data-href="<?php the_permalink();?>" data-oaid="579745863508352884" data-layout="1" data-color="blue" data-customize="false"></div>
+
 			<script>window.twttr = (function(d, s, id) {
 			var js, fjs = d.getElementsByTagName(s)[0],
 			t = window.twttr || {};

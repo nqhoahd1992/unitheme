@@ -40,9 +40,9 @@ function gallery_enqueue_scripts() {
 	        wp_enqueue_style( 'slick-theme-style' );
 			wp_enqueue_script( 'fancybox-js' );
 			wp_enqueue_style( 'fancybox-css' );
-			wp_enqueue_script('zoom-js', get_template_directory_uri() .'/lib/js/gallery-product/jquery.zoom.min.js',array('jquery'),'1.0', true);
-			wp_enqueue_style('gallery-front-css', get_template_directory_uri() .'/lib/css/gallery-product/gallery-front.css','1.0', true);
-			wp_register_script('gallery-front-js', get_template_directory_uri() .'/lib/js/gallery-product/gallery.front.js',array('jquery'),'1.0', true);
+			wp_enqueue_script( 'zoom-js', get_template_directory_uri() .'/lib/js/gallery-product/jquery.zoom.min.js',array('jquery'),'1.7.21', true );
+			wp_enqueue_style( 'gallery-front-css', get_template_directory_uri() .'/lib/css/gallery-product/gallery-front.css' );
+			wp_register_script( 'gallery-front-js', get_template_directory_uri() .'/lib/js/gallery-product/gallery.front.js',array('jquery'),'1.0', true );
 			
 			global $sh_option;
 			$translation_array = array(

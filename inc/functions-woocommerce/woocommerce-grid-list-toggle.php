@@ -27,7 +27,7 @@ if ( ! class_exists( 'WC_List_Grid' ) ) {
 		}
 
 		function setup_scripts_script() {
-			wp_enqueue_script( 'cookie', get_template_directory_uri() . '/lib/js/gridlist-product/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
+			wp_enqueue_script( 'cookie', get_template_directory_uri() . '/lib/js/gridlist-product/jquery.cookie.min.js', array( 'jquery' ), '1.4.1', true );
 			wp_enqueue_script( 'grid-list-scripts', get_template_directory_uri() . '/lib/js/gridlist-product/jquery.gridlistview.min.js', array( 'jquery' ), '1.0', true );
 		}
 
