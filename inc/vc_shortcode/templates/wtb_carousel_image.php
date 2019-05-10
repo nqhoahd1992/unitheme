@@ -34,8 +34,6 @@ if ( $images == '' ) $images = '-1,-2,-3';
 $images = explode( ',', $images );
 $i = - 1;
 
-var_dump($target_blank);
-
 $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, vc_shortcode_custom_css_class( $css, ' ' ), 'wtb_carousel_image', $atts );
 $el_class = esc_html( wtb_shortcode_extract_class( $el_class ) );
 
