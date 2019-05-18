@@ -982,6 +982,55 @@ html .theme-default .nivo-controlNav {
 .comment-list p, .ping-list p {font-weight: normal;text-transform: none;margin: 10px 5px 10px 0;padding: 0;word-wrap: break-word}
 .comment-list li .fn, .comment-list li .cfn {font-size: 16px;display: inline-block;margin: 10px 0 0}
 .comment-list li .says {display: none}
+/* Extra Comments */
+span.title_comment{font-size:20px;color:#606664;line-height:1.3em;font-weight:700;margin:0 0 15px;display:inline-block}
+.comment-author.vcard{width:25px}
+#formcmmaxweb{overflow:hidden;position:relative;margin-bottom:20px}
+#formcmmaxweb .nameuser{text-align:left}
+#formcmmaxweb .avatarmw img{float:left;margin:5px 10px 0 0;border:1px solid #ccc;padding:5px}
+.comments-title-maxweb{margin:30px 0;font-weight:400}
+.commentlist{margin-top:10px}
+.comment-author.vcard{float:left;clear:both;z-index:2;position:relative;text-align:center}
+.commentlist li{overflow:hidden;clear:both;margin-bottom:10px}
+.commentlist .children{margin-top:10px}
+.commentBody em{color:red}
+.commentBody{position:relative;margin-left:35px;overflow:hidden}
+.comment-meta.commentmetadata{position:relative;padding:0;margin:0 0 5px}
+.noidungcomment{font-size:16px;line-height:24px}
+.cancel-comment-reply a{font-size:14px;text-decoration:none;color:#a9883f}
+.nocomments{border-color:#D98D8D;background-color:#FFCECE;background-position:left -792px;color:#665252;padding:10px}
+.comment-meta.commentmetadata .ngaythang{position:absolute;top:0;right:0;color:#337ab7;opacity:.3;font-size:12px}
+.commentBody:hover .comment-meta.commentmetadata .ngaythang{opacity:1}
+.commentBody .reply{float:right;margin:0;position:absolute;bottom:0;right:0}
+.comment-meta.commentmetadata .fn{font-weight:700;color:#333;margin:0;text-transform:capitalize;font-size:17px;line-height:22px;margin-top:2px}
+ol.commentlist_mw,ol.commentlist_mw ul.children{list-style:none;padding: 0;}
+ol.commentlist_mw li{margin-bottom:10px}
+ol.commentlist_mw>ul.children{margin:10px 0 15px 35px;background:#f1f1f1;padding:10px;position:relative}
+ol.commentlist_mw>ul.children:before{content:'';position:absolute;top:-10px;left:14px;width:0;height:0;border-bottom:10px solid #f1f1f1;border-left:10px solid transparent;border-right:10px solid transparent}
+div.error{color:red;font-size:14px;text-align:left;line-height:16px;margin:10px 0 0}
+.tools_comment a{color:#4a90e2;font-size:14px;position:relative;padding:0 15px 0 0;margin:0 7px 0 0;line-height:14px}
+.tools_comment a:after{content:"";width:4px;height:4px;top:50%;margin-top:-2px;background:#999;position:absolute;right:0;border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%}
+.tools_comment a:last-child:after{display:none}
+.tools_comment a:last-child{padding:0;margin:0}
+.noidungcomment p{margin:0 0 5px}
+#formcmmaxweb input[type="submit"],#formcmmaxweb input[type="button"],#formcmmaxweb input[type="reset"],#formcmmaxweb article.post-password-required input[type=submit],#formcmmaxweb li.bypostauthor cite span{padding:6px 10px;padding:.428571429rem .714285714rem;font-size:11px;font-size:.785714286rem;line-height:1.428571429;font-weight:400;color:#7c7c7c;background-color:#e6e6e6;background-repeat:repeat-x;background-image:-moz-linear-gradient(top,#f4f4f4,#e6e6e6);background-image:-ms-linear-gradient(top,#f4f4f4,#e6e6e6);background-image:-webkit-linear-gradient(top,#f4f4f4,#e6e6e6);background-image:-o-linear-gradient(top,#f4f4f4,#e6e6e6);background-image:linear-gradient(top,#f4f4f4,#e6e6e6);border:1px solid #d2d2d2;border-radius:3px;box-shadow:0 1px 2px rgba(64,64,64,.1)}
+#formcmmaxweb button,#formcmmaxweb input,#formcmmaxweb textarea{border:1px solid #ccc;border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;font-family:inherit;padding:6px;padding:.428571429rem}
+#formcmmaxweb button,#formcmmaxweb input[type="submit"],#formcmmaxweb input[type="button"],#formcmmaxweb input[type="reset"]{cursor:pointer}
+.reply a.comment-reply-link{color:#337ab7;text-decoration:none;font-weight:400;font-size:12px}
+.reply a.comment-reply-link:hover{color:#c7a611}
+#formcmmaxweb p,#formcmmaxweb input,#formcmmaxweb textarea{width:100%;background:transparent;outline:none;font-size:14px}
+#formcmmaxweb input,#formcmmaxweb textarea{border:1px solid #d7d7d7;color:#2e2e2e;display:block}
+#formcmmaxweb input:focus,#formcmmaxweb textarea:focus{border-color:#337ab7}
+#formcmmaxweb p{margin-bottom:10px;text-align:center}
+#formcmmaxweb #commentform p{overflow:hidden}
+#formcmmaxweb .name-email p{width:50%;float:left}
+#formcmmaxweb .name-email p:first-child{padding-right:5px}
+#formcmmaxweb .name-email p:last-child{padding-left:5px}
+#formcmmaxweb input#submit{width:auto;font-weight:400;color:#fff;background:#337ab7;padding:6px 20px;border:none;float:left;font-size:16px;outline:none}
+#formcmmaxweb input#submit:hover{background:#c7a611}
+#formcmmaxweb ::-webkit-input-placeholder{color:#999}
+#formcmmaxweb ::-moz-placeholder{color:#999;color:#999}
+#formcmmaxweb ::-ms-input-placeholder{color:#999}
 
 /*--------------------------------------------------------------
 # Media

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2019-04-17 11:44+0700\n"
-"PO-Revision-Date: 2019-04-17 11:47+0700\n"
+"POT-Creation-Date: 2019-05-18 11:53+0700\n"
+"PO-Revision-Date: 2019-05-18 11:53+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -25,28 +25,54 @@ msgstr ""
 msgid "The content is being updated"
 msgstr "Nội dung đang cập nhật"
 
-#: comments.php:31
+#: comments.php:18
 #, php-format
-msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgctxt ""
+msgid "1 comment"
+msgid_plural "%1$s comment"
+msgstr[0] "%1$s bình luận"
 
-#: comments.php:40 comments.php:61
-msgid "Comment navigation"
-msgstr "Điều hướng bình luận"
-
-#: comments.php:43 comments.php:64
-msgid "Older Comments"
-msgstr "Bình luận cũ hơn"
-
-#: comments.php:44 comments.php:65
-msgid "Newer Comments"
-msgstr "Bình luận mới hơn"
-
-#: comments.php:78
+#: comments.php:25
 msgid "Comments are closed."
 msgstr "Bình luận đã được đóng lại."
+
+#: comments.php:33
+msgid "&larr; previous"
+msgstr "&larr; trước đó"
+
+#: comments.php:34
+msgid "Next &rarr;"
+msgstr "Tiếp theo &rarr;"
+
+#: comments.php:39 comments.php:57
+msgid "Your comment"
+msgstr "Bình luận của bạn"
+
+#: comments.php:48
+msgid "Login"
+msgstr "Đăng nhập"
+
+#: comments.php:48
+msgid "to comment."
+msgstr "để bình luận."
+
+#: comments.php:54
+msgid "Comment with the name:"
+msgstr "Bình luận với tên:"
+
+#: comments.php:62 inc/widgets/wg-support.php:92
+msgid "Name"
+msgstr "Tên"
+
+#: comments.php:65 inc/options.php:856 inc/widgets/wg-information.php:48
+#: inc/widgets/wg-information.php:104 inc/widgets/wg-support.php:76
+#: inc/widgets/wg-support.php:107 inc/widgets/wg-support.php:200
+msgid "Email"
+msgstr "Email"
+
+#: comments.php:69
+msgid "Send"
+msgstr "Gửi"
 
 #: footer.php:37
 msgid "Designed by"
@@ -605,6 +631,15 @@ msgstr "404 - Trang không tồn tại"
 msgid "Products"
 msgstr "Sản phẩm"
 
+#: inc/functions/formatting.php:147
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+#: inc/functions/formatting.php:180 inc/functions/formatting.php:181
+#: inc/functions/formatting.php:182
+msgid "The field is required."
+msgstr "Trường thông tin bắt buộc."
+
 #: inc/functions/init.php:128
 msgid "Unauthorized access is denied!"
 msgstr "Truy cập bị từ chối!"
@@ -934,12 +969,6 @@ msgstr "Instagram"
 #: inc/options.php:851
 msgid "Telephone number"
 msgstr "Số điện thoại"
-
-#: inc/options.php:856 inc/widgets/wg-information.php:48
-#: inc/widgets/wg-information.php:104 inc/widgets/wg-support.php:76
-#: inc/widgets/wg-support.php:107 inc/widgets/wg-support.php:200
-msgid "Email"
-msgstr "Email"
 
 #: inc/options.php:861 inc/widgets/wg-information.php:36
 #: inc/widgets/wg-information.php:88
@@ -1790,10 +1819,6 @@ msgstr "Số hỗ trợ trực tuyến"
 msgid "Save change"
 msgstr "Lưu thay đổi"
 
-#: inc/widgets/wg-support.php:92
-msgid "Name"
-msgstr "Tên"
-
 #: inc/widgets/wg-support.php:99
 msgid "Phone"
 msgstr "Số điện thoại"
@@ -1906,19 +1931,11 @@ msgid "Tag:"
 msgid_plural "Tags:"
 msgstr[0] "Tag:"
 
-#: woocommerce/single-product/product-attributes.php:30
-msgid "Weight"
-msgstr "Cân nặng"
-
-#: woocommerce/single-product/product-attributes.php:37
-msgid "Dimensions"
-msgstr "Kích thước"
-
 #: woocommerce/single-product/product-image.php:43
 msgid "Awaiting product image"
 msgstr "Ảnh sản phẩm đang cập nhật"
 
-#: woocommerce/single-product/rating.php:37
+#: woocommerce/single-product/rating.php:38
 #, php-format
 msgid "%s customer review"
 msgid_plural "%s customer reviews"
@@ -1948,6 +1965,33 @@ msgstr "thietkeweb3b.com"
 #. Author of the plugin/theme
 msgid "Quang Hoa"
 msgstr "Quang Hoa"
+
+#, fuzzy
+#~| msgctxt "plugins"
+#~| msgid "All <span class=\"count\">(%s)</span>"
+#~| msgid_plural "All <span class=\"count\">(%s)</span>"
+#~ msgid "<p class=\"fn\">%s</p>"
+#~ msgstr "Tất cả <span class=\"count\">(%s)</span>"
+
+#~ msgid "Comment"
+#~ msgstr "Bình luận của bạn"
+
+#~ msgctxt "comments title"
+#~ msgid "One thought on &ldquo;%2$s&rdquo;"
+#~ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+#~ msgstr[0] "%1$s thoughts on &ldquo;%2$s&rdquo;"
+
+#~ msgid "Comment navigation"
+#~ msgstr "Điều hướng bình luận"
+
+#~ msgid "Newer Comments"
+#~ msgstr "Bình luận mới hơn"
+
+#~ msgid "Weight"
+#~ msgstr "Cân nặng"
+
+#~ msgid "Dimensions"
+#~ msgstr "Kích thước"
 
 #~ msgid "en-US"
 #~ msgstr "vi"

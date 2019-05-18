@@ -1,85 +1,77 @@
 <?php
-/**
- * The template for displaying comments
- *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package SH_Theme
- */
-
 /*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
-if ( post_password_required() ) {
+* Author http://levantoan.com
+*/
+if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
+	die ('Please do not load this page directly. Thanks!');
+
+if ( post_password_required() ) { ?>
+	<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
+<?php
 	return;
 }
 ?>
-
 <div id="comments" class="comments-area">
-
+	<?php if ( have_comments() ) : ?>
+	<span class="title_comment">
+	    <?php
+			printf( _nx( '1 comment', '%1$s comment', get_comments_number(), '', 'shtheme' ),
+				number_format_i18n( get_comments_number() ));
+		?>
+	</span>
+	<?php endif;?>
 	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'shtheme' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			?>
-		</h2><!-- .comments-title -->
-
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'shtheme' ); ?></h2>
-			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'shtheme' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'shtheme' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
-
-		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
-			?>
-		</ol><!-- .comment-list -->
-
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'shtheme' ); ?></h2>
-			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'shtheme' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'shtheme' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
-		<?php
-		endif; // Check for comment navigation.
-
-	endif; // Check for have_comments().
-
-
-	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'shtheme' ); ?></p>
-	<?php
-	endif;
-
-	comment_form();
-	?>
-
-</div><!-- #comments -->
+		if ( ! comments_open() && get_comments_number() ) : ?>
+		<p class="nocomments"><?php _e( 'Comments are closed.' , 'shtheme' ); ?></p>
+	<?php endif; ?>
+	<?php if ( have_comments() ) : ?>
+		<ol class="commentlist_mw">
+			<?php wp_list_comments('type=comment&callback=shtheme_comment'); ?>
+		</ol><!-- .commentlist -->
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :?>
+		<nav id="comment-nav-below" class="navigation" role="navigation">
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; previous', '' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Next &rarr;', '' ) ); ?></div>
+		</nav>
+		<?php endif;?>
+	<?php endif; // have_comments() ?>
+	
+	<span class="title_comment"><?php _e('Your comment','shtheme') ?></span>
+	<?php if ( comments_open() ) : ?>
+	<div id="formcmmaxweb">
+	
+	    <div class="cancel-comment-reply">
+	    	<small><?php cancel_comment_reply_link(); ?></small>
+	    </div>
+	
+	    <?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
+	    <p><a href="<?php echo wp_login_url( get_permalink() ); ?>"><?php _e('Login','shtheme')?></a> <?php _e('to comment.','shtheme')?></p>
+	    <?php else : ?>
+	
+	<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+	
+	    <?php if ( is_user_logged_in() ) : ?>
+			<p class="nameuser"><?php _e('Comment with the name:','shtheme')?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a></p>    
+	    <?php endif; ?>
+	     	<p>
+	        	<textarea name="comment" id="comment" cols="50" rows="4" tabindex="4" placeholder="<?php _e('Your comment','shtheme')?>"></textarea>
+	        </p>
+	    <?php if(!is_user_logged_in()):?>    
+			<div class="name-email">
+		      <p>
+		      	<input placeholder="<?php _e('Name','shtheme')?>" type="text" name="author" id="author" value="<?php echo esc_attr($comment_author);?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+		      </p>
+		      <p>
+		        <input placeholder="<?php _e('Email','shtheme')?>" type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+		      </p>
+			</div>
+	    <?php endif;?>
+	        <p><input name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Send','shtheme')?>" />
+	        <?php comment_id_fields(); ?>
+	        </p>
+	        <?php do_action('comment_form', $post->ID); ?>	
+	    </form>	
+	        <?php endif; // If registration required and not logged in ?>	       
+	    </div>
+	<?php endif; // if you delete this the sky will fall on your head ?>
+</div><!-- #comments .comments-area -->

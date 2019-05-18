@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2019-04-17 11:44+0700\n"
+"POT-Creation-Date: 2019-05-18 11:53+0700\n"
 "PO-Revision-Date: 2018-01-18 17:08+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,28 +25,54 @@ msgstr ""
 msgid "The content is being updated"
 msgstr ""
 
-#: comments.php:31
+#: comments.php:18
 #, php-format
-msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgctxt ""
+msgid "1 comment"
+msgid_plural "%1$s comment"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:40 comments.php:61
-msgid "Comment navigation"
-msgstr ""
-
-#: comments.php:43 comments.php:64
-msgid "Older Comments"
-msgstr ""
-
-#: comments.php:44 comments.php:65
-msgid "Newer Comments"
-msgstr ""
-
-#: comments.php:78
+#: comments.php:25
 msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:33
+msgid "&larr; previous"
+msgstr ""
+
+#: comments.php:34
+msgid "Next &rarr;"
+msgstr ""
+
+#: comments.php:39 comments.php:57
+msgid "Your comment"
+msgstr ""
+
+#: comments.php:48
+msgid "Login"
+msgstr ""
+
+#: comments.php:48
+msgid "to comment."
+msgstr ""
+
+#: comments.php:54
+msgid "Comment with the name:"
+msgstr ""
+
+#: comments.php:62 inc/widgets/wg-support.php:92
+msgid "Name"
+msgstr ""
+
+#: comments.php:65 inc/options.php:856 inc/widgets/wg-information.php:48
+#: inc/widgets/wg-information.php:104 inc/widgets/wg-support.php:76
+#: inc/widgets/wg-support.php:107 inc/widgets/wg-support.php:200
+msgid "Email"
+msgstr ""
+
+#: comments.php:69
+msgid "Send"
 msgstr ""
 
 #: footer.php:37
@@ -604,6 +630,15 @@ msgstr ""
 msgid "Products"
 msgstr ""
 
+#: inc/functions/formatting.php:147
+msgid "Edit"
+msgstr ""
+
+#: inc/functions/formatting.php:180 inc/functions/formatting.php:181
+#: inc/functions/formatting.php:182
+msgid "The field is required."
+msgstr ""
+
 #: inc/functions/init.php:128
 msgid "Unauthorized access is denied!"
 msgstr ""
@@ -932,12 +967,6 @@ msgstr ""
 
 #: inc/options.php:851
 msgid "Telephone number"
-msgstr ""
-
-#: inc/options.php:856 inc/widgets/wg-information.php:48
-#: inc/widgets/wg-information.php:104 inc/widgets/wg-support.php:76
-#: inc/widgets/wg-support.php:107 inc/widgets/wg-support.php:200
-msgid "Email"
 msgstr ""
 
 #: inc/options.php:861 inc/widgets/wg-information.php:36
@@ -1779,10 +1808,6 @@ msgstr ""
 msgid "Save change"
 msgstr ""
 
-#: inc/widgets/wg-support.php:92
-msgid "Name"
-msgstr ""
-
 #: inc/widgets/wg-support.php:99
 msgid "Phone"
 msgstr ""
@@ -1893,19 +1918,11 @@ msgid_plural "Tags:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: woocommerce/single-product/product-attributes.php:30
-msgid "Weight"
-msgstr ""
-
-#: woocommerce/single-product/product-attributes.php:37
-msgid "Dimensions"
-msgstr ""
-
 #: woocommerce/single-product/product-image.php:43
 msgid "Awaiting product image"
 msgstr ""
 
-#: woocommerce/single-product/rating.php:37
+#: woocommerce/single-product/rating.php:38
 #, php-format
 msgid "%s customer review"
 msgid_plural "%s customer reviews"
