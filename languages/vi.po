@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2019-05-18 11:53+0700\n"
-"PO-Revision-Date: 2019-05-18 11:53+0700\n"
+"POT-Creation-Date: 2019-05-22 11:24+0700\n"
+"PO-Revision-Date: 2019-05-22 11:30+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -1093,11 +1093,12 @@ msgstr "ID"
 msgid "Author"
 msgstr "Tác giả"
 
-#: inc/vc_shortcode/lib/functions.php:21 inc/widgets/wg-fblikebox.php:55
-#: inc/widgets/wg-information.php:80 inc/widgets/wg-page.php:40
-#: inc/widgets/wg-post-list.php:95 inc/widgets/wg-product-slider.php:96
-#: inc/widgets/wg-social.php:72 inc/widgets/wg-support.php:50
-#: inc/widgets/wg-view-post-list.php:105
+#: inc/vc_shortcode/lib/functions.php:21
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:60
+#: inc/widgets/wg-fblikebox.php:55 inc/widgets/wg-information.php:80
+#: inc/widgets/wg-page.php:40 inc/widgets/wg-post-list.php:95
+#: inc/widgets/wg-product-slider.php:96 inc/widgets/wg-social.php:72
+#: inc/widgets/wg-support.php:50 inc/widgets/wg-view-post-list.php:105
 msgid "Title"
 msgstr "Tiêu đề"
 
@@ -1203,6 +1204,7 @@ msgstr "Hiển thị các bài viết trong chuyên mục"
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:23
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:24
 #: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:20
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:20
 #: inc/vc_shortcode/shortcodes/wtb_static_block.php:29
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:24
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:24
@@ -1285,6 +1287,7 @@ msgstr "Designates the ascending or descending order. More at %s."
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:79
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:207
 #: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:189
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:132
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:78
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:148
 msgid "CSS box"
@@ -1293,6 +1296,7 @@ msgstr "CSS box"
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:81
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:209
 #: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:191
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:134
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:80
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:150
 msgid "Design Options"
@@ -1556,6 +1560,163 @@ msgstr "6"
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:37
 msgid "5"
 msgstr "5"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:17
+msgid "Infobox"
+msgstr "Box thông tin"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:19
+msgid "Show infobox width heading, image and content"
+msgstr "Hiển thị một box thông tin gồm tiêu đề, ảnh và nội dung"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:28
+msgid "Box Style"
+msgstr "Box Style"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:32
+msgid "Icon at Left with heading"
+msgstr "Icon ở bên trái cùng tiêu đề"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:33
+msgid "Icon at Right with heading"
+msgstr "Icon ở bên phải cùng tiêu đề"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:34
+msgid "Icon at Left"
+msgstr "Icon ở bên trái"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:35
+msgid "Icon at Right"
+msgstr "Icon ở bên phải"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:36
+msgid "Icon at Top"
+msgstr "Icon ở trên cùng"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:38
+msgid ""
+"Select icon position. Icon box style will be changed according to the icon "
+"position."
+msgstr ""
+"Chọn vị trí biểu tượng. Kiểu box thông tin sẽ được thay đổi theo vị trí biểu "
+"tượng."
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:43
+msgid "Upload Image Icon:"
+msgstr "Tải ảnh icon"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:46
+msgid "Upload the custom image icon."
+msgstr "Tài lên một ảnh tùy ý"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:51
+msgid "Image Width (px)"
+msgstr "Chiều rộng ảnh (px)"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:54
+msgid "Provide image width (px)"
+msgstr "Nhập chiều rộng ảnh (px)"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:64
+msgid "Provide the title for this icon box."
+msgstr "Nhập tiêu đề cho box thông tin"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:69
+msgid "Tag"
+msgstr "Tag"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:73
+msgid "Default"
+msgstr "Mặc định"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:74
+msgid "H1"
+msgstr "H1"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:75
+msgid "H2"
+msgstr "H2"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:76
+msgid "H4"
+msgstr "H4"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:77
+msgid "H5"
+msgstr "H5"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:78
+msgid "H6"
+msgstr "H6"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:79
+msgid "Div"
+msgstr "Div"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:80
+msgid "p"
+msgstr "p"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:81
+msgid "span"
+msgstr "span"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:83
+msgid "Default is H3"
+msgstr "Mặc định là H3"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:90
+#: woocommerce/single-product/tabs/description.php:25
+msgid "Description"
+msgstr "Nội dung"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:93
+msgid "Provide the description for this icon box."
+msgstr "Nhập nội dung cho box thông tin"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:99
+msgid "Apply link to:"
+msgstr "Đặt link tới"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:102
+msgid "No Link"
+msgstr "No Link"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:103
+msgid "Complete Box"
+msgstr "Complete Box"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:104
+msgid "Box Title"
+msgstr "Box Title"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:105
+msgid "Display Read More"
+msgstr "Display Read More"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:107
+msgid "Select whether to use color for icon or not."
+msgstr "Select whether to use color for icon or not."
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:113
+msgid "Add Link"
+msgstr "Add Link"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:116
+msgid ""
+"Add a custom link or select existing page. You can remove existing link as "
+"well."
+msgstr ""
+"Add a custom link or select existing page. You can remove existing link as "
+"well."
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:123
+msgid "Read More Text"
+msgstr "Read More Text"
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:126
+msgid "Customize the read more text."
+msgstr "Customize the read more text."
 
 #: inc/vc_shortcode/shortcodes/wtb_static_block.php:15
 msgid "Choose a block to display"
@@ -1949,10 +2110,6 @@ msgstr "Sản phẩm liên quan"
 msgid "Additional information"
 msgstr "Thông tin đính kèm"
 
-#: woocommerce/single-product/tabs/description.php:25
-msgid "Description"
-msgstr "Mô tả"
-
 #: woocommerce/single-product/up-sells.php:27
 msgid "You may also like&hellip;"
 msgstr "Bạn cũng có thể thích&hellip;"
@@ -2001,9 +2158,6 @@ msgstr "Quang Hoa"
 
 #~ msgid "Navigation Arrows"
 #~ msgstr "Navigation Arrows"
-
-#~ msgid "Default"
-#~ msgstr "Mặc định"
 
 #~ msgid "Google map embed"
 #~ msgstr "Mã google map"

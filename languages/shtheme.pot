@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2019-05-18 11:53+0700\n"
+"POT-Creation-Date: 2019-05-22 11:24+0700\n"
 "PO-Revision-Date: 2018-01-18 17:08+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1089,11 +1089,12 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: inc/vc_shortcode/lib/functions.php:21 inc/widgets/wg-fblikebox.php:55
-#: inc/widgets/wg-information.php:80 inc/widgets/wg-page.php:40
-#: inc/widgets/wg-post-list.php:95 inc/widgets/wg-product-slider.php:96
-#: inc/widgets/wg-social.php:72 inc/widgets/wg-support.php:50
-#: inc/widgets/wg-view-post-list.php:105
+#: inc/vc_shortcode/lib/functions.php:21
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:60
+#: inc/widgets/wg-fblikebox.php:55 inc/widgets/wg-information.php:80
+#: inc/widgets/wg-page.php:40 inc/widgets/wg-post-list.php:95
+#: inc/widgets/wg-product-slider.php:96 inc/widgets/wg-social.php:72
+#: inc/widgets/wg-support.php:50 inc/widgets/wg-view-post-list.php:105
 msgid "Title"
 msgstr ""
 
@@ -1197,6 +1198,7 @@ msgstr ""
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:23
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:24
 #: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:20
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:20
 #: inc/vc_shortcode/shortcodes/wtb_static_block.php:29
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:24
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:24
@@ -1279,6 +1281,7 @@ msgstr ""
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:79
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:207
 #: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:189
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:132
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:78
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:148
 msgid "CSS box"
@@ -1287,6 +1290,7 @@ msgstr ""
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:81
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:209
 #: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:191
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:134
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:80
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:150
 msgid "Design Options"
@@ -1546,6 +1550,159 @@ msgstr ""
 #: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:147
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:37
 msgid "5"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:17
+msgid "Infobox"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:19
+msgid "Show infobox width heading, image and content"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:28
+msgid "Box Style"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:32
+msgid "Icon at Left with heading"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:33
+msgid "Icon at Right with heading"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:34
+msgid "Icon at Left"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:35
+msgid "Icon at Right"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:36
+msgid "Icon at Top"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:38
+msgid ""
+"Select icon position. Icon box style will be changed according to the icon "
+"position."
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:43
+msgid "Upload Image Icon:"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:46
+msgid "Upload the custom image icon."
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:51
+msgid "Image Width (px)"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:54
+msgid "Provide image width (px)"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:64
+msgid "Provide the title for this icon box."
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:69
+msgid "Tag"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:73
+msgid "Default"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:74
+msgid "H1"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:75
+msgid "H2"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:76
+msgid "H4"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:77
+msgid "H5"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:78
+msgid "H6"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:79
+msgid "Div"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:80
+msgid "p"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:81
+msgid "span"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:83
+msgid "Default is H3"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:90
+#: woocommerce/single-product/tabs/description.php:25
+msgid "Description"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:93
+msgid "Provide the description for this icon box."
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:99
+msgid "Apply link to:"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:102
+msgid "No Link"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:103
+msgid "Complete Box"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:104
+msgid "Box Title"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:105
+msgid "Display Read More"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:107
+msgid "Select whether to use color for icon or not."
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:113
+msgid "Add Link"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:116
+msgid ""
+"Add a custom link or select existing page. You can remove existing link as "
+"well."
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:123
+msgid "Read More Text"
+msgstr ""
+
+#: inc/vc_shortcode/shortcodes/wtb_infobox.php:126
+msgid "Customize the read more text."
 msgstr ""
 
 #: inc/vc_shortcode/shortcodes/wtb_static_block.php:15
@@ -1935,10 +2092,6 @@ msgstr ""
 
 #: woocommerce/single-product/tabs/additional-information.php:25
 msgid "Additional information"
-msgstr ""
-
-#: woocommerce/single-product/tabs/description.php:25
-msgid "Description"
 msgstr ""
 
 #: woocommerce/single-product/up-sells.php:27

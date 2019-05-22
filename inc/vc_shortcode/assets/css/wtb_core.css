@@ -102,3 +102,147 @@
 
 }
 
+/*--------------------------------------------------------------
+# Infoxbox Shortcode
+--------------------------------------------------------------*/
+a.wtb-icon-box-link {
+    text-decoration: none;
+    border: none;
+    display: block;
+}
+.wtb-icon-header+.wtb-icon-description {
+    margin-top: 10px;
+}
+.wtb-icon-header .wtb-icon-title {
+    margin: 0;
+    display: block;
+    font-size: 16px;
+    line-height: 1.2em;
+}
+.wtb-icon-description {
+    width: 100%;
+    display: block;
+    margin-top: 0;
+}
+.wtb-icon-img {
+    display: inline-block;
+    font-size: 48px;
+    width: 1em;
+    max-width: 100%;
+    -moz-box-sizing: content-box!important;
+    -webkit-box-sizing: content-box!important;
+    box-sizing: content-box!important;
+}
+.wtb-icon-img img {
+    width: 1em;
+    max-width: 100%!important;
+    -webkit-border-radius: 0!important;
+    border-radius: 0!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    display: block;
+    font-size: inherit;
+    -webkit-transition: -webkit-transform .2s linear;
+    transition: -webkit-transform .2s linear;
+    transition: transform .2s linear;
+    transition: transform .2s linear,-webkit-transform .2s linear;
+}
+.wtb-icon-read {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+}
+/* Icon at Left with heading */
+.wtb-icon-box.default-icon .wtb-icon-default {
+    display: table-cell;
+    vertical-align: middle;
+}
+.wtb-icon-box.default-icon .wtb-icon-header {
+    display: table-cell;
+    vertical-align: middle;
+}
+.wtb-icon-box.default-icon .wtb-icon-img img {
+    width: 1em;
+    display: block;
+    font-size: inherit;
+}
+.wtb-icon-box.default-icon .wtb-icon-img {
+    width: 1em;
+    display: inline-block;
+    margin-right: 15px;
+}
+/* Icon at Right with heading */
+.wtb-icon-box.heading-right-icon .wtb-icon-header {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+.wtb-icon-box.heading-right-icon .wtb-icon-heading-right {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+.wtb-icon-box.heading-right-icon .wtb-ibd-block, 
+.wtb-icon-box.heading-right-icon .wtb-ibd-block *, 
+.wtb-icon-box.heading-right-icon .wtb-icon-description, 
+.wtb-icon-box.heading-right-icon .wtb-icon-header h3.wtb-icon-title {
+    text-align: right;
+}
+.wtb-icon-box.heading-right-icon .wtb-icon-img img {
+    width: 1em;
+    display: block;
+    font-size: inherit;
+}
+.wtb-icon-box.heading-right-icon .wtb-icon-img {
+    width: 1em;
+    display: inline-block;
+    margin-left: 15px;
+}
+/* Icon at Left */
+.wtb-icon-box.left-icon .wtb-icon-left {
+    display: table-cell;
+    vertical-align: top;
+}
+.wtb-icon-box.left-icon .wtb-ibd-block {
+    display: table-cell;
+    vertical-align: middle;
+}
+.wtb-icon-box.left-icon .wtb-icon-left .wtb-icon-img {
+    margin-right: 15px;
+}
+/* Icon at Right */
+.wtb-icon-box.right-icon .wtb-ibd-block {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+.wtb-icon-box.right-icon .wtb-icon-right {
+    display: table-cell;
+    vertical-align: top;
+    width: 100%;
+}
+.wtb-icon-box.right-icon .wtb-ibd-block, 
+.wtb-icon-box.right-icon .wtb-ibd-block *, 
+.wtb-icon-box.right-icon .wtb-icon-description, 
+.wtb-icon-box.right-icon .wtb-icon-header h3.wtb-icon-title {
+    text-align: right;
+}
+.wtb-icon-box.right-icon .wtb-icon-right .wtb-icon-img {
+    margin-left: 15px;
+}
+/* Icon at Top */
+.wtb-icon-box.top-icon .wtb-icon, 
+.wtb-icon-box.top-icon .wtb-icon-description, 
+.wtb-icon-box.top-icon .wtb-icon-header, 
+.wtb-icon-box.top-icon .wtb-icon-img {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+.wtb-icon-box.top-icon .wtb-icon-description {
+    text-align: justify;
+    text-align-last: center;
+}
+.wtb-icon-box.top-icon .wtb-icon-header h3.wtb-icon-title {
+    margin: 25px 0 15px;
+}

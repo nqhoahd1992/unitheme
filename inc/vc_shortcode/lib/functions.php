@@ -94,3 +94,28 @@ function wtb_get_terms( $taxonomy ) {
     }
     return $block_options;
 }
+
+function wtb_link_init( $url, $target, $link_title, $rel ) {
+    $wtb_link_attr = '';
+    if($url !== '')
+        $wtb_link_attr = 'href="'.$url.'" ';
+    if($link_title !== '')
+        $wtb_link_attr .= 'title="'.$link_title.'" ';
+    if($target !== '')
+        $wtb_link_attr .= 'target="'.$target.'" ';
+    if($rel !== ''){
+        if($target !== '' && $target === '_blank'){
+            $wtb_link_attr .= 'rel="'.$rel.' noopener" ';
+        }
+        else {
+            $wtb_link_attr .= 'rel="'.$rel.'" ';
+        }
+    }
+    else {
+        if($target !== '' && $target === '_blank'){
+            $wtb_link_attr .= 'rel="noopener" ';
+        }
+    }
+
+    return $wtb_link_attr;
+}

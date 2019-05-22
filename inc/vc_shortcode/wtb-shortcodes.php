@@ -8,7 +8,7 @@ define('WTB_SHORTCODES_WOO_TEMPLATES', dirname(__FILE__) . '/woo_templates/');
 
 class WTBShortcodesClass {
 
-    private $shortcodes = array("wtb_blog",'wtb_blog_slider','wtb_carousel_image','wtb_static_block');
+    private $shortcodes = array("wtb_blog",'wtb_blog_slider','wtb_carousel_image','wtb_infobox','wtb_static_block');
 	private $woo_shortcodes = array("wtb_product","wtb_product_slider");
     
     function __construct() {
