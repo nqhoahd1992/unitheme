@@ -37,110 +37,112 @@ $suffix .= '</div> <!-- wtb_infobox_container -->';
 
 $html .= '<div class="wtb_infobox-shortcode '. $el_class .'">';
 
-$html .= '<div class="wtb-icon-box '. esc_attr($ex_class) .'">';
-    
-    if($pos == "heading-right" || $pos == "right") {
-        if( $pos == 'right' ){
-            $html .= '<div class="wtb-ibd-block">';
-        }
-        if($title !== ''){
-            $html .= '<div class="wtb-icon-header" >';
-            $link_prefix = $link_sufix = '';
-            if($link !== 'none'){
-                if($read_more == 'title')
-                {
-                    $href           = vc_build_link($link);
-
-                    $url            = ( isset( $href['url'] ) && $href['url'] !== '' ) ? $href['url']  : '';
-                    $target         = ( isset( $href['target'] ) && $href['target'] !== '' ) ? esc_attr( trim( $href['target'] ) ) : '';
-                    $link_title     = ( isset( $href['title'] ) && $href['title'] !== '' ) ? esc_attr($href['title']) : '';
-                    $rel            = ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? esc_attr($href['rel']) : '';
-                    $link_prefix = '<a class="wtb-icon-box-link" '. wtb_link_init($url, $target, $link_title, $rel ).'>';
-                    $link_sufix = '</a>';
-                }
+    $html .= '<div class="wtb-icon-box '. esc_attr($ex_class) .'">';
+        
+        if($pos == "heading-right" || $pos == "right") {
+            if( $pos == 'right' ){
+                $html .= '<div class="wtb-ibd-block">';
             }
-            $html .= $link_prefix.'<'. $heading_tag .' class="wtb-icon-title">'.$title.'</'. $heading_tag .'>'.$link_sufix;
-            $html .= '</div> <!-- header -->';
-        }
-        if($pos !== "right"){
-            if($icon_img !== '')
-                $html .= '<div class="'.esc_attr($ic_class).'" >'.$box_icon.'</div>';
-        }
-        if($content !== ''){
-            $html .= '<div class="wtb-icon-description">';
-                $html .= do_shortcode($content);
+            if($title !== ''){
+                $html .= '<div class="wtb-icon-header" >';
+                $link_prefix = $link_sufix = '';
                 if($link !== 'none'){
-                    if($read_more == 'more') {
+                    if($read_more == 'title')
+                    {
                         $href           = vc_build_link($link);
 
                         $url            = ( isset( $href['url'] ) && $href['url'] !== '' ) ? $href['url']  : '';
                         $target         = ( isset( $href['target'] ) && $href['target'] !== '' ) ? esc_attr( trim( $href['target'] ) ) : '';
                         $link_title     = ( isset( $href['title'] ) && $href['title'] !== '' ) ? esc_attr($href['title']) : '';
                         $rel            = ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? esc_attr($href['rel']) : '';
-
-                        $more_link = '<a class="wtb-icon-read x" '. wtb_link_init($url, $target, $link_title, $rel ).'>';
-                        $more_link .= $read_text;
-                        $more_link .= '&nbsp;&raquo;';
-                        $more_link .= '</a>';
-                        $html .= $more_link;
+                        $link_prefix = '<a class="wtb-icon-box-link" '. wtb_link_init($url, $target, $link_title, $rel ).'>';
+                        $link_sufix = '</a>';
                     }
                 }
-            $html .= '</div> <!-- description -->';
-        }
-        if($pos == "right"){
-            $html .= '</div> <!-- wtb-ibd-block -->';
-            if($icon !== 'none' || $icon_img !== '')
+                $html .= $link_prefix.'<'. $heading_tag .' class="wtb-icon-title">'.$title.'</'. $heading_tag .'>'.$link_sufix;
+                $html .= '</div> <!-- header -->';
+            }
+            if($pos !== "right"){
+                if($icon_img !== '')
+                    $html .= '<div class="'.esc_attr($ic_class).'" >'.$box_icon.'</div>';
+            }
+            if($content !== ''){
+                $html .= '<div class="wtb-icon-description">';
+                    $html .= do_shortcode($content);
+                    if($link !== 'none'){
+                        if($read_more == 'more') {
+                            $href           = vc_build_link($link);
+
+                            $url            = ( isset( $href['url'] ) && $href['url'] !== '' ) ? $href['url']  : '';
+                            $target         = ( isset( $href['target'] ) && $href['target'] !== '' ) ? esc_attr( trim( $href['target'] ) ) : '';
+                            $link_title     = ( isset( $href['title'] ) && $href['title'] !== '' ) ? esc_attr($href['title']) : '';
+                            $rel            = ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? esc_attr($href['rel']) : '';
+
+                            $more_link = '<a class="wtb-icon-read x" '. wtb_link_init($url, $target, $link_title, $rel ).'>';
+                            $more_link .= $read_text;
+                            $more_link .= '&nbsp;&raquo;';
+                            $more_link .= '</a>';
+                            $html .= $more_link;
+                        }
+                    }
+                $html .= '</div> <!-- description -->';
+            }
+            if($pos == "right"){
+                $html .= '</div> <!-- wtb-ibd-block -->';
+                if($icon !== 'none' || $icon_img !== '')
+                    $html .= '<div class="'.esc_attr($ic_class).'">'.$box_icon.'</div>';
+            }
+        } else {
+            if($icon !== 'none' || $icon_img != '')
                 $html .= '<div class="'.esc_attr($ic_class).'">'.$box_icon.'</div>';
-        }
-    } else {
-        if($icon !== 'none' || $icon_img != '')
-            $html .= '<div class="'.esc_attr($ic_class).'">'.$box_icon.'</div>';
-        if($pos == "left")
-            $html .= '<div class="wtb-ibd-block">';
-        if($title !== ''){
-            $html .= '<div class="wtb-icon-header" >';
-            $link_prefix = $link_sufix = '';
-            if($link !== 'none'){
-                if($read_more == 'title')
-                {
-                    $href = vc_build_link($link);
-
-                    $url            = ( isset( $href['url'] ) && $href['url'] !== '' ) ? $href['url']  : '';
-                    $target         = ( isset( $href['target'] ) && $href['target'] !== '' ) ? esc_attr( trim( $href['target'] ) ) : '';
-                    $link_title     = ( isset( $href['title'] ) && $href['title'] !== '' ) ? esc_attr($href['title']) : '';
-                    $rel            = ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? esc_attr($href['rel']) : '';
-
-                    $link_prefix = '<a class="wtb-icon-box-link" '. wtb_link_init($url, $target, $link_title, $rel ).'>';
-                    $link_sufix = '</a>';
-                }
-            }
-            $html .= $link_prefix.'<'. $heading_tag .' class="wtb-icon-title">'.$title.'</'. $heading_tag .'>'.$link_sufix;
-            $html .= '</div> <!-- header -->';
-        }
-        if($content !== ''){
-            $html .= '<div class="wtb-icon-description">';
-                $html .= do_shortcode($content);
+            if($pos == "left")
+                $html .= '<div class="wtb-ibd-block">';
+            if($title !== ''){
+                $html .= '<div class="wtb-icon-header" >';
+                $link_prefix = $link_sufix = '';
                 if($link !== 'none'){
-                    if($read_more == 'more') {
-                        $href           = vc_build_link($link);
+                    if($read_more == 'title')
+                    {
+                        $href = vc_build_link($link);
 
                         $url            = ( isset( $href['url'] ) && $href['url'] !== '' ) ? $href['url']  : '';
                         $target         = ( isset( $href['target'] ) && $href['target'] !== '' ) ? esc_attr( trim( $href['target'] ) ) : '';
                         $link_title     = ( isset( $href['title'] ) && $href['title'] !== '' ) ? esc_attr($href['title']) : '';
                         $rel            = ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? esc_attr($href['rel']) : '';
 
-                        $more_link = '<a class="wtb-icon-read x" '. wtb_link_init($url, $target, $link_title, $rel ).'>';
-                        $more_link .= $read_text;
-                        $more_link .= '&nbsp;&raquo;';
-                        $more_link .= '</a>';
-                        $html .= $more_link;
+                        $link_prefix = '<a class="wtb-icon-box-link" '. wtb_link_init($url, $target, $link_title, $rel ).'>';
+                        $link_sufix = '</a>';
                     }
                 }
-            $html .= '</div> <!-- description -->';
+                $html .= $link_prefix.'<'. $heading_tag .' class="wtb-icon-title">'.$title.'</'. $heading_tag .'>'.$link_sufix;
+                $html .= '</div> <!-- header -->';
+            }
+            if($content !== ''){
+                $html .= '<div class="wtb-icon-description">';
+                    $html .= do_shortcode($content);
+                    if($link !== 'none'){
+                        if($read_more == 'more') {
+                            $href           = vc_build_link($link);
+
+                            $url            = ( isset( $href['url'] ) && $href['url'] !== '' ) ? $href['url']  : '';
+                            $target         = ( isset( $href['target'] ) && $href['target'] !== '' ) ? esc_attr( trim( $href['target'] ) ) : '';
+                            $link_title     = ( isset( $href['title'] ) && $href['title'] !== '' ) ? esc_attr($href['title']) : '';
+                            $rel            = ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? esc_attr($href['rel']) : '';
+
+                            $more_link = '<a class="wtb-icon-read x" '. wtb_link_init($url, $target, $link_title, $rel ).'>';
+                            $more_link .= $read_text;
+                            $more_link .= '&nbsp;&raquo;';
+                            $more_link .= '</a>';
+                            $html .= $more_link;
+                        }
+                    }
+                $html .= '</div> <!-- description -->';
+            }
+            if($pos == "left")
+                $html .= '</div> <!-- wtb-ibd-block -->';
         }
-        if($pos == "left")
-            $html .= '</div> <!-- wtb-ibd-block -->';
-    }
+
+    $html .= '</div>';
 
 $html .= '</div> <!-- wtb-icon-box -->';
 
@@ -161,4 +163,3 @@ if($link !== 'none'){
     $output = $prefix.$html.$suffix;
 }
 echo $output;
-
