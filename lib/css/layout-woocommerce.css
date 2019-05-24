@@ -7,7 +7,7 @@
 .list-products {
 	padding: 0;
 }
-.woocommerce .products .row.list-products {
+.row.list-products {
 	margin-left: -15px;
 	margin-right: -15px;
 }
@@ -87,10 +87,11 @@
 .list-products li .wrap-product .price {
 	display: block !important;
 	font-size: 14px !important;
-	color: #ff0000;
+	margin-bottom: 10px !important;
+	color: #ff0000 !important;
 	font-weight: bold;
 }
-.list-products li .wrap-product .price * {
+.list-products li .wrap-product .price > * {
 	margin: 0 5px;
 }
 .list-products li .wrap-product .price ins {
@@ -131,6 +132,7 @@
 .upsells .list-products .image-product img,
 .row.list-products.list .image-product img {
 	width: 100%;
+	height: auto;
 }
 .upsells .list-products li .wrap-product .price *,
 .row.list-products.list li .wrap-product .price * {

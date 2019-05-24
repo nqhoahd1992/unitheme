@@ -100,7 +100,7 @@ function create_slide_carousel(){
 				$class_carousel = 'carousel-fade';
 			}
 		}
-		echo '<div class="slider">';
+		echo '<div class="wtb-slider">';
 			$home_slide = $sh_option['home-slide'];
 			echo '<div id="carouselMainSlide" class="carousel slide '. $class_carousel .'" data-ride="'. $slider_autoplay .'" data-interval="'. $slider_interval .'" data-pause="'. $slider_pause .'">';
 				echo '<ol class="carousel-indicators">';

@@ -118,6 +118,27 @@ class Gtid_Support_Online extends WP_Widget {
 		    			<input class="widefat" type="text" id="<?php echo $this->get_field_id('supporter_'.$i.'_skype'); ?>" name="<?php echo $this->get_field_name('supporter_'.$i.'_skype'); ?>" value="<?php echo esc_attr( $instance['supporter_'.$i.'_skype'] ); ?>" />
 		    		</p>
 	    		<?php endif;?>
+
+	    		<?php if( $style == '3' ) : ?>
+	    			<p>
+		            	<label for="<?php echo $this->get_field_id('supporter_'.$i.'_zalo'); ?>">
+		            		<?php _e('Zalo', 'shtheme'); ?>:
+		            	</label>
+		    			<input class="widefat" type="text" id="<?php echo $this->get_field_id('supporter_'.$i.'_zalo'); ?>" name="<?php echo $this->get_field_name('supporter_'.$i.'_zalo'); ?>" value="<?php echo esc_attr( $instance['supporter_'.$i.'_zalo'] ); ?>" />
+		    		</p>
+		    		<p>
+		            	<label for="<?php echo $this->get_field_id('supporter_'.$i.'_skype'); ?>">
+		            		<?php _e('Skype', 'shtheme'); ?>:
+		            	</label>
+		    			<input class="widefat" type="text" id="<?php echo $this->get_field_id('supporter_'.$i.'_skype'); ?>" name="<?php echo $this->get_field_name('supporter_'.$i.'_skype'); ?>" value="<?php echo esc_attr( $instance['supporter_'.$i.'_skype'] ); ?>" />
+		    		</p>
+		    		<p>
+		            	<label for="<?php echo $this->get_field_id('supporter_'.$i.'_viber'); ?>">
+		            		<?php _e('Viber', 'shtheme'); ?>:
+		            	</label>
+		    			<input class="widefat" type="text" id="<?php echo $this->get_field_id('supporter_'.$i.'_viber'); ?>" name="<?php echo $this->get_field_name('supporter_'.$i.'_viber'); ?>" value="<?php echo esc_attr( $instance['supporter_'.$i.'_viber'] ); ?>" />
+		    		</p>
+	    		<?php endif;?>
     		
             </div>
 		<?php
@@ -140,6 +161,8 @@ function get_layout_support($instance, $j = 1) {
 		$phone 	= 	$instance['supporter_'.$i.'_phone'];
 		$email 	= 	$instance['supporter_'.$i.'_email'];
 		$skype 	= 	$instance['supporter_'.$i.'_skype'];
+		$zalo 	= 	$instance['supporter_'.$i.'_zalo'];
+		$viber 	= 	$instance['supporter_'.$i.'_viber'];
 		?>
 		<div id="support-<?php echo $i; ?>" class="supporter">
 			<?php
@@ -181,6 +204,17 @@ function get_layout_support($instance, $j = 1) {
 						if( $phone ) {
 							echo '<li class="phone">' .$phone. '</li>';
 						}
+						echo '<div class="social">';
+							if( ! empty( $zalo ) ) {
+								echo '<a target="_blank" href="https://zalo.me/'.$zalo.'"><img src="'. get_stylesheet_directory_uri() .'/lib/images/icon-zalo2.png"></a>';
+							}
+							if( ! empty( $skype ) ) {
+								echo '<a target="_blank" href="skype:'.$skype.'?chat"><img src="'. get_stylesheet_directory_uri() .'/lib/images/icon-skype.png"></a>';
+							}
+							if( ! empty( $viber ) ) {
+								echo '<a target="_blank" href="viber://chat?number='.$viber.'"><img src="'. get_stylesheet_directory_uri() .'/lib/images/icon-viber.png"></a>';
+							}
+						echo '</div>';
 					echo '</ul>';
 					break;
 				case '4':

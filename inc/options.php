@@ -135,7 +135,7 @@ $args = array(
 
 // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
 $args['share_icons'][] = array(
-    'url'   => 'https://www.facebook.com/thietkeweb3b',
+    'url'   => 'https://www.facebook.com/web3bvietnam',
     'title' => 'Like us on Facebook',
     'icon'  => 'el el-facebook',
 );
@@ -956,7 +956,7 @@ Redux::setSection( $opt_name, array(
             'id'       => 'phonering-color',
             'type'     => 'color',
             'title'    => __('Phone Ring Color', 'shtheme'),
-            'default'  => '#337ab7',
+            'default'  => '#ea2700',
             'validate' => 'color',
         ),
         array(

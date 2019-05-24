@@ -121,7 +121,7 @@ img {max-width: 100%;height: auto}
 .main-navigation ul.menu > li.current-menu-item > a,
 .site-header.logo-left .main-navigation ul.menu > li > a:hover,
 .site-header.logo-left .main-navigation ul.menu > li.current-menu-item > a {
-	color: #337ab7;
+	color: #337ab7 !important;
 }
 /* Submenu 1 */
 .main-navigation ul ul {
@@ -553,19 +553,15 @@ textarea.form-control {
 /* Widget Support */
 @media (min-width: 1200px) {
 	.widget_supports .list-supporter {
-		padding-top: 200px;
+		padding-top: 190px;
 		background-image: url(lib/images/bg-support.png);
 		background-repeat: no-repeat;
 		background-position: top center;
 		background-size: contain;
 	}
-	.widget_supports .support-style-3 {
-		padding-top: 0;
-		background: none;
-	}
 }
 .widget_supports .support-style-1 {
-	background-color: #337ab7;
+	background-color: #ef1e1e;
 }
 .widget_supports .support-style-1 .supporter {
 	padding: 0 10px 10px 10px;
@@ -619,22 +615,34 @@ textarea.form-control {
 .widget_supports .support-style-2 .email a {
 	color: #333333;
 }
-.widget_supports .support-style-3 {
-	padding: 5px 0;
+.widget_supports .support-style-3 .supporter:not(:last-child) {
+	border-bottom: 1px solid #dfdfdf;
 }
 .widget_supports .support-style-3 ul {
-	padding: 10px 15px;
-	background: url(lib/images/zalo_logo.png) right 15px center no-repeat;
+	position: relative;
+	padding: 8px 10px;
 }
 .widget_supports .support-style-3 ul li {
 }
 .widget_supports .support-style-3 .name {
-	font-size: 16px;
+	font-size: 12px;
+	color: #333333;
 }
 .widget_supports .support-style-3 .phone {
-	font-size: 22px;
+	font-size: 20px;
+	line-height: 24px;
 	font-weight: bold;
-	color: #ff0000;
+	color: #e70c0c;
+}
+.widget_supports .support-style-3 .social {
+	position: absolute;
+	bottom: 10px;
+	right: 8px;
+	z-index: 1;
+}
+.widget_supports .support-style-3 .social a {
+	display: inline-block;
+	margin-left: 4px;
 }
 /* Widget Slider Products */
 .sidebar .content-feature-page, .sidebar .slider-products {
@@ -873,7 +881,7 @@ html .slick-carousel.slick-dotted.slick-slider {
 .sidebar .cpd li:last-child {
 	border-bottom: none;
 }
-.slider {
+.wtb-slider {
 	margin-bottom: 20px;
 }
 html .theme-default .nivo-controlNav {

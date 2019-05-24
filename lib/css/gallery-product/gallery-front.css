@@ -47,6 +47,10 @@ a.dev3b-popup:hover{
 .dev3b-slider-for.slick-slider {
     margin-left: 0 !important;
     margin-right: 0 !important;
+    margin-bottom: 20px;
+}
+.gallery-horizontal .dev3b-slider-for.slick-slider {
+    margin-bottom: 20px;
 }
 .dev3b-slider-for .slick-slide {
     padding-left: 0 !important;

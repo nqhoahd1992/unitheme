@@ -42,6 +42,7 @@ function my_theme_wrapper_start() {
 	echo '<div class="content-sidebar-wrap">';
 	do_action( 'before_main_content' );
 	echo '<main id="main" class="site-main" role="main">';
+	do_action( 'before_loop_main_content' );
 }
 
 function my_theme_wrapper_end() {
