@@ -10,7 +10,7 @@ function insert_callring(){
 
 	echo '<div class="hotline-phone-'. $sh_option['phonering-style'] .'">';
 		if( $sh_option['phonering-number'] ) {
-			
+
 			if( $sh_option['phonering-style'] == '1' ) {
 				echo '<div class="quick-alo-phone quick-alo-green quick-alo-show d-none d-xl-block" id="quick-alo-phoneIcon">';
 					echo '<a href="tel:'. $sh_option['phonering-number'] .'" title="'. __('Call now','shtheme') .'">';
@@ -50,7 +50,7 @@ add_action('sh_after_footer','insert_callring');
 
 function callring_style() {
 	global $sh_option;
-	if ( $sh_option['phonering-color'] ) { 
+	if ( $sh_option['phonering-color'] ) {
 	?>
 	<style>
 		.hotline-phone-1 .quick-alo-phone.quick-alo-green .quick-alo-ph-img-circle,
@@ -72,7 +72,7 @@ function callring_style() {
 			border-color: <?php echo $hotlinebar_bg ?> !important;
 		}
 	</style>
-	<?php 
+	<?php
 	}
 }
 add_action( 'wp_footer', 'callring_style' );
@@ -205,7 +205,6 @@ function sh_footer_widget_areas() {
 			dynamic_sidebar( 'footer-' . $counter );
 		echo '</div>';
 		$counter++;
-
 	}
 
 }

@@ -39,9 +39,11 @@ global $sh_option;
 					</div>
 				</div>
 				<div class="col-xl-9 col-lg-10">
-					<nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
-						<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'menu_class' => 'menu clearfix' ) );?>
-					</nav>
+					<?php if ( has_nav_menu( 'menu-1' ) ) { ?>
+						<nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+							<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'menu_class' => 'menu clearfix' ) );?>
+						</nav>
+					<?php } // end check menu ?>
 				</div>
 			</div>
 		</div>

@@ -45,11 +45,11 @@ global $sh_option;
 	<a class="navbar-brand" href="<?php echo get_site_url();?>">MENU</a>
 </div>
 <!-- End Menu Mobile -->
-
-<nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
-	<div class="container">
-		<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'menu_class' => 'menu clearfix' ) ); ?>
-	</div>
-</nav>
-
+<?php if ( has_nav_menu( 'menu-1' ) ) { ?>
+	<nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+		<div class="container">
+			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'menu_class' => 'menu clearfix' ) ); ?>
+		</div>
+	</nav>
+<?php } // end check menu ?>
 <?php //do_action( 'sh_after_menu' );?>
