@@ -35,7 +35,7 @@ get_header(); ?>
 				$atts['hide_category'] 		= '0';
 				$atts['hide_desc'] 			= '1';
 				$atts['hide_meta']			= '1';
-				$atts['hide_viewmore']		= '1';
+				$atts['btn_viewmore']		= '0';
 				$atts['number_character']	= '300';
 				$post_class[] 				= 'col-md-12';
 				$style 						= 'style-1';
