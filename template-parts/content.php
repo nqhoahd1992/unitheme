@@ -76,13 +76,12 @@ postview_set( get_the_ID() );
 	<?php endif;?>
 
 	<?php
-	$next_id 		= get_next_post()->ID;
-	$previous_id 	= get_previous_post()->ID;
-	if( $sh_option['display-navipost'] == '1' && ( ! empty( $next_id ) || ! empty( $previous_id ) ) ) : 
+	
+	if( $sh_option['display-navipost'] == '1' && ( ! empty( get_next_post() ) || ! empty( get_previous_post() ) ) ) :
 	?>
 		<div class="post-next-prev">
 			<div class="row">
-				<?php if( $next_id ) : ?>
+				<?php if( get_next_post() ) : $next_id = get_next_post()->ID; ?>
 					<div class="col-sm-6">
 						<div class="post-next-prev-content">
 							<span><?php _e( 'Next Post', 'shtheme' );?></span>
@@ -90,7 +89,7 @@ postview_set( get_the_ID() );
 						</div>
 					</div>
 				<?php endif;?>
-				<?php if( $previous_id ) : ?>
+				<?php if( get_previous_post() ) : $previous_id = get_previous_post()->ID; ?>
 					<div class="col-sm-6">
 						<div class="post-next-prev-content">
 							<span><?php _e( 'Previous Post', 'shtheme' );?></span>

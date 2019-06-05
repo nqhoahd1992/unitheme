@@ -27,8 +27,8 @@ class Gtid_Information_Widget extends WP_Widget {
         ?>
         <ul>
             <?php
-            $hide_label = $instance['hide_label'] ? 'd-none' : '';
-            $hide_icon  = $instance['hide_icon']  ? 'd-none' : '';
+            $hide_label = ! empty( $instance['hide_label'] ) ? 'd-none' : '';
+            $hide_icon  = ! empty( $instance['hide_icon'] ) ? 'd-none' : '';
             if( $instance['company'] ) {
                 echo '<li class="label-company"><i class="'. $hide_icon .' fab fa-windows"></i>'. $instance['company'] .'</li>';
             }
@@ -64,6 +64,7 @@ class Gtid_Information_Widget extends WP_Widget {
     function form($instance) {
         $instance = wp_parse_args( 
         	(array)$instance, array(
+                'company'    => '',
         		'title' 	 => '', 
         		'address'    => '',  
         		'tel' 	     => '',

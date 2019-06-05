@@ -152,9 +152,9 @@ add_action('before_loop_main_content','create_slide_carousel');
  */
 function insert_metaslide(){
 	global $sh_option;
-	if( $sh_option['metaslider'] && ( is_home() || is_front_page() ) ) {
+	if( ! empty( $sh_option['metaslider'] ) && ( is_home() || is_front_page() ) ) {
 		$metaslider = $sh_option['metaslider'];
-		echo '<div class="slider">'.do_shortcode('[metaslider id="'.$metaslider.'"]').'</div>';
+		echo '<div class="wtb-slider">'.do_shortcode('[metaslider id="'.$metaslider.'"]').'</div>';
 	}
 }
 add_action('before_loop_main_content','insert_metaslide');

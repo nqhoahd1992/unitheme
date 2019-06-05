@@ -106,8 +106,10 @@ add_filter( 'loop_shop_per_page', 'woocommerce_edit_loop_shop_per_page', 20 );
  */
 function add_percent_sale(){
 	global $product;
+	$regular_price 	= get_post_meta( get_the_ID(), '_regular_price', true);
+	$sale_price 	= get_post_meta( get_the_ID(), '_sale_price', true);
 	if ( $product->is_on_sale() && $product->is_type( 'simple' ) ) {
-		$per = round( ( ( $product->regular_price - $product->sale_price ) / $product->regular_price ) * 100 );
+		$per = round( ( ( $regular_price - $sale_price ) / $regular_price ) * 100 );
 		echo '<span class="percent">-'. $per .'%</span>';
 	}
 }
@@ -223,7 +225,7 @@ add_action( 'woocommerce_after_add_to_cart_button','insert_btn_quick_buy',1 );
  */
 function redirect_to_checkout($checkout_url) {
     global $woocommerce;
-    if($_GET['quick_buy']) {
+    if( ! empty( $_GET['quick_buy'] ) ) {
         $checkout_url = $woocommerce->cart->get_checkout_url();
     }
     return $checkout_url;
@@ -236,21 +238,21 @@ add_filter ('woocommerce_add_to_cart_redirect', 'redirect_to_checkout');
 function get_price_product(){
 	global $product;
 	if ( $product->is_type( 'simple' ) ) {
-		$regular_price 	= $product->regular_price;
-		$sale_price 	= $product->sale_price;
+		$regular_price 	= get_post_meta( get_the_ID(), '_regular_price', true);
+		$sale_price 	= get_post_meta( get_the_ID(), '_sale_price', true);
 		if ( empty( $regular_price ) ) {
 			echo '<p class="price">'.__( 'Contact', 'shtheme' ).'</p>';
 		} elseif ( ! empty( $regular_price ) && empty( $sale_price ) ) {
 			echo '<p class="price">'. wc_price( $regular_price) . '</p>';
 		} elseif ( ! empty( $regular_price ) && ! empty( $sale_price ) ) {
-			echo '<p class="price"><ins>'. wc_price( $sale_price) .'</ins><del>'. wc_price( $regular_price) .'</del></p>';
+			echo '<p class="price"><ins>'. wc_price( $sale_price) .'</ins><del>'. wc_price( $regular_price) .'</del></p>'; 
 		}
 	} elseif( $product->is_type( 'variable' ) ) {
 		if( is_product() ) {
 			// echo '<p class="price d-none">'. $product->get_price_html() .'</p>';
-			echo '<p class="price d-none">'. wc_price($product->get_price()) .'</p>';
+			echo '<p class="price d-none">'. wc_price(wc_get_price_to_display( $product, array( 'price' => $product->get_price() ) )) .'</p>';
 		} else {
-			echo '<p class="price">'. wc_price($product->get_price()) .'</p>';
+			echo '<p class="price">'. wc_price(wc_get_price_to_display( $product, array( 'price' => $product->get_price() ) )) .'</p>';
 		}
 	}
 }
