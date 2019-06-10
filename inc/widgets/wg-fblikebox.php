@@ -25,21 +25,11 @@ class Like_Box_Facebook extends WP_Widget {
 
 		if( $page_url ): ?>
 			<div id="fb-root"></div>
-			<script>(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = 'https://connect.facebook.net/<?php _e('en_US','shtheme');?>/sdk.js#xfbml=1&version=v3.2';
-			  fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));</script>
+			<?php global $lib_fb;if( $lib_fb != 1 ) : ?>
+				<script async defer crossorigin="anonymous" src="https://connect.facebook.net/<?php _e('en_US','shtheme');?>/sdk.js#xfbml=1&version=v3.3"></script>
+			<?php endif;?>
 
-			<div class="fb-page" 
-				data-href="<?php echo $page_url; ?>" 
-				data-small-header="false" 
-				data-adapt-container-width="true" 
-				data-hide-cover="false" 
-				data-show-facepile="true">
-			</div>
+			<div class="fb-page" data-href="<?php echo $page_url; ?>" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
 		<?php endif;
 		echo $after_widget;
     }

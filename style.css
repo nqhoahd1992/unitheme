@@ -562,7 +562,7 @@ textarea.form-control {
 	}
 }
 .widget_supports .support-style-1 {
-	background-color: #ef1e1e;
+	background-color: #FFF;
 }
 .widget_supports .support-style-1 .supporter {
 	padding: 0 10px 10px 10px;
@@ -570,8 +570,8 @@ textarea.form-control {
 .widget_supports .support-style-1 li {
 	padding: 5px 0;
 	font-size: 14px;
-	color: #FFF;
-	border-top: 1px solid #FFF;
+	color: #333;
+	border-top: 1px solid #333;
 }
 .widget_supports .support-style-1 li:first-child {
 	border-top: none;
@@ -607,11 +607,10 @@ textarea.form-control {
 	bottom: 10px;
 	z-index: 1;
 }
-.widget_supports .support-style-2 .email {
-	margin: 0 8px;
+.widget_supports .list-supporter .email {
+	padding: 5px 10px;
 	font-weight: 600;
-	border-top: 1px solid #dddddd;
-	line-height: 30px;
+	line-height: 20px;
 }
 .widget_supports .support-style-2 .email a {
 	color: #333333;

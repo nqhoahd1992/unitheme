@@ -48,7 +48,7 @@ class Gtid_Post_Top_View_Widget extends WP_Widget {
             $the_query->the_post();
             ?>
                 <li id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
-                    <?php if ( $instance['show_image'] ) { ?>
+                    <?php if ( ! empty( $instance['show_image'] ) ) { ?>
                         <a class="img <?php echo $instance['image_alignment'];?>" href="<?php the_permalink();?>" title="<?php the_title();?>">
                             <?php if(has_post_thumbnail()) the_post_thumbnail( $instance['image_size'] ,array( "alt" => get_the_title() ) );?>
                         </a>

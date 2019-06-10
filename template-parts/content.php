@@ -44,16 +44,10 @@ postview_set( get_the_ID() );
 		?>
 	</div><!-- .entry-content -->
 
-	<?php if( $sh_option['display-sharepost'] == '1' ) : ?>
+	<?php if( $sh_option['display-sharepost'] == '1' ) : $GLOBALS['lib_fb'] = 1; ?>
 		<div class="socials-share">
 			<div id="fb-root"></div>
-			<script>(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = 'https://connect.facebook.net/<?php _e('en_US','shtheme');?>/sdk.js#xfbml=1&version=v3.2';
-			  fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));</script>
+			<script async defer crossorigin="anonymous" src="https://connect.facebook.net/<?php _e('en_US','shtheme');?>/sdk.js#xfbml=1&version=v3.3"></script>
 
 			<div class="fb-like" data-href="<?php the_permalink();?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 

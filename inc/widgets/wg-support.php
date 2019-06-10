@@ -36,14 +36,32 @@ class Gtid_Support_Online extends WP_Widget {
 	}
 
 	function form($instance) {
-		$instance = wp_parse_args( 
-			(array)$instance, array(
-				'title' 			=> __( 'Support Online', 'shtheme' ),
-	            'number_supporter' 	=> 1,
-	            'tel' 				=> '',
-	            'data_style' 		=> '',
-			)
+		
+		$default_support = array(
+			'title' 			=> __( 'Support Online', 'shtheme' ),
+            'number_supporter' 	=> 1,
+            'data_style' 		=> '',
 		);
+
+		$args_support = array();
+
+		if( empty( $instance['number_supporter'] ) ) {
+			$instance['number_supporter'] = 1;
+		}
+
+		for( $i = 1;$i<=$instance['number_supporter'];$i++ ) {
+			$args_support['supporter_'.$i.'_name'] = '';
+			$args_support['supporter_'.$i.'_phone'] = '';
+			$args_support['supporter_'.$i.'_email'] = '';
+			$args_support['supporter_'.$i.'_zalo'] = '';
+			$args_support['supporter_'.$i.'_skype'] = '';
+			$args_support['supporter_'.$i.'_viber'] = '';
+		}
+
+		$instance = wp_parse_args( 
+			(array)$instance, array_merge( $default_support, $args_support )
+		);
+
 		$style =  $instance['data_style'];
 		?>
 		<p>
@@ -70,7 +88,7 @@ class Gtid_Support_Online extends WP_Widget {
 	        <input type="submit" name="savewidget" id="savewidget" class="button-primary widget-control-save" value="<?php _e('Save change', 'shtheme'); ?>" />
     	</p>
 
-    	<?php if( $style == '2' ) { ?>
+    	<?php if( $style == '2' || $style == '3' ) { ?>
     		<p>
 				<label for="<?php echo $this->get_field_id('supporter_email_general'); ?>">
 					<?php _e('Email', 'shtheme'); ?>:
@@ -110,14 +128,12 @@ class Gtid_Support_Online extends WP_Widget {
 					</p>
 				<?php endif;?>
 
-				<?php if( $style != '3' ) : ?>
 		    		<p>
 		            	<label for="<?php echo $this->get_field_id('supporter_'.$i.'_skype'); ?>">
 		            		<?php _e('Skype', 'shtheme'); ?>:
 		            	</label>
 		    			<input class="widefat" type="text" id="<?php echo $this->get_field_id('supporter_'.$i.'_skype'); ?>" name="<?php echo $this->get_field_name('supporter_'.$i.'_skype'); ?>" value="<?php echo esc_attr( $instance['supporter_'.$i.'_skype'] ); ?>" />
 		    		</p>
-	    		<?php endif;?>
 
 	    		<?php if( $style == '3' ) : ?>
 	    			<p>
@@ -125,12 +141,6 @@ class Gtid_Support_Online extends WP_Widget {
 		            		<?php _e('Zalo', 'shtheme'); ?>:
 		            	</label>
 		    			<input class="widefat" type="text" id="<?php echo $this->get_field_id('supporter_'.$i.'_zalo'); ?>" name="<?php echo $this->get_field_name('supporter_'.$i.'_zalo'); ?>" value="<?php echo esc_attr( $instance['supporter_'.$i.'_zalo'] ); ?>" />
-		    		</p>
-		    		<p>
-		            	<label for="<?php echo $this->get_field_id('supporter_'.$i.'_skype'); ?>">
-		            		<?php _e('Skype', 'shtheme'); ?>:
-		            	</label>
-		    			<input class="widefat" type="text" id="<?php echo $this->get_field_id('supporter_'.$i.'_skype'); ?>" name="<?php echo $this->get_field_name('supporter_'.$i.'_skype'); ?>" value="<?php echo esc_attr( $instance['supporter_'.$i.'_skype'] ); ?>" />
 		    		</p>
 		    		<p>
 		            	<label for="<?php echo $this->get_field_id('supporter_'.$i.'_viber'); ?>">
@@ -152,17 +162,21 @@ function get_layout_support($instance, $j = 1) {
         'number_supporter' => 1,
 	) );
 
-	if( $j == '2' ) {
+	if( $j == '2' || $j == '3' ) {
 		$email_general 	= 	$instance['supporter_email_general'];
 	}
 
 	for( $i = 1; $i <= $instance['number_supporter']; $i++ ) {
 		$name 	= 	$instance['supporter_'.$i.'_name'];
 		$phone 	= 	$instance['supporter_'.$i.'_phone'];
-		$email 	= 	$instance['supporter_'.$i.'_email'];
+		if( $j == '1' ) {
+			$email 	= 	$instance['supporter_'.$i.'_email'];
+		}
 		$skype 	= 	$instance['supporter_'.$i.'_skype'];
-		$zalo 	= 	$instance['supporter_'.$i.'_zalo'];
-		$viber 	= 	$instance['supporter_'.$i.'_viber'];
+		if( $j == '3' ) {
+			$zalo 	= 	$instance['supporter_'.$i.'_zalo'];
+			$viber 	= 	$instance['supporter_'.$i.'_viber'];
+		}
 		?>
 		<div id="support-<?php echo $i; ?>" class="supporter">
 			<?php
@@ -229,7 +243,7 @@ function get_layout_support($instance, $j = 1) {
 		<?php
 	}
 
-	if( $j == '2' ) {
+	if( $j == '2' || $j == '3' ) {
 		if( $email_general ) {
 			echo '<div class="email">'. __('Email', 'shtheme') .' <a href="mailto:'. $email_general .'">'. $email_general .'</a></div>';
 		}
