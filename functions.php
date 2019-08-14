@@ -140,6 +140,16 @@ add_action( 'widgets_init','sh_register_footer_widget_areas' );
 // Load Plugin Activation File.
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
+// Load Custom Post Type
+// require get_template_directory() . '/inc/cpt/cpt-abstract.php';
+// require get_template_directory() . '/inc/cpt/khach-hang.php';
+// require get_template_directory() . '/inc/cpt/cpt.php';
+	
+// Load Custom Taxonomy
+// require get_template_directory() . '/inc/taxonomies/custom-taxonomy-abstract.php';
+// require get_template_directory() . '/inc/taxonomies/khach-hang-cat.php';
+// require get_template_directory() . '/inc/taxonomies/custom-taxonomy.php';
+
 // Load Shortcode
 require get_template_directory() . '/inc/shortcode/shortcode-blog.php';
 if ( class_exists( 'Vc_Manager' ) ) {
