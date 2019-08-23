@@ -16,7 +16,7 @@ class CPT
 		do_action( 'Cpt\register_post_type', $this );
 
 		if ( ! empty( $this->custom_post_types ) ) {
-			add_action( 'init', array( $this, 'register_post_type' ) );
+			add_action( 'init', array( $this, 'register_post_type' ), 0 );
 		}
 
 		if ( ! empty( $this->no_slug_post_types ) ) {
@@ -40,16 +40,16 @@ class CPT
 			'name_admin_bar'        => $post_type['name'],
 			'archives'              => $post_type['name'],
 			'attributes'            => $post_type['singular_name'],
-			'parent_item_colon'     => sprintf( __( '%s cha', 'phoenixdigi' ), $post_type['singular_name'] ),
-			'all_items'             => sprintf( __( 'Tất cả %s', 'phoenixdigi' ), $post_type['name'] ),
-			'add_new_item'          => sprintf( __( 'Thêm mới %s', 'phoenixdigi' ), $post_type['singular_name'] ),
-			'add_new'               => _x( 'Thêm mới', 'phoenixdigi', 'phoenixdigi' ),
-			'new_item'              => sprintf( __( '%s mới', 'phoenixdigi' ), $post_type['name'] ),
-			'edit_item'             => __( 'Chỉnh sửa', 'phoenixdigi' ),
-			'view_item'             => sprintf( __( 'Xem %s', 'phoenixdigi' ), $post_type['singular_name'] ),
-			'search_items'          => sprintf( __( 'Tìm kiếm %s', 'phoenixdigi' ), $post_type['singular_name'] ),
-			'not_found'             => sprintf( __( 'Không tìm thấy %s nào', 'phoenixdigi' ), $post_type['singular_name'] ),
-			'not_found_in_trash'    => sprintf( __( 'Không tìm thấy %s nào', 'phoenixdigi' ), $post_type['singular_name'] ),
+			'parent_item_colon'     => sprintf( __( '%s cha', 'shtheme' ), $post_type['singular_name'] ),
+			'all_items'             => sprintf( __( 'Tất cả %s', 'shtheme' ), $post_type['name'] ),
+			'add_new_item'          => sprintf( __( 'Thêm mới %s', 'shtheme' ), $post_type['singular_name'] ),
+			'add_new'               => _x( 'Thêm mới', 'shtheme', 'shtheme' ),
+			'new_item'              => sprintf( __( '%s mới', 'shtheme' ), $post_type['name'] ),
+			'edit_item'             => __( 'Chỉnh sửa', 'shtheme' ),
+			'view_item'             => sprintf( __( 'Xem %s', 'shtheme' ), $post_type['singular_name'] ),
+			'search_items'          => sprintf( __( 'Tìm kiếm %s', 'shtheme' ), $post_type['singular_name'] ),
+			'not_found'             => sprintf( __( 'Không tìm thấy %s nào', 'shtheme' ), $post_type['singular_name'] ),
+			'not_found_in_trash'    => sprintf( __( 'Không tìm thấy %s nào', 'shtheme' ), $post_type['singular_name'] ),
 
 			'supports'              => $post_type['supports'], //array( 'title', 'editor', 'thumbnail', 'comments', 'trackbacks', 'revisions', 'custom-fields', 'page-attributes', 'post-formats' )
 			'show_in_rest'			=> isset($post_type['show_in_rest']) ? $post_type['show_in_rest'] : true,
@@ -63,7 +63,7 @@ class CPT
 			'show_in_nav_menus'     => isset($post_type['show_in_nav_menus']) ? $post_type['show_in_nav_menus'] : true,
 			'can_export'            => isset($post_type['can_export']) ? $post_type['can_export'] : true,
 			'has_archive'           => isset($post_type['has_archive']) ? $post_type['has_archive'] : true,
-			'exclude_from_search'   => isset($post_type['exclude_from_search']) ? $post_type['exclude_from_search'] : true,
+			'exclude_from_search'   => isset($post_type['exclude_from_search']) ? $post_type['exclude_from_search'] : false,
 			'publicly_queryable'    => isset($post_type['publicly_queryable']) ? $post_type['publicly_queryable'] : true,
 			'rewrite'    			=> isset($post_type['rewrite']) ? $post_type['rewrite'] : true,
 			'capability_type'       => isset($post_type['capability_type']) ? $post_type['capability_type'] : 'post'

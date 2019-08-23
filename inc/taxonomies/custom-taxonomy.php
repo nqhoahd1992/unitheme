@@ -22,7 +22,7 @@ class Custom_Taxonomy
 
 		if ( ! empty( $this->custom_taxonomies ) ) {
 
-			add_action( 'init', [ $this, 'register_taxonomy' ] );
+			add_action( 'init', [ $this, 'register_taxonomy' ], 0 );
 		}
 
 		if ( ! empty( $this->no_slug_taxonomies ) ) {
