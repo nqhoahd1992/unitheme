@@ -2,16 +2,16 @@
 add_action('widgets_init', 'register_widget_top_view');
 
 function register_widget_top_view() {
-    register_widget('Gtid_Post_Top_View_Widget');
+    register_widget('QH_Post_Top_View_Widget');
 }
 
-class Gtid_Post_Top_View_Widget extends WP_Widget {
+class QH_Post_Top_View_Widget extends WP_Widget {
 
     function __construct() {
 
         parent::__construct(
             'list_view_posts',
-            __( '3B - Top view posts', 'shtheme' ),
+            __( 'QH - Top view posts', 'shtheme' ),
             array(
                 'description'  => __( 'Top list posts by views', 'shtheme' )
             )

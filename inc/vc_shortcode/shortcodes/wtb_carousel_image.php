@@ -14,11 +14,11 @@ function wtb_load_carousel_image_shortcode() {
     $custom_class       = wtb_vc_custom_class();
 
     vc_map( array(
-        'name'          => "Web3B " . esc_html__('Carousel Images', 'shtheme'),
+        'name'          => esc_html__('Carousel Images', 'shtheme'),
         'base'          => 'wtb_carousel_image',
         'description'   => esc_html__('Show one carousel images', 'shtheme'),
-        'category'      => esc_html__('Web3B', 'shtheme'),
-        'icon'		    => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
+        'category'      => esc_html__('Advanced Element', 'shtheme'),
+        // 'icon'		    => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
         'weight'        => - 50,
         'params'        => array(
             array(

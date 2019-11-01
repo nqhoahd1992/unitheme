@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2019-05-22 11:24+0700\n"
-"PO-Revision-Date: 2019-05-22 11:30+0700\n"
+"POT-Creation-Date: 2019-11-01 09:46+0700\n"
+"PO-Revision-Date: 2019-11-01 09:47+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -25,62 +25,54 @@ msgstr ""
 msgid "The content is being updated"
 msgstr "Nội dung đang cập nhật"
 
-#: comments.php:18
+#: comments.php:14
 #, php-format
 msgctxt ""
 msgid "1 comment"
 msgid_plural "%1$s comment"
 msgstr[0] "%1$s bình luận"
 
-#: comments.php:25
+#: comments.php:19
 msgid "Comments are closed."
 msgstr "Bình luận đã được đóng lại."
 
-#: comments.php:33
+#: comments.php:27
 msgid "&larr; previous"
 msgstr "&larr; trước đó"
 
-#: comments.php:34
+#: comments.php:28
 msgid "Next &rarr;"
 msgstr "Tiếp theo &rarr;"
 
-#: comments.php:39 comments.php:57
+#: comments.php:33 comments.php:52
 msgid "Your comment"
 msgstr "Bình luận của bạn"
 
-#: comments.php:48
+#: comments.php:43
 msgid "Login"
 msgstr "Đăng nhập"
 
-#: comments.php:48
+#: comments.php:43
 msgid "to comment."
 msgstr "để bình luận."
 
-#: comments.php:54
+#: comments.php:49
 msgid "Comment with the name:"
 msgstr "Bình luận với tên:"
 
-#: comments.php:62 inc/widgets/wg-support.php:92
+#: comments.php:58 inc/widgets/wg-support.php:110
 msgid "Name"
 msgstr "Tên"
 
-#: comments.php:65 inc/options.php:856 inc/widgets/wg-information.php:48
-#: inc/widgets/wg-information.php:104 inc/widgets/wg-support.php:76
-#: inc/widgets/wg-support.php:107 inc/widgets/wg-support.php:200
+#: comments.php:63 inc/options.php:856 inc/widgets/wg-information.php:48
+#: inc/widgets/wg-information.php:105 inc/widgets/wg-support.php:94
+#: inc/widgets/wg-support.php:125 inc/widgets/wg-support.php:248
 msgid "Email"
 msgstr "Email"
 
 #: comments.php:69
 msgid "Send"
 msgstr "Gửi"
-
-#: footer.php:37
-msgid "Designed by"
-msgstr "Thiết kế bởi"
-
-#: footer.php:37
-msgid "Viet Nam"
-msgstr "Việt Nam"
 
 #: functions.php:29
 msgid "Primary"
@@ -571,39 +563,93 @@ msgstr "Tất cả cài đặt đã hoàn thành."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Cài đặt gói mở rộng %1$s (%2$d/%3$d)"
 
+#: inc/cpt/cpt.php:43
+#, php-format
+msgid "%s cha"
+msgstr ""
+
+#: inc/cpt/cpt.php:44
+#, php-format
+msgid "Tất cả %s"
+msgstr ""
+
+#: inc/cpt/cpt.php:45
+#, php-format
+msgid "Thêm mới %s"
+msgstr ""
+
+#: inc/cpt/cpt.php:46
+msgctxt "shtheme"
+msgid "Thêm mới"
+msgstr ""
+
+#: inc/cpt/cpt.php:47
+#, php-format
+msgid "%s mới"
+msgstr ""
+
+#: inc/cpt/cpt.php:48
+msgid "Chỉnh sửa"
+msgstr ""
+
+#: inc/cpt/cpt.php:49
+#, php-format
+msgid "Xem %s"
+msgstr ""
+
+#: inc/cpt/cpt.php:50
+#, php-format
+msgid "Tìm kiếm %s"
+msgstr ""
+
+#: inc/cpt/cpt.php:51 inc/cpt/cpt.php:52
+#, php-format
+msgid "Không tìm thấy %s nào"
+msgstr ""
+
+#: inc/cpt/khach-hang.php:9
+msgctxt "Post Type General Name"
+msgid "Khách hàng"
+msgstr ""
+
+#: inc/cpt/khach-hang.php:10
+msgctxt "Post Type Singular Name"
+msgid "Khách hàng"
+msgstr ""
+
 #: inc/function-woo.php:16
 msgid "Shop Sidebar"
 msgstr "Shop Sidebar"
 
-#: inc/function-woo.php:121
+#: inc/function-woo.php:124
 msgid "Continue Shopping"
 msgstr "Tiếp tục mua hàng"
 
-#: inc/function-woo.php:179 inc/options.php:844
+#: inc/function-woo.php:182 inc/options.php:844
 msgid "Information"
 msgstr "Thông tin"
 
-#: inc/function-woo.php:180
+#: inc/function-woo.php:183
 msgid "Gallery"
 msgstr "Thư viện ảnh"
 
-#: inc/function-woo.php:181
+#: inc/function-woo.php:184
 msgid "Video"
 msgstr "Video"
 
-#: inc/function-woo.php:182
+#: inc/function-woo.php:185
 msgid "Attachments"
 msgstr "Tệp đính kèm"
 
-#: inc/function-woo.php:214
+#: inc/function-woo.php:217
 msgid "Quick buy"
 msgstr "Mua ngay"
 
-#: inc/function-woo.php:241
+#: inc/function-woo.php:244
 msgid "Contact"
 msgstr "Liên hệ"
 
-#: inc/function-woo.php:365 inc/function-woo.php:366
+#: inc/function-woo.php:368 inc/function-woo.php:369
 msgid "View detail"
 msgstr "Xem chi tiết"
 
@@ -664,7 +710,7 @@ msgstr "Theme Options"
 msgid "General Settings"
 msgstr "Cài đặt chung"
 
-#: inc/options.php:166 inc/widgets/wg-support.php:61
+#: inc/options.php:166 inc/widgets/wg-support.php:79
 msgid "Appearance"
 msgstr "Giao diện"
 
@@ -971,7 +1017,7 @@ msgid "Telephone number"
 msgstr "Số điện thoại"
 
 #: inc/options.php:861 inc/widgets/wg-information.php:36
-#: inc/widgets/wg-information.php:88
+#: inc/widgets/wg-information.php:89
 msgid "Address"
 msgstr "Địa chỉ"
 
@@ -992,8 +1038,8 @@ msgid "Insert code to footer"
 msgstr "Chèn code vào Footer"
 
 #: inc/options.php:892
-msgid "3B Developer"
-msgstr "3B Developer"
+msgid "QH Developer"
+msgstr "QH Developer"
 
 #: inc/options.php:899
 msgid "User Functions"
@@ -1081,6 +1127,10 @@ msgstr ""
 msgid "Read more"
 msgstr "Xem thêm"
 
+#: inc/taxonomies/khach-hang-cat.php:17 inc/taxonomies/khach-hang-cat.php:18
+msgid "Danh mục"
+msgstr ""
+
 #: inc/vc_shortcode/lib/functions.php:18
 msgid "Date"
 msgstr "Ngày tháng"
@@ -1095,10 +1145,10 @@ msgstr "Tác giả"
 
 #: inc/vc_shortcode/lib/functions.php:21
 #: inc/vc_shortcode/shortcodes/wtb_infobox.php:60
-#: inc/widgets/wg-fblikebox.php:55 inc/widgets/wg-information.php:80
+#: inc/widgets/wg-fblikebox.php:45 inc/widgets/wg-information.php:81
 #: inc/widgets/wg-page.php:40 inc/widgets/wg-post-list.php:95
 #: inc/widgets/wg-product-slider.php:96 inc/widgets/wg-social.php:72
-#: inc/widgets/wg-support.php:50 inc/widgets/wg-view-post-list.php:105
+#: inc/widgets/wg-support.php:68 inc/widgets/wg-view-post-list.php:105
 msgid "Title"
 msgstr "Tiêu đề"
 
@@ -1200,7 +1250,6 @@ msgstr "Blog"
 msgid "Show multiple posts in a category"
 msgstr "Hiển thị các bài viết trong chuyên mục"
 
-#. Theme Name of the plugin/theme
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:23
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:24
 #: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:20
@@ -1208,10 +1257,12 @@ msgstr "Hiển thị các bài viết trong chuyên mục"
 #: inc/vc_shortcode/shortcodes/wtb_static_block.php:29
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:24
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:24
-msgid "Web3B"
-msgstr "Web3B"
+#, fuzzy
+#| msgid "Advanced Options"
+msgid "Advanced Element"
+msgstr "Cài đặt nâng cao"
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:29 inc/widgets/wg-support.php:65
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:29 inc/widgets/wg-support.php:83
 msgid "Layout"
 msgstr "Giao diện"
 
@@ -1759,64 +1810,64 @@ msgid "Number Column on Mobile"
 msgstr "Số cột trên màn Mobile"
 
 #: inc/widgets/wg-fblikebox.php:13
-msgid "3B - Facebook Like Box"
-msgstr "3B - Facebook Like Box"
+msgid "QH - Facebook Like Box"
+msgstr "QH - Facebook Like Box"
 
 #: inc/widgets/wg-fblikebox.php:15
 msgid "Display like box fanpage Facebook"
 msgstr "Hiển thị Like Box Facebook"
 
-#: inc/widgets/wg-fblikebox.php:32 template-parts/content.php:54
+#: inc/widgets/wg-fblikebox.php:29 template-parts/content.php:50
 msgid "en_US"
 msgstr "vi_VN"
 
-#: inc/widgets/wg-fblikebox.php:49
+#: inc/widgets/wg-fblikebox.php:39
 msgid "Like Facebook"
 msgstr "Like Facebook"
 
-#: inc/widgets/wg-fblikebox.php:59
+#: inc/widgets/wg-fblikebox.php:49
 msgid "Link Fanpage"
 msgstr "Link Fanpage"
 
 #: inc/widgets/wg-information.php:14
-msgid "3B - Information contact"
-msgstr "3B - Thông tin liên hệ"
+msgid "QH - Information contact"
+msgstr "QH - Thông tin liên hệ"
 
 #: inc/widgets/wg-information.php:16
 msgid "Display information contact"
 msgstr "Hiển thị thông tin liên hệ"
 
-#: inc/widgets/wg-information.php:39 inc/widgets/wg-information.php:92
+#: inc/widgets/wg-information.php:39 inc/widgets/wg-information.php:93
 msgid "Telephone"
 msgstr "Số điện thoại"
 
-#: inc/widgets/wg-information.php:42 inc/widgets/wg-information.php:96
+#: inc/widgets/wg-information.php:42 inc/widgets/wg-information.php:97
 msgid "Hotline"
 msgstr "Hotline"
 
-#: inc/widgets/wg-information.php:45 inc/widgets/wg-information.php:100
+#: inc/widgets/wg-information.php:45 inc/widgets/wg-information.php:101
 msgid "Fax"
 msgstr "Fax"
 
-#: inc/widgets/wg-information.php:51 inc/widgets/wg-information.php:108
+#: inc/widgets/wg-information.php:51 inc/widgets/wg-information.php:109
 msgid "Website"
 msgstr "Website"
 
-#: inc/widgets/wg-information.php:84
+#: inc/widgets/wg-information.php:85
 msgid "Company"
 msgstr "Công ty"
 
-#: inc/widgets/wg-information.php:113
+#: inc/widgets/wg-information.php:114
 msgid "Hide label"
 msgstr "Không hiển thị nhãn"
 
-#: inc/widgets/wg-information.php:117
+#: inc/widgets/wg-information.php:118
 msgid "Hide icon"
 msgstr "Không hiển thị biểu tượng"
 
 #: inc/widgets/wg-page.php:14
-msgid "3B - Featured Page"
-msgstr "3B - Trang"
+msgid "QH - Featured Page"
+msgstr "QH - Trang"
 
 #: inc/widgets/wg-page.php:16
 msgid "Display featured page"
@@ -1873,8 +1924,8 @@ msgid "More Text"
 msgstr "Ký tự thêm"
 
 #: inc/widgets/wg-post-list.php:14
-msgid "3B - Featured Posts"
-msgstr "3B - Danh sách bài viết"
+msgid "QH - Featured Posts"
+msgstr "QH - Danh sách bài viết"
 
 #: inc/widgets/wg-post-list.php:16
 msgid "Displays featured posts with thumbnails"
@@ -1921,8 +1972,8 @@ msgid "character"
 msgstr "ký tự"
 
 #: inc/widgets/wg-product-slider.php:13
-msgid "3B - Products Slider"
-msgstr "3B - Slider sản phẩm"
+msgid "QH - Products Slider"
+msgstr "QH - Slider sản phẩm"
 
 #: inc/widgets/wg-product-slider.php:15
 msgid "Display slide list product"
@@ -1945,8 +1996,8 @@ msgid "Enter the product number in the view"
 msgstr "Nhập số sản phẩm trong khung nhìn"
 
 #: inc/widgets/wg-social.php:14
-msgid "3B - Social"
-msgstr "3B - Mạng xã hội"
+msgid "QH - Social"
+msgstr "QH - Mạng xã hội"
 
 #: inc/widgets/wg-social.php:16
 msgid "Display information social"
@@ -1961,8 +2012,8 @@ msgstr ""
 "strong></p>"
 
 #: inc/widgets/wg-support.php:13
-msgid "3B - Support"
-msgstr "3B - Hỗ trợ trực tuyến"
+msgid "QH - Support"
+msgstr "QH - Hỗ trợ trực tuyến"
 
 #: inc/widgets/wg-support.php:15
 msgid "Display list support for website"
@@ -1972,25 +2023,33 @@ msgstr "Hiển thị danh sách hỗ trợ trực tuyến"
 msgid "Support Online"
 msgstr "Hỗ trợ trực tuyến"
 
-#: inc/widgets/wg-support.php:55 inc/widgets/wg-support.php:88
+#: inc/widgets/wg-support.php:73 inc/widgets/wg-support.php:106
 msgid "Number supporter"
 msgstr "Số hỗ trợ trực tuyến"
 
-#: inc/widgets/wg-support.php:70
+#: inc/widgets/wg-support.php:88
 msgid "Save change"
 msgstr "Lưu thay đổi"
 
-#: inc/widgets/wg-support.php:99
+#: inc/widgets/wg-support.php:117
 msgid "Phone"
 msgstr "Số điện thoại"
 
-#: inc/widgets/wg-support.php:116
+#: inc/widgets/wg-support.php:133
 msgid "Skype"
 msgstr "Skype"
 
+#: inc/widgets/wg-support.php:141
+msgid "Zalo"
+msgstr "Zalo"
+
+#: inc/widgets/wg-support.php:147
+msgid "Viber"
+msgstr "Viber"
+
 #: inc/widgets/wg-view-post-list.php:14
-msgid "3B - Top view posts"
-msgstr "3B - Danh sách bài viết nhiều lượt xem"
+msgid "QH - Top view posts"
+msgstr "QH - Danh sách bài viết nhiều lượt xem"
 
 #: inc/widgets/wg-view-post-list.php:16
 msgid "Top list posts by views"
@@ -2050,27 +2109,23 @@ msgstr "Đọc tiếp %s <span class=\"meta-nav\">&rarr;</span>"
 msgid "Tags"
 msgstr "Tags"
 
-#: template-parts/content.php:88
+#: template-parts/content.php:81
 msgid "Next Post"
 msgstr "Bài viết trước đó"
 
-#: template-parts/content.php:96
+#: template-parts/content.php:89
 msgid "Previous Post"
 msgstr "Bài viết sau đó"
 
-#: template-parts/content.php:139
+#: template-parts/content.php:132
 msgid "Related posts"
 msgstr "Bài viết liên quan"
 
-#: woocommerce/cart/mini-cart.php:47
+#: woocommerce/cart/mini-cart.php:45
 msgid "Remove this item"
 msgstr "Xóa sản phẩm này"
 
-#: woocommerce/cart/mini-cart.php:91
-msgid "Subtotal"
-msgstr "Tổng phụ"
-
-#: woocommerce/cart/mini-cart.php:99
+#: woocommerce/cart/mini-cart.php:108
 msgid "No products in the cart."
 msgstr "Không có sản phẩm nào trong giỏ hàng."
 
@@ -2114,14 +2169,28 @@ msgstr "Thông tin đính kèm"
 msgid "You may also like&hellip;"
 msgstr "Bạn cũng có thể thích&hellip;"
 
-#. Theme URI of the plugin/theme
-#. Author URI of the plugin/theme
-msgid "thietkeweb3b.com"
-msgstr "thietkeweb3b.com"
+#. Theme Name of the plugin/theme
+msgid "QHTheme"
+msgstr "QHTheme"
 
 #. Author of the plugin/theme
 msgid "Quang Hoa"
 msgstr "Quang Hoa"
+
+#~ msgid "Designed by"
+#~ msgstr "Thiết kế bởi"
+
+#~ msgid "Viet Nam"
+#~ msgstr "Việt Nam"
+
+#~ msgid "Web3B"
+#~ msgstr "Web3B"
+
+#~ msgid "Subtotal"
+#~ msgstr "Tổng phụ"
+
+#~ msgid "thietkeweb3b.com"
+#~ msgstr "thietkeweb3b.com"
 
 #, fuzzy
 #~| msgctxt "plugins"

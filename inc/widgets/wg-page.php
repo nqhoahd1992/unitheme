@@ -1,17 +1,17 @@
 <?php
-add_action('widgets_init', 'register_widget_page_3b');
+add_action('widgets_init', 'qh_register_widget_page');
 
-function register_widget_page_3b() {
-    register_widget('Page_Widget_3B');
+function qh_register_widget_page() {
+    register_widget('QH_Page_Widget');
 }
 
-class Page_Widget_3B extends WP_Widget {
+class QH_Page_Widget extends WP_Widget {
 
 	function __construct() {
 
         parent::__construct(
             'featuredpage',
-            __( '3B - Featured Page', 'shtheme' ),
+            __( 'QH - Featured Page', 'shtheme' ),
             array( 
             	'description'  =>  __( 'Display featured page', 'shtheme' ),
             )

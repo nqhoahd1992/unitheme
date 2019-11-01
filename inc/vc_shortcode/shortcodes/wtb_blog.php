@@ -17,11 +17,11 @@ function wtb_load_blog_shortcode() {
     $block_options      = wtb_get_terms('category');
 
     vc_map( array(
-        'name'          => "Web3B " . esc_html__('Blog', 'shtheme'),
+        'name'          => esc_html__('Blog', 'shtheme'),
         'base'          => 'wtb_blog',
         'description'   => esc_html__('Show multiple posts in a category', 'shtheme'),
-        'category'      => esc_html__('Web3B', 'shtheme'),
-        'icon'		    => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
+        'category'      => esc_html__('Advanced Element', 'shtheme'),
+        // 'icon'		    => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
         'weight'        => - 50,
         'params'        => array(
             array(

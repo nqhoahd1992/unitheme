@@ -2,16 +2,16 @@
 add_action('widgets_init', 'register_widget_social');
 
 function register_widget_social() {
-    register_widget('Gtid_Social_Widget');
+    register_widget('QH_Social_Widget');
 }
 
-class Gtid_Social_Widget extends WP_Widget {
+class QH_Social_Widget extends WP_Widget {
 
     function __construct() {
 
         parent::__construct(
             'social',
-            __( '3B - Social', 'shtheme' ),
+            __( 'QH - Social', 'shtheme' ),
             array(
                 'description'  =>  __( 'Display information social', 'shtheme' )
             )

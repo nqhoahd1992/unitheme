@@ -2,16 +2,16 @@
 add_action('widgets_init', 'register_gtid_post_by_cat');
 
 function register_gtid_post_by_cat() {
-    register_widget('Gtid_Post_Widget');
+    register_widget('QH_Post_Widget');
 }
 
-class Gtid_Post_Widget extends WP_Widget {
+class QH_Post_Widget extends WP_Widget {
 
     function __construct() {
 
         parent::__construct(
             'list_posts',
-            __( '3B - Featured Posts', 'shtheme' ),
+            __( 'QH - Featured Posts', 'shtheme' ),
             array( 
                 'description'  =>  __( 'Displays featured posts with thumbnails', 'shtheme' ),
             )

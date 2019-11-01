@@ -14,11 +14,11 @@ function wtb_load_infobox_shortcode() {
     $custom_class       = wtb_vc_custom_class();
 
     vc_map( array(
-        'name'          => "Web3B " . esc_html__('Infobox', 'shtheme'),
+        'name'          => esc_html__('Infobox', 'shtheme'),
         'base'          => 'wtb_infobox',
         'description'   => esc_html__('Show infobox width heading, image and content', 'shtheme'),
-        'category'      => esc_html__('Web3B', 'shtheme'),
-        'icon'		    => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
+        'category'      => esc_html__('Advanced Element', 'shtheme'),
+        // 'icon'		    => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
         'weight'        => - 50,
         'params'        => array(
             // Position the icon box

@@ -134,11 +134,11 @@ $args = array(
 );
 
 // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
-$args['share_icons'][] = array(
-    'url'   => 'https://www.facebook.com/web3bvietnam',
-    'title' => 'Like us on Facebook',
-    'icon'  => 'el el-facebook',
-);
+// $args['share_icons'][] = array(
+//     'url'   => '',
+//     'title' => 'Like us on Facebook',
+//     'icon'  => 'el el-facebook',
+// );
 
 
 Redux::setArgs( $opt_name, $args );
@@ -887,9 +887,9 @@ Redux::setSection( $opt_name, array(
     )
 ) );
 
-// -> 3B Developer
+// -> QH Developer
 Redux::setSection( $opt_name, array(
-    'title'            => __( '3B Developer', 'shtheme' ),
+    'title'            => __( 'QH Developer', 'shtheme' ),
     'id'               => 'function',
     'icon'             => 'el el-adjust-alt',
     'permissions'      => 'administrator',

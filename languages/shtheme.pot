@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2019-05-22 11:24+0700\n"
+"POT-Creation-Date: 2019-11-01 09:46+0700\n"
 "PO-Revision-Date: 2018-01-18 17:08+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "The content is being updated"
 msgstr ""
 
-#: comments.php:18
+#: comments.php:14
 #, php-format
 msgctxt ""
 msgid "1 comment"
@@ -33,54 +33,46 @@ msgid_plural "%1$s comment"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:25
+#: comments.php:19
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:33
+#: comments.php:27
 msgid "&larr; previous"
 msgstr ""
 
-#: comments.php:34
+#: comments.php:28
 msgid "Next &rarr;"
 msgstr ""
 
-#: comments.php:39 comments.php:57
+#: comments.php:33 comments.php:52
 msgid "Your comment"
 msgstr ""
 
-#: comments.php:48
+#: comments.php:43
 msgid "Login"
 msgstr ""
 
-#: comments.php:48
+#: comments.php:43
 msgid "to comment."
 msgstr ""
 
-#: comments.php:54
+#: comments.php:49
 msgid "Comment with the name:"
 msgstr ""
 
-#: comments.php:62 inc/widgets/wg-support.php:92
+#: comments.php:58 inc/widgets/wg-support.php:110
 msgid "Name"
 msgstr ""
 
-#: comments.php:65 inc/options.php:856 inc/widgets/wg-information.php:48
-#: inc/widgets/wg-information.php:104 inc/widgets/wg-support.php:76
-#: inc/widgets/wg-support.php:107 inc/widgets/wg-support.php:200
+#: comments.php:63 inc/options.php:856 inc/widgets/wg-information.php:48
+#: inc/widgets/wg-information.php:105 inc/widgets/wg-support.php:94
+#: inc/widgets/wg-support.php:125 inc/widgets/wg-support.php:248
 msgid "Email"
 msgstr ""
 
 #: comments.php:69
 msgid "Send"
-msgstr ""
-
-#: footer.php:37
-msgid "Designed by"
-msgstr ""
-
-#: footer.php:37
-msgid "Viet Nam"
 msgstr ""
 
 #: functions.php:29
@@ -570,39 +562,93 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
+#: inc/cpt/cpt.php:43
+#, php-format
+msgid "%s cha"
+msgstr ""
+
+#: inc/cpt/cpt.php:44
+#, php-format
+msgid "Tất cả %s"
+msgstr ""
+
+#: inc/cpt/cpt.php:45
+#, php-format
+msgid "Thêm mới %s"
+msgstr ""
+
+#: inc/cpt/cpt.php:46
+msgctxt "shtheme"
+msgid "Thêm mới"
+msgstr ""
+
+#: inc/cpt/cpt.php:47
+#, php-format
+msgid "%s mới"
+msgstr ""
+
+#: inc/cpt/cpt.php:48
+msgid "Chỉnh sửa"
+msgstr ""
+
+#: inc/cpt/cpt.php:49
+#, php-format
+msgid "Xem %s"
+msgstr ""
+
+#: inc/cpt/cpt.php:50
+#, php-format
+msgid "Tìm kiếm %s"
+msgstr ""
+
+#: inc/cpt/cpt.php:51 inc/cpt/cpt.php:52
+#, php-format
+msgid "Không tìm thấy %s nào"
+msgstr ""
+
+#: inc/cpt/khach-hang.php:9
+msgctxt "Post Type General Name"
+msgid "Khách hàng"
+msgstr ""
+
+#: inc/cpt/khach-hang.php:10
+msgctxt "Post Type Singular Name"
+msgid "Khách hàng"
+msgstr ""
+
 #: inc/function-woo.php:16
 msgid "Shop Sidebar"
 msgstr ""
 
-#: inc/function-woo.php:121
+#: inc/function-woo.php:124
 msgid "Continue Shopping"
 msgstr ""
 
-#: inc/function-woo.php:179 inc/options.php:844
+#: inc/function-woo.php:182 inc/options.php:844
 msgid "Information"
 msgstr ""
 
-#: inc/function-woo.php:180
+#: inc/function-woo.php:183
 msgid "Gallery"
 msgstr ""
 
-#: inc/function-woo.php:181
+#: inc/function-woo.php:184
 msgid "Video"
 msgstr ""
 
-#: inc/function-woo.php:182
+#: inc/function-woo.php:185
 msgid "Attachments"
 msgstr ""
 
-#: inc/function-woo.php:214
+#: inc/function-woo.php:217
 msgid "Quick buy"
 msgstr ""
 
-#: inc/function-woo.php:241
+#: inc/function-woo.php:244
 msgid "Contact"
 msgstr ""
 
-#: inc/function-woo.php:365 inc/function-woo.php:366
+#: inc/function-woo.php:368 inc/function-woo.php:369
 msgid "View detail"
 msgstr ""
 
@@ -663,7 +709,7 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: inc/options.php:166 inc/widgets/wg-support.php:61
+#: inc/options.php:166 inc/widgets/wg-support.php:79
 msgid "Appearance"
 msgstr ""
 
@@ -970,7 +1016,7 @@ msgid "Telephone number"
 msgstr ""
 
 #: inc/options.php:861 inc/widgets/wg-information.php:36
-#: inc/widgets/wg-information.php:88
+#: inc/widgets/wg-information.php:89
 msgid "Address"
 msgstr ""
 
@@ -991,7 +1037,7 @@ msgid "Insert code to footer"
 msgstr ""
 
 #: inc/options.php:892
-msgid "3B Developer"
+msgid "QH Developer"
 msgstr ""
 
 #: inc/options.php:899
@@ -1077,6 +1123,10 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
+#: inc/taxonomies/khach-hang-cat.php:17 inc/taxonomies/khach-hang-cat.php:18
+msgid "Danh mục"
+msgstr ""
+
 #: inc/vc_shortcode/lib/functions.php:18
 msgid "Date"
 msgstr ""
@@ -1091,10 +1141,10 @@ msgstr ""
 
 #: inc/vc_shortcode/lib/functions.php:21
 #: inc/vc_shortcode/shortcodes/wtb_infobox.php:60
-#: inc/widgets/wg-fblikebox.php:55 inc/widgets/wg-information.php:80
+#: inc/widgets/wg-fblikebox.php:45 inc/widgets/wg-information.php:81
 #: inc/widgets/wg-page.php:40 inc/widgets/wg-post-list.php:95
 #: inc/widgets/wg-product-slider.php:96 inc/widgets/wg-social.php:72
-#: inc/widgets/wg-support.php:50 inc/widgets/wg-view-post-list.php:105
+#: inc/widgets/wg-support.php:68 inc/widgets/wg-view-post-list.php:105
 msgid "Title"
 msgstr ""
 
@@ -1194,7 +1244,6 @@ msgstr ""
 msgid "Show multiple posts in a category"
 msgstr ""
 
-#. Theme Name of the plugin/theme
 #: inc/vc_shortcode/shortcodes/wtb_blog.php:23
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:24
 #: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:20
@@ -1202,10 +1251,10 @@ msgstr ""
 #: inc/vc_shortcode/shortcodes/wtb_static_block.php:29
 #: inc/vc_shortcode/woo_shortcodes/wtb_product.php:24
 #: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:24
-msgid "Web3B"
+msgid "Advanced Element"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:29 inc/widgets/wg-support.php:65
+#: inc/vc_shortcode/shortcodes/wtb_blog.php:29 inc/widgets/wg-support.php:83
 msgid "Layout"
 msgstr ""
 
@@ -1746,63 +1795,63 @@ msgid "Number Column on Mobile"
 msgstr ""
 
 #: inc/widgets/wg-fblikebox.php:13
-msgid "3B - Facebook Like Box"
+msgid "QH - Facebook Like Box"
 msgstr ""
 
 #: inc/widgets/wg-fblikebox.php:15
 msgid "Display like box fanpage Facebook"
 msgstr ""
 
-#: inc/widgets/wg-fblikebox.php:32 template-parts/content.php:54
+#: inc/widgets/wg-fblikebox.php:29 template-parts/content.php:50
 msgid "en_US"
 msgstr ""
 
-#: inc/widgets/wg-fblikebox.php:49
+#: inc/widgets/wg-fblikebox.php:39
 msgid "Like Facebook"
 msgstr ""
 
-#: inc/widgets/wg-fblikebox.php:59
+#: inc/widgets/wg-fblikebox.php:49
 msgid "Link Fanpage"
 msgstr ""
 
 #: inc/widgets/wg-information.php:14
-msgid "3B - Information contact"
+msgid "QH - Information contact"
 msgstr ""
 
 #: inc/widgets/wg-information.php:16
 msgid "Display information contact"
 msgstr ""
 
-#: inc/widgets/wg-information.php:39 inc/widgets/wg-information.php:92
+#: inc/widgets/wg-information.php:39 inc/widgets/wg-information.php:93
 msgid "Telephone"
 msgstr ""
 
-#: inc/widgets/wg-information.php:42 inc/widgets/wg-information.php:96
+#: inc/widgets/wg-information.php:42 inc/widgets/wg-information.php:97
 msgid "Hotline"
 msgstr ""
 
-#: inc/widgets/wg-information.php:45 inc/widgets/wg-information.php:100
+#: inc/widgets/wg-information.php:45 inc/widgets/wg-information.php:101
 msgid "Fax"
 msgstr ""
 
-#: inc/widgets/wg-information.php:51 inc/widgets/wg-information.php:108
+#: inc/widgets/wg-information.php:51 inc/widgets/wg-information.php:109
 msgid "Website"
 msgstr ""
 
-#: inc/widgets/wg-information.php:84
+#: inc/widgets/wg-information.php:85
 msgid "Company"
 msgstr ""
 
-#: inc/widgets/wg-information.php:113
+#: inc/widgets/wg-information.php:114
 msgid "Hide label"
 msgstr ""
 
-#: inc/widgets/wg-information.php:117
+#: inc/widgets/wg-information.php:118
 msgid "Hide icon"
 msgstr ""
 
 #: inc/widgets/wg-page.php:14
-msgid "3B - Featured Page"
+msgid "QH - Featured Page"
 msgstr ""
 
 #: inc/widgets/wg-page.php:16
@@ -1860,7 +1909,7 @@ msgid "More Text"
 msgstr ""
 
 #: inc/widgets/wg-post-list.php:14
-msgid "3B - Featured Posts"
+msgid "QH - Featured Posts"
 msgstr ""
 
 #: inc/widgets/wg-post-list.php:16
@@ -1908,7 +1957,7 @@ msgid "character"
 msgstr ""
 
 #: inc/widgets/wg-product-slider.php:13
-msgid "3B - Products Slider"
+msgid "QH - Products Slider"
 msgstr ""
 
 #: inc/widgets/wg-product-slider.php:15
@@ -1932,7 +1981,7 @@ msgid "Enter the product number in the view"
 msgstr ""
 
 #: inc/widgets/wg-social.php:14
-msgid "3B - Social"
+msgid "QH - Social"
 msgstr ""
 
 #: inc/widgets/wg-social.php:16
@@ -1946,7 +1995,7 @@ msgid ""
 msgstr ""
 
 #: inc/widgets/wg-support.php:13
-msgid "3B - Support"
+msgid "QH - Support"
 msgstr ""
 
 #: inc/widgets/wg-support.php:15
@@ -1957,24 +2006,32 @@ msgstr ""
 msgid "Support Online"
 msgstr ""
 
-#: inc/widgets/wg-support.php:55 inc/widgets/wg-support.php:88
+#: inc/widgets/wg-support.php:73 inc/widgets/wg-support.php:106
 msgid "Number supporter"
 msgstr ""
 
-#: inc/widgets/wg-support.php:70
+#: inc/widgets/wg-support.php:88
 msgid "Save change"
 msgstr ""
 
-#: inc/widgets/wg-support.php:99
+#: inc/widgets/wg-support.php:117
 msgid "Phone"
 msgstr ""
 
-#: inc/widgets/wg-support.php:116
+#: inc/widgets/wg-support.php:133
 msgid "Skype"
 msgstr ""
 
+#: inc/widgets/wg-support.php:141
+msgid "Zalo"
+msgstr ""
+
+#: inc/widgets/wg-support.php:147
+msgid "Viber"
+msgstr ""
+
 #: inc/widgets/wg-view-post-list.php:14
-msgid "3B - Top view posts"
+msgid "QH - Top view posts"
 msgstr ""
 
 #: inc/widgets/wg-view-post-list.php:16
@@ -2031,27 +2088,23 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: template-parts/content.php:88
+#: template-parts/content.php:81
 msgid "Next Post"
 msgstr ""
 
-#: template-parts/content.php:96
+#: template-parts/content.php:89
 msgid "Previous Post"
 msgstr ""
 
-#: template-parts/content.php:139
+#: template-parts/content.php:132
 msgid "Related posts"
 msgstr ""
 
-#: woocommerce/cart/mini-cart.php:47
+#: woocommerce/cart/mini-cart.php:45
 msgid "Remove this item"
 msgstr ""
 
-#: woocommerce/cart/mini-cart.php:91
-msgid "Subtotal"
-msgstr ""
-
-#: woocommerce/cart/mini-cart.php:99
+#: woocommerce/cart/mini-cart.php:108
 msgid "No products in the cart."
 msgstr ""
 
@@ -2098,9 +2151,8 @@ msgstr ""
 msgid "You may also like&hellip;"
 msgstr ""
 
-#. Theme URI of the plugin/theme
-#. Author URI of the plugin/theme
-msgid "thietkeweb3b.com"
+#. Theme Name of the plugin/theme
+msgid "QHTheme"
 msgstr ""
 
 #. Author of the plugin/theme

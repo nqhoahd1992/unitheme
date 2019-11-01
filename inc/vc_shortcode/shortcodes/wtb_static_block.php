@@ -23,11 +23,11 @@ function wtb_load_static_block_shortcode() {
         $block_options[$_post->post_title] = $_post->ID;
     }
     vc_map( array(
-        'name'          => "Web3B " . esc_html__('Static Block', 'shtheme'),
+        'name'          => esc_html__('Static Block', 'shtheme'),
         'base'          => 'wtb_static_block',
         'description'   => esc_html__('Show static block', 'shtheme'),
-        'category'      => esc_html__('Web3B', 'shtheme'),
-        'icon'          => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
+        'category'      => esc_html__('Advanced Element', 'shtheme'),
+        // 'icon'          => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
         'weight'        => - 50,
         'params'        => array(
             array(

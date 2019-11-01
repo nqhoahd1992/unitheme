@@ -2,16 +2,16 @@
 add_action('widgets_init', 'register_widget_information');
 
 function register_widget_information() {
-    register_widget('Gtid_Information_Widget');
+    register_widget('QH_Information_Widget');
 }
 
-class Gtid_Information_Widget extends WP_Widget {
+class QH_Information_Widget extends WP_Widget {
 
     function __construct() {
 
         parent::__construct(
             'information',
-            __( '3B - Information contact', 'shtheme' ),
+            __( 'QH - Information contact', 'shtheme' ),
             array( 
                 'description'  => __( 'Display information contact', 'shtheme' ),
             )

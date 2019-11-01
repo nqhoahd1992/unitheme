@@ -2,15 +2,15 @@
 add_action( 'widgets_init', 'like_box_facebook_widget' );
 
 function like_box_facebook_widget() {
-    register_widget('Like_Box_Facebook');
+    register_widget('QH_Like_Box_Facebook');
 }
 
-class Like_Box_Facebook extends WP_Widget {
+class QH_Like_Box_Facebook extends WP_Widget {
 
     function __construct() {
 		parent::__construct (
 	      	'facebook_like',
-	      	__( '3B - Facebook Like Box', 'shtheme' ), 
+	      	__( 'QH - Facebook Like Box', 'shtheme' ), 
 	      	array(
 	          	'description' => __( 'Display like box fanpage Facebook', 'shtheme' ),
 	      	)

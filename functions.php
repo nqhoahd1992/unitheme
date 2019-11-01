@@ -199,6 +199,7 @@ function shtheme_lib_scripts(){
 	wp_register_script( 'fancybox-js', SH_DIR .'/lib/js/gallery-product/jquery.fancybox.min.js',array('jquery'),'3.5.7', true);
 	wp_register_style( 'fancybox-css', SH_DIR .'/lib/css/gallery-product/fancybox.min.css' );
 
+	// Validate js
 	wp_register_script( 'validate-js', SH_DIR .'/lib/js/jquery.validate.min.js',array('jquery'),'1.19.0', true);
 
 	// Ring Phone
@@ -210,19 +211,6 @@ function shtheme_lib_scripts(){
 	
 }
 add_action( 'wp_enqueue_scripts', 'shtheme_lib_scripts' , 1 );
-
-/**
- * Optimize
- */
-function remove_head_scripts() { 
-   remove_action('wp_head', 'wp_print_scripts'); 
-   remove_action('wp_head', 'wp_print_head_scripts', 9); 
-   remove_action('wp_head', 'wp_enqueue_scripts', 1);
-   add_action('wp_footer', 'wp_print_scripts', 5);
-   add_action('wp_footer', 'wp_enqueue_scripts', 5);
-   add_action('wp_footer', 'wp_print_head_scripts', 5);
-} 
-// add_action( 'wp_enqueue_scripts', 'remove_head_scripts' );
 
 /**
  * Add Thumb Size
