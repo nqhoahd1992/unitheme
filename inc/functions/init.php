@@ -75,10 +75,6 @@ function sh_plugin_activation() {
             'required' 	=> true
         ),
         array(
-            'name' 		=> 'WooCommerce',
-            'slug' 		=> 'woocommerce',
-        ),
-        array(
             'name' 		=> 'Duplicate post',
             'slug' 		=> 'duplicate-post',
         ),
@@ -102,12 +98,7 @@ function sh_plugin_activation() {
             'name' 		=> 'Yoast SEO',
             'slug' 		=> 'wordpress-seo',
         ),
-        array(
-            'name' 		=> 'MetaSlider',
-            'slug' 		=> 'ml-slider',
-        ),
     );
-
     $configs = array(
         'menu' 			=> 'tp_plugin_install',
         'has_notice' 	=> true,

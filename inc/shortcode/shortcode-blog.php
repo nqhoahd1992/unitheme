@@ -85,7 +85,6 @@ class sh_blog_shortcode {
 					$html .= $this->sh_general_post_html( $the_query, $atts );
 					break;
 			}
-
 			$html .= '</div>';
 
 		}
@@ -245,11 +244,6 @@ class sh_blog_shortcode {
 	 */
 	function sh_blog_style_6 ( $the_query, $atts ) {
 
-        extract( shortcode_atts( array(
-            'posts_per_page'                => '10',
-        ), $atts ) );
-
-
 		$i = 0;
 		$image_size 			= 'sh_thumb300x200';
 		$post_class 			= array( 'element', 'hentry', 'post-item' );
@@ -296,9 +290,6 @@ class sh_blog_shortcode {
 	 *
 	 */
 	function sh_blog_style_7 ( $the_query, $atts ) {
-		extract( shortcode_atts( array(
-			'posts_per_page'				=> '10',
-		), $atts ) );
 
 		$i = 0;
 		$image_size 			= 'sh_thumb300x200';
@@ -347,10 +338,6 @@ class sh_blog_shortcode {
 	 *
 	 */
 	function sh_blog_style_8 ( $the_query, $atts ) {
-		extract( shortcode_atts( array(
-            'posts_per_page'                => '10',
-        ), $atts ) );
-
 
 		$i = 0;
 		$image_size 			= 'sh_thumb300x200';
