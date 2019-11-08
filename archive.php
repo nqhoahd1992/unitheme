@@ -44,8 +44,9 @@ get_header(); ?>
 				if( $sh_option['display-hierarchy'] == '1' ) {
 
 					// Content
-					$archive_object = get_queried_object();
-					$archive_id 	= $archive_object->term_id;
+					$archive_object   = get_queried_object();
+					$archive_id 	  = $archive_object->term_id;
+					$archive_taxonomy = $archive_object->taxonomy;
 					$args = array(
 						'parent'     	=> $archive_id,
 						'hide_empty'  	=> 0,
@@ -56,12 +57,12 @@ get_header(); ?>
 						/* Start the Loop */
 						foreach ( $categories as $value ) {
 							echo '<div class="list-categories">';
-						    	echo '<a class="item-category" href="' . get_term_link( $value->term_id, $archive_object->taxonomy ) . '">' . $value->name . '</a>';
+						    	echo '<a class="item-category" href="' . get_term_link( $value->term_id, $archive_taxonomy ) . '">' . $value->name . '</a>';
 						    	$args = array(
 			                        'post_type' => 'post',
 			                        'tax_query' => array(
 			                            array(
-			                                'taxonomy' 	=> $archive_object->taxonomy,
+			                                'taxonomy' 	=> $archive_taxonomy,
 			                                'field' 	=> 'id',
 			                                'terms' 	=> $value->term_id,
 			                            )

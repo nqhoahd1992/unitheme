@@ -155,13 +155,12 @@ require get_template_directory() . '/inc/shortcode/shortcode-blog.php';
 if ( class_exists( 'Vc_Manager' ) ) {
 	require get_template_directory() . '/inc/vc_shortcode/wtb-shortcodes.php';
 }
-if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/shortcode/shortcode-product.php';
-}
 
 // Load Function Woocomerce
 if ( class_exists( 'WooCommerce' ) ) {
+	require get_template_directory() . '/inc/shortcode/shortcode-product.php';
 	require get_template_directory() . '/inc/function-woo.php';
+	require get_template_directory() . '/inc/widgets/wg-product-slider.php';
 }
 
 // Load Widget
@@ -172,9 +171,6 @@ require get_template_directory() . '/inc/widgets/wg-page.php';
 require get_template_directory() . '/inc/widgets/wg-view-post-list.php';
 require get_template_directory() . '/inc/widgets/wg-information.php';
 require get_template_directory() . '/inc/widgets/wg-social.php';
-if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/widgets/wg-product-slider.php';
-}
 
 function shtheme_lib_scripts(){
 

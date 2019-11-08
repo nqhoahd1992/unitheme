@@ -51,12 +51,13 @@ do_action( 'woocommerce_before_main_content' );
 // Check hierarchy in theme options
 if( $sh_option['display-hierarchy-woocommerce'] == '1' && ! is_shop() && is_product_category() ) {
 	// Content
-	$archive_object = get_queried_object();
-	$archive_id 	= $archive_object->term_id;
+	$archive_object   = get_queried_object();
+	$archive_id 	  = $archive_object->term_id;
+	$archive_taxonomy = $archive_object->taxonomy;
 	$args = array(
 		'parent'     	=> $archive_id,
 		'hide_empty'  	=> 0,
-		'taxonomy'    	=> $archive_object->taxonomy,
+		'taxonomy'    	=> $archive_taxonomy,
 	);
 	$categories = get_categories( $args );
 	if( $categories ) {
@@ -66,8 +67,8 @@ if( $sh_option['display-hierarchy-woocommerce'] == '1' && ! is_shop() && is_prod
 			foreach ( $categories as $value ) {
 				echo '<div class="col-md-3">';
 					echo '<div class="list-categories__item">';
-						echo '<a class="img" title="' . $value->name . '" href="' . get_term_link( $value->term_id, $archive_object->taxonomy ) . '">' . woocommerce_category_image( $value->term_id ) . '</a>';
-				    	echo '<h2><a class="" title="' . $value->name . '" href="' . get_term_link( $value->term_id, $archive_object->taxonomy ) . '">' . $value->name . '</a></h2>';
+						echo '<a class="img" title="' . $value->name . '" href="' . get_term_link( $value->term_id, $archive_taxonomy ) . '">' . woocommerce_category_image( $value->term_id ) . '</a>';
+				    	echo '<h2><a class="" title="' . $value->name . '" href="' . get_term_link( $value->term_id, $archive_taxonomy ) . '">' . $value->name . '</a></h2>';
 					echo '</div>';
 				echo '</div>';
 			}
