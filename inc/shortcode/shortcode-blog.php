@@ -103,7 +103,7 @@ class sh_blog_shortcode {
 	 */
 	function sh_blog_style_1 ( $the_query, $atts ) {
 
-		$image_size 			= 'sh_thumb300x200';	
+		$image_size 			= 'thumb300x200';	
 		$post_class 			= array( 'element', 'hentry', 'post-item' );
 		$post_class[] 			= 'col-md-12';
 		$atts['hide_category'] 	= '0';
@@ -131,7 +131,7 @@ class sh_blog_shortcode {
 	 */
 	function sh_blog_style_2 ( $the_query, $atts ) {
 
-		$image_size 			= 'sh_thumb300x200';
+		$image_size 			= 'thumb300x200';
 		$post_class 			= array( 'element', 'hentry', 'post-item' );
 		$post_class[] 			= 'col-sm-6';
 		$atts['hide_category'] 	= '0';
@@ -160,7 +160,7 @@ class sh_blog_shortcode {
 	 */
 	function sh_blog_style_3 ( $the_query, $atts ) {
 		
-		$image_size 			= 'sh_thumb300x200';
+		$image_size 			= 'thumb300x200';
 		$post_class 			= array( 'element', 'hentry', 'post-item' );
 		$post_class[] 			= 'col-md-4 col-sm-6 col-6';
 		$atts['hide_category'] 	= '0';
@@ -188,7 +188,7 @@ class sh_blog_shortcode {
 	 */
 	function sh_blog_style_4 ( $the_query, $atts ) {
 
-		$image_size 			= 'sh_thumb300x200';
+		$image_size 			= 'thumb300x200';
 		$post_class 			= array( 'element', 'hentry', 'post-item' );
 		$post_class[] 			= 'col-md-3 col-sm-6 col-6';
 		$atts['hide_category'] 	= '0';
@@ -216,7 +216,7 @@ class sh_blog_shortcode {
 	 */
 	function sh_blog_style_5 ( $the_query, $atts ) {
 		
-		$image_size 			= 'sh_thumb300x200';
+		$image_size 			= 'thumb300x200';
 		$post_class 			= array( 'element', 'hentry', 'post-item' );
 		$post_class[] 			= 'col-md-6';
 		$atts['hide_category'] 	= '0';
@@ -245,7 +245,7 @@ class sh_blog_shortcode {
 	function sh_blog_style_6 ( $the_query, $atts ) {
 
 		$i = 0;
-		$image_size 			= 'sh_thumb300x200';
+		$image_size 			= 'thumb300x200';
 		$post_class 			= array( 'element', 'hentry', 'post-item' );
 		$atts['hide_category'] 	= '0';
 
@@ -254,7 +254,7 @@ class sh_blog_shortcode {
 		while ( $the_query->have_posts() ) { $the_query->the_post(); $i++;
 
 			if ( $i == 1 ) {
-				// $image_size 					= 'sh_thumb300x200';
+				// $image_size 					= 'thumb300x200';
 				$atts['btn_viewmore']			= '1';
 				
 				$html .= '<div class="col-md-6 first-element-layout">';
@@ -264,7 +264,7 @@ class sh_blog_shortcode {
 					$html .= '<div class="col-md-6 second-element-layout">';
 				}
 			} else {
-				// $image_size 					= 'sh_thumb300x200';
+				// $image_size 					= 'thumb300x200';
 				$atts['hide_meta'] 				= '0';
 				$atts['btn_viewmore'] 			= '0';
 				$atts['hide_desc'] 				= '0';
@@ -292,7 +292,7 @@ class sh_blog_shortcode {
 	function sh_blog_style_7 ( $the_query, $atts ) {
 
 		$i = 0;
-		$image_size 			= 'sh_thumb300x200';
+		$image_size 			= 'thumb300x200';
 		$post_class 			= array( 'element', 'hentry', 'post-item' );
 		$atts['hide_category'] 	= '0';
 
@@ -301,7 +301,7 @@ class sh_blog_shortcode {
 		while ( $the_query->have_posts() ) { $the_query->the_post(); $i++;
 
 			if ( $i == 1 ) {
-				// $image_size 					= 'sh_thumb300x200';
+				// $image_size 					= 'thumb300x200';
 				$atts['btn_viewmore']			= '1';
 
 				$html .= '<div class="col-md-12 first-element-layout">';
@@ -311,7 +311,7 @@ class sh_blog_shortcode {
 					$html .= '<div class="col-md-12 second-element-layout">';
 				}
 			} else {
-				// $image_size 					= 'sh_thumb300x200';
+				// $image_size 					= 'thumb300x200';
 				$atts['hide_thumb'] 			= '0';
 				$atts['hide_meta'] 				= '0';
 				$atts['btn_viewmore'] 			= '0';
@@ -340,7 +340,7 @@ class sh_blog_shortcode {
 	function sh_blog_style_8 ( $the_query, $atts ) {
 
 		$i = 0;
-		$image_size 			= 'sh_thumb300x200';
+		$image_size 			= 'thumb300x200';
 		$post_class 			= array( 'element', 'hentry', 'post-item' );
 		$atts['hide_category'] 	= '0';
 		$atts['hide_meta'] 		= '0';
@@ -352,7 +352,7 @@ class sh_blog_shortcode {
 		while ( $the_query->have_posts() ) { $the_query->the_post(); $i++;
 
 			if ( $i == 1 ) {
-				$image_size 					= 'sh_thumb300x200';
+				$image_size 					= 'thumb300x200';
 				
 				$html .= '<div class="col-md-6 first-element-layout">';
 				$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
@@ -361,7 +361,7 @@ class sh_blog_shortcode {
 					$html .= '<div class="col-md-6 second-element-layout"><div class="row">';
 				}
 			} else {
-				$image_size 			= 'sh_thumb300x200';
+				$image_size 			= 'thumb300x200';
 				$post_class[] 			= 'col-6';
 				
 				$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
@@ -384,7 +384,7 @@ class sh_blog_shortcode {
 	 * @return $html: html of post
 	 *
 	 */
-	function sh_general_post_html ( $post_class = array(), $atts = array(), $image_size = 'sh_thumb300x200' ) {
+	function sh_general_post_html ( $post_class = array(), $atts = array(), $image_size = 'thumb300x200' ) {
 		extract( shortcode_atts( array(
 			'posts_per_page'				=> '5',
 			'categories'					=> '',
@@ -452,7 +452,7 @@ class sh_blog_shortcode {
 	 * @return $html: html of post
 	 *
 	 */
-	function sh_general_post_html_style_2 ( $post_class = array(), $atts = array(), $image_size = 'sh_thumb300x200' ) {
+	function sh_general_post_html_style_2 ( $post_class = array(), $atts = array(), $image_size = 'thumb300x200' ) {
 		extract( shortcode_atts( array(
 			'posts_per_page'				=> '5',
 			'categories'					=> '',

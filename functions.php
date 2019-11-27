@@ -211,5 +211,5 @@ add_action( 'wp_enqueue_scripts', 'shtheme_lib_scripts' , 1 );
 /**
  * Add Thumb Size
 **/
-add_image_size( 'sh_thumb300x200', 300, 200, array( 'center', 'center' ) );
+add_image_size( 'thumb300x200', 300, 200, array( 'center', 'center' ) );
 

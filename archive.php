@@ -31,7 +31,7 @@ get_header(); ?>
 				// Settings Loop
 				$new_post = new sh_blog_shortcode();
 				$post_class = array( 'element', 'hentry', 'post-item', 'item-new' );
-				$image_size = 'sh_thumb300x200';
+				$image_size = 'thumb300x200';
 				$atts['hide_category'] 		= '0';
 				$atts['hide_desc'] 			= '1';
 				$atts['hide_meta']			= '1';
