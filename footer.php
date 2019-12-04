@@ -26,20 +26,24 @@ do_action( 'sh_after_content_sidebar_wrap' );
 				</div>
 			</div>
 		</div><!-- .footer-widgets -->
-		<div class="site-info">
-			<div class="container">
-				<div class="wrap">
-					<div class="row">
-						<div class="col-sm-12 text-center">
-							<p id="copyright"><?php if( $sh_option['footer-copyright'] ) : echo $sh_option['footer-copyright'];endif;?></p>
+
+		<?php if( $sh_option['footer-copyright'] ) : ?>
+			<div class="site-info">
+				<div class="container">
+					<div class="wrap">
+						<div class="row">
+							<div class="col-sm-12 text-center">
+								<p id="copyright"><?php echo $sh_option['footer-copyright'];?></p>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div><!-- .site-info -->
-		<p id="back-top"><a href="#top" target="_blank"><span></span></a></p>
+			</div><!-- .site-info -->
+		<?php endif; ?>
 		
 	</footer><!-- #colophon -->
+
+	<p id="back-top"><a href="#top" target="_blank"><span></span></a></p>
 
 	<?php do_action( 'sh_after_footer' );?>
 	

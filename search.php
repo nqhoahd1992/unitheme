@@ -20,7 +20,7 @@ get_header(); ?>
 			<?php
 			if ( have_posts() ) : ?>
 
-					<h1 class="page-title"><?php printf( esc_html__( 'Search for keyword: %s', 'shtheme' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( esc_html__( 'Search for keyword: %s', 'shtheme' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 
 				<?php
 				// Settings Loop
