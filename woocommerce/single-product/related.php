@@ -32,7 +32,7 @@ if ( $related_products ) : ?>
         wp_enqueue_style( 'slick-theme-style' );
         // woocommerce_product_loop_start();
         ?>
-        <section class="related">
+        <section class="related sh-product-shortcode">
 	        <h2 class="heading-related"><span><?php _e( 'Related Products', 'shtheme' ); ?></span></h2>
         	<ul class="slick-carousel list-products" 
 	        	data-item="<?php echo $numcol_pro_related;?>" 

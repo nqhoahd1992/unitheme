@@ -124,7 +124,7 @@ function wtb_continue_shopping_button() {
 	echo ' <a href="'. $shop_page_url .'" class="button">'. __('Continue Shopping','shtheme') .' →</a>';
 	echo '</div>';
 }
-add_action( 'woocommerce_after_cart_totals', 'wtb_continue_shopping_button' );
+add_action( 'woocommerce_proceed_to_checkout', 'wtb_continue_shopping_button' );
 
 /**
  * Overwrite field checkout
