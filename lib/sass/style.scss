@@ -42,6 +42,7 @@ Tags:
 --------------------------------------------------------------*/
 $primary-color: #337ab7;
 $text-color: #333333;
+$border-color: #cccccc;
 $primary-font: 'Roboto';
 $container-width: 1140px;
 @mixin fontawesome {
@@ -433,7 +434,7 @@ textarea.form-control {
 .sidebar .content-feature-page, .sidebar .slider-products,
 .sidebar .list-post-item, .sidebar .widget_text .textwidget,
 .sidebar .widget_recently_viewed_products .product_list_widget {
-	border: 1px solid #cccccc;
+	border: 1px solid $border-color;
 	border-top: none;
 }
 .sidebar .widget_list_posts .list-post-item, 
@@ -465,7 +466,7 @@ textarea.form-control {
 			}
 		}
 		&.menu > li:not(:last-child) {
-			border-bottom: 1px solid #cccccc;
+			border-bottom: 1px solid $border-color;
 		}
 	}
 	.menu-item-has-children .sub-menu {
@@ -475,7 +476,7 @@ textarea.form-control {
 		left: 100%;
 		z-index: 99;
 		min-width: 200px;
-		border: 1px solid #cccccc;
+		border: 1px solid $border-color;
 	    @include transition(0.2s ease-in-out);
 	    @include custom-hidden;
 	    @include translate2d(40px, 0);
@@ -545,7 +546,7 @@ textarea.form-control {
 /* Widget Recent Posts */
 .sidebar .widget_recent_entries ul li {
 	padding: 5px 10px;
-	border-bottom: 1px solid #cccccc;
+	border-bottom: 1px solid $border-color;
 	&:last-child {
 		border-bottom: none;
 	}
@@ -921,7 +922,7 @@ html .slick-slider {
 	padding: 5px 10px;
 	li {
 		padding: 5px 0;
-		border-bottom: 1px solid #cccccc;
+		border-bottom: 1px solid $border-color;
 		&:last-child {
 			border-bottom: none;
 		}
