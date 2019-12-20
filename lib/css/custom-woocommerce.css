@@ -275,6 +275,9 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td, .shop_table
 
 .woocommerce-order-details .woocommerce-order-details__title, .woocommerce-customer-details .woocommerce-column__title { text-transform: uppercase; margin-bottom: 10px; }
 
+.continue_shopping { margin-bottom: 10px; overflow: hidden; }
+.continue_shopping a { float: right; }
+
 /*--------------------------------------------------------------
 # Custom Css
 --------------------------------------------------------------*/

@@ -1158,6 +1158,13 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td,
     text-transform: uppercase;
     margin-bottom: 10px;
 }
+.continue_shopping {
+    margin-bottom: 10px;
+    overflow: hidden;
+    a {
+        float: right;
+    }
+}
 
 /*--------------------------------------------------------------
 # Custom Css
