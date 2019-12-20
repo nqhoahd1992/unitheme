@@ -686,14 +686,6 @@ if ( class_exists( 'WooCommerce' ) ) {
                'indent'     => true
             ),
             array(
-                'id'        => 'gallery-single-custom',
-                'type'      => 'switch',
-                'title'     => __('Enable customizer gallery product', 'shtheme'),
-                'default'   => false,
-                'on'        => __('Enable', 'shtheme'),
-                'off'       => __('Disable', 'shtheme'),
-            ),
-            array(
                 'id'       => 'gallery-single-style',
                 'type'     => 'button_set',
                 'title'    => __('Choose style of slider gallery product', 'shtheme'),
@@ -703,7 +695,6 @@ if ( class_exists( 'WooCommerce' ) ) {
                     '2'       => __('Vertical', 'shtheme'),
                  ),
                 'default' => '1',
-                'required'  => array('gallery-single-custom','equals',true),
             ),
             array(
                 'id'        => 'gallery-single-number-thumbnails',
@@ -714,7 +705,6 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'step'      => 1,
                 'max'       => 6,
                 'display_value' => 'text',
-                'required'  => array('gallery-single-custom','equals',true),
             ),
             array(
                 'id'        => 'gallery-single-zoom',
@@ -723,7 +713,6 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'default'   => false,
                 'on'        => __('Enable', 'shtheme'),
                 'off'       => __('Disable', 'shtheme'),
-                'required'  => array('gallery-single-custom','equals',true),
             ),
             array(
                 'id'        => 'gallery-single-lightbox',
@@ -732,7 +721,6 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'default'   => false,
                 'on'        => __('Enable', 'shtheme'),
                 'off'       => __('Disable', 'shtheme'),
-                'required'  => array('gallery-single-custom','equals',true),
             ),
             array(
                 'id'        => 'gallery-single-autoplay',
@@ -741,7 +729,6 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'default'   => false,
                 'on'        => __('Enable', 'shtheme'),
                 'off'       => __('Disable', 'shtheme'),
-                'required'  => array('gallery-single-custom','equals',true),
             ),
             array(
                 'id'        => 'section-gallery-end',

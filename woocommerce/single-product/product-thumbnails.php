@@ -17,17 +17,35 @@
 
 defined( 'ABSPATH' ) || exit;
 
-// Note: `wc_get_gallery_image_html` was added in WC 3.3.2 and did not exist prior. This check protects against theme overrides being used on older versions of WC.
-if ( ! function_exists( 'wc_get_gallery_image_html' ) ) {
-	return;
-}
-
 global $product;
 
 $attachment_ids = $product->get_gallery_image_ids();
 
-if ( $attachment_ids && $product->get_image_id() ) {
-	foreach ( $attachment_ids as $attachment_id ) {
-		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', wc_get_gallery_image_html( $attachment_id ), $attachment_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
-	}
+if ( has_post_thumbnail() ) {
+	$thumbnails_id   = array( get_post_thumbnail_id() );
+	$attachment_ids = array_merge( $thumbnails_id, $attachment_ids );
+}
+
+if ( $attachment_ids && count( $attachment_ids ) > 1 ) {
+	echo '<section id="dev3b-gallery" class="slider dev3b-slider-nav">';
+		foreach ( $attachment_ids as $attachment_id ) {
+			$full_size_image  = wp_get_attachment_image_src( $attachment_id, 'full' );
+			$thumbnail        = wp_get_attachment_image_src( $attachment_id, 'woocommerce_thumbnail' );
+
+			$attributes = array(
+				'title'                   => get_post_field( 'post_title', $attachment_id ),
+				'data-caption'            => get_post_field( 'post_excerpt', $attachment_id ),
+				'data-src'                => $full_size_image[0],
+				'data-large_image'        => $full_size_image[0],
+				'data-large_image_width'  => $full_size_image[1],
+				'data-large_image_height' => $full_size_image[2],
+			);
+
+			$html  = '<li class="product-image-wrap"><figure data-thumb="' . esc_url( $thumbnail[0] ) . '" class="woocommerce-product-gallery__image">';
+			$html .= wp_get_attachment_image( $attachment_id, 'woocommerce_single', false, $attributes );
+	 		$html .= '</figure></li>';
+
+			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $attachment_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
+		}
+	echo '</section>';
 }

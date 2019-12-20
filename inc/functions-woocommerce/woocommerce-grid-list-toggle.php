@@ -14,7 +14,6 @@ if ( ! class_exists( 'WC_List_Grid' ) ) {
 		// Setup
 		function setup_gridlist() {
 			if ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) {
-				// add_action( 'wp_enqueue_scripts', array( $this, 'setup_scripts_styles' ), 20);
 				add_action( 'wp_enqueue_scripts', array( $this, 'setup_scripts_script' ), 20);
 				add_action( 'woocommerce_before_shop_loop', array( $this, 'gridlist_toggle_button' ), 10);
 				add_action( 'woocommerce_after_shop_loop_item', array( $this, 'gridlist_description' ), 9);
@@ -22,10 +21,6 @@ if ( ! class_exists( 'WC_List_Grid' ) ) {
 		}
 
 		// Scripts & styles
-		function setup_scripts_styles() {
-			
-		}
-
 		function setup_scripts_script() {
 			wp_enqueue_script( 'cookie', get_template_directory_uri() . '/lib/js/gridlist-product/jquery.cookie.min.js', array( 'jquery' ), '1.4.1', true );
 			wp_enqueue_script( 'grid-list-scripts', get_template_directory_uri() . '/lib/js/gridlist-product/jquery.gridlistview.min.js', array( 'jquery' ), '1.0', true );
@@ -47,7 +42,7 @@ if ( ! class_exists( 'WC_List_Grid' ) ) {
 			global $post;
 			echo '<div class="gridlist-description">';
 				$short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
-				echo strip_tags($short_description);
+				echo strip_tags( $short_description );
 			echo '</div>';
 		}
 

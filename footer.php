@@ -27,7 +27,7 @@ do_action( 'sh_after_content_sidebar_wrap' );
 			</div>
 		</div><!-- .footer-widgets -->
 
-		<?php if( $sh_option['footer-copyright'] ) : ?>
+		<?php if( ! empty( $sh_option['footer-copyright'] ) ) : ?>
 			<div class="site-info">
 				<div class="container">
 					<div class="wrap">

@@ -254,9 +254,9 @@ textarea.form-control { height: 160px; }
 .item-product-slide h3 { margin: 5px 0; font-size: 14px; font-weight: 500; line-height: 1.2; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 .item-product-slide h3 a { color: #333333; }
 .item-product-slide .price { font-weight: bold; color: #ff0000; margin: 0; }
-.item-product-slide .price ins, .item-product-slide .price del { display: block; text-decoration: none; }
+.item-product-slide .price ins, .item-product-slide .price del { display: inline-block; text-decoration: none; }
 .item-product-slide .price ins { margin-right: 0; }
-.item-product-slide .price del { text-decoration: line-through; font-weight: normal; color: #666666; }
+.item-product-slide .price del { text-decoration: line-through; font-weight: normal; color: #666666; margin-left: 5px; }
 .item-product-slide.slick-slide img { width: auto; display: inline-block; max-height: 100px; max-width: 100px; }
 
 /* Widget Slider Posts */

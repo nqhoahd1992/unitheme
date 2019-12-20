@@ -6,7 +6,7 @@ function code_hover_zoom_class_img() {
 	global $sh_option;
     if( ! wp_is_mobile() && $sh_option['woocommerce-tooltip'] == '1' ) {
 		wp_enqueue_style( 'hover-zoom-style' );
-	    wp_enqueue_script('hover-zoom-js' );
+	    wp_enqueue_script( 'hover-zoom-js' );
     	?>
 	    <div id="mystickytooltip" class="stickytooltip">
 	        <div style="padding: 5px;">

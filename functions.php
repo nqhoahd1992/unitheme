@@ -12,22 +12,10 @@ if ( ! function_exists( 'shtheme_setup' ) ) :
 		
 		load_theme_textdomain( 'shtheme', get_template_directory() . '/languages' );
 
-		// Load Theme Options
-		require get_template_directory() . '/inc/options.php';
-
-		if ( class_exists( 'ReduxFrameworkPlugin' ) ) {
-			Redux::init('sh_option');
-		}
-
 		// Add theme support
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
-
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'shtheme' ),
-		) );
 
 		// Switch default core markup for search form, comment form, and comments to output valid HTML5.
 		add_theme_support( 'html5', array('search-form','comment-form','comment-list','gallery','caption',) );
@@ -37,6 +25,18 @@ if ( ! function_exists( 'shtheme_setup' ) ) :
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus( array(
+			'menu-1' => esc_html__( 'Primary', 'shtheme' ),
+		) );
+
+		// Load Theme Options
+		require get_template_directory() . '/inc/options.php';
+
+		if ( class_exists( 'ReduxFrameworkPlugin' ) ) {
+			Redux::init('sh_option');
+		}
 	}
 endif;
 add_action( 'after_setup_theme', 'shtheme_setup' );

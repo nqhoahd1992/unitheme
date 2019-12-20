@@ -24,14 +24,21 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 
-// Dev Feature Tooltip
+$string_tooltip = $classes = '';
+
 if( $sh_option['woocommerce-tooltip'] == '1' ) {
-	$string_tooltip = 'data-tooltip="stickyzoom" data-img-full="'. wp_get_attachment_url(get_post_thumbnail_id( $product->id,'full' )) .'" ';
-} else {
-	$string_tooltip = '';
+	$string_tooltip = 'data-tooltip="stickyzoom" data-img-full="'. wp_get_attachment_url( get_post_thumbnail_id( $product->id,'full' ) ) .'" ';
+}
+
+if( $sh_option['woo-hover-flip-image'] == '1' ) {
+	$attachment_ids 	= $product->get_gallery_image_ids( $product );
+	$attachment_ids     = array_values( $attachment_ids );
+	if ( $attachment_ids ) {
+		$classes = 'product-has-gallery';
+	}
 }
 ?>
-<li <?php wc_product_class( '', $product ); ?>>
+<li <?php wc_product_class( $classes, $product ); ?>>
 	<div class="wrap-product">
 		<?php
 		/**
@@ -55,7 +62,7 @@ if( $sh_option['woocommerce-tooltip'] == '1' ) {
 				do_action( 'woocommerce_shop_loop_item_image' );
 			echo '</a>';
 		echo '</div>';
-
+		
 		/**
 		 * Hook: woocommerce_shop_loop_item_title.
 		 *

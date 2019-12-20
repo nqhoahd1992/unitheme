@@ -10,15 +10,19 @@ a.dev3b-popup{
     cursor:pointer;
 }
 a.dev3b-popup {
-    bottom: 15px;
-    font-size: 25px;
-    line-height: 0;
-    opacity: 0.6;
-    padding: 12px 0;
+    bottom: 10px;
+    font-size: 20px;
+    padding: 10px;
+    width: 40px;
+    text-align: center;
     position: absolute;
-    right: 15px;
+    right: 10px;
     z-index: 9;
     color:#444;
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 0 5px rgba(0,0,0,.08);
+    color: rgba(0,0,0,.7);
+    border-radius: 50%;
 }
 a.dev3b-popup:hover{
     opacity: 1;
@@ -109,7 +113,6 @@ a.dev3b-popup:hover{
 .gallery-vertical #dev3b-gallery .slick-slide {
     padding-left: 0 !important;
     padding-right: 0 !important;
-    margin-bottom: 10px;
 }
 .gallery-vertical #dev3b-gallery.slick-slider .slick-prev,
 .gallery-vertical #dev3b-gallery.slick-slider .slick-next {

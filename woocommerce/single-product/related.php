@@ -27,9 +27,6 @@ if ( $related_products ) : ?>
 	$display_relatedpro = $sh_option['display-relatedpro'];
 	$numcol_pro_related = $sh_option['number-column-product-related'];
 	if( $display_relatedpro == '1' ) {
-		wp_enqueue_script( 'slick-js' );
-        wp_enqueue_style( 'slick-style' );
-        wp_enqueue_style( 'slick-theme-style' );
         // woocommerce_product_loop_start();
         ?>
         <section class="related sh-product-shortcode">

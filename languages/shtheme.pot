@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2019-11-01 09:46+0700\n"
+"POT-Creation-Date: 2019-12-20 13:47+0700\n"
 "PO-Revision-Date: 2018-01-18 17:08+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: archive.php:106
+#: archive.php:107
 msgid "The content is being updated"
 msgstr ""
 
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: comments.php:63 inc/options.php:856 inc/widgets/wg-information.php:48
+#: comments.php:63 inc/options.php:843 inc/widgets/wg-information.php:48
 #: inc/widgets/wg-information.php:105 inc/widgets/wg-support.php:94
 #: inc/widgets/wg-support.php:125 inc/widgets/wg-support.php:248
 msgid "Email"
@@ -75,7 +75,7 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: functions.php:29
+#: functions.php:31
 msgid "Primary"
 msgstr ""
 
@@ -83,7 +83,7 @@ msgstr ""
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:70 functions.php:80 inc/function-woo.php:18
+#: functions.php:70 functions.php:80 inc/function-woo.php:15
 msgid "Add widgets here."
 msgstr ""
 
@@ -616,51 +616,47 @@ msgctxt "Post Type Singular Name"
 msgid "Khách hàng"
 msgstr ""
 
-#: inc/function-woo.php:16
+#: inc/function-woo.php:13
 msgid "Shop Sidebar"
 msgstr ""
 
-#: inc/function-woo.php:124
+#: inc/function-woo.php:141
 msgid "Continue Shopping"
 msgstr ""
 
-#: inc/function-woo.php:182 inc/options.php:844
+#: inc/function-woo.php:195 inc/options.php:831
 msgid "Information"
 msgstr ""
 
-#: inc/function-woo.php:183
+#: inc/function-woo.php:196
 msgid "Gallery"
 msgstr ""
 
-#: inc/function-woo.php:184
+#: inc/function-woo.php:197
 msgid "Video"
 msgstr ""
 
-#: inc/function-woo.php:185
+#: inc/function-woo.php:198
 msgid "Attachments"
 msgstr ""
 
-#: inc/function-woo.php:217
+#: inc/function-woo.php:229
 msgid "Quick buy"
 msgstr ""
 
-#: inc/function-woo.php:244
+#: inc/function-woo.php:255
 msgid "Contact"
 msgstr ""
 
-#: inc/function-woo.php:368 inc/function-woo.php:369
+#: inc/function-woo.php:439 inc/function-woo.php:440
 msgid "View detail"
 msgstr ""
 
-#: inc/functions-woocommerce/gallery-product/product-image.php:75
-msgid "Placeholder"
-msgstr ""
-
-#: inc/functions-woocommerce/woocommerce-grid-list-toggle.php:37
+#: inc/functions-woocommerce/woocommerce-grid-list-toggle.php:32
 msgid "Grid view"
 msgstr ""
 
-#: inc/functions-woocommerce/woocommerce-grid-list-toggle.php:38
+#: inc/functions-woocommerce/woocommerce-grid-list-toggle.php:33
 msgid "List view"
 msgstr ""
 
@@ -685,11 +681,11 @@ msgstr ""
 msgid "The field is required."
 msgstr ""
 
-#: inc/functions/init.php:128
+#: inc/functions/init.php:119
 msgid "Unauthorized access is denied!"
 msgstr ""
 
-#: inc/functions/init.php:265 inc/functions/init.php:267
+#: inc/functions/init.php:256 inc/functions/init.php:258
 msgid "views"
 msgstr ""
 
@@ -757,10 +753,10 @@ msgstr ""
 #: inc/options.php:346 inc/options.php:365 inc/options.php:524
 #: inc/options.php:532 inc/options.php:540 inc/options.php:554
 #: inc/options.php:581 inc/options.php:606 inc/options.php:614
-#: inc/options.php:650 inc/options.php:672 inc/options.php:693
-#: inc/options.php:724 inc/options.php:733 inc/options.php:742
-#: inc/options.php:763 inc/options.php:909 inc/options.php:918
-#: inc/options.php:1012 inc/options.php:1020
+#: inc/options.php:650 inc/options.php:672 inc/options.php:714
+#: inc/options.php:722 inc/options.php:730 inc/options.php:750
+#: inc/options.php:896 inc/options.php:905 inc/options.php:999
+#: inc/options.php:1007
 msgid "Enable"
 msgstr ""
 
@@ -768,10 +764,10 @@ msgstr ""
 #: inc/options.php:347 inc/options.php:366 inc/options.php:525
 #: inc/options.php:533 inc/options.php:541 inc/options.php:555
 #: inc/options.php:582 inc/options.php:607 inc/options.php:615
-#: inc/options.php:651 inc/options.php:673 inc/options.php:694
-#: inc/options.php:725 inc/options.php:734 inc/options.php:743
-#: inc/options.php:764 inc/options.php:910 inc/options.php:919
-#: inc/options.php:1013 inc/options.php:1021
+#: inc/options.php:651 inc/options.php:673 inc/options.php:715
+#: inc/options.php:723 inc/options.php:731 inc/options.php:751
+#: inc/options.php:897 inc/options.php:906 inc/options.php:1000
+#: inc/options.php:1008
 msgid "Disable"
 msgstr ""
 
@@ -855,7 +851,7 @@ msgstr ""
 msgid "Enter number product"
 msgstr ""
 
-#: inc/options.php:489 inc/options.php:638 inc/options.php:780
+#: inc/options.php:489 inc/options.php:638 inc/options.php:767
 msgid "Enter number product per row"
 msgstr ""
 
@@ -936,187 +932,183 @@ msgid "Gallery Product"
 msgstr ""
 
 #: inc/options.php:691
-msgid "Enable customizer gallery product"
-msgstr ""
-
-#: inc/options.php:699
 msgid "Choose style of slider gallery product"
 msgstr ""
 
-#: inc/options.php:702
+#: inc/options.php:694
 msgid "Horizontal"
 msgstr ""
 
-#: inc/options.php:703
+#: inc/options.php:695
 msgid "Vertical"
 msgstr ""
 
-#: inc/options.php:711
+#: inc/options.php:702
 msgid "Enter the number of product images in the view"
 msgstr ""
 
-#: inc/options.php:722
+#: inc/options.php:712
 msgid "Enable Zoom"
 msgstr ""
 
-#: inc/options.php:731
+#: inc/options.php:720
 msgid "Enable Lightbox"
 msgstr ""
 
-#: inc/options.php:740
+#: inc/options.php:728
 msgid "Enable autoplay for gallery"
 msgstr ""
 
-#: inc/options.php:755
+#: inc/options.php:742
 msgid "Related Product"
 msgstr ""
 
-#: inc/options.php:761
+#: inc/options.php:748
 msgid "Display related products"
 msgstr ""
 
-#: inc/options.php:769
+#: inc/options.php:756
 msgid "Enter number related product"
 msgstr ""
 
-#: inc/options.php:800
+#: inc/options.php:787
 msgid "Social"
 msgstr ""
 
-#: inc/options.php:807
+#: inc/options.php:794
 msgid "Facebook"
 msgstr ""
 
-#: inc/options.php:812
+#: inc/options.php:799
 msgid "Twitter"
 msgstr ""
 
-#: inc/options.php:817
+#: inc/options.php:804
 msgid "Google +"
 msgstr ""
 
-#: inc/options.php:822
+#: inc/options.php:809
 msgid "Youtube"
 msgstr ""
 
-#: inc/options.php:827
+#: inc/options.php:814
 msgid "Linkedin"
 msgstr ""
 
-#: inc/options.php:832
+#: inc/options.php:819
 msgid "Pinterest"
 msgstr ""
 
-#: inc/options.php:837
+#: inc/options.php:824
 msgid "Instagram"
 msgstr ""
 
-#: inc/options.php:851
+#: inc/options.php:838
 msgid "Telephone number"
 msgstr ""
 
-#: inc/options.php:861 inc/widgets/wg-information.php:36
+#: inc/options.php:848 inc/widgets/wg-information.php:36
 #: inc/widgets/wg-information.php:89
 msgid "Address"
 msgstr ""
 
-#: inc/options.php:866
+#: inc/options.php:853
 msgid "Google Maps"
 msgstr ""
 
-#: inc/options.php:873
+#: inc/options.php:860
 msgid "Insert code"
 msgstr ""
 
-#: inc/options.php:880
+#: inc/options.php:867
 msgid "Insert code to header"
 msgstr ""
 
-#: inc/options.php:885
+#: inc/options.php:872
 msgid "Insert code to footer"
 msgstr ""
 
-#: inc/options.php:892
+#: inc/options.php:879
 msgid "QH Developer"
 msgstr ""
 
-#: inc/options.php:899
+#: inc/options.php:886
 msgid "User Functions"
 msgstr ""
 
-#: inc/options.php:906
+#: inc/options.php:893
 msgid "Restrict user"
 msgstr ""
 
-#: inc/options.php:907
+#: inc/options.php:894
 msgid "Restrict user in admin page"
 msgstr ""
 
-#: inc/options.php:915
+#: inc/options.php:902
 msgid "Hidden information"
 msgstr ""
 
-#: inc/options.php:916
+#: inc/options.php:903
 msgid "Hidden information dashboard & login page"
 msgstr ""
 
-#: inc/options.php:925
+#: inc/options.php:912
 msgid "Website Functions"
 msgstr ""
 
-#: inc/options.php:932
+#: inc/options.php:919
 msgid "Plugin Chat"
 msgstr ""
 
-#: inc/options.php:938
+#: inc/options.php:925
 msgid "Enter telephone number"
 msgstr ""
 
-#: inc/options.php:948
+#: inc/options.php:935
 msgid "Phone Ring Style"
 msgstr ""
 
-#: inc/options.php:958
+#: inc/options.php:945
 msgid "Phone Ring Color"
 msgstr ""
 
-#: inc/options.php:965
+#: inc/options.php:952
 msgid "Enter zalo number"
 msgstr ""
 
-#: inc/options.php:981
+#: inc/options.php:968
 msgid "Metaslider"
 msgstr ""
 
-#: inc/options.php:989
+#: inc/options.php:976
 msgid "Select slider"
 msgstr ""
 
-#: inc/options.php:1003
+#: inc/options.php:990
 msgid "Woocommerce"
 msgstr ""
 
-#: inc/options.php:1010
+#: inc/options.php:997
 msgid "Tooltip"
 msgstr ""
 
-#: inc/options.php:1018
+#: inc/options.php:1005
 msgid "Cart"
 msgstr ""
 
-#: inc/options.php:1129
+#: inc/options.php:1116
 msgid "Section via hook"
 msgstr ""
 
-#: inc/options.php:1130
+#: inc/options.php:1117
 msgid ""
 "<p class=\"description\">This is a section created by adding a filter to the "
 "sections array. Can be used by child themes to add/remove sections from the "
 "options.</p>"
 msgstr ""
 
-#: inc/shortcode/shortcode-blog.php:33 inc/shortcode/shortcode-blog.php:404
-#: inc/shortcode/shortcode-blog.php:472
+#: inc/shortcode/shortcode-blog.php:33 inc/shortcode/shortcode-blog.php:391
+#: inc/shortcode/shortcode-blog.php:459
 #: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:148
 #: inc/vc_shortcode/templates/wtb_blog_slider.php:16
 #: inc/widgets/wg-post-list.php:59
@@ -1704,7 +1696,6 @@ msgid "Default is H3"
 msgstr ""
 
 #: inc/vc_shortcode/shortcodes/wtb_infobox.php:90
-#: woocommerce/single-product/tabs/description.php:25
 msgid "Description"
 msgstr ""
 
@@ -2108,47 +2099,20 @@ msgstr ""
 msgid "No products in the cart."
 msgstr ""
 
-#: woocommerce/single-product/meta.php:31
-msgid "SKU:"
+#: woocommerce/checkout/form-checkout.php:26
+msgid "You must be logged in to checkout."
 msgstr ""
 
-#: woocommerce/single-product/meta.php:31
-msgid "N/A"
+#: woocommerce/checkout/form-checkout.php:58
+msgid "Your order"
 msgstr ""
 
-#: woocommerce/single-product/meta.php:35
-msgid "Category:"
-msgid_plural "Categories:"
-msgstr[0] ""
-msgstr[1] ""
-
-#: woocommerce/single-product/meta.php:37
-msgid "Tag:"
-msgid_plural "Tags:"
-msgstr[0] ""
-msgstr[1] ""
-
-#: woocommerce/single-product/product-image.php:43
-msgid "Awaiting product image"
+#: woocommerce/single-product/product-image.php:67
+msgid "Placeholder"
 msgstr ""
 
-#: woocommerce/single-product/rating.php:38
-#, php-format
-msgid "%s customer review"
-msgid_plural "%s customer reviews"
-msgstr[0] ""
-msgstr[1] ""
-
-#: woocommerce/single-product/related.php:36
+#: woocommerce/single-product/related.php:33
 msgid "Related Products"
-msgstr ""
-
-#: woocommerce/single-product/tabs/additional-information.php:25
-msgid "Additional information"
-msgstr ""
-
-#: woocommerce/single-product/up-sells.php:27
-msgid "You may also like&hellip;"
 msgstr ""
 
 #. Theme Name of the plugin/theme
