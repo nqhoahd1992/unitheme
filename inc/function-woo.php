@@ -32,7 +32,7 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 /**
  * Dev Disable Cart
 **/
-function dev_disable_cart(){
+function dev_disable_cart() {
 	global $sh_option;
 	if( $sh_option['woocommerce-disable-cart'] == '0' ) {
 		remove_action( 'woocommerce_after_shop_loop_item','woocommerce_template_loop_add_to_cart',10 );
@@ -122,7 +122,7 @@ add_filter( 'loop_shop_per_page', 'woocommerce_edit_loop_shop_per_page', 20 );
 /**
  * Add percent sale in content product template
  */
-function add_percent_sale(){
+function add_percent_sale() {
 	global $product;
 	$regular_price 	= get_post_meta( get_the_ID(), '_regular_price', true);
 	$sale_price 	= get_post_meta( get_the_ID(), '_sale_price', true);
@@ -213,8 +213,7 @@ function woo_rename_tabs( $tabs ) {
  */
 function custom_numberpro_related_products_args( $args ) {
 	global $sh_option;
-	$numpro_related = $sh_option['number-product-related'];
-	$args['posts_per_page'] = $numpro_related; // number related products
+	$args['posts_per_page'] = $sh_option['number-product-related']; // number related products
 	// $args['columns'] 	= 2; // arranged in number columns
 	return $args;
 }
@@ -223,7 +222,7 @@ add_filter( 'woocommerce_output_related_products_args', 'custom_numberpro_relate
 /**
  * Add Button Quick Buy Simple Product In Single Product
  */
-function insert_btn_quick_buy(){
+function insert_btn_quick_buy() {
 	global $post, $product;
 	if ( $product->is_type( 'simple' ) ) {
 		echo '<a class="button buy_now ml-2" href="?quick_buy=1&add-to-cart='. $post->ID .'" class="qn_btn">'. __('Quick buy','shtheme') .'</a>';
@@ -246,7 +245,7 @@ add_filter( 'woocommerce_add_to_cart_redirect', 'redirect_to_checkout' );
 /**
  * Get Price Product
  */
-function get_price_product(){
+function get_price_product() {
 	global $product;
 	if ( $product->is_type( 'simple' ) ) {
 		$regular_price 	= get_post_meta( get_the_ID(), '_regular_price', true);
@@ -283,7 +282,7 @@ add_filter( 'woocommerce_available_variation', 'display_equalprice_variable_pro'
 /**
  * Title Product content-product.php
  */
-function add_title_name_product(){
+function add_title_name_product() {
 	echo '<h3 class="woocommerce-loop-product__title"><a 
 	title="' . get_the_title() . '" 
 	href=" '. get_the_permalink() .' ">' . get_the_title() . '</a></h3>';
@@ -301,7 +300,7 @@ function load_script_single_product() {
 		wp_enqueue_script( 'fancybox-js' );
 		wp_enqueue_style( 'fancybox-css' );
 		wp_enqueue_script( 'zoom-js', SH_DIR .'/lib/js/gallery-product/jquery.zoom.min.js', array('jquery'), '1.7.21', true );
-		wp_register_script( 'gallery-front-js', SH_DIR .'/lib/js/gallery-product/jquery.gallery.front.js',array('jquery'),'1.0', true );
+		wp_register_script( 'gallery-front-js', SH_DIR .'/lib/js/gallery-product/jquery.gallery.front.js',array('jquery'), '1.0', true );
 		wp_enqueue_style( 'gallery-front-css', SH_DIR .'/lib/css/gallery-product/gallery-front.css' );
 		
 		global $sh_option;
@@ -324,7 +323,7 @@ add_action( 'wp_enqueue_scripts', 'load_script_single_product' );
 /**
  * Get first image of gallery product in content-product.php
  */
-function woocommerce_swap_image_product(){
+function woocommerce_swap_image_product() {
 	global $product, $sh_option;
 	if( $sh_option['woo-hover-flip-image'] == '1' ) {
 		$attachment_ids = $product->get_gallery_image_ids();
@@ -353,11 +352,11 @@ add_action( 'woocommerce_shop_loop_item_image','woocommerce_swap_image_product' 
 /**
  * Include JS CSS Files 
  */
-function shtheme_lib_woocommerce_scripts(){
+function shtheme_lib_woocommerce_scripts() {
 
 	// Main js
 	wp_enqueue_script( 'main-woo-js', SH_DIR . '/lib/js/main-woo.js', array(), '1.0', true );
-	// wp_localize_script(	'main-woo-js', 'ajax', array( 'url' => admin_url('admin-ajax.php') ) );
+	// wp_localize_script( 'main-woo-js', 'ajax', array( 'url' => admin_url('admin-ajax.php') ) );
 	
 	// Woocommerce Style
 	wp_enqueue_style( 'woocommerce-style', SH_DIR .'/lib/css/custom-woocommerce.css' );
@@ -369,7 +368,7 @@ add_action( 'wp_enqueue_scripts', 'shtheme_lib_woocommerce_scripts' , 99 );
 /**
  * Insert button share single product
  */
-function insert_share_product(){
+function insert_share_product() {
 	?>
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57e482b2e67c850b"></script>
 	<div class="addthis_inline_share_toolbox_4524"></div>
@@ -442,27 +441,27 @@ function insert_btn_detail(){
 	</div>
 	<?php
 }
-// add_action( 'woocommerce_after_shop_loop_item', 'insert_btn_detail',15 );
+// add_action( 'woocommerce_after_shop_loop_item', 'insert_btn_detail', 15 );
 
 /**
  * Hook Woocommerce
  */
 // File archive-product.php
-// remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count',20 );
-// remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering',30 );
-remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb',20 );
-remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar',10 );
+// remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+// remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
 // File content-product.php
-remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open',10 );
-remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash',10 );
-remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail',10 );
-remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close',5 );
-// remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart',10 );
-remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating',5 );
-remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price',10 );
-remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title',10 );
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+// remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
 
 // File content-single-product.php
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta',40 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta',6 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 6 );

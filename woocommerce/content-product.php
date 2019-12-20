@@ -31,8 +31,8 @@ if( $sh_option['woocommerce-tooltip'] == '1' ) {
 }
 
 if( $sh_option['woo-hover-flip-image'] == '1' ) {
-	$attachment_ids 	= $product->get_gallery_image_ids( $product );
-	$attachment_ids     = array_values( $attachment_ids );
+	$attachment_ids	= $product->get_gallery_image_ids( $product );
+	$attachment_ids = array_values( $attachment_ids );
 	if ( $attachment_ids ) {
 		$classes = 'product-has-gallery';
 	}
@@ -56,13 +56,15 @@ if( $sh_option['woo-hover-flip-image'] == '1' ) {
 		 */
 		do_action( 'woocommerce_before_shop_loop_item_title' );
 
-		echo '<div class="image-product">';
+		echo '<div class="wrap-product__thumbnail">';
 			echo '<a class="img hover-zoom" '. $string_tooltip .' href="'. get_permalink( ) .'" title="'. get_the_title( ) .'">';
 				echo woocommerce_get_product_thumbnail( );
 				do_action( 'woocommerce_shop_loop_item_image' );
 			echo '</a>';
 		echo '</div>';
 		
+		echo '<div class="wrap-product__content">';
+
 		/**
 		 * Hook: woocommerce_shop_loop_item_title.
 		 *
@@ -85,6 +87,8 @@ if( $sh_option['woo-hover-flip-image'] == '1' ) {
 		 * @hooked woocommerce_template_loop_add_to_cart - 10
 		 */
 		do_action( 'woocommerce_after_shop_loop_item' );
+
+		echo '</div>';
 		?>
 	</div>
 </li>

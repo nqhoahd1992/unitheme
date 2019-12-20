@@ -192,11 +192,11 @@ function shtheme_lib_scripts(){
 	wp_enqueue_style( 'fontawesome-style', SH_DIR .'/lib/css/font-awesome-all.css' );
 
 	// Fancybox
-	wp_register_script( 'fancybox-js', SH_DIR .'/lib/js/gallery-product/jquery.fancybox.min.js',array('jquery'),'3.5.7', true);
-	wp_register_style( 'fancybox-css', SH_DIR .'/lib/css/gallery-product/fancybox.min.css' );
+	wp_register_script( 'fancybox-js', SH_DIR .'/lib/js/jquery.fancybox.min.js', array('jquery'), '3.5.7', true);
+	wp_register_style( 'fancybox-css', SH_DIR .'/lib/css/fancybox.min.css' );
 
 	// Validate js
-	wp_register_script( 'validate-js', SH_DIR .'/lib/js/jquery.validate.min.js',array('jquery'),'1.19.0', true);
+	wp_register_script( 'validate-js', SH_DIR .'/lib/js/jquery.validate.min.js', array('jquery'), '1.19.0', true );
 
 	// Ring Phone
 	wp_register_style( 'phonering-style', SH_DIR .'/lib/css/phone-ring.css' );
