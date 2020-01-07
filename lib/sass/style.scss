@@ -151,16 +151,39 @@ img {max-width: 100%;height: auto}
 				}
 				&.menu-item-has-children {
 					& > a {
+						position: relative;
+						padding-right: 20px !important;
 						&:after {
-							@include fontawesome;
-							content: "\f107";
-						    margin-left: 5px;
+						    content: '';
+						    border: 2px solid #FFF;
+						    border-bottom: none;
+						    border-right: none;
+						    -webkit-box-sizing: content-box;
+						    box-sizing: content-box;
+						    display: block;
+						    width: 6px;
+						    height: 6px;
+						    margin: auto;
+						    position: absolute;
+						    top: 0;
+						    bottom: 0;
+						    -webkit-transform: rotate(225deg);
+						    -ms-transform: rotate(225deg);
+						    transform: rotate(225deg);
+						    right: 6px;
+						    left: auto;
+						    -moz-transition: all 0.25s ease 0s;
+						    -o-transition: all 0.25s ease 0s;
+						    -webkit-transition: all 0.25s ease 0s;
+						    transition: all 0.25s ease 0s;
 						}
 					}
 					&:hover {
 						& > a {
 							&:after {
-								content: "\f106";
+								-webkit-transform: rotate(45deg);
+								-ms-transform: rotate(45deg);
+								transform: rotate(45deg);
 							}
 						}
 					}
