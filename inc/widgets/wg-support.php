@@ -2,15 +2,15 @@
 add_action('widgets_init', 'register_gtid_support');
 
 function register_gtid_support() {
-    register_widget('QH_Support_Online');
+    register_widget('Uni_Support_Online');
 }
 
-class QH_Support_Online extends WP_Widget {
+class Uni_Support_Online extends WP_Widget {
 
 	function __construct() {
         parent::__construct(
             'supports',
-            __( 'QH - Support', 'shtheme' ),
+            __( 'Uni - Support', 'shtheme' ),
             array(
                 'description'  => __( 'Display list support for website', 'shtheme' )
             )

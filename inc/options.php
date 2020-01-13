@@ -874,9 +874,9 @@ Redux::setSection( $opt_name, array(
     )
 ) );
 
-// -> QH Developer
+// -> Uni Developer
 Redux::setSection( $opt_name, array(
-    'title'            => __( 'QH Developer', 'shtheme' ),
+    'title'            => __( 'Uni Developer', 'shtheme' ),
     'id'               => 'function',
     'icon'             => 'el el-adjust-alt',
     'permissions'      => 'administrator',
@@ -923,7 +923,7 @@ Redux::setSection( $opt_name, array(
             'id'        => 'phonering-number',
             'type'      => 'text',
             'title'     => __('Enter telephone number', 'shtheme'),
-            'default'   => 10,
+            // 'default'   => 10,
             'min'       => 1,
             'step'      => 1,
             'max'       => 30,

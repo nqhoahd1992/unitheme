@@ -2,15 +2,15 @@
 add_action('widgets_init', 'register_widget_slider_products');
 
 function register_widget_slider_products() {
-    register_widget('QH_Products_Vertical_Widget');
+    register_widget('Uni_Products_Vertical_Widget');
 }
 
-class QH_Products_Vertical_Widget extends WP_Widget {
+class Uni_Products_Vertical_Widget extends WP_Widget {
 
     function __construct() {
         parent::__construct(
             'slider_products',
-            __( 'QH - Products Slider', 'shtheme' ),
+            __( 'Uni - Products Slider', 'shtheme' ),
             array(
                 'description'  => __( 'Display slide list product', 'shtheme' )
             )

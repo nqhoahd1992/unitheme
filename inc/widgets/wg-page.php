@@ -1,17 +1,17 @@
 <?php
-add_action('widgets_init', 'qh_register_widget_page');
+add_action('widgets_init', 'Uni_register_widget_page');
 
-function qh_register_widget_page() {
-    register_widget('QH_Page_Widget');
+function Uni_register_widget_page() {
+    register_widget('Uni_Page_Widget');
 }
 
-class QH_Page_Widget extends WP_Widget {
+class Uni_Page_Widget extends WP_Widget {
 
 	function __construct() {
 
         parent::__construct(
             'featuredpage',
-            __( 'QH - Featured Page', 'shtheme' ),
+            __( 'Uni - Featured Page', 'shtheme' ),
             array( 
             	'description'  =>  __( 'Display featured page', 'shtheme' ),
             )
