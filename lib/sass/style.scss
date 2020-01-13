@@ -40,6 +40,7 @@ Tags:
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&display=swap');
 $primary-color: #337ab7;
 $text-color: #333333;
 $border-color: #cccccc;
@@ -77,7 +78,6 @@ $container-width: 1140px;
     -o-transform: translate3d($tx, $ty, $tz);
     transform: translate3d($tx, $ty, $tz);
 }
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&subset=vietnamese');
 html{font-size:62.5%;}
 body {font-family: $primary-font, Arial, sans-serif;font-size: 14px;color: $text-color;}
 a {
@@ -351,9 +351,11 @@ iframe[name='google_conversion_frame'] {height: 0 !important;width: 0 !important
 @media (min-width: 768px) { .col-sm-15 {-webkit-box-flex: 0;-ms-flex: 0 0 20%;flex: 0 0 20%;max-width: 20%;}}
 @media (min-width: 992px) {.col-md-15 {-webkit-box-flex: 0;-ms-flex: 0 0 20%;flex: 0 0 20%;max-width: 20%;}}
 @media (min-width: 1200px) {.col-lg-15 {-webkit-box-flex: 0;-ms-flex: 0 0 20%;flex: 0 0 20%;max-width: 20%;}}
-.wpcf7 label {font-weight: 600;display: block}
+.wpcf7 label {font-weight: 500;display: block}
 .wpcf7 div.wpcf7-validation-errors {margin: 2em 0 1em}
 .wpcf7 span.wpcf7-not-valid-tip {margin: 5px 0}
+div.wpcf7-validation-errors, div.wpcf7-acceptance-missing {border:none}
+div.wpcf7-response-output {padding: .75rem 1.25rem}
 .page_nav {
 	text-align: center;
 	margin-bottom: 20px;
@@ -371,6 +373,7 @@ iframe[name='google_conversion_frame'] {height: 0 !important;width: 0 !important
 }
 .screen-reader-text {display: none}
 .btn {
+	padding: 6px 20px;
 	font-size: 14px;
 	background: $primary-color;
 	color: #FFF;
@@ -386,6 +389,9 @@ iframe[name='google_conversion_frame'] {height: 0 !important;width: 0 !important
 	    background-color: $primary-color;
 	    border-color: $primary-color;
 	}
+}
+.form-group {
+	margin-bottom: 15px;
 }
 .form-control {
 	height: 34px;

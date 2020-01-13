@@ -40,7 +40,7 @@ Tags:
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&subset=vietnamese");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&display=swap");
 html { font-size: 62.5%; }
 
 body { font-family: "Roboto", Arial, sans-serif; font-size: 14px; color: #333333; }
@@ -122,11 +122,15 @@ iframe[name='google_conversion_frame'] { height: 0 !important; width: 0 !importa
 @media (min-width: 768px) { .col-sm-15 { -webkit-box-flex: 0; -ms-flex: 0 0 20%; flex: 0 0 20%; max-width: 20%; } }
 @media (min-width: 992px) { .col-md-15 { -webkit-box-flex: 0; -ms-flex: 0 0 20%; flex: 0 0 20%; max-width: 20%; } }
 @media (min-width: 1200px) { .col-lg-15 { -webkit-box-flex: 0; -ms-flex: 0 0 20%; flex: 0 0 20%; max-width: 20%; } }
-.wpcf7 label { font-weight: 600; display: block; }
+.wpcf7 label { font-weight: 500; display: block; }
 
 .wpcf7 div.wpcf7-validation-errors { margin: 2em 0 1em; }
 
 .wpcf7 span.wpcf7-not-valid-tip { margin: 5px 0; }
+
+div.wpcf7-validation-errors, div.wpcf7-acceptance-missing { border: none; }
+
+div.wpcf7-response-output { padding: .75rem 1.25rem; }
 
 .page_nav { text-align: center; margin-bottom: 20px; }
 .page_nav * { display: inline-block; padding: 3px 10px; background: #FFF; border: 1px solid #337ab7; margin: 0; }
@@ -134,11 +138,13 @@ iframe[name='google_conversion_frame'] { height: 0 !important; width: 0 !importa
 
 .screen-reader-text { display: none; }
 
-.btn { font-size: 14px; background: #337ab7; color: #FFF; }
+.btn { padding: 6px 20px; font-size: 14px; background: #337ab7; color: #FFF; }
 .btn:hover, .btn:focus, .btn .focus { color: #FFF; box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.2); }
 
 .btn-primary { border-color: #337ab7; }
 .btn-primary:hover { color: #fff; background-color: #337ab7; border-color: #337ab7; }
+
+.form-group { margin-bottom: 15px; }
 
 .form-control { height: 34px; font-size: 14px; }
 
