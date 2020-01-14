@@ -22,7 +22,7 @@ function create_menu_mobile_style_sliding(){
                 'menu_class'        => 'mobile-menu',
             ) );
             ?>
-            <a class="menu_close"><i class="fas fa-angle-left"></i></a>
+            <a class="menu_close"></a>
         </div>
     </nav>
     <?php

@@ -1486,11 +1486,15 @@ embed, iframe, object {max-width: 100%}
 	&.opened {
 		@include translate2d(0, 0px);
 	}
-	h3 {color: #f2f2f2;font-size: 28px;}
+	h3 {
+		color: $primary-color;
+		font-size: 20px;
+		margin-bottom: 0;
+	}
 	.mobile-menu {margin: 0;padding: 0;}
 	.mobilenav__inner > div:not(.toplg) {
 		overflow-y: auto;
-		height: calc( 100% - 128px );
+		height: calc( 100% - 60px );
 	}
 	ul {
 		li {
@@ -1498,53 +1502,87 @@ embed, iframe, object {max-width: 100%}
 			position: relative;
 			overflow: auto;
 			a {
-				color: #fff;
+				color: $text-color;
 				position: relative;
 				display: block;
 				margin: 0;
 				padding: 10px 15px;
+				font-weight: bold;
 			    font-size: 14px;
-			    border-bottom: solid 1px #161b1f;
-				border-top: solid 1px #4b4e50;
+			    border-top: solid 1px #dfe3e8;
 				@include transition(all 0.35s linear);
 			}
 		}
-		&.mobile-menu > li > a {
-			background: #262d33;
+		&.mobile-menu > li {
+			&:last-child > a {
+				border-bottom: solid 1px #dfe3e8;
+			}
+			&>a {
+				// text-transform: uppercase;
+			}
+		}
+		&.mobile-menu > li.open {
+			background: #f7fcff;
+			& > a {
+				color: $primary-color;
+			}
+		}
+		&.mobile-menu > li.current_page_item {
+			& > a {
+				color: $primary-color;
+			}
 		}
 		ul.sub-menu {
 			display: none;
 			list-style: none;
 			margin: 0;
-			padding: 0;
-			background: #363f48;
+			padding-left: 20px;
+			li a {
+				padding-left: 0;
+			}
 		}
-		& > li.menu-item-has-children.open>.arrow:before {content: "\f106";}
+		& > li.menu-item-has-children.open>.arrow:before {
+			-webkit-transform: rotate(225deg);
+			-ms-transform: rotate(225deg);
+			transform: rotate(225deg);
+		}
 	}
 	.arrow {
 		position: absolute;
 		top: 0;
 		right: 0;
-		width: 43px;
-		height: 43px;
+		width: 42px;
+		height: 42px;
 		cursor: pointer;
 		text-align: center;
 		line-height: 25px;
-		color: #FFF;
+		color: $text-color;
 		background: rgba(255,255,255,0.085);
-		@include fontawesome;
 		@include transition(all 0.25s ease 0s);
 		&:before {
+			content: '';
+			border: 2px solid rgba(0, 0, 0, 0.3);
+			border-bottom: none;
+			border-right: none;
+			-webkit-box-sizing: content-box;
+			box-sizing: content-box;
+			display: block;
+			width: 8px;
+			height: 8px;
+			margin: auto;
 			position: absolute;
-		    top: 50%;
-		    transform: translateY(-50%);
-		    content: "\f107";
-		    font-size: 18px;
-		    left: 43%;
+			top: 0;
+			bottom: 0;
+			-webkit-transform: rotate(135deg);
+			-ms-transform: rotate(135deg);
+			transform: rotate(135deg);
+			right: 23px;
+			left: auto;
+			@include transition(all 0.25s ease 0s);
 		}
 	}
 	.mobilenav__inner {
-		background: #1e1e1e;
+		background: #f3f3f3;
 	    max-width: 84%;
 	    position: relative;
 	    height: 100%;
@@ -1562,21 +1600,10 @@ embed, iframe, object {max-width: 100%}
 		    width: 20%;
 		    height: 100%;
 		    cursor: pointer;
-		    i {
-				font-size: 18px;
-			    top: 50%;
-			    left: 0;
-			    border-radius: 0 40px 40px 0;
-			    padding: 10px;
-			    position: absolute;
-			    background: #1e1e1e;
-			    border-left: 1px solid #000000;
-			    color: #fff;
-			    transform: translateY(-50%);
-			}
 		}
 		.toplg {
-			padding: 50px 15px 40px 15px;
+			padding: 18px 15px;
+			height: 60px;
 			text-align: center;
 			img {
 				max-width: 150px;
@@ -1612,7 +1639,7 @@ embed, iframe, object {max-width: 100%}
 .hamburger {
     display: inline-block;
     width: 30px;
-    height: 24px;
+    height: 22px;
     cursor: pointer;
     -webkit-transition-property: opacity, -webkit-filter;
     transition-property: opacity, filter;
@@ -1641,7 +1668,7 @@ embed, iframe, object {max-width: 100%}
 .hamburger-inner:after,
 .hamburger-inner:before {
     width: 30px;
-    height: 3px;
+    height: 2px;
     background-color: #FFF;
     border-radius: 2px;
     position: absolute;
@@ -1653,7 +1680,7 @@ embed, iframe, object {max-width: 100%}
     -webkit-transition-timing-function: ease;
     transition-timing-function: ease;
     .site-header:not(.header-banner) & {
-    	background-color: $primary-color;
+    	background-color: $text-color;
     }
 }
 .hamburger--collapse {
