@@ -2,7 +2,7 @@
 /**
  * Template for Logo Header
  *
- * @package SH_Theme
+ * @package Uni_Theme
  */
 
 global $sh_option;

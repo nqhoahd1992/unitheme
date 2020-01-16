@@ -10,7 +10,7 @@
 <?php global $sh_option;?>
 <body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
-<?php do_action( 'sh_before_header' );?>
+<?php do_action( 'before_header' );?>
 
 <div id="page" class="site">
 
@@ -26,7 +26,7 @@
 		<?php endif; ?>
 		<!-- End Top Header -->
 
-		<?php sh_header_layout();?>
+		<?php uni_header_layout();?>
 
 	</header><!-- #masthead -->
 	

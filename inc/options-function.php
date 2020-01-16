@@ -46,7 +46,7 @@ function insert_callring(){
 		}
 	echo '</div>';
 }
-add_action('sh_after_footer','insert_callring');
+add_action( 'after_footer', 'insert_callring' );
 
 function callring_style() {
 	global $sh_option;
@@ -145,7 +145,7 @@ function create_slide_carousel(){
 		echo '</div>';
 	}
 }
-add_action('before_loop_main_content','create_slide_carousel');
+add_action( 'before_loop_main_content', 'create_slide_carousel' );
 
 /**
  * Display Metaslider
@@ -154,10 +154,10 @@ function insert_metaslide(){
 	global $sh_option;
 	if( ! empty( $sh_option['metaslider'] ) && ( is_home() || is_front_page() ) ) {
 		$metaslider = $sh_option['metaslider'];
-		echo '<div class="wtb-slider">'.do_shortcode('[metaslider id="'.$metaslider.'"]').'</div>';
+		echo '<div class="wtb-slider">'. do_shortcode('[metaslider id="'.$metaslider.'"]') .'</div>';
 	}
 }
-add_action('before_loop_main_content','insert_metaslide');
+add_action( 'before_loop_main_content', 'insert_metaslide' );
 
 /**
  * Display Logo
@@ -166,14 +166,14 @@ function display_logo(){
 	global $sh_option;
 	$url_logo = $sh_option['opt_settings_logo']['url'];
 	if(  $url_logo ) {
-		echo '<a href="'. esc_url( home_url( '/' ) ) .'"><img src="'. $url_logo .'"></a>';
+		echo '<a href="'. esc_url( home_url( '/' ) ) .'"><img alt="Logo" src="'. $url_logo .'"></a>';
 	}
 }
 
 /**
  * Display Footer
  */
-function sh_footer_widget_areas() {
+function uni_footer_widget_areas() {
 
 	global $sh_option;
 
@@ -200,7 +200,6 @@ function sh_footer_widget_areas() {
 
  	$counter = 1;
 	while ( $counter <= $footer_widgets_number ) {
-
 		echo '<div class="'. $classes .'">';
 			dynamic_sidebar( 'footer-' . $counter );
 		echo '</div>';
@@ -208,7 +207,7 @@ function sh_footer_widget_areas() {
 	}
 
 }
-add_action( 'sh_footer', 'sh_footer_widget_areas' );
+add_action( 'uni_footer', 'uni_footer_widget_areas' );
 
 /**
  * Inser Code To Header Footer
@@ -220,7 +219,7 @@ function insert_code_to_header(){
 		echo $html_header;
 	}
 }
-add_action( 'wp_head','insert_code_to_header' );
+add_action( 'wp_head', 'insert_code_to_header' );
 
 function insert_code_to_footer(){
 	global $sh_option;
@@ -229,4 +228,4 @@ function insert_code_to_footer(){
 		echo $html_footer;
 	}
 }
-add_action( 'wp_footer','insert_code_to_footer' );
+add_action( 'wp_footer', 'insert_code_to_footer' );

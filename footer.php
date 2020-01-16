@@ -6,11 +6,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package SH_Theme
+ * @package Uni_Theme
  */
 
 global $sh_option;
-do_action( 'sh_after_content_sidebar_wrap' );
+do_action( 'after_content_sidebar_wrap' );
 ?>
 		</div>
 	</div><!-- #content -->
@@ -21,7 +21,7 @@ do_action( 'sh_after_content_sidebar_wrap' );
 			<div class="container">
 				<div class="wrap">
 					<div class="row">
-						<?php do_action( 'sh_footer' );?>
+						<?php do_action( 'uni_footer' );?>
 					</div>
 				</div>
 			</div>
@@ -45,7 +45,7 @@ do_action( 'sh_after_content_sidebar_wrap' );
 
 	<p id="back-top"><a href="#top" target="_blank"><span></span></a></p>
 
-	<?php do_action( 'sh_after_footer' );?>
+	<?php do_action( 'after_footer' );?>
 	
 </div><!-- #page -->
 

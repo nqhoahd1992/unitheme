@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package SH_Theme
+ * @package Uni_Theme
  */
 
 get_header(); ?>
@@ -32,7 +32,8 @@ get_header(); ?>
 
 		</main><!-- #main -->
 
-		<?php do_action( 'sh_after_content' );?>
+		<?php do_action( 'after_main_content' );?>
+		
 	</div><!-- #primary -->
 
 <?php

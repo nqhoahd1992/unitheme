@@ -20,7 +20,7 @@ if ( post_password_required() ) { ?>
 	<?php endif; ?>
 	<?php if ( have_comments() ) : ?>
 		<ol class="commentlist_mw">
-			<?php wp_list_comments('type=comment&callback=shtheme_comment'); ?>
+			<?php wp_list_comments('type=comment&callback=uni_comment'); ?>
 		</ol><!-- .commentlist -->
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :?>
 			<nav id="comment-nav-below" class="navigation" role="navigation">

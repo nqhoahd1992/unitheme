@@ -9,11 +9,13 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package SH_Theme
+ * @package Uni_Theme
  */
 
 global $sh_option;
+
 get_header(); ?>
+
 	<div id="primary" class="content-sidebar-wrap">
 
 		<?php do_action( 'before_main_content' ) ?>
@@ -36,7 +38,7 @@ get_header(); ?>
 					echo '<div class="product-wrap">';
 						foreach ($list_cat_product as $key => $idpost) {
 							echo '<h2 class="heading"><a title="'. get_dm_name( $idpost,'product_cat' ) .'" href="'. get_dm_link( $idpost,'product_cat' ) .'">'. get_dm_name( $idpost,'product_cat' ) .'</a></h2>';
-							echo do_shortcode('[shproduct posts_per_page="' . $number_product . '" categories="' . $idpost . '" numcol="' . $number_product_row . '"]');
+							echo do_shortcode('[uniproduct posts_per_page="' . $number_product . '" categories="' . $idpost . '" numcol="' . $number_product_row . '"]');
 						}
 					echo '</div>';
 				}
@@ -56,7 +58,7 @@ get_header(); ?>
 				echo '<div class="news-wrap">';
 					foreach ($list_cat_post as $key => $idpost) {
 						echo '<h2 class="heading"><a title="'. get_cat_name( $idpost ) .'" href="'. get_category_link( $idpost ) .'">'. get_cat_name( $idpost ) .'</a></h2>';
-						echo do_shortcode('[shblog posts_per_page="' . $number_news . '" categories="' . $idpost . '" number_character="140" style="' . $type_layout . '"]');
+						echo do_shortcode('[uniblog posts_per_page="' . $number_news . '" categories="' . $idpost . '" number_character="140" style="' . $type_layout . '"]');
 					}
 				echo '</div>';
 			}
@@ -64,7 +66,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 
-		<?php do_action( 'sh_after_content' );?>
+		<?php do_action( 'after_main_content' );?>
 
 	</div><!-- #primary -->
 	

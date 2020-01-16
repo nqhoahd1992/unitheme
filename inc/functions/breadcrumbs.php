@@ -1,13 +1,13 @@
 <?php
 /**
  * Breadcrumbs
- * @package SH_Theme
+ * @package Uni_Theme
  * @author  Quang Hoa
  * @license 
  * @link    
  */
 
-function sh_create_breadcrumb(){
+function uni_create_breadcrumb(){
     global $sh_option;
     if( $sh_option['display-pagetitlebar'] == '1' && ! is_front_page() ) {
         echo '<div class="d-flex align-items-center page-title-bar">';
@@ -43,4 +43,4 @@ function sh_create_breadcrumb(){
         echo '</div>';
     }
 }
-add_action( 'before_content','sh_create_breadcrumb' );
+add_action( 'before_content','uni_create_breadcrumb' );

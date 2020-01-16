@@ -136,11 +136,11 @@ add_action( 'woocommerce_after_shop_loop_item', 'add_percent_sale', 15 );
 /**
  * Add button continue shopping
  */
-function wtb_continue_shopping_button() {
+function uni_continue_shopping_button() {
 	$shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) );
 	echo '<div class="continue_shopping"><a href="'. $shop_page_url .'" class="button">'. __('Continue Shopping','shtheme') .' →</a></div>';
 }
-add_action( 'woocommerce_proceed_to_checkout', 'wtb_continue_shopping_button' );
+add_action( 'woocommerce_proceed_to_checkout', 'uni_continue_shopping_button' );
 
 /**
  * Overwrite field checkout
@@ -255,7 +255,10 @@ function get_price_product() {
 		} elseif ( ! empty( $regular_price ) && empty( $sale_price ) ) {
 			echo '<p class="price">'. wc_price( $regular_price) . '</p>';
 		} elseif ( ! empty( $regular_price ) && ! empty( $sale_price ) ) {
-			echo '<p class="price"><ins>'. wc_price( $sale_price) .'</ins><del>'. wc_price( $regular_price) .'</del></p>'; 
+			echo '<p class="price">
+			<ins>'. wc_price( $sale_price) .'</ins>
+			<del>'. wc_price( $regular_price) .'</del>
+			</p>'; 
 		}
 	} elseif( $product->is_type( 'variable' ) ) {
 		if( is_product() ) {
@@ -299,9 +302,9 @@ function load_script_single_product() {
         wp_enqueue_style( 'slick-theme-style' );
 		wp_enqueue_script( 'fancybox-js' );
 		wp_enqueue_style( 'fancybox-css' );
-		wp_enqueue_script( 'zoom-js', SH_DIR .'/lib/js/gallery-product/jquery.zoom.min.js', array('jquery'), '1.7.21', true );
-		wp_register_script( 'gallery-front-js', SH_DIR .'/lib/js/gallery-product/jquery.gallery.front.js',array('jquery'), '1.0', true );
-		wp_enqueue_style( 'gallery-front-css', SH_DIR .'/lib/css/gallery-product/gallery-front.css' );
+		wp_enqueue_script( 'zoom-js', UNI_DIR .'/lib/js/gallery-product/jquery.zoom.min.js', array('jquery'), '1.7.21', true );
+		wp_register_script( 'gallery-front-js', UNI_DIR .'/lib/js/gallery-product/jquery.gallery.front.js',array('jquery'), '1.0', true );
+		wp_enqueue_style( 'gallery-front-css', UNI_DIR .'/lib/css/gallery-product/gallery-front.css' );
 		
 		global $sh_option;
 		$setting_array = array(
@@ -355,12 +358,12 @@ add_action( 'woocommerce_shop_loop_item_image','woocommerce_swap_image_product' 
 function shtheme_lib_woocommerce_scripts() {
 
 	// Main js
-	wp_enqueue_script( 'main-woo-js', SH_DIR . '/lib/js/main-woo.js', array(), '1.0', true );
+	wp_enqueue_script( 'main-woo-js', UNI_DIR . '/lib/js/main-woo.js', array(), '1.0', true );
 	// wp_localize_script( 'main-woo-js', 'ajax', array( 'url' => admin_url('admin-ajax.php') ) );
 	
 	// Woocommerce Style
-	wp_enqueue_style( 'woocommerce-style', SH_DIR .'/lib/css/custom-woocommerce.css' );
-	wp_enqueue_style( 'woocommerce-layout-style', SH_DIR .'/lib/css/layout-woocommerce.css' );
+	wp_enqueue_style( 'woocommerce-style', UNI_DIR .'/lib/css/custom-woocommerce.css' );
+	wp_enqueue_style( 'woocommerce-layout-style', UNI_DIR .'/lib/css/layout-woocommerce.css' );
 
 }
 add_action( 'wp_enqueue_scripts', 'shtheme_lib_woocommerce_scripts' , 99 );

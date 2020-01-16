@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 /**
- * custom tax
+ * Custom Taxonomy
  */
 
 abstract class Custom_Taxonomy_Abstract

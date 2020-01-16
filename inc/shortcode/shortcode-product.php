@@ -4,16 +4,16 @@
  *
  * @link 
  *
- * @package SH_Theme
+ * @package Uni_Theme
  */
 
-class sh_product_shortcode {
+class uni_product_shortcode {
 
 	public static $args;
 
 	public function __construct() {
 
-		add_shortcode( 'shproduct', array( $this, 'render' ) );
+		add_shortcode( 'uniproduct', array( $this, 'render' ) );
 
 	}
 
@@ -82,4 +82,4 @@ class sh_product_shortcode {
 	}
 
 }
-new sh_product_shortcode();
+new uni_product_shortcode();

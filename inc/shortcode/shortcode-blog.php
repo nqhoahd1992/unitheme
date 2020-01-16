@@ -4,16 +4,16 @@
  *
  * @link 
  *
- * @package SH_Theme
+ * @package Uni_Theme
  */
 
-class sh_blog_shortcode {
+class uni_blog_shortcode {
 
 	public static $args;
 
 	public function __construct() {
 
-		add_shortcode( 'shblog', array( $this, 'render' ) );
+		add_shortcode( 'uniblog', array( $this, 'render' ) );
 
 	}
 
@@ -511,4 +511,4 @@ class sh_blog_shortcode {
 	}
 
 }
-new sh_blog_shortcode();
+new uni_blog_shortcode();

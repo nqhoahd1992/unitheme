@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package shtheme
+ * @package Uni_Theme
  */
 ?>
 <section class="no-results not-found">

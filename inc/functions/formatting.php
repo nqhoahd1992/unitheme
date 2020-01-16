@@ -3,7 +3,7 @@
  * Formatting
  *
  *
- * @package SH_Theme
+ * @package Uni_Theme
  * @author  
  * @license 
  * @link    
@@ -23,7 +23,7 @@
  * @param int    $max_characters The maximum number of characters to return.
  * @return string Truncated string. Empty string if `$max_characters` is falsy.
  */
-function sh_truncate_phrase( $text, $max_characters ) {
+function uni_truncate_phrase( $text, $max_characters ) {
 
 	if ( ! $max_characters ) {
 		return '';
@@ -69,7 +69,7 @@ function get_the_content_limit( $max_characters, $more_link_text = '(more...)', 
 	$content = trim( preg_replace( '#<(s(cript|tyle)).*?</\1>#si', '', $content ) );
 
 	// Truncate $content to $max_char.
-	$content = sh_truncate_phrase( $content, $max_characters );
+	$content = uni_truncate_phrase( $content, $max_characters );
 
 	// More link?
 	if ( $more_link_text ) {
@@ -124,7 +124,7 @@ function div_wrapper_video($content) {
 add_filter('the_content', 'div_wrapper_video');
 
 
-function shtheme_comment($comment, $args, $depth)    {
+function uni_comment($comment, $args, $depth)    {
     $GLOBALS['comment'] = $comment; ?>
     <li <?php comment_class();?> id="li-comment-<?=get_comment_ID();?>">    
         <div id="comment-<?=get_comment_ID();?>" class="clearfix">

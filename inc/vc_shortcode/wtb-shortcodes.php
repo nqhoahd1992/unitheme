@@ -48,7 +48,7 @@ class WTBShortcodesClass {
     }
 
     function wtb_enqueue_script() {   
-        wp_enqueue_style('wtb-core-style', SH_DIR  . '/inc/vc_shortcode/assets/css/wtb_core.css');  
+        wp_enqueue_style('wtb-core-style', UNI_DIR . '/inc/vc_shortcode/assets/css/wtb_core.css');  
     }
 
 }

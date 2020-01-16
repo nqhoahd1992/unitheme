@@ -5,10 +5,10 @@
  *
  * @link 
  *
- * @package SH_Theme
+ * @package Uni_Theme
  */
 
-function create_menu_mobile_style_sliding(){
+function uni_create_menu_mobile(){
     ?>
     <nav id="mobilenav">
         <div class="mobilenav__inner">
@@ -16,20 +16,22 @@ function create_menu_mobile_style_sliding(){
                 <h3><?php _e( 'MENU', 'shtheme' )?></h3>
             </div>
             <?php 
-            wp_nav_menu( array(
-                'theme_location'    => 'menu-1', 
-                'menu_id'           => 'menu-main', 
-                'menu_class'        => 'mobile-menu',
-            ) );
+            if ( has_nav_menu( 'menu-1' ) ) {
+                wp_nav_menu( array(
+                    'theme_location'    => 'menu-1', 
+                    'menu_id'           => 'menu-main', 
+                    'menu_class'        => 'mobile-menu',
+                ) );
+            }
             ?>
             <a class="menu_close"></a>
         </div>
     </nav>
     <?php
 }
-add_action( 'sh_before_header','create_menu_mobile_style_sliding' );
+add_action( 'before_header','uni_create_menu_mobile' );
 
 function create_overlay_body(){
     echo '<div class="panel-overlay"></div>';
 }
-add_action( 'sh_after_footer','create_overlay_body' );
+add_action( 'after_footer','create_overlay_body' );

@@ -5,10 +5,11 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package SH_Theme
+ * @package Uni_Theme
  */
 
 global $sh_option;
+
 get_header(); ?>
 
 	<div id="primary" class="content-sidebar-wrap">
@@ -41,9 +42,7 @@ get_header(); ?>
 								<?php echo do_shortcode( '[contact-form-7 id="156" title="Liên hệ"]' );?>
 							</div>
 							<div class="col-sm-6">
-								<?php
-									the_content();
-								?>
+								<?php the_content();?>
 							</div>
 						</div>
 					</div><!-- .entry-content -->
@@ -61,7 +60,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 		
-		<?php do_action( 'sh_after_content' );?>
+		<?php do_action( 'after_main_content' );?>
 
 	</div><!-- #primary -->
 

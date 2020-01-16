@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package SH_Theme
+ * @package Uni_Theme
  */
 
 global $sh_option;

@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package SH_Theme
+ * @package Uni_Theme
  */
 
 get_header(); ?>
@@ -37,7 +37,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 		
-		<?php do_action( 'sh_after_content' );?>
+		<?php do_action( 'after_main_content' );?>
 
 	</div><!-- #primary -->
 
