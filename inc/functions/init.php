@@ -1,8 +1,10 @@
 <?php
 /**
  * Init
- *
  * @package Uni_Theme
+ * @author  
+ * @license 
+ * @link    
  */
 
 /**
@@ -83,24 +85,32 @@ function uni_plugin_activation() {
             'slug' 		=> 'duplicate-post',
         ),
         array(
-            'name' 		=> 'Contact form 7',
+            'name' 		=> 'Contact Form 7',
             'slug' 		=> 'contact-form-7',
         ),
         array(
-            'name' 		=> 'Tinymce advanced',
+            'name' 		=> 'TinyMCE Advanced',
             'slug' 		=> 'tinymce-advanced',
         ),
         array(
-            'name' 		=> 'User role editor',
+            'name' 		=> 'User Role Editor',
             'slug' 		=> 'user-role-editor',
         ),
         array(
-            'name' 		=> 'Wp smtp',
+            'name' 		=> 'WP SMTP',
             'slug' 		=> 'wp-smtp',
         ),
         array(
             'name' 		=> 'Yoast SEO',
             'slug' 		=> 'wordpress-seo',
+        ),
+        array(
+            'name' 		=> 'iThemes Security',
+            'slug' 		=> 'better-wp-security',
+        ),
+        array(
+            'name' 		=> 'WP Fastest Cache',
+            'slug' 		=> 'wp-fastest-cache',
         ),
     );
     $configs = array(
@@ -118,8 +128,8 @@ add_action('tgmpa_register', 'uni_plugin_activation');
  * Security
  */
 /* Disable Rest API */
-function disable_rest_api(){
-	if(!is_user_logged_in()){
+function disable_rest_api() {
+	if( ! is_user_logged_in() ) {
 		return new WP_Error('Error!', __('Unauthorized access is denied!','rest-api-error'), array('status' => rest_authorization_required_code()));
 	}
 }
@@ -141,7 +151,7 @@ function unitheme_optimize() {
     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
     remove_action( 'wp_print_styles', 'print_emoji_styles' );
 }
-add_action('after_setup_theme', 'unitheme_optimize');
+// add_action('after_setup_theme', 'unitheme_optimize');
 
 /**
  * Add Body Class
@@ -237,7 +247,7 @@ if ( ! function_exists( 'uni_custom_pagination' ) ) {
 }
 
 /**
- * Count view post
+ * Set view post
 **/
 function postview_set( $postID ) {
     $count_key 	= 'postview_number';
@@ -252,6 +262,9 @@ function postview_set( $postID ) {
     }
 }
 
+/**
+ * Get view post
+**/
 function postview_get( $postID ){
     $count_key 	= 'postview_number';
     $count 		= get_post_meta( $postID, $count_key, true );

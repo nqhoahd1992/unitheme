@@ -1,32 +1,32 @@
 <?php
 
-add_shortcode('wtb_blog_slider', 'wtb_shortcode_blog_slider');
-add_action('vc_build_admin_page', 'wtb_load_blog_slider_shortcode');
-add_action('vc_after_init', 'wtb_load_blog_slider_shortcode');
+add_shortcode('uni_blog_slider', 'uni_shortcode_blog_slider');
+add_action('vc_build_admin_page', 'uni_load_blog_slider_shortcode');
+add_action('vc_after_init', 'uni_load_blog_slider_shortcode');
 
-function wtb_shortcode_blog_slider($atts, $content = null) {
+function uni_shortcode_blog_slider($atts, $content = null) {
     ob_start();
-    if ($template = wtb_shortcode_template('wtb_blog_slider'))
+    if ($template = uni_shortcode_template('uni_blog_slider'))
         include $template;
     return ob_get_clean();
 }
 
-function wtb_load_blog_slider_shortcode() {
-    $custom_class       = wtb_vc_custom_class();
-    $order_by_values    = wtb_vc_woo_order_by();
-    $order_way_values   = wtb_vc_woo_order_way();
-    $block_options      = wtb_get_terms('category');
+function uni_load_blog_slider_shortcode() {
+    $custom_class       = uni_vc_custom_class();
+    $order_by_values    = uni_vc_woo_order_by();
+    $order_way_values   = uni_vc_woo_order_way();
+    $block_options      = uni_get_terms('category');
     
     vc_map( array(
         'name'          => esc_html__('Blog Slider', 'shtheme'),
-        'base'          => 'wtb_blog_slider',
+        'base'          => 'uni_blog_slider',
         'description'   => esc_html__('Show posts slider in a category', 'shtheme'),
         'category'      => esc_html__('Advanced Element', 'shtheme'),
-        // 'icon'          => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
+        'icon'          => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
         'weight'        => - 50,
         'params'        => array(
             array(
-                'type'          => 'wtb_vc_slider_type_field',
+                'type'          => 'uni_vc_slider_type_field',
                 'heading'       => esc_html__('Posts Count', 'shtheme'),
                 'param_name'    => 'posts_per_page',
                 'value'         => '10',
@@ -125,7 +125,7 @@ function wtb_load_blog_slider_shortcode() {
                 'value'         => array(esc_html__('Yes', 'shtheme') => '1')
             ),
             array(
-                'type'          => 'wtb_vc_slider_type_field',
+                'type'          => 'uni_vc_slider_type_field',
                 'heading'       => esc_html__('Number character limit', 'shtheme'),
                 'param_name'    => 'number_character',
                 'value'         => 200,

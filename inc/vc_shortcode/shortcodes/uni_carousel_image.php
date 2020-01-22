@@ -1,24 +1,24 @@
 <?php
-add_shortcode('wtb_carousel_image', 'wtb_shortcode_carousel_image');
-add_action('vc_build_admin_page', 'wtb_load_carousel_image_shortcode');
-add_action('vc_after_init', 'wtb_load_carousel_image_shortcode');
+add_shortcode('uni_carousel_image', 'uni_shortcode_carousel_image');
+add_action('vc_build_admin_page', 'uni_load_carousel_image_shortcode');
+add_action('vc_after_init', 'uni_load_carousel_image_shortcode');
 
-function wtb_shortcode_carousel_image($atts, $content = null) {
+function uni_shortcode_carousel_image($atts, $content = null) {
     ob_start();
-    if ($template = wtb_shortcode_template('wtb_carousel_image'))
+    if ($template = uni_shortcode_template('uni_carousel_image'))
         include $template;
     return ob_get_clean();
 }
 
-function wtb_load_carousel_image_shortcode() {
-    $custom_class       = wtb_vc_custom_class();
+function uni_load_carousel_image_shortcode() {
+    $custom_class       = uni_vc_custom_class();
 
     vc_map( array(
         'name'          => esc_html__('Carousel Images', 'shtheme'),
-        'base'          => 'wtb_carousel_image',
+        'base'          => 'uni_carousel_image',
         'description'   => esc_html__('Show one carousel images', 'shtheme'),
         'category'      => esc_html__('Advanced Element', 'shtheme'),
-        // 'icon'		    => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
+        'icon'		    => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
         'weight'        => - 50,
         'params'        => array(
             array(

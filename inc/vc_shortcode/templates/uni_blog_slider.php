@@ -41,14 +41,14 @@ $args = array(
 $the_query = new WP_Query( $args );
 // The Loop
 if ( $the_query->have_posts() ) {
-    $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, vc_shortcode_custom_css_class( $css, ' ' ), 'wtb_blog_slider', $atts );
-    $el_class = esc_html( wtb_shortcode_extract_class( $el_class ) );
+    $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, vc_shortcode_custom_css_class( $css, ' ' ), 'uni_blog_slider', $atts );
+    $el_class = esc_html( uni_shortcode_extract_class( $el_class ) );
 
     wp_enqueue_script( 'slick-js' );
     wp_enqueue_style( 'slick-style' );
     wp_enqueue_style( 'slick-theme-style' );
 
-    echo '<div class="wtb_blog_slider_container wpb_content_element '. $css_class .'">';
+    echo '<div class="uni_blog_slider_container wpb_content_element '. $css_class .'">';
         echo '<div class="sh-blog-slider-shortcode '. $el_class .'">';
 
             echo '<div class="slick-carousel blog-slider" data-item="'. $item .'" data-item_lg="'. $item_lg .'" data-item_md="'. $item_md .'" data-item_sm="'. $item_sm .'" data-item_mb="'. $item_mb .'" data-row="'. $number_row .'" data-dots="'. $data_dots .'" data-arrows="'. $data_arrows .'" data-vertical="false">';
@@ -91,5 +91,4 @@ if ( $the_query->have_posts() ) {
 
         echo '</div>';
     echo '</div>';
-
 }

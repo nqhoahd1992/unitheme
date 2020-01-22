@@ -27,8 +27,8 @@ $args = array(
 $the_query = new WP_Query( $args );
 // The Loop
 if ( $the_query->have_posts() ) {
-    $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, vc_shortcode_custom_css_class( $css, ' ' ), 'wtb_blog', $atts );
-    $el_class = esc_html( wtb_shortcode_extract_class( $el_class ) );
+    $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, vc_shortcode_custom_css_class( $css, ' ' ), 'uni_blog', $atts );
+    $el_class = esc_html( uni_shortcode_extract_class( $el_class ) );
 
     echo '<div class="sh-product-shortcode column-'. $numcol .' '. $el_class .'">';
 

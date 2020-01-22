@@ -8,7 +8,7 @@ require get_template_directory() . '/inc/functions-woocommerce/woocommerce-grid-
 /**
  * Register Shop Widget Area
  */
-function shtheme_add_sidebar_shop() {
+function uni_add_sidebar_shop() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Shop Sidebar', 'shtheme' ),
 		'id'            => 'sidebar-shop',
@@ -19,7 +19,7 @@ function shtheme_add_sidebar_shop() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'shtheme_add_sidebar_shop' );
+add_action( 'widgets_init', 'uni_add_sidebar_shop' );
 
 /**
  * Add Support Woocommrce

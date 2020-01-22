@@ -1,16 +1,16 @@
 <?php
-add_shortcode('wtb_static_block', 'wtb_shortcode_static_block');
-add_action('vc_build_admin_page', 'wtb_load_static_block_shortcode');
-add_action('vc_after_init', 'wtb_load_static_block_shortcode');
-function wtb_shortcode_static_block($atts, $content = null) {
+add_shortcode('uni_static_block', 'uni_shortcode_static_block');
+add_action('vc_build_admin_page', 'uni_load_static_block_shortcode');
+add_action('vc_after_init', 'uni_load_static_block_shortcode');
+function uni_shortcode_static_block($atts, $content = null) {
     ob_start();
-    if ($template = wtb_shortcode_template('wtb_static_block'))
+    if ($template = uni_shortcode_template('uni_static_block'))
         include $template;
     return ob_get_clean();
 }
 
-function wtb_load_static_block_shortcode() {
-    $custom_class       = wtb_vc_custom_class();
+function uni_load_static_block_shortcode() {
+    $custom_class       = uni_vc_custom_class();
     $block_options      = array();
     $block_options[0]   = esc_html__('Choose a block to display', 'shtheme');
     $args = array(
@@ -24,10 +24,10 @@ function wtb_load_static_block_shortcode() {
     }
     vc_map( array(
         'name'          => esc_html__('Static Block', 'shtheme'),
-        'base'          => 'wtb_static_block',
+        'base'          => 'uni_static_block',
         'description'   => esc_html__('Show static block', 'shtheme'),
         'category'      => esc_html__('Advanced Element', 'shtheme'),
-        // 'icon'          => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
+        'icon'          => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
         'weight'        => - 50,
         'params'        => array(
             array(

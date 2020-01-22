@@ -19,7 +19,7 @@ if ($posts->have_posts()) {
     wp_enqueue_script('wpb_composer_front_js');
     wp_enqueue_style('js_composer_front');
 
-    $el_class = wtb_shortcode_extract_class( $el_class );
+    $el_class = uni_shortcode_extract_class( $el_class );
 
     if( $el_class != '' ){
         $output = '<div class="arrowpress-static-block' . $el_class . '"';
@@ -32,7 +32,7 @@ if ($posts->have_posts()) {
 
         $uvc_addons = new Ultimate_VC_Addons();
         $uvc_addons->aio_front_scripts();
-        $wtb_ult_assets = str_replace('js/', '', $uvc_addons->assets_js);
+        $uni_ult_assets = str_replace('js/', '', $uvc_addons->assets_js);
         $isAjax = false;
         $ultimate_ajax_theme = get_option('ultimate_ajax_theme');
         if($ultimate_ajax_theme == 'enable')
@@ -41,15 +41,15 @@ if ($posts->have_posts()) {
 
         // register js
 
-        wp_register_script('ultimate-script', $wtb_ult_assets . 'min-js/ultimate.min.js', array('jquery'), ULTIMATE_VERSION, false);
-        wp_register_script('ultimate-appear', $wtb_ult_assets . 'min-js/jquery.appear.min.js', array('jquery'), ULTIMATE_VERSION);
-        wp_register_script('ultimate-custom', $wtb_ult_assets . 'min-js/custom.min.js', array('jquery'), ULTIMATE_VERSION);
-        wp_register_script('ultimate-vc-params', $wtb_ult_assets . 'min-js/ultimate-params.min.js', array('jquery'), ULTIMATE_VERSION);
+        wp_register_script('ultimate-script', $uni_ult_assets . 'min-js/ultimate.min.js', array('jquery'), ULTIMATE_VERSION, false);
+        wp_register_script('ultimate-appear', $uni_ult_assets . 'min-js/jquery.appear.min.js', array('jquery'), ULTIMATE_VERSION);
+        wp_register_script('ultimate-custom', $uni_ult_assets . 'min-js/custom.min.js', array('jquery'), ULTIMATE_VERSION);
+        wp_register_script('ultimate-vc-params', $uni_ult_assets . 'min-js/ultimate-params.min.js', array('jquery'), ULTIMATE_VERSION);
 
         // register css
-        wp_register_style('ultimate-animate', $wtb_ult_assets . 'min-css/animate.min.css', array(), ULTIMATE_VERSION);
-        wp_register_style('ultimate-style', $wtb_ult_assets . 'min-css/style.min.css', array(), ULTIMATE_VERSION);
-        wp_register_style('ultimate-style-min', $wtb_ult_assets . 'min-css/ultimate.min.css', array(), ULTIMATE_VERSION);
+        wp_register_style('ultimate-animate', $uni_ult_assets . 'min-css/animate.min.css', array(), ULTIMATE_VERSION);
+        wp_register_style('ultimate-style', $uni_ult_assets . 'min-css/style.min.css', array(), ULTIMATE_VERSION);
+        wp_register_style('ultimate-style-min', $uni_ult_assets . 'min-css/ultimate.min.css', array(), ULTIMATE_VERSION);
 
         if(stripos($post_content, 'font_call:'))
         {
@@ -169,8 +169,8 @@ if ($posts->have_posts()) {
         if($ultimate_css == "enable"){
             wp_enqueue_style('ultimate-style-min');
             //if( stripos( $post_content, '[ultimate_carousel') ) {
-            //  wp_enqueue_style("ult-slick", $wtb_ult_assets . 'slick/slick.css');
-            //  wp_enqueue_style("ult-icons", $wtb_ult_assets . 'slick/icons.css');
+            //  wp_enqueue_style("ult-slick", $uni_ult_assets . 'slick/slick.css');
+            //  wp_enqueue_style("ult-icons", $uni_ult_assets . 'slick/icons.css');
             //}
         } else {
             wp_enqueue_style('ultimate-style');
@@ -182,19 +182,19 @@ if ($posts->have_posts()) {
             if( stripos( $post_content, '[icon_counter') ) {
                 wp_enqueue_style('ultimate-animate');
                 wp_enqueue_style('ultimate-style');
-                wp_enqueue_style('aio-flip-style', $wtb_ult_assets . 'min-css/flip-box.min.css');
+                wp_enqueue_style('aio-flip-style', $uni_ult_assets . 'min-css/flip-box.min.css');
             }
             if( stripos( $post_content, '[ult_countdown') ) {
-                wp_enqueue_style('countdown_shortcode', $wtb_ult_assets . 'min-css/countdown.min.css');
+                wp_enqueue_style('countdown_shortcode', $uni_ult_assets . 'min-css/countdown.min.css');
             }
             if( stripos( $post_content, '[ultimate_icon_list') ) {
                 wp_enqueue_style('ultimate-animate');
-                wp_enqueue_style('aio-tooltip', $wtb_ult_assets . 'min-css/tooltip.min.css');
+                wp_enqueue_style('aio-tooltip', $uni_ult_assets . 'min-css/tooltip.min.css');
             }
             if( stripos( $post_content, '[ultimate_carousel') ) {
-                wp_enqueue_style("ult-slick", $wtb_ult_assets . 'slick/slick.css');
-                wp_enqueue_style("ult-icons", $wtb_ult_assets . 'slick/icons.css');
-                wp_enqueue_style("ult-slick-animate", $wtb_ult_assets . 'slick/animate.min.css');
+                wp_enqueue_style("ult-slick", $uni_ult_assets . 'slick/slick.css');
+                wp_enqueue_style("ult-icons", $uni_ult_assets . 'slick/icons.css');
+                wp_enqueue_style("ult-slick-animate", $uni_ult_assets . 'slick/animate.min.css');
 
             }
             if( stripos( $post_content, '[ultimate_fancytext') ) {
@@ -202,21 +202,21 @@ if ($posts->have_posts()) {
             }
             if( stripos( $post_content, '[icon_counter') ) {
                 wp_enqueue_style('ultimate-animate');
-                wp_enqueue_style('aio-flip-style', $wtb_ult_assets . 'min-css/flip-box.min.css');
+                wp_enqueue_style('aio-flip-style', $uni_ult_assets . 'min-css/flip-box.min.css');
 
             }
             if( stripos( $post_content, '[ultimate_ctation') ) {
                 wp_enqueue_style('utl-ctaction-style');
             }
             if( stripos( $post_content, '[ult_buttons') ) {
-                wp_enqueue_style( 'ult-btn', $wtb_ult_assets . 'min-css/btn-min.css' );
+                wp_enqueue_style( 'ult-btn', $uni_ult_assets . 'min-css/btn-min.css' );
             }
             if( stripos( $post_content, '[ultimate_heading') ) {
                 wp_enqueue_style("ultimate-headings-style");
             }
             if( stripos( $post_content, '[ultimate_icons') || stripos( $post_content, '[single_icon')) {
                 wp_enqueue_style('ultimate-animate');
-                wp_enqueue_style('aio-tooltip', $wtb_ult_assets . 'min-css/tooltip.min.css');
+                wp_enqueue_style('aio-tooltip', $uni_ult_assets . 'min-css/tooltip.min.css');
             }
             if( stripos( $post_content, '[ult_ihover') ) {
                 wp_enqueue_style( 'ult_ihover_css' );
@@ -227,11 +227,11 @@ if ($posts->have_posts()) {
             }
             if( stripos( $post_content, '[bsf-info-box') ) {
                 wp_enqueue_style('ultimate-animate');
-                wp_enqueue_style('info-box-style', $wtb_ult_assets . 'min-css/info-box.min.css');
+                wp_enqueue_style('info-box-style', $uni_ult_assets . 'min-css/info-box.min.css');
             }
             if( stripos( $post_content, '[info_circle') ) {
                 wp_enqueue_style('ultimate-animate');
-                wp_enqueue_style('info-circle', $wtb_ult_assets . 'min-css/info-circle.min.css');
+                wp_enqueue_style('info-circle', $uni_ult_assets . 'min-css/info-circle.min.css');
             }
             if( stripos( $post_content, '[ultimate_info_banner') ) {
                 wp_enqueue_style('utl-info-banner-style');
@@ -239,40 +239,40 @@ if ($posts->have_posts()) {
             }
             if( stripos( $post_content, '[icon_timeline') ) {
                 wp_enqueue_style('ultimate-animate');
-                wp_enqueue_style('aio-timeline', $wtb_ult_assets . 'min-css/timeline.min.css');
+                wp_enqueue_style('aio-timeline', $uni_ult_assets . 'min-css/timeline.min.css');
             }
             if( stripos( $post_content, '[just_icon') ) {
                 wp_enqueue_style('ultimate-animate');
-                wp_enqueue_style('aio-tooltip', $wtb_ult_assets . 'min-css/tooltip.min.css');
+                wp_enqueue_style('aio-tooltip', $uni_ult_assets . 'min-css/tooltip.min.css');
             }
             if( stripos( $post_content, '[interactive_banner_2') ) {
-                wp_enqueue_style('utl-ib2-style', $wtb_ult_assets . 'min-css/ib2-style.min.css');
+                wp_enqueue_style('utl-ib2-style', $uni_ult_assets . 'min-css/ib2-style.min.css');
             }
             if( stripos( $post_content, '[interactive_banner') ) {
                 wp_enqueue_style('ultimate-animate');
-                wp_enqueue_style('aio-interactive-styles', $wtb_ult_assets . 'min-css/interactive-styles.min.css');
+                wp_enqueue_style('aio-interactive-styles', $uni_ult_assets . 'min-css/interactive-styles.min.css');
             }
             if( stripos( $post_content, '[info_list') ) {
                 wp_enqueue_style('ultimate-animate');
             }
             if( stripos( $post_content, '[ultimate_modal') ) {
                 wp_enqueue_style('ultimate-animate');
-                wp_enqueue_style('ultimate-modal', $wtb_ult_assets . 'min-css/modal.min.css');
+                wp_enqueue_style('ultimate-modal', $uni_ult_assets . 'min-css/modal.min.css');
             }
             if( stripos( $post_content, '[ultimate_info_table') ) {
                 wp_enqueue_style('ultimate-animate');
-                wp_enqueue_style("ultimate-pricing", $wtb_ult_assets . 'min-css/pricing.min.css');
+                wp_enqueue_style("ultimate-pricing", $uni_ult_assets . 'min-css/pricing.min.css');
             }
             if( stripos( $post_content, '[ultimate_pricing') ) {
                 wp_enqueue_style('ultimate-animate');
-                wp_enqueue_style("ultimate-pricing", $wtb_ult_assets . 'min-css/pricing.min.css');
+                wp_enqueue_style("ultimate-pricing", $uni_ult_assets . 'min-css/pricing.min.css');
             }
             if( stripos( $post_content, '[swatch_container') ) {
-                wp_enqueue_style('swatchbook-css', $wtb_ult_assets . 'min-css/swatchbook.min.css');
+                wp_enqueue_style('swatchbook-css', $uni_ult_assets . 'min-css/swatchbook.min.css');
             }
             if( stripos( $post_content, '[stat_counter') ) {
                 wp_enqueue_style('ultimate-animate');
-                wp_enqueue_style('stats-counter-style', $wtb_ult_assets . 'min-css/stats-counter.min.css');
+                wp_enqueue_style('stats-counter-style', $uni_ult_assets . 'min-css/stats-counter.min.css');
             }
             if( stripos( $post_content, '[ultimate_video_banner') ) {
                 wp_enqueue_style('ultimate-video-banner-style');
@@ -289,9 +289,9 @@ if ($posts->have_posts()) {
             }
         }
 
-        wp_register_script('ultimate-appear', $wtb_ult_assets . 'min-js/jquery.appear.min.js', array('jquery'), ULTIMATE_VERSION, true);
-        wp_register_script('ultimate-custom', $wtb_ult_assets . 'min-js/custom.min.js', $dependancy, ULTIMATE_VERSION, true);
-        wp_register_script('ultimate-smooth-scroll', $wtb_ult_assets . 'js/SmoothScroll.js', array('jquery'), ULTIMATE_VERSION, true);
+        wp_register_script('ultimate-appear', $uni_ult_assets . 'min-js/jquery.appear.min.js', array('jquery'), ULTIMATE_VERSION, true);
+        wp_register_script('ultimate-custom', $uni_ult_assets . 'min-js/custom.min.js', $dependancy, ULTIMATE_VERSION, true);
+        wp_register_script('ultimate-smooth-scroll', $uni_ult_assets . 'js/SmoothScroll.js', array('jquery'), ULTIMATE_VERSION, true);
 
         $ultimate_smooth_scroll = get_option('ultimate_smooth_scroll');
         if($ultimate_smooth_scroll == "enable")
@@ -299,7 +299,7 @@ if ($posts->have_posts()) {
 
         if(function_exists('vc_is_editor')){
             if(vc_is_editor()){
-                wp_enqueue_style('vc-fronteditor', $wtb_ult_assets . 'min-css/vc-fronteditor.min.css');
+                wp_enqueue_style('vc-fronteditor', $uni_ult_assets . 'min-css/vc-fronteditor.min.css');
             }
         }
         $fonts = get_option('smile_fonts');
@@ -344,7 +344,7 @@ if ($posts->have_posts()) {
     if($el_class !=''){
         $output .= '</div>';
     }
-    $output .= wtb_shortcode_end_block_comment( 'wtb_static_block' ) . "\n";
+    $output .= uni_shortcode_end_block_comment( 'uni_static_block' ) . "\n";
     echo $output;
 }
 

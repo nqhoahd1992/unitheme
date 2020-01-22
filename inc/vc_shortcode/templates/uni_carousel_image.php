@@ -34,11 +34,11 @@ if ( $images == '' ) $images = '-1,-2,-3';
 $images = explode( ',', $images );
 $i = - 1;
 
-$css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, vc_shortcode_custom_css_class( $css, ' ' ), 'wtb_carousel_image', $atts );
-$el_class = esc_html( wtb_shortcode_extract_class( $el_class ) );
+$css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, vc_shortcode_custom_css_class( $css, ' ' ), 'uni_carousel_image', $atts );
+$el_class = esc_html( uni_shortcode_extract_class( $el_class ) );
 
-echo '<div class="wtb_carousel_image_container wpb_content_element '. $css_class .'">';
-    echo '<div class="wtb_carousel_image-shortcode '. $el_class .'">';
+echo '<div class="uni_carousel_image_container wpb_content_element '. $css_class .'">';
+    echo '<div class="uni_carousel_image-shortcode '. $el_class .'">';
 
         echo '<div class="slick-carousel carousel_image-slider" data-item="'. $item .'" data-item_lg="'. $item_lg .'" data-item_md="'. $item_md .'" data-item_sm="'. $item_sm .'" data-item_mb="'. $item_mb .'" data-row="'. $number_row .'" data-dots="'. $data_dots .'" data-arrows="'. $data_arrows .'" data-vertical="false">';
             

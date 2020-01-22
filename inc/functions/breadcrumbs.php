@@ -2,7 +2,7 @@
 /**
  * Breadcrumbs
  * @package Uni_Theme
- * @author  Quang Hoa
+ * @author  
  * @license 
  * @link    
  */

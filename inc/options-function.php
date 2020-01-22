@@ -2,8 +2,9 @@
 /**
  * Display Call Ring
  */
-function insert_callring(){
+function insert_callring() {
 	global $sh_option;
+
 	if( $sh_option['phonering-number'] || $sh_option['zalo-number'] ) {
 		wp_enqueue_style( 'phonering-style' );
 	}
@@ -45,11 +46,8 @@ function insert_callring(){
 			echo '<div class="alo-floating alo-floating-zalo"><a title="Chat Zalo" rel="nofollow" target="_blank" href="https://zalo.me/'. $sh_option['zalo-number'] .'"><strong>Chat Zalo</strong></a></div>';
 		}
 	echo '</div>';
-}
-add_action( 'after_footer', 'insert_callring' );
 
-function callring_style() {
-	global $sh_option;
+	// Styling
 	if ( $sh_option['phonering-color'] ) {
 	?>
 	<style>
@@ -75,7 +73,7 @@ function callring_style() {
 	<?php
 	}
 }
-add_action( 'wp_footer', 'callring_style' );
+add_action( 'wp_footer', 'insert_callring' );
 
 /**
  * Display Slider
@@ -164,8 +162,8 @@ add_action( 'before_loop_main_content', 'insert_metaslide' );
  */
 function display_logo(){
 	global $sh_option;
-	$url_logo = $sh_option['opt_settings_logo']['url'];
-	if(  $url_logo ) {
+	if( $sh_option['opt_settings_logo']['url'] ) {
+		$url_logo = $sh_option['opt_settings_logo']['url'];
 		echo '<a href="'. esc_url( home_url( '/' ) ) .'"><img alt="Logo" src="'. $url_logo .'"></a>';
 	}
 }
@@ -178,9 +176,9 @@ function uni_footer_widget_areas() {
 	global $sh_option;
 
 	$footer_widgets = $sh_option['opt-number-footer'];
-	$footer_widgets_number = intval($footer_widgets);
+	$footer_widgets_number = intval( $footer_widgets );
 
-	switch ($footer_widgets_number) {
+	switch ( $footer_widgets_number ) {
 	    case '1':
 	        $classes = 'footer-widgets-area col-md-12';
 	        break;

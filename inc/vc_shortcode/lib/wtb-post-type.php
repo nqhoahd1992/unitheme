@@ -1,6 +1,6 @@
 <?php
 
-class WTB_PostTypes {
+class UNI_PostTypes {
 
     function __construct() {
         // Register post types
@@ -46,4 +46,4 @@ class WTB_PostTypes {
 
 }
 
-new WTB_PostTypes();
+new UNI_PostTypes();

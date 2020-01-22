@@ -1,11 +1,10 @@
 <?php
 /**
- *
- * @author Quang Hoa
- *
- * @link 
- *
+ * Mobile Menu
  * @package Uni_Theme
+ * @author  
+ * @license 
+ * @link    
  */
 
 function uni_create_menu_mobile(){

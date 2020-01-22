@@ -29,7 +29,7 @@ get_header(); ?>
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				
 				// Settings Loop
-				$new_post = new sh_blog_shortcode();
+				$new_post = new uni_blog_shortcode();
 				$post_class = array( 'element', 'hentry', 'post-item', 'item-new' );
 				$image_size = 'thumb300x200';
 				$atts['hide_category'] 		= '0';
@@ -76,7 +76,7 @@ get_header(); ?>
 										echo $new_post->sh_general_post_html_style_2( $post_class, $atts, $image_size );
 									endwhile;
 								echo '</div></div>';
-								shtheme_pagination();
+								uni_pagination();
 								wp_reset_postdata();
 						    echo '</div>';
 						}
@@ -87,7 +87,7 @@ get_header(); ?>
 								echo $new_post->sh_general_post_html_style_2( $post_class, $atts, $image_size );
 							endwhile;
 						echo '</div></div>';
-						shtheme_pagination();
+						uni_pagination();
 						wp_reset_postdata();
 					}
 
@@ -98,7 +98,7 @@ get_header(); ?>
 							echo $new_post->sh_general_post_html_style_2( $post_class, $atts, $image_size );
 						endwhile;
 					echo '</div></div>';
-					shtheme_pagination();
+					uni_pagination();
 					wp_reset_postdata();
 				}
 				

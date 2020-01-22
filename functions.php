@@ -21,7 +21,7 @@ if ( ! function_exists( 'unitheme_setup' ) ) :
 		add_theme_support( 'html5', array('search-form','comment-form','comment-list','gallery','caption',) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'shtheme_custom_background_args', array('default-color' => 'ffffff','default-image' => '',) ) );
+		add_theme_support( 'custom-background', apply_filters( 'uni_custom_background_args', array('default-color' => 'ffffff','default-image' => '',) ) );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -139,7 +139,7 @@ require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 // Load Shortcode
 require get_template_directory() . '/inc/shortcode/shortcode-blog.php';
 if ( class_exists( 'Vc_Manager' ) ) {
-	require get_template_directory() . '/inc/vc_shortcode/wtb-shortcodes.php';
+	require get_template_directory() . '/inc/vc_shortcode/uni-shortcodes.php';
 }
 
 // Load Function Woocomerce

@@ -1,10 +1,10 @@
 <?php
 /**
- * Uni Theme Sidebar functions
- *
- * @link 
- *
+ * Sidebar
  * @package Uni_Theme
+ * @author  
+ * @license 
+ * @link    
  */
 
 function uni_sidebar(){

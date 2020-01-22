@@ -1,5 +1,13 @@
 <?php
 /**
+ * Dashboard
+ * @package Uni_Theme
+ * @author  
+ * @license 
+ * @link    
+ */
+
+/**
  * Custom Login Page
  */
 function sh_login_logo() {

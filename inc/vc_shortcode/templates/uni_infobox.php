@@ -29,13 +29,13 @@ $box_icon = '<div class="align-icon">';
     $box_icon .= '</div>';
 $box_icon .= '</div>';
 
-$css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, vc_shortcode_custom_css_class( $css, ' ' ), 'wtb_infobox', $atts );
-$el_class = esc_html( wtb_shortcode_extract_class( $el_class ) );
+$css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, vc_shortcode_custom_css_class( $css, ' ' ), 'uni_infobox', $atts );
+$el_class = esc_html( uni_shortcode_extract_class( $el_class ) );
 
-$prefix .= '<div class="wtb_infobox_container wpb_content_element '.esc_attr($css_class).' '.esc_attr($el_class).'">';
-$suffix .= '</div> <!-- wtb_infobox_container -->'; 
+$prefix .= '<div class="uni_infobox_container wpb_content_element '.esc_attr($css_class).' '.esc_attr($el_class).'">';
+$suffix .= '</div> <!-- uni_infobox_container -->'; 
 
-$html .= '<div class="wtb_infobox-shortcode '. $el_class .'">';
+$html .= '<div class="uni_infobox-shortcode '. $el_class .'">';
 
     $html .= '<div class="wtb-icon-box '. esc_attr($ex_class) .'">';
         
@@ -55,7 +55,7 @@ $html .= '<div class="wtb_infobox-shortcode '. $el_class .'">';
                         $target         = ( isset( $href['target'] ) && $href['target'] !== '' ) ? esc_attr( trim( $href['target'] ) ) : '';
                         $link_title     = ( isset( $href['title'] ) && $href['title'] !== '' ) ? esc_attr($href['title']) : '';
                         $rel            = ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? esc_attr($href['rel']) : '';
-                        $link_prefix = '<a class="wtb-icon-box-link" '. wtb_link_init($url, $target, $link_title, $rel ).'>';
+                        $link_prefix = '<a class="wtb-icon-box-link" '. uni_link_init($url, $target, $link_title, $rel ).'>';
                         $link_sufix = '</a>';
                     }
                 }
@@ -78,7 +78,7 @@ $html .= '<div class="wtb_infobox-shortcode '. $el_class .'">';
                             $link_title     = ( isset( $href['title'] ) && $href['title'] !== '' ) ? esc_attr($href['title']) : '';
                             $rel            = ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? esc_attr($href['rel']) : '';
 
-                            $more_link = '<a class="wtb-icon-read x" '. wtb_link_init($url, $target, $link_title, $rel ).'>';
+                            $more_link = '<a class="wtb-icon-read x" '. uni_link_init($url, $target, $link_title, $rel ).'>';
                             $more_link .= $read_text;
                             $more_link .= '&nbsp;&raquo;';
                             $more_link .= '</a>';
@@ -110,7 +110,7 @@ $html .= '<div class="wtb_infobox-shortcode '. $el_class .'">';
                         $link_title     = ( isset( $href['title'] ) && $href['title'] !== '' ) ? esc_attr($href['title']) : '';
                         $rel            = ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? esc_attr($href['rel']) : '';
 
-                        $link_prefix = '<a class="wtb-icon-box-link" '. wtb_link_init($url, $target, $link_title, $rel ).'>';
+                        $link_prefix = '<a class="wtb-icon-box-link" '. uni_link_init($url, $target, $link_title, $rel ).'>';
                         $link_sufix = '</a>';
                     }
                 }
@@ -129,7 +129,7 @@ $html .= '<div class="wtb_infobox-shortcode '. $el_class .'">';
                             $link_title     = ( isset( $href['title'] ) && $href['title'] !== '' ) ? esc_attr($href['title']) : '';
                             $rel            = ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? esc_attr($href['rel']) : '';
 
-                            $more_link = '<a class="wtb-icon-read x" '. wtb_link_init($url, $target, $link_title, $rel ).'>';
+                            $more_link = '<a class="wtb-icon-read x" '. uni_link_init($url, $target, $link_title, $rel ).'>';
                             $more_link .= $read_text;
                             $more_link .= '&nbsp;&raquo;';
                             $more_link .= '</a>';
@@ -155,7 +155,7 @@ if($link !== 'none'){
         $link_title     = ( isset( $href['title'] ) && $href['title'] !== '' ) ? esc_attr($href['title']) : '';
         $rel            = ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? esc_attr($href['rel']) : '';
 
-        $output = $prefix.'<a class="wtb-icon-box-link" '. wtb_link_init($url, $target, $link_title, $rel ).'>'.$html.'</a>'.$suffix;
+        $output = $prefix.'<a class="wtb-icon-box-link" '. uni_link_init($url, $target, $link_title, $rel ).'>'.$html.'</a>'.$suffix;
     } else {
         $output = $prefix.$html.$suffix;
     }

@@ -1,18 +1,18 @@
 <?php
 /**
-* WTB input type number param
+* Define input field type number
 */
 if ( function_exists('vc_add_shortcode_param') ){
-    vc_add_shortcode_param( 'wtb_vc_slider_type_field', 'wtb_vc_slider_type_field' );
+    vc_add_shortcode_param( 'uni_vc_slider_type_field', 'uni_vc_slider_type_field' );
 }
-if ( ! function_exists( 'wtb_vc_slider_type_field' ) ) {
-    function wtb_vc_slider_type_field( $settings, $value ) {
+if ( ! function_exists( 'uni_vc_slider_type_field' ) ) {
+    function uni_vc_slider_type_field( $settings, $value ) {
         $output = '<input type="number" min="0" max="5" class="wpb_vc_param_value ' . $settings['param_name'] . '" name="' . $settings['param_name'] . '" value="'.$value.'" style="height:auto;" />';
         return $output;
     }
 }
 
-function wtb_vc_woo_order_by() {
+function uni_vc_woo_order_by() {
     return array(
         '',
         esc_html__( 'Date', 'shtheme' ) => 'date',
@@ -26,7 +26,7 @@ function wtb_vc_woo_order_by() {
     );
 }
 
-function wtb_vc_woo_order_way() {
+function uni_vc_woo_order_way() {
     return array(
         '',
         esc_html__( 'Descending', 'shtheme' ) => 'DESC',
@@ -34,7 +34,7 @@ function wtb_vc_woo_order_way() {
     );
 }
 
-function wtb_shortcode_template( $name = false ) {
+function uni_shortcode_template( $name = false ) {
     if (!$name)
         return false;
 
@@ -43,11 +43,11 @@ function wtb_shortcode_template( $name = false ) {
     } else {
         // If neither the child nor parent theme have overridden the template,
         // we load the template from the 'templates' sub-directory of the directory this file is in
-        return WTB_SHORTCODES_TEMPLATES . $name . '.php';
+        return uni_SHORTCODES_TEMPLATES . $name . '.php';
     }
 }
 
-function wtb_shortcode_woo_template( $name = false ) {
+function uni_shortcode_woo_template( $name = false ) {
     if (!$name)
         return false;
     
@@ -56,11 +56,11 @@ function wtb_shortcode_woo_template( $name = false ) {
     } else {
         // If neither the child nor parent theme have overridden the template,
         // we load the template from the 'templates' sub-directory of the directory this file is in
-        return WTB_SHORTCODES_WOO_TEMPLATES . $name . '.php';
+        return uni_SHORTCODES_WOO_TEMPLATES . $name . '.php';
     }
 }
 
-function wtb_shortcode_extract_class( $el_class ) {
+function uni_shortcode_extract_class( $el_class ) {
     $output = '';
     if ( $el_class != '' ) {
         $output = " " . str_replace( ".", "", $el_class );
@@ -69,7 +69,7 @@ function wtb_shortcode_extract_class( $el_class ) {
     return $output;
 }
 
-function wtb_vc_custom_class() {
+function uni_vc_custom_class() {
     return array(
         'type' => 'textfield',
         'heading' => esc_html__( 'Extra class name', 'shtheme' ),
@@ -78,11 +78,11 @@ function wtb_vc_custom_class() {
     );
 }
 
-function wtb_shortcode_end_block_comment( $string ) {
+function uni_shortcode_end_block_comment( $string ) {
     return WP_DEBUG ? '<!-- END ' . $string . ' -->' : '';
 }
 
-function wtb_get_terms( $taxonomy ) {
+function uni_get_terms( $taxonomy ) {
     $block_options      = array();
     $block_options[0]   = esc_html__('Choose a category', 'shtheme');
     $terms = get_terms( array(
@@ -95,27 +95,27 @@ function wtb_get_terms( $taxonomy ) {
     return $block_options;
 }
 
-function wtb_link_init( $url, $target, $link_title, $rel ) {
-    $wtb_link_attr = '';
+function uni_link_init( $url, $target, $link_title, $rel ) {
+    $uni_link_attr = '';
     if($url !== '')
-        $wtb_link_attr = 'href="'.$url.'" ';
+        $uni_link_attr = 'href="'.$url.'" ';
     if($link_title !== '')
-        $wtb_link_attr .= 'title="'.$link_title.'" ';
+        $uni_link_attr .= 'title="'.$link_title.'" ';
     if($target !== '')
-        $wtb_link_attr .= 'target="'.$target.'" ';
+        $uni_link_attr .= 'target="'.$target.'" ';
     if($rel !== ''){
         if($target !== '' && $target === '_blank'){
-            $wtb_link_attr .= 'rel="'.$rel.' noopener" ';
+            $uni_link_attr .= 'rel="'.$rel.' noopener" ';
         }
         else {
-            $wtb_link_attr .= 'rel="'.$rel.'" ';
+            $uni_link_attr .= 'rel="'.$rel.'" ';
         }
     }
     else {
         if($target !== '' && $target === '_blank'){
-            $wtb_link_attr .= 'rel="noopener" ';
+            $uni_link_attr .= 'rel="noopener" ';
         }
     }
 
-    return $wtb_link_attr;
+    return $uni_link_attr;
 }

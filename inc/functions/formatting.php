@@ -1,8 +1,6 @@
 <?php
 /**
  * Formatting
- *
- *
  * @package Uni_Theme
  * @author  
  * @license 

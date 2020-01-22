@@ -1,24 +1,24 @@
 <?php
-add_shortcode('wtb_infobox', 'wtb_shortcode_infobox');
-add_action('vc_build_admin_page', 'wtb_load_infobox_shortcode');
-add_action('vc_after_init', 'wtb_load_infobox_shortcode');
+add_shortcode('uni_infobox', 'uni_shortcode_infobox');
+add_action('vc_build_admin_page', 'uni_load_infobox_shortcode');
+add_action('vc_after_init', 'uni_load_infobox_shortcode');
 
-function wtb_shortcode_infobox($atts, $content = null) {
+function uni_shortcode_infobox($atts, $content = null) {
     ob_start();
-    if ($template = wtb_shortcode_template('wtb_infobox'))
+    if ($template = uni_shortcode_template('uni_infobox'))
         include $template;
     return ob_get_clean();
 }
 
-function wtb_load_infobox_shortcode() {
-    $custom_class       = wtb_vc_custom_class();
+function uni_load_infobox_shortcode() {
+    $custom_class       = uni_vc_custom_class();
 
     vc_map( array(
         'name'          => esc_html__('Infobox', 'shtheme'),
-        'base'          => 'wtb_infobox',
+        'base'          => 'uni_infobox',
         'description'   => esc_html__('Show infobox width heading, image and content', 'shtheme'),
         'category'      => esc_html__('Advanced Element', 'shtheme'),
-        // 'icon'		    => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
+        'icon'		    => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
         'weight'        => - 50,
         'params'        => array(
             // Position the icon box
@@ -46,7 +46,7 @@ function wtb_load_infobox_shortcode() {
                 "description" 	=> __("Upload the custom image icon.", "shtheme"),
             ),
             array(
-                "type" 			=> "wtb_vc_slider_type_field",
+                "type" 			=> "uni_vc_slider_type_field",
                 "class" 		=> "",
                 "heading" 		=> __("Image Width (px)", "shtheme"),
                 "param_name" 	=> "img_width",

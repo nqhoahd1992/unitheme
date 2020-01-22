@@ -1,47 +1,48 @@
 <?php
+add_shortcode('uni_blog', 'uni_shortcode_blog');
+add_action('vc_build_admin_page', 'uni_load_blog_shortcode');
+add_action('vc_after_init', 'uni_load_blog_shortcode');
 
-add_shortcode('wtb_product', 'wtb_shortcode_product');
-add_action('vc_build_admin_page', 'wtb_load_product_shortcode');
-add_action('vc_after_init', 'wtb_load_product_shortcode');
-
-function wtb_shortcode_product($atts, $content = null) {
+function uni_shortcode_blog($atts, $content = null) {
     ob_start();
-    if ($template = wtb_shortcode_woo_template('wtb_product'))
+    if ($template = uni_shortcode_template('uni_blog'))
         include $template;
     return ob_get_clean();
 }
 
-function wtb_load_product_shortcode() {
-    $custom_class       = wtb_vc_custom_class();
-    $order_by_values    = wtb_vc_woo_order_by();
-    $order_way_values   = wtb_vc_woo_order_way();
-    $block_options      = wtb_get_terms('product_cat');
+function uni_load_blog_shortcode() {
+    $custom_class       = uni_vc_custom_class();
+    $order_by_values    = uni_vc_woo_order_by();
+    $order_way_values   = uni_vc_woo_order_way();
+    $block_options      = uni_get_terms('category');
 
     vc_map( array(
-        'name'          => esc_html__('Product', 'shtheme'),
-        'base'          => 'wtb_product',
-        'description'   => esc_html__('Show multiple products in a category', 'shtheme'),
+        'name'          => esc_html__('Blog', 'shtheme'),
+        'base'          => 'uni_blog',
+        'description'   => esc_html__('Show multiple posts in a category', 'shtheme'),
         'category'      => esc_html__('Advanced Element', 'shtheme'),
-        // 'icon'          => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
+        'icon'		    => get_template_directory_uri() . "/inc/vc_shortcode/assets/images/logo.svg",
         'weight'        => - 50,
         'params'        => array(
             array(
                 'type'          => 'dropdown',
-                'heading'       => esc_html__('Number of products per row', 'shtheme'),
-                'param_name'    => 'numcol',
+                'heading'       => esc_html__('Layout', 'shtheme'),
+                'param_name'    => 'style',
                 'value'         => array(
-                    esc_html__('1', 'shtheme') => '1',
-                    esc_html__('2', 'shtheme') => '2',
-                    esc_html__('3', 'shtheme') => '3',
-                    esc_html__('4', 'shtheme') => '4',
-                    esc_html__('5', 'shtheme') => '5',
-                    esc_html__('6', 'shtheme') => '6',
+                    esc_html__('Style 1', 'shtheme') => '1',
+                    esc_html__('Style 2', 'shtheme') => '2',
+                    esc_html__('Style 3', 'shtheme') => '3',
+                    esc_html__('Style 4', 'shtheme') => '4',
+                    esc_html__('Style 5', 'shtheme') => '5',
+                    esc_html__('Style 6', 'shtheme') => '6',
+                    esc_html__('Style 7', 'shtheme') => '7',
+                    esc_html__('Style 8', 'shtheme') => '8',
                 ),
                 'std'           => '3',
                 'admin_label'   => true,
             ),
             array(
-                'type'          => 'wtb_vc_slider_type_field',
+                'type'          => 'uni_vc_slider_type_field',
                 'heading'       => esc_html__('Posts Count', 'shtheme'),
                 'param_name'    => 'posts_per_page',
                 'value'         => '3',
