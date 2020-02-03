@@ -47,13 +47,10 @@ function uni_header_layout() {
  * Enqueue Script File And Css File
  */
 function uni_scripts() {
-	wp_enqueue_style( 'shtheme-style', get_stylesheet_uri() );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_style( 'unitheme-style', get_stylesheet_uri() );
+	// wp_enqueue_style( 'custom-style', UNI_DIR .'/lib/css/custom-style.css' );
 }
-add_action( 'wp_enqueue_scripts', 'uni_scripts' );
+add_action( 'wp_enqueue_scripts', 'uni_scripts', 51 );
 
 /**
  * Remove Title
@@ -215,10 +212,10 @@ if ( ! function_exists( 'uni_pagination' ) ) {
 		$big = 999999999;
 		echo '<div class="page_nav">';
 		echo paginate_links( array(
-			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-			'format' => '?paged=%#%',
-			'current' => max( 1, get_query_var('paged') ),
-			'total' => $wp_query->max_num_pages
+			'base' 		=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' 	=> '?paged=%#%',
+			'current' 	=> max( 1, get_query_var('paged') ),
+			'total' 	=> $wp_query->max_num_pages
 		) );
 		echo '</div>';
 	}
@@ -232,14 +229,13 @@ if ( ! function_exists( 'uni_custom_pagination' ) ) {
 		$total_pages = $custom_query->max_num_pages;
 		$big = 999999999;
 		echo '<div class="page_nav">';
-			if ($total_pages > 1){
-		        $current_page = max(1, get_query_var('paged'));
-
-		        echo paginate_links(array(
-		            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		            'format' => '?paged=%#%',
-		            'current' => $current_page,
-		            'total' => $total_pages,
+			if ( $total_pages > 1 ) {
+		        $current_page = max( 1, get_query_var('paged') );
+		        echo paginate_links( array(
+		            'base' 		=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		            'format' 	=> '?paged=%#%',
+		            'current' 	=> $current_page,
+		            'total' 	=> $total_pages,
 		        ));
 		    }
 		echo '</div>';

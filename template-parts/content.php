@@ -47,7 +47,7 @@ postview_set( get_the_ID() );
 	<?php if( $sh_option['display-sharepost'] == '1' ) : $GLOBALS['lib_fb'] = 1; ?>
 		<div class="socials-share">
 			<div id="fb-root"></div>
-			<script async defer crossorigin="anonymous" src="https://connect.facebook.net/<?php _e('en_US','shtheme');?>/sdk.js#xfbml=1&version=v3.3"></script>
+			<script async defer crossorigin="anonymous" src="https://connect.facebook.net/<?php _e('en_US','shtheme');?>/sdk.js#xfbml=1&version=v5.0"></script>
 
 			<div class="fb-like" data-href="<?php the_permalink();?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 

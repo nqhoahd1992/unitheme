@@ -1194,3 +1194,98 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td,
 	    opacity: .7;
 	}
 }
+
+/*---------------------------------------------------------------------------------------------------------
+## Woocommerce Blocks
+-----------------------------------------------------------------------------------------------------------*/
+.wc-block-grid__products {
+    margin: 0 -15px 30px;
+}
+.wc-block-grid__product {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    .wc-block-grid__product-title {
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 10px 0 5px 0;
+        line-height: 1.4;
+        overflow: hidden;
+        a {
+            color: #333333;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}
+.wc-block-grid__product-add-to-cart {
+    a, button {
+        font-size: 14px;
+        padding: 6px 10px;
+        border-radius: 0;
+        background: $primary-color;
+    }
+}
+.wc-block-grid__product-price .wc-block-grid__product-price__value {
+    color: #ff0000;
+    font-size: 14px;
+    letter-spacing: 0;
+}
+
+.wc-block-sort-select__select {
+    padding: 8px 10px;
+    background-color: #f5f5f5;
+    border: none;
+}
+.wc-block-price-filter .wc-block-price-filter__controls .wc-block-price-filter__amount {
+    padding: 5px 5px;
+}
+
+/*--------------------------------------------------------------
+# Block Woocommerce Product Filter
+--------------------------------------------------------------*/
+.wc-block-active-filters .wc-block-active-filters-list {
+    padding-left: 0;
+    li {
+        background-color: rgba(0,0,0,0.05);
+        border-radius: 3px;
+        display: inline-block;
+        padding: 10px 26px 10px 10px;
+        margin-right: .5em;
+        margin-bottom: .5em;
+    }
+    button {
+        right: 6px;
+    }
+}
+.wc-block-price-filter .wc-block-price-filter__range-input-wrapper .wc-block-price-filter__range-input-progress {
+    --track-background: linear-gradient(90deg,transparent var(--low),var(--range-color) 0,var(--range-color) var(--high),transparent 0) no-repeat 0 100%/100% 100%;
+    --range-color: #949494;
+}
+.wc-block-attribute-filter .wc-block-attribute-filter-list {
+    .wc-block-attribute-filter-list-count {
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 4px;
+        height: 14px;
+        line-height: 14px;
+        font-size: 10px;
+        padding: 0 2px;
+        border: 1px solid #aaa;
+        color: #aaa;
+        background-color: #fff;
+        border-radius: 2px;
+        min-width: 12px;
+        text-align: center;
+        &:before, &:after {
+            content: '';
+        }
+    }
+    li input {
+        margin-right: 5px;
+        position: relative;
+        top: 2px;
+    }
+}

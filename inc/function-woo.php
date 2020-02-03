@@ -355,7 +355,7 @@ add_action( 'woocommerce_shop_loop_item_image','woocommerce_swap_image_product' 
 /**
  * Include JS CSS Files 
  */
-function shtheme_lib_woocommerce_scripts() {
+function unitheme_lib_woocommerce_scripts() {
 
 	// Main js
 	wp_enqueue_script( 'main-woo-js', UNI_DIR . '/lib/js/main-woo.js', array(), '1.0', true );
@@ -366,7 +366,7 @@ function shtheme_lib_woocommerce_scripts() {
 	wp_enqueue_style( 'woocommerce-layout-style', UNI_DIR .'/lib/css/layout-woocommerce.css' );
 
 }
-add_action( 'wp_enqueue_scripts', 'shtheme_lib_woocommerce_scripts' , 99 );
+add_action( 'wp_enqueue_scripts', 'unitheme_lib_woocommerce_scripts', 50 );
 
 /**
  * Insert button share single product
