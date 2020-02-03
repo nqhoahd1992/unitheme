@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2019-12-20 13:47+0700\n"
+"POT-Creation-Date: 2020-02-03 10:18+0700\n"
 "PO-Revision-Date: 2018-01-18 17:08+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,6 +20,16 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:23
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:27
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
 
 #: archive.php:107
 msgid "The content is being updated"
@@ -79,34 +89,34 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:68
-msgid "Primary Sidebar"
-msgstr ""
-
-#: functions.php:70 functions.php:80 inc/function-woo.php:15
-msgid "Add widgets here."
-msgstr ""
-
-#: functions.php:78
-msgid "Secondary Sidebar"
-msgstr ""
-
-#: functions.php:97
+#: functions.php:71
 msgid "Top Header"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:73
 msgid "Top Header widget area"
 msgstr ""
 
-#: functions.php:122
+#: functions.php:87
 #, php-format
 msgid "Footer %d"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:89
 #, php-format
 msgid "Footer %d widget area"
+msgstr ""
+
+#: functions.php:101
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:103 functions.php:113 inc/function-woo.php:15
+msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:111
+msgid "Secondary Sidebar"
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:334
@@ -640,15 +650,15 @@ msgstr ""
 msgid "Attachments"
 msgstr ""
 
-#: inc/function-woo.php:229
+#: inc/function-woo.php:228
 msgid "Quick buy"
 msgstr ""
 
-#: inc/function-woo.php:255
+#: inc/function-woo.php:254
 msgid "Contact"
 msgstr ""
 
-#: inc/function-woo.php:439 inc/function-woo.php:440
+#: inc/function-woo.php:441 inc/function-woo.php:442
 msgid "View detail"
 msgstr ""
 
@@ -672,28 +682,28 @@ msgstr ""
 msgid "Products"
 msgstr ""
 
-#: inc/functions/formatting.php:147
+#: inc/functions/formatting.php:145
 msgid "Edit"
 msgstr ""
 
-#: inc/functions/formatting.php:180 inc/functions/formatting.php:181
-#: inc/functions/formatting.php:182
+#: inc/functions/formatting.php:178 inc/functions/formatting.php:179
+#: inc/functions/formatting.php:180
 msgid "The field is required."
 msgstr ""
 
-#: inc/functions/init.php:119
+#: inc/functions/init.php:130
 msgid "Unauthorized access is denied!"
 msgstr ""
 
-#: inc/functions/init.php:256 inc/functions/init.php:258
+#: inc/functions/init.php:270 inc/functions/init.php:272
 msgid "views"
 msgstr ""
 
-#: inc/functions/mobilemenu.php:16
+#: inc/functions/mobilemenu.php:15
 msgid "MENU"
 msgstr ""
 
-#: inc/options-function.php:16 inc/options-function.php:20
+#: inc/options-function.php:17 inc/options-function.php:21
 msgid "Call now"
 msgstr ""
 
@@ -843,7 +853,7 @@ msgstr ""
 msgid "Blog Layout"
 msgstr ""
 
-#: inc/options.php:461 inc/vc_shortcode/woo_shortcodes/wtb_product.php:21
+#: inc/options.php:461 inc/vc_shortcode/woo_shortcodes/uni_product.php:21
 msgid "Product"
 msgstr ""
 
@@ -1029,7 +1039,7 @@ msgid "Insert code to footer"
 msgstr ""
 
 #: inc/options.php:879
-msgid "QH Developer"
+msgid "Uni Developer"
 msgstr ""
 
 #: inc/options.php:886
@@ -1109,8 +1119,8 @@ msgstr ""
 
 #: inc/shortcode/shortcode-blog.php:33 inc/shortcode/shortcode-blog.php:391
 #: inc/shortcode/shortcode-blog.php:459
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:148
-#: inc/vc_shortcode/templates/wtb_blog_slider.php:16
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:148
+#: inc/vc_shortcode/templates/uni_blog_slider.php:16
 #: inc/widgets/wg-post-list.php:59
 msgid "Read more"
 msgstr ""
@@ -1132,7 +1142,7 @@ msgid "Author"
 msgstr ""
 
 #: inc/vc_shortcode/lib/functions.php:21
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:60
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:60
 #: inc/widgets/wg-fblikebox.php:45 inc/widgets/wg-information.php:81
 #: inc/widgets/wg-page.php:40 inc/widgets/wg-post-list.php:95
 #: inc/widgets/wg-product-slider.php:96 inc/widgets/wg-social.php:72
@@ -1175,16 +1185,16 @@ msgid ""
 msgstr ""
 
 #: inc/vc_shortcode/lib/functions.php:87
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:71
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:175
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:70
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:116
+#: inc/vc_shortcode/shortcodes/uni_blog.php:71
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:175
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:70
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:116
 msgid "Choose a category"
 msgstr ""
 
 #: inc/vc_shortcode/lib/wtb-post-type.php:14
-#: inc/vc_shortcode/shortcodes/wtb_static_block.php:26
-#: inc/vc_shortcode/shortcodes/wtb_static_block.php:35
+#: inc/vc_shortcode/shortcodes/uni_static_block.php:26
+#: inc/vc_shortcode/shortcodes/uni_static_block.php:35
 msgid "Static Block"
 msgstr ""
 
@@ -1228,565 +1238,565 @@ msgstr ""
 msgid "No %s found in Trash"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:20
+#: inc/vc_shortcode/shortcodes/uni_blog.php:20
 msgid "Blog"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:22
+#: inc/vc_shortcode/shortcodes/uni_blog.php:22
 msgid "Show multiple posts in a category"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:23
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:24
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:20
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:20
-#: inc/vc_shortcode/shortcodes/wtb_static_block.php:29
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:24
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:24
+#: inc/vc_shortcode/shortcodes/uni_blog.php:23
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:24
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:20
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:20
+#: inc/vc_shortcode/shortcodes/uni_static_block.php:29
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:24
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:24
 msgid "Advanced Element"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:29 inc/widgets/wg-support.php:83
+#: inc/vc_shortcode/shortcodes/uni_blog.php:29 inc/widgets/wg-support.php:83
 msgid "Layout"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:32
+#: inc/vc_shortcode/shortcodes/uni_blog.php:32
 msgid "Style 1"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:33
+#: inc/vc_shortcode/shortcodes/uni_blog.php:33
 msgid "Style 2"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:34
+#: inc/vc_shortcode/shortcodes/uni_blog.php:34
 msgid "Style 3"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:35
+#: inc/vc_shortcode/shortcodes/uni_blog.php:35
 msgid "Style 4"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:36
+#: inc/vc_shortcode/shortcodes/uni_blog.php:36
 msgid "Style 5"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:37
+#: inc/vc_shortcode/shortcodes/uni_blog.php:37
 msgid "Style 6"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:38
+#: inc/vc_shortcode/shortcodes/uni_blog.php:38
 msgid "Style 7"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:39
+#: inc/vc_shortcode/shortcodes/uni_blog.php:39
 msgid "Style 8"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:46
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:30
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:45
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:30
+#: inc/vc_shortcode/shortcodes/uni_blog.php:46
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:30
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:45
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:30
 msgid "Posts Count"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:55
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:159
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:54
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:100
+#: inc/vc_shortcode/shortcodes/uni_blog.php:55
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:159
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:54
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:100
 msgid "Order by"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:58
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:162
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:57
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:103
+#: inc/vc_shortcode/shortcodes/uni_blog.php:58
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:162
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:57
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:103
 #, php-format
 msgid "Select how to sort retrieved products_category. More at %s."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:63
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:167
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:62
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:108
+#: inc/vc_shortcode/shortcodes/uni_blog.php:63
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:167
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:62
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:108
 msgid "Order way"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:66
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:170
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:65
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:111
+#: inc/vc_shortcode/shortcodes/uni_blog.php:66
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:170
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:65
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:111
 #, php-format
 msgid "Designates the ascending or descending order. More at %s."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:79
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:207
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:189
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:132
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:78
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:148
+#: inc/vc_shortcode/shortcodes/uni_blog.php:79
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:207
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:189
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:132
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:78
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:148
 msgid "CSS box"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog.php:81
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:209
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:191
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:134
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:80
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:150
+#: inc/vc_shortcode/shortcodes/uni_blog.php:81
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:209
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:191
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:134
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:80
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:150
 msgid "Design Options"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:21
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:21
 msgid "Blog Slider"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:23
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:23
 msgid "Show posts slider in a category"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:37
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:74
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:37
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:74
 msgid "Number Column on Extra large screen (>= 1200px)"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:41
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:53
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:65
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:77
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:89
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:101
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:80
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:94
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:108
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:120
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:134
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:148
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:36
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:41
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:53
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:65
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:77
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:89
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:41
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:53
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:65
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:77
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:89
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:101
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:80
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:94
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:108
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:120
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:134
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:148
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:36
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:41
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:53
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:65
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:77
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:89
 msgid "4"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:42
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:54
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:66
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:78
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:90
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:102
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:81
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:95
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:109
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:121
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:135
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:149
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:35
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:42
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:54
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:66
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:78
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:90
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:42
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:54
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:66
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:78
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:90
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:102
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:81
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:95
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:109
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:121
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:135
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:149
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:35
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:42
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:54
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:66
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:78
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:90
 msgid "3"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:43
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:55
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:67
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:79
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:91
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:103
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:82
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:96
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:110
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:122
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:136
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:150
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:34
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:43
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:55
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:67
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:79
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:91
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:43
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:55
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:67
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:79
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:91
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:103
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:82
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:96
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:110
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:122
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:136
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:150
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:34
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:43
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:55
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:67
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:79
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:91
 msgid "2"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:44
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:56
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:68
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:80
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:92
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:104
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:83
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:97
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:111
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:123
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:137
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:151
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:33
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:44
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:56
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:68
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:80
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:92
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:44
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:56
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:68
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:80
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:92
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:104
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:83
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:97
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:111
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:123
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:137
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:151
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:33
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:44
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:56
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:68
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:80
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:92
 msgid "1"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:49
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:88
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:49
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:88
 msgid "Number Column on Large screen (992px - 1199px)"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:61
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:102
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:61
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:102
 msgid "Number Column on Medium screen (769px - 991px)"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:73
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:116
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:73
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:116
 msgid "Number Column on Small screen (577px - 767px)"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:85
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:128
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:85
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:128
 msgid "Number Column on Extra small screen (< 576px)"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:97
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:142
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:85
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:97
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:142
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:85
 msgid "Number row"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:109
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:156
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:109
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:156
 msgid "Image size"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:113
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:160
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:113
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:160
 msgid ""
 "Enter image size (Example: \"thumbnail\", \"medium\", \"large\", \"full\" or "
 "other sizes defined by theme). Alternatively enter size in pixels (Example: "
 "200x100 (Width x Height))."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:117
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:117
 msgid "Show meta post"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:119
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:125
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:142
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:188
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:199
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:54
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:171
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:182
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:129
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:140
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:119
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:125
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:142
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:188
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:199
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:54
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:171
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:182
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:129
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:140
 msgid "Yes"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:123
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:123
 msgid "Show content limit"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:129
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:129
 msgid "Number character limit"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:140
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:140
 msgid "Show view more"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:146
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:146
 msgid "View more text"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:184
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:167
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:125
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:184
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:167
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:125
 msgid "Dots Navigation"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:189
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:200
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:53
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:172
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:183
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:130
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:141
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:189
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:200
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:53
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:172
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:183
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:130
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:141
 msgid "No"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_blog_slider.php:195
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:178
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:136
+#: inc/vc_shortcode/shortcodes/uni_blog_slider.php:195
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:178
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:136
 msgid "Arrows Navigation"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:17
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:17
 msgid "Carousel Images"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:19
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:19
 msgid "Show one carousel images"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:26
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:26
 msgid "Images"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:29
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:29
 msgid "Select images from media library."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:37
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:37
 msgid "On click action"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:41
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:41
 msgid "Lightbox"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:42
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:42
 msgid "Custom link"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:43
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:43
 #: inc/widgets/wg-page.php:71 inc/widgets/wg-post-list.php:119
 #: inc/widgets/wg-product-slider.php:130 inc/widgets/wg-view-post-list.php:127
 msgid "None"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:49
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:49
 msgid "Open in new tab"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:64
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:64
 msgid "Custom links"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:66
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:66
 msgid ""
 "Enter links for each slide (Note: divide links with linebreaks (Enter))."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:78
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:92
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:106
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:132
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:146
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:38
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:78
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:92
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:106
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:132
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:146
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:38
 msgid "6"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:79
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:93
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:107
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:133
-#: inc/vc_shortcode/shortcodes/wtb_carousel_image.php:147
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:37
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:79
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:93
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:107
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:133
+#: inc/vc_shortcode/shortcodes/uni_carousel_image.php:147
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:37
 msgid "5"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:17
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:17
 msgid "Infobox"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:19
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:19
 msgid "Show infobox width heading, image and content"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:28
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:28
 msgid "Box Style"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:32
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:32
 msgid "Icon at Left with heading"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:33
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:33
 msgid "Icon at Right with heading"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:34
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:34
 msgid "Icon at Left"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:35
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:35
 msgid "Icon at Right"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:36
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:36
 msgid "Icon at Top"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:38
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:38
 msgid ""
 "Select icon position. Icon box style will be changed according to the icon "
 "position."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:43
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:43
 msgid "Upload Image Icon:"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:46
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:46
 msgid "Upload the custom image icon."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:51
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:51
 msgid "Image Width (px)"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:54
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:54
 msgid "Provide image width (px)"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:64
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:64
 msgid "Provide the title for this icon box."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:69
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:69
 msgid "Tag"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:73
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:73
 msgid "Default"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:74
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:74
 msgid "H1"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:75
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:75
 msgid "H2"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:76
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:76
 msgid "H4"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:77
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:77
 msgid "H5"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:78
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:78
 msgid "H6"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:79
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:79
 msgid "Div"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:80
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:80
 msgid "p"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:81
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:81
 msgid "span"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:83
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:83
 msgid "Default is H3"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:90
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:90
 msgid "Description"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:93
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:93
 msgid "Provide the description for this icon box."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:99
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:99
 msgid "Apply link to:"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:102
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:102
 msgid "No Link"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:103
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:103
 msgid "Complete Box"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:104
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:104
 msgid "Box Title"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:105
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:105
 msgid "Display Read More"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:107
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:107
 msgid "Select whether to use color for icon or not."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:113
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:113
 msgid "Add Link"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:116
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:116
 msgid ""
 "Add a custom link or select existing page. You can remove existing link as "
 "well."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:123
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:123
 msgid "Read More Text"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_infobox.php:126
+#: inc/vc_shortcode/shortcodes/uni_infobox.php:126
 msgid "Customize the read more text."
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_static_block.php:15
+#: inc/vc_shortcode/shortcodes/uni_static_block.php:15
 msgid "Choose a block to display"
 msgstr ""
 
-#: inc/vc_shortcode/shortcodes/wtb_static_block.php:28
+#: inc/vc_shortcode/shortcodes/uni_static_block.php:28
 msgid "Show static block"
 msgstr ""
 
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:23
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:23
 msgid "Show multiple products in a category"
 msgstr ""
 
-#: inc/vc_shortcode/woo_shortcodes/wtb_product.php:30
+#: inc/vc_shortcode/woo_shortcodes/uni_product.php:30
 msgid "Number of products per row"
 msgstr ""
 
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:21
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:21
 msgid "Product Slider"
 msgstr ""
 
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:23
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:23
 msgid "Show products slider in a category"
 msgstr ""
 
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:37
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:37
 msgid "Number Column on Desktop Large (> 1200px)"
 msgstr ""
 
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:49
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:49
 msgid "Number Column on Desktop"
 msgstr ""
 
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:61
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:61
 msgid "Number Column on Tablets"
 msgstr ""
 
-#: inc/vc_shortcode/woo_shortcodes/wtb_product_slider.php:73
+#: inc/vc_shortcode/woo_shortcodes/uni_product_slider.php:73
 msgid "Number Column on Mobile"
 msgstr ""
 
 #: inc/widgets/wg-fblikebox.php:13
-msgid "QH - Facebook Like Box"
+msgid "Uni - Facebook Like Box"
 msgstr ""
 
 #: inc/widgets/wg-fblikebox.php:15
@@ -1806,7 +1816,7 @@ msgid "Link Fanpage"
 msgstr ""
 
 #: inc/widgets/wg-information.php:14
-msgid "QH - Information contact"
+msgid "Uni - Information contact"
 msgstr ""
 
 #: inc/widgets/wg-information.php:16
@@ -1842,7 +1852,7 @@ msgid "Hide icon"
 msgstr ""
 
 #: inc/widgets/wg-page.php:14
-msgid "QH - Featured Page"
+msgid "Uni - Featured Page"
 msgstr ""
 
 #: inc/widgets/wg-page.php:16
@@ -1900,7 +1910,7 @@ msgid "More Text"
 msgstr ""
 
 #: inc/widgets/wg-post-list.php:14
-msgid "QH - Featured Posts"
+msgid "Uni - Featured Posts"
 msgstr ""
 
 #: inc/widgets/wg-post-list.php:16
@@ -1948,7 +1958,7 @@ msgid "character"
 msgstr ""
 
 #: inc/widgets/wg-product-slider.php:13
-msgid "QH - Products Slider"
+msgid "Uni - Products Slider"
 msgstr ""
 
 #: inc/widgets/wg-product-slider.php:15
@@ -1972,7 +1982,7 @@ msgid "Enter the product number in the view"
 msgstr ""
 
 #: inc/widgets/wg-social.php:14
-msgid "QH - Social"
+msgid "Uni - Social"
 msgstr ""
 
 #: inc/widgets/wg-social.php:16
@@ -1986,7 +1996,7 @@ msgid ""
 msgstr ""
 
 #: inc/widgets/wg-support.php:13
-msgid "QH - Support"
+msgid "Uni - Support"
 msgstr ""
 
 #: inc/widgets/wg-support.php:15
@@ -2022,7 +2032,7 @@ msgid "Viber"
 msgstr ""
 
 #: inc/widgets/wg-view-post-list.php:14
-msgid "QH - Top view posts"
+msgid "Uni - Top view posts"
 msgstr ""
 
 #: inc/widgets/wg-view-post-list.php:16
@@ -2111,12 +2121,12 @@ msgstr ""
 msgid "Placeholder"
 msgstr ""
 
-#: woocommerce/single-product/related.php:33
+#: woocommerce/single-product/related.php:32
 msgid "Related Products"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "QHTheme"
+msgid "UniTheme"
 msgstr ""
 
 #. Author of the plugin/theme
