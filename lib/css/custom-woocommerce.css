@@ -278,17 +278,6 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td, .shop_table
 .continue_shopping { margin-bottom: 10px; overflow: hidden; }
 .continue_shopping a { float: right; }
 
-/*--------------------------------------------------------------
-# Custom Css
---------------------------------------------------------------*/
-.list-categories__item { margin-bottom: 30px; }
-.list-categories__item h2 { text-align: center; font-size: 16px; }
-.list-categories__item h2 a { color: #333333; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; }
-.list-categories__item h2 a:hover { color: #337ab7; }
-.list-categories__item .img { display: block; margin-bottom: 10px; }
-.list-categories__item img { width: 100%; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; }
-.list-categories__item:hover img { opacity: .7; }
-
 /*---------------------------------------------------------------------------------------------------------
 ## Woocommerce Blocks
 -----------------------------------------------------------------------------------------------------------*/
@@ -319,5 +308,16 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td, .shop_table
 .wc-block-attribute-filter .wc-block-attribute-filter-list .wc-block-attribute-filter-list-count { float: none; display: inline-block; vertical-align: middle; margin-left: 4px; height: 14px; line-height: 14px; font-size: 10px; padding: 0 2px; border: 1px solid #aaa; color: #aaa; background-color: #fff; border-radius: 2px; min-width: 12px; text-align: center; }
 .wc-block-attribute-filter .wc-block-attribute-filter-list .wc-block-attribute-filter-list-count:before, .wc-block-attribute-filter .wc-block-attribute-filter-list .wc-block-attribute-filter-list-count:after { content: ''; }
 .wc-block-attribute-filter .wc-block-attribute-filter-list li input { margin-right: 5px; position: relative; top: 2px; }
+
+/*--------------------------------------------------------------
+# Custom Css
+--------------------------------------------------------------*/
+.list-categories__item { margin-bottom: 30px; }
+.list-categories__item h2 { text-align: center; font-size: 16px; }
+.list-categories__item h2 a { color: #333333; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; }
+.list-categories__item h2 a:hover { color: #337ab7; }
+.list-categories__item .img { display: block; margin-bottom: 10px; }
+.list-categories__item img { width: 100%; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; }
+.list-categories__item:hover img { opacity: .7; }
 
 /*# sourceMappingURL=custom-woocommerce.css.map */

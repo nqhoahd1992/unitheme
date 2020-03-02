@@ -16,11 +16,9 @@ function header_class( ) {
 	$layout_header 		= $sh_option['opt-layout-header'];
 	if( $layout_header == '1' ) {
 		$array_class_header[] = 'header-banner';
-	} 
-	if( $layout_header == '2' ) {
+	} elseif ( $layout_header == '2' ) {
 		$array_class_header[] = 'header-logo';
-	} 
-	if( $layout_header == '3' ) {
+	} elseif ( $layout_header == '3' ) {
 		$array_class_header[] = 'header-logo-style2';
 	}
     echo 'class="' . join( ' ', $array_class_header ) . '"';
@@ -34,11 +32,9 @@ function uni_header_layout() {
 	$layout_header = $sh_option['opt-layout-header'];
 	if( $layout_header == '1' ) {
 		get_template_part( 'template-parts/header/header-banner' );
-	} 
-	if( $layout_header == '2' ) {
+	} elseif ( $layout_header == '2' ) {
 		get_template_part( 'template-parts/header/header-logo' );
-	} 
-	if( $layout_header == '3' ) {
+	} elseif ( $layout_header == '3' ) {
 		get_template_part( 'template-parts/header/header-logo-style2' );
 	}
 }
@@ -134,21 +130,6 @@ function disable_rest_api() {
 
 /* Disable XML RPC */
 add_filter( 'xmlrpc_enabled', '__return_false' );
-
-/**
- * Optimize
- */
-function unitheme_optimize() {
-    remove_action('wp_head', 'wp_generator');
-    remove_action('wp_head', 'wlwmanifest_link');
-    remove_action('wp_head', 'rsd_link');
-    remove_action('wp_head', 'wp_shortlink_wp_head');
-    remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10);
-    add_filter('the_generator', '__return_false');
-    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-    remove_action( 'wp_print_styles', 'print_emoji_styles' );
-}
-// add_action('after_setup_theme', 'unitheme_optimize');
 
 /**
  * Add Body Class
@@ -296,3 +277,95 @@ function get_dm_link( $category, $taxonomy ) {
 	return '';
 	return $category;
 }
+
+/**
+ * Responsive Video Youtube In Content
+ *
+ * @since 0.1.0
+ *
+ * @param string $content 
+ */
+function div_wrapper_video($content) {
+   // match any iframes
+   /*$pattern = '~<iframe.*</iframe>|<embed.*</embed>~'; // Add it if all iframe*/
+   $pattern = '~<iframe.*src=".*(youtube.com|youtu.be).*</iframe>|<embed.*</embed>~'; //only iframe youtube
+   preg_match_all($pattern, $content, $matches);
+   foreach ($matches[0] as $match) {
+     // wrap matched iframe with div
+     $wrappedframe = '<div class="embed-responsive embed-responsive-16by9">' . $match . '</div>';
+     //replace original iframe with new in content
+     $content = str_replace($match, $wrappedframe, $content);
+   }
+   return $content; 
+}
+add_filter('the_content', 'div_wrapper_video');
+
+function uni_comment($comment, $args, $depth)    {
+    $GLOBALS['comment'] = $comment; ?>
+    <li <?php comment_class();?> id="li-comment-<?=get_comment_ID();?>">    
+        <div id="comment-<?=get_comment_ID();?>" class="clearfix">
+             <div class="comment-author vcard">
+                <?php echo get_avatar($comment, $size='70', ''); ?>  
+             </div><!-- end comment autho vcard-->
+        
+	         <div class="commentBody">
+	        	 <div class="comment-meta commentmetadata">
+	              <?php printf(('<p class="fn">%s</p>'), get_comment_author_link()); ?>	              
+	             </div><!--end .comment-meta-->
+	            <?php if($comment->comment_approved == '0') : ?>
+	                <em><?php echo 'Your coment is waiting for moderation.';?></em>
+	                <?php endif; ?>
+				<div class="noidungcomment">
+	            	<?php comment_text(); ?>
+	            </div>
+	            <div class="tools_comment">	                
+		            <?php comment_reply_link(array_merge($args,array('respond_id' => 'formcmmaxweb','depth' => $depth, 'max_depth'=> $args['max_depth'])));?>		            
+              		<?php edit_comment_link(__('Edit'),' ',''); ?>
+              		<?php printf(('<a href="#comment-%d" class="ngaythang">%s</a>'),get_comment_ID(),get_comment_date('d/m/Y'));?>
+	            </div>
+	            	
+	        </div><!--end #commentBody-->
+        </div><!--end #comment-author-vcard-->
+	</li>
+<?php }
+
+//validate comments
+function comment_validation_init() {
+	if(is_singular() && comments_open() ) { 
+		wp_enqueue_script( 'validate-js' );
+	?>
+	<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$('#commentform').validate({		 
+			onfocusout: function(element) {
+				this.element(element);
+			},
+			rules: {
+				author: {
+					required: true,
+					minlength: 2
+				},
+				email: {
+					required: true,
+					email: true
+				},
+				comment: {
+					required: true,
+				}
+			},
+			messages: {
+				author: "<?php echo __('The field is required.','shtheme');?>",
+				email: "<?php echo __('The field is required.','shtheme');?>",
+				comment: "<?php echo __('The field is required.','shtheme');?>"
+			},
+			errorElement: "div",
+			errorPlacement: function(error, element) {
+				element.after(error);
+			}
+		});
+	});
+	</script>
+	<?php
+	}
+}
+add_action('wp_footer', 'comment_validation_init');

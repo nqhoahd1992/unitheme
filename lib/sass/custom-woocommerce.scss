@@ -1166,35 +1166,6 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td,
     }
 }
 
-/*--------------------------------------------------------------
-# Custom Css
---------------------------------------------------------------*/
-.list-categories__item {
-    margin-bottom: 30px;
-    h2 {
-	    text-align: center;
-	    font-size: 16px;
-	    a {
-		    color: #333333;
-		    @include transition(all .5s ease-in-out);
-		    &:hover {
-			    color: $primary-color;
-			}
-		}
-	}
-	.img {
-	    display: block;
-	    margin-bottom: 10px;
-	}
-	img {
-	    width: 100%;
-	    @include transition(all .5s ease-in-out);
-	}
-	&:hover img {
-	    opacity: .7;
-	}
-}
-
 /*---------------------------------------------------------------------------------------------------------
 ## Woocommerce Blocks
 -----------------------------------------------------------------------------------------------------------*/
@@ -1287,5 +1258,34 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td,
         margin-right: 5px;
         position: relative;
         top: 2px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Custom Css
+--------------------------------------------------------------*/
+.list-categories__item {
+    margin-bottom: 30px;
+    h2 {
+        text-align: center;
+        font-size: 16px;
+        a {
+            color: #333333;
+            @include transition(all .5s ease-in-out);
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+    .img {
+        display: block;
+        margin-bottom: 10px;
+    }
+    img {
+        width: 100%;
+        @include transition(all .5s ease-in-out);
+    }
+    &:hover img {
+        opacity: .7;
     }
 }

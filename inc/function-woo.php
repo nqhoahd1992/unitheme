@@ -2,8 +2,8 @@
 /**
  * Include function woocommerce
  */
-require get_template_directory() . '/inc/functions-woocommerce/tooltip-product.php';
-require get_template_directory() . '/inc/functions-woocommerce/woocommerce-grid-list-toggle.php';
+require get_template_directory() . '/inc/woocommerce/tooltip-product.php';
+require get_template_directory() . '/inc/woocommerce/woocommerce-grid-list-toggle.php';
 
 /**
  * Register Shop Widget Area
@@ -248,16 +248,16 @@ add_filter( 'woocommerce_add_to_cart_redirect', 'redirect_to_checkout' );
 function get_price_product() {
 	global $product;
 	if ( $product->is_type( 'simple' ) ) {
-		$regular_price 	= get_post_meta( get_the_ID(), '_regular_price', true);
-		$sale_price 	= get_post_meta( get_the_ID(), '_sale_price', true);
+		$regular_price 	= get_post_meta( get_the_ID(), '_regular_price', true );
+		$sale_price 	= get_post_meta( get_the_ID(), '_sale_price', true );
 		if ( empty( $regular_price ) ) {
 			echo '<p class="price">'. __( 'Contact', 'shtheme' ) .'</p>';
 		} elseif ( ! empty( $regular_price ) && empty( $sale_price ) ) {
 			echo '<p class="price">'. wc_price( $regular_price) . '</p>';
 		} elseif ( ! empty( $regular_price ) && ! empty( $sale_price ) ) {
 			echo '<p class="price">
-			<ins>'. wc_price( $sale_price) .'</ins>
-			<del>'. wc_price( $regular_price) .'</del>
+			<ins>'. wc_price( $sale_price ) .'</ins>
+			<del>'. wc_price( $regular_price ) .'</del>
 			</p>'; 
 		}
 	} elseif( $product->is_type( 'variable' ) ) {

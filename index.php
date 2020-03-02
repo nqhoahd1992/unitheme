@@ -27,7 +27,7 @@ get_header(); ?>
 			<!-- --------------------- Products --------------------- -->
 			<?php
 			if ( class_exists( 'WooCommerce' ) ) {
-				if( $sh_option['list_cat_product'] ) {
+				if( ! empty( $sh_option['list_cat_product'] ) ) {
 					$list_cat_product = $sh_option['list_cat_product'];
 					if( $sh_option['number_product'] ) {
 						$number_product = $sh_option['number_product'];
@@ -47,7 +47,7 @@ get_header(); ?>
 
 			<!-- --------------------- News --------------------- -->
 			<?php
-			if( $sh_option['list_cat_post'] ) {
+			if( ! empty( $sh_option['list_cat_post'] ) ) {
 				$list_cat_post = $sh_option['list_cat_post'];
 				if( $sh_option['number_news'] ) {
 					$number_news = $sh_option['number_news'];

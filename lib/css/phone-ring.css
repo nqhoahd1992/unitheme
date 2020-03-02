@@ -368,6 +368,7 @@
     border-radius: 50px !important;
     left: 42px;
     bottom: 31px;
+    opacity: .8;
 }
 .hotline-bar > a {
     color: #fff;

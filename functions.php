@@ -1,4 +1,9 @@
 <?php
+define( 'PARENT_DIR', get_template_directory() );
+define( 'UNI_DIR',  get_template_directory_uri() );
+define( 'FUNCTIONS_DIR', PARENT_DIR . '/inc/template-functions' );
+define( 'TAGS_DIR', PARENT_DIR . '/inc/template-tags' );
+
 /**
  * Uni Theme functions and definitions
  *
@@ -10,7 +15,7 @@
 if ( ! function_exists( 'unitheme_setup' ) ) :
 	function uni_setup() {
 		
-		load_theme_textdomain( 'shtheme', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'shtheme', PARENT_DIR . '/languages' );
 
 		// Add theme support
 		add_theme_support( 'automatic-feed-links' );
@@ -32,7 +37,7 @@ if ( ! function_exists( 'unitheme_setup' ) ) :
 		) );
 
 		// Load Theme Options
-		require get_template_directory() . '/inc/options.php';
+		require PARENT_DIR . '/inc/options.php';
 
 		if ( class_exists( 'ReduxFrameworkPlugin' ) ) {
 			Redux::init('sh_option');
@@ -41,24 +46,18 @@ if ( ! function_exists( 'unitheme_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'uni_setup' );
 
-function uni_constants() {
-	define( 'PARENT_DIR', get_template_directory() );
-	define( 'UNI_DIR',  get_template_directory_uri() );
-	define( 'UNI_FUNCTIONS_DIR', PARENT_DIR . '/inc/functions' );
-}
-add_action( 'init', 'uni_constants' );
-
 function uni_load_framework() {
 	// Load Functions.
 	require_once( PARENT_DIR . '/inc/options-function.php' );
-	require_once( UNI_FUNCTIONS_DIR . '/init.php' );
-	require_once( UNI_FUNCTIONS_DIR . '/sidebar.php' );
-	require_once( UNI_FUNCTIONS_DIR . '/formatting.php' );
-	require_once( UNI_FUNCTIONS_DIR . '/breadcrumbs.php' );
-	require_once( UNI_FUNCTIONS_DIR . '/dashboard.php' );
-	require_once( UNI_FUNCTIONS_DIR . '/mobilemenu.php' );
+	require_once( FUNCTIONS_DIR . '/init.php' );
+	require_once( FUNCTIONS_DIR . '/sidebar.php' );
+	require_once( FUNCTIONS_DIR . '/breadcrumbs.php' );
+	require_once( FUNCTIONS_DIR . '/dashboard.php' );
+	require_once( FUNCTIONS_DIR . '/mobilemenu.php' );
+	require_once( TAGS_DIR . '/formatting.php' );
+	require_once( TAGS_DIR . '/class-tgm-plugin-activation.php' );
 }
-add_action( 'init','uni_load_framework' );
+add_action( 'after_setup_theme','uni_load_framework' );
 
 /**
  * Register Widget Area
@@ -124,39 +123,36 @@ add_action( 'widgets_init', 'uni_widgets_init' );
  */
 
 // Load Custom Post Type
-// require get_template_directory() . '/inc/cpt/cpt-abstract.php';
-// require get_template_directory() . '/inc/cpt/khach-hang.php';
-// require get_template_directory() . '/inc/cpt/cpt.php';
+// require PARENT_DIR . '/inc/template-functions/cpt/cpt-abstract.php';
+// require PARENT_DIR . '/inc/template-functions/cpt/khach-hang.php';
+// require PARENT_DIR . '/inc/template-functions/cpt/cpt.php';
 	
 // Load Custom Taxonomy
-// require get_template_directory() . '/inc/taxonomies/custom-taxonomy-abstract.php';
-// require get_template_directory() . '/inc/taxonomies/khach-hang-cat.php';
-// require get_template_directory() . '/inc/taxonomies/custom-taxonomy.php';
-
-// Load Plugin Activation File.
-require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+// require PARENT_DIR . '/inc/template-functions/taxonomies/custom-taxonomy-abstract.php';
+// require PARENT_DIR . '/inc/template-functions/taxonomies/khach-hang-cat.php';
+// require PARENT_DIR . '/inc/template-functions/taxonomies/custom-taxonomy.php';
 
 // Load Shortcode
-require get_template_directory() . '/inc/shortcode/shortcode-blog.php';
+require PARENT_DIR . '/inc/shortcode/shortcode-blog.php';
 if ( class_exists( 'Vc_Manager' ) ) {
-	require get_template_directory() . '/inc/vc_shortcode/uni-shortcodes.php';
+	require PARENT_DIR . '/inc/vc_shortcode/uni-shortcodes.php';
 }
 
 // Load Function Woocomerce
 if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/shortcode/shortcode-product.php';
-	require get_template_directory() . '/inc/function-woo.php';
-	require get_template_directory() . '/inc/widgets/wg-product-slider.php';
+	require PARENT_DIR . '/inc/shortcode/shortcode-product.php';
+	require PARENT_DIR . '/inc/function-woo.php';
+	require PARENT_DIR . '/inc/widgets/wg-product-slider.php';
 }
 
 // Load Widget
-require get_template_directory() . '/inc/widgets/wg-post-list.php';
-require get_template_directory() . '/inc/widgets/wg-support.php';
-require get_template_directory() . '/inc/widgets/wg-fblikebox.php';
-require get_template_directory() . '/inc/widgets/wg-page.php';
-require get_template_directory() . '/inc/widgets/wg-view-post-list.php';
-require get_template_directory() . '/inc/widgets/wg-information.php';
-require get_template_directory() . '/inc/widgets/wg-social.php';
+require PARENT_DIR . '/inc/widgets/wg-post-list.php';
+require PARENT_DIR . '/inc/widgets/wg-support.php';
+require PARENT_DIR . '/inc/widgets/wg-fblikebox.php';
+require PARENT_DIR . '/inc/widgets/wg-page.php';
+require PARENT_DIR . '/inc/widgets/wg-view-post-list.php';
+require PARENT_DIR . '/inc/widgets/wg-information.php';
+require PARENT_DIR . '/inc/widgets/wg-social.php';
 
 function uni_lib_scripts(){
 
@@ -192,7 +188,7 @@ function uni_lib_scripts(){
 	}
 	
 }
-add_action( 'wp_enqueue_scripts', 'uni_lib_scripts' , 1 );
+add_action( 'wp_enqueue_scripts', 'uni_lib_scripts', 1 );
 
 /**
  * Add Thumb Size
