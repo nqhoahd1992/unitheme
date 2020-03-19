@@ -34,9 +34,6 @@ class Uni_Social_Widget extends WP_Widget {
                 if( $sh_option['social-twitter'] ) {
                     echo '<li class="icon_social icon_twitter"><a title="Twitter" href="'. $sh_option['social-twitter'] .'" rel="nofollow" target="_blank"><i class="fab fa-twitter"></i></a></li>';
                 }
-                if( $sh_option['social-google'] ) {
-                    echo '<li class="icon_social icon_google"><a title="Google Plus" href="'. $sh_option['social-google'] .'" rel="nofollow" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>';
-                }
                 if( $sh_option['social-youtube'] ) {
                     echo '<li class="icon_social icon_youtube"><a title="Youtube" href="'. $sh_option['social-youtube'] .'" rel="nofollow" target="_blank"><i class="fab fa-youtube"></i></a></li>';
                 }

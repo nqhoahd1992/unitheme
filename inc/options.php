@@ -235,6 +235,61 @@ Redux::setSection( $opt_name, array(
     )
 ) );
 
+Redux::setSection( $opt_name, array(
+    'title'            => __( 'Website Functions', 'shtheme' ),
+    'id'               => 'general-func',
+    'subsection'       => true,
+    'fields'           => array(
+        array(
+           'id'         => 'section-website-func-start',
+           'type'       => 'section',
+           'title'      => __('Plugin Chat', 'shtheme'),
+           'indent'     => true,
+        ),
+        array(
+            'id'        => 'phonering-number',
+            'type'      => 'text',
+            'title'     => __('Enter telephone number', 'shtheme'),
+            // 'default'   => 10,
+            'min'       => 1,
+            'step'      => 1,
+            'max'       => 30,
+            'display_value' => 'text',
+        ),
+        array(
+            'id'        => 'phonering-style',
+            'type'      => 'button_set',
+            'title'     => __('Phone Ring Style', 'shtheme'),
+            'options'   => array(
+                '1' => 'Style 1',
+                '2' => 'Style 2',
+             ),
+            'default' => '2'
+        ),
+        array(
+            'id'       => 'phonering-color',
+            'type'     => 'color',
+            'title'    => __('Phone Ring Color', 'shtheme'),
+            'default'  => '#ea2700',
+            'validate' => 'color',
+        ),
+        array(
+            'id'        => 'zalo-number',
+            'type'      => 'text',
+            'title'     => __('Enter zalo number', 'shtheme'),
+            'min'       => 1,
+            'step'      => 1,
+            'max'       => 30,
+            'display_value' => 'text',
+        ),
+        array(
+            'id'        => 'section-website-func-end',
+            'type'      => 'section',
+            'indent'    => false,
+        ),
+    )
+) );
+
 // -> Header
 Redux::setSection( $opt_name, array(
     'title'            => __( 'Header', 'shtheme' ),
@@ -614,6 +669,22 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'on'       => __('Enable', 'shtheme'),
                 'off'      => __('Disable', 'shtheme'),
             ),
+            array(
+                'id'       => 'woocommerce-tooltip',
+                'type'     => 'switch',
+                'title'    => __('Tooltip', 'shtheme'),
+                'default'  => false,
+                'on'       => __('Enable', 'shtheme'),
+                'off'      => __('Disable', 'shtheme'),
+            ),
+            array(
+                'id'       => 'woocommerce-disable-cart',
+                'type'     => 'switch',
+                'title'    => __('Cart', 'shtheme'),
+                'default'  => false,
+                'on'       => __('Enable', 'shtheme'),
+                'off'      => __('Disable', 'shtheme'),
+            ),
         )
     ) );
 
@@ -799,11 +870,6 @@ Redux::setSection( $opt_name, array(
             'title' => __('Twitter', 'shtheme'),
         ),
         array(
-            'id'    =>'social-google',
-            'type'  => 'text',
-            'title' => __('Google +', 'shtheme'),
-        ),
-        array(
             'id'    =>'social-youtube',
             'type'  => 'text',
             'title' => __('Youtube', 'shtheme'),
@@ -908,61 +974,6 @@ Redux::setSection( $opt_name, array(
     )
 ) );
 
-Redux::setSection( $opt_name, array(
-    'title'            => __( 'Website Functions', 'shtheme' ),
-    'id'               => 'website-func',
-    'subsection'       => true,
-    'fields'           => array(
-        array(
-           'id'         => 'section-website-func-start',
-           'type'       => 'section',
-           'title'      => __('Plugin Chat', 'shtheme'),
-           'indent'     => true,
-        ),
-        array(
-            'id'        => 'phonering-number',
-            'type'      => 'text',
-            'title'     => __('Enter telephone number', 'shtheme'),
-            // 'default'   => 10,
-            'min'       => 1,
-            'step'      => 1,
-            'max'       => 30,
-            'display_value' => 'text',
-        ),
-        array(
-            'id'        => 'phonering-style',
-            'type'      => 'button_set',
-            'title'     => __('Phone Ring Style', 'shtheme'),
-            'options'   => array(
-                '1' => 'Style 1',
-                '2' => 'Style 2',
-             ),
-            'default' => '2'
-        ),
-        array(
-            'id'       => 'phonering-color',
-            'type'     => 'color',
-            'title'    => __('Phone Ring Color', 'shtheme'),
-            'default'  => '#ea2700',
-            'validate' => 'color',
-        ),
-        array(
-            'id'        => 'zalo-number',
-            'type'      => 'text',
-            'title'     => __('Enter zalo number', 'shtheme'),
-            'min'       => 1,
-            'step'      => 1,
-            'max'       => 30,
-            'display_value' => 'text',
-        ),
-        array(
-            'id'        => 'section-website-func-end',
-            'type'      => 'section',
-            'indent'    => false,
-        ),
-    )
-) );
-
 if ( class_exists( 'MetaSliderPlugin' ) ) {
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Metaslider', 'shtheme' ),
@@ -980,32 +991,6 @@ if ( class_exists( 'MetaSliderPlugin' ) ) {
                     'orderby'       => 'date',
                     'order'         => 'DESC',
                 ),
-            ),
-        )
-    ) );
-}
-
-if ( class_exists( 'WooCommerce' ) ) {
-    Redux::setSection( $opt_name, array(
-        'title'            => __( 'Woocommerce', 'shtheme' ),
-        'id'               => 'function-woocommerce',
-        'subsection'       => true,
-        'fields'           => array(
-            array(
-                'id'       => 'woocommerce-tooltip',
-                'type'     => 'switch',
-                'title'    => __('Tooltip', 'shtheme'),
-                'default'  => false,
-                'on'       => __('Enable', 'shtheme'),
-                'off'      => __('Disable', 'shtheme'),
-            ),
-            array(
-                'id'       => 'woocommerce-disable-cart',
-                'type'     => 'switch',
-                'title'    => __('Cart', 'shtheme'),
-                'default'  => false,
-                'on'       => __('Enable', 'shtheme'),
-                'off'      => __('Disable', 'shtheme'),
             ),
         )
     ) );

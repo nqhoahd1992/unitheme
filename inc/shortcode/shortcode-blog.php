@@ -260,7 +260,7 @@ class uni_blog_shortcode {
 				$html .= '<div class="col-md-6 first-element-layout">';
 				$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
 				$html .= '</div>';
-				if( $posts_per_page > 1 ) {
+				if( $atts['posts_per_page'] > 1 ) {
 					$html .= '<div class="col-md-6 second-element-layout">';
 				}
 			} else {
@@ -307,7 +307,7 @@ class uni_blog_shortcode {
 				$html .= '<div class="col-md-12 first-element-layout">';
 				$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
 				$html .= '</div>';
-				if( $posts_per_page > 1 ) {
+				if( $atts['posts_per_page'] > 1 ) {
 					$html .= '<div class="col-md-12 second-element-layout">';
 				}
 			} else {
@@ -357,7 +357,7 @@ class uni_blog_shortcode {
 				$html .= '<div class="col-md-6 first-element-layout">';
 				$html .= $this->sh_general_post_html( $post_class, $atts, $image_size );
 				$html .= '</div>';
-				if( $posts_per_page > 1 ) {
+				if( $atts['posts_per_page'] > 1 ) {
 					$html .= '<div class="col-md-6 second-element-layout"><div class="row">';
 				}
 			} else {
