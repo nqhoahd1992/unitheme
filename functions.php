@@ -134,15 +134,17 @@ add_action( 'widgets_init', 'uni_widgets_init' );
 
 // Load Shortcode
 require PARENT_DIR . '/inc/shortcode/shortcode-blog.php';
+require PARENT_DIR . '/inc/shortcode/shortcode-blog-slide.php';
 if ( class_exists( 'Vc_Manager' ) ) {
 	require PARENT_DIR . '/inc/vc_shortcode/uni-shortcodes.php';
 }
 
-// Load Function Woocomerce
+// Load Woocomerce
 if ( class_exists( 'WooCommerce' ) ) {
 	require PARENT_DIR . '/inc/shortcode/shortcode-product.php';
-	require PARENT_DIR . '/inc/function-woo.php';
+	require PARENT_DIR . '/inc/shortcode/shortcode-product-slide.php';
 	require PARENT_DIR . '/inc/widgets/wg-product-slider.php';
+	require PARENT_DIR . '/inc/function-woo.php';
 }
 
 // Load Widget

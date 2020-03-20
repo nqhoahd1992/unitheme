@@ -1,5 +1,5 @@
 <?php
-$css_class = '';
+$html = $css_class = '';
 extract(shortcode_atts(array(
     'style'             => '3',
     'posts_per_page'    => '3',
@@ -31,39 +31,41 @@ if ( $the_query->have_posts() ) {
     $el_class = esc_html( uni_shortcode_extract_class( $el_class ) );
 
     $new_post = new uni_blog_shortcode();
-    echo '<div class="uni_blog_container wpb_content_element '. $css_class .'">';
-        echo '<div class="sh-blog-shortcode style-'. $style .' '. $el_class .'">';
+    $html .= '<div class="uni_blog_container wpb_content_element '. $css_class .'">';
+        $html .= '<div class="sh-blog-shortcode style-'. $style .' '. $el_class .'">';
 
             switch ( $style ) {
                 case '1':
-                    echo $new_post->sh_blog_style_1( $the_query, $atts );
+                    $html .= $new_post->sh_blog_style_1( $the_query, $atts );
                     break;
                 case '2':
-                    echo $new_post->sh_blog_style_2( $the_query, $atts );
+                    $html .= $new_post->sh_blog_style_2( $the_query, $atts );
                     break;
                 case '3':
-                    echo $new_post->sh_blog_style_3( $the_query, $atts );
+                    $html .= $new_post->sh_blog_style_3( $the_query, $atts );
                     break;
                 case '4':
-                    echo $new_post->sh_blog_style_4( $the_query, $atts );
+                    $html .= $new_post->sh_blog_style_4( $the_query, $atts );
                     break;
                 case '5':
-                    echo $new_post->sh_blog_style_5( $the_query, $atts );
+                    $html .= $new_post->sh_blog_style_5( $the_query, $atts );
                     break;
                 case '6':
-                    echo $new_post->sh_blog_style_6( $the_query, $atts );
+                    $html .= $new_post->sh_blog_style_6( $the_query, $atts );
                     break;
                 case '7':
-                    echo $new_post->sh_blog_style_7( $the_query, $atts );
+                    $html .= $new_post->sh_blog_style_7( $the_query, $atts );
                     break;
                 case '8':
-                    echo $new_post->sh_blog_style_8( $the_query, $atts );
+                    $html .= $new_post->sh_blog_style_8( $the_query, $atts );
                     break;
                 default:
-                    echo $new_post->sh_general_post_html( $the_query, $atts );
+                    $html .= $new_post->sh_general_post_html( $the_query, $atts );
                     break;
             }
 
-        echo '</div>';
-    echo '</div>';
+        $html .= '</div>';
+    $html .= '</div>';
 }
+
+echo $html;

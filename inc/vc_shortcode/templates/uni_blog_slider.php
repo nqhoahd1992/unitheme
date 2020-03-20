@@ -1,5 +1,5 @@
 <?php
-$css_class = '';
+$html = $css_class = '';
 extract(shortcode_atts(array(
     // 'style'             => '1',
     'posts_per_page'        => '10',
@@ -48,47 +48,23 @@ if ( $the_query->have_posts() ) {
     wp_enqueue_style( 'slick-style' );
     wp_enqueue_style( 'slick-theme-style' );
 
-    echo '<div class="uni_blog_slider_container wpb_content_element '. $css_class .'">';
-        echo '<div class="sh-blog-slider-shortcode '. $el_class .'">';
+    $new_post = new uni_blog_slide_shortcode();
+    $html .= '<div class="uni_blog_slider_container wpb_content_element '. $css_class .'">';
+        $html .= '<div class="sh-blog-slider-shortcode '. $el_class .'">';
 
-            echo '<div class="slick-carousel blog-slider" data-item="'. $item .'" data-item_lg="'. $item_lg .'" data-item_md="'. $item_md .'" data-item_sm="'. $item_sm .'" data-item_mb="'. $item_mb .'" data-row="'. $number_row .'" data-dots="'. $data_dots .'" data-arrows="'. $data_arrows .'" data-vertical="false">';
+            $html .= '<div class="slick-carousel blog-slider" data-item="'. $item .'" data-item_lg="'. $item_lg .'" data-item_md="'. $item_md .'" data-item_sm="'. $item_sm .'" data-item_mb="'. $item_mb .'" data-row="'. $number_row .'" data-dots="'. $data_dots .'" data-arrows="'. $data_arrows .'" data-vertical="false">';
                 
-                while ( $the_query->have_posts() ) {
-                    $the_query->the_post();
-                    echo '<div class="blog-slider__item">';
-                        echo '<div class="blog-slider__item__inner">';
-                            echo '<div class="entry-thumb">';
-                                echo '<a class="d-block" href="'. get_the_permalink() .'" title="'. get_the_title() .'">';
-                                    echo '<div class="blog-slider__item__hover"><i class="fas fa-link"></i></div>';
-                                    if( has_post_thumbnail() ) : 
-                                        echo '<img alt="'. get_the_title() .'" data-lazy="'. get_the_post_thumbnail_url( get_the_ID(), $image_size ) .'"/>';
-                                    endif;
-                                echo '</a>';
-                            echo '</div>';
-                            echo '<div class="entry-content">';
-                                echo '<h3 class="entry-title"><a href="'. get_the_permalink() .'" title="'. get_the_title() .'">'. get_the_title() .'</a></h3>';
-                                // Metadata
-                                if ( $hide_meta == '1' ) {
-                                    echo '<div class="entry-meta">';
-                                        echo '<span class="date-time"><i class="fas fa-calendar-alt"></i> '. get_the_time('d/m/Y G:i') .'</span>';
-                                    echo '</div>';
-                                }
-                                // Check display description
-                                if ( $hide_desc == '1' ) {
-                                    echo '<div class="entry-description">'. get_the_content_limit( $number_character,' ' ) .'</div>';
-                                }
-                                // Check display view more button
-                                if ( $btn_viewmore == '1' ) {
-                                    echo '<div class="text-left"><a class="view-detail" href="'. get_permalink() .'" title="'. get_the_title() .'">'. $viewmore_text .' <i class="fas fa-angle-double-right"></i></a></div>';
-                                }
-                            echo '</div>';
-                        echo '</div>';
-                    echo '</div>';
+                while ( $the_query->have_posts() ) { $the_query->the_post();
+
+                    $html .= $new_post->sh_general_post_html( $the_query, $atts );
+
                 }
                 wp_reset_postdata();
 
-            echo '</div>';
+            $html .= '</div>';
 
-        echo '</div>';
-    echo '</div>';
+        $html .= '</div>';
+    $html .= '</div>';
 }
+
+echo $html;
