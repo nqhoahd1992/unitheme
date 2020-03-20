@@ -43,7 +43,11 @@ function insert_callring() {
 		}
 
 		if( $sh_option['zalo-number'] ) {
-			echo '<div class="alo-floating alo-floating-zalo"><a title="Chat Zalo" rel="nofollow" target="_blank" href="https://zalo.me/'. $sh_option['zalo-number'] .'"><strong>Chat Zalo</strong></a></div>';
+			echo '<div class="zalo-container">';
+				echo '<a id="zalo-btn" href="https://zalo.me/'. $sh_option['zalo-number'] .'" target="_blank" rel="noopener">';
+					echo '<i class="zalo-ico zalo-has-notify"><div class="zalo-ico-main"><img src="'. get_stylesheet_directory_uri() .'/lib/images/stick_zalo.png" alt="Zalo"></div><em></em></i>';
+				echo '</a>';
+			echo '</div>';
 		}
 	echo '</div>';
 
@@ -208,12 +212,12 @@ function uni_footer_widget_areas() {
 add_action( 'uni_footer', 'uni_footer_widget_areas' );
 
 /**
- * Inser Code To Header Footer
+ * Insert Code To Header Footer
  */
 function insert_code_to_header(){
 	global $sh_option;
-	$html_header = $sh_option['opt-textarea-header'];
-	if( $html_header ) {
+	if( ! empty( $sh_option['opt-textarea-header'] ) ) {
+		$html_header = $sh_option['opt-textarea-header'];
 		echo $html_header;
 	}
 }
@@ -221,8 +225,8 @@ add_action( 'wp_head', 'insert_code_to_header' );
 
 function insert_code_to_footer(){
 	global $sh_option;
-	$html_footer = $sh_option['opt-textarea-footer'];
-	if( $html_footer ) {
+	if( ! empty( $sh_option['opt-textarea-footer'] ) ) {
+		$html_footer = $sh_option['opt-textarea-footer'];
 		echo $html_footer;
 	}
 }
