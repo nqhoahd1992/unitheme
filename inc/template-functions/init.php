@@ -90,10 +90,6 @@ function uni_plugin_activation() {
             'slug' 		=> 'user-role-editor',
         ),
         array(
-            'name' 		=> 'WP SMTP',
-            'slug' 		=> 'wp-smtp',
-        ),
-        array(
             'name' 		=> 'Yoast SEO',
             'slug' 		=> 'wordpress-seo',
         ),
