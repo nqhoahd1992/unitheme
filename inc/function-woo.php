@@ -124,9 +124,9 @@ add_filter( 'loop_shop_per_page', 'woocommerce_edit_loop_shop_per_page', 20 );
  */
 function add_percent_sale() {
 	global $product;
-	$regular_price 	= get_post_meta( get_the_ID(), '_regular_price', true);
-	$sale_price 	= get_post_meta( get_the_ID(), '_sale_price', true);
 	if ( $product->is_on_sale() && $product->is_type( 'simple' ) ) {
+		$regular_price 	= get_post_meta( get_the_ID(), '_regular_price', true);
+		$sale_price 	= get_post_meta( get_the_ID(), '_sale_price', true);
 		$per = round( ( ( $regular_price - $sale_price ) / $regular_price ) * 100 );
 		echo '<span class="percent">-'. $per .'%</span>';
 	}
@@ -243,33 +243,17 @@ function redirect_to_checkout( $checkout_url ) {
 add_filter( 'woocommerce_add_to_cart_redirect', 'redirect_to_checkout' );
 
 /**
- * Get Price Product
+ * Modify price
  */
-function get_price_product() {
-	global $product;
-	if ( $product->is_type( 'simple' ) ) {
-		$regular_price 	= get_post_meta( get_the_ID(), '_regular_price', true );
-		$sale_price 	= get_post_meta( get_the_ID(), '_sale_price', true );
-		if ( empty( $regular_price ) ) {
-			echo '<p class="price">'. __( 'Contact', 'shtheme' ) .'</p>';
-		} elseif ( ! empty( $regular_price ) && empty( $sale_price ) ) {
-			echo '<p class="price">'. wc_price( $regular_price) . '</p>';
-		} elseif ( ! empty( $regular_price ) && ! empty( $sale_price ) ) {
-			echo '<p class="price">
-			<ins>'. wc_price( $sale_price ) .'</ins>
-			<del>'. wc_price( $regular_price ) .'</del>
-			</p>'; 
-		}
-	} elseif( $product->is_type( 'variable' ) ) {
-		if( is_product() ) {
-			// echo '<p class="price d-none">'. $product->get_price_html() .'</p>';
-			echo '<p class="price d-none">'. wc_price( wc_get_price_to_display( $product, array( 'price' => $product->get_price() ) ) ) .'</p>';
-		} else {
-			echo '<p class="price">'. wc_price( wc_get_price_to_display( $product, array( 'price' => $product->get_price() ) ) ) .'</p>';
-		}
-	}
+function invert_formatted_sale_price( $price, $regular_price, $sale_price ) {
+    return '<ins>' . ( is_numeric( $sale_price ) ? wc_price( $sale_price ) : $sale_price ) . '</ins> <del>' . ( is_numeric( $regular_price ) ? wc_price( $regular_price ) : $regular_price ) . '</del>';
 }
-add_action( 'woocommerce_after_shop_loop_item', 'get_price_product', 9 );
+add_filter( 'woocommerce_format_sale_price', 'invert_formatted_sale_price', 10, 3 );
+
+function custom_call_for_price() {
+    return __( 'Contact', 'shtheme' );
+}
+add_filter('woocommerce_empty_price_html', 'custom_call_for_price');
 
 /**
  * Display Price For Variable Product Equal Price
@@ -462,7 +446,7 @@ remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
 // remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
-remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+// remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
 
 // File content-single-product.php

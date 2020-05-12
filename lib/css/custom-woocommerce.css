@@ -153,6 +153,8 @@ button.loading, input[type='button'].loading, input[type='reset'].loading, input
 .product_meta { margin-bottom: 10px; }
 .product_meta .sku_wrapper, .product_meta .posted_in { display: block; margin-bottom: 5px; }
 
+.woocommerce div.product p.price del, .woocommerce div.product span.price del { opacity: 1; }
+
 .woocommerce #quantity input::-webkit-outer-spin-button, .woocommerce #quantity input::-webkit-inner-spin-button, .woocommerce #content .quantity input::-webkit-outer-spin-button, .woocommerce #content .quantity input::-webkit-inner-spin-button, .woocommerce-page #quantity input::-webkit-outer-spin-button, .woocommerce-page #quantity input::-webkit-inner-spin-button, .woocommerce-page #content .quantity input::-webkit-outer-spin-button, .woocommerce-page #content .quantity input::-webkit-inner-spin-button { display: none; }
 
 .woocommerce div.product form.cart div.quantity, .woocommerce table.shop_table .quantity.buttons_added { position: relative; margin: 0 10px 0 0; overflow: hidden; zoom: 1; padding-right: 1.1em; display: inline-block; }

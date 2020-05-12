@@ -691,6 +691,9 @@ div.product {
 	    margin-bottom: 5px;
 	}
 }
+.woocommerce div.product p.price del, .woocommerce div.product span.price del {
+    opacity: 1;
+}
 .woocommerce #quantity input::-webkit-outer-spin-button,
 .woocommerce #quantity input::-webkit-inner-spin-button,
 .woocommerce #content .quantity input::-webkit-outer-spin-button,
