@@ -220,12 +220,20 @@ function custom_numberpro_related_products_args( $args ) {
 add_filter( 'woocommerce_output_related_products_args', 'custom_numberpro_related_products_args' );
 
 /**
+ * Change text button add to cart in single product
+ */
+function woocommerce_custom_single_add_to_cart_text() {
+    return __( 'Add to cart', 'shtheme' ); 
+}
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_custom_single_add_to_cart_text' );
+
+/**
  * Add Button Quick Buy Simple Product In Single Product
  */
 function insert_btn_quick_buy() {
 	global $post, $product;
 	if ( $product->is_type( 'simple' ) ) {
-		echo '<a class="button buy_now ml-2" href="?quick_buy=1&add-to-cart='. $post->ID .'" class="qn_btn">'. __('Quick buy','shtheme') .'</a>';
+		echo '<a class="button buy_now ml-3" href="?quick_buy=1&add-to-cart='. $post->ID .'" class="qn_btn">'. __('Quick buy','shtheme') .'</a>';
 	}
 }
 add_action( 'woocommerce_after_add_to_cart_button', 'insert_btn_quick_buy', 1 );
@@ -246,14 +254,20 @@ add_filter( 'woocommerce_add_to_cart_redirect', 'redirect_to_checkout' );
  * Modify price
  */
 function invert_formatted_sale_price( $price, $regular_price, $sale_price ) {
-    return '<ins>' . ( is_numeric( $sale_price ) ? wc_price( $sale_price ) : $sale_price ) . '</ins> <del>' . ( is_numeric( $regular_price ) ? wc_price( $regular_price ) : $regular_price ) . '</del>';
+	global $product;
+	$price_html = '';
+    $price_html .= '<ins>' . ( is_numeric( $sale_price ) ? wc_price( $sale_price ) : $sale_price ) . '</ins> <del>' . ( is_numeric( $regular_price ) ? wc_price( $regular_price ) : $regular_price ) . '</del>';
+    if( is_product() && $product->is_on_sale() && $product->is_type('simple') ) {
+    	$price_html .= '<span class="badge">' . __( 'Discount', 'shtheme' ) . ' ' . round( ( ( $regular_price - $sale_price ) / $regular_price ) * 100 ) . '%</span>';
+    }
+    return $price_html;
 }
 add_filter( 'woocommerce_format_sale_price', 'invert_formatted_sale_price', 10, 3 );
 
-function custom_call_for_price() {
+function uni_custom_contact_for_price() {
     return __( 'Contact', 'shtheme' );
 }
-add_filter('woocommerce_empty_price_html', 'custom_call_for_price');
+add_filter( 'woocommerce_empty_price_html', 'uni_custom_contact_for_price' );
 
 /**
  * Display Price For Variable Product Equal Price
@@ -452,3 +466,15 @@ remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_pr
 // File content-single-product.php
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 6 );
+
+function wrap_before_button_cart(){
+	echo '<div class="d-flex flex-wrap align-items-center wrap-btn-cart">';
+	echo '<span class="mr-5">Chọn số lượng</span>';
+}
+add_action( 'woocommerce_before_add_to_cart_quantity', 'wrap_before_button_cart' );
+
+function wrap_after_button_cart(){
+	echo '</div>';
+	echo '<div class="clearfix"></div>';
+}
+add_action( 'woocommerce_after_add_to_cart_quantity', 'wrap_after_button_cart' );

@@ -9,9 +9,10 @@ class Khach_Hang extends CPT_Abstract
 			'name' 			=> _x( 'Khách hàng', 'Post Type General Name', 'shtheme' ),
 			'singular_name' => _x( 'Khách hàng', 'Post Type Singular Name', 'shtheme' ),
 			'supports'		=> [ 'title', 'editor', 'thumbnail', 'excerpt' , 'revisions' ],
-			'menu_icon'		=> 'dashicons-money',
+			// 'menu_icon'		=> 'dashicons-money',
 			'rewrite'		=> [ 'slug' => 'khach-hang'],
-			'menu_position'	=> 6
+			'menu_position'	=> 6,
+			// 'has_archive'	=> false,
 		));
 		$cpt->set_no_slug_post_type( 'khach-hang' );
 		//$cpt->set_no_gutenberg_post_types('khach-hang);

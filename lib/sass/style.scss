@@ -1043,7 +1043,7 @@ html .theme-default .nivo-controlNav {
     border-bottom: 1px solid #ebebeb;
     .fb_iframe_widget {
 	    position: relative;
-	    top: -8px;
+	    top: -6px;
 	}
 }
 .post-next-prev {
@@ -1321,7 +1321,7 @@ html .theme-default .nivo-controlNav {
     font-size: 14px;
     text-align: left;
     line-height: 16px;
-    margin: 10px 0 0;
+    margin: 0 0 10px;
 }
 
 /*--------------------------------------------------------------
@@ -1524,10 +1524,16 @@ embed, iframe, object {max-width: 100%}
 		}
 		.entry-title {
 			margin: 10px 0 5px 0;
-			font-size: 15px;
+			font-size: 16px;
 			font-weight: 600;
-			line-height: 1.2;
-			text-transform: uppercase;
+			line-height: 1.4em;
+			white-space: normal;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			max-height: 2.8em;
 		}
 		.entry-description {
 			text-align: justify;
@@ -1921,7 +1927,7 @@ embed, iframe, object {max-width: 100%}
 .hamburger {
     display: inline-block;
     width: 30px;
-    height: 22px;
+    height: 24px;
     cursor: pointer;
     -webkit-transition-property: opacity, -webkit-filter;
     transition-property: opacity, filter;
