@@ -281,6 +281,36 @@ function display_equalprice_variable_pro( $available_variations, \WC_Product_Var
 add_filter( 'woocommerce_available_variation', 'display_equalprice_variable_pro', 10, 3 );
 
 /**
+ * Customizer quantity single product
+ */
+function wrap_before_button_cart(){
+	echo '<div class="d-flex flex-wrap align-items-center wrap-btn-cart">';
+	echo '<span class="mr-5">'. __( 'Choose quantity', 'shtheme' ) .'</span>';
+}
+add_action( 'woocommerce_before_add_to_cart_quantity', 'wrap_before_button_cart' );
+
+function wrap_after_button_cart(){
+	echo '</div>';
+	echo '<div class="clearfix"></div>';
+}
+add_action( 'woocommerce_after_add_to_cart_quantity', 'wrap_after_button_cart' );
+
+/**
+ * Add posted_in and tagged_as single product
+ */
+function custom_position_posted_in_and_tagged_as() {
+	global $product;
+	?>
+	<div class="product_meta">
+		<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+
+		<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+	</div>
+	<?php
+}
+add_action( 'woocommerce_single_product_summary', 'custom_position_posted_in_and_tagged_as', 41 );
+
+/**
  * Title Product content-product.php
  */
 function add_title_name_product() {
@@ -466,15 +496,3 @@ remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_pr
 // File content-single-product.php
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 6 );
-
-function wrap_before_button_cart(){
-	echo '<div class="d-flex flex-wrap align-items-center wrap-btn-cart">';
-	echo '<span class="mr-5">Chọn số lượng</span>';
-}
-add_action( 'woocommerce_before_add_to_cart_quantity', 'wrap_before_button_cart' );
-
-function wrap_after_button_cart(){
-	echo '</div>';
-	echo '<div class="clearfix"></div>';
-}
-add_action( 'woocommerce_after_add_to_cart_quantity', 'wrap_after_button_cart' );

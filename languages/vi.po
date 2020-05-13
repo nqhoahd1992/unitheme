@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2020-05-13 10:54+0700\n"
-"PO-Revision-Date: 2020-05-13 10:55+0700\n"
+"POT-Creation-Date: 2020-05-13 11:28+0700\n"
+"PO-Revision-Date: 2020-05-13 11:29+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -160,7 +160,21 @@ msgstr "Giảm"
 msgid "Contact"
 msgstr "Liên hệ"
 
-#: inc/function-woo.php:439 inc/function-woo.php:440
+#: inc/function-woo.php:288
+msgid "Choose quantity"
+msgstr "Chọn số lượng"
+
+#: inc/function-woo.php:305
+msgid "Category:"
+msgid_plural "Categories:"
+msgstr[0] "Danh mục:"
+
+#: inc/function-woo.php:307
+msgid "Tag:"
+msgid_plural "Tags:"
+msgstr[0] "Tag:"
+
+#: inc/function-woo.php:469 inc/function-woo.php:470
 msgid "View detail"
 msgstr "Xem chi tiết"
 
@@ -2141,6 +2155,14 @@ msgstr "Bạn phải đăng nhập để thanh toán."
 msgid "Your order"
 msgstr "Đơn hàng của bạn"
 
+#: woocommerce/single-product/meta.php:30
+msgid "SKU:"
+msgstr "SKU:"
+
+#: woocommerce/single-product/meta.php:30
+msgid "N/A"
+msgstr "N/A"
+
 #: woocommerce/single-product/product-image.php:67
 msgid "Placeholder"
 msgstr "Placeholder"
@@ -2165,20 +2187,6 @@ msgstr "Quang Hoa"
 
 #~ msgid "Enable customizer gallery product"
 #~ msgstr "Kích hoạt chức năng tùy chỉnh thư viện ảnh"
-
-#~ msgid "SKU:"
-#~ msgstr "SKU:"
-
-#~ msgid "N/A"
-#~ msgstr "N/A"
-
-#~ msgid "Category:"
-#~ msgid_plural "Categories:"
-#~ msgstr[0] "Danh mục:"
-
-#~ msgid "Tag:"
-#~ msgid_plural "Tags:"
-#~ msgstr[0] "Tag:"
 
 #~ msgid "Awaiting product image"
 #~ msgstr "Ảnh sản phẩm đang cập nhật"

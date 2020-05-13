@@ -719,6 +719,9 @@ div.product {
 .woocommerce div.product p.price del, .woocommerce div.product span.price del {
     opacity: 1;
 }
+.woocommerce div.product form.cart {
+    margin-bottom: 20px;
+}
 .woocommerce #quantity input::-webkit-outer-spin-button,
 .woocommerce #quantity input::-webkit-inner-spin-button,
 .woocommerce #content .quantity input::-webkit-outer-spin-button,
@@ -761,7 +764,6 @@ div.product {
             text-align: center;
             border: 1px solid #d3d3d3;
             font-weight: 500;
-            border-radius: 2px 0 0 2px;
             -moz-appearance: textfield;
         }
     }
