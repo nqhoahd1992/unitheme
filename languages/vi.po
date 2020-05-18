@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2020-05-13 11:28+0700\n"
-"PO-Revision-Date: 2020-05-13 11:29+0700\n"
+"Project-Id-Version: univn\n"
+"POT-Creation-Date: 2020-05-18 09:40+0700\n"
+"PO-Revision-Date: 2020-05-18 09:40+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -128,53 +128,47 @@ msgstr "Shop Sidebar"
 msgid "Continue Shopping"
 msgstr "Tiếp tục mua hàng"
 
-#: inc/function-woo.php:195 inc/options.php:897
+#: inc/function-woo.php:204 inc/options.php:897
 msgid "Information"
 msgstr "Thông tin"
 
-#: inc/function-woo.php:196
+#: inc/function-woo.php:205
 msgid "Gallery"
 msgstr "Thư viện ảnh"
 
-#: inc/function-woo.php:197
+#: inc/function-woo.php:206
 msgid "Video"
 msgstr "Video"
 
-#: inc/function-woo.php:198
+#: inc/function-woo.php:207
 msgid "Attachments"
 msgstr "Tệp đính kèm"
 
-#: inc/function-woo.php:226
+#: inc/function-woo.php:235
 msgid "Add to cart"
 msgstr "Thêm vào giỏ"
 
-#: inc/function-woo.php:236
+#: inc/function-woo.php:245
 msgid "Quick buy"
 msgstr "Mua ngay"
 
-#: inc/function-woo.php:261
+#: inc/function-woo.php:270
 msgid "Discount"
 msgstr "Giảm"
 
-#: inc/function-woo.php:268
+#: inc/function-woo.php:277
 msgid "Contact"
 msgstr "Liên hệ"
 
-#: inc/function-woo.php:288
-msgid "Choose quantity"
-msgstr "Chọn số lượng"
+#: inc/function-woo.php:410 inc/function-woo.php:442 inc/options.php:683
+msgid "Cart"
+msgstr "Giỏ hàng"
 
-#: inc/function-woo.php:305
-msgid "Category:"
-msgid_plural "Categories:"
-msgstr[0] "Danh mục:"
+#: inc/function-woo.php:411 inc/function-woo.php:443
+msgid "Close"
+msgstr "Đóng"
 
-#: inc/function-woo.php:307
-msgid "Tag:"
-msgid_plural "Tags:"
-msgstr[0] "Tag:"
-
-#: inc/function-woo.php:469 inc/function-woo.php:470
+#: inc/function-woo.php:470 inc/function-woo.php:471
 msgid "View detail"
 msgstr "Xem chi tiết"
 
@@ -424,10 +418,6 @@ msgstr "Bật chức năng hover lật ảnh sản phẩm"
 msgid "Tooltip"
 msgstr "Tooltip"
 
-#: inc/options.php:683
-msgid "Cart"
-msgstr "Giỏ hàng"
-
 #: inc/options.php:692
 msgid "Category Product"
 msgstr "Danh mục sản phẩm"
@@ -663,20 +653,20 @@ msgctxt "Post Type Singular Name"
 msgid "Khách hàng"
 msgstr "Khách hàng"
 
-#: inc/template-functions/init.php:122
+#: inc/template-functions/init.php:114
 msgid "Unauthorized access is denied!"
 msgstr "Truy cập bị từ chối!"
 
-#: inc/template-functions/init.php:247 inc/template-functions/init.php:249
+#: inc/template-functions/init.php:239 inc/template-functions/init.php:241
 msgid "views"
 msgstr "lượt xem"
 
-#: inc/template-functions/init.php:319
+#: inc/template-functions/init.php:311
 msgid "Edit"
 msgstr "Chỉnh sửa"
 
-#: inc/template-functions/init.php:353 inc/template-functions/init.php:354
-#: inc/template-functions/init.php:355
+#: inc/template-functions/init.php:345 inc/template-functions/init.php:346
+#: inc/template-functions/init.php:347
 msgid "The field is required."
 msgstr "Trường thông tin bắt buộc."
 
@@ -2139,13 +2129,17 @@ msgstr "Bài viết sau đó"
 msgid "Related posts"
 msgstr "Bài viết liên quan"
 
-#: woocommerce/cart/mini-cart.php:45
+#: woocommerce/cart/mini-cart.php:48
 msgid "Remove this item"
 msgstr "Xóa sản phẩm này"
 
-#: woocommerce/cart/mini-cart.php:108
+#: woocommerce/cart/mini-cart.php:114
 msgid "No products in the cart."
 msgstr "Không có sản phẩm nào trong giỏ hàng."
+
+#: woocommerce/cart/mini-cart.php:118
+msgid "Return To Shop"
+msgstr ""
 
 #: woocommerce/checkout/form-checkout.php:26
 msgid "You must be logged in to checkout."
@@ -2154,14 +2148,6 @@ msgstr "Bạn phải đăng nhập để thanh toán."
 #: woocommerce/checkout/form-checkout.php:58
 msgid "Your order"
 msgstr "Đơn hàng của bạn"
-
-#: woocommerce/single-product/meta.php:30
-msgid "SKU:"
-msgstr "SKU:"
-
-#: woocommerce/single-product/meta.php:30
-msgid "N/A"
-msgstr "N/A"
 
 #: woocommerce/single-product/product-image.php:67
 msgid "Placeholder"
@@ -2188,6 +2174,20 @@ msgstr "Quang Hoa"
 #~ msgid "Enable customizer gallery product"
 #~ msgstr "Kích hoạt chức năng tùy chỉnh thư viện ảnh"
 
+#~ msgid "SKU:"
+#~ msgstr "SKU:"
+
+#~ msgid "N/A"
+#~ msgstr "N/A"
+
+#~ msgid "Category:"
+#~ msgid_plural "Categories:"
+#~ msgstr[0] "Danh mục:"
+
+#~ msgid "Tag:"
+#~ msgid_plural "Tags:"
+#~ msgstr[0] "Tag:"
+
 #~ msgid "Awaiting product image"
 #~ msgstr "Ảnh sản phẩm đang cập nhật"
 
@@ -2207,14 +2207,14 @@ msgstr "Quang Hoa"
 #~ msgid "Viet Nam"
 #~ msgstr "Việt Nam"
 
-#~ msgid "Web3B"
-#~ msgstr "Web3B"
+#~ msgid "univn"
+#~ msgstr "univn"
 
 #~ msgid "Subtotal"
 #~ msgstr "Tổng phụ"
 
-#~ msgid "thietkeweb3b.com"
-#~ msgstr "thietkeweb3b.com"
+#~ msgid "univn.vn"
+#~ msgstr "univn.vn"
 
 #, fuzzy
 #~| msgctxt "plugins"

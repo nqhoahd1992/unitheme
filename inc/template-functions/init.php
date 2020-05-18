@@ -93,14 +93,6 @@ function uni_plugin_activation() {
             'name' 		=> 'Yoast SEO',
             'slug' 		=> 'wordpress-seo',
         ),
-        array(
-            'name' 		=> 'iThemes Security',
-            'slug' 		=> 'better-wp-security',
-        ),
-        array(
-            'name' 		=> 'WP Fastest Cache',
-            'slug' 		=> 'wp-fastest-cache',
-        ),
     );
     $configs = array(
         'menu' 			=> 'tp_plugin_install',
