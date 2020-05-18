@@ -33,15 +33,13 @@ global $sh_option;
 				</span>
 			</a>
 			<div class="row align-items-center">
-				<div class="col-xl-3 col-lg-3">
+				<div class="col-xl-3 col-lg-2">
 					<div class="logo">
 						<?php display_logo();?>
 					</div>
 				</div>
-				<div class="col-xl-7 col-lg-7">
+				<div class="col-xl-9 col-lg-10">
 					Content
-				</div>
-				<div class="col-xl-2 col-lg-2">
 					<?php do_action( 'sh_after_menu' );?>
 				</div>
 			</div>

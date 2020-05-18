@@ -149,18 +149,9 @@ function custom_override_checkout_fields( $fields ) {
     unset( $fields['billing']['billing_company'] );
     unset( $fields['billing']['billing_country'] );
     unset( $fields['billing']['billing_postcode'] );
-    unset( $fields['billing']['billing_city'] );
-    unset( $fields['billing']['billing_address_2'] );
     return $fields;
 }
 add_filter( 'woocommerce_checkout_fields', 'custom_override_checkout_fields' );
-
-// woocomerce checkout disable required
-add_filter( 'woocommerce_checkout_fields' , 'uni_custom_override_checkout_fields', 9999 );
-function uni_custom_override_checkout_fields( $fields ) {
-    $fields['billing']['billing_email']['required'] = false;
-    return $fields;
-}
 
 /**
  * Return class layout product
@@ -290,6 +281,36 @@ function display_equalprice_variable_pro( $available_variations, \WC_Product_Var
 add_filter( 'woocommerce_available_variation', 'display_equalprice_variable_pro', 10, 3 );
 
 /**
+ * Customizer quantity single product
+ */
+function wrap_before_button_cart(){
+	echo '<div class="d-flex flex-wrap align-items-center wrap-btn-cart">';
+	echo '<span class="mr-5">'. __( 'Choose quantity', 'shtheme' ) .'</span>';
+}
+add_action( 'woocommerce_before_add_to_cart_quantity', 'wrap_before_button_cart' );
+
+function wrap_after_button_cart(){
+	echo '</div>';
+	echo '<div class="clearfix"></div>';
+}
+add_action( 'woocommerce_after_add_to_cart_quantity', 'wrap_after_button_cart' );
+
+/**
+ * Add posted_in and tagged_as single product
+ */
+function custom_position_posted_in_and_tagged_as() {
+	global $product;
+	?>
+	<div class="product_meta">
+		<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+
+		<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+	</div>
+	<?php
+}
+add_action( 'woocommerce_single_product_summary', 'custom_position_posted_in_and_tagged_as', 41 );
+
+/**
  * Title Product content-product.php
  */
 function add_title_name_product() {
@@ -394,23 +415,18 @@ add_action( 'woocommerce_share', 'insert_share_product' );
 if( ! function_exists( 'sh_woocommerce_get__cart_menu_item__content' ) ) {
 	function sh_woocommerce_get__cart_menu_item__content() {
 	?>
-	<div class="cart-block">
-		<div class="navbar-actions">
-			<div class="navbar-actions-shrink shopping-cart">
-				<span class="shopping-cart-icon-container ffb-cart-menu-item">
-					<span class="shopping-cart-icon-wrapper" title="<?php echo WC()->cart->get_cart_contents_count();?>">
-						<img src="<?php echo get_stylesheet_directory_uri();?>/lib/images/icon-cart.png">
+	<div class="navbar-actions">
+		<div class="navbar-actions-shrink shopping-cart">
+			<a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>" class="shopping-cart-icon-container ffb-cart-menu-item">
+				<span class="shopping-cart-icon-wrapper" title="<?php echo WC()->cart->get_cart_contents_count();?>">
+					<span class="shopping-cart-menu-title">
+						<?php echo get_the_title( wc_get_page_id('cart') );?>
 					</span>
+					<img src="<?php echo get_stylesheet_directory_uri();?>/lib/images/icon-cart.png">
 				</span>
-				<div class="shopping-cart-menu-wrapper">
-					<div class="cart-heading">
-						<h3 class="cart-title"><?=__('Cart','shtheme') ?></h3>
-						<span class="close-side-cart"><?=__('Close','shtheme') ?></span>
-					</div>
-					<div class="cart-body">
-						<?php wc_get_template( 'cart/mini-cart.php', array( 'list_class' => '' ) );?>
-					</div>
-				</div>
+			</a>
+			<div class="shopping-cart-menu-wrapper">
+				<?php wc_get_template( 'cart/mini-cart.php', array( 'list_class' => '' ) );?>
 			</div>
 		</div>
 	</div>
@@ -423,38 +439,27 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	global $woocommerce;
 	ob_start();
 	?>
-	
-		<div class="navbar-actions">
-			<div class="navbar-actions-shrink shopping-cart">
-				<span class="shopping-cart-icon-container ffb-cart-menu-item">
-					<span class="shopping-cart-icon-wrapper" title="<?php echo WC()->cart->get_cart_contents_count();?>">
-						<img src="<?php echo get_stylesheet_directory_uri();?>/lib/images/icon-cart.png">
+	<div class="navbar-actions">
+		<div class="navbar-actions-shrink shopping-cart">
+			<a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>" class="shopping-cart-icon-container ffb-cart-menu-item">
+				<span class="shopping-cart-icon-wrapper" title="<?php echo WC()->cart->get_cart_contents_count();?>">
+					<span class="shopping-cart-menu-title">
+						<?php echo get_the_title( wc_get_page_id('cart') );?>
 					</span>
+					<img src="<?php echo get_stylesheet_directory_uri();?>/lib/images/icon-cart.png">
 				</span>
-				<div class="shopping-cart-menu-wrapper">
-					<div class="cart-heading">
-						<h3 class="cart-title"><?=__('Cart','shtheme') ?></h3>
-						<span class="close-side-cart"><?=__('Close','shtheme') ?></span>
-					</div>
-					<?php wc_get_template( 'cart/mini-cart.php', array( 'list_class' => '' ) );?>
-				</div>
+			</a>
+			<div class="shopping-cart-menu-wrapper">
+				<?php wc_get_template( 'cart/mini-cart.php', array( 'list_class' => '' ) );?>
 			</div>
 		</div>
+	</div>
 	<?php
 	$fragments['.navbar-actions'] = ob_get_clean();
 	return $fragments;
 }
 add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
 
-/**
- * Overlay Cart
- */
-if ( class_exists( 'WooCommerce' ) ) { 
-	function insert_overlay_cart() {
-		echo '<div class="overlay-cart"></div>';
-	}
-}
-add_action( 'after_footer', 'insert_overlay_cart', 1 );
 /**
  * Button Detail In File content-product.php
  */
@@ -489,15 +494,5 @@ remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_l
 remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
 
 // File content-single-product.php
-
-function wrap_before_button_cart(){
-	echo '<div class="d-flex flex-wrap align-items-center wrap-btn-cart">';
-	echo '<span class="mr-5">Chọn số lượng</span>';
-}
-add_action( 'woocommerce_before_add_to_cart_quantity', 'wrap_before_button_cart' );
-
-function wrap_after_button_cart(){
-	echo '</div>';
-	echo '<div class="clearfix"></div>';
-}
-add_action( 'woocommerce_after_add_to_cart_quantity', 'wrap_after_button_cart' );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 6 );

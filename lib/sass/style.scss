@@ -40,14 +40,15 @@ Tags:
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap&subset=vietnamese');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&display=swap');
 $primary-color: #337ab7;
 $text-color: #333333;
 $border-color: #cccccc;
-$primary-font: 'Open Sans';
+$primary-font: 'Roboto';
 $container-width: 1140px;
 @mixin fontawesome {
-	font-family: 'Font Awesome 5 Pro' !important;
+	font-family: Font Awesome\ 5 Free !important;
+    font-weight: 900 !important;
 }
 @mixin custom-hidden {
 	opacity: 0;
@@ -78,7 +79,7 @@ $container-width: 1140px;
     transform: translate3d($tx, $ty, $tz);
 }
 html{font-size:62.5%;}
-body {font-family: "Open Sans", Arial, sans-serif;font-size: 14px;color: $text-color;}
+body {font-family: $primary-font, Arial, sans-serif;font-size: 14px;color: $text-color;}
 a {
 	color: $primary-color;
 	@include transition(0.3s ease-in-out);
@@ -229,7 +230,7 @@ img {max-width: 100%;height: auto}
 				    float: right;
 				    margin-right: -14px;
 				    line-height: 22px;
-				    content: "\f105";
+				    content: "\f0da";
 				    @include fontawesome;
 				}
 				ul {
@@ -312,24 +313,10 @@ img {max-width: 100%;height: auto}
 	}
 }
 .page-title, h1.entry-title {
-	margin: 0 0 15px 0;
-	padding: 0;
-	font-size: 15px;
+	font-size: 22px;
+	font-weight: 600;
 	color: $primary-color;
-	font-weight: normal;
-	line-height: 40px;
-	text-transform: uppercase;
-    border-bottom: 2px solid $primary-color;
-    position: relative;
-    &:before {
-    	content: '';
-    	position: absolute;
-    	width: 100px;
-    	height: 4px;
-    	bottom: -3px;
-    	left: 0;
-    	background: $primary-color;
-    }
+	margin: 5px 0 15px 0;
 }
 .page-title-bar {
     padding: 20px 0 10px 0;

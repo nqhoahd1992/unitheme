@@ -426,9 +426,9 @@ class uni_blog_shortcode {
 			// Metadata
 			if ( $hide_meta == '1' ) {
 				$html .= '<div class="entry-meta">';
-					$html .= '<span class="date-time"><i class="far fa-calendar-alt"></i>'. get_the_time('d/m/Y G:i') .'</span>';
+					$html .= '<span class="date-time"><i class="fas fa-calendar-alt"></i>'. get_the_time('d/m/Y G:i') .'</span>';
 					// $comments_count = wp_count_comments( get_the_ID() );
-					// $html .= '<span class="number-comment"><i class="far fa-comment-dots"></i>'. $comments_count->approved . ' ' . __( 'Comments', 'shtheme' ) . '</span>';
+					// $html .= '<span class="number-comment"><i class="fas fa-comment-dots"></i>'. $comments_count->approved . ' ' . __( 'Comments', 'shtheme' ) . '</span>';
 				$html .= '</div>';
 			}
 			// Check display description
@@ -437,7 +437,7 @@ class uni_blog_shortcode {
 			}
 			// Check display view more button
 			if ( $btn_viewmore == '1' ) {
-				$html .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'" class="view-more">'. $viewmore_text .' <i class="far fa-angle-double-right"></i></a>';
+				$html .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'" class="view-more">'. $viewmore_text .' <i class="fas fa-angle-double-right"></i></a>';
 			}
 		$html .= '</div>';
 		$html .= '</div></article>';
@@ -494,7 +494,7 @@ class uni_blog_shortcode {
 			// Metadata
 			if ( $hide_meta == '1' ) {
 				$html .= '<div class="entry-meta">';
-					$html .= '<span class="date-time"><i class="far fa-calendar-alt"></i>'. get_the_time('d/m/Y G:i') .'</span>';
+					$html .= '<span class="date-time"><i class="fas fa-calendar-alt"></i>'. get_the_time('d/m/Y G:i') .'</span>';
 				$html .= '</div>';
 			}
 			// Check display description
@@ -503,7 +503,7 @@ class uni_blog_shortcode {
 			}
 			// Check display view more button
 			if ( $btn_viewmore == '1' ) {
-				$html .= '<div class="text-left"><a class="view-detail" href="'. get_permalink() .'" title="'. get_the_title() .'">'. $viewmore_text .' <i class="far fa-angle-double-right"></i></a></div>';
+				$html .= '<div class="text-left"><a class="view-detail" href="'. get_permalink() .'" title="'. get_the_title() .'">'. $viewmore_text .' <i class="fas fa-angle-double-right"></i></a></div>';
 			}
 		$html .= '</div>';
 		$html .= '</div></article>';

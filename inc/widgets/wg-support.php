@@ -184,10 +184,10 @@ function get_layout_support($instance, $j = 1) {
 				case '1':
 					echo '<ul>';
 						if( $name ) {
-							echo '<li><i class="far fa-comment-alt"></i> ' .$name. '</li>';
+							echo '<li><i class="fas fa-comment-alt"></i> ' .$name. '</li>';
 						}
 						if( $phone ) {
-							echo '<li><i class="far fa-phone-square"></i> ' .$phone. '</li>';
+							echo '<li><i class="fas fa-phone-square"></i> ' .$phone. '</li>';
 						}
 						if( $email ) {
 							echo '<li><i class="far fa-envelope"></i> ' .$email. '</li>';

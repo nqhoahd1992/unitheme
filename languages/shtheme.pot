@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Univn\n"
-"POT-Creation-Date: 2020-05-18 09:40+0700\n"
+"Project-Id-Version: Web3B\n"
+"POT-Creation-Date: 2020-05-13 11:28+0700\n"
 "PO-Revision-Date: 2018-01-18 17:08+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -127,47 +127,55 @@ msgstr ""
 msgid "Continue Shopping"
 msgstr ""
 
-#: inc/function-woo.php:204 inc/options.php:897
+#: inc/function-woo.php:195 inc/options.php:897
 msgid "Information"
 msgstr ""
 
-#: inc/function-woo.php:205
+#: inc/function-woo.php:196
 msgid "Gallery"
 msgstr ""
 
-#: inc/function-woo.php:206
+#: inc/function-woo.php:197
 msgid "Video"
 msgstr ""
 
-#: inc/function-woo.php:207
+#: inc/function-woo.php:198
 msgid "Attachments"
 msgstr ""
 
-#: inc/function-woo.php:235
+#: inc/function-woo.php:226
 msgid "Add to cart"
 msgstr ""
 
-#: inc/function-woo.php:245
+#: inc/function-woo.php:236
 msgid "Quick buy"
 msgstr ""
 
-#: inc/function-woo.php:270
+#: inc/function-woo.php:261
 msgid "Discount"
 msgstr ""
 
-#: inc/function-woo.php:277
+#: inc/function-woo.php:268
 msgid "Contact"
 msgstr ""
 
-#: inc/function-woo.php:410 inc/function-woo.php:442 inc/options.php:683
-msgid "Cart"
+#: inc/function-woo.php:288
+msgid "Choose quantity"
 msgstr ""
 
-#: inc/function-woo.php:411 inc/function-woo.php:443
-msgid "Close"
-msgstr ""
+#: inc/function-woo.php:305
+msgid "Category:"
+msgid_plural "Categories:"
+msgstr[0] ""
+msgstr[1] ""
 
-#: inc/function-woo.php:470 inc/function-woo.php:471
+#: inc/function-woo.php:307
+msgid "Tag:"
+msgid_plural "Tags:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/function-woo.php:469 inc/function-woo.php:470
 msgid "View detail"
 msgstr ""
 
@@ -417,6 +425,10 @@ msgstr ""
 msgid "Tooltip"
 msgstr ""
 
+#: inc/options.php:683
+msgid "Cart"
+msgstr ""
+
 #: inc/options.php:692
 msgid "Category Product"
 msgstr ""
@@ -649,20 +661,20 @@ msgctxt "Post Type Singular Name"
 msgid "Khách hàng"
 msgstr ""
 
-#: inc/template-functions/init.php:114
+#: inc/template-functions/init.php:122
 msgid "Unauthorized access is denied!"
 msgstr ""
 
-#: inc/template-functions/init.php:239 inc/template-functions/init.php:241
+#: inc/template-functions/init.php:247 inc/template-functions/init.php:249
 msgid "views"
 msgstr ""
 
-#: inc/template-functions/init.php:311
+#: inc/template-functions/init.php:319
 msgid "Edit"
 msgstr ""
 
-#: inc/template-functions/init.php:345 inc/template-functions/init.php:346
-#: inc/template-functions/init.php:347
+#: inc/template-functions/init.php:353 inc/template-functions/init.php:354
+#: inc/template-functions/init.php:355
 msgid "The field is required."
 msgstr ""
 
@@ -2108,16 +2120,12 @@ msgstr ""
 msgid "Related posts"
 msgstr ""
 
-#: woocommerce/cart/mini-cart.php:48
+#: woocommerce/cart/mini-cart.php:45
 msgid "Remove this item"
 msgstr ""
 
-#: woocommerce/cart/mini-cart.php:114
+#: woocommerce/cart/mini-cart.php:108
 msgid "No products in the cart."
-msgstr ""
-
-#: woocommerce/cart/mini-cart.php:118
-msgid "Return To Shop"
 msgstr ""
 
 #: woocommerce/checkout/form-checkout.php:26
@@ -2126,6 +2134,14 @@ msgstr ""
 
 #: woocommerce/checkout/form-checkout.php:58
 msgid "Your order"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:30
+msgid "SKU:"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:30
+msgid "N/A"
 msgstr ""
 
 #: woocommerce/single-product/product-image.php:67

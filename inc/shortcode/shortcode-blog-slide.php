@@ -115,7 +115,7 @@ class uni_blog_slide_shortcode {
 	        	if( has_post_thumbnail() ) :
 		            $html .= '<div class="entry-thumb">';
 		                $html .= '<a class="d-block" href="'. get_the_permalink() .'" title="'. get_the_title() .'">';
-		                    $html .= '<div class="blog-slider__item__hover"><i class="far fa-link"></i></div>';
+		                    $html .= '<div class="blog-slider__item__hover"><i class="fas fa-link"></i></div>';
 	                        $html .= '<img alt="'. get_the_title() .'" data-lazy="'. get_the_post_thumbnail_url( get_the_ID(), $image_size ) .'"/>';
 		                $html .= '</a>';
 		            $html .= '</div>';
@@ -125,7 +125,7 @@ class uni_blog_slide_shortcode {
 	                // Metadata
 	                if ( $hide_meta == '1' ) {
 	                    $html .= '<div class="entry-meta">';
-	                        $html .= '<span class="date-time"><i class="far fa-calendar-alt"></i> '. get_the_time('d/m/Y G:i') .'</span>';
+	                        $html .= '<span class="date-time"><i class="fas fa-calendar-alt"></i> '. get_the_time('d/m/Y G:i') .'</span>';
 	                    $html .= '</div>';
 	                }
 	                // Check display description
@@ -134,7 +134,7 @@ class uni_blog_slide_shortcode {
 	                }
 	                // Check display view more button
 	                if ( $btn_viewmore == '1' ) {
-	                    $html .= '<div class="text-left"><a class="view-detail" href="'. get_permalink() .'" title="'. get_the_title() .'">'. $viewmore_text .' <i class="far fa-angle-double-right"></i></a></div>';
+	                    $html .= '<div class="text-left"><a class="view-detail" href="'. get_permalink() .'" title="'. get_the_title() .'">'. $viewmore_text .' <i class="fas fa-angle-double-right"></i></a></div>';
 	                }
 	            $html .= '</div>';
 	        $html .= '</div>';

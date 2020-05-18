@@ -32,7 +32,7 @@ if ( ! class_exists( 'WC_List_Grid' ) ) {
 			$grid_view = __( 'Grid view', 'shtheme' );
 			$list_view = __( 'List view', 'shtheme' );
 
-			$output = sprintf( '<div class="view-mode-switcher d-none d-md-block"><a href="#" id="grid" title="%1$s"><i class="far fa-th-large"></i> <em>%1$s</em></a><a href="#" id="list" title="%2$s"><i class="far fa-list-ul"></i> <em>%2$s</em></a></div>', $grid_view, $list_view );
+			$output = sprintf( '<div class="view-mode-switcher d-none d-md-block"><a href="#" id="grid" title="%1$s"><i class="fas fa-th-large"></i> <em>%1$s</em></a><a href="#" id="list" title="%2$s"><i class="fas fa-list-ul"></i> <em>%2$s</em></a></div>', $grid_view, $list_view );
 
 			echo apply_filters( 'gridlist_toggle_button_output', $output, $grid_view, $list_view );
 		}
