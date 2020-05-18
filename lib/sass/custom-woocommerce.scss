@@ -1,8 +1,7 @@
 $primary-color: #337ab7;
 $text-color: #333333;
 @mixin fontawesome {
-    font-family: Font Awesome\ 5 Free !important;
-    font-weight: 900 !important;
+    font-family: 'Font Awesome 5 Pro';
 }
 @mixin custom-hidden {
     opacity: 0;
@@ -330,7 +329,6 @@ button.loading, input[type='button'].loading, input[type='reset'].loading, input
         box-shadow: 1px 1px 15px rgba(0,0,0,0.15);
         @include transition(all 0.5s cubic-bezier(0.7, 1, 0.7, 1));
         @include custom-hidden;
-        
         .cart-heading {
             display: -webkit-box;
             display: -ms-flexbox;
