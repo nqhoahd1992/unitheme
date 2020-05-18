@@ -149,6 +149,7 @@ function custom_override_checkout_fields( $fields ) {
     unset( $fields['billing']['billing_company'] );
     unset( $fields['billing']['billing_country'] );
     unset( $fields['billing']['billing_postcode'] );
+    unset( $fields['billing']['billing_address_2'] );
     // $fields['billing']['billing_email']['required'] = false;
     return $fields;
 }
