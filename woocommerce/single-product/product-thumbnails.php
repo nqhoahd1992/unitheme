@@ -27,7 +27,7 @@ if ( has_post_thumbnail() ) {
 }
 
 if ( $attachment_ids && count( $attachment_ids ) > 1 ) {
-	echo '<section id="dev3b-gallery" class="slider dev3b-slider-nav">';
+	echo '<section id="unidev-gallery" class="slider unidev-slider-nav">';
 		foreach ( $attachment_ids as $attachment_id ) {
 			$full_size_image  = wp_get_attachment_image_src( $attachment_id, 'full' );
 			$thumbnail        = wp_get_attachment_image_src( $attachment_id, 'woocommerce_thumbnail' );

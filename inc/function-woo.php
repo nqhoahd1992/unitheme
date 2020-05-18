@@ -149,6 +149,7 @@ function custom_override_checkout_fields( $fields ) {
     unset( $fields['billing']['billing_company'] );
     unset( $fields['billing']['billing_country'] );
     unset( $fields['billing']['billing_postcode'] );
+    // $fields['billing']['billing_email']['required'] = false;
     return $fields;
 }
 add_filter( 'woocommerce_checkout_fields', 'custom_override_checkout_fields' );
@@ -415,18 +416,23 @@ add_action( 'woocommerce_share', 'insert_share_product' );
 if( ! function_exists( 'sh_woocommerce_get__cart_menu_item__content' ) ) {
 	function sh_woocommerce_get__cart_menu_item__content() {
 	?>
-	<div class="navbar-actions">
-		<div class="navbar-actions-shrink shopping-cart">
-			<a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>" class="shopping-cart-icon-container ffb-cart-menu-item">
-				<span class="shopping-cart-icon-wrapper" title="<?php echo WC()->cart->get_cart_contents_count();?>">
-					<span class="shopping-cart-menu-title">
-						<?php echo get_the_title( wc_get_page_id('cart') );?>
+	<div class="cart-block">
+		<div class="navbar-actions">
+			<div class="navbar-actions-shrink shopping-cart">
+				<span class="shopping-cart-icon-container ffb-cart-menu-item">
+					<span class="shopping-cart-icon-wrapper" title="<?php echo WC()->cart->get_cart_contents_count();?>">
+						<img src="<?php echo get_stylesheet_directory_uri();?>/lib/images/icon-cart.png">
 					</span>
-					<img src="<?php echo get_stylesheet_directory_uri();?>/lib/images/icon-cart.png">
 				</span>
-			</a>
-			<div class="shopping-cart-menu-wrapper">
-				<?php wc_get_template( 'cart/mini-cart.php', array( 'list_class' => '' ) );?>
+				<div class="shopping-cart-menu-wrapper">
+					<div class="cart-heading">
+						<h3 class="cart-title"><?php _e('Cart','shtheme') ?></h3>
+						<span class="close-side-cart"><?php _e('Close','shtheme') ?></span>
+					</div>
+					<div class="cart-body">
+						<?php wc_get_template( 'cart/mini-cart.php', array( 'list_class' => '' ) );?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -441,16 +447,19 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	?>
 	<div class="navbar-actions">
 		<div class="navbar-actions-shrink shopping-cart">
-			<a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>" class="shopping-cart-icon-container ffb-cart-menu-item">
+			<span class="shopping-cart-icon-container ffb-cart-menu-item">
 				<span class="shopping-cart-icon-wrapper" title="<?php echo WC()->cart->get_cart_contents_count();?>">
-					<span class="shopping-cart-menu-title">
-						<?php echo get_the_title( wc_get_page_id('cart') );?>
-					</span>
 					<img src="<?php echo get_stylesheet_directory_uri();?>/lib/images/icon-cart.png">
 				</span>
-			</a>
+			</span>
 			<div class="shopping-cart-menu-wrapper">
-				<?php wc_get_template( 'cart/mini-cart.php', array( 'list_class' => '' ) );?>
+				<div class="cart-heading">
+					<h3 class="cart-title"><?php _e('Cart','shtheme') ?></h3>
+					<span class="close-side-cart"><?php _e('Close','shtheme') ?></span>
+				</div>
+				<div class="cart-body">
+					<?php wc_get_template( 'cart/mini-cart.php', array( 'list_class' => '' ) );?>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -459,6 +468,14 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	return $fragments;
 }
 add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+
+/**
+ * Overlay Cart
+ */
+function insert_overlay_cart() {
+	echo '<div class="overlay-cart"></div>';
+}
+add_action( 'after_footer', 'insert_overlay_cart', 1 );
 
 /**
  * Button Detail In File content-product.php

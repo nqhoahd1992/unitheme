@@ -47,8 +47,7 @@ $border-color: #cccccc;
 $primary-font: 'Roboto';
 $container-width: 1140px;
 @mixin fontawesome {
-	font-family: Font Awesome\ 5 Free !important;
-    font-weight: 900 !important;
+	font-family: 'Font Awesome 5 Pro';
 }
 @mixin custom-hidden {
 	opacity: 0;
@@ -230,7 +229,7 @@ img {max-width: 100%;height: auto}
 				    float: right;
 				    margin-right: -14px;
 				    line-height: 22px;
-				    content: "\f0da";
+				    content: "\f105";
 				    @include fontawesome;
 				}
 				ul {

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2020-05-13 11:28+0700\n"
+"POT-Creation-Date: 2020-05-18 15:33+0700\n"
 "PO-Revision-Date: 2018-01-18 17:08+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -127,55 +127,63 @@ msgstr ""
 msgid "Continue Shopping"
 msgstr ""
 
-#: inc/function-woo.php:195 inc/options.php:897
+#: inc/function-woo.php:196 inc/options.php:897
 msgid "Information"
 msgstr ""
 
-#: inc/function-woo.php:196
+#: inc/function-woo.php:197
 msgid "Gallery"
 msgstr ""
 
-#: inc/function-woo.php:197
+#: inc/function-woo.php:198
 msgid "Video"
 msgstr ""
 
-#: inc/function-woo.php:198
+#: inc/function-woo.php:199
 msgid "Attachments"
 msgstr ""
 
-#: inc/function-woo.php:226
+#: inc/function-woo.php:227
 msgid "Add to cart"
 msgstr ""
 
-#: inc/function-woo.php:236
+#: inc/function-woo.php:237
 msgid "Quick buy"
 msgstr ""
 
-#: inc/function-woo.php:261
+#: inc/function-woo.php:262
 msgid "Discount"
 msgstr ""
 
-#: inc/function-woo.php:268
+#: inc/function-woo.php:269
 msgid "Contact"
 msgstr ""
 
-#: inc/function-woo.php:288
+#: inc/function-woo.php:289
 msgid "Choose quantity"
 msgstr ""
 
-#: inc/function-woo.php:305
+#: inc/function-woo.php:306
 msgid "Category:"
 msgid_plural "Categories:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/function-woo.php:307
+#: inc/function-woo.php:308
 msgid "Tag:"
 msgid_plural "Tags:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/function-woo.php:469 inc/function-woo.php:470
+#: inc/function-woo.php:429 inc/function-woo.php:457 inc/options.php:683
+msgid "Cart"
+msgstr ""
+
+#: inc/function-woo.php:430 inc/function-woo.php:458
+msgid "Close"
+msgstr ""
+
+#: inc/function-woo.php:486 inc/function-woo.php:487
 msgid "View detail"
 msgstr ""
 
@@ -423,10 +431,6 @@ msgstr ""
 
 #: inc/options.php:675
 msgid "Tooltip"
-msgstr ""
-
-#: inc/options.php:683
-msgid "Cart"
 msgstr ""
 
 #: inc/options.php:692
@@ -2120,12 +2124,16 @@ msgstr ""
 msgid "Related posts"
 msgstr ""
 
-#: woocommerce/cart/mini-cart.php:45
+#: woocommerce/cart/mini-cart.php:48
 msgid "Remove this item"
 msgstr ""
 
-#: woocommerce/cart/mini-cart.php:108
+#: woocommerce/cart/mini-cart.php:114
 msgid "No products in the cart."
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:118
+msgid "Return To Shop"
 msgstr ""
 
 #: woocommerce/checkout/form-checkout.php:26
@@ -2136,11 +2144,11 @@ msgstr ""
 msgid "Your order"
 msgstr ""
 
-#: woocommerce/single-product/meta.php:30
+#: woocommerce/single-product/meta.php:31
 msgid "SKU:"
 msgstr ""
 
-#: woocommerce/single-product/meta.php:30
+#: woocommerce/single-product/meta.php:31
 msgid "N/A"
 msgstr ""
 

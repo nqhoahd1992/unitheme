@@ -33,22 +33,22 @@ class Uni_Information_Widget extends WP_Widget {
                 echo '<li class="label-company"><i class="'. $hide_icon .' fab fa-windows"></i>'. $instance['company'] .'</li>';
             }
             if( $instance['address'] ) {
-                echo '<li><i class="'. $hide_icon .' fas fa-map-marker-alt"></i><span class="'. $hide_label .'">'. __( 'Address', 'shtheme' ) .':</span> '. $instance['address'] .'</li>';
+                echo '<li><i class="'. $hide_icon .' far fa-map-marker-alt"></i><span class="'. $hide_label .'">'. __( 'Address', 'shtheme' ) .':</span> '. $instance['address'] .'</li>';
             }
             if( $instance['tel'] ) {
-                echo '<li><i class="'. $hide_icon .' fas fa-phone"></i><span class="'. $hide_label .'">'. __( 'Telephone', 'shtheme' ) .':</span> '. $instance['tel'] .'</li>';
+                echo '<li><i class="'. $hide_icon .' far fa-phone"></i><span class="'. $hide_label .'">'. __( 'Telephone', 'shtheme' ) .':</span> '. $instance['tel'] .'</li>';
             }
             if( $instance['hotline'] ) {
-                echo '<li><i class="'. $hide_icon .' fas fa-mobile-alt"></i><span class="'. $hide_label .'">'. __( 'Hotline', 'shtheme' ) .':</span> '. $instance['hotline'] .'</li>';
+                echo '<li><i class="'. $hide_icon .' far fa-mobile-alt"></i><span class="'. $hide_label .'">'. __( 'Hotline', 'shtheme' ) .':</span> '. $instance['hotline'] .'</li>';
             }
             if( $instance['fax'] ) {
-                echo '<li><i class="'. $hide_icon .' fas fa-fax"></i><span class="'. $hide_label .'">'. __( 'Fax', 'shtheme' ) .':</span> '. $instance['fax'] .'</li>';
+                echo '<li><i class="'. $hide_icon .' far fa-fax"></i><span class="'. $hide_label .'">'. __( 'Fax', 'shtheme' ) .':</span> '. $instance['fax'] .'</li>';
             }
             if( $instance['email'] ) {
                 echo '<li><i class="'. $hide_icon .' far fa-envelope"></i><span class="'. $hide_label .'">'. __( 'Email', 'shtheme' ) .':</span> '. $instance['email'] .'</li>';
             }
             if( $instance['website'] ) {
-                echo '<li><i class="'. $hide_icon .' fas fa-globe"></i><span class="'. $hide_label .'">'. __( 'Website', 'shtheme' ) .':</span> '. $instance['website'] .'</li>';
+                echo '<li><i class="'. $hide_icon .' far fa-globe"></i><span class="'. $hide_label .'">'. __( 'Website', 'shtheme' ) .':</span> '. $instance['website'] .'</li>';
             }
             ?>
         </ul>

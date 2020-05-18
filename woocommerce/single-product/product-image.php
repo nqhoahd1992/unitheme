@@ -40,11 +40,11 @@ global $post, $product;
 					'alt'    => $props['alt'],
 				) );
 
-				// dev3b FOR SLIDER
-				$html  = '<section class="dev3b-slider-for">';
+				// Uni FOR SLIDER
+				$html  = '<section class="unidev-slider-for">';
 				
 				$html .= sprintf(
-					'<div class="zoom">%s%s<a href="%s" class="dev3b-popup fas fa-expand-arrows-alt" data-fancybox="product-gallery"></a></div>',
+					'<div class="zoom">%s%s<a href="%s" class="unidev-popup far fa-expand-arrows-alt" data-fancybox="product-gallery"></a></div>',
 					$fullimage,
 					$image,
 					$image_link
@@ -53,7 +53,7 @@ global $post, $product;
 				foreach( $attachment_ids as $attachment_id ) {
 				   $imgfull_src = wp_get_attachment_image_src( $attachment_id,'full');
 				   $image_src   = wp_get_attachment_image_src( $attachment_id,'shop_single');
-				   $html .= '<div class="zoom"><img src="' . $imgfull_src[0] . '" /><img src="' . $image_src[0] . '" /><a href="' . $imgfull_src[0] . '" class="dev3b-popup fas fa-expand-arrows-alt" data-fancybox="product-gallery"></a></div>';
+				   $html .= '<div class="zoom"><img src="' . $imgfull_src[0] . '" /><img src="' . $image_src[0] . '" /><a href="' . $imgfull_src[0] . '" class="unidev-popup far fa-expand-arrows-alt" data-fancybox="product-gallery"></a></div>';
 				}
 				
 				$html .= '</section>';
