@@ -33,16 +33,17 @@ $text-color: #333333;
 					margin-bottom: 10px;
 					color: #ff0000;
 					font-weight: bold;
-					& > * {
-						margin: 0 5px;
-					}
 					ins {
 						text-decoration: none;
 					}
 					del {
+						margin-left: 5px;
 						font-size: 14px;
 						font-weight: normal;
 						color: #666666;
+					}
+					.badge {
+						display: none;
 					}
 				}
 			}

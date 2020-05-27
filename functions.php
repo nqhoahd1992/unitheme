@@ -160,7 +160,7 @@ function uni_lib_scripts(){
 
 	// Bootstrap
 	wp_enqueue_script( 'popper-js', UNI_DIR . '/lib/js/popper.min.js', array('jquery'), '1.0', true );
-	wp_enqueue_script( 'bootstrap-js', UNI_DIR . '/lib/js/bootstrap.min.js', array('jquery'), '4.4.1', true );
+	wp_enqueue_script( 'bootstrap-js', UNI_DIR . '/lib/js/bootstrap.min.js', array('jquery'), '4.5.0', true );
 	wp_enqueue_style( 'bootstrap-style', UNI_DIR .'/lib/css/bootstrap.min.css' );
 
 	// Main js

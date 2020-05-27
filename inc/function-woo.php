@@ -253,13 +253,21 @@ function redirect_to_checkout( $checkout_url ) {
 add_filter( 'woocommerce_add_to_cart_redirect', 'redirect_to_checkout' );
 
 /**
- * Modify price
+ * Add text before price html
+ */
+function add_text_before_price_html( $price ) {
+	return '<span class="text_price">' . __('Price','shtheme') . ':</span> ' . $price;
+}
+add_filter( 'woocommerce_get_price_html', 'add_text_before_price_html' );
+
+/**
+ * Modify price html
  */
 function invert_formatted_sale_price( $price, $regular_price, $sale_price ) {
 	global $product;
 	$price_html = '';
     $price_html .= '<ins>' . ( is_numeric( $sale_price ) ? wc_price( $sale_price ) : $sale_price ) . '</ins> <del>' . ( is_numeric( $regular_price ) ? wc_price( $regular_price ) : $regular_price ) . '</del>';
-    if( is_product() && $product->is_on_sale() && $product->is_type('simple') ) {
+    if( is_product() && $product->is_on_sale() ) {
     	$price_html .= '<span class="badge">' . __( 'Discount', 'shtheme' ) . ' ' . round( ( ( $regular_price - $sale_price ) / $regular_price ) * 100 ) . '%</span>';
     }
     return $price_html;
@@ -270,6 +278,28 @@ function uni_custom_contact_for_price() {
     return __( 'Contact', 'shtheme' );
 }
 add_filter( 'woocommerce_empty_price_html', 'uni_custom_contact_for_price' );
+
+/**
+ * Show price min for variation product
+ */
+function shop_variable_product_price( $price, $product ) {
+	if( ! is_product() ) :
+	    $variation_min_reg_price 	= $product->get_variation_regular_price('min', true);
+	    $variation_min_sale_price 	= $product->get_variation_sale_price('min', true);
+	    if ( $product->is_on_sale() && ! empty( $variation_min_sale_price ) ) {
+	        if ( ! empty( $variation_min_sale_price ) )
+	            $price = '<ins>' .  woocommerce_price($variation_min_sale_price) . '</ins><del>' .  woocommerce_price($variation_min_reg_price) . '</del>';
+	    } else {
+	        if( ! empty($variation_min_reg_price ) )
+	            $price = '<ins>'. woocommerce_price( $variation_min_reg_price ) .'</ins>';
+	        else
+	            $price = '<ins>'. woocommerce_price( $product->regular_price ) .'</ins>';
+	    }
+	endif;
+    return $price;
+}
+add_filter('woocommerce_variable_sale_price_html', 'shop_variable_product_price', 10, 2);
+add_filter('woocommerce_variable_price_html','shop_variable_product_price', 10, 2 );
 
 /**
  * Display Price For Variable Product Equal Price

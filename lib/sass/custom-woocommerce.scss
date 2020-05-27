@@ -691,7 +691,7 @@ div.product {
             color: #ff0000;
             font-size: 20px;
         }
-        p.price {
+        .price {
             margin-bottom: 20px;
             .badge {
                 font-size: 70%;
@@ -702,9 +702,6 @@ div.product {
                 color: #FFF;
             }
         }
-        p.price ins {
-            margin-right: 15px;
-        }
         p.price ins, span.price ins {
             text-decoration: none;
         }
@@ -712,6 +709,7 @@ div.product {
             font-size: 16px;
             font-weight: normal;
             color: #666666;
+            margin-left: 15px;
         }
         .stock {
             font-style: italic;
@@ -1146,6 +1144,9 @@ pre .woocommerce {
 	    }
 	}
 }
+.woocommerce form .password-input, .woocommerce-page form .password-input {
+    flex: 0 0 100%;
+}
 
 /*--------------------------------------------------------------
 # Giỏ hàng
@@ -1159,11 +1160,9 @@ pre .woocommerce {
 --------------------------------------------------------------*/
 .woocommerce {
 	.woocommerce-form-login {
-		.button {
-		    margin-left: 1em;
-		}
 		.woocommerce-form__label-for-checkbox {
-		    margin-top: 5px;
+		    display: block;
+            width: 100%;
 		}
 	}
 	form.checkout_coupon, form.login, form.register {
