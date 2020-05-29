@@ -797,8 +797,11 @@ textarea.form-control {
 		font-weight: bold;
 		color: #ff0000;
 		margin: 0;
+		.text_price, .badge {
+			display: none;
+		}
 		ins, del {
-			display: inline-block;
+			display: block;
 			text-decoration: none;
 		}
 		ins {
@@ -808,7 +811,6 @@ textarea.form-control {
 			text-decoration: line-through;
 		    font-weight: normal;
 		    color: #666666;
-		    margin-left: 5px;
 		}
 	}
 	&.slick-slide img {

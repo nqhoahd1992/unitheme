@@ -49,6 +49,7 @@ class Uni_Products_Vertical_Widget extends WP_Widget {
                 $the_query = new WP_Query($args);
                 while($the_query->have_posts()):
                 $the_query->the_post();
+                global $product;
                 ?>
                     <div id="post-<?php the_ID(); ?>" class="item-product-slide">
                         <a class="<?php echo $instance['image_alignment'];?>" href="<?php the_permalink();?>" title="<?php the_title();?>">
@@ -61,7 +62,7 @@ class Uni_Products_Vertical_Widget extends WP_Widget {
                                 <?php the_title();?>
                             </a>
                         </h3>
-                        <?php get_price_product();?>
+                        <?php echo '<div class="price">' . $product->get_price_html() . '</div>';?>
                     </div>
                 <?php
                 endwhile;
