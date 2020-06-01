@@ -134,27 +134,31 @@ function add_class_body_layout( $classes ) {
 	global $sh_option;
 	$layout 	 = $sh_option['opt-layout'];
 	$site_layout = $sh_option['site-layout'];
-	switch ( $layout ) {
-	    case '1':
-	        $classes[] = 'no-sidebar';
-	        break;
-	    case '2':
-	        $classes[] = 'sidebar-content';
-	        break;
-	    case '3':
-	        $classes[] = 'content-sidebar';
-	        break;
-	    case '4':
-	        $classes[] = 'sidebar-content-sidebar';
-	        break;
-        case '5':
-	        $classes[] = 'sidebar-sidebar-content';
-	        break;
-	    case '6':
-	        $classes[] = 'content-sidebar-sidebar';
-	        break;
+	if( class_exists( 'WooCommerce' ) && ( is_cart() || is_account_page() || is_checkout() ) ) {
+		$classes[] = 'no-sidebar';
+	} else {
+		switch ( $layout ) {
+		    case '1':
+		        $classes[] = 'no-sidebar';
+		        break;
+		    case '2':
+		        $classes[] = 'sidebar-content';
+		        break;
+		    case '3':
+		        $classes[] = 'content-sidebar';
+		        break;
+		    case '4':
+		        $classes[] = 'sidebar-content-sidebar';
+		        break;
+	        case '5':
+		        $classes[] = 'sidebar-sidebar-content';
+		        break;
+		    case '6':
+		        $classes[] = 'content-sidebar-sidebar';
+		        break;
+		}
 	}
-
+	
 	switch ( $site_layout ) {
 	    case '1':
 	        $classes[] = 'site-full-width';

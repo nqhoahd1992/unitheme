@@ -1147,6 +1147,12 @@ pre .woocommerce {
 .woocommerce form .password-input, .woocommerce-page form .password-input {
     flex: 0 0 100%;
 }
+.woocommerce table.my_account_orders {
+    font-size: 14px;
+}
+.woocommerce table.my_account_orders .button {
+    margin: 0 5px 5px 5px;
+}
 
 /*--------------------------------------------------------------
 # Giỏ hàng
@@ -1310,6 +1316,10 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td,
     box-shadow: 1px 1px 2px rgba(0,0,0,.05);
 }
 .woocommerce {
+    .woocommerce-input-wrapper {
+        display: block;
+        width: 100%;
+    }
 	form .form-row {
 	    padding: 0;
 	    margin-bottom: 15px;

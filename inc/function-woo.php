@@ -50,6 +50,27 @@ function remove_menu_pages_disable_cart() {
 add_action( 'admin_init', 'remove_menu_pages_disable_cart' );
 
 /**
+ * Remove Woocommerce Admin
+ */
+function uni_remove_menu_page_woocommerce(){
+	remove_menu_page( 'wc-admin&path=/analytics/revenue' );
+	remove_menu_page( 'wc-admin&path=/marketing' );
+}
+add_action( 'admin_init', 'uni_remove_menu_page_woocommerce', 999 );
+
+if ( ! function_exists( 'uni_remove_admin_body_class' ) ) {
+	function uni_remove_admin_body_class() {
+		// var_dump(get_current_screen());
+		$screen = get_current_screen();
+		if ( is_admin() && $screen->post_type === 'product' || $screen->id === 'woocommerce_page_wc-settings' ) {
+			remove_filter( 'admin_body_class', [ 'Automattic\\WooCommerce\\Admin\\Loader', 'add_admin_body_classes' ] );
+		}
+	}
+	add_action( 'current_screen', 'uni_remove_admin_body_class' );
+}
+remove_action( 'in_admin_header', [ 'Automattic\\WooCommerce\\Admin\\Loader', 'embed_page_header' ] );
+
+/**
  * Setup Layout Page Woocommerce
  */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
@@ -256,14 +277,17 @@ add_filter( 'woocommerce_add_to_cart_redirect', 'redirect_to_checkout' );
  * Add text before price html
  */
 function add_text_before_price_html( $price ) {
-	return '<span class="text_price">' . __('Price','shtheme') . ':</span> ' . $price;
+	if ( ! is_admin() ) {
+		$price = '<span class="text_price">' . __('Price','shtheme') . ':</span> ' . $price;
+	}
+	return $price;
 }
 add_filter( 'woocommerce_get_price_html', 'add_text_before_price_html' );
 
 /**
  * Modify price html
  */
-function invert_formatted_sale_price( $price, $regular_price, $sale_price ) {
+function uni_formatted_sale_price( $price, $regular_price, $sale_price ) {
 	global $product;
 	$price_html = '';
     $price_html .= '<ins>' . ( is_numeric( $sale_price ) ? wc_price( $sale_price ) : $sale_price ) . '</ins> <del>' . ( is_numeric( $regular_price ) ? wc_price( $regular_price ) : $regular_price ) . '</del>';
@@ -272,10 +296,13 @@ function invert_formatted_sale_price( $price, $regular_price, $sale_price ) {
     }
     return $price_html;
 }
-add_filter( 'woocommerce_format_sale_price', 'invert_formatted_sale_price', 10, 3 );
+add_filter( 'woocommerce_format_sale_price', 'uni_formatted_sale_price', 10, 3 );
 
-function uni_custom_contact_for_price() {
-    return __( 'Contact', 'shtheme' );
+function uni_custom_contact_for_price( $html ) {
+	if ( ! is_admin() ) {
+	    $html = __( 'Contact', 'shtheme' );
+	}
+    return $html;
 }
 add_filter( 'woocommerce_empty_price_html', 'uni_custom_contact_for_price' );
 

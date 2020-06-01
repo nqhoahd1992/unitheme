@@ -243,6 +243,10 @@ pre .woocommerce { font-family: 'Roboto', Arial, sans-serif; font-size: 14px; wh
 
 .woocommerce form .password-input, .woocommerce-page form .password-input { flex: 0 0 100%; }
 
+.woocommerce table.my_account_orders { font-size: 14px; }
+
+.woocommerce table.my_account_orders .button { margin: 0 5px 5px 5px; }
+
 /*--------------------------------------------------------------
 # Giỏ hàng
 --------------------------------------------------------------*/
@@ -286,6 +290,7 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td, .shop_table
 
 .qhtheme-table-wrapper { padding: 5px 15px; background-color: #FFF; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); }
 
+.woocommerce .woocommerce-input-wrapper { display: block; width: 100%; }
 .woocommerce form .form-row { padding: 0; margin-bottom: 15px; }
 .woocommerce form .form-row label { font-weight: 600; }
 .woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea { height: 34px; font-size: 14px; border: 1px solid #ddd; border-radius: 5px; padding: .375rem .75rem; }
