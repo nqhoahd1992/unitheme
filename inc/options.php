@@ -974,27 +974,72 @@ Redux::setSection( $opt_name, array(
     )
 ) );
 
-if ( class_exists( 'MetaSliderPlugin' ) ) {
-    Redux::setSection( $opt_name, array(
-        'title'            => __( 'Metaslider', 'shtheme' ),
-        'id'               => 'function-metaslider',
-        'subsection'       => true,
-        'fields'           => array(
-            array(
-                'id'       => 'metaslider',
-                'type'     => 'select',
-                // 'multi'    => true,
-                'title'    => __( 'Select slider', 'shtheme' ),
-                'data'     => 'posts',
-                'args'     => array(
-                    'post_type'     => 'ml-slider',
-                    'orderby'       => 'date',
-                    'order'         => 'DESC',
-                ),
+Redux::setSection( $opt_name, array(
+    'title'            => __( 'SMTP Setup', 'shtheme' ),
+    'id'               => 'smtp-func',
+    'subsection'       => true,
+    'fields'           => array(
+        array(
+            'id'       => 'btn-smtp',
+            'type'     => 'switch',
+            'title'    => __('SMTP', 'shtheme'),
+            'default'  => true,
+            'on'       => __('Enable', 'shtheme'),
+            'off'      => __('Disable', 'shtheme'),
+        ),
+        array(
+            'id'        =>'smtp-host',
+            'type'      => 'text',
+            'title'     => __('SMTP Host', 'shtheme'),
+            'subtitle'  => '<i>'.__('Ex: smtp.gmail.com', 'shtheme').'</i>',
+            'required'  => array('btn-smtp','equals',true),
+        ),
+        array(
+            'id'        =>'smtp-port',
+            'type'      => 'text',
+            'title'     => __('SMTP Port', 'shtheme'),
+            'subtitle'  => '<i>'.__('Port 587 / 465 / 25', 'shtheme').'</i>',
+            'required'  => array('btn-smtp','equals',true),
+        ),
+        array(
+            'id'        =>'smtp-select',
+            'type'      => 'select',
+            'title'     => __('Type of Encryption', 'shtheme'),
+            'subtitle'  => '<i>'.__('Type: TLS / SSL', 'shtheme').'</i>',
+            // Must provide key => value pairs for select options
+            'options'   => array(
+                '1'     => 'TLS',
+                '2'     => 'SSL'
             ),
-        )
-    ) );
-}
+            'default'  => '1',
+            'required'  => array('btn-smtp','equals',true),
+        ),
+        array(
+            'id'        =>'smtp-username',
+            'type'      => 'text',
+            'title'     => __('SMTP Username', 'shtheme'),
+            'required'  => array('btn-smtp','equals',true),
+        ),
+        array(
+            'id'        =>'smtp-password',
+            'type'      => 'password',
+            'title'     => __('SMTP Password', 'shtheme'),
+            'required'  => array('btn-smtp','equals',true),
+        ),
+        array(
+            'id'        =>'smtp-name',
+            'type'      => 'text',
+            'title'     => __('From Name', 'shtheme'),
+            'required'  => array('btn-smtp','equals',true),
+        ),
+        array(
+            'id'        =>'smtp-email-address',
+            'type'      => 'text',
+            'title'     => __('From Email Address', 'shtheme'),
+            'required'  => array('btn-smtp','equals',true),
+        ),
+    )
+) );
 
 /*
  * <--- END SECTIONS

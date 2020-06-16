@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2020-05-27 11:32+0700\n"
-"PO-Revision-Date: 2020-05-27 11:32+0700\n"
+"POT-Creation-Date: 2020-06-16 15:32+0700\n"
+"PO-Revision-Date: 2020-06-16 15:32+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -124,69 +124,69 @@ msgstr "Secondary Sidebar"
 msgid "Shop Sidebar"
 msgstr "Shop Sidebar"
 
-#: inc/function-woo.php:141
+#: inc/function-woo.php:162
 msgid "Continue Shopping"
 msgstr "Tiếp tục mua hàng"
 
-#: inc/function-woo.php:197 inc/options.php:897
+#: inc/function-woo.php:218 inc/options.php:897
 msgid "Information"
 msgstr "Thông tin"
 
-#: inc/function-woo.php:198
+#: inc/function-woo.php:219
 msgid "Gallery"
 msgstr "Thư viện ảnh"
 
-#: inc/function-woo.php:199
+#: inc/function-woo.php:220
 msgid "Video"
 msgstr "Video"
 
-#: inc/function-woo.php:200
+#: inc/function-woo.php:221
 msgid "Attachments"
 msgstr "Tệp đính kèm"
 
-#: inc/function-woo.php:228
+#: inc/function-woo.php:249
 msgid "Add to cart"
 msgstr "Thêm vào giỏ"
 
-#: inc/function-woo.php:238
+#: inc/function-woo.php:259
 msgid "Quick buy"
 msgstr "Mua ngay"
 
-#: inc/function-woo.php:259
+#: inc/function-woo.php:281
 msgid "Price"
 msgstr "Giá"
 
-#: inc/function-woo.php:271
+#: inc/function-woo.php:295
 msgid "Discount"
 msgstr "Giảm"
 
-#: inc/function-woo.php:278
+#: inc/function-woo.php:303
 msgid "Contact"
 msgstr "Liên hệ"
 
-#: inc/function-woo.php:320
+#: inc/function-woo.php:347
 msgid "Choose quantity"
 msgstr "Chọn số lượng"
 
-#: inc/function-woo.php:337
+#: inc/function-woo.php:364
 msgid "Category:"
 msgid_plural "Categories:"
 msgstr[0] "Danh mục:"
 
-#: inc/function-woo.php:339
+#: inc/function-woo.php:366
 msgid "Tag:"
 msgid_plural "Tags:"
 msgstr[0] "Tag:"
 
-#: inc/function-woo.php:460 inc/function-woo.php:488 inc/options.php:683
+#: inc/function-woo.php:487 inc/function-woo.php:515 inc/options.php:683
 msgid "Cart"
 msgstr "Giỏ hàng"
 
-#: inc/function-woo.php:461 inc/function-woo.php:489
+#: inc/function-woo.php:488 inc/function-woo.php:516
 msgid "Close"
 msgstr "Đóng"
 
-#: inc/function-woo.php:517 inc/function-woo.php:518
+#: inc/function-woo.php:544 inc/function-woo.php:545
 msgid "View detail"
 msgstr "Xem chi tiết"
 
@@ -277,7 +277,7 @@ msgstr "Bật Page Title Bar"
 #: inc/options.php:677 inc/options.php:685 inc/options.php:721
 #: inc/options.php:743 inc/options.php:785 inc/options.php:793
 #: inc/options.php:801 inc/options.php:821 inc/options.php:962
-#: inc/options.php:971
+#: inc/options.php:971 inc/options.php:987
 msgid "Enable"
 msgstr "Bật"
 
@@ -288,7 +288,7 @@ msgstr "Bật"
 #: inc/options.php:678 inc/options.php:686 inc/options.php:722
 #: inc/options.php:744 inc/options.php:786 inc/options.php:794
 #: inc/options.php:802 inc/options.php:822 inc/options.php:963
-#: inc/options.php:972
+#: inc/options.php:972 inc/options.php:988
 msgid "Disable"
 msgstr "Tắt"
 
@@ -573,19 +573,59 @@ msgstr "Ẩn thông tin"
 msgid "Hidden information dashboard & login page"
 msgstr "Ẩn thông tin ở bảng điều khiển trong trang quản trị và trang đăng nhập"
 
-#: inc/options.php:979
-msgid "Metaslider"
-msgstr "Metaslider"
+#: inc/options.php:978
+msgid "SMTP Setup"
+msgstr "Cài đặt SMTP"
 
-#: inc/options.php:987
-msgid "Select slider"
-msgstr "Chọn slide"
+#: inc/options.php:985
+msgid "SMTP"
+msgstr "SMTP"
 
-#: inc/options.php:1101
+#: inc/options.php:993
+msgid "SMTP Host"
+msgstr "SMTP Host"
+
+#: inc/options.php:994
+msgid "Ex: smtp.gmail.com"
+msgstr "Ví dụ: smtp.gmail.com"
+
+#: inc/options.php:1000
+msgid "SMTP Port"
+msgstr "Cổng SMTP"
+
+#: inc/options.php:1001
+msgid "Port 587 / 465 / 25"
+msgstr "Cổng 587 / 465 / 25"
+
+#: inc/options.php:1007
+msgid "Type of Encryption"
+msgstr "Loại mã hóa"
+
+#: inc/options.php:1008
+msgid "Type: TLS / SSL"
+msgstr "Định dạng: TLS / SSL"
+
+#: inc/options.php:1020
+msgid "SMTP Username"
+msgstr "SMTP Username"
+
+#: inc/options.php:1026
+msgid "SMTP Password"
+msgstr "SMTP Password"
+
+#: inc/options.php:1032
+msgid "From Name"
+msgstr "From Name"
+
+#: inc/options.php:1038
+msgid "From Email Address"
+msgstr "From Email Address"
+
+#: inc/options.php:1146
 msgid "Section via hook"
 msgstr "Section via hook"
 
-#: inc/options.php:1102
+#: inc/options.php:1147
 msgid ""
 "<p class=\"description\">This is a section created by adding a filter to the "
 "sections array. Can be used by child themes to add/remove sections from the "
@@ -675,18 +715,26 @@ msgstr "Khách hàng"
 msgid "Unauthorized access is denied!"
 msgstr "Truy cập bị từ chối!"
 
-#: inc/template-functions/init.php:247 inc/template-functions/init.php:249
+#: inc/template-functions/init.php:251 inc/template-functions/init.php:253
 msgid "views"
 msgstr "lượt xem"
 
-#: inc/template-functions/init.php:319
+#: inc/template-functions/init.php:323
 msgid "Edit"
 msgstr "Chỉnh sửa"
 
-#: inc/template-functions/init.php:353 inc/template-functions/init.php:354
-#: inc/template-functions/init.php:355
+#: inc/template-functions/init.php:357 inc/template-functions/init.php:358
+#: inc/template-functions/init.php:359
 msgid "The field is required."
 msgstr "Trường thông tin bắt buộc."
+
+#: inc/template-functions/init.php:500
+msgid "Duplicate this item"
+msgstr "Nhân đôi bài viết này"
+
+#: inc/template-functions/init.php:500
+msgid "Duplicate"
+msgstr "Nhân đôi bài viết"
 
 #: inc/template-functions/mobilemenu.php:15
 msgid "MENU"
@@ -1168,7 +1216,7 @@ msgstr "Tác giả"
 #: inc/vc_shortcode/shortcodes/uni_infobox.php:60
 #: inc/widgets/wg-fblikebox.php:45 inc/widgets/wg-information.php:81
 #: inc/widgets/wg-page.php:40 inc/widgets/wg-post-list.php:95
-#: inc/widgets/wg-product-slider.php:96 inc/widgets/wg-social.php:69
+#: inc/widgets/wg-product-slider.php:97 inc/widgets/wg-social.php:69
 #: inc/widgets/wg-support.php:68 inc/widgets/wg-view-post-list.php:105
 msgid "Title"
 msgstr "Tiêu đề"
@@ -1595,7 +1643,7 @@ msgstr "Link tùy chỉnh"
 
 #: inc/vc_shortcode/shortcodes/uni_carousel_image.php:43
 #: inc/widgets/wg-page.php:71 inc/widgets/wg-post-list.php:119
-#: inc/widgets/wg-product-slider.php:130 inc/widgets/wg-view-post-list.php:127
+#: inc/widgets/wg-product-slider.php:131 inc/widgets/wg-view-post-list.php:127
 msgid "None"
 msgstr "Không"
 
@@ -1901,27 +1949,27 @@ msgid "Show Featured Image"
 msgstr "Hiển thị ảnh đại diện"
 
 #: inc/widgets/wg-page.php:57 inc/widgets/wg-post-list.php:127
-#: inc/widgets/wg-product-slider.php:138 inc/widgets/wg-view-post-list.php:135
+#: inc/widgets/wg-product-slider.php:139 inc/widgets/wg-view-post-list.php:135
 msgid "Image Size"
 msgstr "Kích thước ảnh"
 
 #: inc/widgets/wg-page.php:69 inc/widgets/wg-post-list.php:117
-#: inc/widgets/wg-product-slider.php:128 inc/widgets/wg-view-post-list.php:125
+#: inc/widgets/wg-product-slider.php:129 inc/widgets/wg-view-post-list.php:125
 msgid "Image Alignment"
 msgstr "Căn lề ảnh"
 
 #: inc/widgets/wg-page.php:72 inc/widgets/wg-post-list.php:120
-#: inc/widgets/wg-product-slider.php:131 inc/widgets/wg-view-post-list.php:128
+#: inc/widgets/wg-product-slider.php:132 inc/widgets/wg-view-post-list.php:128
 msgid "Left"
 msgstr "Trái"
 
 #: inc/widgets/wg-page.php:73 inc/widgets/wg-post-list.php:121
-#: inc/widgets/wg-product-slider.php:132 inc/widgets/wg-view-post-list.php:129
+#: inc/widgets/wg-product-slider.php:133 inc/widgets/wg-view-post-list.php:129
 msgid "Right"
 msgstr "Phải"
 
 #: inc/widgets/wg-page.php:74 inc/widgets/wg-post-list.php:122
-#: inc/widgets/wg-product-slider.php:133 inc/widgets/wg-view-post-list.php:130
+#: inc/widgets/wg-product-slider.php:134 inc/widgets/wg-view-post-list.php:130
 msgid "Center"
 msgstr "Chính giữa"
 
@@ -1953,11 +2001,11 @@ msgstr "Hiển thị danh sách bài viết theo chuyên mục"
 msgid "Number of Posts to Show"
 msgstr "Số bài viết hiển thị"
 
-#: inc/widgets/wg-post-list.php:105 inc/widgets/wg-product-slider.php:121
+#: inc/widgets/wg-post-list.php:105 inc/widgets/wg-product-slider.php:122
 msgid "Category"
 msgstr "Chuyên mục"
 
-#: inc/widgets/wg-post-list.php:107 inc/widgets/wg-product-slider.php:123
+#: inc/widgets/wg-post-list.php:107 inc/widgets/wg-product-slider.php:124
 msgid "Select category"
 msgstr "Chọn chuyên mục"
 
@@ -1997,19 +2045,19 @@ msgstr "Uni - Slider sản phẩm"
 msgid "Display slide list product"
 msgstr "Hiển thị 1 slider sản phẩm"
 
-#: inc/widgets/wg-product-slider.php:101
+#: inc/widgets/wg-product-slider.php:102
 msgid "Select type slider"
 msgstr "Chọn kiểu slide"
 
-#: inc/widgets/wg-product-slider.php:103
+#: inc/widgets/wg-product-slider.php:104
 msgid "Vertical Slider"
 msgstr "Slider chạy dọc"
 
-#: inc/widgets/wg-product-slider.php:104
+#: inc/widgets/wg-product-slider.php:105
 msgid "Horizontal Slider"
 msgstr "Slider chạy ngang"
 
-#: inc/widgets/wg-product-slider.php:109
+#: inc/widgets/wg-product-slider.php:110
 msgid "Enter the product number in the view"
 msgstr "Nhập số sản phẩm trong khung nhìn"
 
@@ -2190,6 +2238,15 @@ msgstr "UniTheme"
 #. Author of the plugin/theme
 msgid "Quang Hoa"
 msgstr "Quang Hoa"
+
+#~ msgid "Định dạng: TLS / SSL"
+#~ msgstr "Định dạng: TLS / SSL"
+
+#~ msgid "Metaslider"
+#~ msgstr "Metaslider"
+
+#~ msgid "Select slider"
+#~ msgstr "Chọn slide"
 
 #~ msgid "Google +"
 #~ msgstr "Google +"
