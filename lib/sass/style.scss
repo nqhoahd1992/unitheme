@@ -591,6 +591,7 @@ textarea.form-control {
 			}
 		}
 		input[type=submit] {
+			font-size: 14px;
 			height: 34px;
 			position: static;
 			background: none;
@@ -2048,7 +2049,7 @@ embed, iframe, object {max-width: 100%}
 			    position: absolute;
 			    left: 0;
 			    top: 3px;
-			    content: "\f0da";
+			    content: "\f105";
 			    @include fontawesome;
 			}
 			&:hover {

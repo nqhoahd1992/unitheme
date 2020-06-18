@@ -74,10 +74,6 @@ function uni_plugin_activation() {
             'required' 	=> true
         ),
         array(
-            'name' 		=> 'Duplicate post',
-            'slug' 		=> 'duplicate-post',
-        ),
-        array(
             'name' 		=> 'Contact Form 7',
             'slug' 		=> 'contact-form-7',
         ),
