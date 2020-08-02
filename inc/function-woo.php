@@ -54,9 +54,16 @@ add_action( 'admin_init', 'remove_menu_pages_disable_cart' );
  */
 function uni_remove_menu_page_woocommerce(){
 	remove_menu_page( 'wc-admin&path=/analytics/revenue' );
-	remove_menu_page( 'wc-admin&path=/marketing' );
 }
 add_action( 'admin_init', 'uni_remove_menu_page_woocommerce', 999 );
+
+add_filter( 'woocommerce_admin_features', function( $features ) {
+	return array_values(
+		array_filter( $features, function($feature) {
+			return $feature !== 'marketing';
+		} ) 
+	);
+} );
 
 if ( ! function_exists( 'uni_remove_admin_body_class' ) ) {
 	function uni_remove_admin_body_class() {
