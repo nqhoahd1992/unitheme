@@ -29,7 +29,7 @@ $text-color: #333333;
 				@include transition(all 0.3s ease);
 			    .price {
 					display: block;
-					font-size: 14px;
+					font-size: 0.875rem;
 					margin-bottom: 10px;
 					color: #ff0000;
 					font-weight: bold;
@@ -38,7 +38,7 @@ $text-color: #333333;
 					}
 					del {
 						margin-left: 5px;
-						font-size: 14px;
+						font-size: 0.875rem;
 						font-weight: normal;
 						color: #666666;
 					}
@@ -55,27 +55,28 @@ $text-color: #333333;
 				}
 			}
 			.wrap-product__thumbnail {
-				display: table;
+				// display: table;
+				display: block;
 				text-align: center;
 				width: 100%;
-				/*height: 200px;*/
+				// height: 200px;
 				margin-bottom: 10px;
 				overflow: hidden;
 				a.img {
 					display: block;
 					position: relative;
-					/*display: table-cell;
-					vertical-align: middle;*/
+					// display: table-cell;
+					// vertical-align: middle;
 					img {
 						display: inline;
 						width: auto;
-						/*max-height: 180px;*/
+						// max-height: 180px;
 						@include transition(all 0.5s ease-in-out);
 					}
 				}
 			}
 			.woocommerce-loop-product__title {
-				font-size: 14px;
+				font-size: 0.875rem;
 				font-weight: 600;
 				text-transform: uppercase;
 				margin: 10px 0 5px 0;
@@ -96,13 +97,13 @@ $text-color: #333333;
 			}
 			.button, .added_to_cart {
 				display: inline-block;
-			    padding: 6px 10px;
+			    padding: 0.375em 0.625em;
 			    background: $primary-color;
 			    color: #FFF;
 			    margin-bottom: 10px;
 			    line-height: 1.4;
 			    border-radius: 0;
-			    font-size: 14px;
+			    font-size: 0.875rem;
 			    font-weight: normal;
 			    min-height: 0;
 			}

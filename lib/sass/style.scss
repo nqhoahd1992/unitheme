@@ -77,8 +77,7 @@ $container-width: 1140px;
     -o-transform: translate3d($tx, $ty, $tz);
     transform: translate3d($tx, $ty, $tz);
 }
-html{font-size:62.5%;}
-body {font-family: $primary-font, Arial, sans-serif;font-size: 14px;color: $text-color;}
+body {font-family: $primary-font, Arial, sans-serif;font-size: 0.875rem;color: $text-color;}
 a {
 	color: $primary-color;
 	@include transition(0.3s ease-in-out);
@@ -129,7 +128,7 @@ img {max-width: 100%;height: auto}
 				position: relative;
 				display: block;
 				a {
-					font-size: 14px;
+					font-size: 0.875rem;
 					color: $text-color;
 					display: block;
 					white-space: nowrap;
@@ -140,7 +139,7 @@ img {max-width: 100%;height: auto}
 			& > li {
 				float: left;
 				& > a {
-					font-size: 15px;
+					font-size: 0.9375rem;
 					padding: 0 20px;
 					line-height: 40px;
 					height: 40px;
@@ -287,18 +286,18 @@ img {max-width: 100%;height: auto}
 # Elements
 --------------------------------------------------------------*/
 .heading {
-	margin: 0 0 15px 0;
-	padding: 0;
-	font-size: 15px;
+	margin: 0 0 0.9375em 0;
+	font-size: 1.125rem;
 	color: $primary-color;
-	font-weight: normal;
-	line-height: 40px;
+	font-weight: bold;
+	line-height: 1.4;
 	text-transform: uppercase;
     border-bottom: 3px solid #f2f2f2;
     a {
 		position: relative;
 		display: inline-block;
 		color: $primary-color;
+		padding: 0 0 0.5em 0;
 		&:after {
 			content: '';
 		    display: inline-block;
@@ -312,7 +311,7 @@ img {max-width: 100%;height: auto}
 	}
 }
 .page-title, h1.entry-title {
-	font-size: 22px;
+	font-size: 1.375rem;
 	font-weight: 600;
 	color: $primary-color;
 	margin: 5px 0 15px 0;
@@ -321,7 +320,7 @@ img {max-width: 100%;height: auto}
     padding: 20px 0 10px 0;
     margin-bottom: 20px;
     .title {
-	    font-size: 24px;
+	    font-size: 1.5rem;
 	    line-height: 1.4;
 	    margin-top: 0;
 	}
@@ -373,10 +372,9 @@ div.wpcf7-response-output {padding: .75rem 1.25rem}
 }
 .screen-reader-text {display: none}
 .btn {
-	padding: 6px 20px;
-	font-size: 14px;
-	background: $primary-color;
-	color: #FFF;
+	padding: 0.375rem 1.25rem;
+	font-size: 0.875rem;
+	font-weight: bold;
 	&:hover, &:focus, .focus {
 		color: #FFF;
 		box-shadow: inset 0 0 0 100px rgba(0,0,0,0.2);
@@ -384,6 +382,7 @@ div.wpcf7-response-output {padding: .75rem 1.25rem}
 }
 .btn-primary {
 	border-color: $primary-color;
+	background-color: $primary-color;
 	&:hover {
 	    color: #fff;
 	    background-color: $primary-color;
@@ -395,7 +394,7 @@ div.wpcf7-response-output {padding: .75rem 1.25rem}
 }
 .form-control {
 	height: 34px;
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 textarea.form-control {
 	height: 160px;
@@ -438,15 +437,15 @@ textarea.form-control {
 .widget {
 	margin: 0 0 1.5em;
 	.sidebar & {
-		margin: 0 0 20px 0;
+		margin: 0 0 30px 0;
 		.widget-title {
-			font-size: 15px;
+			font-size: 0.9375rem;
 			color: #FFF;
 			font-weight: 600;
 			text-transform: uppercase;
 			text-align: center;
 			background: $primary-color;
-			padding: 10px 10px;
+			padding: 0.625em 0.625em;
 			margin: 0;
 		}
 		ul {
@@ -479,7 +478,7 @@ textarea.form-control {
 			position: relative;
 			padding: 8px 10px;
 			a {
-				font-size: 14px;
+				font-size: 0.875rem;
 				font-weight: normal;
 				display: block;
 				color: $text-color;
@@ -591,7 +590,7 @@ textarea.form-control {
 			}
 		}
 		input[type=submit] {
-			font-size: 14px;
+			font-size: 0.875rem;
 			height: 34px;
 			position: static;
 			background: none;
@@ -641,7 +640,7 @@ textarea.form-control {
 	}
 	h3 {
 		margin: 0 0 5px 0;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 500;
 		line-height: 1.2;
 		overflow: hidden;
@@ -670,7 +669,7 @@ textarea.form-control {
 		line-height: 20px;
 	}
 	.phone {
-		font-size: 20px;
+		font-size: 1.25rem;
 		color: #ff0000;
 		font-weight: bold;
 	}
@@ -681,7 +680,7 @@ textarea.form-control {
 		}
 		li {
 			padding: 5px 0;
-			font-size: 14px;
+			font-size: 0.875rem;
 			color: $text-color;
 			border-top: 1px solid #333;
 			&:first-child {
@@ -729,7 +728,7 @@ textarea.form-control {
 			padding: 8px 10px;
 		}
 		.name {
-			font-size: 12px;
+			font-size: 0.75rem;
 			color: $text-color;
 		}
 		.phone {
@@ -783,7 +782,7 @@ textarea.form-control {
 	}
 	h3 {
 		margin: 5px 0;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 500;
 		line-height: 1.2;
 		overflow: hidden;
@@ -870,7 +869,7 @@ html .slick-slider {
 		li {
 			margin: 0;
 			button:before {
-				font-size: 14px;
+				font-size: 0.875rem;
 				color: #d8d8d8;
 			}
 			&.slick-active button:before {
@@ -891,7 +890,7 @@ html .slick-slider {
 /* Widget Featured Page */
 .widget_featuredpage {
 	.entry-title {
-		font-size: 15px;
+		font-size: 0.9375rem;
 		font-weight: 600;
 		line-height: 1.4;
 		margin: 0;
@@ -909,7 +908,7 @@ html .slick-slider {
 		margin-left: 10px;
 	}
 	p {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		text-align: justify;
 	}
 }
@@ -919,7 +918,7 @@ html .slick-slider {
 		padding: 3px 0 3px 22px;
 		position: relative;
 		i {
-			font-size: 12px;
+			font-size: 0.75rem;
 			position: absolute;
 			left: 0;
 			top: 7px;
@@ -945,7 +944,7 @@ html .slick-slider {
 			margin-right: 0;
 		}
 		a {
-			font-size: 16px;
+			font-size: 1rem;
 		    display: inline-block;
 		    height: 30px;
 		    width: 30px;
@@ -970,7 +969,7 @@ html .slick-slider {
 }
 /* Widget Tag Cloud */
 .tagcloud a {
-    font-size: 14px !important;
+    font-size: 0.875rem !important;
     display: inline-block;
     border: 1px solid $primary-color;
     margin: 0 3px 5px 0;
@@ -1018,7 +1017,7 @@ html .theme-default .nivo-controlNav {
 .page-links {clear: both;margin: 0 0 1.5em}
 .single {
 	article.post .entry-content {
-		line-height: 25px;
+		line-height: 1.8;
 		margin-bottom: 20px;
 	}
 	.entry-content table tr td {
@@ -1027,7 +1026,7 @@ html .theme-default .nivo-controlNav {
 	}
 }
 .entry-meta {
-	font-size: 13px;
+	font-size: 0.8125rem;
 	margin-bottom: 10px;
 	span {
 		color: #747474;
@@ -1054,7 +1053,7 @@ html .theme-default .nivo-controlNav {
 	.post-next-prev-content {
 		span {
 		    display: block;
-		    font-size: 12px;
+		    font-size: 0.75rem;
 		    color: #c1c1c1;
 		    margin-bottom: 7px;
 		}
@@ -1069,7 +1068,7 @@ html .theme-default .nivo-controlNav {
 	margin-bottom: 30px;
 	.related-title {
 		font-weight: bold;
-		font-size: 20px;
+		font-size: 1.25rem;
 		margin-bottom: 15px;
 		text-transform: uppercase;
 	}
@@ -1136,7 +1135,7 @@ html .theme-default .nivo-controlNav {
 		    -moz-border-radius: 50%;
 		}
 		.fn, .cfn {
-		    font-size: 16px;
+		    font-size: 1rem;
 		    display: inline-block;
 		    margin: 10px 0 0;
 		}
@@ -1155,7 +1154,7 @@ html .theme-default .nivo-controlNav {
 .comment-content {
     padding: 10px 20px 45px;
     margin: 25px 0 0;
-    font-size: 15px;
+    font-size: 0.9375rem;
     border: 1px solid #dfdfdf;
     border-radius: 3px;
     line-height: 1.5em !important;
@@ -1168,7 +1167,7 @@ html .theme-default .nivo-controlNav {
     word-wrap: break-word;
 }
 .title_comment, .comment-reply-title {
-	font-size: 20px;
+	font-size: 1.25rem;
     color: #606664;
     line-height: 1.3em;
     font-weight: 700;
@@ -1198,7 +1197,7 @@ html .theme-default .nivo-controlNav {
 			    opacity: 1;
 			}
 			.noidungcomment {
-			    font-size: 14px;
+			    font-size: 0.875rem;
 			    line-height: 22px;
 			    p {
 				    margin: 0 0 5px;
@@ -1206,11 +1205,11 @@ html .theme-default .nivo-controlNav {
 			}
 			.tools_comment a {
 			    color: $primary-color;
-			    font-size: 14px;
+			    font-size: 0.875rem;
 			    position: relative;
 			    padding: 0 15px 0 0;
 			    margin: 0 7px 0 0;
-			    line-height: 14px;
+			    line-height: 1;
 			    &:after {
 				    content: "";
 				    width: 4px;
@@ -1243,14 +1242,14 @@ html .theme-default .nivo-controlNav {
 			    right: 0;
 			    color: $primary-color;
 			    opacity: .3;
-			    font-size: 12px;
+			    font-size: 0.75rem;
 			}
 			.fn {
 			    font-weight: 700;
 			    color: #333;
 			    margin: 0;
 			    text-transform: capitalize;
-			    font-size: 16px;
+			    font-size: 1rem;
 			    line-height: 22px;
 			    margin-top: 2px;
 			}
@@ -1305,7 +1304,7 @@ html .theme-default .nivo-controlNav {
 		.cancel-comment-reply a {
 		    display: block;
 		    margin: 5px 0;
-		    font-size: 14px;
+		    font-size: 0.875rem;
 		    text-decoration: none;
 		    color: #737373;
 		}
@@ -1320,7 +1319,7 @@ html .theme-default .nivo-controlNav {
 }
 .error {
     color: #ff0000;
-    font-size: 14px;
+    font-size: 0.875rem;
     text-align: left;
     line-height: 16px;
     margin: 0 0 10px;
@@ -1526,7 +1525,7 @@ embed, iframe, object {max-width: 100%}
 		}
 		.entry-title {
 			margin: 10px 0 5px 0;
-			font-size: 16px;
+			font-size: 1rem;
 			font-weight: 600;
 			line-height: 1.4em;
 			white-space: normal;
@@ -1571,7 +1570,7 @@ embed, iframe, object {max-width: 100%}
 			margin-top: 0;
 		}
 		.entry-description {
-			font-size: 13px;
+			font-size: 0.8125rem;
 		}
 	}
 	&.style-6 {
@@ -1660,7 +1659,7 @@ embed, iframe, object {max-width: 100%}
 				padding: 10px 10px;
 			}
 			.entry-title {
-			    font-size: 14px;
+			    font-size: 0.875rem;
 				line-height: 20px;
 				margin: 0;
 				a {
@@ -1698,7 +1697,7 @@ embed, iframe, object {max-width: 100%}
 	    -webkit-transform: scale(1.1);
 	}
 	.entry-title {
-		font-size: 15px;
+		font-size: 0.9375rem;
 		margin-bottom: 8px;
 		a {
 			color: #333333;
@@ -1722,7 +1721,7 @@ embed, iframe, object {max-width: 100%}
 	    justify-content: center;
 	    flex-direction: column;
 	    text-align: center;
-	    font-size: 22px;
+	    font-size: 1.375rem;
 	    visibility: hidden;
 	    opacity: 0;
 	    z-index: 1;
@@ -1755,7 +1754,7 @@ embed, iframe, object {max-width: 100%}
 	color: #FFF !important;
 	height: 46px;
 	padding: 12px 0;
-	font-size: 16px;
+	font-size: 1rem;
 	font-weight: bold;
 	/*position: absolute;
 	left: 50%;
@@ -1778,7 +1777,7 @@ embed, iframe, object {max-width: 100%}
 	}
 	h3 {
 		color: $primary-color;
-		font-size: 20px;
+		font-size: 1.25rem;
 		margin-bottom: 0;
 	}
 	.mobile-menu {margin: 0;padding: 0;}
@@ -1798,7 +1797,7 @@ embed, iframe, object {max-width: 100%}
 				margin: 0;
 				padding: 10px 15px;
 				font-weight: bold;
-			    font-size: 14px;
+			    font-size: 0.875rem;
 			    border-top: solid 1px #dfe3e8;
 				@include transition(all 0.35s linear);
 			}
@@ -2031,7 +2030,7 @@ embed, iframe, object {max-width: 100%}
 	background: $primary-color;
 	h4.widget-title {
 		font-weight: 600;
-		font-size: 16px;
+		font-size: 1rem;
 		text-transform: uppercase;
 	}
 	ul {

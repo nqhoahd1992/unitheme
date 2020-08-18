@@ -82,7 +82,7 @@ $text-color: #333333;
             border-bottom: 1px solid #cccccc;
         }
         a {
-            font-size: 14px;
+            font-size: 0.875rem;
             font-weight: normal;
             color: #333333;
         }
@@ -123,7 +123,7 @@ $text-color: #333333;
 .woocommerce ul.cart_list li a span, .woocommerce ul.product_list_widget li a span {
     color: #333333;
     margin: 5px 0;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
     line-height: 1.2;
     overflow: hidden;
@@ -195,8 +195,8 @@ button.loading::after, input[type='button'].loading::after, input[type='reset'].
     animation: spin 2s linear infinite;
     height: 20px;
     width: 20px;
-    line-height: 20px;
-    font-size: 20px;
+    line-height: 1;
+    font-size: 1.25rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -260,8 +260,8 @@ button.loading, input[type='button'].loading, input[type='reset'].loading, input
         padding: 15px 0;
         .button {
             padding: 10px 15px;
-            font-size: 12px;
-            line-height: 16px;
+            font-size: 0.8125rem;
+            line-height: 1.4;
             background-color: $primary-color;
             color: #FFF;
             box-shadow: inset 0 -2px 0 rgba(0,0,0,.15);
@@ -307,7 +307,7 @@ button.loading, input[type='button'].loading, input[type='reset'].loading, input
             right: -10px;
             z-index: 3;
             color: #ffffff;
-            font-size: 12px;
+            font-size: 0.75rem;
             line-height: 18px;
             text-align: center;
             border-radius: 50%;
@@ -354,7 +354,7 @@ button.loading, input[type='button'].loading, input[type='reset'].loading, input
                 -ms-flex: 1 1 auto;
                 flex: 1 1 auto;
                 margin-bottom: 0;
-                font-size: 20px;
+                font-size: 1.25rem;
                 font-weight: bold;
             }
             .close-side-cart {
@@ -367,7 +367,7 @@ button.loading, input[type='button'].loading, input[type='reset'].loading, input
                 text-transform: uppercase;
                 letter-spacing: .3px;
                 font-weight: 600;
-                font-size: 13px;
+                font-size: 0.8125rem;
                 line-height: 30px;
                 padding-right: 21px;
                 cursor: pointer;
@@ -409,7 +409,7 @@ button.loading, input[type='button'].loading, input[type='reset'].loading, input
             .woocommerce-Price-amount {
                 font-weight: bold;
                 color: #f00;
-                font-size: 15px;
+                font-size: 0.9375rem;
             }
         }
         .cart-footer {
@@ -488,12 +488,12 @@ button.loading, input[type='button'].loading, input[type='reset'].loading, input
         }
         .shopping-cart-menu-product-wrap a {
             display: block;
-            font-size: 14px;
+            font-size: 0.875rem;
             font-weight: 400;
             color: #333;
         }
         .quantity {
-            font-size: 13px;
+            font-size: 0.8125rem;
             display: block;
         }
         a.remove.remove_from_cart_button {
@@ -518,14 +518,14 @@ button.loading, input[type='button'].loading, input[type='reset'].loading, input
             }
         }
         .shopping-cart-subtotal-title {
-            font-size: 14px;
+            font-size: 0.875rem;
             font-weight: 500;
         }
         .woocommerce-mini-cart__buttons a {
             color: #fff;
             border-radius: 0;
             margin-bottom: 10px;
-            font-size: 14px;
+            font-size: 0.875rem;
             font-weight: 500;
             padding: 8px 10px;
             min-height: 0;
@@ -672,7 +672,7 @@ div.product {
         .product_title {
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 18px;
+            font-size: 1.125rem;
             color: #333333;
             margin: 10px 0;
         }
@@ -684,17 +684,17 @@ div.product {
             border-bottom: 1px solid #f2f2f2;
         }
         form.cart .group_table .woocommerce-Price-amount {
-            font-size: 14px;
+            font-size: 0.875rem;
         }
         p.price, span.price, form.cart .group_table .woocommerce-Price-amount {
             font-weight: bold;
             color: #ff0000;
-            font-size: 20px;
+            font-size: 1.25rem;
         }
         .price {
             margin-bottom: 20px;
             .badge {
-                font-size: 70%;
+                font-size: 0.8125rem;
                 padding: 4px 8px;
                 background: #ec4855;
                 border-radius: 6px;
@@ -706,7 +706,7 @@ div.product {
             text-decoration: none;
         }
         p.price del, span.price del {
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: normal;
             color: #666666;
             margin-left: 15px;
@@ -751,7 +751,7 @@ div.product {
             }
             li {
                 a {
-                    font-size: 15px;
+                    font-size: 0.9375rem;
                     font-weight: bold;
                     text-transform: uppercase;
                     position: relative;
@@ -823,7 +823,7 @@ div.product {
                 content: "\f058";
                 @include fontawesome;
                 margin-right: 5px;
-                font-size: 10px;
+                font-size: 0.625rem;
             }
             &:after {
                 content: ": ";
@@ -844,7 +844,7 @@ div.product {
         &:before {
             height: 20px;
             width: 20px;
-            font-size: 20px;
+            font-size: 1.25rem;
         }
     }
 }
@@ -855,13 +855,14 @@ div.product {
     left: 5px;
     width: 40px;
     height: 40px;
+    line-height: 40px;
     z-index: 1;
     color: #FFF;
     background: #ff0000;
     text-align: center;
-    padding: 11px 5px;
+    padding: 0;
     border-radius: 50%;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 600;
 }
 .product_meta {
@@ -996,7 +997,7 @@ div.product {
     }
 }
 .heading-related {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 600;
     margin: 0 0 20px 0;
     border-bottom: solid 1px #D2D2D2;
@@ -1033,13 +1034,16 @@ div.product {
 	    }
 	}
 }
+.up-sells > h2 {
+    font-size: 1.125rem;
+}
 
 /*--------------------------------------------------------------
 # Theo dõi đơn hàng
 --------------------------------------------------------------*/
 pre .woocommerce {
     font-family: 'Roboto', Arial, sans-serif;
-    font-size: 14px;
+    font-size: 0.875rem;
     white-space: normal;
 }
 
@@ -1076,7 +1080,7 @@ pre .woocommerce {
             display: block;
             padding: 0;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 0.875rem;
             color: #555;
             background-color: #f8f8f8;
             box-shadow: -2px 0 4px -4px #888 inset, 0 1px 0 #fff inset;
@@ -1088,7 +1092,7 @@ pre .woocommerce {
                 content: "\f192";
                 @include fontawesome;
                 margin-right: 10px;
-                font-size: 10px;
+                font-size: 0.625rem;
                 color: $primary-color;
             }
         }
@@ -1148,7 +1152,7 @@ pre .woocommerce {
     flex: 0 0 100%;
 }
 .woocommerce table.my_account_orders {
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 .woocommerce table.my_account_orders .button {
     margin: 0 5px 5px 5px;
@@ -1207,11 +1211,14 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td,
 .shop_table thead tr th:last-of-type, .shop_table tr td:last-of-type {
     text-align: right;
 }
+.cart_totals > h2, .cross-sells > h2 {
+    font-size: 1.6rem;
+}
 .woocommerce-checkout {
 	.woocommerce-billing-fields h3, #order_review_heading {
 	    text-transform: uppercase;
         font-weight: 600;
-        font-size: 22px;
+        font-size: 1.375rem;
         margin-bottom: 20px;
 	}
 	.woocommerce-input-wrapper {
@@ -1264,7 +1271,7 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td,
 			#add_payment_method &, .woocommerce-cart &, .woocommerce-checkout & {
 				float: none;
 			    line-height: 1.4;
-			    font-size: 13px;
+			    font-size: 0.8125rem;
 			    margin-left: 5px;
 			}
 		}
@@ -1328,7 +1335,7 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td,
 		}
 		input.input-text, textarea {
 		    height: 34px;
-		    font-size: 14px;
+		    font-size: 0.875rem;
 		    border: 1px solid #ddd;
 		    border-radius: 5px;
 		    padding: .375rem .75rem;
@@ -1381,7 +1388,7 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td,
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     .wc-block-grid__product-title {
-        font-size: 14px;
+        font-size: 0.875rem;
         font-weight: 600;
         text-transform: uppercase;
         margin: 10px 0 5px 0;
@@ -1397,7 +1404,7 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td,
 }
 .wc-block-grid__product-add-to-cart {
     a, button {
-        font-size: 14px;
+        font-size: 0.875rem;
         padding: 6px 10px;
         border-radius: 0;
         background: $primary-color;
@@ -1405,7 +1412,7 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td,
 }
 .wc-block-grid__product-price .wc-block-grid__product-price__value {
     color: #ff0000;
-    font-size: 14px;
+    font-size: 0.875rem;
     letter-spacing: 0;
 }
 
@@ -1447,7 +1454,7 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td,
         margin-left: 4px;
         height: 14px;
         line-height: 14px;
-        font-size: 10px;
+        font-size: 0.625rem;
         padding: 0 2px;
         border: 1px solid #aaa;
         color: #aaa;
@@ -1473,7 +1480,7 @@ td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td,
     margin-bottom: 30px;
     h2 {
         text-align: center;
-        font-size: 16px;
+        font-size: 1rem;
         a {
             color: #333333;
             @include transition(all .5s ease-in-out);
