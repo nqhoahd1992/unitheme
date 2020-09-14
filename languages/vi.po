@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web3B\n"
-"POT-Creation-Date: 2020-06-16 15:32+0700\n"
-"PO-Revision-Date: 2020-06-16 15:32+0700\n"
+"POT-Creation-Date: 2020-09-14 14:10+0700\n"
+"PO-Revision-Date: 2020-09-14 14:12+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -124,69 +124,69 @@ msgstr "Secondary Sidebar"
 msgid "Shop Sidebar"
 msgstr "Shop Sidebar"
 
-#: inc/function-woo.php:162
+#: inc/function-woo.php:169
 msgid "Continue Shopping"
 msgstr "Tiếp tục mua hàng"
 
-#: inc/function-woo.php:218 inc/options.php:897
+#: inc/function-woo.php:225 inc/options.php:897
 msgid "Information"
 msgstr "Thông tin"
 
-#: inc/function-woo.php:219
+#: inc/function-woo.php:226
 msgid "Gallery"
 msgstr "Thư viện ảnh"
 
-#: inc/function-woo.php:220
+#: inc/function-woo.php:227
 msgid "Video"
 msgstr "Video"
 
-#: inc/function-woo.php:221
+#: inc/function-woo.php:228
 msgid "Attachments"
 msgstr "Tệp đính kèm"
 
-#: inc/function-woo.php:249
+#: inc/function-woo.php:256
 msgid "Add to cart"
 msgstr "Thêm vào giỏ"
 
-#: inc/function-woo.php:259
+#: inc/function-woo.php:266
 msgid "Quick buy"
 msgstr "Mua ngay"
 
-#: inc/function-woo.php:281
+#: inc/function-woo.php:288
 msgid "Price"
 msgstr "Giá"
 
-#: inc/function-woo.php:295
+#: inc/function-woo.php:302
 msgid "Discount"
 msgstr "Giảm"
 
-#: inc/function-woo.php:303
+#: inc/function-woo.php:310
 msgid "Contact"
 msgstr "Liên hệ"
 
-#: inc/function-woo.php:347
+#: inc/function-woo.php:354
 msgid "Choose quantity"
 msgstr "Chọn số lượng"
 
-#: inc/function-woo.php:364
+#: inc/function-woo.php:371
 msgid "Category:"
 msgid_plural "Categories:"
 msgstr[0] "Danh mục:"
 
-#: inc/function-woo.php:366
+#: inc/function-woo.php:373
 msgid "Tag:"
 msgid_plural "Tags:"
 msgstr[0] "Tag:"
 
-#: inc/function-woo.php:487 inc/function-woo.php:515 inc/options.php:683
+#: inc/function-woo.php:494 inc/function-woo.php:522 inc/options.php:683
 msgid "Cart"
 msgstr "Giỏ hàng"
 
-#: inc/function-woo.php:488 inc/function-woo.php:516
+#: inc/function-woo.php:495 inc/function-woo.php:523
 msgid "Close"
 msgstr "Đóng"
 
-#: inc/function-woo.php:544 inc/function-woo.php:545
+#: inc/function-woo.php:551 inc/function-woo.php:552
 msgid "View detail"
 msgstr "Xem chi tiết"
 
@@ -276,8 +276,8 @@ msgstr "Bật Page Title Bar"
 #: inc/options.php:636 inc/options.php:661 inc/options.php:669
 #: inc/options.php:677 inc/options.php:685 inc/options.php:721
 #: inc/options.php:743 inc/options.php:785 inc/options.php:793
-#: inc/options.php:801 inc/options.php:821 inc/options.php:962
-#: inc/options.php:971 inc/options.php:987
+#: inc/options.php:801 inc/options.php:821 inc/options.php:970
+#: inc/options.php:979 inc/options.php:995
 msgid "Enable"
 msgstr "Bật"
 
@@ -287,8 +287,8 @@ msgstr "Bật"
 #: inc/options.php:637 inc/options.php:662 inc/options.php:670
 #: inc/options.php:678 inc/options.php:686 inc/options.php:722
 #: inc/options.php:744 inc/options.php:786 inc/options.php:794
-#: inc/options.php:802 inc/options.php:822 inc/options.php:963
-#: inc/options.php:972 inc/options.php:988
+#: inc/options.php:802 inc/options.php:822 inc/options.php:971
+#: inc/options.php:980 inc/options.php:996
 msgid "Disable"
 msgstr "Tắt"
 
@@ -542,90 +542,118 @@ msgid "Insert code"
 msgstr "Nhúng code"
 
 #: inc/options.php:933
-msgid "Insert code to header"
-msgstr "Chèn code vào Header"
+msgid "HEADER SCRIPTS"
+msgstr "HEADER SCRIPTS"
 
-#: inc/options.php:938
-msgid "Insert code to footer"
-msgstr "Chèn code vào Footer"
+#: inc/options.php:934
+msgid ""
+"Add custom scripts inside HEAD tag. You need to have a SCRIPT tag around "
+"scripts."
+msgstr ""
+"Thêm các tập lệnh tùy chỉnh bên trong thẻ HEAD. Bạn cần có thẻ SCRIPT xung "
+"quanh các tập lệnh."
+
+#: inc/options.php:939
+msgid "FOOTER SCRIPTS"
+msgstr "FOOTER SCRIPTS"
+
+#: inc/options.php:940
+msgid ""
+"Add custom scripts you might want to be loaded in the footer of your "
+"website. You need to have a SCRIPT tag around scripts."
+msgstr ""
+"Thêm các tập lệnh tùy chỉnh mà bạn có thể muốn tải ở phần chân trang của "
+"trang web. Bạn cần có thẻ SCRIPT xung quanh các tập lệnh."
 
 #: inc/options.php:945
+msgid "BODY SCRIPTS - TOP"
+msgstr "BODY SCRIPTS - TOP"
+
+#: inc/options.php:946
+msgid ""
+"Add custom scripts just after the BODY tag opened. You need to have a SCRIPT "
+"tag around scripts."
+msgstr ""
+"Thêm tập lệnh tùy chỉnh ngay sau khi thẻ BODY được mở. Bạn cần có thẻ SCRIPT "
+"xung quanh các tập lệnh."
+
+#: inc/options.php:953
 msgid "Uni Developer"
 msgstr "Uni Developer"
 
-#: inc/options.php:952
+#: inc/options.php:960
 msgid "User Functions"
 msgstr "Chức năng người dùng"
 
-#: inc/options.php:959
+#: inc/options.php:967
 msgid "Restrict user"
 msgstr "Hạn chế chức năng người dùng"
 
-#: inc/options.php:960
+#: inc/options.php:968
 msgid "Restrict user in admin page"
 msgstr "Hạn chế chức năng của người dùng trong trang quản trị"
 
-#: inc/options.php:968
+#: inc/options.php:976
 msgid "Hidden information"
 msgstr "Ẩn thông tin"
 
-#: inc/options.php:969
+#: inc/options.php:977
 msgid "Hidden information dashboard & login page"
 msgstr "Ẩn thông tin ở bảng điều khiển trong trang quản trị và trang đăng nhập"
 
-#: inc/options.php:978
+#: inc/options.php:986
 msgid "SMTP Setup"
 msgstr "Cài đặt SMTP"
 
-#: inc/options.php:985
+#: inc/options.php:993
 msgid "SMTP"
 msgstr "SMTP"
 
-#: inc/options.php:993
+#: inc/options.php:1001
 msgid "SMTP Host"
 msgstr "SMTP Host"
 
-#: inc/options.php:994
+#: inc/options.php:1002
 msgid "Ex: smtp.gmail.com"
 msgstr "Ví dụ: smtp.gmail.com"
 
-#: inc/options.php:1000
+#: inc/options.php:1008
 msgid "SMTP Port"
 msgstr "Cổng SMTP"
 
-#: inc/options.php:1001
+#: inc/options.php:1009
 msgid "Port 587 / 465 / 25"
 msgstr "Cổng 587 / 465 / 25"
 
-#: inc/options.php:1007
+#: inc/options.php:1015
 msgid "Type of Encryption"
 msgstr "Loại mã hóa"
 
-#: inc/options.php:1008
+#: inc/options.php:1016
 msgid "Type: TLS / SSL"
 msgstr "Định dạng: TLS / SSL"
 
-#: inc/options.php:1020
+#: inc/options.php:1028
 msgid "SMTP Username"
 msgstr "SMTP Username"
 
-#: inc/options.php:1026
+#: inc/options.php:1034
 msgid "SMTP Password"
 msgstr "SMTP Password"
 
-#: inc/options.php:1032
+#: inc/options.php:1040
 msgid "From Name"
 msgstr "From Name"
 
-#: inc/options.php:1038
+#: inc/options.php:1046
 msgid "From Email Address"
 msgstr "From Email Address"
 
-#: inc/options.php:1146
+#: inc/options.php:1154
 msgid "Section via hook"
 msgstr "Section via hook"
 
-#: inc/options.php:1147
+#: inc/options.php:1155
 msgid ""
 "<p class=\"description\">This is a section created by adding a filter to the "
 "sections array. Can be used by child themes to add/remove sections from the "
@@ -711,28 +739,28 @@ msgctxt "Post Type Singular Name"
 msgid "Khách hàng"
 msgstr "Khách hàng"
 
-#: inc/template-functions/init.php:122
+#: inc/template-functions/init.php:118
 msgid "Unauthorized access is denied!"
 msgstr "Truy cập bị từ chối!"
 
-#: inc/template-functions/init.php:251 inc/template-functions/init.php:253
+#: inc/template-functions/init.php:247 inc/template-functions/init.php:249
 msgid "views"
 msgstr "lượt xem"
 
-#: inc/template-functions/init.php:323
+#: inc/template-functions/init.php:319
 msgid "Edit"
 msgstr "Chỉnh sửa"
 
-#: inc/template-functions/init.php:357 inc/template-functions/init.php:358
-#: inc/template-functions/init.php:359
+#: inc/template-functions/init.php:353 inc/template-functions/init.php:354
+#: inc/template-functions/init.php:355
 msgid "The field is required."
 msgstr "Trường thông tin bắt buộc."
 
-#: inc/template-functions/init.php:500
+#: inc/template-functions/init.php:496
 msgid "Duplicate this item"
 msgstr "Nhân đôi bài viết này"
 
-#: inc/template-functions/init.php:500
+#: inc/template-functions/init.php:496
 msgid "Duplicate"
 msgstr "Nhân đôi bài viết"
 
@@ -2238,6 +2266,12 @@ msgstr "UniTheme"
 #. Author of the plugin/theme
 msgid "Quang Hoa"
 msgstr "Quang Hoa"
+
+#~ msgid "Insert code to header"
+#~ msgstr "Chèn code vào Header"
+
+#~ msgid "Insert code to footer"
+#~ msgstr "Chèn code vào Footer"
 
 #~ msgid "Định dạng: TLS / SSL"
 #~ msgstr "Định dạng: TLS / SSL"

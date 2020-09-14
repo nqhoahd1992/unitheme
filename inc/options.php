@@ -928,14 +928,22 @@ Redux::setSection( $opt_name, array(
     'icon'             => 'el el-plus-sign',
     'fields'           => array(
         array(
-            'id'        =>'opt-textarea-header',
+            'id'        => 'script-header',
             'type'      => 'textarea',
-            'title'     => __('Insert code to header', 'shtheme'),
+            'title'     => __('HEADER SCRIPTS', 'shtheme'),
+            'desc'      => __('Add custom scripts inside HEAD tag. You need to have a SCRIPT tag around scripts.', 'shtheme'),
         ),
         array(
-            'id'        =>'opt-textarea-footer',
+            'id'        => 'script-footer',
             'type'      => 'textarea',
-            'title'     => __('Insert code to footer', 'shtheme'),
+            'title'     => __('FOOTER SCRIPTS', 'shtheme'),
+            'desc'      => __('Add custom scripts you might want to be loaded in the footer of your website. You need to have a SCRIPT tag around scripts.', 'shtheme'),
+        ),
+        array(
+            'id'        => 'script-body-top',
+            'type'      => 'textarea',
+            'title'     => __('BODY SCRIPTS - TOP', 'shtheme'),
+            'desc'      => __('Add custom scripts just after the BODY tag opened. You need to have a SCRIPT tag around scripts.', 'shtheme'),
         ),
     )
 ) );

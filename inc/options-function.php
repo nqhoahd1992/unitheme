@@ -212,22 +212,28 @@ function uni_footer_widget_areas() {
 add_action( 'uni_footer', 'uni_footer_widget_areas' );
 
 /**
- * Insert Code To Header Footer
+ * Insert Code
  */
 function insert_code_to_header(){
 	global $sh_option;
-	if( ! empty( $sh_option['opt-textarea-header'] ) ) {
-		$html_header = $sh_option['opt-textarea-header'];
-		echo $html_header;
+	if( ! empty( $sh_option['script-header'] ) ) {
+		echo $sh_option['script-header'];
 	}
 }
 add_action( 'wp_head', 'insert_code_to_header' );
 
 function insert_code_to_footer(){
 	global $sh_option;
-	if( ! empty( $sh_option['opt-textarea-footer'] ) ) {
-		$html_footer = $sh_option['opt-textarea-footer'];
-		echo $html_footer;
+	if( ! empty( $sh_option['script-footer'] ) ) {
+		echo $sh_option['script-footer'];
 	}
 }
 add_action( 'wp_footer', 'insert_code_to_footer' );
+
+function insert_code_to_body_top(){
+	global $sh_option;
+	if( ! empty( $sh_option['script-body-top'] ) ) {
+		echo $sh_option['script-body-top'];
+	}
+}
+add_action( 'before_header', 'insert_code_to_body_top' );
