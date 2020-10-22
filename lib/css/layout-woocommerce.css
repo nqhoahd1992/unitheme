@@ -14,7 +14,7 @@
 .sh-product-shortcode .list-products li.product .wrap-product__thumbnail { display: block; text-align: center; width: 100%; margin-bottom: 10px; overflow: hidden; }
 .sh-product-shortcode .list-products li.product .wrap-product__thumbnail a.img { display: block; position: relative; }
 .sh-product-shortcode .list-products li.product .wrap-product__thumbnail a.img img { display: inline; width: auto; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; }
-.sh-product-shortcode .list-products li.product .woocommerce-loop-product__title { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; margin: 10px 0 5px 0; line-height: 1.4em; white-space: normal; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; max-height: 2.8em; }
+.sh-product-shortcode .list-products li.product .woocommerce-loop-product__title { font-size: 0.875rem !important; font-weight: 600; text-transform: uppercase; padding: 0 !important; margin: 10px 0 5px 0 !important; line-height: 1.4em; white-space: normal; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; max-height: 2.8em; }
 .sh-product-shortcode .list-products li.product .woocommerce-loop-product__title a { color: #333333; }
 .sh-product-shortcode .list-products li.product .woocommerce-loop-product__title a:hover { color: #337ab7; }
 .sh-product-shortcode .list-products li.product .button, .sh-product-shortcode .list-products li.product .added_to_cart { display: inline-block; padding: 0.375em 0.625em; background: #337ab7; color: #FFF; margin-bottom: 10px; line-height: 1.4; border-radius: 0; font-size: 0.875rem; font-weight: normal; min-height: 0; }
@@ -35,7 +35,7 @@
 /*--------------------------------------------------------------
 # Responsive
 --------------------------------------------------------------*/
-.sh-product-shortcode .row.list-products li.product { position: relative; width: 100%; min-height: 1px; padding-right: 15px; padding-left: 15px; }
+.sh-product-shortcode .row.list-products li.product { position: relative; width: 100%; min-height: 1px; padding-right: 15px; padding-left: 15px; float: none; margin: 0 0 30px 0; }
 
 /* 2 columns */
 .sh-product-shortcode.column-2 .row.list-products:not(.list) li.product { -webkit-box-flex: 0; -ms-flex: 0 0 50%; flex: 0 0 50%; max-width: 50%; }

@@ -76,10 +76,11 @@ $text-color: #333333;
 				}
 			}
 			.woocommerce-loop-product__title {
-				font-size: 0.875rem;
+				font-size: 0.875rem !important;
 				font-weight: 600;
 				text-transform: uppercase;
-				margin: 10px 0 5px 0;
+				padding: 0 !important;
+				margin: 10px 0 5px 0 !important;
 				line-height: 1.4em;
 				white-space: normal;
 				overflow: hidden;
@@ -170,6 +171,8 @@ li.product {
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
+    float: none;
+    margin: 0 0 30px 0;
 }
 /* 2 columns */
 .sh-product-shortcode.column-2 .row.list-products:not(.list) li.product {

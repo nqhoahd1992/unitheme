@@ -453,7 +453,7 @@ Redux::setSection( $opt_name, array(
             'title'    => __( 'Select categories', 'shtheme' ),
             'data' 	   => 'terms',
 			'args' 	   => array(
-			    'taxonomies' => array( 'category' ),
+			    'taxonomy' => array( 'category' ),
 			    'hide_empty' => false,
 			),
         ),
@@ -524,7 +524,7 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'title'    => __( 'Select categories', 'shtheme' ),
                 'data' => 'terms',
 				'args' => array(
-				    'taxonomies' => array( 'product_cat' ),
+				    'taxonomy' => array( 'product_cat' ),
 				    'hide_empty' => false,
 				),
             ),

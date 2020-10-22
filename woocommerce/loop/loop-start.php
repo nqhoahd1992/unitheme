@@ -20,4 +20,4 @@ global $sh_option, $post;
 $numcol   = $sh_option['number-column-product-cate'];
 ?>
 <div class="sh-product-shortcode column-<?php echo $numcol;?>">
-<ul class="row list-products">
+<ul class="products row list-products">
