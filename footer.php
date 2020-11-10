@@ -33,7 +33,7 @@ do_action( 'after_content_sidebar_wrap' );
 					<div class="wrap">
 						<div class="row">
 							<div class="col-sm-12 text-center">
-								<p id="copyright"><?php echo $sh_option['footer-copyright'];?> - <a href="https://univn.vn/dich-vu-thiet-ke-website/" rel="nofollow" target="_blank">Thiết kế website</a> bởi <a href="https://univn.vn/" rel="nofollow" target="_blank">Uni Creation</a></p>
+								<p id="copyright"><?php echo $sh_option['footer-copyright'];?> - <a href="https://univn.vn/thiet-ke-website-tron-goi/" rel="nofollow" target="_blank">Thiết kế website</a> bởi <a href="https://univn.vn/" rel="nofollow" target="_blank">Uni Creation</a></p>
 							</div>
 						</div>
 					</div>
