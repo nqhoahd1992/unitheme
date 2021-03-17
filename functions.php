@@ -12,7 +12,7 @@ define( 'TAGS_DIR', PARENT_DIR . '/inc/template-tags' );
  * @package Uni_Theme
  */
 
-if ( ! function_exists( 'unitheme_setup' ) ) :
+if ( ! function_exists( 'uni_setup' ) ) :
 	function uni_setup() {
 		
 		load_theme_textdomain( 'shtheme', PARENT_DIR . '/languages' );
@@ -197,3 +197,29 @@ add_action( 'wp_enqueue_scripts', 'uni_lib_scripts', 1 );
 **/
 add_image_size( 'thumb300x200', 300, 200, array( 'center', 'center' ) );
 
+// add_action('um_after_account_general', 'showUMExtraFields', 100);
+
+// function showUMExtraFields() {
+// 	$id = um_user('ID');
+// 	$output = '';
+// 	$names = array('phone_number', 'user_company');
+
+// 	$fields = array(); 
+// 	foreach( $names as $name )
+// 		$fields[ $name ] = UM()->builtin()->get_specific_field( $name );
+// 	$fields = apply_filters('um_account_secure_fields', $fields, $id);
+// 	foreach( $fields as $key => $data )
+// 		$output .= UM()->fields()->edit_field( $key, $data );
+
+// 	echo $output;
+// }
+
+// add_action('um_account_pre_update_profile', 'getUMFormData', 100);
+
+// function getUMFormData(){
+// 	$id = um_user('ID');
+// 	$names = array('phone_number', 'user_company');
+
+// 	foreach( $names as $name )
+// 		update_user_meta( $id, $name, $_POST[$name] );
+// }

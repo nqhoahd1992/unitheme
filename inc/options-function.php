@@ -40,10 +40,10 @@ function create_slide_carousel(){
 						echo '<div class="carousel-item '. $class .'">';
 							if( $value['url'] ) {
 								echo '<a href="'. $value['url'] .'">';
-									echo '<img class="d-block w-100" src="'. $value['image'] .'" alt="'. $value['title'] .'">';
+									echo '<img class="d-block w-100" src="'. $value['image'] .'" srcset="'. wp_get_attachment_image_srcset($value['attachment_id']) .'" alt="'. $value['title'] .'">';
 								echo '</a>';
 							} else {
-								echo '<img class="d-block w-100" src="'. $value['image'] .'" alt="'. $value['title'] .'">';
+								echo '<img class="d-block w-100" src="'. $value['image'] .'" srcset="'. wp_get_attachment_image_srcset($value['attachment_id']) .'" alt="'. $value['title'] .'">';
 							}
 							if( $value['title'] || $value['description'] ) {
 								echo '<div class="carousel-caption d-none d-md-block">';
